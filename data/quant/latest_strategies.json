@@ -1,31 +1,31 @@
 {
   "strategies": [
     {
-      "dsl": "rs_strong AND foreign_buy AND price_above_ma20",
+      "dsl": "vol_spike AND triple_buy AND price_above_ma20",
       "score": 0.85,
       "weight": 0.2,
       "age": 1
     },
     {
-      "dsl": "trend_ma_cross AND rs_strong AND vol_spike",
+      "dsl": "vol_spike AND triple_buy AND rs_strong",
       "score": 0.85,
       "weight": 0.2,
       "age": 1
     },
     {
-      "dsl": "rs_strong AND price_above_ma20 AND vol_spike",
+      "dsl": "vol_spike AND foreign_buy AND rs_strong",
       "score": 0.85,
       "weight": 0.2,
       "age": 1
     },
     {
-      "dsl": "vol_spike AND rs_strong AND foreign_buy",
+      "dsl": "triple_buy AND rs_strong AND price_above_ma20",
       "score": 0.85,
       "weight": 0.2,
       "age": 1
     },
     {
-      "dsl": "rs_strong AND vol_spike AND triple_buy",
+      "dsl": "price_above_ma20 AND triple_buy AND rsi_strong",
       "score": 0.85,
       "weight": 0.2,
       "age": 1
