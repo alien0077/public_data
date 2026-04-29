@@ -1,0 +1,61 @@
+{
+  "feature_weights": {
+    "trend_ma_cross": 1.05,
+    "vol_spike": 1.2,
+    "rs_strong": 1.55,
+    "breakout": 1.55,
+    "accumulation": 1.25,
+    "low_vol_base": 0.8
+  },
+  "strategy_pool": [
+    {
+      "weights": {
+        "trend_ma_cross": 1.0,
+        "rs_strong": 1.5,
+        "breakout": 1.5
+      },
+      "dsl": "trend_ma_cross AND rs_strong AND breakout"
+    },
+    {
+      "weights": {
+        "accumulation": 1.5,
+        "low_vol_base": 1.2,
+        "rs_strong": 1.0
+      },
+      "dsl": "accumulation AND rs_strong"
+    },
+    {
+      "weights": {
+        "trend_ma_cross": 1.077942450141426,
+        "rs_strong": 1.4027977693893283,
+        "breakout": 1.491996250782045
+      },
+      "dsl": "trend_ma_cross AND rs_strong AND breakout"
+    },
+    {
+      "weights": {
+        "accumulation": 1.4806441876038117,
+        "low_vol_base": 1.1243309006130104,
+        "rs_strong": 1.0744251660494557
+      },
+      "dsl": "accumulation AND rs_strong"
+    },
+    {
+      "weights": {
+        "accumulation": 1.5,
+        "low_vol_base": 1.2,
+        "rs_strong": 1.0
+      },
+      "dsl": ""
+    },
+    {
+      "weights": {
+        "accumulation": 1.5,
+        "low_vol_base": 1.2,
+        "rs_strong": 1.0
+      },
+      "dsl": ""
+    }
+  ],
+  "last_train_date": "2026-04-29"
+}
