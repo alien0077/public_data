@@ -2,23 +2,23 @@
   "strategies": [
     {
       "dsl": "trend_ma_cross AND breakout",
-      "score": 0.39,
+      "score": 0.3,
       "weight": 1.8,
       "age": 2,
       "desc": "主升段突破策略",
-      "sharpe": 3.92,
-      "total_return": 0.7913,
-      "win_rate": 0.0
+      "sharpe": 3.05,
+      "total_return": 1.4949,
+      "win_rate": 0.444
     },
     {
-      "dsl": "",
-      "score": 0.37,
-      "weight": 1.73,
+      "dsl": "rs_strong AND breakout",
+      "score": 0.3,
+      "weight": 1.66,
       "age": 1,
-      "desc": "主升段突破策略",
-      "sharpe": 3.68,
-      "total_return": 0.736,
-      "win_rate": 0.0
+      "desc": "相對強度領先策略",
+      "sharpe": 3.01,
+      "total_return": 1.4803,
+      "win_rate": 0.443
     }
   ]
 }
