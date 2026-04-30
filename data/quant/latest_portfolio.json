@@ -1,7 +1,7 @@
 {
-  "date": "2026-04-28",
-  "regime": "bull",
-  "breadth": 0.573,
+  "date": "2026-04-29",
+  "regime": "bear",
+  "breadth": 0.458,
   "performance": {
     "total_return": 0.8258,
     "sharpe": 6.14,
@@ -135,95 +135,398 @@
     {
       "stock": "3028",
       "weight": 0.1,
-      "return": 0.0,
+      "score": 2.0,
+      "return": -0.0028,
       "entry_date": "2026-04-28",
-      "themes": []
+      "themes": [],
+      "is_held": true
     },
     {
       "stock": "4967",
       "weight": 0.1,
-      "return": 0.0,
+      "score": 2.0,
+      "return": -0.0578,
       "entry_date": "2026-04-28",
-      "themes": []
+      "themes": [],
+      "is_held": true
     },
     {
       "stock": "3339",
       "weight": 0.1,
-      "return": 0.0,
+      "score": 2.0,
+      "return": 0.0457,
       "entry_date": "2026-04-28",
-      "themes": []
+      "themes": [],
+      "is_held": true
     },
     {
       "stock": "1809",
       "weight": 0.1,
-      "return": 0.0,
+      "score": 2.0,
+      "return": 0.0019,
       "entry_date": "2026-04-28",
-      "themes": []
-    },
-    {
-      "stock": "2105",
-      "weight": 0.1,
-      "return": 0.0,
-      "entry_date": "2026-04-28",
-      "themes": []
-    },
-    {
-      "stock": "2231",
-      "weight": 0.1,
-      "return": 0.0,
-      "entry_date": "2026-04-28",
-      "themes": []
-    },
-    {
-      "stock": "2353",
-      "weight": 0.1,
-      "return": 0.0,
-      "entry_date": "2026-04-28",
-      "themes": [
-        "AI_PC"
-      ]
+      "themes": [],
+      "is_held": true
     },
     {
       "stock": "2537",
       "weight": 0.1,
-      "return": 0.0,
+      "score": 2.0,
+      "return": 0.0097,
       "entry_date": "2026-04-28",
-      "themes": []
+      "themes": [],
+      "is_held": true
     },
     {
-      "stock": "3413",
-      "weight": 0.1,
+      "stock": "2243",
+      "weight": 0.0,
+      "score": 4.15,
       "return": 0.0,
-      "entry_date": "2026-04-28",
-      "themes": [
-        "CoWoS_Advanced"
-      ]
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2337",
+      "weight": 0.0,
+      "score": 4.15,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "8103",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
     },
     {
       "stock": "3708",
-      "weight": 0.1,
+      "weight": 0.0,
+      "score": 3.1,
       "return": 0.0,
-      "entry_date": "2026-04-28",
-      "themes": []
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "4739",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6136",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2464",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "Robotics_AI"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "4540",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1441",
+      "weight": 0.0,
+      "score": 2.3,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1463",
+      "weight": 0.0,
+      "score": 2.3,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1531",
+      "weight": 0.0,
+      "score": 2.3,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1760",
+      "weight": 0.0,
+      "score": 2.3,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2727",
+      "weight": 0.0,
+      "score": 2.3,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3605",
+      "weight": 0.0,
+      "score": 2.3,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6771",
+      "weight": 0.0,
+      "score": 2.3,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1526",
+      "weight": 0.0,
+      "score": 2.05,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2321",
+      "weight": 0.0,
+      "score": 2.05,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2498",
+      "weight": 0.0,
+      "score": 2.05,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2614",
+      "weight": 0.0,
+      "score": 2.05,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3032",
+      "weight": 0.0,
+      "score": 2.05,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3557",
+      "weight": 0.0,
+      "score": 2.05,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "4137",
+      "weight": 0.0,
+      "score": 2.05,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "4590",
+      "weight": 0.0,
+      "score": 2.05,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6918",
+      "weight": 0.0,
+      "score": 2.05,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "8045",
+      "weight": 0.0,
+      "score": 2.05,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1325",
+      "weight": 0.0,
+      "score": 1.25,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1447",
+      "weight": 0.0,
+      "score": 1.25,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1527",
+      "weight": 0.0,
+      "score": 1.25,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2102",
+      "weight": 0.0,
+      "score": 1.25,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2206",
+      "weight": 0.0,
+      "score": 1.25,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2645",
+      "weight": 0.0,
+      "score": 1.25,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2884",
+      "weight": 0.0,
+      "score": 1.25,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "4536",
+      "weight": 0.0,
+      "score": 1.25,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6005",
+      "weight": 0.0,
+      "score": 1.25,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6177",
+      "weight": 0.0,
+      "score": 1.25,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6936",
+      "weight": 0.0,
+      "score": 1.25,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3528",
+      "weight": 0.0,
+      "score": 1.05,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6405",
+      "weight": 0.0,
+      "score": 1.05,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
     }
   ],
-  "new_entries": [
-    "3339",
-    "1809",
-    "2105",
-    "2231",
-    "2353",
-    "2537",
-    "3413",
-    "3708"
-  ],
+  "new_entries": [],
   "exits": [
-    "3339",
-    "1809",
     "2105",
     "2231",
     "2353",
-    "2537",
     "3413",
     "3708"
   ]
