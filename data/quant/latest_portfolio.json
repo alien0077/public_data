@@ -3,255 +3,12 @@
   "regime": "bear",
   "breadth": 0.458,
   "performance": {
-    "total_return": 0.8132,
-    "sharpe": 6.05,
-    "max_drawdown": -0.1516,
-    "win_rate": 0.433,
-    "profit_factor": 1.66,
-    "equity_curve": [
-      {
-        "date": "03/10",
-        "equity": 1.2561
-      },
-      {
-        "date": "03/11",
-        "equity": 1.3089
-      },
-      {
-        "date": "03/12",
-        "equity": 1.3485
-      },
-      {
-        "date": "03/13",
-        "equity": 1.3962
-      },
-      {
-        "date": "03/16",
-        "equity": 1.4073
-      },
-      {
-        "date": "03/17",
-        "equity": 1.4022
-      },
-      {
-        "date": "03/18",
-        "equity": 1.3912
-      },
-      {
-        "date": "03/19",
-        "equity": 1.3532
-      },
-      {
-        "date": "03/20",
-        "equity": 1.3172
-      },
-      {
-        "date": "03/23",
-        "equity": 1.3045
-      },
-      {
-        "date": "03/24",
-        "equity": 1.2771
-      },
-      {
-        "date": "03/25",
-        "equity": 1.2515
-      },
-      {
-        "date": "03/26",
-        "equity": 1.2078
-      },
-      {
-        "date": "03/27",
-        "equity": 1.194
-      },
-      {
-        "date": "03/30",
-        "equity": 1.2024
-      },
-      {
-        "date": "03/31",
-        "equity": 1.2678
-      },
-      {
-        "date": "04/01",
-        "equity": 1.2984
-      },
-      {
-        "date": "04/02",
-        "equity": 1.3832
-      },
-      {
-        "date": "04/07",
-        "equity": 1.4635
-      },
-      {
-        "date": "04/08",
-        "equity": 1.4975
-      },
-      {
-        "date": "04/09",
-        "equity": 1.5991
-      },
-      {
-        "date": "04/10",
-        "equity": 1.7138
-      },
-      {
-        "date": "04/13",
-        "equity": 1.7888
-      },
-      {
-        "date": "04/14",
-        "equity": 1.8535
-      },
-      {
-        "date": "04/15",
-        "equity": 1.9452
-      },
-      {
-        "date": "04/16",
-        "equity": 1.9571
-      },
-      {
-        "date": "04/17",
-        "equity": 1.953
-      },
-      {
-        "date": "04/20",
-        "equity": 1.8864
-      },
-      {
-        "date": "04/21",
-        "equity": 1.8432
-      },
-      {
-        "date": "04/22",
-        "equity": 1.8132
-      }
-    ],
-    "drawdown_curve": [
-      {
-        "date": "03/10",
-        "value": -0.0549
-      },
-      {
-        "date": "03/11",
-        "value": -0.0152
-      },
-      {
-        "date": "03/12",
-        "value": 0.0
-      },
-      {
-        "date": "03/13",
-        "value": 0.0
-      },
-      {
-        "date": "03/16",
-        "value": 0.0
-      },
-      {
-        "date": "03/17",
-        "value": -0.0036
-      },
-      {
-        "date": "03/18",
-        "value": -0.0115
-      },
-      {
-        "date": "03/19",
-        "value": -0.0385
-      },
-      {
-        "date": "03/20",
-        "value": -0.064
-      },
-      {
-        "date": "03/23",
-        "value": -0.0731
-      },
-      {
-        "date": "03/24",
-        "value": -0.0925
-      },
-      {
-        "date": "03/25",
-        "value": -0.1107
-      },
-      {
-        "date": "03/26",
-        "value": -0.1417
-      },
-      {
-        "date": "03/27",
-        "value": -0.1516
-      },
-      {
-        "date": "03/30",
-        "value": -0.1456
-      },
-      {
-        "date": "03/31",
-        "value": -0.0991
-      },
-      {
-        "date": "04/01",
-        "value": -0.0774
-      },
-      {
-        "date": "04/02",
-        "value": -0.0171
-      },
-      {
-        "date": "04/07",
-        "value": 0.0
-      },
-      {
-        "date": "04/08",
-        "value": 0.0
-      },
-      {
-        "date": "04/09",
-        "value": 0.0
-      },
-      {
-        "date": "04/10",
-        "value": 0.0
-      },
-      {
-        "date": "04/13",
-        "value": 0.0
-      },
-      {
-        "date": "04/14",
-        "value": 0.0
-      },
-      {
-        "date": "04/15",
-        "value": 0.0
-      },
-      {
-        "date": "04/16",
-        "value": 0.0
-      },
-      {
-        "date": "04/17",
-        "value": -0.0021
-      },
-      {
-        "date": "04/20",
-        "value": -0.0361
-      },
-      {
-        "date": "04/21",
-        "value": -0.0582
-      },
-      {
-        "date": "04/22",
-        "value": -0.0735
-      }
-    ]
+    "total_return": 0,
+    "sharpe": 0,
+    "max_drawdown": 0,
+    "win_rate": 0,
+    "profit_factor": 0,
+    "equity_curve": []
   },
   "portfolio": [
     {
@@ -300,6 +57,28 @@
       "is_held": true
     },
     {
+      "stock": "3533",
+      "weight": 0.0,
+      "score": 4.65,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "AI_Server"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "6515",
+      "weight": 0.0,
+      "score": 4.65,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "CoWoS_Advanced"
+      ],
+      "is_held": false
+    },
+    {
       "stock": "2243",
       "weight": 0.0,
       "score": 4.15,
@@ -318,9 +97,629 @@
       "is_held": false
     },
     {
-      "stock": "8103",
+      "stock": "2426",
+      "weight": 0.0,
+      "score": 4.15,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2486",
+      "weight": 0.0,
+      "score": 4.15,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "Cooling_Liquid"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "6205",
+      "weight": 0.0,
+      "score": 4.15,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2345",
       "weight": 0.0,
       "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "HPC_Compute",
+        "CPO_Optical"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "2351",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2383",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "PCB_CCL_Drilling"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "2399",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2460",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3017",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "AI_Server",
+        "AI_PC",
+        "Cooling_Liquid",
+        "Apple_Chain"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "3529",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3555",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "4908",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "CPO_Optical"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "4927",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "4958",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "PCB_CCL_Drilling",
+        "Apple_Chain"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "6290",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6735",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6829",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6830",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6877",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "7556",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "7734",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "7751",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "8210",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "AI_Server"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "8358",
+      "weight": 0.0,
+      "score": 3.85,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1711",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2313",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "PCB_CCL_Drilling",
+        "Apple_Chain"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "2360",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "Tesla_Chain"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "2367",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "PCB_CCL_Drilling"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "2485",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3167",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "PCB_CCL_Drilling"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "3229",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3443",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "HPC_Compute"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "3563",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3653",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "HPC_Compute"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "3714",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "4764",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "4949",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6141",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6213",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "PCB_CCL_Drilling"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "6285",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6442",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "CPO_Optical"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "6531",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6861",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "8438",
+      "weight": 0.0,
+      "score": 3.4,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "0056",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1568",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1721",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1773",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2108",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2248",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2388",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2436",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2540",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2855",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2945",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3010",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3013",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "AI_Server",
+        "Cooling_Liquid",
+        "Robotics_AI"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "3014",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3034",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "Weight_Stocks"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "3150",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3312",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3338",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "Cooling_Liquid"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "3356",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3545",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "3592",
+      "weight": 0.0,
+      "score": 3.1,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
@@ -345,12 +744,192 @@
       "is_held": false
     },
     {
+      "stock": "4755",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "4952",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "4961",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6115",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
       "stock": "6136",
       "weight": 0.0,
       "score": 3.1,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6209",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6415",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6525",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6655",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6902",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "7740",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "8081",
+      "weight": 0.0,
+      "score": 3.1,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1303",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1597",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1727",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1785",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "1802",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "2308",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "Weight_Stocks",
+        "AI_Server",
+        "AI_PC",
+        "Power_Grid"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "2368",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "PCB_CCL_Drilling"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "2440",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "CoWoS_Advanced"
+      ],
       "is_held": false
     },
     {
@@ -365,7 +944,18 @@
       "is_held": false
     },
     {
-      "stock": "4540",
+      "stock": "2467",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "CoWoS_Advanced"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "2489",
       "weight": 0.0,
       "score": 2.6,
       "return": 0.0,
@@ -374,270 +964,463 @@
       "is_held": false
     },
     {
-      "stock": "1441",
+      "stock": "3016",
       "weight": 0.0,
-      "score": 2.3,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "1463",
+      "stock": "3030",
       "weight": 0.0,
-      "score": 2.3,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "1531",
+      "stock": "3054",
       "weight": 0.0,
-      "score": 2.3,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "1760",
+      "stock": "3057",
       "weight": 0.0,
-      "score": 2.3,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "2727",
+      "stock": "3131",
       "weight": 0.0,
-      "score": 2.3,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "CoWoS_Advanced"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "3135",
+      "weight": 0.0,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "3605",
+      "stock": "3163",
       "weight": 0.0,
-      "score": 2.3,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "CPO_Optical"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "3221",
+      "weight": 0.0,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "6771",
+      "stock": "3264",
       "weight": 0.0,
-      "score": 2.3,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "1526",
+      "stock": "3455",
       "weight": 0.0,
-      "score": 2.05,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "2321",
+      "stock": "3581",
       "weight": 0.0,
-      "score": 2.05,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "2498",
+      "stock": "3583",
       "weight": 0.0,
-      "score": 2.05,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "CoWoS_Advanced"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "3593",
+      "weight": 0.0,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "2614",
+      "stock": "3665",
       "weight": 0.0,
-      "score": 2.05,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "Tesla_Chain"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "4542",
+      "weight": 0.0,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "3032",
+      "stock": "4577",
       "weight": 0.0,
-      "score": 2.05,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "3557",
+      "stock": "4768",
       "weight": 0.0,
-      "score": 2.05,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "4137",
+      "stock": "4971",
       "weight": 0.0,
-      "score": 2.05,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "4590",
+      "stock": "4973",
       "weight": 0.0,
-      "score": 2.05,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "6918",
+      "stock": "4979",
       "weight": 0.0,
-      "score": 2.05,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "CPO_Optical"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "5274",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "Weight_Stocks",
+        "HPC_Compute",
+        "Apple_Chain"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "5289",
+      "weight": 0.0,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "8045",
+      "stock": "5291",
       "weight": 0.0,
-      "score": 2.05,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "1325",
+      "stock": "5340",
       "weight": 0.0,
-      "score": 1.25,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "1447",
+      "stock": "5475",
       "weight": 0.0,
-      "score": 1.25,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "1527",
+      "stock": "5498",
       "weight": 0.0,
-      "score": 1.25,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "2102",
+      "stock": "6147",
       "weight": 0.0,
-      "score": 1.25,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "2206",
+      "stock": "6165",
       "weight": 0.0,
-      "score": 1.25,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "2645",
+      "stock": "6197",
       "weight": 0.0,
-      "score": 1.25,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "2884",
+      "stock": "6223",
       "weight": 0.0,
-      "score": 1.25,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "CoWoS_Advanced"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "6234",
+      "weight": 0.0,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "4536",
+      "stock": "6465",
       "weight": 0.0,
-      "score": 1.25,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "6005",
+      "stock": "6510",
       "weight": 0.0,
-      "score": 1.25,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "6177",
+      "stock": "6568",
       "weight": 0.0,
-      "score": 1.25,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "6936",
+      "stock": "6584",
       "weight": 0.0,
-      "score": 1.25,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "3528",
+      "stock": "6640",
       "weight": 0.0,
-      "score": 1.05,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "CoWoS_Advanced"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "6658",
+      "weight": 0.0,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],
       "is_held": false
     },
     {
-      "stock": "6405",
+      "stock": "6683",
       "weight": 0.0,
-      "score": 1.05,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6693",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6727",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6739",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "6903",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "8027",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "CoWoS_Advanced"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "8047",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "8064",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "8155",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [
+        "PCB_CCL_Drilling"
+      ],
+      "is_held": false
+    },
+    {
+      "stock": "8291",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "8996",
+      "weight": 0.0,
+      "score": 2.6,
+      "return": 0.0,
+      "entry_date": "--",
+      "themes": [],
+      "is_held": false
+    },
+    {
+      "stock": "9136",
+      "weight": 0.0,
+      "score": 2.6,
       "return": 0.0,
       "entry_date": "--",
       "themes": [],

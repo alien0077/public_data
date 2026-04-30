@@ -2,53 +2,53 @@
   "strategies": [
     {
       "dsl": "trend_ma_cross AND rs_strong AND breakout",
-      "score": 0.6,
+      "score": 0.59,
       "weight": 1.5,
       "age": 1,
       "desc": "相對強度領先策略",
-      "sharpe": 6.05,
-      "total_return": 0.8132,
-      "win_rate": 0.433
+      "sharpe": 5.92,
+      "total_return": 5.4061,
+      "win_rate": 0.497
     },
     {
       "dsl": "trend_ma_cross AND rs_strong AND breakout",
-      "score": 0.6,
+      "score": 0.46,
       "weight": 1.49,
       "age": 1,
       "desc": "主升段突破策略",
-      "sharpe": 6.05,
-      "total_return": 0.8132,
-      "win_rate": 0.433
+      "sharpe": 4.63,
+      "total_return": 2.5336,
+      "win_rate": 0.435
     },
     {
       "dsl": "trend_ma_cross AND rs_strong AND breakout",
-      "score": 0.6,
+      "score": 0.59,
       "weight": 1.54,
       "age": 1,
       "desc": "相對強度領先策略",
-      "sharpe": 6.05,
-      "total_return": 0.8132,
-      "win_rate": 0.433
+      "sharpe": 5.92,
+      "total_return": 5.4061,
+      "win_rate": 0.497
     },
     {
-      "dsl": "rs_strong AND breakout",
-      "score": 0.6,
-      "weight": 1.42,
-      "age": 1,
-      "desc": "相對強度領先策略",
-      "sharpe": 6.05,
-      "total_return": 0.8132,
-      "win_rate": 0.433
-    },
-    {
-      "dsl": "breakout AND trend_ma_cross",
-      "score": 0.6,
-      "weight": 1.46,
+      "dsl": "breakout AND rs_strong",
+      "score": 0.58,
+      "weight": 1.61,
       "age": 1,
       "desc": "主升段突破策略",
-      "sharpe": 6.05,
-      "total_return": 0.8132,
-      "win_rate": 0.433
+      "sharpe": 5.8,
+      "total_return": 1.0832,
+      "win_rate": 0.439
+    },
+    {
+      "dsl": "breakout AND rs_strong",
+      "score": 0.58,
+      "weight": 1.32,
+      "age": 1,
+      "desc": "主升段突破策略",
+      "sharpe": 5.8,
+      "total_return": 1.0832,
+      "win_rate": 0.439
     }
   ]
 }
