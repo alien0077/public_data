@@ -2,50 +2,50 @@
   "strategies": [
     {
       "dsl": "trend_ma_cross AND rs_strong AND breakout",
-      "score": 0.0,
+      "score": 0.15,
       "weight": 1.5,
       "age": 1,
-      "desc": "系統進化策略",
-      "sharpe": 0.0,
-      "total_return": 0.0,
-      "win_rate": 0.0
-    },
-    {
-      "dsl": "accumulation AND rs_strong",
-      "score": 0.0,
-      "weight": 0.5,
-      "age": 1,
-      "desc": "系統進化策略",
+      "desc": "相對強度領先策略",
       "sharpe": 0.0,
       "total_return": 0.0,
       "win_rate": 0.0
     },
     {
       "dsl": "trend_ma_cross AND rs_strong AND breakout",
-      "score": 0.0,
+      "score": 0.15,
       "weight": 1.49,
       "age": 1,
-      "desc": "系統進化策略",
+      "desc": "主升段突破策略",
       "sharpe": 0.0,
       "total_return": 0.0,
       "win_rate": 0.0
     },
     {
-      "dsl": "accumulation AND rs_strong",
-      "score": 0.0,
-      "weight": 0.5,
+      "dsl": "trend_ma_cross AND rs_strong AND breakout",
+      "score": 0.15,
+      "weight": 1.54,
       "age": 1,
-      "desc": "系統進化策略",
+      "desc": "相對強度領先策略",
       "sharpe": 0.0,
       "total_return": 0.0,
       "win_rate": 0.0
     },
     {
-      "dsl": "",
-      "score": 0.0,
-      "weight": 0.5,
+      "dsl": "trend_ma_cross AND breakout",
+      "score": 0.15,
+      "weight": 1.47,
       "age": 1,
-      "desc": "系統進化策略",
+      "desc": "主升段突破策略",
+      "sharpe": 0.0,
+      "total_return": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "dsl": "trend_ma_cross AND breakout",
+      "score": 0.15,
+      "weight": 1.73,
+      "age": 1,
+      "desc": "主升段突破策略",
       "sharpe": 0.0,
       "total_return": 0.0,
       "win_rate": 0.0
