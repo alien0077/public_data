@@ -1,6 +1,7 @@
 {
   "date": "2026-05-04",
   "regime": "NEUTRAL",
+  "breadth": 0.5,
   "alpha_allocation": [
     {
       "strategy": "Breakout",
@@ -16,11 +17,11 @@
     }
   ],
   "theme_allocation": {
-    "PCB_CCL_Drilling": 102.71,
-    "CPO_Optical": 91.12,
-    "CoWoS_Advanced": 61.35,
-    "HPC_Compute": 57.28,
-    "Apple_Chain": 45.98
+    "PCB_CCL_Drilling": 1.0,
+    "CPO_Optical": 0.89,
+    "CoWoS_Advanced": 0.6,
+    "HPC_Compute": 0.56,
+    "Apple_Chain": 0.45
   },
   "performance": {
     "total_return": 0.2412,
@@ -274,95 +275,125 @@
   },
   "portfolio": [
     {
-      "stock": "006207",
-      "weight": 0.0,
-      "score": 0.0,
-      "is_held": false,
-      "entry_reason": "Breakout"
+      "stock": "6196",
+      "weight": 0.1,
+      "score": 2.0,
+      "is_held": true,
+      "entry_reason": "Signal",
+      "themes": [
+        "CoWoS_Advanced"
+      ],
+      "entry_date": "2026-04-10",
+      "return": 0.1633
     },
     {
-      "stock": "00639",
-      "weight": 0.0,
-      "score": 0.0,
-      "is_held": false,
-      "entry_reason": "Breakout"
-    },
-    {
-      "stock": "00739",
-      "weight": 0.0,
-      "score": 0.0,
-      "is_held": false,
-      "entry_reason": "Breakout"
+      "stock": "4958",
+      "weight": 0.1,
+      "score": 2.0,
+      "is_held": true,
+      "entry_reason": "Signal",
+      "themes": [
+        "PCB_CCL_Drilling",
+        "Apple_Chain"
+      ],
+      "entry_date": "2026-04-27",
+      "return": 0.1928
     },
     {
       "stock": "2233",
-      "weight": 0.0,
+      "weight": 0.05,
       "score": 2.0,
       "is_held": false,
-      "entry_reason": "Breakout"
+      "entry_reason": "Breakout",
+      "themes": [],
+      "entry_date": "2026-05-04"
     },
     {
       "stock": "2417",
-      "weight": 0.0,
+      "weight": 0.05,
       "score": 2.0,
       "is_held": false,
-      "entry_reason": "Breakout"
+      "entry_reason": "Breakout",
+      "themes": [
+        "AI_Server"
+      ],
+      "entry_date": "2026-05-04"
     },
     {
       "stock": "2465",
-      "weight": 0.0,
+      "weight": 0.05,
       "score": 2.0,
       "is_held": false,
-      "entry_reason": "Breakout"
-    },
-    {
-      "stock": "2486",
-      "weight": 0.0,
-      "score": 0.0,
-      "is_held": false,
-      "entry_reason": "Breakout"
-    },
-    {
-      "stock": "3167",
-      "weight": 0.0,
-      "score": 0.0,
-      "is_held": false,
-      "entry_reason": "Breakout"
+      "entry_reason": "Breakout",
+      "themes": [],
+      "entry_date": "2026-05-04"
     },
     {
       "stock": "4526",
-      "weight": 0.0,
+      "weight": 0.05,
       "score": 2.0,
       "is_held": false,
-      "entry_reason": "Breakout"
-    },
-    {
-      "stock": "4540",
-      "weight": 0.0,
-      "score": 0.0,
-      "is_held": false,
-      "entry_reason": "Breakout"
+      "entry_reason": "Breakout",
+      "themes": [],
+      "entry_date": "2026-05-04"
     },
     {
       "stock": "4576",
-      "weight": 0.0,
+      "weight": 0.05,
       "score": 2.0,
       "is_held": false,
-      "entry_reason": "Breakout"
-    },
-    {
-      "stock": "6165",
-      "weight": 0.0,
-      "score": 0.0,
-      "is_held": false,
-      "entry_reason": "Breakout"
+      "entry_reason": "Breakout",
+      "themes": [],
+      "entry_date": "2026-05-04"
     },
     {
       "stock": "6579",
-      "weight": 0.0,
+      "weight": 0.05,
       "score": 2.0,
       "is_held": false,
-      "entry_reason": "Breakout"
+      "entry_reason": "Breakout",
+      "themes": [],
+      "entry_date": "2026-05-04"
+    },
+    {
+      "stock": "2486",
+      "weight": 0.05,
+      "score": 0.0,
+      "is_held": false,
+      "entry_reason": "Breakout",
+      "themes": [
+        "Cooling_Liquid"
+      ],
+      "entry_date": "2026-05-04"
+    },
+    {
+      "stock": "3167",
+      "weight": 0.05,
+      "score": 0.0,
+      "is_held": false,
+      "entry_reason": "Breakout",
+      "themes": [
+        "PCB_CCL_Drilling"
+      ],
+      "entry_date": "2026-05-04"
+    },
+    {
+      "stock": "4540",
+      "weight": 0.05,
+      "score": 0.0,
+      "is_held": false,
+      "entry_reason": "Breakout",
+      "themes": [],
+      "entry_date": "2026-05-04"
+    },
+    {
+      "stock": "6165",
+      "weight": 0.05,
+      "score": 0.0,
+      "is_held": false,
+      "entry_reason": "Breakout",
+      "themes": [],
+      "entry_date": "2026-05-04"
     }
   ],
   "trade_log": []
