@@ -1,34 +1,22 @@
 {
   "strategies": [
     {
-      "dsl": "breakout AND rs_strong",
-      "score": 2.1,
-      "weight": 0.8,
-      "age": 1,
-      "desc": "Breakout",
-      "sharpe": 2.1,
-      "total_return": 0.2558,
-      "win_rate": 0.5263157894736842
+      "dsl": "rs > 90 AND pct > 2",
+      "desc": "TREND Ensemble Fund",
+      "sharpe": 8.75,
+      "total_return": 4.133,
+      "weight": 0.9986965812113245,
+      "age": 8,
+      "score": 8.75
     },
     {
-      "dsl": "accumulation AND low_vol",
-      "score": 0.61,
-      "weight": 0.0,
-      "age": 1,
-      "desc": "Accumulation",
-      "sharpe": 0.61,
-      "total_return": 0.1214,
-      "win_rate": 0.34763948497854075
-    },
-    {
-      "dsl": "trend_ma_cross",
-      "score": -0.29,
-      "weight": 0.0,
-      "age": 1,
-      "desc": "TrendFollowing",
-      "sharpe": -0.29,
-      "total_return": -0.1115,
-      "win_rate": 0.3390804597701149
+      "dsl": "rsi < 35",
+      "desc": "MR Ensemble Fund",
+      "sharpe": -10.53,
+      "total_return": -0.5052,
+      "weight": 0.001303418788675441,
+      "age": 8,
+      "score": -10.53
     }
   ]
 }
