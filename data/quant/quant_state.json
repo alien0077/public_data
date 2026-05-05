@@ -9,15 +9,11 @@
       "dsl": "breakout AND rs_strong",
       "age": 1,
       "performance": {
-        "total_return": 0.2412,
-        "sharpe": 2.0,
+        "total_return": 0.2558,
+        "sharpe": 2.1,
         "max_drawdown": -0.0828,
         "win_rate": 0.5263157894736842,
         "equity_curve": [
-          {
-            "date": "03-18",
-            "equity": 1.0247
-          },
           {
             "date": "03-19",
             "equity": 1.0241
@@ -133,13 +129,13 @@
           {
             "date": "04-30",
             "equity": 1.2412
+          },
+          {
+            "date": "05-04",
+            "equity": 1.2558
           }
         ],
         "drawdown_curve": [
-          {
-            "date": "03-18",
-            "value": -0.0519
-          },
           {
             "date": "03-19",
             "value": -0.0525
@@ -255,10 +251,14 @@
           {
             "date": "04-30",
             "value": 0.0
+          },
+          {
+            "date": "05-04",
+            "value": 0.0
           }
         ]
       },
-      "capital_weight": 0.853,
+      "capital_weight": 0.8,
       "positions": {
         "6196": {
           "cost": 194241.85076625002,
@@ -271,7 +271,7 @@
         "4958": {
           "cost": 367314.783749625,
           "shares": 1013.0,
-          "max_price": 421.0,
+          "max_price": 432.5,
           "entry_date": "2026-04-27",
           "entry_reason": "Signal",
           "theme": "PCB_CCL_Drilling"
@@ -287,144 +287,140 @@
       "dsl": "accumulation AND low_vol",
       "age": 1,
       "performance": {
-        "total_return": 0.0729,
-        "sharpe": 0.45,
-        "max_drawdown": -0.2192,
-        "win_rate": 0.34913793103448276,
+        "total_return": 0.1214,
+        "sharpe": 0.61,
+        "max_drawdown": -0.217,
+        "win_rate": 0.34763948497854075,
         "equity_curve": [
           {
-            "date": "03-18",
-            "equity": 0.9885
-          },
-          {
             "date": "03-19",
-            "equity": 1.0224
+            "equity": 1.0084
           },
           {
             "date": "03-20",
-            "equity": 1.0258
+            "equity": 1.0117
           },
           {
             "date": "03-23",
-            "equity": 0.9727
+            "equity": 0.9594
           },
           {
             "date": "03-24",
-            "equity": 0.9331
+            "equity": 0.9203
           },
           {
             "date": "03-25",
-            "equity": 0.9702
+            "equity": 0.9567
           },
           {
             "date": "03-26",
-            "equity": 0.974
+            "equity": 0.9603
           },
           {
             "date": "03-27",
-            "equity": 0.9991
+            "equity": 0.985
           },
           {
             "date": "03-30",
-            "equity": 0.9677
+            "equity": 0.9539
           },
           {
             "date": "03-31",
-            "equity": 0.9112
+            "equity": 0.8984
           },
           {
             "date": "04-01",
-            "equity": 0.955
+            "equity": 0.9415
           },
           {
             "date": "04-02",
-            "equity": 0.9566
+            "equity": 0.943
           },
           {
             "date": "04-07",
-            "equity": 0.9944
+            "equity": 0.9803
           },
           {
             "date": "04-08",
-            "equity": 1.0291
+            "equity": 1.0146
           },
           {
             "date": "04-09",
-            "equity": 1.0513
+            "equity": 1.0366
           },
           {
             "date": "04-10",
-            "equity": 1.0552
+            "equity": 1.0403
           },
           {
             "date": "04-13",
-            "equity": 1.0473
+            "equity": 1.0324
           },
           {
             "date": "04-14",
-            "equity": 1.0306
+            "equity": 1.0162
           },
           {
             "date": "04-15",
-            "equity": 1.0518
+            "equity": 1.0371
           },
           {
             "date": "04-16",
-            "equity": 1.0506
+            "equity": 1.036
           },
           {
             "date": "04-17",
-            "equity": 1.0902
+            "equity": 1.075
           },
           {
             "date": "04-20",
-            "equity": 1.1205
+            "equity": 1.1049
           },
           {
             "date": "04-21",
-            "equity": 1.1181
+            "equity": 1.1025
           },
           {
             "date": "04-22",
-            "equity": 1.1192
+            "equity": 1.1035
           },
           {
             "date": "04-23",
-            "equity": 1.0553
+            "equity": 1.0404
           },
           {
             "date": "04-24",
-            "equity": 1.0582
+            "equity": 1.0431
           },
           {
             "date": "04-27",
-            "equity": 1.0169
+            "equity": 1.0023
           },
           {
             "date": "04-28",
-            "equity": 1.021
+            "equity": 1.0063
           },
           {
             "date": "04-29",
-            "equity": 1.0245
+            "equity": 1.0096
           },
           {
             "date": "04-30",
-            "equity": 1.0729
+            "equity": 1.0574
+          },
+          {
+            "date": "05-04",
+            "equity": 1.1214
           }
         ],
         "drawdown_curve": [
           {
-            "date": "03-18",
-            "value": -0.0574
-          },
-          {
             "date": "03-19",
-            "value": -0.025
+            "value": -0.0252
           },
           {
             "date": "03-20",
-            "value": -0.0218
+            "value": -0.0219
           },
           {
             "date": "03-23",
@@ -432,43 +428,43 @@
           },
           {
             "date": "03-24",
-            "value": -0.1102
+            "value": -0.1103
           },
           {
             "date": "03-25",
-            "value": -0.0749
+            "value": -0.0751
           },
           {
             "date": "03-26",
-            "value": -0.0712
+            "value": -0.0716
           },
           {
             "date": "03-27",
-            "value": -0.0473
+            "value": -0.0478
           },
           {
             "date": "03-30",
-            "value": -0.0772
+            "value": -0.0778
           },
           {
             "date": "03-31",
-            "value": -0.1311
+            "value": -0.1315
           },
           {
             "date": "04-01",
-            "value": -0.0893
+            "value": -0.0898
           },
           {
             "date": "04-02",
-            "value": -0.0878
+            "value": -0.0884
           },
           {
             "date": "04-07",
-            "value": -0.0517
+            "value": -0.0523
           },
           {
             "date": "04-08",
-            "value": -0.0187
+            "value": -0.0192
           },
           {
             "date": "04-09",
@@ -480,19 +476,19 @@
           },
           {
             "date": "04-13",
-            "value": -0.0075
+            "value": -0.0076
           },
           {
             "date": "04-14",
-            "value": -0.0233
+            "value": -0.0232
           },
           {
             "date": "04-15",
-            "value": -0.0033
+            "value": -0.0031
           },
           {
             "date": "04-16",
-            "value": -0.0044
+            "value": -0.0042
           },
           {
             "date": "04-17",
@@ -504,92 +500,88 @@
           },
           {
             "date": "04-21",
-            "value": -0.0021
+            "value": -0.0022
           },
           {
             "date": "04-22",
-            "value": -0.0012
+            "value": -0.0013
           },
           {
             "date": "04-23",
-            "value": -0.0582
+            "value": -0.0583
           },
           {
             "date": "04-24",
-            "value": -0.0556
+            "value": -0.0559
           },
           {
             "date": "04-27",
-            "value": -0.0924
+            "value": -0.0928
           },
           {
             "date": "04-28",
-            "value": -0.0887
+            "value": -0.0892
           },
           {
             "date": "04-29",
-            "value": -0.0857
+            "value": -0.0862
           },
           {
             "date": "04-30",
-            "value": -0.0425
+            "value": -0.0429
+          },
+          {
+            "date": "05-04",
+            "value": 0.0
           }
         ]
       },
       "capital_weight": 0.0,
       "positions": {
         "6196": {
-          "cost": 42789.9489105,
-          "shares": 132.0,
+          "cost": 42465.782630875,
+          "shares": 131.0,
           "max_price": 397.5,
           "entry_date": "2026-04-13",
           "entry_reason": "Signal",
           "theme": "CoWoS_Advanced"
         },
         "6274": {
-          "cost": 160464.8370125,
-          "shares": 167.0,
-          "max_price": 1045.0,
+          "cost": 158543.1024375,
+          "shares": 165.0,
+          "max_price": 1110.0,
           "entry_date": "2026-04-20",
           "entry_reason": "Signal",
           "theme": "PCB_CCL_Drilling"
         },
         "8155": {
-          "cost": 59268.822891125004,
-          "shares": 163.0,
+          "cost": 57814.373249625,
+          "shares": 159.0,
           "max_price": 416.5,
           "entry_date": "2026-04-23",
           "entry_reason": "Signal",
           "theme": "PCB_CCL_Drilling"
         },
-        "4908": {
-          "cost": 55718.165404,
-          "shares": 313.0,
-          "max_price": 214.0,
-          "entry_date": "2026-04-23",
-          "entry_reason": "Signal",
-          "theme": "CPO_Optical"
-        },
         "4979": {
-          "cost": 55628.14731075,
-          "shares": 97.0,
-          "max_price": 609.0,
+          "cost": 54481.17520125,
+          "shares": 95.0,
+          "max_price": 669.0,
           "entry_date": "2026-04-23",
           "entry_reason": "Signal",
           "theme": "CPO_Optical"
         },
         "1560": {
-          "cost": 56911.663719000004,
-          "shares": 108.0,
-          "max_price": 540.0,
+          "cost": 55857.7440205,
+          "shares": 106.0,
+          "max_price": 557.0,
           "entry_date": "2026-04-23",
           "entry_reason": "Signal",
           "theme": "CoWoS_Advanced"
         },
         "8074": {
-          "cost": 183211.2965936,
-          "shares": 2573.0,
-          "max_price": 80.3,
+          "cost": 180861.520928,
+          "shares": 2540.0,
+          "max_price": 88.3,
           "entry_date": "2026-04-27",
           "entry_reason": "Signal",
           "theme": "PCB_CCL_Drilling"
@@ -597,15 +589,15 @@
         "3081": {
           "cost": 69364.503765,
           "shares": 27.0,
-          "max_price": 2640.0,
+          "max_price": 2745.0,
           "entry_date": "2026-04-27",
           "entry_reason": "Signal",
           "theme": "CPO_Optical"
         },
         "6789": {
-          "cost": 70984.82944350001,
-          "shares": 126.0,
-          "max_price": 576.0,
+          "cost": 69858.08611900001,
+          "shares": 124.0,
+          "max_price": 611.0,
           "entry_date": "2026-04-27",
           "entry_reason": "Signal",
           "theme": "CPO_Optical"
@@ -613,7 +605,7 @@
         "2345": {
           "cost": 50597.24848125,
           "shares": 23.0,
-          "max_price": 2295.0,
+          "max_price": 2505.0,
           "entry_date": "2026-04-27",
           "entry_reason": "Signal",
           "theme": "HPC_Compute"
@@ -621,7 +613,7 @@
         "3661": {
           "cost": 50491.04736000001,
           "shares": 12.0,
-          "max_price": 4160.0,
+          "max_price": 4250.0,
           "entry_date": "2026-04-27",
           "entry_reason": "Signal",
           "theme": "HPC_Compute"
@@ -637,260 +629,260 @@
       "dsl": "trend_ma_cross",
       "age": 1,
       "performance": {
-        "total_return": -0.1415,
-        "sharpe": -0.42,
+        "total_return": -0.1115,
+        "sharpe": -0.29,
         "max_drawdown": -0.3954,
-        "win_rate": 0.33524904214559387,
+        "win_rate": 0.3390804597701149,
         "equity_curve": [
           {
-            "date": "03-18",
-            "equity": 0.7488
-          },
-          {
             "date": "03-19",
-            "equity": 0.7467
+            "equity": 0.7411
           },
           {
             "date": "03-20",
-            "equity": 0.7525
+            "equity": 0.7468
           },
           {
             "date": "03-23",
-            "equity": 0.7242
+            "equity": 0.7188
           },
           {
             "date": "03-24",
-            "equity": 0.7089
+            "equity": 0.7037
           },
           {
             "date": "03-25",
-            "equity": 0.7443
+            "equity": 0.739
           },
           {
             "date": "03-26",
-            "equity": 0.7431
+            "equity": 0.7378
           },
           {
             "date": "03-27",
-            "equity": 0.7636
+            "equity": 0.7582
           },
           {
             "date": "03-30",
-            "equity": 0.7461
+            "equity": 0.7408
           },
           {
             "date": "03-31",
-            "equity": 0.6928
+            "equity": 0.6877
           },
           {
             "date": "04-01",
-            "equity": 0.7344
+            "equity": 0.7291
           },
           {
             "date": "04-02",
-            "equity": 0.7381
+            "equity": 0.7328
           },
           {
             "date": "04-07",
-            "equity": 0.7646
+            "equity": 0.7592
           },
           {
             "date": "04-08",
-            "equity": 0.7854
+            "equity": 0.7799
           },
           {
             "date": "04-09",
-            "equity": 0.7978
+            "equity": 0.7923
           },
           {
             "date": "04-10",
-            "equity": 0.8181
+            "equity": 0.8124
           },
           {
             "date": "04-13",
-            "equity": 0.8157
+            "equity": 0.8101
           },
           {
             "date": "04-14",
-            "equity": 0.8138
+            "equity": 0.8081
           },
           {
             "date": "04-15",
-            "equity": 0.8267
+            "equity": 0.8208
           },
           {
             "date": "04-16",
-            "equity": 0.8229
+            "equity": 0.8171
           },
           {
             "date": "04-17",
-            "equity": 0.849
+            "equity": 0.843
           },
           {
             "date": "04-20",
-            "equity": 0.8742
+            "equity": 0.868
           },
           {
             "date": "04-21",
-            "equity": 0.8764
+            "equity": 0.8702
           },
           {
             "date": "04-22",
-            "equity": 0.8863
+            "equity": 0.88
           },
           {
             "date": "04-23",
-            "equity": 0.8688
+            "equity": 0.8627
           },
           {
             "date": "04-24",
-            "equity": 0.8707
+            "equity": 0.8646
           },
           {
             "date": "04-27",
-            "equity": 0.837
+            "equity": 0.8312
           },
           {
             "date": "04-28",
-            "equity": 0.8326
+            "equity": 0.8268
           },
           {
             "date": "04-29",
-            "equity": 0.8278
+            "equity": 0.822
           },
           {
             "date": "04-30",
-            "equity": 0.8585
+            "equity": 0.8525
+          },
+          {
+            "date": "05-04",
+            "equity": 0.8885
           }
         ],
         "drawdown_curve": [
           {
-            "date": "03-18",
-            "value": -0.2556
-          },
-          {
             "date": "03-19",
-            "value": -0.2577
+            "value": -0.2589
           },
           {
             "date": "03-20",
-            "value": -0.2519
+            "value": -0.2532
           },
           {
             "date": "03-23",
-            "value": -0.28
+            "value": -0.2812
           },
           {
             "date": "03-24",
-            "value": -0.2952
+            "value": -0.2963
           },
           {
             "date": "03-25",
-            "value": -0.26
+            "value": -0.261
           },
           {
             "date": "03-26",
-            "value": -0.2612
+            "value": -0.2622
           },
           {
             "date": "03-27",
-            "value": -0.2409
+            "value": -0.2418
           },
           {
             "date": "03-30",
-            "value": -0.2582
+            "value": -0.2592
           },
           {
             "date": "03-31",
-            "value": -0.3113
+            "value": -0.3123
           },
           {
             "date": "04-01",
-            "value": -0.2699
+            "value": -0.2709
           },
           {
             "date": "04-02",
-            "value": -0.2663
+            "value": -0.2672
           },
           {
             "date": "04-07",
-            "value": -0.2399
+            "value": -0.2408
           },
           {
             "date": "04-08",
-            "value": -0.2192
+            "value": -0.2201
           },
           {
             "date": "04-09",
-            "value": -0.2068
+            "value": -0.2077
           },
           {
             "date": "04-10",
-            "value": -0.1867
+            "value": -0.1876
           },
           {
             "date": "04-13",
-            "value": -0.189
+            "value": -0.1899
           },
           {
             "date": "04-14",
-            "value": -0.191
+            "value": -0.1919
           },
           {
             "date": "04-15",
-            "value": -0.1781
+            "value": -0.1792
           },
           {
             "date": "04-16",
-            "value": -0.1819
+            "value": -0.1829
           },
           {
             "date": "04-17",
-            "value": -0.1559
+            "value": -0.157
           },
           {
             "date": "04-20",
-            "value": -0.1309
+            "value": -0.132
           },
           {
             "date": "04-21",
-            "value": -0.1288
+            "value": -0.1298
           },
           {
             "date": "04-22",
-            "value": -0.1189
+            "value": -0.12
           },
           {
             "date": "04-23",
-            "value": -0.1363
+            "value": -0.1373
           },
           {
             "date": "04-24",
-            "value": -0.1344
+            "value": -0.1354
           },
           {
             "date": "04-27",
-            "value": -0.1679
+            "value": -0.1688
           },
           {
             "date": "04-28",
-            "value": -0.1723
+            "value": -0.1732
           },
           {
             "date": "04-29",
-            "value": -0.1771
+            "value": -0.178
           },
           {
             "date": "04-30",
-            "value": -0.1465
+            "value": -0.1475
+          },
+          {
+            "date": "05-04",
+            "value": -0.1115
           }
         ]
       },
       "capital_weight": 0.0,
       "positions": {
         "3044": {
-          "cost": 37850.079613500006,
-          "shares": 99.0,
+          "cost": 37467.755577,
+          "shares": 98.0,
           "max_price": 485.0,
           "entry_date": "2026-04-09",
           "entry_reason": "Signal",
@@ -899,7 +891,7 @@
         "2368": {
           "cost": 41241.43541875001,
           "shares": 35.0,
-          "max_price": 1420.0,
+          "max_price": 1440.0,
           "entry_date": "2026-04-16",
           "entry_reason": "Signal",
           "theme": "PCB_CCL_Drilling"
@@ -907,7 +899,7 @@
         "2383": {
           "cost": 38788.695237500004,
           "shares": 10.0,
-          "max_price": 4730.0,
+          "max_price": 4755.0,
           "entry_date": "2026-04-16",
           "entry_reason": "Signal",
           "theme": "PCB_CCL_Drilling"
@@ -915,47 +907,39 @@
         "1560": {
           "cost": 51720.95748800001,
           "shares": 94.0,
-          "max_price": 544.0,
+          "max_price": 557.0,
           "entry_date": "2026-04-16",
           "entry_reason": "Signal",
           "theme": "CoWoS_Advanced"
         },
         "4958": {
-          "cost": 43582.917282500006,
-          "shares": 124.0,
-          "max_price": 421.0,
+          "cost": 43231.442143125,
+          "shares": 123.0,
+          "max_price": 432.5,
           "entry_date": "2026-04-24",
           "entry_reason": "Signal",
           "theme": "PCB_CCL_Drilling"
         },
-        "4908": {
-          "cost": 50944.677863624995,
-          "shares": 287.0,
-          "max_price": 214.0,
-          "entry_date": "2026-04-24",
-          "entry_reason": "Signal",
-          "theme": "CPO_Optical"
-        },
         "6213": {
-          "cost": 51536.36982487501,
-          "shares": 201.0,
-          "max_price": 270.0,
+          "cost": 51023.57012512501,
+          "shares": 199.0,
+          "max_price": 290.0,
           "entry_date": "2026-04-28",
           "entry_reason": "Signal",
           "theme": "PCB_CCL_Drilling"
         },
         "2455": {
-          "cost": 56608.231944,
-          "shares": 176.0,
-          "max_price": 347.5,
+          "cost": 56286.594262499995,
+          "shares": 175.0,
+          "max_price": 355.0,
           "entry_date": "2026-04-28",
           "entry_reason": "Signal",
           "theme": "CPO_Optical"
         },
         "4979": {
-          "cost": 56741.741924999995,
-          "shares": 100.0,
-          "max_price": 609.0,
+          "cost": 56174.324505749995,
+          "shares": 99.0,
+          "max_price": 669.0,
           "entry_date": "2026-04-28",
           "entry_reason": "Signal",
           "theme": "CPO_Optical"
@@ -963,7 +947,7 @@
         "2345": {
           "cost": 58031.32696875,
           "shares": 25.0,
-          "max_price": 2295.0,
+          "max_price": 2505.0,
           "entry_date": "2026-04-28",
           "entry_reason": "Signal",
           "theme": "HPC_Compute"
@@ -971,7 +955,7 @@
         "3443": {
           "cost": 55093.0959475,
           "shares": 13.0,
-          "max_price": 4260.0,
+          "max_price": 4685.0,
           "entry_date": "2026-04-28",
           "entry_reason": "Signal",
           "theme": "HPC_Compute"
@@ -982,15 +966,11 @@
   "positions": [],
   "trade_history": [],
   "performance": {
-    "total_return": 0.2412,
-    "sharpe": 2.0,
+    "total_return": 0.2558,
+    "sharpe": 2.1,
     "max_drawdown": -0.0828,
-    "win_rate": null,
+    "win_rate": 0.0,
     "equity_curve": [
-      {
-        "date": "03-18",
-        "equity": 1.0247
-      },
       {
         "date": "03-19",
         "equity": 1.0241
@@ -1106,13 +1086,13 @@
       {
         "date": "04-30",
         "equity": 1.2412
+      },
+      {
+        "date": "05-04",
+        "equity": 1.2558
       }
     ],
     "drawdown_curve": [
-      {
-        "date": "03-18",
-        "value": -0.0519
-      },
       {
         "date": "03-19",
         "value": -0.0525
@@ -1228,7 +1208,133 @@
       {
         "date": "04-30",
         "value": 0.0
+      },
+      {
+        "date": "05-04",
+        "value": 0.0
       }
     ]
-  }
+  },
+  "live_nav_history": [
+    {
+      "date": "2026-03-19",
+      "nav": 1.0241
+    },
+    {
+      "date": "2026-03-20",
+      "nav": 1.0318
+    },
+    {
+      "date": "2026-03-23",
+      "nav": 1.0352
+    },
+    {
+      "date": "2026-03-24",
+      "nav": 1.0444
+    },
+    {
+      "date": "2026-03-25",
+      "nav": 1.0701
+    },
+    {
+      "date": "2026-03-26",
+      "nav": 1.07
+    },
+    {
+      "date": "2026-03-27",
+      "nav": 1.0682
+    },
+    {
+      "date": "2026-03-30",
+      "nav": 1.0524
+    },
+    {
+      "date": "2026-03-31",
+      "nav": 1.0346
+    },
+    {
+      "date": "2026-04-01",
+      "nav": 1.0314
+    },
+    {
+      "date": "2026-04-02",
+      "nav": 1.0281
+    },
+    {
+      "date": "2026-04-07",
+      "nav": 1.0364
+    },
+    {
+      "date": "2026-04-08",
+      "nav": 1.0567
+    },
+    {
+      "date": "2026-04-09",
+      "nav": 1.079
+    },
+    {
+      "date": "2026-04-10",
+      "nav": 1.1011
+    },
+    {
+      "date": "2026-04-13",
+      "nav": 1.0977
+    },
+    {
+      "date": "2026-04-14",
+      "nav": 1.1023
+    },
+    {
+      "date": "2026-04-15",
+      "nav": 1.1069
+    },
+    {
+      "date": "2026-04-16",
+      "nav": 1.1124
+    },
+    {
+      "date": "2026-04-17",
+      "nav": 1.1358
+    },
+    {
+      "date": "2026-04-20",
+      "nav": 1.1816
+    },
+    {
+      "date": "2026-04-21",
+      "nav": 1.1915
+    },
+    {
+      "date": "2026-04-22",
+      "nav": 1.1855
+    },
+    {
+      "date": "2026-04-23",
+      "nav": 1.1772
+    },
+    {
+      "date": "2026-04-24",
+      "nav": 1.1947
+    },
+    {
+      "date": "2026-04-27",
+      "nav": 1.1793
+    },
+    {
+      "date": "2026-04-28",
+      "nav": 1.2159
+    },
+    {
+      "date": "2026-04-29",
+      "nav": 1.2018
+    },
+    {
+      "date": "2026-04-30",
+      "nav": 1.2412
+    },
+    {
+      "date": "2026-05-04",
+      "nav": 1.2558
+    }
+  ]
 }

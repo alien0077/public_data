@@ -5,7 +5,7 @@
   "alpha_allocation": [
     {
       "strategy": "Breakout",
-      "weight": 0.853
+      "weight": 0.8
     },
     {
       "strategy": "Accumulation",
@@ -24,15 +24,11 @@
     "Apple_Chain": 0.45
   },
   "performance": {
-    "total_return": 0.2412,
-    "sharpe": 2.0,
+    "total_return": 0.2558,
+    "sharpe": 2.1,
     "max_drawdown": -0.0828,
-    "win_rate": null,
+    "win_rate": 0.0,
     "equity_curve": [
-      {
-        "date": "03-18",
-        "equity": 1.0247
-      },
       {
         "date": "03-19",
         "equity": 1.0241
@@ -148,13 +144,13 @@
       {
         "date": "04-30",
         "equity": 1.2412
+      },
+      {
+        "date": "05-04",
+        "equity": 1.2558
       }
     ],
     "drawdown_curve": [
-      {
-        "date": "03-18",
-        "value": -0.0519
-      },
       {
         "date": "03-19",
         "value": -0.0525
@@ -269,6 +265,10 @@
       },
       {
         "date": "04-30",
+        "value": 0.0
+      },
+      {
+        "date": "05-04",
         "value": 0.0
       }
     ]

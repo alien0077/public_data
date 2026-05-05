@@ -2,33 +2,33 @@
   "strategies": [
     {
       "dsl": "breakout AND rs_strong",
-      "score": 2.0,
-      "weight": 0.853,
+      "score": 2.1,
+      "weight": 0.8,
       "age": 1,
       "desc": "Breakout",
-      "sharpe": 2.0,
-      "total_return": 0.2412,
+      "sharpe": 2.1,
+      "total_return": 0.2558,
       "win_rate": 0.5263157894736842
     },
     {
       "dsl": "accumulation AND low_vol",
-      "score": 0.45,
+      "score": 0.61,
       "weight": 0.0,
       "age": 1,
       "desc": "Accumulation",
-      "sharpe": 0.45,
-      "total_return": 0.0729,
-      "win_rate": 0.34913793103448276
+      "sharpe": 0.61,
+      "total_return": 0.1214,
+      "win_rate": 0.34763948497854075
     },
     {
       "dsl": "trend_ma_cross",
-      "score": -0.42,
+      "score": -0.29,
       "weight": 0.0,
       "age": 1,
       "desc": "TrendFollowing",
-      "sharpe": -0.42,
-      "total_return": -0.1415,
-      "win_rate": 0.33524904214559387
+      "sharpe": -0.29,
+      "total_return": -0.1115,
+      "win_rate": 0.3390804597701149
     }
   ]
 }
