@@ -1,0 +1,48 @@
+{
+  "stock_id": "2912",
+  "name": "2912",
+  "date": "2026-05-08",
+  "close": 232.0,
+  "health_score": 150,
+  "signal": "Bullish",
+  "institutional": {
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 686.185,
+    "trust_buy_days": 0,
+    "dealer_buy_days": 0
+  },
+  "margin": {
+    "margin_change": 392.0,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.26
+  },
+  "tdcc": {
+    "big_holder_change": 79.54,
+    "retail_holder_change": 0,
+    "holder_concentration": 84.6
+  },
+  "main_force": {
+    "cost": 229.7,
+    "distance": 1.0,
+    "trend": "UP"
+  },
+  "sector": {
+    "name": "一般",
+    "score": 80
+  },
+  "market_style": {
+    "style": "Growth",
+    "score": 100
+  },
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-08"
+}

@@ -1,0 +1,47 @@
+{
+  "stock_id": "3489",
+  "name": "3489",
+  "date": "2026-05-08",
+  "close": 22.15,
+  "health_score": 123,
+  "signal": "Bullish",
+  "institutional": {
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 9.0,
+    "trust_buy_days": 0,
+    "dealer_buy_days": 0
+  },
+  "margin": {
+    "margin_change": 1614.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
+  },
+  "tdcc": {
+    "big_holder_change": 66.59,
+    "retail_holder_change": 0,
+    "holder_concentration": 74.71
+  },
+  "main_force": {
+    "cost": 22.78,
+    "distance": -2.77,
+    "trend": "DOWN"
+  },
+  "sector": {
+    "name": "一般",
+    "score": 80
+  },
+  "market_style": {
+    "style": "Value",
+    "score": 60
+  },
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 5 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-08"
+}

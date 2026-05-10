@@ -1,0 +1,48 @@
+{
+  "stock_id": "7732",
+  "name": "7732",
+  "date": "2026-05-08",
+  "close": 35.85,
+  "health_score": 110,
+  "signal": "Bullish",
+  "institutional": {
+    "foreign_buy_days": 6,
+    "foreign_buy_ratio": 1.0,
+    "trust_buy_days": 0,
+    "dealer_buy_days": 0
+  },
+  "margin": {
+    "margin_change": 44.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
+  },
+  "tdcc": {
+    "big_holder_change": 86.29,
+    "retail_holder_change": 0,
+    "holder_concentration": 88.59
+  },
+  "main_force": {
+    "cost": 35.52,
+    "distance": 0.93,
+    "trend": "UP"
+  },
+  "sector": {
+    "name": "一般",
+    "score": 80
+  },
+  "market_style": {
+    "style": "Value",
+    "score": 40
+  },
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 6 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-08"
+}

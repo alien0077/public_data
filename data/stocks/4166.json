@@ -1,0 +1,48 @@
+{
+  "stock_id": "4166",
+  "name": "4166",
+  "date": "2026-05-08",
+  "close": 26.05,
+  "health_score": 130,
+  "signal": "Bullish",
+  "institutional": {
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 103.0,
+    "trust_buy_days": 0,
+    "dealer_buy_days": 0
+  },
+  "margin": {
+    "margin_change": 491.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
+  },
+  "tdcc": {
+    "big_holder_change": 79.28,
+    "retail_holder_change": 0,
+    "holder_concentration": 82.41
+  },
+  "main_force": {
+    "cost": 25.94,
+    "distance": 0.42,
+    "trend": "UP"
+  },
+  "sector": {
+    "name": "一般",
+    "score": 80
+  },
+  "market_style": {
+    "style": "Growth",
+    "score": 70
+  },
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 4 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-08"
+}

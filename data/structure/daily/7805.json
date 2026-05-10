@@ -1,6 +1,198 @@
 {
   "symbol": "7805",
-  "updated_at": "2026-05-08",
-  "lines": [],
-  "events": []
+  "updated_at": "2026-05-09",
+  "lines": [
+    {
+      "id": "H_6",
+      "type": "high",
+      "price": 760.0,
+      "start_idx": 6,
+      "start_date": "2025-12-31",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "L_20",
+      "type": "low",
+      "price": 571.0,
+      "start_idx": 20,
+      "start_date": "2026-01-21",
+      "end_idx": 26,
+      "end_date": "2026-01-29",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "L_27",
+      "type": "low",
+      "price": 548.0,
+      "start_idx": 27,
+      "start_date": "2026-01-30",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_38",
+      "type": "high",
+      "price": 671.0,
+      "start_idx": 38,
+      "start_date": "2026-02-25",
+      "end_idx": 47,
+      "end_date": "2026-03-11",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "L_45",
+      "type": "low",
+      "price": 572.0,
+      "start_idx": 45,
+      "start_date": "2026-03-09",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_49",
+      "type": "high",
+      "price": 690.0,
+      "start_idx": 49,
+      "start_date": "2026-03-13",
+      "end_idx": 58,
+      "end_date": "2026-03-26",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "H_50",
+      "type": "high",
+      "price": 690.0,
+      "start_idx": 50,
+      "start_date": "2026-03-16",
+      "end_idx": 58,
+      "end_date": "2026-03-26",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "L_56",
+      "type": "low",
+      "price": 643.0,
+      "start_idx": 56,
+      "start_date": "2026-03-24",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_59",
+      "type": "high",
+      "price": 698.0,
+      "start_idx": 59,
+      "start_date": "2026-03-27",
+      "end_idx": 65,
+      "end_date": "2026-04-08",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "H_65",
+      "type": "high",
+      "price": 700.0,
+      "start_idx": 65,
+      "start_date": "2026-04-08",
+      "end_idx": 73,
+      "end_date": "2026-04-20",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "L_70",
+      "type": "low",
+      "price": 655.0,
+      "start_idx": 70,
+      "start_date": "2026-04-15",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "L_71",
+      "type": "low",
+      "price": 655.0,
+      "start_idx": 71,
+      "start_date": "2026-04-16",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_73",
+      "type": "high",
+      "price": 738.0,
+      "start_idx": 73,
+      "start_date": "2026-04-20",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "L_80",
+      "type": "low",
+      "price": 678.0,
+      "start_idx": 80,
+      "start_date": "2026-04-29",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "type": "CHOCH_DOWN",
+      "price": 571.0,
+      "idx": 26,
+      "date": "2026-01-29"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 671.0,
+      "idx": 47,
+      "date": "2026-03-11"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 690.0,
+      "idx": 58,
+      "date": "2026-03-26"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 690.0,
+      "idx": 58,
+      "date": "2026-03-26"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 698.0,
+      "idx": 65,
+      "date": "2026-04-08"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 700.0,
+      "idx": 73,
+      "date": "2026-04-20"
+    }
+  ]
 }

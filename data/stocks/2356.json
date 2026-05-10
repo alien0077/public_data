@@ -1,0 +1,48 @@
+{
+  "stock_id": "2356",
+  "name": "2356",
+  "date": "2026-05-08",
+  "close": 49.55,
+  "health_score": 150,
+  "signal": "Bullish",
+  "institutional": {
+    "foreign_buy_days": 8,
+    "foreign_buy_ratio": 9713.498,
+    "trust_buy_days": 0,
+    "dealer_buy_days": 0
+  },
+  "margin": {
+    "margin_change": 22706.0,
+    "short_change": 265.0,
+    "short_margin_ratio": 1.17
+  },
+  "tdcc": {
+    "big_holder_change": 68.39,
+    "retail_holder_change": 0,
+    "holder_concentration": 71.06
+  },
+  "main_force": {
+    "cost": 46.61,
+    "distance": 6.31,
+    "trend": "UP"
+  },
+  "sector": {
+    "name": "一般",
+    "score": 80
+  },
+  "market_style": {
+    "style": "Growth",
+    "score": 100
+  },
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 8 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-08"
+}

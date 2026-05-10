@@ -1,0 +1,48 @@
+{
+  "stock_id": "6115",
+  "name": "6115",
+  "date": "2026-05-08",
+  "close": 47.85,
+  "health_score": 150,
+  "signal": "Bullish",
+  "institutional": {
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 59.0,
+    "trust_buy_days": 0,
+    "dealer_buy_days": 0
+  },
+  "margin": {
+    "margin_change": 65.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
+  },
+  "tdcc": {
+    "big_holder_change": 55.76,
+    "retail_holder_change": 0,
+    "holder_concentration": 61.14
+  },
+  "main_force": {
+    "cost": 47.72,
+    "distance": 0.27,
+    "trend": "UP"
+  },
+  "sector": {
+    "name": "一般",
+    "score": 80
+  },
+  "market_style": {
+    "style": "Growth",
+    "score": 100
+  },
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 5 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-08"
+}

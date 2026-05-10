@@ -1,0 +1,44 @@
+{
+  "stock_id": "00738U",
+  "name": "00738U",
+  "date": "2026-05-08",
+  "close": 64.55,
+  "health_score": 150,
+  "signal": "Bullish",
+  "institutional": {
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 1418.915,
+    "trust_buy_days": 0,
+    "dealer_buy_days": 0
+  },
+  "margin": {
+    "margin_change": 11461.0,
+    "short_change": 692.0,
+    "short_margin_ratio": 6.04
+  },
+  "tdcc": {},
+  "main_force": {
+    "cost": 62.11,
+    "distance": 3.93,
+    "trend": "UP"
+  },
+  "sector": {
+    "name": "一般",
+    "score": 80
+  },
+  "market_style": {
+    "style": "Growth",
+    "score": 100
+  },
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-08"
+}
