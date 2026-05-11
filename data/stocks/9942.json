@@ -1,18 +1,18 @@
 {
   "stock_id": "9942",
   "name": "9942",
-  "date": "2026-05-08",
-  "close": 121.5,
-  "health_score": 150,
+  "date": "2026-05-11",
+  "close": 120.5,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.139,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.107,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 86.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 51.81
   },
   "main_force": {
-    "cost": 117.55,
-    "distance": 3.36,
+    "cost": 117.72,
+    "distance": 2.36,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 5 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

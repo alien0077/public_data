@@ -1,20 +1,20 @@
 {
   "stock_id": "9938",
   "name": "9938",
-  "date": "2026-05-08",
-  "close": 44.8,
-  "health_score": 83,
+  "date": "2026-05-11",
+  "close": 45.25,
+  "health_score": 126,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.208,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.135,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3397.0,
-    "short_change": 5.0,
-    "short_margin_ratio": 0.15
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 45.69,
@@ -23,8 +23,8 @@
   },
   "main_force": {
     "cost": 44.92,
-    "distance": -0.27,
-    "trend": "DOWN"
+    "distance": 0.73,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,12 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-08"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-11"
 }
