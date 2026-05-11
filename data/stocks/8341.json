@@ -1,18 +1,18 @@
 {
   "stock_id": "8341",
   "name": "8341",
-  "date": "2026-05-08",
-  "close": 75.8,
+  "date": "2026-05-11",
+  "close": 76.1,
   "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.051,
+    "foreign_buy_days": 6,
+    "foreign_buy_ratio": 0.025,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 351.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 75.3,
-    "distance": 0.66,
+    "distance": 1.06,
     "trend": "UP"
   },
   "sector": {
@@ -37,12 +37,12 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 5 天"
+      "title": "外資連買 6 天"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

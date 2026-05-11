@@ -1,18 +1,18 @@
 {
   "stock_id": "4513",
   "name": "4513",
-  "date": "2026-05-08",
-  "close": 14.7,
+  "date": "2026-05-11",
+  "close": 14.75,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.046,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.042,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2635.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 44.44
   },
   "main_force": {
-    "cost": 15.61,
-    "distance": -5.83,
+    "cost": 15.54,
+    "distance": -5.08,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

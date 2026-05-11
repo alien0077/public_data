@@ -1,20 +1,20 @@
 {
   "stock_id": "6505",
   "name": "6505",
-  "date": "2026-05-08",
-  "close": 53.0,
-  "health_score": 100,
+  "date": "2026-05-11",
+  "close": 54.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.011,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.048,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 12736.0,
-    "short_change": 19.0,
-    "short_margin_ratio": 0.15
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 94.17,
@@ -22,21 +22,22 @@
     "holder_concentration": 94.62
   },
   "main_force": {
-    "cost": 53.76,
-    "distance": -1.41,
-    "trend": "DOWN"
+    "cost": 53.86,
+    "distance": 0.26,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

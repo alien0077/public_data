@@ -1,20 +1,20 @@
 {
   "stock_id": "1455",
   "name": "1455",
-  "date": "2026-05-08",
-  "close": 8.08,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-11",
+  "close": 8.13,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.013,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.007,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2903.0,
-    "short_change": 4.0,
-    "short_margin_ratio": 0.14
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 62.03,
@@ -22,8 +22,8 @@
     "holder_concentration": 66.0
   },
   "main_force": {
-    "cost": 8.55,
-    "distance": -5.5,
+    "cost": 8.54,
+    "distance": -4.8,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-08"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

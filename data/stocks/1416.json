@@ -1,18 +1,18 @@
 {
   "stock_id": "1416",
   "name": "1416",
-  "date": "2026-05-08",
+  "date": "2026-05-11",
   "close": 11.3,
-  "health_score": 83,
-  "signal": "Bullish",
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.01,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.005,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3848.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 55.55
   },
   "main_force": {
-    "cost": 11.49,
-    "distance": -1.65,
+    "cost": 11.48,
+    "distance": -1.57,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-08"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-11"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "6523",
   "name": "6523",
-  "date": "2026-05-08",
-  "close": 100.0,
-  "health_score": 86,
+  "date": "2026-05-11",
+  "close": 99.1,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.024,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.016,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 54.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 63.08
   },
   "main_force": {
-    "cost": 103.38,
-    "distance": -3.27,
+    "cost": 102.54,
+    "distance": -3.35,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-08"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

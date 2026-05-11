@@ -1,13 +1,13 @@
 {
   "stock_id": "6464",
   "name": "6464",
-  "date": "2026-05-08",
-  "close": 76.2,
-  "health_score": 83,
+  "date": "2026-05-11",
+  "close": 76.5,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.011,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -23,25 +23,20 @@
   },
   "main_force": {
     "cost": 76.24,
-    "distance": -0.05,
-    "trend": "DOWN"
+    "distance": 0.34,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "6109",
   "name": "6109",
-  "date": "2026-05-08",
-  "close": 12.55,
-  "health_score": 150,
+  "date": "2026-05-11",
+  "close": 12.5,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 8,
-    "foreign_buy_ratio": 0.08,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.034,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 112.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 48.28
   },
   "main_force": {
-    "cost": 12.04,
-    "distance": 4.24,
+    "cost": 12.08,
+    "distance": 3.48,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 8 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

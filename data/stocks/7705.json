@@ -1,18 +1,18 @@
 {
   "stock_id": "7705",
   "name": "7705",
-  "date": "2026-05-08",
-  "close": 32.3,
-  "health_score": 83,
-  "signal": "Bullish",
+  "date": "2026-05-11",
+  "close": 31.4,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.03,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.074,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 97.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 69.77
   },
   "main_force": {
-    "cost": 33.84,
-    "distance": -4.55,
+    "cost": 33.67,
+    "distance": -6.74,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-08"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-11"
 }

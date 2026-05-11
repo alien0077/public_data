@@ -1,18 +1,18 @@
 {
   "stock_id": "8050",
   "name": "8050",
-  "date": "2026-05-08",
-  "close": 44.45,
-  "health_score": 133,
+  "date": "2026-05-11",
+  "close": 47.6,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.027,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.172,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3105.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 43.24
   },
   "main_force": {
-    "cost": 42.32,
-    "distance": 5.03,
+    "cost": 42.64,
+    "distance": 11.63,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

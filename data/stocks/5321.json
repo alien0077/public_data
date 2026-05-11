@@ -1,18 +1,18 @@
 {
   "stock_id": "5321",
   "name": "5321",
-  "date": "2026-05-08",
-  "close": 22.5,
-  "health_score": 86,
+  "date": "2026-05-11",
+  "close": 22.35,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.028,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.004,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1006.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 62.87
   },
   "main_force": {
-    "cost": 23.39,
-    "distance": -3.81,
+    "cost": 23.2,
+    "distance": -3.66,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-08"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

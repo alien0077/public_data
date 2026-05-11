@@ -1,18 +1,18 @@
 {
   "stock_id": "6281",
   "name": "6281",
-  "date": "2026-05-08",
-  "close": 51.0,
-  "health_score": 103,
+  "date": "2026-05-11",
+  "close": 51.5,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.048,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.055,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 88.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,21 +22,21 @@
     "holder_concentration": 55.88
   },
   "main_force": {
-    "cost": 51.29,
-    "distance": -0.57,
-    "trend": "DOWN"
+    "cost": 51.23,
+    "distance": 0.53,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

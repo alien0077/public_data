@@ -1,20 +1,20 @@
 {
   "stock_id": "4991",
   "name": "4991",
-  "date": "2026-05-08",
-  "close": 644.0,
-  "health_score": 103,
+  "date": "2026-05-11",
+  "close": 686.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.578,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.712,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8490.0,
-    "short_change": 9.0,
-    "short_margin_ratio": 0.11
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 49.51,
@@ -22,21 +22,27 @@
     "holder_concentration": 61.5
   },
   "main_force": {
-    "cost": 647.95,
-    "distance": -0.61,
-    "trend": "DOWN"
+    "cost": 654.65,
+    "distance": 4.79,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-05-08"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-11"
 }

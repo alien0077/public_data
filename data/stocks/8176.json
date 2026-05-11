@@ -1,13 +1,13 @@
 {
   "stock_id": "8176",
   "name": "8176",
-  "date": "2026-05-08",
-  "close": 10.15,
+  "date": "2026-05-11",
+  "close": 10.25,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.006,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 34.91
   },
   "main_force": {
-    "cost": 10.54,
-    "distance": -3.7,
+    "cost": 10.5,
+    "distance": -2.38,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

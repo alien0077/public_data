@@ -1,18 +1,18 @@
 {
   "stock_id": "7556",
   "name": "7556",
-  "date": "2026-05-08",
-  "close": 257.0,
-  "health_score": 86,
+  "date": "2026-05-11",
+  "close": 270.0,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.015,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.026,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 396.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 64.8
   },
   "main_force": {
-    "cost": 278.75,
-    "distance": -7.8,
+    "cost": 282.3,
+    "distance": -4.36,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,7 +34,14 @@
     "style": "Value",
     "score": 30
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-08"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "2228",
   "name": "2228",
-  "date": "2026-05-08",
-  "close": 88.6,
-  "health_score": 83,
-  "signal": "Bullish",
+  "date": "2026-05-11",
+  "close": 87.8,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.013,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.049,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2030.0,
-    "short_change": 1.0,
-    "short_margin_ratio": 0.05
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 53.88,
@@ -22,8 +22,8 @@
     "holder_concentration": 56.21
   },
   "main_force": {
-    "cost": 89.62,
-    "distance": -1.14,
+    "cost": 89.5,
+    "distance": -1.9,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 5 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-08"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-11"
 }

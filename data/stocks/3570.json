@@ -1,18 +1,18 @@
 {
   "stock_id": "3570",
   "name": "3570",
-  "date": "2026-05-08",
-  "close": 166.5,
-  "health_score": 130,
+  "date": "2026-05-11",
+  "close": 175.5,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.117,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.269,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 27.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 53.9
   },
   "main_force": {
-    "cost": 163.82,
-    "distance": 1.64,
+    "cost": 164.25,
+    "distance": 6.85,
     "trend": "UP"
   },
   "sector": {
@@ -32,12 +32,16 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "8277",
   "name": "8277",
-  "date": "2026-05-08",
-  "close": 7.1,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-11",
+  "close": 7.05,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.043,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.022,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 19.03
   },
   "main_force": {
-    "cost": 7.35,
-    "distance": -3.4,
+    "cost": 7.32,
+    "distance": -3.69,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-08"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

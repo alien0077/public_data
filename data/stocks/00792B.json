@@ -1,12 +1,12 @@
 {
   "stock_id": "00792B",
   "name": "00792B",
-  "date": "2026-05-08",
-  "close": 31.63,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-11",
+  "close": 31.68,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 31.85,
-    "distance": -0.69,
+    "cost": 31.82,
+    "distance": -0.44,
     "trend": "DOWN"
   },
   "sector": {
@@ -28,9 +28,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-08"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

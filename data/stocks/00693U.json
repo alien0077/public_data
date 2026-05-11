@@ -1,36 +1,39 @@
 {
   "stock_id": "00693U",
   "name": "00693U",
-  "date": "2026-05-08",
-  "close": 22.08,
-  "health_score": 86,
+  "date": "2026-05-11",
+  "close": 22.55,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3876.0,
-    "short_change": 9.0,
-    "short_margin_ratio": 0.23
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {},
   "main_force": {
-    "cost": 22.1,
-    "distance": -0.09,
-    "trend": "DOWN"
+    "cost": 22.12,
+    "distance": 1.94,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-08"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-11"
 }

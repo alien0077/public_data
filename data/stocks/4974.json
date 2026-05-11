@@ -1,18 +1,18 @@
 {
   "stock_id": "4974",
   "name": "4974",
-  "date": "2026-05-08",
-  "close": 73.5,
+  "date": "2026-05-11",
+  "close": 74.4,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.007,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.131,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1297.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 42.37
   },
   "main_force": {
-    "cost": 72.02,
-    "distance": 2.05,
+    "cost": 72.23,
+    "distance": 3.0,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

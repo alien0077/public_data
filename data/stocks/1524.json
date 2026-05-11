@@ -1,20 +1,20 @@
 {
   "stock_id": "1524",
   "name": "1524",
-  "date": "2026-05-08",
-  "close": 29.1,
+  "date": "2026-05-11",
+  "close": 29.55,
   "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.01,
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 0.097,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4669.0,
-    "short_change": 16.0,
-    "short_margin_ratio": 0.34
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 36.25,
@@ -22,8 +22,8 @@
     "holder_concentration": 40.11
   },
   "main_force": {
-    "cost": 28.89,
-    "distance": 0.73,
+    "cost": 28.88,
+    "distance": 2.32,
     "trend": "UP"
   },
   "sector": {
@@ -37,12 +37,12 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 4 天"
+      "title": "外資連買 5 天"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

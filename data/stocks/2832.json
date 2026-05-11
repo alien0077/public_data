@@ -1,18 +1,18 @@
 {
   "stock_id": "2832",
   "name": "2832",
-  "date": "2026-05-08",
+  "date": "2026-05-11",
   "close": 53.6,
-  "health_score": 150,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.03,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.037,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 365.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 68.95
   },
   "main_force": {
-    "cost": 50.83,
-    "distance": 5.45,
+    "cost": 51.1,
+    "distance": 4.89,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

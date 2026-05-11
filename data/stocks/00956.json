@@ -1,18 +1,18 @@
 {
   "stock_id": "00956",
   "name": "00956",
-  "date": "2026-05-08",
-  "close": 12.18,
-  "health_score": 113,
+  "date": "2026-05-11",
+  "close": 12.25,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 98.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 17.96
   },
   "main_force": {
-    "cost": 12.13,
-    "distance": 0.41,
+    "cost": 12.12,
+    "distance": 1.07,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

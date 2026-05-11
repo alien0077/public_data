@@ -1,18 +1,18 @@
 {
   "stock_id": "6957",
   "name": "6957",
-  "date": "2026-05-08",
-  "close": 159.5,
-  "health_score": 83,
-  "signal": "Bullish",
+  "date": "2026-05-11",
+  "close": 159.0,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.008,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.179,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 981.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 71.83
   },
   "main_force": {
-    "cost": 160.7,
-    "distance": -0.75,
+    "cost": 160.8,
+    "distance": -1.12,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-08"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-11"
 }

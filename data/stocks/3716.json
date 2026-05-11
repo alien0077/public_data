@@ -1,18 +1,18 @@
 {
   "stock_id": "3716",
   "name": "3716",
-  "date": "2026-05-08",
-  "close": 35.0,
-  "health_score": 150,
+  "date": "2026-05-11",
+  "close": 34.5,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.146,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.098,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 748.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 53.83
   },
   "main_force": {
-    "cost": 32.65,
-    "distance": 7.2,
+    "cost": 32.73,
+    "distance": 5.41,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 5 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }

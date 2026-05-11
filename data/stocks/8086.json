@@ -1,20 +1,20 @@
 {
   "stock_id": "8086",
   "name": "8086",
-  "date": "2026-05-08",
-  "close": 159.5,
-  "health_score": 150,
+  "date": "2026-05-11",
+  "close": 162.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 6,
-    "foreign_buy_ratio": 1.479,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -1.515,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8325.0,
-    "short_change": 33.0,
-    "short_margin_ratio": 0.4
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 51.99,
@@ -22,8 +22,8 @@
     "holder_concentration": 58.07
   },
   "main_force": {
-    "cost": 145.0,
-    "distance": 10.0,
+    "cost": 145.88,
+    "distance": 11.05,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 6 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-08"
+  "data_version": "2026-05-11"
 }
