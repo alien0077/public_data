@@ -1,18 +1,18 @@
 {
   "stock_id": "4971",
   "name": "4971",
-  "date": "2026-05-11",
-  "close": 723.0,
-  "health_score": 86,
+  "date": "2026-05-12",
+  "close": 795.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.09,
+    "foreign_buy_ratio": -1.745,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 4026.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,17 +22,17 @@
     "holder_concentration": 33.64
   },
   "main_force": {
-    "cost": 763.95,
-    "distance": -5.36,
-    "trend": "DOWN"
+    "cost": 767.55,
+    "distance": 3.58,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [
     {
@@ -40,6 +40,8 @@
       "title": "今日強勢大漲"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-05-11"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-12"
 }

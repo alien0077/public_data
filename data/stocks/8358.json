@@ -1,20 +1,20 @@
 {
   "stock_id": "8358",
   "name": "8358",
-  "date": "2026-05-11",
-  "close": 462.0,
+  "date": "2026-05-12",
+  "close": 477.0,
   "health_score": 166,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 1.155,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 1.072,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 25852.0,
+    "short_change": 107.0,
+    "short_margin_ratio": 0.41
   },
   "tdcc": {
     "big_holder_change": 52.21,
@@ -22,8 +22,8 @@
     "holder_concentration": 60.08
   },
   "main_force": {
-    "cost": 384.68,
-    "distance": 20.1,
+    "cost": 385.42,
+    "distance": 23.76,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-12"
 }

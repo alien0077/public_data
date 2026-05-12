@@ -1,18 +1,18 @@
 {
   "stock_id": "8429",
   "name": "8429",
-  "date": "2026-05-11",
-  "close": 6.44,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-12",
+  "close": 6.41,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.02,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.005,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 12913.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 6.65,
-    "distance": -3.16,
+    "distance": -3.61,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-11"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-12"
 }

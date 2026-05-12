@@ -1,18 +1,18 @@
 {
   "stock_id": "8462",
   "name": "8462",
-  "date": "2026-05-11",
-  "close": 147.5,
-  "health_score": 130,
+  "date": "2026-05-12",
+  "close": 146.5,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 6,
-    "foreign_buy_ratio": 0.032,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.096,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 1079.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 65.36
   },
   "main_force": {
-    "cost": 145.02,
-    "distance": 1.71,
+    "cost": 144.98,
+    "distance": 1.05,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 6 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-12"
 }

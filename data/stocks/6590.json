@@ -1,13 +1,13 @@
 {
   "stock_id": "6590",
   "name": "6590",
-  "date": "2026-05-11",
-  "close": 69.4,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-12",
+  "close": 68.6,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.008,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 56.72
   },
   "main_force": {
-    "cost": 70.0,
-    "distance": -0.86,
+    "cost": 69.96,
+    "distance": -1.94,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-11"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-12"
 }

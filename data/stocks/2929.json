@@ -1,18 +1,18 @@
 {
   "stock_id": "2929",
   "name": "2929",
-  "date": "2026-05-11",
-  "close": 5.51,
-  "health_score": 83,
-  "signal": "Bullish",
+  "date": "2026-05-12",
+  "close": 5.5,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 10,
-    "foreign_buy_ratio": 0.011,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.1,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 1773.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 5.86,
-    "distance": -5.97,
+    "distance": -6.14,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 10 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-11"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-12"
 }

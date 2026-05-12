@@ -1,18 +1,18 @@
 {
   "stock_id": "5011",
   "name": "5011",
-  "date": "2026-05-11",
-  "close": 15.4,
-  "health_score": 150,
+  "date": "2026-05-12",
+  "close": 15.1,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.371,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.018,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 2553.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 43.36
   },
   "main_force": {
-    "cost": 14.39,
-    "distance": 7.02,
+    "cost": 14.37,
+    "distance": 5.08,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-12"
 }

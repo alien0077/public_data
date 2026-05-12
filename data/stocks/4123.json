@@ -1,20 +1,20 @@
 {
   "stock_id": "4123",
   "name": "4123",
-  "date": "2026-05-11",
-  "close": 38.3,
-  "health_score": 103,
+  "date": "2026-05-12",
+  "close": 38.35,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.018,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.049,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 12589.0,
+    "short_change": 5.0,
+    "short_margin_ratio": 0.04
   },
   "tdcc": {
     "big_holder_change": 51.19,
@@ -22,8 +22,8 @@
     "holder_concentration": 58.29
   },
   "main_force": {
-    "cost": 39.41,
-    "distance": -2.82,
+    "cost": 39.42,
+    "distance": -2.71,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,8 +35,6 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-11"
+  "raw_signals": [],
+  "data_version": "2026-05-12"
 }

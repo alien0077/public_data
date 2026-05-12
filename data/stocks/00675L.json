@@ -1,25 +1,25 @@
 {
   "stock_id": "00675L",
   "name": "00675L",
-  "date": "2026-05-11",
-  "close": 283.65,
-  "health_score": 150,
+  "date": "2026-05-12",
+  "close": 281.9,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 1589.0,
+    "short_change": 595.0,
+    "short_margin_ratio": 37.44
   },
   "tdcc": {},
   "main_force": {
-    "cost": 247.03,
-    "distance": 14.82,
+    "cost": 246.95,
+    "distance": 14.15,
     "trend": "UP"
   },
   "sector": {
@@ -30,10 +30,14 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "YELLOW",
+      "title": "短線券資比過高"
+    }
+  ],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-12"
 }

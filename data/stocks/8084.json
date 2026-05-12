@@ -1,13 +1,13 @@
 {
   "stock_id": "8084",
   "name": "8084",
-  "date": "2026-05-11",
-  "close": 44.7,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-12",
+  "close": 44.8,
+  "health_score": 110,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.069,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.04,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 62.05
   },
   "main_force": {
-    "cost": 44.77,
-    "distance": -0.16,
-    "trend": "DOWN"
+    "cost": 44.78,
+    "distance": 0.04,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,12 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-11"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-12"
 }

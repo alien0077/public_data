@@ -1,18 +1,18 @@
 {
   "stock_id": "00982B",
   "name": "00982B",
-  "date": "2026-05-11",
+  "date": "2026-05-12",
   "close": 9.81,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 111.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -30,9 +30,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-12"
 }

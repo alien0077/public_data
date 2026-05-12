@@ -1,20 +1,20 @@
 {
   "stock_id": "8064",
   "name": "8064",
-  "date": "2026-05-11",
-  "close": 113.5,
-  "health_score": 133,
+  "date": "2026-05-12",
+  "close": 118.5,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.021,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.198,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 9098.0,
+    "short_change": 18.0,
+    "short_margin_ratio": 0.2
   },
   "tdcc": {
     "big_holder_change": 45.56,
@@ -22,8 +22,8 @@
     "holder_concentration": 53.42
   },
   "main_force": {
-    "cost": 91.92,
-    "distance": 23.48,
+    "cost": 92.16,
+    "distance": 28.58,
     "trend": "UP"
   },
   "sector": {
@@ -41,7 +41,8 @@
     }
   ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-12"
 }

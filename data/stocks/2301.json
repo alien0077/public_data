@@ -1,20 +1,20 @@
 {
   "stock_id": "2301",
   "name": "2301",
-  "date": "2026-05-11",
-  "close": 224.0,
+  "date": "2026-05-12",
+  "close": 234.5,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.419,
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 1.2,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 15279.0,
+    "short_change": 668.0,
+    "short_margin_ratio": 4.37
   },
   "tdcc": {
     "big_holder_change": 76.06,
@@ -22,8 +22,8 @@
     "holder_concentration": 80.58
   },
   "main_force": {
-    "cost": 174.05,
-    "distance": 28.7,
+    "cost": 174.58,
+    "distance": 34.32,
     "trend": "UP"
   },
   "sector": {
@@ -37,7 +37,7 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 4 天"
+      "title": "外資連買 5 天"
     },
     {
       "level": "GREEN",
@@ -48,5 +48,5 @@
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-12"
 }

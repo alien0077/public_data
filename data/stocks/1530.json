@@ -1,18 +1,18 @@
 {
   "stock_id": "1530",
   "name": "1530",
-  "date": "2026-05-11",
+  "date": "2026-05-12",
   "close": 26.6,
-  "health_score": 103,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 6,
-    "foreign_buy_ratio": 0.01,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.007,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 133.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 30
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 6 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-11"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-12"
 }

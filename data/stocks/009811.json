@@ -1,20 +1,20 @@
 {
   "stock_id": "009811",
   "name": "009811",
-  "date": "2026-05-11",
-  "close": 12.73,
+  "date": "2026-05-12",
+  "close": 12.71,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 6,
+    "foreign_buy_days": 7,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 120.0,
+    "short_change": 35.0,
+    "short_margin_ratio": 29.17
   },
   "tdcc": {
     "big_holder_change": 14.07,
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 12.09,
-    "distance": 5.29,
+    "distance": 5.13,
     "trend": "UP"
   },
   "sector": {
@@ -37,12 +37,16 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 6 天"
+      "title": "外資連買 7 天"
+    },
+    {
+      "level": "YELLOW",
+      "title": "短線券資比過高"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-12"
 }

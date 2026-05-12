@@ -1,9 +1,9 @@
 {
   "stock_id": "5345",
   "name": "5345",
-  "date": "2026-05-11",
-  "close": 21.85,
-  "health_score": 86,
+  "date": "2026-05-12",
+  "close": 21.95,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -22,19 +22,21 @@
     "holder_concentration": 79.56
   },
   "main_force": {
-    "cost": 22.57,
-    "distance": -3.19,
-    "trend": "DOWN"
+    "cost": 21.4,
+    "distance": 2.57,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-11"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-12"
 }

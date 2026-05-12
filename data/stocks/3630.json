@@ -1,18 +1,18 @@
 {
   "stock_id": "3630",
   "name": "3630",
-  "date": "2026-05-11",
-  "close": 26.55,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-12",
+  "close": 26.3,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.061,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.102,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 3676.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 54.2
   },
   "main_force": {
-    "cost": 28.51,
-    "distance": -6.87,
+    "cost": 28.5,
+    "distance": -7.72,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-11"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-12"
 }

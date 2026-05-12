@@ -1,18 +1,18 @@
 {
   "stock_id": "3684",
   "name": "3684",
-  "date": "2026-05-11",
-  "close": 59.0,
-  "health_score": 110,
+  "date": "2026-05-12",
+  "close": 58.4,
+  "health_score": 93,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.01,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.01,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 405.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 61.15
   },
   "main_force": {
-    "cost": 58.34,
-    "distance": 1.13,
+    "cost": 58.31,
+    "distance": 0.15,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Value",
     "score": 40
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-12"
 }

@@ -1,10 +1,10 @@
 {
   "stock_id": "5209",
   "name": "5209",
-  "date": "2026-05-11",
-  "close": 164.5,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-12",
+  "close": 165.0,
+  "health_score": 93,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": -0.018,
@@ -12,7 +12,7 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 27.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 55.26
   },
   "main_force": {
-    "cost": 164.7,
-    "distance": -0.12,
-    "trend": "DOWN"
+    "cost": 164.72,
+    "distance": 0.17,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-11"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-12"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "6743",
   "name": "6743",
-  "date": "2026-05-11",
+  "date": "2026-05-12",
   "close": 29.95,
-  "health_score": 150,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.012,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.018,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 699.0,
+    "short_change": 4.0,
+    "short_margin_ratio": 0.57
   },
   "tdcc": {
     "big_holder_change": 57.08,
@@ -36,8 +36,7 @@
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-12"
 }

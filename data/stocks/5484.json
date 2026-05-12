@@ -1,13 +1,13 @@
 {
   "stock_id": "5484",
   "name": "5484",
-  "date": "2026-05-11",
-  "close": 38.2,
-  "health_score": 83,
+  "date": "2026-05-12",
+  "close": 39.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.042,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.154,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,21 +22,22 @@
     "holder_concentration": 38.29
   },
   "main_force": {
-    "cost": 38.52,
-    "distance": -0.83,
-    "trend": "DOWN"
+    "cost": 38.56,
+    "distance": 1.14,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-12"
 }

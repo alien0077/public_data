@@ -1,9 +1,9 @@
 {
   "stock_id": "00707R",
   "name": "00707R",
-  "date": "2026-05-08",
-  "close": 31.49,
-  "health_score": 106,
+  "date": "2026-05-12",
+  "close": 31.57,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -18,19 +18,21 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 31.86,
-    "distance": -1.16,
-    "trend": "DOWN"
+    "cost": 30.26,
+    "distance": 4.33,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-08"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-12"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "5547",
   "name": "5547",
-  "date": "2026-05-11",
-  "close": 21.85,
+  "date": "2026-05-12",
+  "close": 22.0,
   "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.031,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.007,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 66.74
   },
   "main_force": {
-    "cost": 21.63,
-    "distance": 1.02,
+    "cost": 21.64,
+    "distance": 1.66,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-12"
 }
