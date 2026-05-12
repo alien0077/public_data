@@ -1,20 +1,20 @@
 {
   "stock_id": "3583",
   "name": "3583",
-  "date": "2026-05-12",
-  "close": 952.0,
-  "health_score": 150,
+  "date": "2026-05-11",
+  "close": 866.0,
+  "health_score": 166,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.699,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.699,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2839.0,
-    "short_change": 755.0,
-    "short_margin_ratio": 26.59
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 49.92,
@@ -22,8 +22,8 @@
     "holder_concentration": 59.86
   },
   "main_force": {
-    "cost": 782.35,
-    "distance": 21.68,
+    "cost": 778.05,
+    "distance": 11.3,
     "trend": "UP"
   },
   "sector": {
@@ -38,14 +38,11 @@
     {
       "level": "GREEN",
       "title": "今日強勢大漲"
-    },
-    {
-      "level": "YELLOW",
-      "title": "短線券資比過高"
     }
   ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-12"
+  "data_version": "2026-05-11"
 }

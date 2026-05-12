@@ -1,20 +1,20 @@
 {
   "stock_id": "6515",
   "name": "6515",
-  "date": "2026-05-12",
-  "close": 9950.0,
-  "health_score": 123,
+  "date": "2026-05-11",
+  "close": 10090.0,
+  "health_score": 166,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.094,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.118,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 309.0,
-    "short_change": 7.0,
-    "short_margin_ratio": 2.27
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 36.91,
@@ -22,26 +22,22 @@
     "holder_concentration": 54.42
   },
   "main_force": {
-    "cost": 9993.0,
-    "distance": -0.43,
-    "trend": "DOWN"
+    "cost": 10000.0,
+    "distance": 0.9,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-12"
+  "data_version": "2026-05-11"
 }

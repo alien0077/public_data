@@ -1,18 +1,18 @@
 {
   "stock_id": "5438",
   "name": "5438",
-  "date": "2026-05-12",
-  "close": 18.9,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-11",
+  "close": 19.4,
+  "health_score": 93,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.004,
+    "foreign_buy_ratio": -0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1566.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 75.72
   },
   "main_force": {
-    "cost": 19.21,
-    "distance": -1.61,
-    "trend": "DOWN"
+    "cost": 19.24,
+    "distance": 0.83,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-11"
 }

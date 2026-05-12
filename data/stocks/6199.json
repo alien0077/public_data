@@ -1,20 +1,20 @@
 {
   "stock_id": "6199",
   "name": "6199",
-  "date": "2026-05-12",
-  "close": 98.5,
-  "health_score": 86,
+  "date": "2026-05-11",
+  "close": 100.5,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.193,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.266,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3296.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.06
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 75.79,
@@ -22,19 +22,22 @@
     "holder_concentration": 80.99
   },
   "main_force": {
-    "cost": 100.08,
-    "distance": -1.58,
-    "trend": "DOWN"
+    "cost": 100.18,
+    "distance": 0.32,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-11"
 }

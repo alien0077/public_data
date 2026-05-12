@@ -1,13 +1,13 @@
 {
   "stock_id": "7777",
   "name": "7777",
-  "date": "2026-05-12",
-  "close": 28.8,
-  "health_score": 93,
+  "date": "2026-05-11",
+  "close": 28.75,
+  "health_score": 110,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.012,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.01,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 27.27,
-    "distance": 5.61,
+    "distance": 5.43,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-12"
+  "data_version": "2026-05-11"
 }

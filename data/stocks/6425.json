@@ -1,20 +1,20 @@
 {
   "stock_id": "6425",
   "name": "6425",
-  "date": "2026-05-12",
-  "close": 89.0,
-  "health_score": 133,
+  "date": "2026-05-11",
+  "close": 88.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.488,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.693,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4382.0,
-    "short_change": 1.0,
-    "short_margin_ratio": 0.02
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 34.6,
@@ -22,8 +22,8 @@
     "holder_concentration": 44.57
   },
   "main_force": {
-    "cost": 83.87,
-    "distance": 6.12,
+    "cost": 83.82,
+    "distance": 4.99,
     "trend": "UP"
   },
   "sector": {
@@ -41,7 +41,8 @@
     }
   ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-12"
+  "data_version": "2026-05-11"
 }

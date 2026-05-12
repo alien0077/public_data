@@ -1,18 +1,18 @@
 {
   "stock_id": "4581",
   "name": "4581",
-  "date": "2026-05-12",
-  "close": 49.8,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-11",
+  "close": 51.0,
+  "health_score": 150,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.012,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 84.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,27 @@
     "holder_concentration": 62.95
   },
   "main_force": {
-    "cost": 50.24,
-    "distance": -0.88,
-    "trend": "DOWN"
+    "cost": 50.3,
+    "distance": 1.39,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-11"
 }

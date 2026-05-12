@@ -1,25 +1,25 @@
 {
   "stock_id": "7740",
   "name": "7740",
-  "date": "2026-05-12",
-  "close": 170.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-11",
+  "close": 171.0,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1183.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.17
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {},
   "main_force": {
-    "cost": 181.88,
-    "distance": -6.53,
+    "cost": 181.92,
+    "distance": -6.0,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "3218",
   "name": "3218",
-  "date": "2026-05-12",
-  "close": 133.5,
-  "health_score": 93,
+  "date": "2026-05-11",
+  "close": 135.5,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.092,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.057,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 749.0,
-    "short_change": 1.0,
-    "short_margin_ratio": 0.13
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 49.14,
@@ -22,8 +22,8 @@
     "holder_concentration": 57.14
   },
   "main_force": {
-    "cost": 131.68,
-    "distance": 1.38,
+    "cost": 131.78,
+    "distance": 2.82,
     "trend": "UP"
   },
   "sector": {
@@ -31,12 +31,13 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 40
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-12"
+  "data_version": "2026-05-11"
 }

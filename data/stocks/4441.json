@@ -1,18 +1,18 @@
 {
   "stock_id": "4441",
   "name": "4441",
-  "date": "2026-05-12",
-  "close": 214.5,
-  "health_score": 133,
+  "date": "2026-05-11",
+  "close": 201.5,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.014,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.024,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 122.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 72.33
   },
   "main_force": {
-    "cost": 192.4,
-    "distance": 11.49,
+    "cost": 191.75,
+    "distance": 5.08,
     "trend": "UP"
   },
   "sector": {
@@ -32,16 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-12"
+  "data_version": "2026-05-11"
 }

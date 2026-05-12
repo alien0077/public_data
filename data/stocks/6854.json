@@ -1,20 +1,20 @@
 {
   "stock_id": "6854",
   "name": "6854",
-  "date": "2026-05-12",
-  "close": 147.5,
-  "health_score": 86,
+  "date": "2026-05-11",
+  "close": 145.5,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.057,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3799.0,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.08
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 55.09,
@@ -22,8 +22,8 @@
     "holder_concentration": 66.35
   },
   "main_force": {
-    "cost": 161.25,
-    "distance": -8.53,
+    "cost": 161.15,
+    "distance": -9.71,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

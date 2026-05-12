@@ -1,18 +1,18 @@
 {
   "stock_id": "3168",
   "name": "3168",
-  "date": "2026-05-12",
-  "close": 44.5,
-  "health_score": 86,
+  "date": "2026-05-11",
+  "close": 45.2,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.017,
+    "foreign_buy_ratio": -0.008,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 31.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,21 @@
     "holder_concentration": 75.44
   },
   "main_force": {
-    "cost": 45.02,
-    "distance": -1.16,
-    "trend": "DOWN"
+    "cost": 45.05,
+    "distance": 0.33,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-11"
 }

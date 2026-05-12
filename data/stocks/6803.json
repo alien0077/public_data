@@ -1,18 +1,18 @@
 {
   "stock_id": "6803",
   "name": "6803",
-  "date": "2026-05-12",
-  "close": 286.5,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-11",
+  "close": 287.0,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.123,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.032,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 24.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 55.76
   },
   "main_force": {
-    "cost": 289.35,
-    "distance": -0.98,
+    "cost": 289.38,
+    "distance": -0.82,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

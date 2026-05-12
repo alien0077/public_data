@@ -1,10 +1,10 @@
 {
   "stock_id": "00702",
   "name": "00702",
-  "date": "2026-05-12",
-  "close": 23.73,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-11",
+  "close": 23.78,
+  "health_score": 93,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -23,8 +23,8 @@
   },
   "main_force": {
     "cost": 23.74,
-    "distance": -0.04,
-    "trend": "DOWN"
+    "distance": 0.17,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-11"
 }

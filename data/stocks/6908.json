@@ -1,13 +1,13 @@
 {
   "stock_id": "6908",
   "name": "6908",
-  "date": "2026-05-12",
-  "close": 39.3,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-11",
+  "close": 39.45,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.008,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 86.39
   },
   "main_force": {
-    "cost": 39.58,
-    "distance": -0.71,
+    "cost": 39.59,
+    "distance": -0.35,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,7 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 4 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

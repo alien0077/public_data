@@ -1,18 +1,18 @@
 {
   "stock_id": "7736",
   "name": "7736",
-  "date": "2026-05-12",
-  "close": 74.6,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-11",
+  "close": 75.2,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.011,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.009,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 26.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 84.06
   },
   "main_force": {
-    "cost": 77.89,
-    "distance": -4.22,
+    "cost": 77.91,
+    "distance": -3.48,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 4 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

@@ -1,25 +1,25 @@
 {
   "stock_id": "00663L",
   "name": "00663L",
-  "date": "2026-05-12",
-  "close": 93.15,
-  "health_score": 133,
+  "date": "2026-05-11",
+  "close": 93.75,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 2,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5306.0,
-    "short_change": 1944.0,
-    "short_margin_ratio": 36.64
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {},
   "main_force": {
-    "cost": 81.52,
-    "distance": 14.27,
+    "cost": 81.55,
+    "distance": 14.96,
     "trend": "UP"
   },
   "sector": {
@@ -30,14 +30,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "YELLOW",
-      "title": "短線券資比過高"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-12"
+  "data_version": "2026-05-11"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "1570",
   "name": "1570",
-  "date": "2026-05-12",
-  "close": 39.1,
-  "health_score": 133,
+  "date": "2026-05-11",
+  "close": 39.95,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.237,
+    "foreign_buy_days": 7,
+    "foreign_buy_ratio": 0.198,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2323.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 53.27
   },
   "main_force": {
-    "cost": 36.91,
-    "distance": 5.93,
+    "cost": 36.95,
+    "distance": 8.12,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,19 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 7 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-12"
+  "data_version": "2026-05-11"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "1506",
   "name": "1506",
-  "date": "2026-05-12",
-  "close": 10.65,
-  "health_score": 86,
+  "date": "2026-05-11",
+  "close": 10.75,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.006,
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 0.015,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 77.61
   },
   "main_force": {
-    "cost": 10.92,
-    "distance": -2.47,
+    "cost": 10.93,
+    "distance": -1.65,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,7 +34,14 @@
     "style": "Value",
     "score": 30
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 5 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

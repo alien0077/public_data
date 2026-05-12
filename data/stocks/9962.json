@@ -1,18 +1,18 @@
 {
   "stock_id": "9962",
   "name": "9962",
-  "date": "2026-05-12",
-  "close": 9.64,
-  "health_score": 86,
+  "date": "2026-05-11",
+  "close": 9.61,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.02,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.018,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 305.0,
+    "margin_change": 0.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 9.88,
-    "distance": -2.43,
+    "distance": -2.73,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-11"
 }

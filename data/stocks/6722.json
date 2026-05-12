@@ -1,13 +1,13 @@
 {
   "stock_id": "6722",
   "name": "6722",
-  "date": "2026-05-12",
-  "close": 39.5,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-11",
+  "close": 40.35,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.026,
+    "foreign_buy_ratio": -0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,21 @@
     "holder_concentration": 76.78
   },
   "main_force": {
-    "cost": 39.92,
-    "distance": -1.05,
-    "trend": "DOWN"
+    "cost": 39.96,
+    "distance": 0.98,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-12"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-11"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "1468",
   "name": "1468",
-  "date": "2026-05-12",
-  "close": 12.5,
-  "health_score": 133,
+  "date": "2026-05-11",
+  "close": 12.45,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.004,
+    "foreign_buy_days": 6,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 97.58
   },
   "main_force": {
-    "cost": 12.31,
-    "distance": 1.54,
+    "cost": 12.3,
+    "distance": 1.22,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 6 天"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-12"
+  "data_version": "2026-05-11"
 }

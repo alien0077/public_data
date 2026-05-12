@@ -1,13 +1,13 @@
 {
   "stock_id": "6028",
   "name": "6028",
-  "date": "2026-05-12",
-  "close": 81.4,
-  "health_score": 113,
+  "date": "2026-05-11",
+  "close": 81.9,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.148,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 64.25
   },
   "main_force": {
-    "cost": 79.99,
-    "distance": 1.76,
+    "cost": 80.02,
+    "distance": 2.35,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,15 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 4 天"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-12"
+  "data_version": "2026-05-11"
 }
