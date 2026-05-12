@@ -1690,14 +1690,14 @@
   ],
   "strategy_performance": {
     "trend": {
-      "sharpe": 8.72,
+      "sharpe": 8.35,
       "win_rate": 0.7667,
-      "total_return": 4.1519
+      "total_return": 3.2191
     },
     "mr": {
-      "sharpe": -10.33,
+      "sharpe": -9.69,
       "win_rate": 0.2,
-      "total_return": -0.4986
+      "total_return": -0.5303
     }
   },
   "ensemble_performance": {
@@ -1829,7 +1829,7 @@
     "win_rate": 0.4833333333333334
   },
   "portfolio": {
-    "cash": 19041.0,
+    "cash": 179643.0,
     "positions": {
       "trend": [
         {
@@ -1860,15 +1860,6 @@
           "cost": 197554.0
         },
         {
-          "stock": "6830",
-          "entry_price": 925.0,
-          "entry_date": "2026-05-04",
-          "shares": 213,
-          "max_price": 925.0,
-          "type": "trend",
-          "cost": 197025.0
-        },
-        {
           "stock": "6515",
           "entry_price": 10700.0,
           "entry_date": "2026-05-04",
@@ -1896,513 +1887,513 @@
       {
         "date": "2026-05-08",
         "nav": 940340.0
+      },
+      {
+        "date": "2026-05-11",
+        "nav": 965275.0
       }
     ]
   },
   "backtest_history": [],
   "backtest_performance": {
-    "total_return": 1.8414715303172877,
-    "sharpe": 6.703745501380841,
-    "max_drawdown": -0.08744109540484309,
-    "win_rate": 0.7310924369747899,
+    "total_return": 1.360886736542275,
+    "sharpe": 5.936732259209612,
+    "max_drawdown": -0.0828290001765467,
+    "win_rate": 0.7142857142857143,
     "equity_curve": [
       {
-        "date": "11-05",
+        "date": "11-06",
         "equity": 1.0
       },
       {
-        "date": "11-06",
-        "equity": 1.0113
-      },
-      {
         "date": "11-07",
-        "equity": 1.0045
+        "equity": 0.9907
       },
       {
         "date": "11-10",
-        "equity": 1.0072
+        "equity": 0.9889
       },
       {
         "date": "11-11",
-        "equity": 1.0292
+        "equity": 1.0009
       },
       {
         "date": "11-12",
-        "equity": 1.0525
+        "equity": 1.0171
       },
       {
         "date": "11-13",
-        "equity": 1.0536
-      },
-      {
-        "date": "11-14",
-        "equity": 1.0347
-      },
-      {
-        "date": "11-17",
-        "equity": 1.0341
-      },
-      {
-        "date": "11-18",
-        "equity": 1.0109
-      },
-      {
-        "date": "11-19",
-        "equity": 0.9981
-      },
-      {
-        "date": "11-20",
-        "equity": 1.0228
-      },
-      {
-        "date": "11-21",
-        "equity": 0.9891
-      },
-      {
-        "date": "11-24",
-        "equity": 0.9968
-      },
-      {
-        "date": "11-25",
         "equity": 1.0161
       },
       {
+        "date": "11-14",
+        "equity": 0.9986
+      },
+      {
+        "date": "11-17",
+        "equity": 0.9954
+      },
+      {
+        "date": "11-18",
+        "equity": 0.9715
+      },
+      {
+        "date": "11-19",
+        "equity": 0.9618
+      },
+      {
+        "date": "11-20",
+        "equity": 0.9831
+      },
+      {
+        "date": "11-21",
+        "equity": 0.9542
+      },
+      {
+        "date": "11-24",
+        "equity": 0.9623
+      },
+      {
+        "date": "11-25",
+        "equity": 0.9771
+      },
+      {
         "date": "11-26",
-        "equity": 1.019
+        "equity": 0.9844
       },
       {
         "date": "11-27",
-        "equity": 1.0345
+        "equity": 0.9959
       },
       {
         "date": "11-28",
-        "equity": 1.0464
+        "equity": 1.0043
       },
       {
         "date": "12-01",
-        "equity": 1.0831
+        "equity": 1.023
       },
       {
         "date": "12-02",
-        "equity": 1.0849
+        "equity": 1.0257
       },
       {
         "date": "12-03",
-        "equity": 1.0979
+        "equity": 1.0361
       },
       {
         "date": "12-04",
-        "equity": 1.0976
+        "equity": 1.0362
       },
       {
         "date": "12-05",
-        "equity": 1.1004
+        "equity": 1.0431
       },
       {
         "date": "12-08",
-        "equity": 1.1117
+        "equity": 1.0515
       },
       {
         "date": "12-09",
-        "equity": 1.1307
+        "equity": 1.0629
       },
       {
         "date": "12-10",
-        "equity": 1.1344
+        "equity": 1.0698
       },
       {
         "date": "12-11",
-        "equity": 1.1411
+        "equity": 1.072
       },
       {
         "date": "12-12",
-        "equity": 1.155
+        "equity": 1.0816
       },
       {
         "date": "12-15",
-        "equity": 1.169
+        "equity": 1.0895
       },
       {
         "date": "12-16",
-        "equity": 1.1504
+        "equity": 1.0735
       },
       {
         "date": "12-17",
-        "equity": 1.1562
+        "equity": 1.0763
       },
       {
         "date": "12-18",
-        "equity": 1.1543
+        "equity": 1.0716
       },
       {
         "date": "12-19",
-        "equity": 1.168
+        "equity": 1.0829
       },
       {
         "date": "12-22",
-        "equity": 1.1923
+        "equity": 1.0999
       },
       {
         "date": "12-23",
-        "equity": 1.198
+        "equity": 1.1064
       },
       {
         "date": "12-24",
-        "equity": 1.2175
+        "equity": 1.1179
       },
       {
         "date": "12-26",
-        "equity": 1.2328
+        "equity": 1.1296
       },
       {
         "date": "12-29",
-        "equity": 1.2647
+        "equity": 1.1514
       },
       {
         "date": "12-30",
-        "equity": 1.2685
+        "equity": 1.1545
       },
       {
         "date": "12-31",
-        "equity": 1.2751
+        "equity": 1.1568
       },
       {
         "date": "01-02",
-        "equity": 1.2903
+        "equity": 1.1672
       },
       {
         "date": "01-05",
-        "equity": 1.2871
+        "equity": 1.1618
       },
       {
         "date": "01-06",
-        "equity": 1.3002
+        "equity": 1.1712
       },
       {
         "date": "01-07",
-        "equity": 1.3144
+        "equity": 1.1805
       },
       {
         "date": "01-08",
-        "equity": 1.3152
+        "equity": 1.1803
       },
       {
         "date": "01-09",
-        "equity": 1.3217
+        "equity": 1.1839
       },
       {
         "date": "01-12",
-        "equity": 1.3509
+        "equity": 1.2051
       },
       {
         "date": "01-13",
-        "equity": 1.3546
+        "equity": 1.209
       },
       {
         "date": "01-14",
-        "equity": 1.3882
+        "equity": 1.2354
       },
       {
         "date": "01-15",
-        "equity": 1.4068
+        "equity": 1.2501
       },
       {
         "date": "01-16",
-        "equity": 1.423
+        "equity": 1.2628
       },
       {
         "date": "01-19",
-        "equity": 1.4635
+        "equity": 1.2873
       },
       {
         "date": "01-20",
-        "equity": 1.4789
+        "equity": 1.3003
       },
       {
         "date": "01-21",
-        "equity": 1.4498
+        "equity": 1.2764
       },
       {
         "date": "01-22",
-        "equity": 1.4641
+        "equity": 1.289
       },
       {
         "date": "01-23",
-        "equity": 1.4637
+        "equity": 1.2882
       },
       {
         "date": "01-26",
-        "equity": 1.4862
+        "equity": 1.305
       },
       {
         "date": "01-27",
-        "equity": 1.4978
+        "equity": 1.3141
       },
       {
         "date": "01-28",
-        "equity": 1.5304
+        "equity": 1.3372
       },
       {
         "date": "01-29",
-        "equity": 1.522
+        "equity": 1.3298
       },
       {
         "date": "01-30",
-        "equity": 1.5164
+        "equity": 1.3208
       },
       {
         "date": "02-02",
-        "equity": 1.4782
+        "equity": 1.2896
       },
       {
         "date": "02-03",
-        "equity": 1.5119
+        "equity": 1.3151
       },
       {
         "date": "02-04",
-        "equity": 1.5611
+        "equity": 1.3523
       },
       {
         "date": "02-05",
-        "equity": 1.5322
+        "equity": 1.3285
       },
       {
         "date": "02-06",
-        "equity": 1.487
+        "equity": 1.2922
       },
       {
         "date": "02-09",
-        "equity": 1.5224
+        "equity": 1.3196
       },
       {
         "date": "02-10",
-        "equity": 1.5341
+        "equity": 1.3287
       },
       {
         "date": "02-11",
-        "equity": 1.5574
+        "equity": 1.3439
       },
       {
         "date": "02-23",
-        "equity": 1.6151
+        "equity": 1.3891
       },
       {
         "date": "02-24",
-        "equity": 1.6801
+        "equity": 1.438
       },
       {
         "date": "02-25",
-        "equity": 1.7033
+        "equity": 1.4576
       },
       {
         "date": "02-26",
-        "equity": 1.7444
+        "equity": 1.492
       },
       {
         "date": "03-02",
-        "equity": 1.7819
+        "equity": 1.5183
       },
       {
         "date": "03-03",
-        "equity": 1.7341
+        "equity": 1.4806
       },
       {
         "date": "03-04",
-        "equity": 1.6389
+        "equity": 1.4032
       },
       {
         "date": "03-05",
-        "equity": 1.6885
+        "equity": 1.4461
       },
       {
         "date": "03-06",
-        "equity": 1.7119
+        "equity": 1.4631
       },
       {
         "date": "03-09",
-        "equity": 1.6299
+        "equity": 1.3925
       },
       {
         "date": "03-10",
-        "equity": 1.6713
+        "equity": 1.4248
       },
       {
         "date": "03-11",
-        "equity": 1.7707
+        "equity": 1.5029
       },
       {
         "date": "03-12",
-        "equity": 1.8089
+        "equity": 1.5282
       },
       {
         "date": "03-13",
-        "equity": 1.8353
+        "equity": 1.5481
       },
       {
         "date": "03-16",
-        "equity": 1.8743
+        "equity": 1.5788
       },
       {
         "date": "03-17",
-        "equity": 1.9124
+        "equity": 1.6089
       },
       {
         "date": "03-18",
-        "equity": 1.9771
+        "equity": 1.659
       },
       {
         "date": "03-19",
-        "equity": 2.0209
+        "equity": 1.6885
       },
       {
         "date": "03-20",
-        "equity": 2.0116
+        "equity": 1.6795
       },
       {
         "date": "03-23",
-        "equity": 1.915
+        "equity": 1.6047
       },
       {
         "date": "03-24",
-        "equity": 1.8442
+        "equity": 1.5521
       },
       {
         "date": "03-25",
-        "equity": 1.937
+        "equity": 1.627
       },
       {
         "date": "03-26",
-        "equity": 1.9343
+        "equity": 1.6247
       },
       {
         "date": "03-27",
-        "equity": 1.9536
+        "equity": 1.6406
       },
       {
         "date": "03-30",
-        "equity": 1.9491
+        "equity": 1.6351
       },
       {
         "date": "03-31",
-        "equity": 1.8443
+        "equity": 1.5528
       },
       {
         "date": "04-01",
-        "equity": 1.9421
+        "equity": 1.6302
       },
       {
         "date": "04-02",
-        "equity": 1.932
+        "equity": 1.6182
       },
       {
         "date": "04-07",
-        "equity": 1.9929
+        "equity": 1.6629
       },
       {
         "date": "04-08",
-        "equity": 2.0999
+        "equity": 1.7476
       },
       {
         "date": "04-09",
-        "equity": 2.138
+        "equity": 1.7782
       },
       {
         "date": "04-10",
-        "equity": 2.2157
+        "equity": 1.8389
       },
       {
         "date": "04-13",
-        "equity": 2.2602
+        "equity": 1.8719
       },
       {
         "date": "04-14",
-        "equity": 2.2803
+        "equity": 1.8885
       },
       {
         "date": "04-15",
-        "equity": 2.3111
+        "equity": 1.9155
       },
       {
         "date": "04-16",
-        "equity": 2.3629
+        "equity": 1.9551
       },
       {
         "date": "04-17",
-        "equity": 2.4331
+        "equity": 2.0072
       },
       {
         "date": "04-20",
-        "equity": 2.4986
+        "equity": 2.0574
       },
       {
         "date": "04-21",
-        "equity": 2.5542
+        "equity": 2.0998
       },
       {
         "date": "04-22",
-        "equity": 2.6442
+        "equity": 2.169
       },
       {
         "date": "04-23",
-        "equity": 2.5581
+        "equity": 2.1002
       },
       {
         "date": "04-24",
-        "equity": 2.5493
+        "equity": 2.092
       },
       {
         "date": "04-27",
-        "equity": 2.5298
+        "equity": 2.0638
       },
       {
         "date": "04-28",
-        "equity": 2.6181
+        "equity": 2.1303
       },
       {
         "date": "04-29",
-        "equity": 2.6429
+        "equity": 2.1497
       },
       {
         "date": "04-30",
-        "equity": 2.6908
+        "equity": 2.1841
       },
       {
         "date": "05-04",
-        "equity": 2.7946
+        "equity": 2.2644
       },
       {
         "date": "05-05",
-        "equity": 2.8827
+        "equity": 2.3308
       },
       {
         "date": "05-06",
-        "equity": 2.8672
+        "equity": 2.3205
       },
       {
         "date": "05-07",
-        "equity": 2.9023
+        "equity": 2.3482
       },
       {
         "date": "05-08",
-        "equity": 2.8415
+        "equity": 2.3008
+      },
+      {
+        "date": "05-11",
+        "equity": 2.3609
       }
     ],
     "drawdown_curve": [
       {
-        "date": "11-05",
-        "value": 0.0
-      },
-      {
         "date": "11-06",
         "value": 0.0
       },
       {
         "date": "11-07",
-        "value": -0.0068
+        "value": -0.0093
       },
       {
         "date": "11-10",
-        "value": -0.004
+        "value": -0.0111
       },
       {
         "date": "11-11",
@@ -2414,51 +2405,51 @@
       },
       {
         "date": "11-13",
-        "value": 0.0
+        "value": -0.0011
       },
       {
         "date": "11-14",
-        "value": -0.018
+        "value": -0.0183
       },
       {
         "date": "11-17",
-        "value": -0.0185
+        "value": -0.0214
       },
       {
         "date": "11-18",
-        "value": -0.0405
+        "value": -0.0448
       },
       {
         "date": "11-19",
-        "value": -0.0527
+        "value": -0.0544
       },
       {
         "date": "11-20",
-        "value": -0.0292
+        "value": -0.0335
       },
       {
         "date": "11-21",
-        "value": -0.0613
+        "value": -0.0619
       },
       {
         "date": "11-24",
-        "value": -0.054
+        "value": -0.0539
       },
       {
         "date": "11-25",
-        "value": -0.0356
+        "value": -0.0393
       },
       {
         "date": "11-26",
-        "value": -0.0329
+        "value": -0.0322
       },
       {
         "date": "11-27",
-        "value": -0.0182
+        "value": -0.0209
       },
       {
         "date": "11-28",
-        "value": -0.0069
+        "value": -0.0127
       },
       {
         "date": "12-01",
@@ -2474,7 +2465,7 @@
       },
       {
         "date": "12-04",
-        "value": -0.0003
+        "value": 0.0
       },
       {
         "date": "12-05",
@@ -2506,19 +2497,19 @@
       },
       {
         "date": "12-16",
-        "value": -0.0159
+        "value": -0.0146
       },
       {
         "date": "12-17",
-        "value": -0.0109
+        "value": -0.0121
       },
       {
         "date": "12-18",
-        "value": -0.0126
+        "value": -0.0164
       },
       {
         "date": "12-19",
-        "value": -0.0008
+        "value": -0.006
       },
       {
         "date": "12-22",
@@ -2554,7 +2545,7 @@
       },
       {
         "date": "01-05",
-        "value": -0.0025
+        "value": -0.0046
       },
       {
         "date": "01-06",
@@ -2566,7 +2557,7 @@
       },
       {
         "date": "01-08",
-        "value": 0.0
+        "value": -0.0002
       },
       {
         "date": "01-09",
@@ -2602,15 +2593,15 @@
       },
       {
         "date": "01-21",
-        "value": -0.0197
+        "value": -0.0184
       },
       {
         "date": "01-22",
-        "value": -0.0101
+        "value": -0.0087
       },
       {
         "date": "01-23",
-        "value": -0.0103
+        "value": -0.0093
       },
       {
         "date": "01-26",
@@ -2626,19 +2617,19 @@
       },
       {
         "date": "01-29",
-        "value": -0.0055
+        "value": -0.0056
       },
       {
         "date": "01-30",
-        "value": -0.0091
+        "value": -0.0123
       },
       {
         "date": "02-02",
-        "value": -0.0341
+        "value": -0.0356
       },
       {
         "date": "02-03",
-        "value": -0.0121
+        "value": -0.0166
       },
       {
         "date": "02-04",
@@ -2646,23 +2637,23 @@
       },
       {
         "date": "02-05",
-        "value": -0.0186
+        "value": -0.0176
       },
       {
         "date": "02-06",
-        "value": -0.0475
+        "value": -0.0445
       },
       {
         "date": "02-09",
-        "value": -0.0248
+        "value": -0.0242
       },
       {
         "date": "02-10",
-        "value": -0.0173
+        "value": -0.0174
       },
       {
         "date": "02-11",
-        "value": -0.0024
+        "value": -0.0062
       },
       {
         "date": "02-23",
@@ -2686,31 +2677,31 @@
       },
       {
         "date": "03-03",
-        "value": -0.0268
+        "value": -0.0248
       },
       {
         "date": "03-04",
-        "value": -0.0803
+        "value": -0.0758
       },
       {
         "date": "03-05",
-        "value": -0.0525
+        "value": -0.0475
       },
       {
         "date": "03-06",
-        "value": -0.0393
+        "value": -0.0364
       },
       {
         "date": "03-09",
-        "value": -0.0853
+        "value": -0.0828
       },
       {
         "date": "03-10",
-        "value": -0.0621
+        "value": -0.0616
       },
       {
         "date": "03-11",
-        "value": -0.0063
+        "value": -0.0102
       },
       {
         "date": "03-12",
@@ -2738,47 +2729,47 @@
       },
       {
         "date": "03-20",
-        "value": -0.0046
+        "value": -0.0053
       },
       {
         "date": "03-23",
-        "value": -0.0524
+        "value": -0.0496
       },
       {
         "date": "03-24",
-        "value": -0.0874
+        "value": -0.0807
       },
       {
         "date": "03-25",
-        "value": -0.0415
+        "value": -0.0364
       },
       {
         "date": "03-26",
-        "value": -0.0428
+        "value": -0.0378
       },
       {
         "date": "03-27",
-        "value": -0.0333
+        "value": -0.0283
       },
       {
         "date": "03-30",
-        "value": -0.0355
+        "value": -0.0316
       },
       {
         "date": "03-31",
-        "value": -0.0874
+        "value": -0.0804
       },
       {
         "date": "04-01",
-        "value": -0.039
+        "value": -0.0345
       },
       {
         "date": "04-02",
-        "value": -0.044
+        "value": -0.0416
       },
       {
         "date": "04-07",
-        "value": -0.0138
+        "value": -0.0152
       },
       {
         "date": "04-08",
@@ -2826,23 +2817,23 @@
       },
       {
         "date": "04-23",
-        "value": -0.0326
+        "value": -0.0317
       },
       {
         "date": "04-24",
-        "value": -0.0359
+        "value": -0.0355
       },
       {
         "date": "04-27",
-        "value": -0.0433
+        "value": -0.0485
       },
       {
         "date": "04-28",
-        "value": -0.0099
+        "value": -0.0179
       },
       {
         "date": "04-29",
-        "value": -0.0005
+        "value": -0.0089
       },
       {
         "date": "04-30",
@@ -2858,7 +2849,7 @@
       },
       {
         "date": "05-06",
-        "value": -0.0054
+        "value": -0.0044
       },
       {
         "date": "05-07",
@@ -2866,8 +2857,63 @@
       },
       {
         "date": "05-08",
-        "value": -0.021
+        "value": -0.0202
+      },
+      {
+        "date": "05-11",
+        "value": 0.0
       }
     ]
-  }
+  },
+  "optimized_exits": {
+    "trend": 91,
+    "mr": 75
+  },
+  "trade_log": [
+    {
+      "stock": "6515",
+      "entry_date": "2026-05-04",
+      "exit_date": null,
+      "return": null,
+      "reason": null,
+      "entry_reason": "SIGNAL",
+      "action": "BUY"
+    },
+    {
+      "stock": "6830",
+      "entry_date": "2026-05-04",
+      "exit_date": "2026-05-11",
+      "return": -0.1849,
+      "reason": "STOP_LOSS (10%)",
+      "entry_reason": "SIGNAL",
+      "action": "SELL"
+    },
+    {
+      "stock": "6861",
+      "entry_date": "2026-05-04",
+      "exit_date": null,
+      "return": null,
+      "reason": null,
+      "entry_reason": "SIGNAL",
+      "action": "BUY"
+    },
+    {
+      "stock": "6683",
+      "entry_date": "2026-05-04",
+      "exit_date": null,
+      "return": null,
+      "reason": null,
+      "entry_reason": "SIGNAL",
+      "action": "BUY"
+    },
+    {
+      "stock": "3081",
+      "entry_date": "2026-05-04",
+      "exit_date": null,
+      "return": null,
+      "reason": null,
+      "entry_reason": "SIGNAL",
+      "action": "BUY"
+    }
+  ]
 }

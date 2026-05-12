@@ -2,23 +2,25 @@
   "strategies": [
     {
       "dsl": "rs > 90 AND pct > 2",
+      "exit_dsl": "rs < 91",
       "desc": "TREND Ensemble Fund",
-      "sharpe": 8.72,
-      "total_return": 4.1519,
+      "sharpe": 8.35,
+      "total_return": 3.2191,
       "win_rate": 0.7667,
-      "weight": 0.8311910675959198,
-      "age": 8,
-      "score": 8.72
+      "weight": 0.8273395491095654,
+      "age": 9,
+      "score": 8.35
     },
     {
       "dsl": "rsi < 35",
+      "exit_dsl": "rsi > 75",
       "desc": "MR Ensemble Fund",
-      "sharpe": -10.33,
-      "total_return": -0.4986,
+      "sharpe": -9.69,
+      "total_return": -0.5303,
       "win_rate": 0.2,
-      "weight": 0.16880893240408035,
-      "age": 8,
-      "score": -10.33
+      "weight": 0.1726604508904346,
+      "age": 9,
+      "score": -9.69
     }
   ]
 }
