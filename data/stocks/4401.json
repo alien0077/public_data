@@ -1,18 +1,18 @@
 {
   "stock_id": "4401",
   "name": "4401",
-  "date": "2026-05-11",
-  "close": 14.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-13",
+  "close": 14.1,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.002,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 902.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 62.01
   },
   "main_force": {
-    "cost": 14.6,
-    "distance": -4.11,
+    "cost": 14.61,
+    "distance": -3.49,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-11"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-13"
 }

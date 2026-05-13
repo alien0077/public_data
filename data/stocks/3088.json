@@ -1,18 +1,18 @@
 {
   "stock_id": "3088",
   "name": "3088",
-  "date": "2026-05-11",
-  "close": 128.0,
+  "date": "2026-05-13",
+  "close": 133.5,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.144,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.246,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 3117.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 48.64
   },
   "main_force": {
-    "cost": 105.22,
-    "distance": 21.65,
+    "cost": 105.49,
+    "distance": 26.55,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,19 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 4 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-13"
 }

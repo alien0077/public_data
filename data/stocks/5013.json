@@ -1,18 +1,18 @@
 {
   "stock_id": "5013",
   "name": "5013",
-  "date": "2026-05-11",
-  "close": 28.45,
-  "health_score": 86,
+  "date": "2026-05-13",
+  "close": 27.35,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.001,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 4.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 86.96
   },
   "main_force": {
-    "cost": 29.3,
-    "distance": -2.9,
+    "cost": 29.24,
+    "distance": -6.46,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-11"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-13"
 }

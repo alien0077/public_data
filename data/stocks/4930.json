@@ -1,18 +1,18 @@
 {
   "stock_id": "4930",
   "name": "4930",
-  "date": "2026-05-11",
-  "close": 17.85,
+  "date": "2026-05-13",
+  "close": 17.55,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.008,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.004,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 3612.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 63.14
   },
   "main_force": {
-    "cost": 18.65,
-    "distance": -4.29,
+    "cost": 18.64,
+    "distance": -5.85,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-13"
 }

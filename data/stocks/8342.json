@@ -1,18 +1,18 @@
 {
   "stock_id": "8342",
   "name": "8342",
-  "date": "2026-05-11",
-  "close": 88.0,
-  "health_score": 86,
+  "date": "2026-05-13",
+  "close": 90.3,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.003,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 1.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 72.68
   },
   "main_force": {
-    "cost": 90.14,
-    "distance": -2.37,
-    "trend": "DOWN"
+    "cost": 90.26,
+    "distance": 0.04,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-11"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-13"
 }

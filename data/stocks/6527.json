@@ -1,13 +1,13 @@
 {
   "stock_id": "6527",
   "name": "6527",
-  "date": "2026-05-11",
-  "close": 68.6,
-  "health_score": 83,
+  "date": "2026-05-13",
+  "close": 70.5,
+  "health_score": 110,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.016,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.012,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 41.38
   },
   "main_force": {
-    "cost": 69.49,
-    "distance": -1.28,
-    "trend": "DOWN"
+    "cost": 69.58,
+    "distance": 1.32,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,16 +32,12 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-13"
 }

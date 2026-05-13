@@ -1,20 +1,20 @@
 {
   "stock_id": "00830",
   "name": "00830",
-  "date": "2026-05-11",
-  "close": 82.3,
+  "date": "2026-05-13",
+  "close": 83.45,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 4,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 2721.0,
+    "short_change": 300.0,
+    "short_margin_ratio": 11.03
   },
   "tdcc": {
     "big_holder_change": 21.87,
@@ -22,8 +22,8 @@
     "holder_concentration": 25.08
   },
   "main_force": {
-    "cost": 70.93,
-    "distance": 16.03,
+    "cost": 70.99,
+    "distance": 17.55,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,19 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 4 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-13"
 }

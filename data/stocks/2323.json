@@ -1,19 +1,19 @@
 {
   "stock_id": "2323",
   "name": "2323",
-  "date": "2026-05-11",
-  "close": 10.6,
-  "health_score": 93,
-  "signal": "Bullish",
+  "date": "2026-05-13",
+  "close": 10.45,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.045,
+    "foreign_buy_ratio": -0.311,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "short_change": 0.0,
+    "margin_change": 31528.0,
+    "short_change": 1.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
@@ -22,9 +22,9 @@
     "holder_concentration": 44.93
   },
   "main_force": {
-    "cost": 10.57,
-    "distance": 0.28,
-    "trend": "UP"
+    "cost": 10.56,
+    "distance": -1.04,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
@@ -32,11 +32,9 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 40
+    "score": 0
   },
   "events": [],
-  "raw_signals": [
-    "ma_bull"
-  ],
-  "data_version": "2026-05-11"
+  "raw_signals": [],
+  "data_version": "2026-05-13"
 }

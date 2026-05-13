@@ -1,18 +1,18 @@
 {
   "stock_id": "2015",
   "name": "2015",
-  "date": "2026-05-11",
-  "close": 64.3,
+  "date": "2026-05-13",
+  "close": 62.6,
   "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 6,
-    "foreign_buy_ratio": 0.069,
+    "foreign_buy_days": 8,
+    "foreign_buy_ratio": 0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 36.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 88.01
   },
   "main_force": {
-    "cost": 62.22,
-    "distance": 3.34,
+    "cost": 62.13,
+    "distance": 0.76,
     "trend": "UP"
   },
   "sector": {
@@ -37,12 +37,12 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 6 天"
+      "title": "外資連買 8 天"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-13"
 }

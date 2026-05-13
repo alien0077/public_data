@@ -1,25 +1,25 @@
 {
   "stock_id": "00706L",
   "name": "00706L",
-  "date": "2026-05-11",
-  "close": 19.83,
-  "health_score": 113,
+  "date": "2026-05-13",
+  "close": 19.65,
+  "health_score": 110,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 2164.0,
+    "short_change": 48.0,
+    "short_margin_ratio": 2.22
   },
   "tdcc": {},
   "main_force": {
-    "cost": 19.52,
-    "distance": 1.59,
+    "cost": 19.51,
+    "distance": 0.72,
     "trend": "UP"
   },
   "sector": {
@@ -27,12 +27,13 @@
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 40
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-13"
 }

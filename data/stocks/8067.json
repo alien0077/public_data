@@ -1,10 +1,10 @@
 {
   "stock_id": "8067",
   "name": "8067",
-  "date": "2026-05-11",
-  "close": 12.45,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-13",
+  "close": 12.8,
+  "health_score": 93,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -22,9 +22,9 @@
     "holder_concentration": 81.35
   },
   "main_force": {
-    "cost": 13.3,
-    "distance": -6.39,
-    "trend": "DOWN"
+    "cost": 12.6,
+    "distance": 1.59,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-11"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-13"
 }

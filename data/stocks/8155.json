@@ -1,20 +1,20 @@
 {
   "stock_id": "8155",
   "name": "8155",
-  "date": "2026-05-11",
-  "close": 420.0,
-  "health_score": 130,
+  "date": "2026-05-13",
+  "close": 424.0,
+  "health_score": 146,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -1.741,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.073,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 3910.0,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.05
   },
   "tdcc": {
     "big_holder_change": 40.6,
@@ -22,8 +22,8 @@
     "holder_concentration": 55.4
   },
   "main_force": {
-    "cost": 397.32,
-    "distance": 5.71,
+    "cost": 397.52,
+    "distance": 6.66,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-13"
 }

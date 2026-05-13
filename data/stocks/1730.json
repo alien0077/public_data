@@ -1,18 +1,18 @@
 {
   "stock_id": "1730",
   "name": "1730",
-  "date": "2026-05-11",
-  "close": 52.7,
-  "health_score": 110,
+  "date": "2026-05-13",
+  "close": 52.8,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.005,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
+    "margin_change": 11.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 52.65,
-    "distance": 0.09,
+    "distance": 0.28,
     "trend": "UP"
   },
   "sector": {
@@ -31,13 +31,12 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 40
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-13"
 }

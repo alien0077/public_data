@@ -1,20 +1,20 @@
 {
   "stock_id": "6443",
   "name": "6443",
-  "date": "2026-05-11",
-  "close": 41.4,
-  "health_score": 130,
+  "date": "2026-05-13",
+  "close": 42.15,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 8,
-    "foreign_buy_ratio": 0.034,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.213,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 22771.0,
+    "short_change": 6055.0,
+    "short_margin_ratio": 26.59
   },
   "tdcc": {
     "big_holder_change": 17.4,
@@ -22,8 +22,8 @@
     "holder_concentration": 19.52
   },
   "main_force": {
-    "cost": 38.08,
-    "distance": 8.72,
+    "cost": 38.12,
+    "distance": 10.57,
     "trend": "UP"
   },
   "sector": {
@@ -37,12 +37,15 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 8 天"
+      "title": "今日強勢大漲"
+    },
+    {
+      "level": "YELLOW",
+      "title": "短線券資比過高"
     }
   ],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-11"
+  "data_version": "2026-05-13"
 }
