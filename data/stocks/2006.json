@@ -1,18 +1,18 @@
 {
   "stock_id": "2006",
   "name": "2006",
-  "date": "2026-05-13",
-  "close": 65.5,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-14",
+  "close": 66.1,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.112,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.022,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1005.0,
+    "margin_change": 995.0,
     "short_change": 9.0,
     "short_margin_ratio": 0.9
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 79.76
   },
   "main_force": {
-    "cost": 68.38,
-    "distance": -4.21,
+    "cost": 68.12,
+    "distance": -2.97,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-13"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-14"
 }

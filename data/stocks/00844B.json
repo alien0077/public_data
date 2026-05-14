@@ -1,12 +1,12 @@
 {
   "stock_id": "00844B",
   "name": "00844B",
-  "date": "2026-05-13",
-  "close": 31.71,
-  "health_score": 83,
+  "date": "2026-05-14",
+  "close": 31.76,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -19,7 +19,7 @@
   "tdcc": {},
   "main_force": {
     "cost": 31.79,
-    "distance": -0.25,
+    "distance": -0.09,
     "trend": "DOWN"
   },
   "sector": {
@@ -28,11 +28,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

@@ -1,12 +1,12 @@
 {
   "stock_id": "00739",
   "name": "00739",
-  "date": "2026-05-13",
-  "close": 29.56,
+  "date": "2026-05-14",
+  "close": 29.46,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -22,8 +22,8 @@
     "holder_concentration": 36.67
   },
   "main_force": {
-    "cost": 28.21,
-    "distance": 4.79,
+    "cost": 28.31,
+    "distance": 4.06,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

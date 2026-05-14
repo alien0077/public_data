@@ -1,18 +1,18 @@
 {
   "stock_id": "6508",
   "name": "6508",
-  "date": "2026-05-13",
-  "close": 24.1,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-14",
+  "close": 24.15,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.017,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.005,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 366.0,
+    "margin_change": 365.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 60.01
   },
   "main_force": {
-    "cost": 25.73,
-    "distance": -6.34,
+    "cost": 25.58,
+    "distance": -5.59,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-13"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-14"
 }

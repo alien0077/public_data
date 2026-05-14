@@ -1,13 +1,13 @@
 {
   "stock_id": "5344",
   "name": "5344",
-  "date": "2026-05-13",
-  "close": 15.6,
-  "health_score": 103,
+  "date": "2026-05-14",
+  "close": 16.7,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.013,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,21 +22,26 @@
     "holder_concentration": 75.57
   },
   "main_force": {
-    "cost": 16.18,
-    "distance": -3.58,
-    "trend": "DOWN"
+    "cost": 16.29,
+    "distance": 2.52,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-05-13"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-14"
 }

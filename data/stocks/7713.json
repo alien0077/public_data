@@ -1,13 +1,13 @@
 {
   "stock_id": "7713",
   "name": "7713",
-  "date": "2026-05-13",
+  "date": "2026-05-14",
   "close": 68.0,
-  "health_score": 130,
+  "health_score": 110,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.001,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.018,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 83.96
   },
   "main_force": {
-    "cost": 67.59,
-    "distance": 0.61,
+    "cost": 67.58,
+    "distance": 0.62,
     "trend": "UP"
   },
   "sector": {
@@ -31,13 +31,18 @@
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 40
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

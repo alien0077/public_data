@@ -1,20 +1,20 @@
 {
   "stock_id": "3665",
   "name": "3665",
-  "date": "2026-05-13",
-  "close": 2500.0,
+  "date": "2026-05-14",
+  "close": 2250.0,
   "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.036,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.43,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1821.0,
-    "short_change": 477.0,
-    "short_margin_ratio": 26.19
+    "margin_change": 2183.0,
+    "short_change": 66.0,
+    "short_margin_ratio": 3.02
   },
   "tdcc": {
     "big_holder_change": 44.45,
@@ -22,8 +22,8 @@
     "holder_concentration": 61.61
   },
   "main_force": {
-    "cost": 2599.5,
-    "distance": -3.83,
+    "cost": 2600.75,
+    "distance": -13.49,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,12 +34,9 @@
     "style": "Value",
     "score": 30
   },
-  "events": [
-    {
-      "level": "YELLOW",
-      "title": "短線券資比過高"
-    }
+  "events": [],
+  "raw_signals": [
+    "foreign_buy"
   ],
-  "raw_signals": [],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

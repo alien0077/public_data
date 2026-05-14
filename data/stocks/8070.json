@@ -1,20 +1,20 @@
 {
   "stock_id": "8070",
   "name": "8070",
-  "date": "2026-05-13",
-  "close": 46.3,
-  "health_score": 86,
+  "date": "2026-05-14",
+  "close": 45.6,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.08,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5293.0,
-    "short_change": 1.0,
-    "short_margin_ratio": 0.02
+    "margin_change": 5259.0,
+    "short_change": 649.0,
+    "short_margin_ratio": 12.34
   },
   "tdcc": {
     "big_holder_change": 73.15,
@@ -22,8 +22,8 @@
     "holder_concentration": 76.58
   },
   "main_force": {
-    "cost": 47.76,
-    "distance": -3.06,
+    "cost": 47.66,
+    "distance": -4.32,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-13"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-14"
 }

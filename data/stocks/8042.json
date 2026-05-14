@@ -1,20 +1,20 @@
 {
   "stock_id": "8042",
   "name": "8042",
-  "date": "2026-05-13",
-  "close": 106.0,
+  "date": "2026-05-14",
+  "close": 109.0,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 1.227,
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 0.252,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7682.0,
-    "short_change": 20.0,
-    "short_margin_ratio": 0.26
+    "margin_change": 7068.0,
+    "short_change": 504.0,
+    "short_margin_ratio": 7.13
   },
   "tdcc": {
     "big_holder_change": 66.07,
@@ -22,8 +22,8 @@
     "holder_concentration": 73.43
   },
   "main_force": {
-    "cost": 67.7,
-    "distance": 56.57,
+    "cost": 70.07,
+    "distance": 55.56,
     "trend": "UP"
   },
   "sector": {
@@ -37,16 +37,12 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 4 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
+      "title": "外資連買 5 天"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

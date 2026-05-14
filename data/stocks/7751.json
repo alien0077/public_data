@@ -1,13 +1,13 @@
 {
   "stock_id": "7751",
   "name": "7751",
-  "date": "2026-05-13",
-  "close": 1720.0,
-  "health_score": 103,
+  "date": "2026-05-14",
+  "close": 1550.0,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.245,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.115,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 47.08
   },
   "main_force": {
-    "cost": 2200.0,
-    "distance": -21.82,
+    "cost": 2179.5,
+    "distance": -28.88,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "00645",
   "name": "00645",
-  "date": "2026-05-13",
-  "close": 55.15,
-  "health_score": 150,
+  "date": "2026-05-14",
+  "close": 54.75,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 36.0,
+    "margin_change": 40.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 33.48
   },
   "main_force": {
-    "cost": 52.99,
-    "distance": 4.08,
+    "cost": 53.11,
+    "distance": 3.09,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

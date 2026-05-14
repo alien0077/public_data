@@ -1,20 +1,20 @@
 {
   "stock_id": "3045",
   "name": "3045",
-  "date": "2026-05-13",
-  "close": 112.0,
-  "health_score": 150,
+  "date": "2026-05-14",
+  "close": 115.0,
+  "health_score": 166,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.106,
+    "foreign_buy_days": 8,
+    "foreign_buy_ratio": 0.433,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 649.0,
-    "short_change": 78.0,
-    "short_margin_ratio": 12.02
+    "margin_change": 384.0,
+    "short_change": 88.0,
+    "short_margin_ratio": 22.92
   },
   "tdcc": {
     "big_holder_change": 89.52,
@@ -22,8 +22,8 @@
     "holder_concentration": 91.68
   },
   "main_force": {
-    "cost": 111.35,
-    "distance": 0.58,
+    "cost": 111.6,
+    "distance": 3.05,
     "trend": "UP"
   },
   "sector": {
@@ -37,12 +37,16 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 7 天"
+      "title": "外資連買 8 天"
+    },
+    {
+      "level": "YELLOW",
+      "title": "短線券資比過高"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

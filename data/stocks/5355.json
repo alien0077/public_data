@@ -1,13 +1,13 @@
 {
   "stock_id": "5355",
   "name": "5355",
-  "date": "2026-05-13",
-  "close": 6.9,
-  "health_score": 110,
-  "signal": "Bullish",
+  "date": "2026-05-14",
+  "close": 6.51,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.003,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -23,8 +23,8 @@
   },
   "main_force": {
     "cost": 6.7,
-    "distance": 2.99,
-    "trend": "UP"
+    "distance": -2.84,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
@@ -32,12 +32,9 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 40
+    "score": 0
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-05-13"
+  "raw_signals": [],
+  "data_version": "2026-05-14"
 }

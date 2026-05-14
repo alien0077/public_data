@@ -1,18 +1,18 @@
 {
   "stock_id": "6186",
   "name": "6186",
-  "date": "2026-05-13",
-  "close": 38.25,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-14",
+  "close": 39.55,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.249,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.205,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1227.0,
+    "margin_change": 1190.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 52.59
   },
   "main_force": {
-    "cost": 40.5,
-    "distance": -5.56,
+    "cost": 40.47,
+    "distance": -2.27,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-13"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-14"
 }

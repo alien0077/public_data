@@ -1,10 +1,10 @@
 {
   "stock_id": "4706",
   "name": "4706",
-  "date": "2026-05-13",
-  "close": 0.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-14",
+  "close": 32.0,
+  "health_score": 133,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -12,7 +12,7 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 110.0,
+    "margin_change": 109.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,21 @@
     "holder_concentration": 82.17
   },
   "main_force": {
-    "cost": 30.33,
-    "distance": -100.0,
-    "trend": "DOWN"
+    "cost": 30.4,
+    "distance": 5.26,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-13"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-14"
 }

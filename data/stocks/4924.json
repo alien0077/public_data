@@ -1,18 +1,18 @@
 {
   "stock_id": "4924",
   "name": "4924",
-  "date": "2026-05-13",
-  "close": 10.65,
-  "health_score": 133,
+  "date": "2026-05-14",
+  "close": 10.45,
+  "health_score": 110,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.013,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.005,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 389.0,
+    "margin_change": 392.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 10.42,
-    "distance": 2.21,
+    "distance": 0.29,
     "trend": "UP"
   },
   "sector": {
@@ -31,12 +31,13 @@
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 100
+    "style": "Value",
+    "score": 40
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

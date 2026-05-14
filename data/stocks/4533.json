@@ -1,20 +1,20 @@
 {
   "stock_id": "4533",
   "name": "4533",
-  "date": "2026-05-13",
-  "close": 31.25,
-  "health_score": 110,
+  "date": "2026-05-14",
+  "close": 30.65,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.049,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.03,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8796.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.02
+    "margin_change": 8815.0,
+    "short_change": 5.0,
+    "short_margin_ratio": 0.06
   },
   "tdcc": {
     "big_holder_change": 24.28,
@@ -22,9 +22,9 @@
     "holder_concentration": 27.92
   },
   "main_force": {
-    "cost": 31.14,
-    "distance": 0.35,
-    "trend": "UP"
+    "cost": 31.18,
+    "distance": -1.7,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
@@ -32,12 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 40
+    "score": 0
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
+    "foreign_buy"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

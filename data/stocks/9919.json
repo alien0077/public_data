@@ -1,18 +1,18 @@
 {
   "stock_id": "9919",
   "name": "9919",
-  "date": "2026-05-13",
+  "date": "2026-05-14",
   "close": 14.2,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.036,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.063,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8395.0,
+    "margin_change": 8397.0,
     "short_change": 7.0,
     "short_margin_ratio": 0.08
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 46.18
   },
   "main_force": {
-    "cost": 14.52,
-    "distance": -2.2,
+    "cost": 14.47,
+    "distance": -1.87,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

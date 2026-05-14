@@ -1,9 +1,9 @@
 {
   "stock_id": "8101",
   "name": "8101",
-  "date": "2026-05-13",
-  "close": 13.0,
-  "health_score": 86,
+  "date": "2026-05-14",
+  "close": 13.6,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -22,19 +22,21 @@
     "holder_concentration": 81.58
   },
   "main_force": {
-    "cost": 13.15,
-    "distance": -1.14,
-    "trend": "DOWN"
+    "cost": 13.16,
+    "distance": 3.34,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-13"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-14"
 }

@@ -1,9 +1,9 @@
 {
   "stock_id": "00683L",
   "name": "00683L",
-  "date": "2026-05-13",
-  "close": 20.8,
-  "health_score": 86,
+  "date": "2026-05-14",
+  "close": 20.95,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -19,18 +19,20 @@
   "tdcc": {},
   "main_force": {
     "cost": 20.85,
-    "distance": -0.24,
-    "trend": "DOWN"
+    "distance": 0.48,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-13"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-14"
 }

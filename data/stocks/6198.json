@@ -1,9 +1,9 @@
 {
   "stock_id": "6198",
   "name": "6198",
-  "date": "2026-05-13",
-  "close": 21.95,
-  "health_score": 86,
+  "date": "2026-05-14",
+  "close": 22.4,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -22,19 +22,21 @@
     "holder_concentration": 94.14
   },
   "main_force": {
-    "cost": 22.0,
-    "distance": -0.23,
-    "trend": "DOWN"
+    "cost": 22.01,
+    "distance": 1.77,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-13"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-14"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "5511",
   "name": "5511",
-  "date": "2026-05-13",
+  "date": "2026-05-14",
   "close": 72.4,
-  "health_score": 150,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.012,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.056,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 505.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 515.0,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.19
   },
   "tdcc": {
     "big_holder_change": 50.96,
@@ -22,8 +22,8 @@
     "holder_concentration": 63.53
   },
   "main_force": {
-    "cost": 70.65,
-    "distance": 2.48,
+    "cost": 70.7,
+    "distance": 2.4,
     "trend": "UP"
   },
   "sector": {
@@ -36,8 +36,7 @@
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

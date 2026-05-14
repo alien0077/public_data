@@ -1,20 +1,20 @@
 {
   "stock_id": "2022",
   "name": "2022",
-  "date": "2026-05-13",
-  "close": 8.28,
-  "health_score": 103,
-  "signal": "Bullish",
+  "date": "2026-05-14",
+  "close": 7.9,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.027,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.362,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1075.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 1109.0,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.18
   },
   "tdcc": {
     "big_holder_change": 36.07,
@@ -22,8 +22,8 @@
     "holder_concentration": 38.97
   },
   "main_force": {
-    "cost": 8.38,
-    "distance": -1.19,
+    "cost": 8.33,
+    "distance": -5.16,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,9 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-13"
+  "raw_signals": [],
+  "data_version": "2026-05-14"
 }

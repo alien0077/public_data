@@ -1,6 +1,6 @@
 {
   "symbol": "00983B",
-  "updated_at": "2026-05-13",
+  "updated_at": "2026-05-14",
   "lines": [
     {
       "id": "L_9",
@@ -63,9 +63,9 @@
       "price": 15.52,
       "start_idx": 94,
       "start_date": "2025-09-23",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 242,
+      "end_date": "2026-05-14",
+      "broken": true,
       "strength": 1
     },
     {
@@ -87,17 +87,6 @@
       "start_date": "2025-11-27",
       "end_idx": 194,
       "end_date": "2026-03-02",
-      "broken": true,
-      "strength": 1
-    },
-    {
-      "id": "H_153",
-      "type": "high",
-      "price": 16.22,
-      "start_idx": 153,
-      "start_date": "2025-12-19",
-      "end_idx": 170,
-      "end_date": "2026-01-15",
       "broken": true,
       "strength": 1
     },
@@ -203,12 +192,6 @@
   ],
   "events": [
     {
-      "type": "BOS_UP",
-      "price": 16.22,
-      "idx": 170,
-      "date": "2026-01-15"
-    },
-    {
       "type": "CHOCH_DOWN",
       "price": 15.95,
       "idx": 180,
@@ -261,6 +244,12 @@
       "price": 15.67,
       "idx": 237,
       "date": "2026-05-05"
+    },
+    {
+      "type": "CHOCH_DOWN",
+      "price": 15.52,
+      "idx": 242,
+      "date": "2026-05-14"
     }
   ]
 }

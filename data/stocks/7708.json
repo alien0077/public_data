@@ -1,13 +1,13 @@
 {
   "stock_id": "7708",
   "name": "7708",
-  "date": "2026-05-13",
-  "close": 91.3,
-  "health_score": 83,
+  "date": "2026-05-14",
+  "close": 94.4,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.008,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.02,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,21 +22,22 @@
     "holder_concentration": 63.56
   },
   "main_force": {
-    "cost": 91.82,
-    "distance": -0.57,
-    "trend": "DOWN"
+    "cost": 91.93,
+    "distance": 2.69,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

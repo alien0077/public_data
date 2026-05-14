@@ -1,13 +1,13 @@
 {
   "stock_id": "7823",
   "name": "7823",
-  "date": "2026-05-13",
-  "close": 90.2,
-  "health_score": 133,
+  "date": "2026-05-14",
+  "close": 98.5,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.006,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.161,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 71.83
   },
   "main_force": {
-    "cost": 82.57,
-    "distance": 9.24,
+    "cost": 83.54,
+    "distance": 17.91,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-13"
+  "data_version": "2026-05-14"
 }

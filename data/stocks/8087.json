@@ -1,18 +1,18 @@
 {
   "stock_id": "8087",
   "name": "8087",
-  "date": "2026-05-13",
-  "close": 33.0,
-  "health_score": 83,
+  "date": "2026-05-14",
+  "close": 35.35,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.005,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.084,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 71.0,
+    "margin_change": 75.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,21 +22,26 @@
     "holder_concentration": 58.3
   },
   "main_force": {
-    "cost": 34.28,
-    "distance": -3.73,
-    "trend": "DOWN"
+    "cost": 34.24,
+    "distance": 3.24,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-05-13"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-14"
 }
