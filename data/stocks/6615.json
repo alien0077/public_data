@@ -1,13 +1,13 @@
 {
   "stock_id": "6615",
   "name": "6615",
-  "date": "2026-05-14",
-  "close": 33.1,
-  "health_score": 103,
+  "date": "2026-05-15",
+  "close": 32.75,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.014,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.023,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 51.46
   },
   "main_force": {
-    "cost": 33.25,
-    "distance": -0.45,
+    "cost": 33.2,
+    "distance": -1.36,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-14"
+  "data_version": "2026-05-15"
 }

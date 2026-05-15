@@ -1,20 +1,20 @@
 {
   "stock_id": "2597",
   "name": "2597",
-  "date": "2026-05-14",
-  "close": 158.0,
-  "health_score": 113,
+  "date": "2026-05-15",
+  "close": 162.5,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.016,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.075,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 979.0,
+    "margin_change": 1136.0,
     "short_change": 10.0,
-    "short_margin_ratio": 1.02
+    "short_margin_ratio": 0.88
   },
   "tdcc": {
     "big_holder_change": 74.47,
@@ -22,8 +22,8 @@
     "holder_concentration": 78.45
   },
   "main_force": {
-    "cost": 155.2,
-    "distance": 1.8,
+    "cost": 155.68,
+    "distance": 4.38,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-14"
+  "data_version": "2026-05-15"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "6442",
   "name": "6442",
-  "date": "2026-05-14",
-  "close": 1855.0,
-  "health_score": 100,
+  "date": "2026-05-15",
+  "close": 1740.0,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.168,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 1.064,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5170.0,
-    "short_change": 72.0,
-    "short_margin_ratio": 1.39
+    "margin_change": 5150.0,
+    "short_change": 89.0,
+    "short_margin_ratio": 1.73
   },
   "tdcc": {
     "big_holder_change": 39.57,
@@ -22,8 +22,8 @@
     "holder_concentration": 58.79
   },
   "main_force": {
-    "cost": 2048.25,
-    "distance": -9.43,
+    "cost": 2031.5,
+    "distance": -14.35,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-14"
+  "data_version": "2026-05-15"
 }

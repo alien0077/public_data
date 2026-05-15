@@ -1,25 +1,25 @@
 {
   "stock_id": "00987A",
   "name": "00987A",
-  "date": "2026-05-14",
-  "close": 17.24,
-  "health_score": 113,
+  "date": "2026-05-15",
+  "close": 16.5,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3739.0,
+    "margin_change": 3246.0,
     "short_change": 22.0,
-    "short_margin_ratio": 0.59
+    "short_margin_ratio": 0.68
   },
   "tdcc": {},
   "main_force": {
-    "cost": 16.15,
-    "distance": 6.75,
+    "cost": 16.26,
+    "distance": 1.48,
     "trend": "UP"
   },
   "sector": {
@@ -32,7 +32,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-14"
+  "data_version": "2026-05-15"
 }

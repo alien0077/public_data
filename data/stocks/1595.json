@@ -1,20 +1,20 @@
 {
   "stock_id": "1595",
   "name": "1595",
-  "date": "2026-05-14",
-  "close": 90.2,
-  "health_score": 113,
+  "date": "2026-05-15",
+  "close": 85.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.002,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.011,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7222.0,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.04
+    "margin_change": 7055.0,
+    "short_change": 13.0,
+    "short_margin_ratio": 0.18
   },
   "tdcc": {
     "big_holder_change": 39.34,
@@ -22,8 +22,8 @@
     "holder_concentration": 51.92
   },
   "main_force": {
-    "cost": 69.56,
-    "distance": 29.67,
+    "cost": 71.32,
+    "distance": 19.18,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-14"
+  "data_version": "2026-05-15"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "8071",
   "name": "8071",
-  "date": "2026-05-14",
-  "close": 18.3,
-  "health_score": 133,
+  "date": "2026-05-15",
+  "close": 19.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.023,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.048,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3131.0,
+    "margin_change": 2913.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 37.73
   },
   "main_force": {
-    "cost": 16.61,
-    "distance": 10.17,
+    "cost": 16.74,
+    "distance": 13.5,
     "trend": "UP"
   },
   "sector": {
@@ -34,14 +34,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-14"
+  "data_version": "2026-05-15"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "2719",
   "name": "2719",
-  "date": "2026-05-14",
-  "close": 25.9,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-15",
+  "close": 25.55,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.003,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 77.0,
+    "margin_change": 76.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 91.02
   },
   "main_force": {
-    "cost": 27.88,
-    "distance": -7.1,
+    "cost": 27.67,
+    "distance": -7.66,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-14"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

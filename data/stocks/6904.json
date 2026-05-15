@@ -1,10 +1,10 @@
 {
   "stock_id": "6904",
   "name": "6904",
-  "date": "2026-05-14",
-  "close": 0.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-15",
+  "close": 116.0,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -22,19 +22,21 @@
     "holder_concentration": 79.9
   },
   "main_force": {
-    "cost": 105.78,
-    "distance": -100.0,
-    "trend": "DOWN"
+    "cost": 105.62,
+    "distance": 9.83,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-14"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-15"
 }

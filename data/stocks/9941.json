@@ -1,20 +1,20 @@
 {
   "stock_id": "9941",
   "name": "9941",
-  "date": "2026-05-14",
+  "date": "2026-05-15",
   "close": 73.1,
-  "health_score": 66,
-  "signal": "Neutral",
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.07,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.028,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1272.0,
+    "margin_change": 1216.0,
     "short_change": 5.0,
-    "short_margin_ratio": 0.39
+    "short_margin_ratio": 0.41
   },
   "tdcc": {
     "big_holder_change": 65.12,
@@ -22,8 +22,8 @@
     "holder_concentration": 68.4
   },
   "main_force": {
-    "cost": 77.11,
-    "distance": -5.2,
+    "cost": 76.97,
+    "distance": -5.03,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-14"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

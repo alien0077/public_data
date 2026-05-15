@@ -1,12 +1,12 @@
 {
   "stock_id": "6907",
   "name": "6907",
-  "date": "2026-05-14",
-  "close": 122.0,
-  "health_score": 86,
+  "date": "2026-05-15",
+  "close": 118.0,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 126.25,
-    "distance": -3.37,
+    "cost": 125.78,
+    "distance": -6.19,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-14"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

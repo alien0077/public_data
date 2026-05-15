@@ -1,18 +1,18 @@
 {
   "stock_id": "3527",
   "name": "3527",
-  "date": "2026-05-14",
-  "close": 61.9,
-  "health_score": 150,
+  "date": "2026-05-15",
+  "close": 60.0,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.084,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.124,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1246.0,
+    "margin_change": 1229.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 29.26
   },
   "main_force": {
-    "cost": 59.28,
-    "distance": 4.42,
+    "cost": 59.46,
+    "distance": 0.91,
     "trend": "UP"
   },
   "sector": {
@@ -32,17 +32,11 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-14"
+  "data_version": "2026-05-15"
 }

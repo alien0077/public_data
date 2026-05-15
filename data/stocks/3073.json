@@ -1,20 +1,20 @@
 {
   "stock_id": "3073",
   "name": "3073",
-  "date": "2026-05-14",
-  "close": 20.0,
-  "health_score": 83,
+  "date": "2026-05-15",
+  "close": 22.0,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.066,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.271,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 749.0,
-    "short_change": 1.0,
-    "short_margin_ratio": 0.13
+    "margin_change": 746.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 39.09,
@@ -22,8 +22,8 @@
     "holder_concentration": 54.65
   },
   "main_force": {
-    "cost": 23.94,
-    "distance": -16.46,
+    "cost": 23.76,
+    "distance": -7.41,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-14"
+  "data_version": "2026-05-15"
 }

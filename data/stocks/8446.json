@@ -1,18 +1,18 @@
 {
   "stock_id": "8446",
   "name": "8446",
-  "date": "2026-05-14",
-  "close": 83.6,
+  "date": "2026-05-15",
+  "close": 84.0,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.047,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.146,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 258.0,
+    "margin_change": 256.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 48.23
   },
   "main_force": {
-    "cost": 87.04,
-    "distance": -3.95,
+    "cost": 86.32,
+    "distance": -2.69,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-14"
+  "data_version": "2026-05-15"
 }

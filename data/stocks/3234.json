@@ -1,13 +1,13 @@
 {
   "stock_id": "3234",
   "name": "3234",
-  "date": "2026-05-14",
-  "close": 99.5,
-  "health_score": 86,
+  "date": "2026-05-15",
+  "close": 96.5,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.142,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.005,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 28.53
   },
   "main_force": {
-    "cost": 109.02,
-    "distance": -8.73,
+    "cost": 107.95,
+    "distance": -10.61,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-14"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

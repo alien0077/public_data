@@ -1,20 +1,20 @@
 {
   "stock_id": "8033",
   "name": "8033",
-  "date": "2026-05-14",
-  "close": 137.5,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-15",
+  "close": 140.5,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.222,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.577,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7291.0,
-    "short_change": 68.0,
-    "short_margin_ratio": 0.93
+    "margin_change": 7189.0,
+    "short_change": 70.0,
+    "short_margin_ratio": 0.97
   },
   "tdcc": {
     "big_holder_change": 30.01,
@@ -22,8 +22,8 @@
     "holder_concentration": 39.45
   },
   "main_force": {
-    "cost": 148.52,
-    "distance": -7.42,
+    "cost": 148.7,
+    "distance": -5.51,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-14"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

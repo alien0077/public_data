@@ -1,13 +1,13 @@
 {
   "stock_id": "1341",
   "name": "1341",
-  "date": "2026-05-14",
-  "close": 60.7,
-  "health_score": 86,
+  "date": "2026-05-15",
+  "close": 61.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.006,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.004,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 85.0
   },
   "main_force": {
-    "cost": 60.92,
-    "distance": -0.36,
-    "trend": "DOWN"
+    "cost": 60.98,
+    "distance": 0.03,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-14"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-15"
 }

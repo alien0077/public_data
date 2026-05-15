@@ -1,12 +1,12 @@
 {
   "stock_id": "00848B",
   "name": "00848B",
-  "date": "2026-05-14",
-  "close": 34.18,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-15",
+  "close": 34.0,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 34.4,
-    "distance": -0.64,
+    "cost": 34.36,
+    "distance": -1.05,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-14"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

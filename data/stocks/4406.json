@@ -1,13 +1,13 @@
 {
   "stock_id": "4406",
   "name": "4406",
-  "date": "2026-05-14",
-  "close": 10.0,
-  "health_score": 86,
+  "date": "2026-05-15",
+  "close": 9.91,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.002,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.008,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 10.04,
-    "distance": -0.4,
+    "distance": -1.29,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-14"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "4128",
   "name": "4128",
-  "date": "2026-05-14",
-  "close": 15.15,
-  "health_score": 103,
-  "signal": "Bullish",
+  "date": "2026-05-15",
+  "close": 14.6,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.086,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.157,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7292.0,
+    "margin_change": 7352.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 43.83
   },
   "main_force": {
-    "cost": 15.97,
-    "distance": -5.13,
+    "cost": 15.86,
+    "distance": -7.94,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,16 +32,9 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-14"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-15"
 }

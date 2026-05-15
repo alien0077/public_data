@@ -1,18 +1,18 @@
 {
   "stock_id": "3310",
   "name": "3310",
-  "date": "2026-05-14",
-  "close": 70.1,
-  "health_score": 130,
+  "date": "2026-05-15",
+  "close": 69.5,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.005,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2844.0,
+    "margin_change": 2854.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,22 +22,19 @@
     "holder_concentration": 83.29
   },
   "main_force": {
-    "cost": 69.81,
-    "distance": 0.42,
-    "trend": "UP"
+    "cost": 69.7,
+    "distance": -0.29,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 30
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-05-14"
+  "raw_signals": [],
+  "data_version": "2026-05-15"
 }

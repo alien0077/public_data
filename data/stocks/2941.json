@@ -1,12 +1,12 @@
 {
   "stock_id": "2941",
   "name": "2941",
-  "date": "2026-05-14",
-  "close": 31.7,
-  "health_score": 103,
+  "date": "2026-05-15",
+  "close": 32.9,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,30 +18,21 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 32.54,
-    "distance": -2.58,
-    "trend": "DOWN"
+    "cost": 32.4,
+    "distance": 1.54,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-14"
+  "data_version": "2026-05-15"
 }
