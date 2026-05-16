@@ -1829,7 +1829,7 @@
     "win_rate": 0.4833333333333334
   },
   "portfolio": {
-    "cash": 341343.0,
+    "cash": 588491.0,
     "positions": {
       "trend": [
         {
@@ -1839,16 +1839,8 @@
           "shares": 72,
           "max_price": 2745.0,
           "type": "trend",
-          "cost": 197640.0
-        },
-        {
-          "stock": "6861",
-          "entry_price": 360.5,
-          "entry_date": "2026-05-04",
-          "shares": 548,
-          "max_price": 360.5,
-          "type": "trend",
-          "cost": 197554.0
+          "cost": 197640.0,
+          "max_return": -0.032786885245901676
         },
         {
           "stock": "6515",
@@ -1857,7 +1849,8 @@
           "shares": 18,
           "max_price": 10700.0,
           "type": "trend",
-          "cost": 192600.0
+          "cost": 192600.0,
+          "max_return": -0.08598130841121499
         }
       ],
       "mr": []
@@ -2873,6 +2866,15 @@
     "mr": 75
   },
   "trade_log": [
+    {
+      "stock": "6861",
+      "entry_date": "2026-05-04",
+      "exit_date": "2026-05-15",
+      "return": 0.251,
+      "reason": "TAKE_PROFIT (25%)",
+      "entry_reason": "SIGNAL",
+      "action": "SELL"
+    },
     {
       "stock": "6683",
       "entry_date": "2026-05-04",
