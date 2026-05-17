@@ -2,7 +2,7 @@
   "strategies": [
     {
       "dsl": "rs > 90 AND pct > 2",
-      "exit_dsl": "rs < 91",
+      "exit_dsl": "rs < 91 OR max_return > 0.25",
       "desc": "TREND Ensemble Fund",
       "sharpe": 8.48,
       "total_return": 2.7663,
@@ -13,7 +13,7 @@
     },
     {
       "dsl": "rsi < 35",
-      "exit_dsl": "rsi > 75",
+      "exit_dsl": "rsi > 75 OR max_return > 0.15",
       "desc": "MR Ensemble Fund",
       "sharpe": -9.74,
       "total_return": -0.571,
