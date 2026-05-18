@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWStockTracker Web - Private</title>
+    <!-- 引入 Tailwind CSS (UI 框架) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 TradingView Lightweight Charts (專業圖表庫) -->
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <!-- 引入 Lucide Icons (圖示) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        .chart-container { height: calc(100vh - 180px); }
+    </style>
+</head>
+<body class="p-4">
+
+    <!-- 頂部導航欄 -->
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+        <div class="flex items-center gap-3">
+            <div class="bg-blue-600 p-2 rounded-lg"><i data-lucide="trending-up" class="text-white"></i></div>
+            <h1 class="text-2xl font-bold tracking-tight">TWStock Tracker <span class="text-blue-500 text-sm font-normal">Cloud v1.0</span></h1>
+        </div>
+        
+        <div class="flex gap-2 w-full md:w-auto">
+            <input type="text" id="symbolInput" placeholder="輸入代號 (如 2330)" 
+                class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-40 text-center font-bold">
+            <button onclick="loadStockData()" class="bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded-lg font-bold transition-all flex items-center gap-2">
+                <i data-lucide="search" size="18"></i> 查詢
+            </button>
+        </div>
+    </div>
+
+    <!-- 資訊面板 -->
+    <div id="stockInfo" class="max-w-7xl mx-auto mb-4 hidden">
+        <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700 flex flex-wrap gap-8 items-center">
+            <div>
+                <span class="text-slate-400 text-xs block mb-1 uppercase tracking-wider">Symbol</span>
+                <span id="displaySymbol" class="text-xl font-bold">-</span>
+            </div>
+            <div>
+                <span class="text-slate-400 text-xs block mb-1 uppercase tracking-wider">Price</span>
+                <span id="displayPrice" class="text-2xl font-bold">-</span>
+            </div>
+            <div>
+                <span class="text-slate-400 text-xs block mb-1 uppercase tracking-wider">Change</span>
+                <span id="displayChange" class="text-xl font-bold">-</span>
+            </div>
+            <div class="ml-auto hidden md:block">
+                <span class="text-slate-500 text-xs italic">Data Source: GitHub + Yahoo Real-time</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 圖表容器 -->
+    <div class="max-w-7xl mx-auto bg-slate-900 rounded-2xl border border-slate-800 p-2 shadow-2xl relative">
+        <div id="loadingOverlay" class="absolute inset-0 bg-slate-900/80 flex items-center justify-center z-10 hidden">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+        </div>
+        <div id="tvChart" class="chart-container w-full"></div>
+    </div>
+
+    <script>
+        // --- 設定區 ---
+        const CONFIG = {
+            GITHUB_BASE: "https://alien0077.github.io/Public_Data/data",
+            WORKER_URL: "https://alienstocks.alien0077.workers.dev",
+            MY_SECRET: localStorage.getItem("dashboard_key") || ""
+        };
+
+        let chart, candleSeries;
+
+        // 初始化圖表
+        function initChart() {
+            const chartOptions = {
+                layout: { textColor: '#94a3b8', background: { type: 'solid', color: 'transparent' } },
+                grid: { vertLines: { color: '#1e293b' }, horzLines: { color: '#1e293b' } },
+                crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+                rightPriceScale: { borderColor: '#1e293b' },
+                timeScale: { borderColor: '#1e293b' },
+            };
+            chart = LightweightCharts.createChart(document.getElementById('tvChart'), chartOptions);
+            candleSeries = chart.addCandlestickSeries({
+                upColor: '#ef4444', downColor: '#22c55e', borderVisible: false,
+                wickUpColor: '#ef4444', wickDownColor: '#22c55e',
+            });
+
+            window.addEventListener('resize', () => {
+                chart.resize(document.getElementById('tvChart').clientWidth, document.getElementById('tvChart').clientHeight);
+            });
+        }
+
+        // 解析 Yahoo 1m 數據並合成當日 K 棒
+        function synthesizeToday(result) {
+            const indicators = result.indicators.quote[0];
+            const meta = result.meta;
+            const timestamps = result.timestamp;
+            
+            if (!timestamps || timestamps.length === 0) return null;
+
+            // 計算當日 OHLCV
+            const validHighs = indicators.high.filter(v => v != null);
+            const validLows = indicators.low.filter(v => v != null);
+            
+            return {
+                time: new Date(meta.regularMarketTime * 1000).toISOString().split('T')[0],
+                open: indicators.open.find(v => v != null),
+                high: Math.max(...validHighs),
+                low: Math.min(...validLows),
+                close: meta.regularMarketPrice,
+                volume: indicators.volume.reduce((a, b) => a + (b || 0), 0)
+            };
+        }
+
+        // 主加載邏輯
+        async function loadStockData() {
+            const symbol = document.getElementById('symbolInput').value.trim();
+            if (!symbol) return alert("請輸入股票代號");
+
+            // 安全檢查：如果沒有密鑰，詢問用戶
+            if (!CONFIG.MY_SECRET) {
+                const key = prompt("請輸入訪問密鑰 (Access Key):");
+                if (!key) return;
+                CONFIG.MY_SECRET = key;
+                localStorage.setItem("dashboard_key", key);
+            }
+
+            document.getElementById('loadingOverlay').classList.remove('hidden');
+            
+            try {
+                // 1. 抓取 GitHub 歷史數據
+                const historyUrl = `${CONFIG.GITHUB_BASE}/daily/tw/${symbol}.json`;
+                const historyResp = await fetch(historyUrl);
+                const historyJson = await historyResp.json();
+                
+                // 2. 抓取 Yahoo 即時數據 (透過 Worker)
+                const yahooSymbol = symbol.length >= 4 ? `${symbol}.TW` : symbol;
+                const liveUrl = `${CONFIG.WORKER_URL}/?s=${yahooSymbol}`;
+                const liveResp = await fetch(liveUrl, {
+                    headers: { "X-My-Dashboard-Key": CONFIG.MY_SECRET }
+                });
+
+                if (liveResp.status === 403) {
+                    localStorage.removeItem("dashboard_key");
+                    CONFIG.MY_SECRET = "";
+                    throw new Error("密鑰錯誤！請重新整理頁面輸入正確密鑰。");
+                }
+
+                const liveJson = await liveResp.json();
+                const todayCandle = synthesizeToday(liveJson.chart.result[0]);
+
+                // 3. 處理數據對齊
+                let allCandles = historyJson.stocks.map(d => ({
+                    time: d.date,
+                    open: d.open,
+                    high: d.high,
+                    low: d.low,
+                    close: d.close
+                }));
+
+                // 4. 合成當日
+                if (todayCandle) {
+                    const lastHistoryDate = allCandles[allCandles.length - 1].time;
+                    if (lastHistoryDate === todayCandle.time) {
+                        allCandles[allCandles.length - 1] = todayCandle;
+                    } else {
+                        allCandles.push(todayCandle);
+                    }
+                    
+                    // 更新資訊面板
+                    document.getElementById('stockInfo').classList.remove('hidden');
+                    document.getElementById('displaySymbol').innerText = symbol;
+                    document.getElementById('displayPrice').innerText = todayCandle.close;
+                    const change = todayCandle.close - allCandles[allCandles.length-2].close;
+                    const pct = (change / allCandles[allCandles.length-2].close * 100).toFixed(2);
+                    const displayChange = document.getElementById('displayChange');
+                    displayChange.innerText = `${change > 0 ? '+' : ''}${change.toFixed(2)} (${pct}%)`;
+                    displayChange.className = change >= 0 ? "text-xl font-bold text-red-500" : "text-xl font-bold text-green-500";
+                    document.getElementById('displayPrice').className = change >= 0 ? "text-2xl font-bold text-red-500" : "text-2xl font-bold text-green-500";
+                }
+
+                candleSeries.setData(allCandles);
+                chart.timeScale().fitContent();
+
+            } catch (err) {
+                console.error(err);
+                alert("載入失敗: " + err.message);
+            } finally {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+            }
+        }
+
+        // 啟動
+        initChart();
+        lucide.createIcons();
+        
+        // 支援 Enter 鍵查詢
+        document.getElementById('symbolInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') loadStockData();
+        });
+    </script>
+</body>
+</html>
