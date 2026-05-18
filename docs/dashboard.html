@@ -109,9 +109,12 @@
 
         // 解析 Yahoo 歷史數據
         function parseYahooHistory(result) {
+            if (!result || !result.timestamp || !result.indicators || !result.indicators.quote[0]) {
+                console.error("Yahoo 數據結構異常:", result);
+                return [];
+            }
             const timestamps = result.timestamp;
             const indicators = result.indicators.quote[0];
-            if (!timestamps) return [];
             
             return timestamps.map((t, i) => ({
                 time: new Date(t * 1000).toISOString().split('T')[0],
@@ -119,11 +122,12 @@
                 high: indicators.high[i],
                 low: indicators.low[i],
                 close: indicators.close[i]
-            })).filter(d => d.open != null && d.close != null);
+            })).filter(d => d.time && d.close != null);
         }
 
         // 解析 Yahoo 1m 數據並合成當日 K 棒
         function synthesizeToday(result) {
+            if (!result || !result.meta || !result.timestamp || !result.indicators) return null;
             const indicators = result.indicators.quote[0];
             const meta = result.meta;
             const timestamps = result.timestamp;
@@ -136,8 +140,8 @@
             return {
                 time: new Date(meta.regularMarketTime * 1000).toISOString().split('T')[0],
                 open: indicators.open.find(v => v != null),
-                high: Math.max(...validHighs),
-                low: Math.min(...validLows),
+                high: validHighs.length > 0 ? Math.max(...validHighs) : meta.regularMarketPrice,
+                low: validLows.length > 0 ? Math.min(...validLows) : meta.regularMarketPrice,
                 close: meta.regularMarketPrice,
                 volume: indicators.volume.reduce((a, b) => a + (b || 0), 0)
             };
@@ -158,23 +162,40 @@
             document.getElementById('loadingOverlay').classList.remove('hidden');
             
             try {
-                const yahooSymbol = symbol.length >= 4 && !symbol.includes('.') ? `${symbol}.TW` : symbol;
+                // 統一處理台股代號格式
+                let yahooSymbol = symbol;
+                if (symbol.length >= 4 && !symbol.includes('.')) {
+                    yahooSymbol = (parseInt(symbol) >= 1000 || symbol.startsWith('00')) ? `${symbol}.TW` : symbol;
+                }
                 
-                // 1. 抓取 Yahoo 歷史數據 (1年) - 透過 Worker
+                console.log("正在查詢:", yahooSymbol);
+
+                // 1. 抓取 Yahoo 歷史數據 (1年)
                 const historyUrl = `${CONFIG.WORKER_URL}/?s=${yahooSymbol}&r=1y&i=1d`;
                 const historyResp = await fetch(historyUrl, { headers: { "X-My-Dashboard-Key": CONFIG.MY_SECRET } });
-                if (historyResp.status === 403) throw new Error("密鑰錯誤！");
-                const historyJson = await historyResp.json();
-                let allCandles = parseYahooHistory(historyJson.chart.result[0]);
+                
+                if (historyResp.status === 403) {
+                    localStorage.removeItem("dashboard_key");
+                    throw new Error("密鑰錯誤！請重新整理頁面。");
+                }
 
-                // 2. 抓取 Yahoo 即時數據 (1m) - 用於合成今日最新狀態
+                const historyJson = await historyResp.json();
+                if (!historyJson.chart || !historyJson.chart.result) {
+                    throw new Error("Yahoo 找不到該股票資料，請檢查代號 (如 2330)。");
+                }
+
+                let allCandles = parseYahooHistory(historyJson.chart.result[0]);
+                if (allCandles.length === 0) throw new Error("該股票沒有歷史 K 線資料。");
+
+                // 2. 抓取 Yahoo 即時數據 (1m)
                 const liveUrl = `${CONFIG.WORKER_URL}/?s=${yahooSymbol}&r=1d&i=1m`;
                 const liveResp = await fetch(liveUrl, { headers: { "X-My-Dashboard-Key": CONFIG.MY_SECRET } });
                 const liveJson = await liveResp.json();
                 const todayCandle = synthesizeToday(liveJson.chart.result[0]);
 
-                // 3. 抓取 GitHub 項目特有數據 (健檢、訊號等)
+                // 3. 抓取您 GitHub 上的正確 JSON (個股摘要)
                 const projectUrl = `${CONFIG.GITHUB_BASE}/stocks/${symbol}.json`;
+                console.log("抓取 GitHub 項目數據:", projectUrl);
                 const projectResp = await fetch(projectUrl);
                 let projectData = null;
                 if (projectResp.ok) projectData = await projectResp.json();
