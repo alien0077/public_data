@@ -1,29 +1,29 @@
 {
   "stock_id": "2313",
   "name": "2313",
-  "date": "2026-05-15",
-  "close": 235.5,
-  "health_score": 103,
+  "date": "2026-05-18",
+  "close": 259.0,
+  "health_score": 140,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -1.212,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 1.111,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 45120.0,
-    "short_change": 371.0,
-    "short_margin_ratio": 0.82
+    "margin_change": 44515.0,
+    "short_change": 756.0,
+    "short_margin_ratio": 1.7
   },
   "tdcc": {
-    "big_holder_change": 60.53,
+    "big_holder_change": 59.6,
     "retail_holder_change": 0,
-    "holder_concentration": 65.84
+    "holder_concentration": 64.83
   },
   "main_force": {
-    "cost": 246.85,
-    "distance": -4.6,
+    "cost": 261.18,
+    "distance": -0.83,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 60
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-18"
 }

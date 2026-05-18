@@ -1,9 +1,9 @@
 {
   "stock_id": "3593",
   "name": "3593",
-  "date": "2026-05-15",
+  "date": "2026-05-18",
   "close": 17.5,
-  "health_score": 86,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -19,22 +19,24 @@
   "tdcc": {
     "big_holder_change": 50.01,
     "retail_holder_change": 0,
-    "holder_concentration": 62.63
+    "holder_concentration": 62.65
   },
   "main_force": {
-    "cost": 19.08,
-    "distance": -8.28,
-    "trend": "DOWN"
+    "cost": 16.08,
+    "distance": 8.83,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-18"
 }

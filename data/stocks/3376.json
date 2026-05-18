@@ -1,30 +1,30 @@
 {
   "stock_id": "3376",
   "name": "3376",
-  "date": "2026-05-15",
-  "close": 192.5,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-18",
+  "close": 205.5,
+  "health_score": 110,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.458,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.967,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 12369.0,
-    "short_change": 59.0,
-    "short_margin_ratio": 0.48
+    "margin_change": 12280.0,
+    "short_change": 20.0,
+    "short_margin_ratio": 0.16
   },
   "tdcc": {
-    "big_holder_change": 41.39,
+    "big_holder_change": 38.89,
     "retail_holder_change": 0,
-    "holder_concentration": 52.38
+    "holder_concentration": 48.48
   },
   "main_force": {
-    "cost": 205.4,
-    "distance": -6.28,
-    "trend": "DOWN"
+    "cost": 203.92,
+    "distance": 0.77,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,12 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-18"
 }

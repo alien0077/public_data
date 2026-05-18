@@ -1,12 +1,12 @@
 {
   "stock_id": "00867B",
   "name": "00867B",
-  "date": "2026-05-15",
-  "close": 31.15,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-18",
+  "close": 30.58,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 31.45,
-    "distance": -0.95,
+    "cost": 31.55,
+    "distance": -3.07,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-18"
 }

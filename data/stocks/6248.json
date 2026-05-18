@@ -1,29 +1,29 @@
 {
   "stock_id": "6248",
   "name": "6248",
-  "date": "2026-05-15",
-  "close": 18.55,
+  "date": "2026-05-18",
+  "close": 18.45,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.006,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 755.0,
+    "margin_change": 757.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 44.03,
+    "big_holder_change": 43.97,
     "retail_holder_change": 0,
-    "holder_concentration": 49.29
+    "holder_concentration": 49.23
   },
   "main_force": {
-    "cost": 19.56,
-    "distance": -5.16,
+    "cost": 20.0,
+    "distance": -7.75,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-18"
 }

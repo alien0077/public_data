@@ -1,12 +1,12 @@
 {
   "stock_id": "00719B",
   "name": "00719B",
-  "date": "2026-05-15",
-  "close": 30.83,
-  "health_score": 86,
+  "date": "2026-05-18",
+  "close": 30.92,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 30.97,
-    "distance": -0.45,
+    "cost": 31.3,
+    "distance": -1.21,
     "trend": "DOWN"
   },
   "sector": {
@@ -28,9 +28,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-18"
 }

@@ -1,9 +1,9 @@
 {
   "stock_id": "6222",
   "name": "6222",
-  "date": "2026-05-15",
-  "close": 21.05,
-  "health_score": 86,
+  "date": "2026-05-18",
+  "close": 21.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -22,19 +22,21 @@
     "holder_concentration": 90.1
   },
   "main_force": {
-    "cost": 21.54,
-    "distance": -2.27,
-    "trend": "DOWN"
+    "cost": 20.79,
+    "distance": 1.01,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-18"
 }

@@ -1,29 +1,29 @@
 {
   "stock_id": "4919",
   "name": "4919",
-  "date": "2026-05-15",
-  "close": 154.5,
-  "health_score": 146,
+  "date": "2026-05-18",
+  "close": 148.5,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.109,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.319,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 22240.0,
-    "short_change": 4166.0,
-    "short_margin_ratio": 18.73
+    "margin_change": 20940.0,
+    "short_change": 4318.0,
+    "short_margin_ratio": 20.62
   },
   "tdcc": {
-    "big_holder_change": 64.05,
+    "big_holder_change": 60.46,
     "retail_holder_change": 0,
-    "holder_concentration": 68.44
+    "holder_concentration": 64.5
   },
   "main_force": {
-    "cost": 148.78,
-    "distance": 3.84,
+    "cost": 111.36,
+    "distance": 33.35,
     "trend": "UP"
   },
   "sector": {
@@ -32,12 +32,17 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "YELLOW",
+      "title": "短線券資比過高"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-18"
 }

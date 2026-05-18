@@ -1,13 +1,13 @@
 {
   "stock_id": "4527",
   "name": "4527",
-  "date": "2026-05-15",
-  "close": 43.25,
-  "health_score": 133,
+  "date": "2026-05-18",
+  "close": 43.7,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 61.38,
+    "big_holder_change": 61.42,
     "retail_holder_change": 0,
-    "holder_concentration": 66.29
+    "holder_concentration": 66.34
   },
   "main_force": {
-    "cost": 42.98,
-    "distance": 0.63,
+    "cost": 43.09,
+    "distance": 1.42,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-18"
 }

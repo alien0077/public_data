@@ -1,25 +1,25 @@
 {
   "stock_id": "00715L",
   "name": "00715L",
-  "date": "2026-05-15",
-  "close": 64.2,
-  "health_score": 133,
+  "date": "2026-05-18",
+  "close": 69.15,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9776.0,
-    "short_change": 6710.0,
-    "short_margin_ratio": 68.64
+    "margin_change": 10262.0,
+    "short_change": 6851.0,
+    "short_margin_ratio": 66.76
   },
   "tdcc": {},
   "main_force": {
-    "cost": 58.66,
-    "distance": 9.44,
+    "cost": 54.0,
+    "distance": 28.06,
     "trend": "UP"
   },
   "sector": {
@@ -32,12 +32,17 @@
   },
   "events": [
     {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    },
+    {
       "level": "YELLOW",
       "title": "短線券資比過高"
     }
   ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-18"
 }

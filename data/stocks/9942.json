@@ -1,13 +1,13 @@
 {
   "stock_id": "9942",
   "name": "9942",
-  "date": "2026-05-15",
+  "date": "2026-05-18",
   "close": 116.5,
-  "health_score": 103,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.011,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.004,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -19,24 +19,24 @@
   "tdcc": {
     "big_holder_change": 38.55,
     "retail_holder_change": 0,
-    "holder_concentration": 51.81
+    "holder_concentration": 52.8
   },
   "main_force": {
-    "cost": 117.82,
-    "distance": -1.12,
-    "trend": "DOWN"
+    "cost": 116.2,
+    "distance": 0.26,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-18"
 }

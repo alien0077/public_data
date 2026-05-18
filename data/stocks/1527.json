@@ -1,29 +1,29 @@
 {
   "stock_id": "1527",
   "name": "1527",
-  "date": "2026-05-15",
-  "close": 32.05,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-18",
+  "close": 32.25,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.139,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.007,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 546.0,
+    "margin_change": 545.0,
     "short_change": 1.0,
     "short_margin_ratio": 0.18
   },
   "tdcc": {
-    "big_holder_change": 26.38,
+    "big_holder_change": 26.94,
     "retail_holder_change": 0,
-    "holder_concentration": 30.23
+    "holder_concentration": 30.82
   },
   "main_force": {
-    "cost": 32.62,
-    "distance": -1.75,
+    "cost": 32.67,
+    "distance": -1.29,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-18"
 }

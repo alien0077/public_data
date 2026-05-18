@@ -1,6 +1,6 @@
 {
   "symbol": "00984B",
-  "updated_at": "2026-05-15",
+  "updated_at": "2026-05-18",
   "lines": [
     {
       "id": "L_9",
@@ -52,8 +52,8 @@
       "price": 16.25,
       "start_idx": 94,
       "start_date": "2025-09-23",
-      "end_idx": 237,
-      "end_date": "2026-05-05",
+      "end_idx": 231,
+      "end_date": "2026-05-18",
       "broken": true,
       "strength": 1
     },
@@ -87,6 +87,17 @@
       "start_date": "2025-12-15",
       "end_idx": 202,
       "end_date": "2026-03-12",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "H_157",
+      "type": "high",
+      "price": 16.94,
+      "start_idx": 157,
+      "start_date": "2025-12-26",
+      "end_idx": 170,
+      "end_date": "2026-01-15",
       "broken": true,
       "strength": 1
     },
@@ -173,8 +184,8 @@
       "price": 16.27,
       "start_idx": 209,
       "start_date": "2026-03-23",
-      "end_idx": 237,
-      "end_date": "2026-05-05",
+      "end_idx": 231,
+      "end_date": "2026-05-18",
       "broken": true,
       "strength": 1
     },
@@ -188,20 +199,15 @@
       "end_date": null,
       "broken": false,
       "strength": 1
-    },
-    {
-      "id": "L_226",
-      "type": "low",
-      "price": 16.39,
-      "start_idx": 226,
-      "start_date": "2026-04-17",
-      "end_idx": 232,
-      "end_date": "2026-04-27",
-      "broken": true,
-      "strength": 1
     }
   ],
   "events": [
+    {
+      "type": "BOS_UP",
+      "price": 16.94,
+      "idx": 170,
+      "date": "2026-01-15"
+    },
     {
       "type": "BOS_UP",
       "price": 16.99,
@@ -246,21 +252,15 @@
     },
     {
       "type": "CHOCH_DOWN",
-      "price": 16.39,
-      "idx": 232,
-      "date": "2026-04-27"
-    },
-    {
-      "type": "CHOCH_DOWN",
       "price": 16.25,
-      "idx": 237,
-      "date": "2026-05-05"
+      "idx": 231,
+      "date": "2026-05-18"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 16.27,
-      "idx": 237,
-      "date": "2026-05-05"
+      "idx": 231,
+      "date": "2026-05-18"
     }
   ]
 }

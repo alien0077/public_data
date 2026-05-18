@@ -1,13 +1,13 @@
 {
   "stock_id": "3508",
   "name": "3508",
-  "date": "2026-05-15",
-  "close": 19.55,
+  "date": "2026-05-18",
+  "close": 21.25,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.087,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 32.93,
+    "big_holder_change": 32.98,
     "retail_holder_change": 0,
-    "holder_concentration": 41.95
+    "holder_concentration": 41.62
   },
   "main_force": {
-    "cost": 23.5,
-    "distance": -16.81,
+    "cost": 30.45,
+    "distance": -30.21,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-18"
 }
