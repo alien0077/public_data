@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TWStockTracker Web - Private</title>
+    <!-- 優先載入圖表庫 (改用 jsDelivr) -->
+    <script src="https://cdn.jsdelivr.net/npm/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #0f172a; color: #e2e8f0; font-family: 'Inter', sans-serif; }
@@ -14,7 +16,7 @@
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
         <div class="flex items-center gap-3">
             <div class="bg-blue-600 p-2 rounded-lg"><i data-lucide="trending-up" class="text-white"></i></div>
-            <h1 class="text-2xl font-bold tracking-tight">TWStock Tracker <span class="text-blue-500 text-sm font-normal">Cloud v1.0.6</span></h1>
+            <h1 class="text-2xl font-bold tracking-tight">TWStock Tracker <span class="text-blue-500 text-sm font-normal">Cloud v1.0.7</span></h1>
         </div>
         
         <div class="flex gap-2 w-full md:w-auto">
@@ -30,8 +32,8 @@
     </div>
 
     <div id="stockInfo" class="max-w-7xl mx-auto mb-4 hidden">
-        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
-            <div><span class="text-slate-400 text-xs block mb-1 uppercase">個股代號</span><span id="displaySymbol" class="text-xl font-bold">-</span></div>
+        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 grid grid-cols-2 md:grid-cols-4 gap-6 items-center text-center">
+            <div><span class="text-slate-400 text-xs block mb-1 uppercase">個股</span><span id="displaySymbol" class="text-xl font-bold">-</span></div>
             <div><span class="text-slate-400 text-xs block mb-1 uppercase">價格</span><span id="displayPrice" class="text-2xl font-bold">-</span></div>
             <div><span class="text-slate-400 text-xs block mb-1 uppercase">AI 評分</span><span id="displayHealth" class="text-2xl font-bold text-blue-400">-</span></div>
             <div><span class="text-slate-400 text-xs block mb-1 uppercase">訊號</span><span id="displaySignal" class="text-lg font-bold">-</span></div>
@@ -45,8 +47,7 @@
         <div id="tvChart" class="chart-container w-full"></div>
     </div>
 
-    <!-- 庫檔案移到最後 -->
-    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <!-- 底部載入圖示庫 -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
@@ -61,20 +62,29 @@
         let candleSeries = null;
 
         function initChart() {
-            if (typeof LightweightCharts === 'undefined') return false;
+            if (typeof LightweightCharts === 'undefined') {
+                console.error("LightweightCharts 尚未載入");
+                return false;
+            }
             const container = document.getElementById("tvChart");
             if (chart) chart.remove();
-            chart = LightweightCharts.createChart(container, {
-                layout: { textColor: "#94a3b8", background: { type: "solid", color: "transparent" } },
-                grid: { vertLines: { color: "#1e293b" }, horzLines: { color: "#1e293b" } },
-                rightPriceScale: { borderColor: "#1e293b" },
-                timeScale: { borderColor: "#1e293b" },
-            });
-            candleSeries = chart.addCandlestickSeries({
-                upColor: "#ef4444", downColor: "#22c55e", borderVisible: false,
-                wickUpColor: "#ef4444", wickDownColor: "#22c55e",
-            });
-            return true;
+            
+            try {
+                chart = LightweightCharts.createChart(container, {
+                    layout: { textColor: "#94a3b8", background: { type: "solid", color: "transparent" } },
+                    grid: { vertLines: { color: "#1e293b" }, horzLines: { color: "#1e293b" } },
+                    rightPriceScale: { borderColor: "#1e293b" },
+                    timeScale: { borderColor: "#1e293b" },
+                });
+                candleSeries = chart.addCandlestickSeries({
+                    upColor: "#ef4444", downColor: "#22c55e", borderVisible: false,
+                    wickUpColor: "#ef4444", wickDownColor: "#22c55e",
+                });
+                return true;
+            } catch (e) {
+                console.error("圖表初始化失敗:", e);
+                return false;
+            }
         }
 
         function resetKey() {
@@ -92,14 +102,17 @@
                 CONFIG.SECRET = key;
             }
 
-            // 智能等待圖表庫
+            // 確保圖表庫載入，若無則嘗試備援
             if (!candleSeries) {
-                let retries = 10;
-                while (retries > 0 && !initChart()) {
-                    await new Promise(r => setTimeout(r, 300));
-                    retries--;
+                if (!initChart()) {
+                    // 嘗試從備援 CDN 下載
+                    console.log("嘗試從備援 CDN 下載...");
+                    const script = document.createElement('script');
+                    script.src = "https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js";
+                    document.head.appendChild(script);
+                    await new Promise(r => setTimeout(r, 1000));
+                    if (!initChart()) return alert("無法載入圖表庫 (CDN 連線失敗)，請檢查您的網路是否阻擋了 unpkg.com 或 jsdelivr.net。");
                 }
-                if (!candleSeries) return alert("錯誤: 圖表庫載入超時，請檢查網路連線或重新整理頁面。");
             }
 
             const overlay = document.getElementById("loadingOverlay");
