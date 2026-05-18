@@ -4,270 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TWStockTracker Web - Private</title>
-    <!-- 引入 Tailwind CSS (UI 框架) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 TradingView Lightweight Charts (專業圖表庫) -->
     <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
-    <!-- 引入 Lucide Icons (圖示) -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { background-color: #0f172a; color: #e2e8f0; font-family: 'Inter', sans-serif; }
-        .chart-container { height: calc(100vh - 180px); }
+        .chart-container { height: calc(100vh - 220px); }
     </style>
 </head>
 <body class="p-4">
-
-    <!-- 頂部導航欄 -->
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
         <div class="flex items-center gap-3">
             <div class="bg-blue-600 p-2 rounded-lg"><i data-lucide="trending-up" class="text-white"></i></div>
-            <h1 class="text-2xl font-bold tracking-tight">TWStock Tracker <span class="text-blue-500 text-sm font-normal">Cloud v1.0.2</span></h1>
+            <h1 class="text-2xl font-bold tracking-tight">TWStock Tracker <span class="text-blue-500 text-sm font-normal">Cloud v1.0.3</span></h1>
         </div>
         
         <div class="flex gap-2 w-full md:w-auto">
             <input type="text" id="symbolInput" placeholder="輸入代號 (如 2330)" 
                 class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-40 text-center font-bold">
-            <button onclick="loadStockData()" class="bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded-lg font-bold transition-all flex items-center gap-2">
+            <button onclick="loadStockData()" class="bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded-lg font-bold transition-all flex items-center gap-2 text-white">
                 <i data-lucide="search" size="18"></i> 查詢
+            </button>
+            <button onclick="resetKey()" class="bg-slate-700 hover:bg-slate-600 p-2 rounded-lg text-slate-300 transition-all" title="清除密鑰">
+                <i data-lucide="key-round" size="18"></i>
             </button>
         </div>
     </div>
 
-    <!-- 資訊面板 -->
     <div id="stockInfo" class="max-w-7xl mx-auto mb-4 hidden">
         <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 grid grid-cols-2 md:grid-cols-5 gap-6 items-center">
-            <div>
-                <span class="text-slate-400 text-xs block mb-1 uppercase tracking-wider">個股代號</span>
-                <span id="displaySymbol" class="text-xl font-bold">-</span>
-            </div>
-            <div>
-                <span class="text-slate-400 text-xs block mb-1 uppercase tracking-wider">即時價格</span>
-                <span id="displayPrice" class="text-2xl font-bold">-</span>
-            </div>
-            <div>
-                <span class="text-slate-400 text-xs block mb-1 uppercase tracking-wider">今日漲跌</span>
-                <span id="displayChange" class="text-xl font-bold">-</span>
-            </div>
-            <div>
-                <span class="text-slate-400 text-xs block mb-1 uppercase tracking-wider">AI 健檢評分</span>
-                <span id="displayHealth" class="text-2xl font-bold text-blue-400">-</span>
-            </div>
-            <div>
-                <span class="text-slate-400 text-xs block mb-1 uppercase tracking-wider">技術訊號</span>
-                <span id="displaySignal" class="text-lg font-bold">-</span>
-            </div>
+            <div><span class="text-slate-400 text-xs block mb-1 uppercase">個股代號</span><span id="displaySymbol" class="text-xl font-bold">-</span></div>
+            <div><span class="text-slate-400 text-xs block mb-1 uppercase">即時價格</span><span id="displayPrice" class="text-2xl font-bold">-</span></div>
+            <div><span class="text-slate-400 text-xs block mb-1 uppercase">今日漲跌</span><span id="displayChange" class="text-xl font-bold">-</span></div>
+            <div><span class="text-slate-400 text-xs block mb-1 uppercase">AI 評分</span><span id="displayHealth" class="text-2xl font-bold text-blue-400">-</span></div>
+            <div><span class="text-slate-400 text-xs block mb-1 uppercase">技術訊號</span><span id="displaySignal" class="text-lg font-bold">-</span></div>
         </div>
-        
-        <!-- 額外量化資訊 -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
             <div class="bg-slate-800/30 p-4 rounded-lg border border-slate-700/50">
-                <h3 class="text-slate-500 text-xs font-bold mb-2 uppercase">法人與籌碼 (最新)</h3>
-                <div id="displayInstitutional" class="text-sm space-y-1">載入中...</div>
+                <h3 class="text-slate-500 text-xs font-bold mb-2 uppercase">法人籌碼</h3>
+                <div id="displayInstitutional" class="text-sm space-y-1">-</div>
             </div>
             <div class="bg-slate-800/30 p-4 rounded-lg border border-slate-700/50">
                 <h3 class="text-slate-500 text-xs font-bold mb-2 uppercase">資券變化</h3>
-                <div id="displayMargin" class="text-sm space-y-1">載入中...</div>
+                <div id="displayMargin" class="text-sm space-y-1">-</div>
             </div>
             <div class="bg-slate-800/30 p-4 rounded-lg border border-slate-700/50">
                 <h3 class="text-slate-500 text-xs font-bold mb-2 uppercase">大戶持股</h3>
-                <div id="displayTdcc" class="text-sm space-y-1">載入中...</div>
+                <div id="displayTdcc" class="text-sm space-y-1">-</div>
             </div>
         </div>
     </div>
 
-    <!-- 圖表容器 -->
-... (rest remains similar, updating script below) ...
+    <div class="max-w-7xl mx-auto bg-slate-900 rounded-2xl border border-slate-800 p-2 shadow-2xl relative">
+        <div id="loadingOverlay" class="absolute inset-0 bg-slate-900/80 flex items-center justify-center z-10 hidden">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+        </div>
+        <div id="tvChart" class="chart-container w-full"></div>
+    </div>
+
     <script>
-        // --- 設定區 ---
         const CONFIG = {
             GITHUB_BASE: "https://alien0077.github.io/Public_Data/data",
             WORKER_URL: "https://alienstocks.alien0077.workers.dev",
-            MY_SECRET: localStorage.getItem("dashboard_key") || ""
+            get SECRET() { return localStorage.getItem("dashboard_key") || ""; },
+            set SECRET(v) { localStorage.setItem("dashboard_key", v); }
         };
 
         let chart, candleSeries;
 
-        // 初始化圖表
         function initChart() {
             const chartOptions = {
-                layout: { textColor: '#94a3b8', background: { type: 'solid', color: 'transparent' } },
-                grid: { vertLines: { color: '#1e293b' }, horzLines: { color: '#1e293b' } },
-                crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
-                rightPriceScale: { borderColor: '#1e293b' },
-                timeScale: { borderColor: '#1e293b' },
+                layout: { textColor: "#94a3b8", background: { type: "solid", color: "transparent" } },
+                grid: { vertLines: { color: "#1e293b" }, horzLines: { color: "#1e293b" } },
+                rightPriceScale: { borderColor: "#1e293b" },
+                timeScale: { borderColor: "#1e293b" },
             };
-            chart = LightweightCharts.createChart(document.getElementById('tvChart'), chartOptions);
+            chart = LightweightCharts.createChart(document.getElementById("tvChart"), chartOptions);
             candleSeries = chart.addCandlestickSeries({
-                upColor: '#ef4444', downColor: '#22c55e', borderVisible: false,
-                wickUpColor: '#ef4444', wickDownColor: '#22c55e',
+                upColor: "#ef4444", downColor: "#22c55e", borderVisible: false,
+                wickUpColor: "#ef4444", wickDownColor: "#22c55e",
             });
-
-            window.addEventListener('resize', () => {
-                chart.resize(document.getElementById('tvChart').clientWidth, document.getElementById('tvChart').clientHeight);
+            window.addEventListener("resize", () => {
+                chart.resize(document.getElementById("tvChart").clientWidth, document.getElementById("tvChart").clientHeight);
             });
         }
 
-        // 解析 Yahoo 歷史數據
+        function resetKey() {
+            localStorage.removeItem("dashboard_key");
+            alert("密鑰已清除，下次查詢將重新詢問。");
+            location.reload();
+        }
+
         function parseYahooHistory(result) {
-            if (!result || !result.timestamp || !result.indicators || !result.indicators.quote[0]) {
-                console.error("Yahoo 數據結構異常:", result);
-                return [];
-            }
+            if (!result || !result.timestamp) return [];
             const timestamps = result.timestamp;
             const indicators = result.indicators.quote[0];
-            
             return timestamps.map((t, i) => ({
-                time: new Date(t * 1000).toISOString().split('T')[0],
-                open: indicators.open[i],
-                high: indicators.high[i],
-                low: indicators.low[i],
-                close: indicators.close[i]
+                time: new Date(t * 1000).toISOString().split("T")[0],
+                open: indicators.open[i], high: indicators.high[i], low: indicators.low[i], close: indicators.close[i]
             })).filter(d => d.time && d.close != null);
         }
 
-        // 解析 Yahoo 1m 數據並合成當日 K 棒
-        function synthesizeToday(result) {
-            if (!result || !result.meta || !result.timestamp || !result.indicators) return null;
-            const indicators = result.indicators.quote[0];
-            const meta = result.meta;
-            const timestamps = result.timestamp;
-            
-            if (!timestamps || timestamps.length === 0) return null;
-
-            const validHighs = indicators.high.filter(v => v != null);
-            const validLows = indicators.low.filter(v => v != null);
-            
-            return {
-                time: new Date(meta.regularMarketTime * 1000).toISOString().split('T')[0],
-                open: indicators.open.find(v => v != null),
-                high: validHighs.length > 0 ? Math.max(...validHighs) : meta.regularMarketPrice,
-                low: validLows.length > 0 ? Math.min(...validLows) : meta.regularMarketPrice,
-                close: meta.regularMarketPrice,
-                volume: indicators.volume.reduce((a, b) => a + (b || 0), 0)
-            };
-        }
-
-        // 主加載邏輯
         async function loadStockData() {
-            const symbol = document.getElementById('symbolInput').value.trim();
-            if (!symbol) return alert("請輸入股票代號");
+            const symbol = document.getElementById("symbolInput").value.trim();
+            if (!symbol) return alert("請輸入代號");
 
-            if (!CONFIG.MY_SECRET) {
+            if (!CONFIG.SECRET) {
                 const key = prompt("請輸入訪問密鑰 (Access Key):");
                 if (!key) return;
-                CONFIG.MY_SECRET = key;
-                localStorage.setItem("dashboard_key", key);
+                CONFIG.SECRET = key;
             }
 
-            document.getElementById('loadingOverlay').classList.remove('hidden');
+            const overlay = document.getElementById("loadingOverlay");
+            overlay.classList.remove("hidden");
             
             try {
-                // 統一處理台股代號格式
                 let yahooSymbol = symbol;
-                if (symbol.length >= 4 && !symbol.includes('.')) {
-                    yahooSymbol = (parseInt(symbol) >= 1000 || symbol.startsWith('00')) ? `${symbol}.TW` : symbol;
-                }
-                
-                console.log("正在查詢:", yahooSymbol);
-
-                // 1. 抓取 Yahoo 歷史數據 (1年)
-                const historyUrl = `${CONFIG.WORKER_URL}/?s=${yahooSymbol}&r=1y&i=1d`;
-                const historyResp = await fetch(historyUrl, { headers: { "X-My-Dashboard-Key": CONFIG.MY_SECRET } });
-                
-                if (historyResp.status === 403) {
-                    localStorage.removeItem("dashboard_key");
-                    throw new Error("密鑰錯誤！請重新整理頁面。");
+                if (symbol.length >= 4 && !symbol.includes(".")) {
+                    yahooSymbol = (parseInt(symbol) >= 1000 || symbol.startsWith("00")) ? `${symbol}.TW` : symbol;
                 }
 
-                const historyJson = await historyResp.json();
-                if (!historyJson.chart || !historyJson.chart.result) {
-                    throw new Error("Yahoo 找不到該股票資料，請檢查代號 (如 2330)。");
+                // 1. Yahoo History
+                const hUrl = `${CONFIG.WORKER_URL}/?s=${yahooSymbol}&r=1y&i=1d`;
+                const hResp = await fetch(hUrl, { headers: { "X-My-Dashboard-Key": CONFIG.SECRET } });
+                if (hResp.status === 403) {
+                    resetKey();
+                    throw new Error("密鑰錯誤，請重新輸入。");
                 }
+                const hJson = await hResp.json();
+                const candles = parseYahooHistory(hJson.chart.result[0]);
+                if (candles.length === 0) throw new Error("找不到歷史 K 線。");
 
-                let allCandles = parseYahooHistory(historyJson.chart.result[0]);
-                if (allCandles.length === 0) throw new Error("該股票沒有歷史 K 線資料。");
-
-                // 2. 抓取 Yahoo 即時數據 (1m)
-                const liveUrl = `${CONFIG.WORKER_URL}/?s=${yahooSymbol}&r=1d&i=1m`;
-                const liveResp = await fetch(liveUrl, { headers: { "X-My-Dashboard-Key": CONFIG.MY_SECRET } });
-                const liveJson = await liveResp.json();
-                const todayCandle = synthesizeToday(liveJson.chart.result[0]);
-
-                // 3. 抓取您 GitHub 上的正確 JSON (個股摘要)
-                const projectUrl = `${CONFIG.GITHUB_BASE}/stocks/${symbol}.json`;
-                console.log("抓取 GitHub 項目數據:", projectUrl);
-                const projectResp = await fetch(projectUrl);
-                let projectData = null;
-                if (projectResp.ok) projectData = await projectResp.json();
-
-                // 4. 合成今日與更新 UI
-                if (todayCandle) {
-                    const lastHistoryDate = allCandles[allCandles.length - 1].time;
-                    if (lastHistoryDate === todayCandle.time) {
-                        allCandles[allCandles.length - 1] = todayCandle;
-                    } else {
-                        allCandles.push(todayCandle);
-                    }
+                // 2. Project Data
+                const pUrl = `${CONFIG.GITHUB_BASE}/stocks/${symbol}.json`;
+                const pResp = await fetch(pUrl);
+                if (pResp.ok) {
+                    const pd = await pResp.json();
+                    document.getElementById("stockInfo").classList.remove("hidden");
+                    document.getElementById("displaySymbol").innerText = symbol;
+                    document.getElementById("displayPrice").innerText = candles[candles.length-1].close;
+                    document.getElementById("displayHealth").innerText = pd.health_score || "-";
+                    document.getElementById("displaySignal").innerText = pd.signal || "-";
+                    document.getElementById("displaySignal").className = pd.signal === "Bullish" ? "text-lg font-bold text-red-500" : "text-lg font-bold text-green-500";
                     
-                    document.getElementById('stockInfo').classList.remove('hidden');
-                    document.getElementById('displaySymbol').innerText = symbol;
-                    document.getElementById('displayPrice').innerText = todayCandle.close;
-                    
-                    const prevClose = allCandles[allCandles.length-2].close;
-                    const change = todayCandle.close - prevClose;
-                    const pct = (change / prevClose * 100).toFixed(2);
-                    const displayChange = document.getElementById('displayChange');
-                    displayChange.innerText = `${change > 0 ? '+' : ''}${change.toFixed(2)} (${pct}%)`;
-                    displayChange.className = change >= 0 ? "text-xl font-bold text-red-500" : "text-xl font-bold text-green-500";
-                    document.getElementById('displayPrice').className = change >= 0 ? "text-2xl font-bold text-red-500" : "text-2xl font-bold text-green-500";
+                    const inst = pd.institutional || {};
+                    document.getElementById("displayInstitutional").innerHTML = `外資買賣: ${inst.foreign_buy_days}天<br>佔比: ${inst.foreign_buy_ratio}%`;
+                    const margin = pd.margin || {};
+                    document.getElementById("displayMargin").innerHTML = `融資增減: ${margin.margin_change}<br>券資比: ${margin.short_margin_ratio}%`;
+                    const tdcc = pd.tdcc || {};
+                    document.getElementById("displayTdcc").innerHTML = `大戶變化: ${tdcc.big_holder_change}%<br>集中度: ${tdcc.holder_concentration}%`;
                 }
 
-                // 5. 更新項目特有 UI
-                if (projectData) {
-                    document.getElementById('displayHealth').innerText = projectData.health_score || "-";
-                    document.getElementById('displaySignal').innerText = projectData.signal || "-";
-                    document.getElementById('displaySignal').className = projectData.signal === "Bullish" ? "text-lg font-bold text-red-500" : "text-lg font-bold text-green-500";
-                    
-                    const inst = projectData.institutional || {};
-                    document.getElementById('displayInstitutional').innerHTML = `
-                        外資買賣: <span class="${inst.foreign_buy_days >= 0 ? 'text-red-400' : 'text-green-400'}">${inst.foreign_buy_days} 天</span><br>
-                        外資佔比: ${inst.foreign_buy_ratio}%<br>
-                        投信買賣: ${inst.trust_buy_days} 天
-                    `;
-                    
-                    const margin = projectData.margin || {};
-                    document.getElementById('displayMargin').innerHTML = `
-                        融資變化: ${margin.margin_change}<br>
-                        融券變化: ${margin.short_change}<br>
-                        券資比: ${margin.short_margin_ratio}%
-                    `;
-
-                    const tdcc = projectData.tdcc || {};
-                    document.getElementById('displayTdcc').innerHTML = `
-                        大戶增減: <span class="${tdcc.big_holder_change >= 0 ? 'text-red-400' : 'text-green-400'}">${tdcc.big_holder_change}%</span><br>
-                        散戶增減: ${tdcc.retail_holder_change}%<br>
-                        籌碼集中度: ${tdcc.holder_concentration}%
-                    `;
-                }
-
-                candleSeries.setData(allCandles);
+                candleSeries.setData(candles);
                 chart.timeScale().fitContent();
-
             } catch (err) {
-                console.error(err);
-                alert("載入失敗: " + err.message);
+                alert("錯誤: " + err.message);
             } finally {
-                document.getElementById('loadingOverlay').classList.add('hidden');
+                overlay.classList.add("hidden");
             }
         }
 
-        // 啟動
         initChart();
         lucide.createIcons();
-        document.getElementById('symbolInput').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') loadStockData();
-        });
+        document.getElementById("symbolInput").addEventListener("keypress", (e) => { if (e.key === "Enter") loadStockData(); });
     </script>
-
 </body>
 </html>
