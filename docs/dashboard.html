@@ -130,14 +130,21 @@
             document.getElementById('loadingOverlay').classList.remove('hidden');
             
             try {
-                // 1. 抓取 GitHub 歷史數據
-                const historyUrl = `${CONFIG.GITHUB_BASE}/daily/tw/${symbol}.json`;
+                // 1. 抓取 GitHub 歷史數據 (修正路徑為 /stocks/)
+                const historyUrl = `${CONFIG.GITHUB_BASE}/stocks/${symbol}.json`;
+                console.log("Fetching history from:", historyUrl);
                 const historyResp = await fetch(historyUrl);
+                
+                if (!historyResp.ok) {
+                    throw new Error(`找不到股票歷史數據 (${symbol})，請確認代號是否正確。`);
+                }
+                
                 const historyJson = await historyResp.json();
                 
                 // 2. 抓取 Yahoo 即時數據 (透過 Worker)
-                const yahooSymbol = symbol.length >= 4 ? `${symbol}.TW` : symbol;
+                const yahooSymbol = symbol.length >= 4 && !symbol.includes('.') ? `${symbol}.TW` : symbol;
                 const liveUrl = `${CONFIG.WORKER_URL}/?s=${yahooSymbol}`;
+                console.log("Fetching live from:", liveUrl);
                 const liveResp = await fetch(liveUrl, {
                     headers: { "X-My-Dashboard-Key": CONFIG.MY_SECRET }
                 });
