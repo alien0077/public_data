@@ -9,18 +9,18 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { background-color: #0f172a; color: #e2e8f0; font-family: 'Inter', sans-serif; }
-        .chart-container { height: calc(100vh - 220px); }
+        .chart-container { height: calc(100vh - 220px); min-height: 400px; }
     </style>
 </head>
 <body class="p-4">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
         <div class="flex items-center gap-3">
             <div class="bg-blue-600 p-2 rounded-lg"><i data-lucide="trending-up" class="text-white"></i></div>
-            <h1 class="text-2xl font-bold tracking-tight">TWStock Tracker <span class="text-blue-500 text-sm font-normal">Cloud v1.0.3</span></h1>
+            <h1 class="text-2xl font-bold tracking-tight">TWStock Tracker <span class="text-blue-500 text-sm font-normal">Cloud v1.0.4</span></h1>
         </div>
         
         <div class="flex gap-2 w-full md:w-auto">
-            <input type="text" id="symbolInput" placeholder="輸入代號 (如 2330)" 
+            <input type="text" id="symbolInput" placeholder="代號 (如 2330)" 
                 class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-40 text-center font-bold">
             <button onclick="loadStockData()" class="bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded-lg font-bold transition-all flex items-center gap-2 text-white">
                 <i data-lucide="search" size="18"></i> 查詢
@@ -39,24 +39,10 @@
             <div><span class="text-slate-400 text-xs block mb-1 uppercase">AI 評分</span><span id="displayHealth" class="text-2xl font-bold text-blue-400">-</span></div>
             <div><span class="text-slate-400 text-xs block mb-1 uppercase">技術訊號</span><span id="displaySignal" class="text-lg font-bold">-</span></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-            <div class="bg-slate-800/30 p-4 rounded-lg border border-slate-700/50">
-                <h3 class="text-slate-500 text-xs font-bold mb-2 uppercase">法人籌碼</h3>
-                <div id="displayInstitutional" class="text-sm space-y-1">-</div>
-            </div>
-            <div class="bg-slate-800/30 p-4 rounded-lg border border-slate-700/50">
-                <h3 class="text-slate-500 text-xs font-bold mb-2 uppercase">資券變化</h3>
-                <div id="displayMargin" class="text-sm space-y-1">-</div>
-            </div>
-            <div class="bg-slate-800/30 p-4 rounded-lg border border-slate-700/50">
-                <h3 class="text-slate-500 text-xs font-bold mb-2 uppercase">大戶持股</h3>
-                <div id="displayTdcc" class="text-sm space-y-1">-</div>
-            </div>
-        </div>
     </div>
 
     <div class="max-w-7xl mx-auto bg-slate-900 rounded-2xl border border-slate-800 p-2 shadow-2xl relative">
-        <div id="loadingOverlay" class="absolute inset-0 bg-slate-900/80 flex items-center justify-center z-10 hidden">
+        <div id="loadingOverlay" class="absolute inset-0 bg-slate-900/80 flex items-center justify-center z-50 hidden">
             <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
         </div>
         <div id="tvChart" class="chart-container w-full"></div>
@@ -70,50 +56,45 @@
             set SECRET(v) { localStorage.setItem("dashboard_key", v); }
         };
 
-        let chart, candleSeries;
+        let chart = null;
+        let candleSeries = null;
 
         function initChart() {
-            const chartOptions = {
+            const container = document.getElementById("tvChart");
+            if (!container) return;
+            
+            chart = LightweightCharts.createChart(container, {
                 layout: { textColor: "#94a3b8", background: { type: "solid", color: "transparent" } },
                 grid: { vertLines: { color: "#1e293b" }, horzLines: { color: "#1e293b" } },
                 rightPriceScale: { borderColor: "#1e293b" },
                 timeScale: { borderColor: "#1e293b" },
-            };
-            chart = LightweightCharts.createChart(document.getElementById("tvChart"), chartOptions);
+            });
             candleSeries = chart.addCandlestickSeries({
                 upColor: "#ef4444", downColor: "#22c55e", borderVisible: false,
                 wickUpColor: "#ef4444", wickDownColor: "#22c55e",
             });
             window.addEventListener("resize", () => {
-                chart.resize(document.getElementById("tvChart").clientWidth, document.getElementById("tvChart").clientHeight);
+                chart.resize(container.clientWidth, container.clientHeight);
             });
         }
 
         function resetKey() {
             localStorage.removeItem("dashboard_key");
-            alert("密鑰已清除，下次查詢將重新詢問。");
+            alert("密鑰已清除");
             location.reload();
-        }
-
-        function parseYahooHistory(result) {
-            if (!result || !result.timestamp) return [];
-            const timestamps = result.timestamp;
-            const indicators = result.indicators.quote[0];
-            return timestamps.map((t, i) => ({
-                time: new Date(t * 1000).toISOString().split("T")[0],
-                open: indicators.open[i], high: indicators.high[i], low: indicators.low[i], close: indicators.close[i]
-            })).filter(d => d.time && d.close != null);
         }
 
         async function loadStockData() {
             const symbol = document.getElementById("symbolInput").value.trim();
-            if (!symbol) return alert("請輸入代號");
-
+            if (!symbol) return;
             if (!CONFIG.SECRET) {
-                const key = prompt("請輸入訪問密鑰 (Access Key):");
+                const key = prompt("請輸入 Access Key:");
                 if (!key) return;
                 CONFIG.SECRET = key;
             }
+
+            // 確保圖表已初始化
+            if (!chart || !candleSeries) initChart();
 
             const overlay = document.getElementById("loadingOverlay");
             overlay.classList.remove("hidden");
@@ -124,48 +105,47 @@
                     yahooSymbol = (parseInt(symbol) >= 1000 || symbol.startsWith("00")) ? `${symbol}.TW` : symbol;
                 }
 
-                // 1. Yahoo History
                 const hUrl = `${CONFIG.WORKER_URL}/?s=${yahooSymbol}&r=1y&i=1d`;
                 const hResp = await fetch(hUrl, { headers: { "X-My-Dashboard-Key": CONFIG.SECRET } });
+                
                 if (hResp.status === 403) {
                     resetKey();
-                    throw new Error("密鑰錯誤，請重新輸入。");
+                    throw new Error("密鑰錯誤");
                 }
+                
                 const hJson = await hResp.json();
-                const candles = parseYahooHistory(hJson.chart.result[0]);
-                if (candles.length === 0) throw new Error("找不到歷史 K 線。");
+                const result = hJson.chart.result[0];
+                const timestamps = result.timestamp;
+                const ind = result.indicators.quote[0];
+                
+                const candles = timestamps.map((t, i) => ({
+                    time: new Date(t * 1000).toISOString().split("T")[0],
+                    open: ind.open[i], high: ind.high[i], low: ind.low[i], close: ind.close[i]
+                })).filter(d => d.time && d.close != null);
 
-                // 2. Project Data
-                const pUrl = `${CONFIG.GITHUB_BASE}/stocks/${symbol}.json`;
-                const pResp = await fetch(pUrl);
-                if (pResp.ok) {
-                    const pd = await pResp.json();
-                    document.getElementById("stockInfo").classList.remove("hidden");
-                    document.getElementById("displaySymbol").innerText = symbol;
-                    document.getElementById("displayPrice").innerText = candles[candles.length-1].close;
-                    document.getElementById("displayHealth").innerText = pd.health_score || "-";
-                    document.getElementById("displaySignal").innerText = pd.signal || "-";
-                    document.getElementById("displaySignal").className = pd.signal === "Bullish" ? "text-lg font-bold text-red-500" : "text-lg font-bold text-green-500";
-                    
-                    const inst = pd.institutional || {};
-                    document.getElementById("displayInstitutional").innerHTML = `外資買賣: ${inst.foreign_buy_days}天<br>佔比: ${inst.foreign_buy_ratio}%`;
-                    const margin = pd.margin || {};
-                    document.getElementById("displayMargin").innerHTML = `融資增減: ${margin.margin_change}<br>券資比: ${margin.short_margin_ratio}%`;
-                    const tdcc = pd.tdcc || {};
-                    document.getElementById("displayTdcc").innerHTML = `大戶變化: ${tdcc.big_holder_change}%<br>集中度: ${tdcc.holder_concentration}%`;
-                }
+                if (candles.length === 0) throw new Error("無歷史數據");
 
+                // 更新 UI
+                document.getElementById("stockInfo").classList.remove("hidden");
+                document.getElementById("displaySymbol").innerText = symbol;
+                document.getElementById("displayPrice").innerText = candles[candles.length-1].close;
+
+                // 更新圖表
                 candleSeries.setData(candles);
                 chart.timeScale().fitContent();
+
             } catch (err) {
-                alert("錯誤: " + err.message);
+                alert("載入失敗: " + err.message);
             } finally {
                 overlay.classList.add("hidden");
             }
         }
 
-        initChart();
-        lucide.createIcons();
+        // 初始化
+        window.onload = () => {
+            initChart();
+            lucide.createIcons();
+        };
         document.getElementById("symbolInput").addEventListener("keypress", (e) => { if (e.key === "Enter") loadStockData(); });
     </script>
 </body>
