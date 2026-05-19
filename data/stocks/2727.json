@@ -1,13 +1,13 @@
 {
   "stock_id": "2727",
   "name": "2727",
-  "date": "2026-05-18",
-  "close": 233.0,
-  "health_score": 133,
+  "date": "2026-05-15",
+  "close": 236.5,
+  "health_score": 166,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.037,
+    "foreign_buy_days": 9,
+    "foreign_buy_ratio": 0.163,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.21
   },
   "tdcc": {
-    "big_holder_change": 16.1,
+    "big_holder_change": 15.77,
     "retail_holder_change": 0,
-    "holder_concentration": 34.08
+    "holder_concentration": 32.59
   },
   "main_force": {
-    "cost": 227.8,
-    "distance": 2.28,
+    "cost": 228.95,
+    "distance": 3.3,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 9 天"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-18"
+  "data_version": "2026-05-15"
 }

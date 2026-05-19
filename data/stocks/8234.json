@@ -1,29 +1,29 @@
 {
   "stock_id": "8234",
   "name": "8234",
-  "date": "2026-05-18",
-  "close": 69.9,
-  "health_score": 133,
+  "date": "2026-05-15",
+  "close": 70.8,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.056,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.427,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4673.0,
-    "short_change": 16.0,
-    "short_margin_ratio": 0.34
+    "margin_change": 4654.0,
+    "short_change": 11.0,
+    "short_margin_ratio": 0.24
   },
   "tdcc": {
-    "big_holder_change": 45.72,
+    "big_holder_change": 45.64,
     "retail_holder_change": 0,
-    "holder_concentration": 53.41
+    "holder_concentration": 53.15
   },
   "main_force": {
-    "cost": 61.84,
-    "distance": 13.03,
+    "cost": 66.36,
+    "distance": 6.69,
     "trend": "UP"
   },
   "sector": {
@@ -34,14 +34,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-18"
+  "data_version": "2026-05-15"
 }

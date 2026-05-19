@@ -1,13 +1,13 @@
 {
   "stock_id": "2025",
   "name": "2025",
-  "date": "2026-05-18",
-  "close": 11.75,
-  "health_score": 93,
+  "date": "2026-05-15",
+  "close": 11.6,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.006,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,14 +17,14 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 60.6,
+    "big_holder_change": 59.76,
     "retail_holder_change": 0,
-    "holder_concentration": 63.29
+    "holder_concentration": 62.45
   },
   "main_force": {
-    "cost": 11.64,
-    "distance": 0.95,
-    "trend": "UP"
+    "cost": 11.65,
+    "distance": -0.43,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
@@ -32,11 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 40
+    "score": 30
   },
   "events": [],
   "raw_signals": [
-    "ma_bull"
+    "foreign_buy"
   ],
-  "data_version": "2026-05-18"
+  "data_version": "2026-05-15"
 }

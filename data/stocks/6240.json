@@ -1,18 +1,18 @@
 {
   "stock_id": "6240",
   "name": "6240",
-  "date": "2026-05-18",
-  "close": 17.95,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-15",
+  "close": 17.8,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.004,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.044,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 603.0,
+    "margin_change": 600.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 82.12
   },
   "main_force": {
-    "cost": 18.54,
-    "distance": -3.18,
+    "cost": 18.61,
+    "distance": -4.35,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-18"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

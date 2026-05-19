@@ -1,6 +1,6 @@
 {
   "symbol": "7642",
-  "updated_at": "2026-05-18",
+  "updated_at": "2026-05-15",
   "lines": [
     {
       "id": "H_57",
@@ -58,17 +58,6 @@
       "strength": 1
     },
     {
-      "id": "L_126",
-      "type": "low",
-      "price": 80.0,
-      "start_idx": 126,
-      "start_date": "2025-11-21",
-      "end_idx": 155,
-      "end_date": "2026-01-05",
-      "broken": true,
-      "strength": 1
-    },
-    {
       "id": "H_134",
       "type": "high",
       "price": 89.7,
@@ -85,17 +74,6 @@
       "price": 85.0,
       "start_idx": 151,
       "start_date": "2025-12-29",
-      "end_idx": 165,
-      "end_date": "2026-01-19",
-      "broken": true,
-      "strength": 1
-    },
-    {
-      "id": "H_159",
-      "type": "high",
-      "price": 80.4,
-      "start_idx": 159,
-      "start_date": "2026-01-09",
       "end_idx": 165,
       "end_date": "2026-01-19",
       "broken": true,
@@ -184,9 +162,9 @@
       "price": 76.2,
       "start_idx": 209,
       "start_date": "2026-04-01",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 232,
+      "end_date": "2026-05-07",
+      "broken": true,
       "strength": 1
     },
     {
@@ -199,24 +177,34 @@
       "end_date": "2026-04-23",
       "broken": true,
       "strength": 1
+    },
+    {
+      "id": "H_220",
+      "type": "high",
+      "price": 73.3,
+      "start_idx": 220,
+      "start_date": "2026-04-20",
+      "end_idx": 232,
+      "end_date": "2026-05-07",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "L_230",
+      "type": "low",
+      "price": 63.2,
+      "start_idx": 230,
+      "start_date": "2026-05-05",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
     }
   ],
   "events": [
     {
-      "type": "CHOCH_DOWN",
-      "price": 80.0,
-      "idx": 155,
-      "date": "2026-01-05"
-    },
-    {
       "type": "BOS_UP",
       "price": 85.0,
-      "idx": 165,
-      "date": "2026-01-19"
-    },
-    {
-      "type": "BOS_UP",
-      "price": 80.4,
       "idx": 165,
       "date": "2026-01-19"
     },
@@ -261,6 +249,18 @@
       "price": 70.7,
       "idx": 223,
       "date": "2026-04-23"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 76.2,
+      "idx": 232,
+      "date": "2026-05-07"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 73.3,
+      "idx": 232,
+      "date": "2026-05-07"
     }
   ]
 }

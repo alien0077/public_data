@@ -1,13 +1,13 @@
 {
   "stock_id": "8277",
   "name": "8277",
-  "date": "2026-05-18",
-  "close": 6.7,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-15",
+  "close": 6.58,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.008,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.032,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -19,11 +19,11 @@
   "tdcc": {
     "big_holder_change": 13.48,
     "retail_holder_change": 0,
-    "holder_concentration": 19.04
+    "holder_concentration": 19.03
   },
   "main_force": {
-    "cost": 7.63,
-    "distance": -12.19,
+    "cost": 7.22,
+    "distance": -8.86,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-18"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

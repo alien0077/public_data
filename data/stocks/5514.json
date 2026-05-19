@@ -1,10 +1,10 @@
 {
   "stock_id": "5514",
   "name": "5514",
-  "date": "2026-05-18",
-  "close": 0.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-15",
+  "close": 15.3,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -19,22 +19,24 @@
   "tdcc": {
     "big_holder_change": 87.51,
     "retail_holder_change": 0,
-    "holder_concentration": 92.44
+    "holder_concentration": 92.39
   },
   "main_force": {
-    "cost": 15.18,
-    "distance": -100.0,
-    "trend": "DOWN"
+    "cost": 14.94,
+    "distance": 2.41,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-18"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-15"
 }

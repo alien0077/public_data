@@ -1,29 +1,29 @@
 {
   "stock_id": "5009",
   "name": "5009",
-  "date": "2026-05-18",
-  "close": 35.45,
-  "health_score": 133,
+  "date": "2026-05-15",
+  "close": 37.3,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.24,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.143,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9342.0,
+    "margin_change": 9242.0,
     "short_change": 5.0,
     "short_margin_ratio": 0.05
   },
   "tdcc": {
-    "big_holder_change": 43.86,
+    "big_holder_change": 44.74,
     "retail_holder_change": 0,
-    "holder_concentration": 49.5
+    "holder_concentration": 49.84
   },
   "main_force": {
-    "cost": 32.39,
-    "distance": 9.45,
+    "cost": 33.69,
+    "distance": 10.72,
     "trend": "UP"
   },
   "sector": {
@@ -34,14 +34,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-18"
+  "data_version": "2026-05-15"
 }

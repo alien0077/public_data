@@ -1,12 +1,12 @@
 {
   "stock_id": "00875",
   "name": "00875",
-  "date": "2026-05-18",
-  "close": 43.52,
-  "health_score": 133,
+  "date": "2026-05-15",
+  "close": 42.92,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 2,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -19,11 +19,11 @@
   "tdcc": {
     "big_holder_change": 0.0,
     "retail_holder_change": 0,
-    "holder_concentration": 13.34
+    "holder_concentration": 10.07
   },
   "main_force": {
-    "cost": 38.93,
-    "distance": 11.79,
+    "cost": 40.73,
+    "distance": 5.38,
     "trend": "UP"
   },
   "sector": {
@@ -34,14 +34,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-18"
+  "data_version": "2026-05-15"
 }

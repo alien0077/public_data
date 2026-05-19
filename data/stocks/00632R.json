@@ -1,25 +1,25 @@
 {
   "stock_id": "00632R",
   "name": "00632R",
-  "date": "2026-05-18",
-  "close": 11.47,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-15",
+  "close": 11.46,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 2,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 294291.0,
-    "short_change": 4927.0,
-    "short_margin_ratio": 1.67
+    "margin_change": 304903.0,
+    "short_change": 5011.0,
+    "short_margin_ratio": 1.64
   },
   "tdcc": {},
   "main_force": {
-    "cost": 13.32,
-    "distance": -13.89,
+    "cost": 11.9,
+    "distance": -3.7,
     "trend": "DOWN"
   },
   "sector": {
@@ -28,9 +28,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-18"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

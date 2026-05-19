@@ -1,18 +1,18 @@
 {
   "stock_id": "4711",
   "name": "4711",
-  "date": "2026-05-18",
-  "close": 16.65,
-  "health_score": 133,
+  "date": "2026-05-15",
+  "close": 16.85,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.038,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.028,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 828.0,
+    "margin_change": 815.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 61.66
   },
   "main_force": {
-    "cost": 15.72,
-    "distance": 5.92,
+    "cost": 16.07,
+    "distance": 4.85,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-18"
+  "data_version": "2026-05-15"
 }

@@ -1,29 +1,29 @@
 {
   "stock_id": "8105",
   "name": "8105",
-  "date": "2026-05-18",
-  "close": 15.75,
-  "health_score": 133,
+  "date": "2026-05-15",
+  "close": 15.7,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.116,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.035,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7590.0,
-    "short_change": 83.0,
-    "short_margin_ratio": 1.09
+    "margin_change": 7473.0,
+    "short_change": 112.0,
+    "short_margin_ratio": 1.5
   },
   "tdcc": {
-    "big_holder_change": 60.2,
+    "big_holder_change": 59.2,
     "retail_holder_change": 0,
-    "holder_concentration": 63.01
+    "holder_concentration": 62.4
   },
   "main_force": {
-    "cost": 13.75,
-    "distance": 14.55,
+    "cost": 14.04,
+    "distance": 11.82,
     "trend": "UP"
   },
   "sector": {
@@ -34,14 +34,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-18"
+  "data_version": "2026-05-15"
 }

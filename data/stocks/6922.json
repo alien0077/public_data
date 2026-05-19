@@ -1,18 +1,18 @@
 {
   "stock_id": "6922",
   "name": "6922",
-  "date": "2026-05-18",
-  "close": 187.0,
-  "health_score": 133,
+  "date": "2026-05-15",
+  "close": 189.5,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.166,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.25,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 205.0,
+    "margin_change": 204.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 63.02
   },
   "main_force": {
-    "cost": 162.8,
-    "distance": 14.86,
+    "cost": 174.38,
+    "distance": 8.67,
     "trend": "UP"
   },
   "sector": {
@@ -34,14 +34,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-18"
+  "data_version": "2026-05-15"
 }

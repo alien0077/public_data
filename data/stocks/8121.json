@@ -1,13 +1,13 @@
 {
   "stock_id": "8121",
   "name": "8121",
-  "date": "2026-05-18",
-  "close": 33.6,
-  "health_score": 150,
+  "date": "2026-05-15",
+  "close": 34.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.107,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.095,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 53.08,
+    "big_holder_change": 53.05,
     "retail_holder_change": 0,
-    "holder_concentration": 60.87
+    "holder_concentration": 59.64
   },
   "main_force": {
-    "cost": 25.78,
-    "distance": 30.33,
+    "cost": 29.61,
+    "distance": 14.83,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-18"
+  "data_version": "2026-05-15"
 }

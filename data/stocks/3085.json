@@ -1,9 +1,9 @@
 {
   "stock_id": "3085",
   "name": "3085",
-  "date": "2026-05-18",
-  "close": 12.25,
-  "health_score": 86,
+  "date": "2026-05-15",
+  "close": 12.6,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -18,24 +18,21 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 12.74,
-    "distance": -3.85,
-    "trend": "DOWN"
+    "cost": 12.02,
+    "distance": 4.83,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
+  "events": [],
+  "raw_signals": [
+    "ma_bull"
   ],
-  "raw_signals": [],
-  "data_version": "2026-05-18"
+  "data_version": "2026-05-15"
 }

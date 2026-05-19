@@ -1,25 +1,25 @@
 {
   "stock_id": "00706L",
   "name": "00706L",
-  "date": "2026-05-18",
-  "close": 19.34,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-15",
+  "close": 19.43,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2713.0,
+    "margin_change": 2301.0,
     "short_change": 48.0,
-    "short_margin_ratio": 1.77
+    "short_margin_ratio": 2.09
   },
   "tdcc": {},
   "main_force": {
-    "cost": 19.45,
-    "distance": -0.57,
+    "cost": 19.52,
+    "distance": -0.46,
     "trend": "DOWN"
   },
   "sector": {
@@ -30,7 +30,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-18"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

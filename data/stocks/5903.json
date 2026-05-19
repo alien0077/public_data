@@ -1,13 +1,13 @@
 {
   "stock_id": "5903",
   "name": "5903",
-  "date": "2026-05-18",
-  "close": 189.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-15",
+  "close": 189.5,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 9,
+    "foreign_buy_ratio": 0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 89.09,
+    "big_holder_change": 89.66,
     "retail_holder_change": 0,
-    "holder_concentration": 91.31
+    "holder_concentration": 91.3
   },
   "main_force": {
-    "cost": 190.05,
-    "distance": -0.55,
+    "cost": 189.85,
+    "distance": -0.18,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-18"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 9 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

@@ -1,29 +1,29 @@
 {
   "stock_id": "2419",
   "name": "2419",
-  "date": "2026-05-18",
-  "close": 30.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-15",
+  "close": 28.65,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.007,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.123,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7270.0,
-    "short_change": 16.0,
-    "short_margin_ratio": 0.22
+    "margin_change": 7257.0,
+    "short_change": 26.0,
+    "short_margin_ratio": 0.36
   },
   "tdcc": {
-    "big_holder_change": 62.58,
+    "big_holder_change": 62.24,
     "retail_holder_change": 0,
-    "holder_concentration": 64.97
+    "holder_concentration": 64.83
   },
   "main_force": {
-    "cost": 34.66,
-    "distance": -13.44,
+    "cost": 32.06,
+    "distance": -10.64,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-18"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-15"
 }

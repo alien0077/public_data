@@ -1,29 +1,29 @@
 {
   "stock_id": "1201",
   "name": "1201",
-  "date": "2026-05-18",
-  "close": 12.0,
-  "health_score": 83,
-  "signal": "Bullish",
+  "date": "2026-05-15",
+  "close": 12.05,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.003,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.062,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1280.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.16
+    "margin_change": 1286.0,
+    "short_change": 4.0,
+    "short_margin_ratio": 0.31
   },
   "tdcc": {
-    "big_holder_change": 59.1,
+    "big_holder_change": 59.21,
     "retail_holder_change": 0,
-    "holder_concentration": 63.33
+    "holder_concentration": 63.3
   },
   "main_force": {
-    "cost": 13.29,
-    "distance": -9.71,
+    "cost": 12.71,
+    "distance": -5.19,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,8 +35,6 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-18"
+  "raw_signals": [],
+  "data_version": "2026-05-15"
 }

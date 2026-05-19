@@ -1,13 +1,13 @@
 {
   "stock_id": "4419",
   "name": "4419",
-  "date": "2026-05-18",
-  "close": 45.15,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-15",
+  "close": 46.3,
+  "health_score": 130,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.001,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 96.87
   },
   "main_force": {
-    "cost": 47.82,
-    "distance": -5.58,
-    "trend": "DOWN"
+    "cost": 45.83,
+    "distance": 1.03,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-18"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-15"
 }
