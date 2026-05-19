@@ -1,29 +1,29 @@
 {
   "stock_id": "3043",
   "name": "3043",
-  "date": "2026-05-15",
-  "close": 19.6,
+  "date": "2026-05-19",
+  "close": 19.65,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.036,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.015,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1257.0,
+    "margin_change": 1245.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 11.37,
     "retail_holder_change": 0,
-    "holder_concentration": 19.44
+    "holder_concentration": 19.39
   },
   "main_force": {
-    "cost": 20.48,
-    "distance": -4.3,
+    "cost": 20.09,
+    "distance": -2.19,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }

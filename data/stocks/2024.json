@@ -1,29 +1,29 @@
 {
   "stock_id": "2024",
   "name": "2024",
-  "date": "2026-05-15",
-  "close": 13.1,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-19",
+  "close": 13.85,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.001,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 51.0,
+    "margin_change": 53.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 80.54,
+    "big_holder_change": 80.57,
     "retail_holder_change": 0,
-    "holder_concentration": 82.76
+    "holder_concentration": 82.79
   },
   "main_force": {
-    "cost": 14.12,
-    "distance": -7.22,
+    "cost": 14.59,
+    "distance": -5.07,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-19"
 }

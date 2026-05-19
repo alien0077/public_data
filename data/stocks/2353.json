@@ -1,40 +1,42 @@
 {
   "stock_id": "2353",
   "name": "2353",
-  "date": "2026-05-15",
-  "close": 27.7,
-  "health_score": 86,
+  "date": "2026-05-19",
+  "close": 27.75,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.298,
+    "foreign_buy_ratio": -0.004,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 26774.0,
-    "short_change": 1077.0,
-    "short_margin_ratio": 4.02
+    "margin_change": 28512.0,
+    "short_change": 1038.0,
+    "short_margin_ratio": 3.64
   },
   "tdcc": {
-    "big_holder_change": 35.38,
+    "big_holder_change": 35.49,
     "retail_holder_change": 0,
-    "holder_concentration": 39.38
+    "holder_concentration": 39.58
   },
   "main_force": {
-    "cost": 27.91,
-    "distance": -0.75,
-    "trend": "DOWN"
+    "cost": 27.58,
+    "distance": 0.62,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-19"
 }

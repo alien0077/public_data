@@ -1,29 +1,29 @@
 {
   "stock_id": "2413",
   "name": "2413",
-  "date": "2026-05-15",
-  "close": 43.2,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-19",
+  "close": 49.95,
+  "health_score": 106,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.13,
+    "foreign_buy_ratio": -0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5402.0,
-    "short_change": 106.0,
-    "short_margin_ratio": 1.96
+    "margin_change": 6052.0,
+    "short_change": 121.0,
+    "short_margin_ratio": 2.0
   },
   "tdcc": {
     "big_holder_change": 50.73,
     "retail_holder_change": 0,
-    "holder_concentration": 57.01
+    "holder_concentration": 56.89
   },
   "main_force": {
-    "cost": 46.42,
-    "distance": -6.94,
+    "cost": 50.9,
+    "distance": -1.87,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,14 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 60
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }

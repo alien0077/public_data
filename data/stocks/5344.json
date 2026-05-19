@@ -1,13 +1,13 @@
 {
   "stock_id": "5344",
   "name": "5344",
-  "date": "2026-05-15",
-  "close": 16.2,
-  "health_score": 86,
+  "date": "2026-05-19",
+  "close": 15.6,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.011,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -19,22 +19,25 @@
   "tdcc": {
     "big_holder_change": 73.54,
     "retail_holder_change": 0,
-    "holder_concentration": 75.57
+    "holder_concentration": 75.58
   },
   "main_force": {
-    "cost": 16.38,
-    "distance": -1.1,
-    "trend": "DOWN"
+    "cost": 14.58,
+    "distance": 7.0,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-19"
 }

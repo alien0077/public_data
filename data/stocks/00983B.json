@@ -1,12 +1,12 @@
 {
   "stock_id": "00983B",
   "name": "00983B",
-  "date": "2026-05-15",
-  "close": 15.4,
+  "date": "2026-05-19",
+  "close": 15.29,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 15.7,
-    "distance": -1.91,
+    "cost": 15.89,
+    "distance": -3.78,
     "trend": "DOWN"
   },
   "sector": {
@@ -30,9 +30,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }

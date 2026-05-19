@@ -1,26 +1,26 @@
 {
   "stock_id": "00650L",
   "name": "00650L",
-  "date": "2026-05-15",
-  "close": 17.69,
-  "health_score": 86,
+  "date": "2026-05-19",
+  "close": 17.33,
+  "health_score": 110,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 15792.0,
-    "short_change": 1677.0,
-    "short_margin_ratio": 10.62
+    "margin_change": 14840.0,
+    "short_change": 1630.0,
+    "short_margin_ratio": 10.98
   },
   "tdcc": {},
   "main_force": {
-    "cost": 17.76,
-    "distance": -0.39,
-    "trend": "DOWN"
+    "cost": 17.21,
+    "distance": 0.7,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -28,9 +28,12 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-19"
 }

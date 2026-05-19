@@ -1,12 +1,12 @@
 {
   "stock_id": "00647L",
   "name": "00647L",
-  "date": "2026-05-15",
-  "close": 133.45,
+  "date": "2026-05-19",
+  "close": 131.0,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 4,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 124.74,
-    "distance": 6.98,
+    "cost": 113.12,
+    "distance": 15.81,
     "trend": "UP"
   },
   "sector": {
@@ -30,10 +30,19 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 4 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }

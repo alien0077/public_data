@@ -1,29 +1,29 @@
 {
   "stock_id": "1216",
   "name": "1216",
-  "date": "2026-05-15",
-  "close": 75.7,
-  "health_score": 150,
+  "date": "2026-05-19",
+  "close": 74.8,
+  "health_score": 166,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.199,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.028,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1011.0,
-    "short_change": 15.0,
-    "short_margin_ratio": 1.48
+    "margin_change": 937.0,
+    "short_change": 10.0,
+    "short_margin_ratio": 1.07
   },
   "tdcc": {
-    "big_holder_change": 84.39,
+    "big_holder_change": 84.98,
     "retail_holder_change": 0,
-    "holder_concentration": 87.92
+    "holder_concentration": 88.54
   },
   "main_force": {
-    "cost": 71.78,
-    "distance": 5.46,
+    "cost": 72.32,
+    "distance": 3.43,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 7 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }

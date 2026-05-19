@@ -1,29 +1,29 @@
 {
   "stock_id": "3704",
   "name": "3704",
-  "date": "2026-05-15",
-  "close": 38.2,
+  "date": "2026-05-19",
+  "close": 38.1,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.945,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.236,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5461.0,
-    "short_change": 36.0,
-    "short_margin_ratio": 0.66
+    "margin_change": 4913.0,
+    "short_change": 37.0,
+    "short_margin_ratio": 0.75
   },
   "tdcc": {
-    "big_holder_change": 50.27,
+    "big_holder_change": 51.04,
     "retail_holder_change": 0,
-    "holder_concentration": 56.74
+    "holder_concentration": 57.54
   },
   "main_force": {
-    "cost": 36.02,
-    "distance": 6.05,
+    "cost": 35.2,
+    "distance": 8.24,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,19 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 4 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }

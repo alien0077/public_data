@@ -1,13 +1,13 @@
 {
   "stock_id": "7792",
   "name": "7792",
-  "date": "2026-05-15",
-  "close": 293.0,
+  "date": "2026-05-19",
+  "close": 264.5,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.03,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.071,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -19,11 +19,11 @@
   "tdcc": {
     "big_holder_change": 61.9,
     "retail_holder_change": 0,
-    "holder_concentration": 71.19
+    "holder_concentration": 70.23
   },
   "main_force": {
-    "cost": 342.15,
-    "distance": -14.37,
+    "cost": 335.45,
+    "distance": -21.15,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }

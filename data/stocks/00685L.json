@@ -1,25 +1,25 @@
 {
   "stock_id": "00685L",
   "name": "00685L",
-  "date": "2026-05-15",
-  "close": 245.35,
-  "health_score": 130,
+  "date": "2026-05-19",
+  "close": 235.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 316.0,
-    "short_change": 18.0,
-    "short_margin_ratio": 5.7
+    "margin_change": 433.0,
+    "short_change": 21.0,
+    "short_margin_ratio": 4.85
   },
   "tdcc": {},
   "main_force": {
-    "cost": 228.34,
-    "distance": 7.45,
+    "cost": 185.62,
+    "distance": 26.6,
     "trend": "UP"
   },
   "sector": {
@@ -28,12 +28,16 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }

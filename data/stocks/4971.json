@@ -1,29 +1,29 @@
 {
   "stock_id": "4971",
   "name": "4971",
-  "date": "2026-05-15",
-  "close": 705.0,
-  "health_score": 86,
+  "date": "2026-05-19",
+  "close": 645.0,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.912,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4703.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.04
+    "margin_change": 4441.0,
+    "short_change": 203.0,
+    "short_margin_ratio": 4.57
   },
   "tdcc": {
-    "big_holder_change": 9.6,
+    "big_holder_change": 7.06,
     "retail_holder_change": 0,
-    "holder_concentration": 33.64
+    "holder_concentration": 34.39
   },
   "main_force": {
-    "cost": 771.2,
-    "distance": -8.58,
+    "cost": 677.55,
+    "distance": -4.8,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-19"
 }

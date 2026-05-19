@@ -1,29 +1,29 @@
 {
   "stock_id": "2030",
   "name": "2030",
-  "date": "2026-05-15",
-  "close": 17.3,
+  "date": "2026-05-19",
+  "close": 16.8,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.113,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.069,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2087.0,
+    "margin_change": 2108.0,
     "short_change": 7.0,
-    "short_margin_ratio": 0.34
+    "short_margin_ratio": 0.33
   },
   "tdcc": {
-    "big_holder_change": 41.37,
+    "big_holder_change": 42.2,
     "retail_holder_change": 0,
-    "holder_concentration": 44.93
+    "holder_concentration": 46.63
   },
   "main_force": {
-    "cost": 16.38,
-    "distance": 5.62,
+    "cost": 16.23,
+    "distance": 3.51,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,19 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 4 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }

@@ -1,12 +1,12 @@
 {
   "stock_id": "6590",
   "name": "6590",
-  "date": "2026-05-15",
-  "close": 67.2,
+  "date": "2026-05-19",
+  "close": 66.8,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0.004,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 30.53,
+    "big_holder_change": 30.57,
     "retail_holder_change": 0,
-    "holder_concentration": 56.72
+    "holder_concentration": 56.78
   },
   "main_force": {
-    "cost": 69.66,
-    "distance": -3.53,
+    "cost": 70.37,
+    "distance": -5.07,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }

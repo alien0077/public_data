@@ -1,29 +1,29 @@
 {
   "stock_id": "1504",
   "name": "1504",
-  "date": "2026-05-15",
-  "close": 69.4,
-  "health_score": 113,
+  "date": "2026-05-19",
+  "close": 67.9,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.073,
+    "foreign_buy_ratio": -0.034,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 27648.0,
-    "short_change": 100.0,
-    "short_margin_ratio": 0.36
+    "margin_change": 27421.0,
+    "short_change": 83.0,
+    "short_margin_ratio": 0.3
   },
   "tdcc": {
-    "big_holder_change": 70.69,
+    "big_holder_change": 70.11,
     "retail_holder_change": 0,
-    "holder_concentration": 73.97
+    "holder_concentration": 73.55
   },
   "main_force": {
-    "cost": 65.61,
-    "distance": 5.78,
+    "cost": 62.08,
+    "distance": 9.38,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "ma_bull"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }

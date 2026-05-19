@@ -1,13 +1,13 @@
 {
   "stock_id": "8284",
   "name": "8284",
-  "date": "2026-05-15",
-  "close": 63.8,
-  "health_score": 106,
+  "date": "2026-05-19",
+  "close": 63.9,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.017,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,21 @@
     "holder_concentration": 63.05
   },
   "main_force": {
-    "cost": 63.8,
-    "distance": 0.0,
-    "trend": "DOWN"
+    "cost": 63.74,
+    "distance": 0.25,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-19"
 }

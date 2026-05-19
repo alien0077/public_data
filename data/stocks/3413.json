@@ -1,29 +1,29 @@
 {
   "stock_id": "3413",
   "name": "3413",
-  "date": "2026-05-15",
-  "close": 325.5,
-  "health_score": 150,
+  "date": "2026-05-19",
+  "close": 314.5,
+  "health_score": 146,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 1.433,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.025,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3544.0,
-    "short_change": 13.0,
-    "short_margin_ratio": 0.37
+    "margin_change": 3454.0,
+    "short_change": 4.0,
+    "short_margin_ratio": 0.12
   },
   "tdcc": {
-    "big_holder_change": 33.83,
+    "big_holder_change": 35.89,
     "retail_holder_change": 0,
-    "holder_concentration": 41.88
+    "holder_concentration": 44.54
   },
   "main_force": {
-    "cost": 317.8,
-    "distance": 2.42,
+    "cost": 311.08,
+    "distance": 1.1,
     "trend": "UP"
   },
   "sector": {
@@ -32,17 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }

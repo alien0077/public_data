@@ -1,13 +1,13 @@
 {
   "stock_id": "8201",
   "name": "8201",
-  "date": "2026-05-15",
-  "close": 12.35,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-19",
+  "close": 12.15,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.014,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.013,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 56.35
   },
   "main_force": {
-    "cost": 13.03,
-    "distance": -5.22,
+    "cost": 13.02,
+    "distance": -6.68,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-19"
 }

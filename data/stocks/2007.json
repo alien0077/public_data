@@ -1,29 +1,29 @@
 {
   "stock_id": "2007",
   "name": "2007",
-  "date": "2026-05-15",
-  "close": 6.98,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-19",
+  "close": 6.88,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.04,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.007,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6.0,
+    "margin_change": 5.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 75.66,
     "retail_holder_change": 0,
-    "holder_concentration": 76.33
+    "holder_concentration": 76.34
   },
   "main_force": {
-    "cost": 7.57,
-    "distance": -7.79,
+    "cost": 8.0,
+    "distance": -14.0,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-19"
 }

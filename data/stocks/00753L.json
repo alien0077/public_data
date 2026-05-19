@@ -1,25 +1,25 @@
 {
   "stock_id": "00753L",
   "name": "00753L",
-  "date": "2026-05-15",
-  "close": 10.45,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-19",
+  "close": 10.25,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 99738.0,
-    "short_change": 1249.0,
-    "short_margin_ratio": 1.25
+    "margin_change": 102023.0,
+    "short_change": 1281.0,
+    "short_margin_ratio": 1.26
   },
   "tdcc": {},
   "main_force": {
-    "cost": 10.77,
-    "distance": -2.97,
+    "cost": 10.55,
+    "distance": -2.84,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-19"
 }

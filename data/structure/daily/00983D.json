@@ -1,6 +1,6 @@
 {
   "symbol": "00983D",
-  "updated_at": "2026-05-15",
+  "updated_at": "2026-05-19",
   "lines": [
     {
       "id": "L_13",
@@ -8,9 +8,9 @@
       "price": 10.05,
       "start_idx": 13,
       "start_date": "2025-11-03",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 125,
+      "end_date": "2026-05-19",
+      "broken": true,
       "strength": 1
     },
     {
@@ -19,9 +19,9 @@
       "price": 10.05,
       "start_idx": 14,
       "start_date": "2025-11-04",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 125,
+      "end_date": "2026-05-19",
+      "broken": true,
       "strength": 1
     },
     {
@@ -30,30 +30,8 @@
       "price": 10.05,
       "start_idx": 16,
       "start_date": "2025-11-06",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
-      "strength": 1
-    },
-    {
-      "id": "H_32",
-      "type": "high",
-      "price": 10.28,
-      "start_idx": 32,
-      "start_date": "2025-11-28",
-      "end_idx": 59,
-      "end_date": "2026-01-08",
-      "broken": true,
-      "strength": 1
-    },
-    {
-      "id": "H_33",
-      "type": "high",
-      "price": 10.28,
-      "start_idx": 33,
-      "start_date": "2025-12-01",
-      "end_idx": 59,
-      "end_date": "2026-01-08",
+      "end_idx": 125,
+      "end_date": "2026-05-19",
       "broken": true,
       "strength": 1
     },
@@ -99,17 +77,6 @@
       "end_idx": null,
       "end_date": null,
       "broken": false,
-      "strength": 1
-    },
-    {
-      "id": "L_67",
-      "type": "low",
-      "price": 10.24,
-      "start_idx": 67,
-      "start_date": "2026-01-20",
-      "end_idx": 73,
-      "end_date": "2026-01-28",
-      "broken": true,
       "strength": 1
     },
     {
@@ -162,8 +129,8 @@
       "price": 10.13,
       "start_idx": 107,
       "start_date": "2026-03-27",
-      "end_idx": 126,
-      "end_date": "2026-04-27",
+      "end_idx": 125,
+      "end_date": "2026-05-19",
       "broken": true,
       "strength": 1
     },
@@ -173,8 +140,8 @@
       "price": 10.13,
       "start_idx": 108,
       "start_date": "2026-03-30",
-      "end_idx": 126,
-      "end_date": "2026-04-27",
+      "end_idx": 125,
+      "end_date": "2026-05-19",
       "broken": true,
       "strength": 1
     },
@@ -210,52 +177,12 @@
       "end_date": null,
       "broken": false,
       "strength": 1
-    },
-    {
-      "id": "L_126",
-      "type": "low",
-      "price": 10.11,
-      "start_idx": 126,
-      "start_date": "2026-04-27",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
-      "strength": 1
-    },
-    {
-      "id": "H_130",
-      "type": "high",
-      "price": 10.17,
-      "start_idx": 130,
-      "start_date": "2026-05-04",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
-      "strength": 1
     }
   ],
   "events": [
     {
-      "type": "BOS_UP",
-      "price": 10.28,
-      "idx": 59,
-      "date": "2026-01-08"
-    },
-    {
-      "type": "BOS_UP",
-      "price": 10.28,
-      "idx": 59,
-      "date": "2026-01-08"
-    },
-    {
       "type": "CHOCH_DOWN",
       "price": 10.23,
-      "idx": 73,
-      "date": "2026-01-28"
-    },
-    {
-      "type": "CHOCH_DOWN",
-      "price": 10.24,
       "idx": 73,
       "date": "2026-01-28"
     },
@@ -285,15 +212,33 @@
     },
     {
       "type": "CHOCH_DOWN",
-      "price": 10.13,
-      "idx": 126,
-      "date": "2026-04-27"
+      "price": 10.05,
+      "idx": 125,
+      "date": "2026-05-19"
+    },
+    {
+      "type": "CHOCH_DOWN",
+      "price": 10.05,
+      "idx": 125,
+      "date": "2026-05-19"
+    },
+    {
+      "type": "CHOCH_DOWN",
+      "price": 10.05,
+      "idx": 125,
+      "date": "2026-05-19"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 10.13,
-      "idx": 126,
-      "date": "2026-04-27"
+      "idx": 125,
+      "date": "2026-05-19"
+    },
+    {
+      "type": "CHOCH_DOWN",
+      "price": 10.13,
+      "idx": 125,
+      "date": "2026-05-19"
     }
   ]
 }

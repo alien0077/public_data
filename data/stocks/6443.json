@@ -1,45 +1,52 @@
 {
   "stock_id": "6443",
   "name": "6443",
-  "date": "2026-05-15",
-  "close": 38.2,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-19",
+  "close": 40.9,
+  "health_score": 130,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.276,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 1.015,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 22427.0,
-    "short_change": 5509.0,
-    "short_margin_ratio": 24.56
+    "margin_change": 22042.0,
+    "short_change": 5480.0,
+    "short_margin_ratio": 24.86
   },
   "tdcc": {
-    "big_holder_change": 17.4,
+    "big_holder_change": 16.31,
     "retail_holder_change": 0,
-    "holder_concentration": 19.52
+    "holder_concentration": 18.6
   },
   "main_force": {
-    "cost": 38.36,
-    "distance": -0.42,
-    "trend": "DOWN"
+    "cost": 39.8,
+    "distance": 2.76,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    },
     {
       "level": "YELLOW",
       "title": "短線券資比過高"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-19"
 }

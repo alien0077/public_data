@@ -1,13 +1,13 @@
 {
   "stock_id": "9929",
   "name": "9929",
-  "date": "2026-05-15",
-  "close": 11.45,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-19",
+  "close": 11.65,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.004,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 87.97
   },
   "main_force": {
-    "cost": 11.96,
-    "distance": -4.26,
+    "cost": 12.28,
+    "distance": -5.13,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-19"
 }

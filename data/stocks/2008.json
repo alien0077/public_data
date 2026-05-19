@@ -1,13 +1,13 @@
 {
   "stock_id": "2008",
   "name": "2008",
-  "date": "2026-05-15",
-  "close": 27.5,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-19",
+  "close": 27.75,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.001,
+    "foreign_buy_ratio": -0.004,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,24 +17,26 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 90.62,
+    "big_holder_change": 90.67,
     "retail_holder_change": 0,
-    "holder_concentration": 92.25
+    "holder_concentration": 92.29
   },
   "main_force": {
-    "cost": 27.57,
-    "distance": -0.25,
-    "trend": "DOWN"
+    "cost": 27.54,
+    "distance": 0.76,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-15"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-19"
 }

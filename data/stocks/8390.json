@@ -1,29 +1,29 @@
 {
   "stock_id": "8390",
   "name": "8390",
-  "date": "2026-05-15",
-  "close": 119.5,
+  "date": "2026-05-19",
+  "close": 114.5,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 10,
-    "foreign_buy_ratio": 0.841,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.199,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1924.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 1912.0,
+    "short_change": 3.0,
+    "short_margin_ratio": 0.16
   },
   "tdcc": {
-    "big_holder_change": 39.17,
+    "big_holder_change": 40.79,
     "retail_holder_change": 0,
-    "holder_concentration": 48.16
+    "holder_concentration": 51.64
   },
   "main_force": {
-    "cost": 92.42,
-    "distance": 29.3,
+    "cost": 91.36,
+    "distance": 25.33,
     "trend": "UP"
   },
   "sector": {
@@ -37,10 +37,6 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 10 天"
-    },
-    {
-      "level": "GREEN",
       "title": "今日強勢大漲"
     }
   ],
@@ -48,5 +44,5 @@
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-15"
+  "data_version": "2026-05-19"
 }
