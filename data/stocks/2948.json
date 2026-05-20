@@ -1,10 +1,10 @@
 {
   "stock_id": "2948",
   "name": "2948",
-  "date": "2026-05-19",
-  "close": 38.2,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-20",
+  "close": 35.3,
+  "health_score": 93,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -22,9 +22,9 @@
     "holder_concentration": 80.24
   },
   "main_force": {
-    "cost": 39.25,
-    "distance": -2.68,
-    "trend": "DOWN"
+    "cost": 34.22,
+    "distance": 3.16,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-19"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-20"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "7722",
   "name": "7722",
-  "date": "2026-05-19",
-  "close": 253.0,
+  "date": "2026-05-20",
+  "close": 253.5,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.024,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.046,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 85.6
   },
   "main_force": {
-    "cost": 304.6,
-    "distance": -16.94,
+    "cost": 276.75,
+    "distance": -8.4,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

@@ -1,10 +1,10 @@
 {
   "stock_id": "00686R",
   "name": "00686R",
-  "date": "2026-05-19",
-  "close": 1.16,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-20",
+  "close": 1.17,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -12,25 +12,27 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 18495.0,
-    "short_change": 29.0,
-    "short_margin_ratio": 0.16
+    "margin_change": 18525.0,
+    "short_change": 17.0,
+    "short_margin_ratio": 0.09
   },
   "tdcc": {},
   "main_force": {
-    "cost": 1.32,
-    "distance": -12.12,
-    "trend": "DOWN"
+    "cost": 1.15,
+    "distance": 1.74,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-19"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-20"
 }

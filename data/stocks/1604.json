@@ -1,18 +1,18 @@
 {
   "stock_id": "1604",
   "name": "1604",
-  "date": "2026-05-19",
-  "close": 23.15,
-  "health_score": 83,
+  "date": "2026-05-20",
+  "close": 23.1,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.005,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.008,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 261.0,
+    "margin_change": 259.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,21 +22,22 @@
     "holder_concentration": 57.9
   },
   "main_force": {
-    "cost": 24.71,
-    "distance": -6.31,
-    "trend": "DOWN"
+    "cost": 22.97,
+    "distance": 0.57,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

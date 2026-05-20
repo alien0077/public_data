@@ -1,13 +1,13 @@
 {
   "stock_id": "4113",
   "name": "4113",
-  "date": "2026-05-19",
-  "close": 14.75,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-20",
+  "close": 15.0,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.001,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,21 @@
     "holder_concentration": 74.31
   },
   "main_force": {
-    "cost": 16.36,
-    "distance": -9.84,
-    "trend": "DOWN"
+    "cost": 14.94,
+    "distance": 0.4,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-19"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-20"
 }

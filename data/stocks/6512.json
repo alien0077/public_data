@@ -1,10 +1,10 @@
 {
   "stock_id": "6512",
   "name": "6512",
-  "date": "2026-05-19",
-  "close": 19.2,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-20",
+  "close": 19.05,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -22,19 +22,21 @@
     "holder_concentration": 35.98
   },
   "main_force": {
-    "cost": 19.67,
-    "distance": -2.39,
-    "trend": "DOWN"
+    "cost": 18.2,
+    "distance": 4.67,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-19"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-20"
 }

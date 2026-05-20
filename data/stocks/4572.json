@@ -1,13 +1,13 @@
 {
   "stock_id": "4572",
   "name": "4572",
-  "date": "2026-05-19",
-  "close": 144.0,
-  "health_score": 110,
+  "date": "2026-05-20",
+  "close": 145.5,
+  "health_score": 106,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.005,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.017,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 64.19
   },
   "main_force": {
-    "cost": 143.75,
-    "distance": 0.17,
-    "trend": "UP"
+    "cost": 146.4,
+    "distance": -0.61,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
@@ -32,12 +32,9 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 40
+    "score": 60
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-05-19"
+  "raw_signals": [],
+  "data_version": "2026-05-20"
 }

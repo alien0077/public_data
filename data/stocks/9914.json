@@ -1,20 +1,20 @@
 {
   "stock_id": "9914",
   "name": "9914",
-  "date": "2026-05-19",
+  "date": "2026-05-20",
   "close": 68.5,
-  "health_score": 130,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.071,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.042,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2954.0,
-    "short_change": 77.0,
-    "short_margin_ratio": 2.61
+    "margin_change": 2923.0,
+    "short_change": 72.0,
+    "short_margin_ratio": 2.46
   },
   "tdcc": {
     "big_holder_change": 54.7,
@@ -22,8 +22,8 @@
     "holder_concentration": 64.74
   },
   "main_force": {
-    "cost": 62.72,
-    "distance": 9.22,
+    "cost": 60.6,
+    "distance": 13.04,
     "trend": "UP"
   },
   "sector": {
@@ -32,21 +32,11 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 5 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

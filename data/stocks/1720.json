@@ -1,18 +1,18 @@
 {
   "stock_id": "1720",
   "name": "1720",
-  "date": "2026-05-19",
+  "date": "2026-05-20",
   "close": 61.8,
-  "health_score": 103,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.04,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.004,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 374.0,
+    "margin_change": 375.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,21 +22,21 @@
     "holder_concentration": 65.26
   },
   "main_force": {
-    "cost": 62.98,
-    "distance": -1.87,
-    "trend": "DOWN"
+    "cost": 61.28,
+    "distance": 0.85,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

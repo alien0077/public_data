@@ -1,25 +1,25 @@
 {
   "stock_id": "00988A",
   "name": "00988A",
-  "date": "2026-05-19",
-  "close": 18.28,
-  "health_score": 133,
+  "date": "2026-05-20",
+  "close": 18.22,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 78301.0,
-    "short_change": 31210.0,
-    "short_margin_ratio": 39.86
+    "margin_change": 77331.0,
+    "short_change": 48299.0,
+    "short_margin_ratio": 62.46
   },
   "tdcc": {},
   "main_force": {
-    "cost": 14.59,
-    "distance": 25.29,
+    "cost": 18.13,
+    "distance": 0.5,
     "trend": "UP"
   },
   "sector": {
@@ -28,20 +28,17 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
   "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    },
     {
       "level": "YELLOW",
       "title": "短線券資比過高"
     }
   ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

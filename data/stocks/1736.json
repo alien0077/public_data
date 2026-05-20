@@ -1,20 +1,20 @@
 {
   "stock_id": "1736",
   "name": "1736",
-  "date": "2026-05-19",
+  "date": "2026-05-20",
   "close": 125.0,
-  "health_score": 130,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.036,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.027,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1998.0,
-    "short_change": 4.0,
-    "short_margin_ratio": 0.2
+    "margin_change": 1978.0,
+    "short_change": 3.0,
+    "short_margin_ratio": 0.15
   },
   "tdcc": {
     "big_holder_change": 82.19,
@@ -22,8 +22,8 @@
     "holder_concentration": 87.65
   },
   "main_force": {
-    "cost": 120.75,
-    "distance": 3.52,
+    "cost": 122.22,
+    "distance": 2.27,
     "trend": "UP"
   },
   "sector": {
@@ -34,19 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

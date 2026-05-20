@@ -1,10 +1,10 @@
 {
   "stock_id": "00638R",
   "name": "00638R",
-  "date": "2026-05-19",
+  "date": "2026-05-20",
   "close": 6.67,
-  "health_score": 66,
-  "signal": "Neutral",
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -18,19 +18,21 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 6.91,
-    "distance": -3.47,
-    "trend": "DOWN"
+    "cost": 6.59,
+    "distance": 1.21,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-19"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-20"
 }

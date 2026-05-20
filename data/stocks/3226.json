@@ -1,13 +1,13 @@
 {
   "stock_id": "3226",
   "name": "3226",
-  "date": "2026-05-19",
-  "close": 40.5,
-  "health_score": 86,
+  "date": "2026-05-20",
+  "close": 39.75,
+  "health_score": 93,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.002,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 86.56
   },
   "main_force": {
-    "cost": 42.33,
-    "distance": -4.32,
-    "trend": "DOWN"
+    "cost": 36.67,
+    "distance": 8.4,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-19"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-20"
 }

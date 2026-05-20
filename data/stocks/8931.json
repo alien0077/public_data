@@ -1,18 +1,18 @@
 {
   "stock_id": "8931",
   "name": "8931",
-  "date": "2026-05-19",
-  "close": 42.2,
-  "health_score": 86,
+  "date": "2026-05-20",
+  "close": 41.9,
+  "health_score": 93,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.012,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5673.0,
+    "margin_change": 5688.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 81.73
   },
   "main_force": {
-    "cost": 42.64,
-    "distance": -1.03,
-    "trend": "DOWN"
+    "cost": 41.79,
+    "distance": 0.26,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-19"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-20"
 }

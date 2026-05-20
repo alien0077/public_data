@@ -1,20 +1,20 @@
 {
   "stock_id": "5314",
   "name": "5314",
-  "date": "2026-05-19",
-  "close": 61.5,
-  "health_score": 100,
+  "date": "2026-05-20",
+  "close": 67.6,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.206,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 16586.0,
-    "short_change": 4.0,
-    "short_margin_ratio": 0.02
+    "margin_change": 17059.0,
+    "short_change": 28.0,
+    "short_margin_ratio": 0.16
   },
   "tdcc": {
     "big_holder_change": 43.41,
@@ -22,8 +22,8 @@
     "holder_concentration": 46.95
   },
   "main_force": {
-    "cost": 77.38,
-    "distance": -20.52,
+    "cost": 68.46,
+    "distance": -1.26,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,14 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-05-19"
+  "raw_signals": [],
+  "data_version": "2026-05-20"
 }

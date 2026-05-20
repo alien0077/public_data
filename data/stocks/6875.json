@@ -1,13 +1,13 @@
 {
   "stock_id": "6875",
   "name": "6875",
-  "date": "2026-05-19",
-  "close": 37.15,
-  "health_score": 103,
+  "date": "2026-05-20",
+  "close": 37.55,
+  "health_score": 93,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.009,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 61.82
   },
   "main_force": {
-    "cost": 37.69,
-    "distance": -1.43,
-    "trend": "DOWN"
+    "cost": 37.18,
+    "distance": 1.0,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,11 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 40
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

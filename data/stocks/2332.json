@@ -1,19 +1,19 @@
 {
   "stock_id": "2332",
   "name": "2332",
-  "date": "2026-05-19",
-  "close": 13.85,
-  "health_score": 83,
+  "date": "2026-05-20",
+  "close": 13.95,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.057,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.097,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 19451.0,
-    "short_change": 21.0,
+    "margin_change": 19375.0,
+    "short_change": 22.0,
     "short_margin_ratio": 0.11
   },
   "tdcc": {
@@ -22,8 +22,8 @@
     "holder_concentration": 43.47
   },
   "main_force": {
-    "cost": 15.12,
-    "distance": -8.4,
+    "cost": 14.04,
+    "distance": -0.64,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

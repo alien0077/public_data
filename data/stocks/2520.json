@@ -1,20 +1,20 @@
 {
   "stock_id": "2520",
   "name": "2520",
-  "date": "2026-05-19",
-  "close": 30.4,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-20",
+  "close": 30.75,
+  "health_score": 93,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.013,
+    "foreign_buy_ratio": -0.011,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4213.0,
+    "margin_change": 4195.0,
     "short_change": 168.0,
-    "short_margin_ratio": 3.99
+    "short_margin_ratio": 4.0
   },
   "tdcc": {
     "big_holder_change": 64.81,
@@ -22,9 +22,9 @@
     "holder_concentration": 69.51
   },
   "main_force": {
-    "cost": 31.34,
-    "distance": -3.0,
-    "trend": "DOWN"
+    "cost": 30.26,
+    "distance": 1.62,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-19"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-20"
 }

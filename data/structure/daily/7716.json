@@ -1,6 +1,6 @@
 {
   "symbol": "7716",
-  "updated_at": "2026-05-19",
+  "updated_at": "2026-05-20",
   "lines": [
     {
       "id": "H_17",
@@ -41,8 +41,8 @@
       "price": 24.85,
       "start_idx": 46,
       "start_date": "2026-01-05",
-      "end_idx": 99,
-      "end_date": "2026-05-19",
+      "end_idx": 102,
+      "end_date": "2026-05-04",
       "broken": true,
       "strength": 1
     },
@@ -74,8 +74,8 @@
       "price": 25.0,
       "start_idx": 64,
       "start_date": "2026-01-30",
-      "end_idx": 99,
-      "end_date": "2026-05-19",
+      "end_idx": 102,
+      "end_date": "2026-05-04",
       "broken": true,
       "strength": 1
     },
@@ -97,7 +97,7 @@
       "start_idx": 72,
       "start_date": "2026-02-23",
       "end_idx": 99,
-      "end_date": "2026-05-19",
+      "end_date": "2026-04-27",
       "broken": true,
       "strength": 1
     },
@@ -140,6 +140,28 @@
       "price": 26.5,
       "start_idx": 90,
       "start_date": "2026-03-26",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_103",
+      "type": "high",
+      "price": 25.85,
+      "start_idx": 103,
+      "start_date": "2026-05-05",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "L_103",
+      "type": "low",
+      "price": 24.2,
+      "start_idx": 103,
+      "start_date": "2026-05-05",
       "end_idx": null,
       "end_date": null,
       "broken": false,
@@ -191,21 +213,21 @@
     },
     {
       "type": "CHOCH_DOWN",
-      "price": 24.85,
+      "price": 25.1,
       "idx": 99,
-      "date": "2026-05-19"
+      "date": "2026-04-27"
+    },
+    {
+      "type": "CHOCH_DOWN",
+      "price": 24.85,
+      "idx": 102,
+      "date": "2026-05-04"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 25.0,
-      "idx": 99,
-      "date": "2026-05-19"
-    },
-    {
-      "type": "CHOCH_DOWN",
-      "price": 25.1,
-      "idx": 99,
-      "date": "2026-05-19"
+      "idx": 102,
+      "date": "2026-05-04"
     }
   ]
 }

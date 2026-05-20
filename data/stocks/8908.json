@@ -1,13 +1,13 @@
 {
   "stock_id": "8908",
   "name": "8908",
-  "date": "2026-05-19",
-  "close": 40.55,
-  "health_score": 83,
+  "date": "2026-05-20",
+  "close": 40.65,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.013,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,26 +22,21 @@
     "holder_concentration": 88.47
   },
   "main_force": {
-    "cost": 40.71,
-    "distance": -0.39,
-    "trend": "DOWN"
+    "cost": 39.76,
+    "distance": 2.24,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

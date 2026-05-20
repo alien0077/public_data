@@ -1,18 +1,18 @@
 {
   "stock_id": "1210",
   "name": "1210",
-  "date": "2026-05-19",
-  "close": 53.5,
-  "health_score": 103,
+  "date": "2026-05-20",
+  "close": 53.0,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.153,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.032,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1880.0,
+    "margin_change": 1885.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,26 +22,21 @@
     "holder_concentration": 62.89
   },
   "main_force": {
-    "cost": 54.4,
-    "distance": -1.65,
-    "trend": "DOWN"
+    "cost": 52.97,
+    "distance": 0.06,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 5 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

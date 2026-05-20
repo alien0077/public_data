@@ -1,6 +1,6 @@
 {
   "symbol": "00981D",
-  "updated_at": "2026-05-19",
+  "updated_at": "2026-05-20",
   "lines": [
     {
       "id": "L_12",
@@ -91,17 +91,6 @@
       "strength": 1
     },
     {
-      "id": "L_73",
-      "type": "low",
-      "price": 10.52,
-      "start_idx": 73,
-      "start_date": "2026-01-05",
-      "end_idx": 88,
-      "end_date": "2026-01-26",
-      "broken": true,
-      "strength": 1
-    },
-    {
       "id": "H_82",
       "type": "high",
       "price": 10.65,
@@ -184,7 +173,7 @@
       "price": 10.28,
       "start_idx": 125,
       "start_date": "2026-03-30",
-      "end_idx": 142,
+      "end_idx": 158,
       "end_date": "2026-05-19",
       "broken": true,
       "strength": 1
@@ -210,15 +199,53 @@
       "end_date": null,
       "broken": false,
       "strength": 1
+    },
+    {
+      "id": "L_143",
+      "type": "low",
+      "price": 10.3,
+      "start_idx": 143,
+      "start_date": "2026-04-27",
+      "end_idx": 158,
+      "end_date": "2026-05-19",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "H_147",
+      "type": "high",
+      "price": 10.4,
+      "start_idx": 147,
+      "start_date": "2026-05-04",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_148",
+      "type": "high",
+      "price": 10.4,
+      "start_idx": 148,
+      "start_date": "2026-05-05",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_154",
+      "type": "high",
+      "price": 10.36,
+      "start_idx": 154,
+      "start_date": "2026-05-13",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
     }
   ],
   "events": [
-    {
-      "type": "CHOCH_DOWN",
-      "price": 10.52,
-      "idx": 88,
-      "date": "2026-01-26"
-    },
     {
       "type": "CHOCH_DOWN",
       "price": 10.5,
@@ -270,7 +297,13 @@
     {
       "type": "CHOCH_DOWN",
       "price": 10.28,
-      "idx": 142,
+      "idx": 158,
+      "date": "2026-05-19"
+    },
+    {
+      "type": "CHOCH_DOWN",
+      "price": 10.3,
+      "idx": 158,
       "date": "2026-05-19"
     }
   ]

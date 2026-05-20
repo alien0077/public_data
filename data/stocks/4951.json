@@ -1,20 +1,20 @@
 {
   "stock_id": "4951",
   "name": "4951",
-  "date": "2026-05-19",
-  "close": 117.0,
-  "health_score": 150,
+  "date": "2026-05-20",
+  "close": 123.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.073,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1636.0,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.18
+    "margin_change": 1640.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 8.64,
@@ -22,8 +22,8 @@
     "holder_concentration": 20.13
   },
   "main_force": {
-    "cost": 73.03,
-    "distance": 60.21,
+    "cost": 114.86,
+    "distance": 7.09,
     "trend": "UP"
   },
   "sector": {
@@ -37,16 +37,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 4 天"
-    },
-    {
-      "level": "GREEN",
       "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

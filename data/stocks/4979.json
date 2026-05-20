@@ -1,20 +1,20 @@
 {
   "stock_id": "4979",
   "name": "4979",
-  "date": "2026-05-19",
-  "close": 523.0,
-  "health_score": 146,
+  "date": "2026-05-20",
+  "close": 562.0,
+  "health_score": 106,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.053,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 11093.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 11002.0,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.01
   },
   "tdcc": {
     "big_holder_change": 31.49,
@@ -22,27 +22,24 @@
     "holder_concentration": 43.04
   },
   "main_force": {
-    "cost": 489.35,
-    "distance": 6.88,
-    "trend": "UP"
+    "cost": 610.65,
+    "distance": -7.97,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 60
   },
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 5 天"
+      "title": "今日強勢大漲"
     }
   ],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-05-19"
+  "raw_signals": [],
+  "data_version": "2026-05-20"
 }

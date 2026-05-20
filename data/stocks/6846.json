@@ -1,10 +1,10 @@
 {
   "stock_id": "6846",
   "name": "6846",
-  "date": "2026-05-19",
-  "close": 70.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-20",
+  "close": 69.9,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -22,19 +22,21 @@
     "holder_concentration": 66.71
   },
   "main_force": {
-    "cost": 70.88,
-    "distance": -1.24,
-    "trend": "DOWN"
+    "cost": 69.7,
+    "distance": 0.29,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-19"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-20"
 }

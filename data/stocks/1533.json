@@ -1,20 +1,20 @@
 {
   "stock_id": "1533",
   "name": "1533",
-  "date": "2026-05-19",
-  "close": 34.55,
+  "date": "2026-05-20",
+  "close": 38.0,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.011,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.447,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 739.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 834.0,
+    "short_change": 7.0,
+    "short_margin_ratio": 0.84
   },
   "tdcc": {
     "big_holder_change": 52.19,
@@ -22,8 +22,8 @@
     "holder_concentration": 63.38
   },
   "main_force": {
-    "cost": 30.6,
-    "distance": 12.91,
+    "cost": 33.34,
+    "distance": 13.98,
     "trend": "UP"
   },
   "sector": {
@@ -37,6 +37,10 @@
   "events": [
     {
       "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
+    {
+      "level": "GREEN",
       "title": "今日強勢大漲"
     }
   ],
@@ -44,5 +48,5 @@
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

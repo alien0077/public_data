@@ -1,18 +1,18 @@
 {
   "stock_id": "6743",
   "name": "6743",
-  "date": "2026-05-19",
-  "close": 28.35,
-  "health_score": 133,
+  "date": "2026-05-20",
+  "close": 28.85,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.011,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 699.0,
+    "margin_change": 690.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 63.41
   },
   "main_force": {
-    "cost": 23.43,
-    "distance": 21.0,
+    "cost": 28.54,
+    "distance": 1.09,
     "trend": "UP"
   },
   "sector": {
@@ -34,14 +34,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

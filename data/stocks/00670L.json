@@ -1,25 +1,25 @@
 {
   "stock_id": "00670L",
   "name": "00670L",
-  "date": "2026-05-19",
-  "close": 200.0,
-  "health_score": 133,
+  "date": "2026-05-20",
+  "close": 199.55,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1274.0,
-    "short_change": 237.0,
-    "short_margin_ratio": 18.6
+    "margin_change": 1312.0,
+    "short_change": 223.0,
+    "short_margin_ratio": 17.0
   },
   "tdcc": {},
   "main_force": {
-    "cost": 155.51,
-    "distance": 28.61,
+    "cost": 191.38,
+    "distance": 4.27,
     "trend": "UP"
   },
   "sector": {
@@ -28,16 +28,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

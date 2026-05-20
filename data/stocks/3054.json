@@ -1,18 +1,18 @@
 {
   "stock_id": "3054",
   "name": "3054",
-  "date": "2026-05-19",
-  "close": 66.2,
-  "health_score": 86,
+  "date": "2026-05-20",
+  "close": 66.6,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.024,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.022,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 922.0,
+    "margin_change": 919.0,
     "short_change": 2.0,
     "short_margin_ratio": 0.22
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 87.79
   },
   "main_force": {
-    "cost": 69.29,
-    "distance": -4.46,
+    "cost": 69.37,
+    "distance": -3.99,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-19"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-20"
 }

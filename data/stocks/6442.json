@@ -1,20 +1,20 @@
 {
   "stock_id": "6442",
   "name": "6442",
-  "date": "2026-05-19",
-  "close": 1740.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-20",
+  "close": 1770.0,
+  "health_score": 100,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.52,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5347.0,
-    "short_change": 104.0,
-    "short_margin_ratio": 1.95
+    "margin_change": 5309.0,
+    "short_change": 98.0,
+    "short_margin_ratio": 1.85
   },
   "tdcc": {
     "big_holder_change": 36.99,
@@ -22,8 +22,8 @@
     "holder_concentration": 57.54
   },
   "main_force": {
-    "cost": 2113.5,
-    "distance": -17.67,
+    "cost": 1939.0,
+    "distance": -8.72,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-19"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-20"
 }

@@ -1,12 +1,12 @@
 {
   "stock_id": "00859B",
   "name": "00859B",
-  "date": "2026-05-19",
-  "close": 41.13,
-  "health_score": 130,
+  "date": "2026-05-20",
+  "close": 41.15,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 10,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 41.09,
-    "distance": 0.1,
+    "cost": 40.92,
+    "distance": 0.56,
     "trend": "UP"
   },
   "sector": {
@@ -30,15 +30,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 10 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }

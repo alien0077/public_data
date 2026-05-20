@@ -1,18 +1,18 @@
 {
   "stock_id": "5244",
   "name": "5244",
-  "date": "2026-05-19",
-  "close": 37.55,
+  "date": "2026-05-20",
+  "close": 37.4,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.003,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.023,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3148.0,
+    "margin_change": 3138.0,
     "short_change": 12.0,
     "short_margin_ratio": 0.38
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 47.11
   },
   "main_force": {
-    "cost": 41.06,
-    "distance": -8.55,
+    "cost": 40.54,
+    "distance": -7.75,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-19"
+  "data_version": "2026-05-20"
 }
