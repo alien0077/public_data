@@ -1,0 +1,43 @@
+/* TWStock Pro Styles */
+
+/* 捲軸美化 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #161b22;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+}
+
+/* 隱藏捲軸但保留功能 */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* 二級導航動畫與樣式 */
+#sub-nav-container {
+    z-index: 10;
+}
+
+@media (max-width: 767px) {
+    /* Mobile Segmented Control 額外樣式 */
+    #sub-nav-container button {
+        flex: 1;
+        text-align: center;
+        white-space: nowrap;
+    }
+}
