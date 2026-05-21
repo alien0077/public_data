@@ -1,20 +1,20 @@
 {
   "stock_id": "1802",
   "name": "1802",
-  "date": "2026-05-20",
-  "close": 63.9,
-  "health_score": 86,
+  "date": "2026-05-21",
+  "close": 65.1,
+  "health_score": 140,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.409,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.209,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 63623.0,
-    "short_change": 1695.0,
-    "short_margin_ratio": 2.66
+    "margin_change": 61320.0,
+    "short_change": 1840.0,
+    "short_margin_ratio": 3.0
   },
   "tdcc": {
     "big_holder_change": 75.4,
@@ -22,8 +22,8 @@
     "holder_concentration": 77.32
   },
   "main_force": {
-    "cost": 67.74,
-    "distance": -5.67,
+    "cost": 67.46,
+    "distance": -3.5,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 60
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-20"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-21"
 }

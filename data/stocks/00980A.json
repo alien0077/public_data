@@ -1,25 +1,25 @@
 {
   "stock_id": "00980A",
   "name": "00980A",
-  "date": "2026-05-20",
-  "close": 21.4,
-  "health_score": 103,
+  "date": "2026-05-21",
+  "close": 22.49,
+  "health_score": 123,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
+    "foreign_buy_days": 5,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4745.0,
-    "short_change": 35.0,
-    "short_margin_ratio": 0.74
+    "margin_change": 4855.0,
+    "short_change": 31.0,
+    "short_margin_ratio": 0.64
   },
   "tdcc": {},
   "main_force": {
-    "cost": 22.57,
-    "distance": -5.18,
+    "cost": 22.63,
+    "distance": -0.62,
     "trend": "DOWN"
   },
   "sector": {
@@ -28,16 +28,20 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 60
   },
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 4 天"
+      "title": "外資連買 5 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-20"
+  "data_version": "2026-05-21"
 }

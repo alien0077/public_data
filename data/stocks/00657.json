@@ -1,12 +1,12 @@
 {
   "stock_id": "00657",
   "name": "00657",
-  "date": "2026-05-20",
-  "close": 70.1,
-  "health_score": 103,
+  "date": "2026-05-21",
+  "close": 72.75,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -22,26 +22,21 @@
     "holder_concentration": 25.97
   },
   "main_force": {
-    "cost": 71.6,
-    "distance": -2.09,
-    "trend": "DOWN"
+    "cost": 71.76,
+    "distance": 1.38,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-20"
+  "data_version": "2026-05-21"
 }

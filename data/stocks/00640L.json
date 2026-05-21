@@ -1,43 +1,43 @@
 {
   "stock_id": "00640L",
   "name": "00640L",
-  "date": "2026-05-20",
-  "close": 93.5,
-  "health_score": 103,
+  "date": "2026-05-21",
+  "close": 98.35,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 601.0,
-    "short_change": 77.0,
-    "short_margin_ratio": 12.81
+    "margin_change": 613.0,
+    "short_change": 87.0,
+    "short_margin_ratio": 14.19
   },
   "tdcc": {},
   "main_force": {
-    "cost": 94.45,
-    "distance": -1.01,
-    "trend": "DOWN"
+    "cost": 94.76,
+    "distance": 3.79,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-20"
+  "data_version": "2026-05-21"
 }

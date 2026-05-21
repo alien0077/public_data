@@ -1,13 +1,13 @@
 {
   "stock_id": "3349",
   "name": "3349",
-  "date": "2026-05-20",
+  "date": "2026-05-21",
   "close": 19.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.182,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 49.27
   },
   "main_force": {
-    "cost": 23.38,
-    "distance": -18.73,
+    "cost": 22.94,
+    "distance": -17.18,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-20"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-21"
 }

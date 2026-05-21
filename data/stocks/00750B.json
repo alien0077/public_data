@@ -1,12 +1,12 @@
 {
   "stock_id": "00750B",
   "name": "00750B",
-  "date": "2026-05-20",
-  "close": 32.33,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-21",
+  "close": 32.56,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 32.85,
-    "distance": -1.58,
+    "cost": 32.82,
+    "distance": -0.79,
     "trend": "DOWN"
   },
   "sector": {
@@ -28,9 +28,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-20"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-21"
 }

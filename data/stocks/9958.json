@@ -1,18 +1,18 @@
 {
   "stock_id": "9958",
   "name": "9958",
-  "date": "2026-05-20",
-  "close": 101.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-21",
+  "close": 103.0,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.358,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.106,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8704.0,
+    "margin_change": 8648.0,
     "short_change": 26.0,
     "short_margin_ratio": 0.3
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 56.67
   },
   "main_force": {
-    "cost": 103.82,
-    "distance": -2.72,
+    "cost": 103.55,
+    "distance": -0.53,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-20"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-21"
 }

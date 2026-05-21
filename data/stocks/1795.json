@@ -1,20 +1,20 @@
 {
   "stock_id": "1795",
   "name": "1795",
-  "date": "2026-05-20",
-  "close": 192.5,
-  "health_score": 86,
+  "date": "2026-05-21",
+  "close": 198.5,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.06,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.154,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9256.0,
-    "short_change": 19.0,
-    "short_margin_ratio": 0.21
+    "margin_change": 9124.0,
+    "short_change": 16.0,
+    "short_margin_ratio": 0.18
   },
   "tdcc": {
     "big_holder_change": 53.49,
@@ -22,8 +22,8 @@
     "holder_concentration": 57.68
   },
   "main_force": {
-    "cost": 215.8,
-    "distance": -10.8,
+    "cost": 214.4,
+    "distance": -7.42,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-20"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-21"
 }

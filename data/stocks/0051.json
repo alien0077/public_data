@@ -1,12 +1,12 @@
 {
   "stock_id": "0051",
   "name": "0051",
-  "date": "2026-05-20",
-  "close": 128.2,
-  "health_score": 103,
+  "date": "2026-05-21",
+  "close": 132.55,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 6,
+    "foreign_buy_days": 7,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -22,26 +22,27 @@
     "holder_concentration": 15.81
   },
   "main_force": {
-    "cost": 128.73,
-    "distance": -0.41,
-    "trend": "DOWN"
+    "cost": 129.1,
+    "distance": 2.67,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 6 天"
+      "title": "外資連買 7 天"
     }
   ],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-20"
+  "data_version": "2026-05-21"
 }

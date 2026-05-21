@@ -1,20 +1,20 @@
 {
   "stock_id": "6163",
   "name": "6163",
-  "date": "2026-05-20",
-  "close": 49.8,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-21",
+  "close": 53.2,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.427,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 24562.0,
-    "short_change": 13.0,
-    "short_margin_ratio": 0.05
+    "margin_change": 24489.0,
+    "short_change": 268.0,
+    "short_margin_ratio": 1.09
   },
   "tdcc": {
     "big_holder_change": 42.33,
@@ -22,8 +22,8 @@
     "holder_concentration": 49.47
   },
   "main_force": {
-    "cost": 58.15,
-    "distance": -14.36,
+    "cost": 57.28,
+    "distance": -7.12,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-20"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-21"
 }

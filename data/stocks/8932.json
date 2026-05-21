@@ -1,19 +1,19 @@
 {
   "stock_id": "8932",
   "name": "8932",
-  "date": "2026-05-20",
-  "close": 98.9,
-  "health_score": 93,
+  "date": "2026-05-21",
+  "close": 100.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 53460.0,
-    "short_change": 1.0,
+    "margin_change": 54263.0,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
@@ -22,8 +22,8 @@
     "holder_concentration": 79.17
   },
   "main_force": {
-    "cost": 94.12,
-    "distance": 5.08,
+    "cost": 94.14,
+    "distance": 6.22,
     "trend": "UP"
   },
   "sector": {
@@ -31,12 +31,13 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 40
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-20"
+  "data_version": "2026-05-21"
 }

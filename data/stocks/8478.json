@@ -1,18 +1,18 @@
 {
   "stock_id": "8478",
   "name": "8478",
-  "date": "2026-05-20",
-  "close": 150.5,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-21",
+  "close": 152.0,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.12,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.053,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1039.0,
+    "margin_change": 1036.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 76.72
   },
   "main_force": {
-    "cost": 165.15,
-    "distance": -8.87,
+    "cost": 163.9,
+    "distance": -7.26,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-20"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-21"
 }

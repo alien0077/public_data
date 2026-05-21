@@ -1,20 +1,20 @@
 {
   "stock_id": "8383",
   "name": "8383",
-  "date": "2026-05-20",
-  "close": 54.9,
-  "health_score": 106,
+  "date": "2026-05-21",
+  "close": 56.6,
+  "health_score": 123,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.153,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2509.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 2479.0,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.04
   },
   "tdcc": {
     "big_holder_change": 45.16,
@@ -22,8 +22,8 @@
     "holder_concentration": 51.97
   },
   "main_force": {
-    "cost": 60.96,
-    "distance": -9.94,
+    "cost": 60.18,
+    "distance": -5.95,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 60
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-20"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-21"
 }

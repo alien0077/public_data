@@ -1,13 +1,13 @@
 {
   "stock_id": "7805",
   "name": "7805",
-  "date": "2026-05-20",
-  "close": 700.0,
-  "health_score": 86,
+  "date": "2026-05-21",
+  "close": 718.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.184,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -23,18 +23,21 @@
   },
   "main_force": {
     "cost": 710.65,
-    "distance": -1.5,
-    "trend": "DOWN"
+    "distance": 1.03,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-20"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-21"
 }

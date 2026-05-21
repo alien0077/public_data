@@ -1,19 +1,19 @@
 {
   "stock_id": "1514",
   "name": "1514",
-  "date": "2026-05-20",
-  "close": 113.0,
-  "health_score": 83,
+  "date": "2026-05-21",
+  "close": 118.0,
+  "health_score": 166,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.034,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.319,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7307.0,
-    "short_change": 589.0,
+    "margin_change": 7284.0,
+    "short_change": 587.0,
     "short_margin_ratio": 8.06
   },
   "tdcc": {
@@ -22,19 +22,22 @@
     "holder_concentration": 44.25
   },
   "main_force": {
-    "cost": 116.4,
-    "distance": -2.92,
-    "trend": "DOWN"
+    "cost": 116.62,
+    "distance": 1.18,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-20"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-21"
 }

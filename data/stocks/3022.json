@@ -1,18 +1,18 @@
 {
   "stock_id": "3022",
   "name": "3022",
-  "date": "2026-05-20",
-  "close": 68.1,
-  "health_score": 123,
+  "date": "2026-05-21",
+  "close": 69.9,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.027,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.223,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4817.0,
+    "margin_change": 4848.0,
     "short_change": 4.0,
     "short_margin_ratio": 0.08
   },
@@ -22,21 +22,22 @@
     "holder_concentration": 58.88
   },
   "main_force": {
-    "cost": 69.97,
-    "distance": -2.67,
-    "trend": "DOWN"
+    "cost": 69.87,
+    "distance": 0.04,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-20"
+  "data_version": "2026-05-21"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "3665",
   "name": "3665",
-  "date": "2026-05-20",
-  "close": 1965.0,
-  "health_score": 83,
+  "date": "2026-05-21",
+  "close": 2155.0,
+  "health_score": 123,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.025,
+    "foreign_buy_days": 6,
+    "foreign_buy_ratio": 0.271,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2932.0,
-    "short_change": 21.0,
-    "short_margin_ratio": 0.72
+    "margin_change": 2806.0,
+    "short_change": 23.0,
+    "short_margin_ratio": 0.82
   },
   "tdcc": {
     "big_holder_change": 44.06,
@@ -22,8 +22,8 @@
     "holder_concentration": 61.52
   },
   "main_force": {
-    "cost": 2574.0,
-    "distance": -23.66,
+    "cost": 2554.0,
+    "distance": -15.62,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,16 +32,20 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 60
   },
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 5 天"
+      "title": "外資連買 6 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-20"
+  "data_version": "2026-05-21"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "2424",
   "name": "2424",
-  "date": "2026-05-20",
-  "close": 18.0,
+  "date": "2026-05-21",
+  "close": 16.2,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.005,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.013,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 84.49
   },
   "main_force": {
-    "cost": 21.53,
-    "distance": -16.4,
+    "cost": 21.08,
+    "distance": -23.15,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-20"
+  "data_version": "2026-05-21"
 }

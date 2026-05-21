@@ -1,13 +1,13 @@
 {
   "stock_id": "4568",
   "name": "4568",
-  "date": "2026-05-20",
-  "close": 0.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-21",
+  "close": 40.35,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_ratio": -0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,21 @@
     "holder_concentration": 68.68
   },
   "main_force": {
-    "cost": 37.04,
-    "distance": -100.0,
-    "trend": "DOWN"
+    "cost": 36.95,
+    "distance": 9.2,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-20"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-21"
 }

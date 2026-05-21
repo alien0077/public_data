@@ -1,20 +1,20 @@
 {
   "stock_id": "1582",
   "name": "1582",
-  "date": "2026-05-20",
-  "close": 107.0,
+  "date": "2026-05-21",
+  "close": 117.5,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 2.283,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.299,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8740.0,
-    "short_change": 71.0,
-    "short_margin_ratio": 0.81
+    "margin_change": 9579.0,
+    "short_change": 94.0,
+    "short_margin_ratio": 0.98
   },
   "tdcc": {
     "big_holder_change": 27.71,
@@ -22,8 +22,8 @@
     "holder_concentration": 33.81
   },
   "main_force": {
-    "cost": 94.87,
-    "distance": 12.79,
+    "cost": 95.62,
+    "distance": 22.88,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-20"
+  "data_version": "2026-05-21"
 }

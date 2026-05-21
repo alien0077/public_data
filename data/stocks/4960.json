@@ -1,20 +1,20 @@
 {
   "stock_id": "4960",
   "name": "4960",
-  "date": "2026-05-20",
-  "close": 33.15,
-  "health_score": 86,
+  "date": "2026-05-21",
+  "close": 36.45,
+  "health_score": 123,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.435,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.455,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 20387.0,
-    "short_change": 327.0,
-    "short_margin_ratio": 1.6
+    "margin_change": 21045.0,
+    "short_change": 399.0,
+    "short_margin_ratio": 1.9
   },
   "tdcc": {
     "big_holder_change": 62.32,
@@ -22,8 +22,8 @@
     "holder_concentration": 65.34
   },
   "main_force": {
-    "cost": 38.34,
-    "distance": -13.54,
+    "cost": 37.92,
+    "distance": -3.88,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 60
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-20"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-21"
 }
