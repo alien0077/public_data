@@ -804,7 +804,40 @@ export const TrendHunter = {
                 }
 
                 // 渲染訊號表格 (分頁)
-                allSignals = data.signals || [];
+                console.log("Quant Data received, processing signals...", data);
+                allSignals = data.signals || data.new_entries;
+                if (!allSignals || allSignals.length === 0) {
+                    console.log("No explicit signals/new_entries, trying fallbacks...");
+                    // Fallback 1: Derive from portfolio candidates
+                    const candidates = (data.portfolio || []).filter(p => !p.is_held && (p.entry_reason === 'SIGNAL' || p.action === 'BUY'));
+                    if (candidates.length > 0) {
+                        allSignals = candidates.map(c => ({
+                            date: data.date,
+                            symbol: c.stock,
+                            type: 'BUY',
+                            reason: c.chip_label || c.entry_reason || '量化模型選入'
+                        }));
+                    }
+                    
+                    // Fallback 2: Merge with recent trade log
+                    const logs = (data.trade_log || []).slice(0, 50).map(l => ({
+                        date: l.exit_date || l.entry_date || data.date,
+                        symbol: l.stock,
+                        type: l.action || 'SIGNAL',
+                        reason: l.reason || '模型成交紀錄'
+                    }));
+                    allSignals = [...(allSignals || []), ...logs];
+                }
+                
+                if (allSignals && allSignals.length > 0) {
+                    // Sort by date desc
+                    allSignals.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    console.log(`Final processed signals count: ${allSignals.length}`);
+                } else {
+                    allSignals = [];
+                    console.warn("All quant signal fallbacks failed, list remains empty.");
+                }
+                
                 renderSignalsPage(1);
 
             } catch (err) {

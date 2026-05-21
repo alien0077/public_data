@@ -107,34 +107,59 @@ export const api = {
             'Authorization': `Bearer ${secret}`
         };
 
-        const response = await fetch(`${API_BASE}${endpoint}`, {
-            ...options,
-            headers
-        });
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5s timeout
 
-        if (!response.ok) {
-            if (response.status === 401) {
-                const isLocal = window.location.hostname === 'localhost' || 
-                                window.location.hostname === '127.0.0.1' || 
-                                window.location.protocol === 'file:';
-                if (isLocal && secret === 'local_dev_bypass') {
-                    throw new Error(`API Error: ${response.status}`);
+        try {
+            const response = await fetch(`${API_BASE}${endpoint}`, {
+                ...options,
+                headers,
+                signal: controller.signal
+            });
+            clearTimeout(timeoutId);
+
+            if (!response.ok) {
+                if (response.status === 401) {
+                    const isLocal = window.location.hostname === 'localhost' || 
+                                    window.location.hostname === '127.0.0.1' || 
+                                    window.location.protocol === 'file:';
+                    if (isLocal && secret === 'local_dev_bypass') {
+                        throw new Error(`API Error: ${response.status}`);
+                    }
+                    localStorage.removeItem('twstock_secret');
+                    window.location.reload();
                 }
-                localStorage.removeItem('twstock_secret');
-                window.location.reload();
+                throw new Error(`API Error: ${response.status}`);
             }
-            throw new Error(`API Error: ${response.status}`);
-        }
 
-        return response.json();
+            return response.json();
+        } catch (err) {
+            clearTimeout(timeoutId);
+            throw err;
+        }
     },
 
     async fetchQuotes(symbols) {
         if (!symbols || symbols.length === 0) return {};
         
-        const formattedSymbols = await Promise.all(symbols.map(s => this.formatSymbol(s)));
+        // 🚀 v2.13.5: 將內部代碼映射為 Yahoo Finance 格式以供 Worker 抓取即時報價
+        const apiMapping = {
+            'IX0001': '^TWII',  // 台股加權
+            'IX0043': '^TWOII', // 櫃買指數
+            'DJI': '^DJI',
+            'IXIC': '^IXIC',
+            'GSPC': '^GSPC',
+            'SOX': '^SOX'
+        };
+
+        const formattedSymbols = await Promise.all(symbols.map(async s => {
+            const clean = s.replace('^', '');
+            const mapped = apiMapping[clean] || s;
+            return await this.formatSymbol(mapped);
+        }));
 
         const query = formattedSymbols.join(',');
+        console.log(`fetchQuotes: Requesting API for [${query}]`);
         
         let quotes = {};
         let fetchFailed = false;
@@ -143,73 +168,120 @@ export const api = {
             const data = await this.fetchWithAuth(`/quote?symbols=${query}`);
             if (data.quoteResponse && data.quoteResponse.result) {
                 data.quoteResponse.result.forEach(q => {
-                    const rawSym = q.symbol.split('.')[0];
-                    quotes[rawSym] = {
+                    const rawSym = q.symbol;
+                    // 反向映射回原始請求代碼
+                    let targetKey = rawSym;
+                    Object.entries(apiMapping).forEach(([key, val]) => {
+                        if (val === rawSym || val.replace('^', '') === rawSym) targetKey = key;
+                    });
+                    
+                    quotes[targetKey] = {
                         price: q.regularMarketPrice,
                         referencePrice: q.regularMarketPreviousClose,
                         change: q.regularMarketChange,
                         changePercent: q.regularMarketChangePercent,
-                        name: q.shortName
+                        name: q.shortName,
+                        source: 'REALTIME'
                     };
                 });
             }
         } catch (err) {
-            console.warn(`Worker API fetchQuotes failed for ${symbols}, trying local daily JSON fallback...`, err);
+            console.warn(`Worker API fetchQuotes failed, trying local fallbacks...`, err);
             fetchFailed = true;
             originalError = err;
         }
 
-        // 🚀 檢查是否所有請求的 symbols 都拿到了報價。如果有缺漏，則使用本地 JSON 來補齊
-        const missingSymbols = symbols.filter(s => !quotes[s.split('.')[0]]);
+        // 🚀 v2.13.5: 強化盤中判定與備援邏輯
+        const missingSymbols = symbols.filter(s => !quotes[s]);
         if (missingSymbols.length > 0) {
-            console.log(`fetchQuotes: Missing quotes for ${missingSymbols.join(',')}. Attempting local daily JSON fallback...`);
-            try {
-                const indexData = await this.fetchLocalJson('index.json');
-                const latestDate = indexData.latest_daily_tw || indexData.latest_daily_tw_market_margin || indexData.latest_liar_update || '2026-05-19';
-                
-                const dailyData = await this.fetchLocalJson(`daily/tw/${latestDate}.json`);
-                
-                let stocksMeta = {};
+            console.log(`fetchQuotes: Missing ${missingSymbols.length} quotes [${missingSymbols.join(',')}]. Checking if market is open...`);
+            
+            const symbolsToFallback = missingSymbols.filter(s => {
+                const isOpen = this.isMarketOpen(s);
+                if (isOpen) {
+                    console.log(`Strict Policy: Skipping fallback for ${s} during OPEN market hours.`);
+                }
+                return !isOpen;
+            });
+
+            if (symbolsToFallback.length > 0) {
+                console.log(`fetchQuotes: Attempting multi-path fallback for [${symbolsToFallback.join(',')}]...`);
                 try {
-                    stocksMeta = await this.fetchLocalJson('meta/stocks.json');
-                } catch(e) {
-                    console.warn("Failed to load stocks meta", e);
-                }
+                    const indexData = await this.fetchLocalJson('index.json');
+                    const latestTW = indexData.latest_daily_tw || '2026-05-20';
+                    const latestIndices = indexData.latest_daily_tw_indices || '2026-05-19';
+                    const latestUS = indexData.latest_daily_us || '2026-05-19';
 
-                if (dailyData && Array.isArray(dailyData.stocks)) {
-                    const missingSet = new Set(missingSymbols.map(s => s.split('.')[0]));
+                    const fallbackSet = new Set(symbolsToFallback);
                     
-                    const metaMap = {};
-                    if (stocksMeta && Array.isArray(stocksMeta.stocks)) {
-                        stocksMeta.stocks.forEach(item => {
-                            metaMap[item.symbol] = item.name;
+                    // 1. Try TW Indices
+                    try {
+                        const twIdxData = await this.fetchLocalJson(`daily/tw_indices/${latestIndices}.json`);
+                        (twIdxData.stocks || twIdxData.data || []).forEach(s => {
+                            const sid = s.id || s.symbol;
+                            if (fallbackSet.has(sid) || (sid === 'IX0001' && fallbackSet.has('TSE')) || (sid === 'IX0043' && fallbackSet.has('OTC'))) {
+                                const targetKey = fallbackSet.has(sid) ? sid : (sid === 'IX0001' ? 'TSE' : 'OTC');
+                                quotes[targetKey] = { price: s.c, referencePrice: s.c / (1 + (s.pct/100)), changePercent: s.pct, name: sid, source: 'EOD_JSON' };
+                                fallbackSet.delete(targetKey);
+                            }
                         });
-                    }
+                    } catch(e) {}
 
-                    dailyData.stocks.forEach(s => {
-                        if (missingSet.has(s.id)) {
-                            const c = s.c || 0;
-                            const pct = s.pct || 0;
-                            const refPrice = pct !== -100 ? (c / (1 + (pct / 100))) : c;
-                            quotes[s.id] = {
-                                price: c,
-                                referencePrice: refPrice,
-                                change: c - refPrice,
-                                changePercent: pct,
-                                name: metaMap[s.id] || s.id
-                            };
-                            console.log(`Matched ${s.id} in fallback, price: ${c}`);
-                        }
-                    });
-                }
-            } catch (fallbackErr) {
-                console.error(`Local fallback fetchQuotes also failed:`, fallbackErr);
-                if (fetchFailed) {
-                    throw originalError;
+                    // 2. Try US Data
+                    try {
+                        const usData = await this.fetchLocalJson(`daily/us/${latestUS}.json`);
+                        (usData.stocks || []).forEach(s => {
+                            const sid = s.id?.replace('^', '');
+                            if (fallbackSet.has(sid) || fallbackSet.has('^' + sid)) {
+                                const targetKey = fallbackSet.has(sid) ? sid : '^' + sid;
+                                quotes[targetKey] = { price: s.c, referencePrice: s.c / (1 + (s.pct/100)), changePercent: s.pct, name: sid, source: 'EOD_JSON' };
+                                fallbackSet.delete(targetKey);
+                            }
+                        });
+                    } catch(e) {}
+
+                    // 3. Try standard TW Data (Stocks)
+                    if (fallbackSet.size > 0) {
+                        try {
+                            const dailyData = await this.fetchLocalJson(`daily/tw/${latestTW}.json`);
+                            (dailyData.stocks || []).forEach(s => {
+                                const sid = s.id || s.symbol;
+                                if (fallbackSet.has(sid)) {
+                                    quotes[sid] = { price: s.c, referencePrice: s.c / (1 + (s.pct/100)), changePercent: s.pct, name: s.n || sid, source: 'EOD_JSON' };
+                                }
+                            });
+                        } catch(e) {}
+                    }
+                } catch (fallbackErr) {
+                    console.error(`Multi-path fallback failed:`, fallbackErr);
                 }
             }
         }
         return quotes;
+    },
+
+    isMarketOpen(symbol) {
+        // 使用台北時間進行判定
+        const tpTimeStr = new Date().toLocaleString('en-US', { timeZone: 'Asia/Taipei', hour12: false });
+        const match = tpTimeStr.match(/(\d+):(\d+):(\d+)/);
+        if (!match) return false;
+        
+        const hour = parseInt(match[1]);
+        const min = parseInt(match[2]);
+        const timeVal = hour * 100 + min;
+        
+        const tpDate = new Date(tpTimeStr);
+        const day = tpDate.getDay();
+        if (day === 0 || day === 6) return false;
+
+        const cleanSym = symbol.replace('^', '');
+        const isTW = cleanSym.includes('.TW') || cleanSym.includes('.TWO') || cleanSym.startsWith('IX') || ['TSE', 'OTC', 'TWII', 'TWOII'].includes(cleanSym);
+        
+        if (isTW) {
+            return timeVal >= 900 && timeVal <= 1335;
+        } else {
+            return timeVal >= 2130 || timeVal < 400;
+        }
     },
 
     async fetchChart(symbol) {

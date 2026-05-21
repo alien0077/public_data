@@ -213,6 +213,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 初始化讀取資料
     async function init() {
         try {
+            // 如果當前頁面是儀表板，主動初始化它
+            if (router.currentPrimary === 'dashboard') {
+                Dashboard.init();
+            }
+
             // 抓取說謊實錄
             const liarData = await api.fetchLiarData();
             renderLiarSection(liarData);
@@ -405,6 +410,14 @@ document.addEventListener('DOMContentLoaded', () => {
         
         dailyPnlEl.textContent = `${dailyPnl >= 0 ? '+' : ''}${formatNumber(dailyPnl, 0)}`;
         dailyPnlEl.className = `text-3xl font-mono font-bold ${dailyPnl >= 0 ? 'text-red-500' : 'text-green-500'}`;
+
+        // 🚀 新增：顯示數據來源提醒
+        const sourceInfo = Object.values(quotes).some(q => q.source === 'REALTIME') ? '📡 即時報價' : '📂 盤後數據 (昨日)';
+        const sourceEl = document.getElementById('price-source-indicator');
+        if (sourceEl) {
+            sourceEl.textContent = sourceInfo;
+            sourceEl.className = `text-[10px] px-2 py-0.5 rounded-full ${sourceInfo.includes('即時') ? 'bg-green-500/10 text-green-500' : 'bg-yellow-500/10 text-yellow-500'}`;
+        }
     }
 
     async function deleteStockTrades(symbol) {
@@ -438,6 +451,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('twstock:ready', () => {
         init();
     });
+
+    // Expose for debugging
+    window.api = api;
+    window.CorporateActions = CorporateActions;
 
     // 檢查是否已登入
     if (localStorage.getItem('twstock_secret')) {
