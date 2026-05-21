@@ -8,12 +8,12 @@ def run_test():
     # 1. 啟動 HTTP 伺服器
     cwd = "/Users/alien/Desktop/TWStockTracker"
     server_process = subprocess.Popen(
-        ["python3", "-m", "http.server", "8000"],
+        ["python3", "-m", "http.server", "8001"],
         cwd=cwd,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL
     )
-    print("HTTP Server started on port 8000...")
+    print("HTTP Server started on port 8001...")
     
     time.sleep(2)
     
@@ -28,7 +28,7 @@ def run_test():
             page.on("pageerror", lambda err: print(f"[Browser JS Error] {err}"))
             
             # 載入頁面 (修正路徑)
-            url = "http://localhost:8000/temp_repo/data/web/index.html"
+            url = "http://localhost:8001/temp_repo/data/web/index.html"
             print(f"Navigating to {url}...")
             page.goto(url)
             page.wait_for_load_state("networkidle")

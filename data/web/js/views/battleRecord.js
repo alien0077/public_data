@@ -1,5 +1,6 @@
 import { db } from '../db.js';
 import { CorporateActions } from '../corporateActions.js';
+import { api } from '../api.js';
 
 /**
  * Battle Record View
@@ -15,11 +16,11 @@ export const BattleRecord = {
                 <!-- Summary Stats -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                     <div class="bg-white dark:bg-[#161b22] p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
-                        <p class="text-gray-500 text-[10px] uppercase font-bold tracking-wider mb-2">已結算總盈虧 (含股利)</p>
+                        <p class="text-gray-500 text-[10px] uppercase font-bold tracking-wider mb-2">全歷史總盈虧</p>
                         <h3 class="text-3xl font-mono font-bold" id="settled-total-pnl">--</h3>
                     </div>
                     <div class="bg-white dark:bg-[#161b22] p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
-                        <p class="text-gray-500 text-[10px] uppercase font-bold tracking-wider mb-2">累計獲利次數</p>
+                        <p class="text-gray-500 text-[10px] uppercase font-bold tracking-wider mb-2">獲利交易數</p>
                         <h3 class="text-3xl font-mono font-bold text-red-500" id="settled-win-count">--</h3>
                     </div>
                     <div class="bg-white dark:bg-[#161b22] p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -37,13 +38,13 @@ export const BattleRecord = {
                     <div class="text-center py-12 text-gray-500">數據分析中...</div>
                 </div>
 
-                <!-- Detail View (Initially Hidden) -->
+                <!-- Detail View Overlay -->
                 <div id="battle-detail-overlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] flex items-center justify-center p-4">
                     <div class="bg-white dark:bg-[#161b22] w-full max-w-2xl max-h-[85vh] rounded-3xl border border-gray-200 dark:border-gray-800 shadow-2xl flex flex-col overflow-hidden">
                         <div class="p-6 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50">
                             <div>
                                 <h3 class="text-xl font-bold text-gray-900 dark:text-white" id="battle-detail-title">個股結算詳情</h3>
-                                <p class="text-xs text-gray-500 mt-1" id="battle-detail-subtitle"></p>
+                                <p class="text-xs text-gray-500 mt-1" id="battle-detail-subtitle">完整交易紀錄與企業行為時間軸</p>
                             </div>
                             <button id="close-battle-detail" class="w-10 h-10 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 flex items-center justify-center transition-colors">
                                 <span class="text-2xl">&times;</span>
@@ -56,7 +57,6 @@ export const BattleRecord = {
             </div>
         `;
 
-        // Bind close button
         document.getElementById('close-battle-detail')?.addEventListener('click', () => {
             document.getElementById('battle-detail-overlay')?.classList.add('hidden');
         });
@@ -67,13 +67,10 @@ export const BattleRecord = {
     async showDetails(symbol, name) {
         const overlay = document.getElementById('battle-detail-overlay');
         const title = document.getElementById('battle-detail-title');
-        const subtitle = document.getElementById('battle-detail-subtitle');
         const content = document.getElementById('battle-detail-content');
-        
         if (!overlay || !content) return;
 
         title.textContent = `${symbol} ${name}`;
-        subtitle.textContent = `完整交易紀錄與企業行為時間軸`;
         content.innerHTML = `<div class="text-center py-8 animate-pulse text-gray-500">載入歷史數據中...</div>`;
         overlay.classList.remove('hidden');
 
@@ -82,7 +79,6 @@ export const BattleRecord = {
             await CorporateActions.loadCorporateActions([symbol]);
             const timeline = CorporateActions.buildTransactionTimeline(trades, symbol);
 
-            // Sort timeline desc (newest first)
             timeline.sort((a, b) => {
                 if (a.date !== b.date) return b.date.localeCompare(a.date);
                 return a.type === 'ACTION' ? -1 : 1;
@@ -111,7 +107,7 @@ export const BattleRecord = {
                                             <div class="font-mono font-bold text-gray-900 dark:text-white">${this.formatNumber(t.quantity || t.shares, 0)} 股</div>
                                         </div>
                                         <div class="flex justify-between items-end">
-                                            <div class="text-sm font-bold ${isBuy ? 'text-red-500' : 'text-green-500'}">${isBuy ? '買入' : '賣出結算'}</div>
+                                            <div class="text-sm font-bold ${isBuy ? 'text-red-500' : 'text-green-500'}">${isBuy ? '買入買進' : '賣出結算'}</div>
                                             <div class="text-sm font-mono text-gray-400">@ $${this.formatNumber(t.price)}</div>
                                         </div>
                                     </div>
@@ -123,24 +119,14 @@ export const BattleRecord = {
                             let color = 'border-yellow-500 text-yellow-600';
                             let icon = '💰';
                             let desc = '';
-                            
                             if (type === 'DIVIDEND' || type === 'CASH_DIVIDEND') {
                                 desc = `配息 $${a.cash_dividend || 0}`;
-                                if (a.stock_dividend > 0) {
-                                    desc += ` + 配股 ${a.stock_dividend} 元`;
-                                    color = 'border-green-500 text-green-600';
-                                    icon = '📈';
-                                }
+                                if (a.stock_dividend > 0) { desc += ` + 配股 ${a.stock_dividend} 元`; color = 'border-green-500 text-green-600'; icon = '📈'; }
                             } else if (type === 'REDUCTION') {
-                                desc = `減資 ${(a.capital_reduction * 100).toFixed(1)}%`;
-                                color = 'border-red-400 text-red-500';
-                                icon = '🔻';
+                                desc = `減資 ${(a.capital_reduction * 100).toFixed(1)}%`; color = 'border-red-400 text-red-500'; icon = '🔻';
                             } else if (type === 'SPLIT') {
-                                desc = `拆分比例 ${a.split_ratio}:1`;
-                                color = 'border-blue-400 text-blue-500';
-                                icon = '🔄';
+                                desc = `拆分比例 ${a.split_ratio}:1`; color = 'border-blue-400 text-blue-500'; icon = '🔄';
                             }
-
                             return `
                                 <div class="relative pl-12">
                                     <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-white dark:bg-[#0f1115] border-2 ${color.split(' ')[0]} flex items-center justify-center z-10 shadow-sm">
@@ -156,10 +142,7 @@ export const BattleRecord = {
                     }).join('')}
                 </div>
             `;
-
-        } catch (err) {
-            content.innerHTML = `<div class="p-8 text-center text-red-500">載入失敗: ${err.message}</div>`;
-        }
+        } catch (err) { content.innerHTML = `<div class="p-8 text-center text-red-500">載入失敗: ${err.message}</div>`; }
     },
 
     async render() {
@@ -172,8 +155,7 @@ export const BattleRecord = {
         const symbols = Array.from(new Set(trades.map(t => t.symbol || t.stock_id || t.stockId)));
         await CorporateActions.loadCorporateActions(symbols);
         const holdings = CorporateActions.recalculateHoldings(trades);
-
-        // Group trades by symbol to find settled ones
+        
         const symbolGroups = {};
         trades.forEach(t => {
             const sym = t.symbol || t.stock_id || t.stockId;
@@ -183,77 +165,79 @@ export const BattleRecord = {
 
         let totalRealizedPNL = 0;
         let totalDividend = 0;
+        let totalUnrealizedPNL = 0;
         let winCount = 0;
         let totalSettledCount = 0;
 
+        let quotes = {};
+        try { quotes = await api.fetchQuotes(symbols).catch(() => ({})); } catch(e) {}
+
         const results = [];
         Object.keys(symbolGroups).forEach(sym => {
-            const h = holdings[sym] || { realizedPNL: 0, totalDividend: 0, shares: 0 };
-            const pnl = h.realizedPNL;
-            const div = h.totalDividend;
-            const totalResult = pnl + div;
+            const h = holdings[sym] || { realizedPNL: 0, totalDividend: 0, shares: 0, totalCost: 0 };
+            let unrealized = 0;
+            if (h.shares > 0) {
+                const q = quotes[sym] || quotes[sym.split('.')[0]] || {};
+                const price = q.price || (h.totalCost / h.shares);
+                unrealized = (price * h.shares) - h.totalCost;
+            }
+            totalUnrealizedPNL += unrealized;
+            const totalResult = h.realizedPNL + h.totalDividend + unrealized;
 
-            // 只有有過 realizedPNL 或 totalDividend 的才算入戰績 (代表有賣出過或領過息)
-            if (Math.abs(pnl) > 0.1 || div > 0) {
-                totalRealizedPNL += pnl;
-                totalDividend += div;
+            if (Math.abs(h.realizedPNL) > 0.1 || h.totalDividend > 0 || h.shares > 0) {
+                totalRealizedPNL += h.realizedPNL;
+                totalDividend += h.totalDividend;
                 totalSettledCount++;
                 if (totalResult > 0) winCount++;
 
                 results.push({
                     symbol: sym,
                     name: symbolGroups[sym][0].name || symbolGroups[sym][0].stockName || '',
-                    pnl: pnl,
-                    dividend: div,
+                    pnl: h.realizedPNL,
+                    dividend: h.totalDividend,
+                    unrealized: unrealized,
                     total: totalResult,
-                    tradesCount: symbolGroups[sym].length
                 });
             }
         });
 
         results.sort((a, b) => b.total - a.total);
 
-        // Update Summary
-        const totalPnlEl = document.getElementById('settled-total-pnl');
-        const grandTotal = totalRealizedPNL + totalDividend;
-        totalPnlEl.textContent = `$${this.formatNumber(grandTotal, 0)}`;
-        totalPnlEl.className = `text-3xl font-mono font-bold ${grandTotal >= 0 ? 'text-red-500' : 'text-green-500'}`;
-
+        const grandTotal = totalRealizedPNL + totalDividend + totalUnrealizedPNL;
+        document.getElementById('settled-total-pnl').textContent = `$${this.formatNumber(grandTotal, 0)}`;
+        document.getElementById('settled-total-pnl').className = `text-3xl font-mono font-bold ${grandTotal >= 0 ? 'text-red-500' : 'text-green-500'}`;
         document.getElementById('settled-win-count').textContent = winCount;
         document.getElementById('settled-total-dividend').textContent = `$${this.formatNumber(totalDividend, 0)}`;
         document.getElementById('settled-win-rate').textContent = totalSettledCount > 0 ? `${(winCount/totalSettledCount*100).toFixed(1)}%` : '0%';
 
-        // Render Groups
         const container = document.getElementById('settled-groups-container');
-        container.innerHTML = results.map(r => `
-            <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm hover:border-blue-500/50 transition-all cursor-pointer" 
-                 onclick="BattleRecord.showDetails('${r.symbol}', '${r.name}')">
-                <div class="p-5 flex justify-between items-center">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-gray-50 dark:bg-gray-900 flex items-center justify-center font-bold text-blue-500">
-                            ${r.symbol.substring(0,2)}
-                        </div>
-                        <div>
-                            <div class="font-bold text-gray-900 dark:text-white">${r.symbol}</div>
-                            <div class="text-xs text-gray-500">${r.name}</div>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-lg font-mono font-bold ${r.total >= 0 ? 'text-red-500' : 'text-green-500'}">
-                            ${r.total >= 0 ? '+' : ''}${this.formatNumber(r.total, 0)}
-                        </div>
-                        <div class="text-[10px] text-gray-400 font-mono">價差: ${this.formatNumber(r.pnl, 0)} | 股利: ${this.formatNumber(r.dividend, 0)}</div>
-                    </div>
-                </div>
+        container.innerHTML = `
+            <div class="bg-blue-50 dark:bg-blue-900/10 p-4 rounded-2xl border border-blue-100 dark:border-blue-800/30 text-xs text-blue-600 dark:text-blue-400 mb-6 font-sans text-center">
+                💡 彙總 = 歷史已實現價差 + 累計股利 + 目前部位未實現。
             </div>
-        `).join('') || `<div class="text-center py-12 text-gray-500">當前尚無已結算的交易紀錄。</div>`;
+            <div class="grid grid-cols-1 gap-4">
+                ${results.map(r => `
+                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm hover:border-blue-500/50 transition-all cursor-pointer group" 
+                         onclick="BattleRecord.showDetails('${r.symbol}', '${r.name}')">
+                        <div class="p-5 flex justify-between items-center">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-gray-50 dark:bg-gray-900 flex items-center justify-center font-bold text-blue-500 group-hover:scale-110 transition-transform">${r.symbol.substring(0,2)}</div>
+                                <div><div class="font-bold text-gray-900 dark:text-white font-sans">${r.symbol}</div><div class="text-xs text-gray-500 font-sans">${r.name}</div></div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-lg font-mono font-bold ${r.total >= 0 ? 'text-red-500' : 'text-green-500'}">${r.total >= 0 ? '+' : ''}${this.formatNumber(r.total, 0)}</div>
+                                <div class="text-[10px] text-gray-400 font-mono">價差: ${this.formatNumber(r.pnl + r.unrealized, 0)} | 股利: ${this.formatNumber(r.dividend, 0)}</div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
     },
 
     formatNumber(num, decimals = 2) {
-        return new Intl.NumberFormat('zh-TW', {
-            minimumFractionDigits: decimals,
-            maximumFractionDigits: decimals
-        }).format(num);
+        return new Intl.NumberFormat('zh-TW', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(num);
     }
 };
 
+window.BattleRecord = BattleRecord;

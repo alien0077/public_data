@@ -8,10 +8,10 @@ from playwright.sync_api import sync_playwright
 def run_empirical_test():
     cwd = "/Users/alien/Desktop/TWStockTracker"
     server_process = subprocess.Popen(
-        ["python3", "-m", "http.server", "8000"],
+        ["python3", "-m", "http.server", "8001"],
         cwd=cwd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
     )
-    print("HTTP Server started.")
+    print("HTTP Server started on port 8001.")
     
     time.sleep(2)
     
@@ -20,31 +20,36 @@ def run_empirical_test():
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
             
-            url = "http://localhost:8000/temp_repo/data/web/index.html"
+            url = "http://localhost:8001/temp_repo/data/web/index.html"
             page.goto(url)
-            page.evaluate("localStorage.setItem('twstock_secret', 'local_dev_bypass')")
+            print("Logging in with MY_SECRET_KEY = 'test'...")
+            page.evaluate("localStorage.setItem('twstock_secret', 'test')")
             page.reload()
             page.wait_for_load_state("networkidle")
             
-            print("--- Executing Direct API Test in Browser ---")
+            print("--- Executing Real-time Yahoo API Test ---")
             
-            # 測試 1: 測試 fetchQuotes 直接回傳
-            # 我們要看的是有沒有任何一個 symbol 拿到價錢 (>0)
+            # 測試 1: 測試 fetchQuotes 並確認 source 是否為 REALTIME
             result = page.evaluate("""
                 async () => {
                     const symbols = ['IX0001', '2330', 'TSM', 'NVDA'];
                     const quotes = await api.fetchQuotes(symbols);
                     return {
                         quotes: quotes,
-                        rawCount: Object.keys(quotes).length,
-                        validPrices: Object.values(quotes).filter(q => q.price > 0).length
+                        hasRealtime: Object.values(quotes).some(q => q.source === 'REALTIME'),
+                        realtimeCount: Object.values(quotes).filter(q => q.source === 'REALTIME').length,
+                        sample: Object.entries(quotes)[0]
                     };
                 }
             """)
             
-            print(f"API Test Results: Found {result['rawCount']} keys, {result['validPrices']} have valid prices.")
-            print("Detailed Quotes Data:")
-            print(json.dumps(result['quotes'], indent=2, ensure_ascii=False))
+            print(f"Yahoo API Result: Found {result['realtimeCount']} REALTIME quotes.")
+            if result['hasRealtime']:
+                print("✅ SUCCESS: Yahoo Real-time data confirmed.")
+            else:
+                print("❌ FAILURE: No real-time data received. Check Worker or Key.")
+            
+            print("Sample Data:", result['sample'])
             
             # 測試 2: 檢查 Dashboard DOM 實際內容
             page.evaluate("router.switchPage('dashboard')")

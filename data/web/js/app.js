@@ -59,6 +59,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentDetailSymbol = null;
     let refreshInterval = null;
 
+    function updateApiStatus(status, isError = false, source = 'OFFLINE') {
+        const indicator = document.getElementById('status-indicator');
+        const text = document.getElementById('status-text');
+        const errorMsg = document.getElementById('api-error-msg');
+        const sourceBadge = document.getElementById('data-source-badge');
+        const timeEl = document.getElementById('last-refresh-time');
+
+        if (!indicator || !text) return;
+
+        text.textContent = status;
+        indicator.className = `w-1.5 h-1.5 rounded-full mr-2 ${isError ? 'bg-red-500 animate-pulse' : 'bg-green-500'}`;
+        
+        if (sourceBadge) {
+            sourceBadge.textContent = source;
+            sourceBadge.className = `px-2 py-0.5 rounded-full font-bold ${source === 'REALTIME' ? 'bg-green-500/10 text-green-500' : 'bg-gray-200 dark:bg-gray-800 text-gray-500'}`;
+        }
+
+        if (timeEl) {
+            timeEl.textContent = new Date().toLocaleTimeString();
+        }
+    }
+
     // --- Theme Logic ---
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
@@ -166,9 +188,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (trades.length > 0) {
                         await db.saveTrades(trades);
-                        alert(`成功匯入 ${trades.length} 筆交易紀錄！`);
-                        await init();
-                        await refreshQuotes();
+                        alert(`成功匯入 ${trades.length} 筆交易紀錄！系統將重新載入...`);
+                        
+                        // 🚀 v2.15.2: 深度系統重置
+                        currentQuotes = {}; // 清空舊報價
+                        const symbols = Array.from(new Set(trades.map(t => t.symbol || t.stock_id || t.stockId)));
+                        await CorporateActions.loadCorporateActions(symbols); // 重新讀取除權息
+                        await init(); // 重啟 UI 組件
+                        await refreshQuotes(); // 立刻抓取最新報價
                     } else {
                         alert('在 JSON 檔案中找不到有效的交易紀錄。');
                     }
@@ -285,22 +312,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function refreshQuotes() {
         const trades = await db.getAllTrades();
-        if (trades.length === 0) return;
+        if (trades.length === 0) {
+            updateApiStatus('無持股數據', false, 'IDLE');
+            return;
+        }
 
         const holdings = calculateHoldings(trades);
         const symbols = Object.keys(holdings);
         
         try {
+            updateApiStatus('正在同步報價...', false, 'FETCHING');
             const quotes = await api.fetchQuotes(symbols);
             currentQuotes = quotes;
+            
+            const hasRealtime = Object.values(quotes).some(q => q.source === 'REALTIME');
+            updateApiStatus('報價同步成功', false, hasRealtime ? 'REALTIME' : 'OFFLINE');
+
             renderPortfolio(trades, quotes);
             
             if (currentDetailSymbol && quotes[currentDetailSymbol]) {
                 updateDetailHeader(currentDetailSymbol, quotes[currentDetailSymbol]);
             }
         } catch (err) {
-            console.error("fetchQuotes failed:", err);
-            // Render portfolio anyway with whatever currentQuotes we have
+            console.error("refreshQuotes failed:", err);
+            updateApiStatus(`同步失敗: ${err.message}`, true, 'ERROR');
             renderPortfolio(trades, currentQuotes || {});
         }
     }

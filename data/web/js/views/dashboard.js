@@ -97,7 +97,8 @@ export const Dashboard = {
         }
 
         const latestMargin = indexData?.latest_daily_tw_market_margin || '2026-05-20';
-        const indexSymbols = ['IX0001', 'IX0043', 'DJI', 'IXIC', 'GSPC', 'SOX', 'TSM']; // Use clean keys for internal lookup
+        // 🚀 v2.15.2: 使用帶有 ^ 的標準 Yahoo 代碼，確保即時與備援一致
+        const indexSymbols = ['IX0001', 'IX0043', '^DJI', '^IXIC', '^GSPC', '^SOX', 'TSM']; 
         
         try {
             // Split into independent promises to avoid one failure blocking all
@@ -164,8 +165,13 @@ export const Dashboard = {
         const getPctColor = (pct) => parseFloat(pct || 0) >= 0 ? 'text-red-500' : 'text-green-500';
 
         const getItem = (sym) => {
-            const clean = sym.replace('^', '');
-            const res = quotes[sym] || quotes[clean] || quotes['^' + clean] || (sym === 'IX0001' ? quotes['TSE'] : (sym === 'IX0043' ? quotes['OTC'] : null)) || { price: 0, changePercent: 0, source: 'N/A' };
+            const clean = sym.replace('^', '').toUpperCase();
+            const res = quotes[sym] || 
+                        quotes['^' + clean] || 
+                        quotes[clean] || 
+                        (clean === 'IX0001' ? (quotes['TSE'] || quotes['^TWII'] || quotes['TWII']) : null) ||
+                        (clean === 'IX0043' ? (quotes['OTC'] || quotes['^TWOII'] || quotes['TWOII']) : null) ||
+                        { price: 0, changePercent: 0, source: 'N/A', date: '--' };
             return res;
         };
 
@@ -177,60 +183,72 @@ export const Dashboard = {
         const sox = getItem('SOX');
         const tsm = getItem('TSM');
 
+        const getDateBadge = (item) => {
+            if (item.source === 'REALTIME' || item.source === 'REALTIME_CHART') return '<span class="ml-1 animate-pulse text-blue-500">📡</span>';
+            if (item.date && item.date !== '--') return `<span class="ml-1 text-[8px] bg-gray-100 dark:bg-gray-800 text-gray-400 px-1 rounded">${item.date.substring(5)}</span>`;
+            return '';
+        };
+
+        const formatPct = (val) => {
+            const num = parseFloat(val);
+            if (isNaN(num)) return '0.00';
+            return (num >= 0 ? '+' : '') + num.toFixed(2);
+        };
+
         container.innerHTML = `
             <div class="bg-white dark:bg-[#161b22] p-5 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm relative overflow-hidden">
                 <div class="flex justify-between items-center mb-4">
-                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">台股市場</span>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest font-sans">台股市場</span>
                     <span class="px-2 py-0.5 rounded text-[10px] text-white font-bold ${twSession.color}">${twSession.label}</span>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <div class="text-[10px] text-gray-500 mb-1 flex items-center">加權 ${tse.source === 'REALTIME' ? '📡' : ''}</div>
+                        <div class="text-[10px] text-gray-500 mb-1 flex items-center">加權 ${getDateBadge(tse)}</div>
                         <div class="text-xl font-mono font-bold text-gray-900 dark:text-white">${formatIdx(tse.price)}</div>
-                        <div class="${getPctColor(tse.changePercent)} font-bold text-xs">${tse.changePercent >= 0 ? '+' : ''}${tse.changePercent}%</div>
+                        <div class="${getPctColor(tse.changePercent)} font-mono font-bold text-xs">${formatPct(tse.changePercent)}%</div>
                     </div>
                     <div>
-                        <div class="text-[10px] text-gray-500 mb-1">櫃買</div>
+                        <div class="text-[10px] text-gray-500 mb-1 flex items-center">櫃買 ${getDateBadge(otc)}</div>
                         <div class="text-xl font-mono font-bold text-gray-900 dark:text-white">${formatIdx(otc.price)}</div>
-                        <div class="${getPctColor(otc.changePercent)} font-bold text-xs">${otc.changePercent >= 0 ? '+' : ''}${otc.changePercent}%</div>
+                        <div class="${getPctColor(otc.changePercent)} font-mono font-bold text-xs">${formatPct(otc.changePercent)}%</div>
                     </div>
                 </div>
                 <div class="mt-4 pt-3 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
-                    <span class="text-[10px] text-gray-400 font-bold">融資餘額</span>
+                    <span class="text-[10px] text-gray-400 font-bold">市場融資餘額</span>
                     <span class="text-xs font-mono font-bold text-blue-500">${((marginData?.stocks?.[0]?.total_margin_balance || 0) / 100000000).toFixed(0)} 億</span>
                 </div>
             </div>
 
             <div class="bg-white dark:bg-[#161b22] p-5 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm relative lg:col-span-2">
                 <div class="flex justify-between items-center mb-4">
-                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">美股與半導體監控</span>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest font-sans">美股與半導體監控</span>
                     <span class="px-2 py-0.5 rounded text-[10px] text-white font-bold ${usSession.color}">${usSession.label}</span>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
                     <div class="p-1">
-                        <div class="text-[10px] text-gray-500 mb-1">道瓊</div>
+                        <div class="text-[10px] text-gray-500 mb-1 flex items-center">道瓊 ${getDateBadge(dji)}</div>
                         <div class="text-base font-mono font-bold text-gray-900 dark:text-white">${formatIdx(dji.price)}</div>
-                        <div class="${getPctColor(dji.changePercent)} text-[10px] font-bold">${dji.changePercent >= 0 ? '+' : ''}${dji.changePercent}%</div>
+                        <div class="${getPctColor(dji.changePercent)} text-[10px] font-mono font-bold">${formatPct(dji.changePercent)}%</div>
                     </div>
                     <div class="p-1">
-                        <div class="text-[10px] text-gray-500 mb-1">標普</div>
+                        <div class="text-[10px] text-gray-500 mb-1 flex items-center">標普 ${getDateBadge(sp500)}</div>
                         <div class="text-base font-mono font-bold text-gray-900 dark:text-white">${formatIdx(sp500.price)}</div>
-                        <div class="${getPctColor(sp500.changePercent)} text-[10px] font-bold">${sp500.changePercent >= 0 ? '+' : ''}${sp500.changePercent}%</div>
+                        <div class="${getPctColor(sp500.changePercent)} text-[10px] font-mono font-bold">${formatPct(sp500.changePercent)}%</div>
                     </div>
                     <div class="p-1">
-                        <div class="text-[10px] text-gray-500 mb-1">納指</div>
+                        <div class="text-[10px] text-gray-500 mb-1 flex items-center">納指 ${getDateBadge(nasdaq)}</div>
                         <div class="text-base font-mono font-bold text-gray-900 dark:text-white">${formatIdx(nasdaq.price)}</div>
-                        <div class="${getPctColor(nasdaq.changePercent)} text-[10px] font-bold">${nasdaq.changePercent >= 0 ? '+' : ''}${nasdaq.changePercent}%</div>
+                        <div class="${getPctColor(nasdaq.changePercent)} text-[10px] font-mono font-bold">${formatPct(nasdaq.changePercent)}%</div>
                     </div>
                     <div class="bg-blue-500/5 p-2 rounded-xl border border-blue-500/20">
-                        <div class="text-[10px] text-blue-600 font-bold mb-1">費半 SOX</div>
+                        <div class="text-[10px] text-blue-600 font-bold mb-1 flex items-center text-xs">費半 ${getDateBadge(sox)}</div>
                         <div class="text-base font-mono font-bold text-gray-900 dark:text-white">${formatIdx(sox.price)}</div>
-                        <div class="${getPctColor(sox.changePercent)} text-[10px] font-bold">${sox.changePercent >= 0 ? '+' : ''}${sox.changePercent}%</div>
+                        <div class="${getPctColor(sox.changePercent)} text-[10px] font-mono font-bold">${formatPct(sox.changePercent)}%</div>
                     </div>
                     <div class="bg-red-500/5 p-2 rounded-xl border border-red-500/20">
-                        <div class="text-[10px] text-red-600 font-bold mb-1">台積 ADR ${tsm.source === 'REALTIME' ? '📡' : ''}</div>
+                        <div class="text-[10px] text-red-600 font-bold mb-1 flex items-center text-xs">台積 ADR ${getDateBadge(tsm)}</div>
                         <div class="text-base font-mono font-bold text-gray-900 dark:text-white">${formatIdx(tsm.price)}</div>
-                        <div class="${getPctColor(tsm.changePercent)} text-[10px] font-bold">${tsm.changePercent >= 0 ? '+' : ''}${tsm.changePercent}%</div>
+                        <div class="${getPctColor(tsm.changePercent)} text-[10px] font-mono font-bold">${formatPct(tsm.changePercent)}%</div>
                     </div>
                 </div>
             </div>
