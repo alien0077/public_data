@@ -40,44 +40,64 @@ def run_test():
             page.wait_for_load_state("networkidle")
             
             # 測試儀表板 (Dashboard)
-            print("--- Testing Dashboard Data Flow ---")
+            print("--- Testing Dashboard Data Flow (Deep Trace) ---")
             
-            # 注入測試腳本，主動測試 api.fetchQuotes
+            # 注入測試腳本，主動測試 api.fetchQuotes 並捕捉原始回應
             test_results = page.evaluate("""
                 async () => {
-                    const symbols = ['IX0001', 'IX0043', 'DJI', 'TSM'];
-                    const results = {};
+                    const symbols = ['IX0001', '2330', 'TSM'];
+                    const results = {
+                        browserTime: new Date().toString(),
+                        isMarketOpen: {
+                            IX0001: api.isMarketOpen('IX0001'),
+                            s2330: api.isMarketOpen('2330')
+                        }
+                    };
                     
-                    // 1. 測試格式化
-                    results.formatted = await Promise.all(symbols.map(s => api.formatSymbol(s)));
-                    
-                    // 2. 測試報價獲取 (直接呼叫)
                     try {
+                        // 1. 測試格式化後的 Query
+                        const formatted = await Promise.all(symbols.map(s => api.formatSymbol(s)));
+                        results.query = formatted.join(',');
+                        
+                        // 2. 攔截 fetch 請求以查看原始回傳
+                        const originalFetch = window.fetch;
+                        let lastResponse = null;
+                        window.fetch = async (...args) => {
+                            const res = await originalFetch(...args);
+                            if (args[0].includes('/quote')) {
+                                try {
+                                    const cloned = res.clone();
+                                    lastResponse = await cloned.json();
+                                } catch(e) { lastResponse = 'JSON_PARSE_ERROR'; }
+                            }
+                            return res;
+                        };
+                        
+                        // 3. 執行請求
                         results.quotes = await api.fetchQuotes(symbols);
+                        results.rawApiResponse = lastResponse;
+                        
+                        // 恢復 fetch
+                        window.fetch = originalFetch;
                     } catch (e) {
                         results.error = e.message;
                     }
                     
-                    // 3. 檢查市場狀態判定
-                    results.marketStatus = {
-                        IX0001: api.isMarketOpen('IX0001'),
-                        DJI: api.isMarketOpen('DJI')
-                    };
-                    
                     return results;
                 }
             """)
-            print(f"Format Check: {test_results['formatted']}")
-            print(f"Market Status: {test_results['marketStatus']}")
+            print(f"Browser Time: {test_results.get('browserTime')}")
+            print(f"Market Status Check: {test_results.get('isMarketOpen')}")
+            print(f"Formatted Query: {test_results.get('query')}")
+            print(f"Raw API Response: {test_results.get('rawApiResponse')}")
+            print(f"Final Quotes Keys: {list(test_results.get('quotes', {}).keys())}")
+            
             if 'error' in test_results:
                 print(f"Fetch Error: {test_results['error']}")
-            else:
-                print(f"Quotes Keys: {list(test_results['quotes'].keys())}")
-                print(f"Quotes Sample (TSE): {test_results['quotes'].get('TSE') or test_results['quotes'].get('IX0001')}")
 
             page.evaluate("router.switchPage('dashboard')")
             page.wait_for_timeout(5000)
-            page.screenshot(path="temp_repo/data/web/test_dashboard_final.png")
+            page.screenshot(path="temp_repo/data/web/test_dashboard_trace.png")
             
             # 測試企業行為與持股
             print("--- Testing Corporate Actions & Portfolio ---")

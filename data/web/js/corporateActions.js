@@ -40,7 +40,7 @@ export const CorporateActions = {
         return this._cache[symbol] || [];
     },
 
-    recalculateHoldings(trades) {
+    recalculateHoldings(trades, includeClosed = true) {
         const holdings = {};
         
         // Sort trades by date
@@ -107,7 +107,9 @@ export const CorporateActions = {
             }
         });
 
-        // Filter out empty holdings
+        if (includeClosed) return holdings;
+
+        // Filter out empty holdings if explicitly requested
         const activeHoldings = {};
         for (const sid in holdings) {
             if (holdings[sid].shares > 0.001) {

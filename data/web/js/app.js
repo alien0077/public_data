@@ -167,7 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (trades.length > 0) {
                         await db.saveTrades(trades);
                         alert(`成功匯入 ${trades.length} 筆交易紀錄！`);
-                        init();
+                        await init();
+                        await refreshQuotes();
                     } else {
                         alert('在 JSON 檔案中找不到有效的交易紀錄。');
                     }
@@ -309,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderPortfolio(trades, quotes = {}) {
-        const holdings = calculateHoldings(trades);
+        const holdings = calculateHoldings(trades); // Now returns everything historical
         portfolioBody.innerHTML = '';
 
         let totalMarketValue = 0;
@@ -322,6 +323,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sortedSymbols.forEach(sym => {
             const h = holdings[sym];
+            
+            // Accumulate historical gains for ALL symbols (even closed ones)
+            totalRealizedPNL += (h.realizedPNL || 0);
+            totalDividendIncome += (h.totalDividend || 0);
+
+            // Only render active holdings in the table
+            if (h.shares <= 0.001) return;
+
             const quote = quotes[sym] || quotes[sym.split('.')[0]] || {};
             const price = quote.price || 0;
             const refPrice = quote.referencePrice || price;
@@ -335,16 +344,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const unrealizedPnl = price > 0 ? (marketValue - costValue) : 0;
             const unrealizedRoi = costValue > 0 ? (unrealizedPnl / costValue * 100) : 0;
             
-            // 此檔股票的總損益 = 未實現 + 已實現 + 股利
-            const totalStockPnl = unrealizedPnl + h.realizedPNL + h.totalDividend;
+            // 🚀 v2.14.1: 改進顯示邏輯
+            // 表格中顯示「目前庫存」的損益
+            const currentPositionPnl = unrealizedPnl; 
             
             const changePercent = (price > 0 && refPrice > 0) ? ((price - refPrice) / refPrice * 100) : 0;
 
             totalMarketValue += marketValue;
             totalCostValue += costValue;
             totalRefMarketValue += (refPrice > 0 ? (refPrice * shares) : marketValue);
-            totalRealizedPNL += h.realizedPNL;
-            totalDividendIncome += h.totalDividend;
 
             const row = document.createElement('tr');
             row.className = 'hover:bg-gray-800/30 transition-colors cursor-pointer';
@@ -370,8 +378,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td class="px-3 md:px-6 py-4 text-right font-bold text-blue-400 hidden md:table-cell">
                     ${formatNumber(marketValue, 0)}
                 </td>
-                <td class="px-3 md:px-6 py-4 text-right ${totalStockPnl >= 0 ? 'text-red-500' : 'text-green-500'}">
-                    <div class="font-bold">${(totalStockPnl >= 0 ? '+' : '') + formatNumber(totalStockPnl, 0)}</div>
+                <td class="px-3 md:px-6 py-4 text-right ${currentPositionPnl >= 0 ? 'text-red-500' : 'text-green-500'}">
+                    <div class="font-bold">${(currentPositionPnl >= 0 ? '+' : '') + formatNumber(currentPositionPnl, 0)}</div>
                     <div class="text-[10px] opacity-70">${unrealizedRoi.toFixed(2)}% (未實現)</div>
                 </td>
                 <td class="px-3 md:px-6 py-4 text-right">
