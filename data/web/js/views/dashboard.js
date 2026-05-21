@@ -302,7 +302,7 @@ export const Dashboard = {
         const symbols = Array.from(new Set(trades.map(t => t.symbol || t.stock_id || t.stockId)));
         await CorporateActions.loadCorporateActions(symbols);
         const holdings = CorporateActions.recalculateHoldings(trades);
-        const activeSymbols = Object.keys(holdings);
+        const activeSymbols = Object.keys(holdings).filter(sym => holdings[sym].shares > 0.001);
 
         let estTotalDiv = 0;
         const currentYear = new Date().getFullYear().toString();

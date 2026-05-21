@@ -248,7 +248,7 @@ export const AssetRisk = {
             const symbols = Array.from(new Set(trades.map(t => t.symbol || t.stock_id || t.stockId)));
             await CorporateActions.loadCorporateActions(symbols);
             const holdings = CorporateActions.recalculateHoldings(trades);
-            const activeSymbols = Object.keys(holdings);
+            const activeSymbols = Object.keys(holdings).filter(sym => holdings[sym].shares > 0.001);
             
             if (activeSymbols.length === 0) {
                 container.innerHTML = `<div class="p-8 text-center text-gray-500">當前無庫存持股。</div>`;
@@ -344,7 +344,7 @@ export const AssetRisk = {
             const symbols = Array.from(new Set(trades.map(t => t.symbol || t.stock_id || t.stockId)));
             await CorporateActions.loadCorporateActions(symbols);
             const holdings = CorporateActions.recalculateHoldings(trades);
-            const activeSymbols = Object.keys(holdings);
+            const activeSymbols = Object.keys(holdings).filter(sym => holdings[sym].shares > 0.001);
             
             if (activeSymbols.length === 0) {
                 container.innerHTML = `<div class="p-8 text-center text-gray-500">當前無庫存持股。</div>`;

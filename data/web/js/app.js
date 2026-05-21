@@ -178,10 +178,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 try {
                     const data = JSON.parse(e.target.result);
                     let trades = [];
-                    if (Array.isArray(data.normalizedTrades)) {
-                        trades = data.normalizedTrades;
-                    } else if (Array.isArray(data.transactions)) {
-                        trades = data.transactions;
+                    
+                    // 🚀 v2.16.1: 智慧偵測交易資料源，優先選取紀錄較完整的陣列
+                    const nTrades = Array.isArray(data.normalizedTrades) ? data.normalizedTrades : [];
+                    const rTransactions = Array.isArray(data.transactions) ? data.transactions : [];
+                    
+                    if (nTrades.length > 0 || rTransactions.length > 0) {
+                        // 優先選擇長度較長的，防止 iOS 備份中 normalizedTrades 滯後的問題
+                        trades = rTransactions.length >= nTrades.length ? rTransactions : nTrades;
                     } else if (Array.isArray(data)) {
                         trades = data;
                     }

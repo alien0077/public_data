@@ -30,15 +30,22 @@ export const api = {
     },
 
     async formatSymbol(s) {
-        if (!/^\d+$/.test(s)) return s;
         if (s.startsWith('^')) return s;
+        
+        // 🚀 v4.1.3: 移除純數字限制，支援含字母代碼 (如 00982A)
         const meta = await this.getStocksMeta();
         const stockInfo = meta.stocks?.find(item => item.symbol === s);
+        
         if (stockInfo) {
             const market = (stockInfo.market || '').toUpperCase();
+            // 優先參考 stocks.json 的市場分類
             return (market === 'TPEX' || market === 'TWO' || market === 'OTC') ? `${s}.TWO` : `${s}.TW`;
         }
-        return s.length === 4 ? `${s}.TW` : `${s}.TWO`;
+        
+        // 默認規則：若 Meta 查無，4碼預設 TWSE，其餘預設 TWSE (因主動式 ETF 為 6 碼)
+        // 但若為純 6 碼數字且 Meta 查無，通常為 OTC
+        if (/^\d{6}$/.test(s)) return `${s}.TWO`;
+        return `${s}.TW`;
     },
 
     async fetchLocalJson(path) {
