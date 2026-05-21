@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const authError = document.getElementById('auth-error');
     const authLoading = document.getElementById('auth-loading');
 
-    // 檢查 sessionStorage 是否已有金鑰
-    const savedKey = sessionStorage.getItem('twstock_secret');
+    // 檢查 localStorage 是否已有金鑰
+    const savedKey = localStorage.getItem('twstock_secret');
     if (savedKey) {
         verifyAndLogin(savedKey);
     }
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 // 驗證成功
-                sessionStorage.setItem('twstock_secret', key);
+                localStorage.setItem('twstock_secret', key);
                 showApp();
             } else {
                 // 🚀 如果在本地環境且金鑰為 local_dev_bypass，則允許登入
@@ -53,12 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
                                 window.location.hostname === '127.0.0.1' || 
                                 window.location.protocol === 'file:';
                 if (isLocal && key === 'local_dev_bypass') {
-                    sessionStorage.setItem('twstock_secret', key);
+                    localStorage.setItem('twstock_secret', key);
                     showApp();
                 } else {
                     // 驗證失敗
                     authError.classList.remove('hidden');
-                    sessionStorage.removeItem('twstock_secret');
+                    localStorage.removeItem('twstock_secret');
                 }
             }
         } catch (error) {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             window.location.hostname === '127.0.0.1' || 
                             window.location.protocol === 'file:';
             if (isLocal) {
-                sessionStorage.setItem('twstock_secret', key || 'local_dev_bypass');
+                localStorage.setItem('twstock_secret', key || 'local_dev_bypass');
                 showApp();
             } else {
                 authError.textContent = '連線失敗，請檢查網路';

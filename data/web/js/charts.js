@@ -123,14 +123,14 @@ export const charts = {
                 confine: true
             },
             grid: [
-                { left: 50, right: 10, top: 20, height: '65%' },
-                { left: 50, right: 10, top: '78%', height: '15%' }
+                { left: 40, right: 10, top: 10, height: '70%' },
+                { left: 40, right: 10, top: '82%', height: '15%' }
             ],
             xAxis: [
                 {
                     type: 'category',
                     data: data.categoryData,
-                    boundaryGap: false,
+                    boundaryGap: true,
                     axisLine: { lineStyle: { color: '#30363d' } },
                     axisLabel: { color: '#8b949e', fontSize: 10 },
                     splitLine: { show: false }
@@ -139,7 +139,7 @@ export const charts = {
                     type: 'category',
                     gridIndex: 1,
                     data: data.categoryData,
-                    boundaryGap: false,
+                    boundaryGap: true,
                     axisLine: { lineStyle: { color: '#30363d' } },
                     axisTick: { show: false },
                     axisLabel: { show: false },
@@ -149,6 +149,7 @@ export const charts = {
             yAxis: [
                 {
                     scale: true,
+                    position: 'left',
                     axisLine: { lineStyle: { color: '#30363d' } },
                     axisLabel: { color: '#8b949e', fontSize: 10 },
                     splitLine: { lineStyle: { color: '#161b22' } }
@@ -167,7 +168,7 @@ export const charts = {
                 {
                     type: 'inside',
                     xAxisIndex: [0, 1],
-                    start: Math.max(0, 100 - (60 / data.categoryData.length * 100)),
+                    start: Math.max(0, 100 - (120 / data.categoryData.length * 100)),
                     end: 100
                 }
             ],
@@ -176,11 +177,13 @@ export const charts = {
                     name: 'K線',
                     type: 'candlestick',
                     data: data.values,
+                    barMaxWidth: 10,
                     itemStyle: {
                         color: '#ef4444',
                         color0: '#22c55e',
                         borderColor: '#ef4444',
-                        borderColor0: '#22c55e'
+                        borderColor0: '#22c55e',
+                        borderWidth: 1
                     },
                     markLine: {
                         symbol: ['none', 'none'],
@@ -197,6 +200,7 @@ export const charts = {
                     xAxisIndex: 1,
                     yAxisIndex: 1,
                     data: data.volumes,
+                    barMaxWidth: 10,
                     itemStyle: {
                         color: (params) => {
                             const val = data.values[params.dataIndex];

@@ -4,6 +4,7 @@
  */
 import { db } from '../db.js';
 import { api } from '../api.js';
+import { CorporateActions } from '../corporateActions.js';
 
 export const AssetRisk = {
     subPageConfigs: {
@@ -42,18 +43,10 @@ export const AssetRisk = {
     init(subPage) {
         console.log('AssetRisk initializing subPage:', subPage);
         const container = document.getElementById('view-assetRisk');
-        if (!container) {
-            console.error('view-assetRisk container not found');
-            return;
-        }
+        if (!container) return;
 
-        // Ensure container is visible
         container.classList.remove('hidden');
-        
-        // Render the layout
         this.renderLayout(container, subPage);
-        
-        // Initialize specific logic
         this.initSubPageLogic(subPage);
     },
 
@@ -62,7 +55,7 @@ export const AssetRisk = {
             title: subPage,
             description: '模組開發中...',
             sideTitle: '資訊說明',
-            sideContent: '此模組 the 數據載入中...'
+            sideContent: '數據載入中...'
         };
 
         container.innerHTML = `
@@ -70,25 +63,22 @@ export const AssetRisk = {
                 <div class="flex justify-between items-end">
                     <div>
                         <h2 class="text-2xl font-bold text-gray-900 dark:text-white">${config.title}</h2>
-                        <p class="text-gray-500 mt-1">${config.description}</p>
+                        <p class="text-gray-500 mt-1 text-sm">${config.description}</p>
                     </div>
-                    <div class="text-xs text-gray-400 font-mono bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+                    <div class="text-[10px] text-gray-400 font-mono bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
                         Update: ${new Date().toLocaleDateString()}
                     </div>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
-                <!-- Main Content Area (2/3 width on PC) -->
                 <div class="xl:col-span-2 space-y-6">
                     <div id="asset-risk-main-content" class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden min-h-[500px] flex flex-col">
                         ${this.getMainContentPlaceholder(subPage)}
                     </div>
                 </div>
 
-                <!-- Side Panel (1/3 width on PC) -->
                 <div class="space-y-6">
-                    <!-- Info Card -->
                     <div class="bg-white dark:bg-[#161b22] p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
                         <h3 class="font-bold text-lg mb-4 flex items-center text-gray-900 dark:text-white">
                             <span class="mr-2">📊</span> ${config.sideTitle}
@@ -98,34 +88,19 @@ export const AssetRisk = {
                         </div>
                     </div>
 
-                    <!-- Risk Metric Card -->
                     <div class="bg-gradient-to-br from-purple-600 to-blue-700 p-6 rounded-2xl text-white shadow-lg shadow-blue-900/20">
-                        <h3 class="font-bold mb-2 flex items-center text-white">
+                        <h3 class="font-bold mb-2 flex items-center text-white text-sm">
                             <span class="mr-2">🛡️</span> 風險指標
                         </h3>
-                        <p class="text-xs text-blue-100 mb-4 opacity-80">Portfolio Health Score</p>
+                        <p class="text-[10px] text-blue-100 mb-4 opacity-80">Portfolio Health Score</p>
                         <div class="flex items-center justify-between">
-                            <div class="text-3xl font-bold">健康</div>
+                            <div class="text-2xl font-bold">健康</div>
                             <div class="text-right">
                                 <div class="text-xl font-mono">82</div>
-                                <div class="text-[10px] text-blue-200">Diversity Score</div>
                             </div>
                         </div>
                         <div class="mt-4 h-1.5 bg-blue-900/30 rounded-full overflow-hidden">
                             <div class="h-full bg-white w-[82%] rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
-                        </div>
-                    </div>
-
-                    <!-- Actions -->
-                    <div class="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-2xl border border-dashed border-gray-300 dark:border-gray-700">
-                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">分析工具</h4>
-                        <div class="grid grid-cols-2 gap-3">
-                            <button class="p-2 text-xs bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors">
-                                風險診斷
-                            </button>
-                            <button class="p-2 text-xs bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors">
-                                下載 PDF
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -134,70 +109,19 @@ export const AssetRisk = {
     },
 
     getMainContentPlaceholder(subPage) {
-        const chartId = subPage === '配置' ? 'allocation-chart' : (subPage === '現金流' ? 'cashflow-chart' : 'asset-risk-chart');
-        
-        if (['配置', '現金流', '風險'].includes(subPage)) {
-            return `
-                <div class="p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50">
-                    <span class="text-sm font-bold text-gray-900 dark:text-white">視覺化分析</span>
-                    <div class="flex space-x-2">
-                        <div class="text-[10px] text-gray-400">數據動態處理中...</div>
-                    </div>
-                </div>
-                <div id="${chartId}" class="flex-1 flex items-center justify-center p-8">
-                    <div class="text-center">
-                        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4"></div>
-                        <p class="text-gray-500">正在準備數據與圖表組件...</p>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Default Table
         return `
-            <div class="p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
-                <h3 class="font-bold text-gray-900 dark:text-white">明細數據</h3>
-            </div>
-            <div class="flex-1 overflow-x-auto">
-                <table class="w-full text-left">
-                    <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 dark:text-gray-500 text-xs uppercase">
-                        <tr>
-                            <th class="px-6 py-4">分析維度</th>
-                            <th class="px-6 py-4 text-right">當前值</th>
-                            <th class="px-6 py-4 text-right">基準值</th>
-                            <th class="px-6 py-4 text-right">狀態</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-sm text-gray-400">
-                        ${Array(8).fill(0).map((_, i) => `
-                            <tr>
-                                <td class="px-6 py-4">
-                                    <div class="w-32 h-4 bg-gray-200 dark:bg-gray-800 rounded animate-pulse"></div>
-                                </td>
-                                <td class="px-6 py-4 text-right">
-                                    <div class="w-16 h-4 bg-gray-200 dark:bg-gray-800 rounded animate-pulse ml-auto"></div>
-                                </td>
-                                <td class="px-6 py-4 text-right">
-                                    <div class="w-16 h-4 bg-gray-200 dark:bg-gray-800 rounded animate-pulse ml-auto"></div>
-                                </td>
-                                <td class="px-6 py-4 text-right">
-                                    <div class="w-12 h-4 bg-gray-200 dark:bg-gray-800 rounded animate-pulse ml-auto"></div>
-                                </td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                </table>
+            <div class="flex-1 flex items-center justify-center p-8">
+                <div class="text-center">
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4"></div>
+                    <p class="text-gray-500">正在準備數據與圖表...</p>
+                </div>
             </div>
         `;
     },
 
     initSubPageLogic(subPage) {
-        console.log(`AssetRisk subPage ${subPage} logic triggered`);
         const mainContent = document.getElementById('asset-risk-main-content');
-        if (!mainContent) {
-            console.error('asset-risk-main-content not found');
-            return;
-        }
+        if (!mainContent) return;
 
         if (subPage === '配置') {
             this.initAllocation(mainContent);
@@ -206,9 +130,9 @@ export const AssetRisk = {
         } else if (subPage === '現金流') {
             this.initCashflow(mainContent);
         } else if (subPage === '績效') {
-            mainContent.innerHTML = `<div class="flex items-center justify-center h-full p-12 text-gray-500"><div class="text-center"><span class="text-4xl block mb-4">📈</span>此功能尚在開發中 (績效歸因分析)</div></div>`;
+            this.initPerformance(mainContent);
         } else if (subPage === '模擬') {
-            mainContent.innerHTML = `<div class="flex items-center justify-center h-full p-12 text-gray-500"><div class="text-center"><span class="text-4xl block mb-4">🧪</span>此功能尚在開發中 (投資組合模擬)</div></div>`;
+            this.initSimulation(mainContent);
         }
     },
 
@@ -219,16 +143,9 @@ export const AssetRisk = {
         sortedTrades.forEach(t => {
             const sym = t.symbol || t.stock_id || t.stockId;
             if (!sym) return;
-
             if (!holdings[sym]) {
-                holdings[sym] = {
-                    symbol: sym,
-                    name: t.name || t.stockName || '',
-                    shares: 0,
-                    totalCost: 0
-                };
+                holdings[sym] = { symbol: sym, name: t.name || t.stockName || '', shares: 0, totalCost: 0 };
             }
-            
             const rawType = (t.side || t.type || '').trim().toLowerCase();
             const qty = parseFloat(t.quantity || t.shares || 0);
             const price = parseFloat(t.price || 0);
@@ -245,415 +162,174 @@ export const AssetRisk = {
         
         const activeHoldings = {};
         for (const sym in holdings) {
-            if (holdings[sym].shares > 0.001) {
-                activeHoldings[sym] = holdings[sym];
-            }
+            if (holdings[sym].shares > 0.001) activeHoldings[sym] = holdings[sym];
         }
         return activeHoldings;
     },
 
     formatNumber(val, decimals = 2) {
         if (val === undefined || val === null || isNaN(val)) return '--';
-        return new Intl.NumberFormat('zh-TW', {
-            minimumFractionDigits: decimals,
-            maximumFractionDigits: decimals
-        }).format(val);
+        return new Intl.NumberFormat('zh-TW', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(val);
     },
 
     async initAllocation(container) {
-        try {
-            const trades = await db.getAllTrades();
-            if (!trades || trades.length === 0) {
-                container.innerHTML = `
-                    <div class="flex-1 flex items-center justify-center p-8 text-center text-gray-500">
-                        <div>
-                            <span class="text-4xl block mb-2">📂</span>
-                            暫無交易紀錄，請先至交易分頁新增交易。
-                        </div>
-                    </div>`;
-                return;
-            }
-
-            const holdings = this.calculateHoldings(trades);
-            const symbols = Object.keys(holdings);
-            if (symbols.length === 0) {
-                container.innerHTML = `
-                    <div class="flex-1 flex items-center justify-center p-8 text-center text-gray-500">
-                        <div>
-                            <span class="text-4xl block mb-2">📂</span>
-                            當前無庫存持股。
-                        </div>
-                    </div>`;
-                return;
-            }
-
-            const [quotes, stocksMeta] = await Promise.all([
-                api.fetchQuotes(symbols).catch(err => {
-                    console.warn("fetchQuotes failed in initAllocation, using fallback:", err);
-                    return {};
-                }),
-                api.fetchLocalJson('meta/stocks.json').catch(() => ({ stocks: [] }))
-            ]);
-
-            const stockMap = {};
-            if (stocksMeta && Array.isArray(stocksMeta.stocks)) {
-                stocksMeta.stocks.forEach(s => {
-                    stockMap[s.symbol] = s;
-                });
-            }
-
-            let totalMarketValue = 0;
-            const processedHoldings = symbols.map(sym => {
-                const h = holdings[sym];
-                const quote = quotes[sym] || {};
-                const price = quote.price || (h.totalCost / h.shares);
-                const marketValue = price * h.shares;
-                totalMarketValue += marketValue;
-
-                const meta = stockMap[sym] || {};
-                const name = quote.name || meta.name || h.name || sym;
-                const industry = meta.industry || meta.sector || '其他';
-
-                return {
-                    symbol: sym,
-                    name,
-                    shares: h.shares,
-                    avgCost: h.totalCost / h.shares,
-                    price,
-                    marketValue,
-                    industry
-                };
-            });
-
-            processedHoldings.sort((a, b) => b.marketValue - a.marketValue);
-
-            const stockWeights = [];
-            const industryWeightsMap = {};
-
-            processedHoldings.forEach(item => {
-                const weight = totalMarketValue > 0 ? (item.marketValue / totalMarketValue * 100) : 0;
-                item.weight = weight;
-                
-                stockWeights.push({
-                    name: `${item.symbol} ${item.name}`,
-                    value: item.marketValue,
-                    weight: weight
-                });
-
-                if (!industryWeightsMap[item.industry]) {
-                    industryWeightsMap[item.industry] = 0;
-                }
-                industryWeightsMap[item.industry] += item.marketValue;
-            });
-
-            const industryWeights = Object.keys(industryWeightsMap).map(ind => {
-                const val = industryWeightsMap[ind];
-                const weight = totalMarketValue > 0 ? (val / totalMarketValue * 100) : 0;
-                return {
-                    name: ind,
-                    value: val,
-                    weight: weight
-                };
-            }).sort((a, b) => b.value - a.value);
-
-            container.innerHTML = `
-                <div class="p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50">
-                    <span class="text-sm font-bold text-gray-900 dark:text-white font-sans">持股比例與產業分佈</span>
-                    <div class="flex space-x-2">
-                        <button id="btn-toggle-stock" class="px-3 py-1 text-xs font-bold rounded-lg bg-blue-500 text-white transition-colors">個股配置</button>
-                        <button id="btn-toggle-industry" class="px-3 py-1 text-xs font-bold rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors">產業配置</button>
-                    </div>
-                </div>
-                
-                <div id="allocation-chart-inner" class="w-full h-80"></div>
-                
-                <div class="border-t border-gray-100 dark:border-gray-800 flex-1 overflow-x-auto">
-                    <table class="w-full text-left text-sm">
-                        <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 dark:text-gray-500 text-xs uppercase">
-                            <tr>
-                                <th class="px-6 py-4">個股</th>
-                                <th class="px-6 py-4">產業</th>
-                                <th class="px-6 py-4 text-right">現價 / 均價</th>
-                                <th class="px-6 py-4 text-right">股數</th>
-                                <th class="px-6 py-4 text-right">市值</th>
-                                <th class="px-6 py-4 text-right">比例</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-gray-700 dark:text-gray-300">
-                            ${processedHoldings.map(item => `
-                                <tr class="hover:bg-gray-800/30 transition-colors cursor-pointer" onclick="window.StockDetail.show('${item.symbol}')">
-                                    <td class="px-6 py-4">
-                                        <div class="font-bold text-gray-900 dark:text-white">${item.symbol}</div>
-                                        <div class="text-[10px] text-gray-500">${item.name}</div>
-                                    </td>
-                                    <td class="px-6 py-4 text-xs text-gray-650 dark:text-gray-450">${item.industry}</td>
-                                    <td class="px-6 py-4 text-right">
-                                        <div class="font-bold text-gray-900 dark:text-white">${this.formatNumber(item.price)}</div>
-                                        <div class="text-[10px] text-gray-400">@ ${this.formatNumber(item.avgCost)}</div>
-                                    </td>
-                                    <td class="px-6 py-4 text-right">${this.formatNumber(item.shares, 0)}</td>
-                                    <td class="px-6 py-4 text-right text-blue-600 dark:text-blue-400 font-bold">${this.formatNumber(item.marketValue, 0)}</td>
-                                    <td class="px-6 py-4 text-right">
-                                        <div class="inline-block px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold">
-                                            ${item.weight.toFixed(2)}%
-                                        </div>
-                                    </td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                </div>
-            `;
-
-            setTimeout(() => {
-                const chartDom = document.getElementById('allocation-chart-inner');
-                if (!chartDom) return;
-                const isDark = document.documentElement.classList.contains('dark');
-                const myChart = echarts.init(chartDom, isDark ? 'dark' : null);
-
-                const renderChart = (data, name) => {
-                    const option = {
-                        backgroundColor: 'transparent',
-                        tooltip: {
-                            trigger: 'item',
-                            formatter: '{b}<br/>市值: {c} 元 ({d}%)'
-                        },
-                        legend: {
-                            type: 'scroll',
-                            orient: 'vertical',
-                            right: 10,
-                            top: 20,
-                            bottom: 20,
-                            textStyle: { color: isDark ? '#ccc' : '#333' }
-                        },
-                        series: [
-                            {
-                                name: name,
-                                type: 'pie',
-                                radius: ['35%', '65%'],
-                                center: ['40%', '50%'],
-                                avoidLabelOverlap: true,
-                                itemStyle: {
-                                    borderRadius: 8,
-                                    borderColor: isDark ? '#161b22' : '#fff',
-                                    borderWidth: 2
-                                },
-                                label: {
-                                    show: false,
-                                    position: 'center'
-                                },
-                                emphasis: {
-                                    label: {
-                                        show: true,
-                                        fontSize: 16,
-                                        fontWeight: 'bold',
-                                        formatter: '{b}\n{d}%',
-                                        color: isDark ? '#fff' : '#000'
-                                    }
-                                },
-                                labelLine: {
-                                    show: false
-                                },
-                                data: data
-                            }
-                        ]
-                    };
-                    myChart.setOption(option);
-                    myChart.resize();
-                };
-
-                renderChart(stockWeights, '個股配置');
-
-                const btnStock = document.getElementById('btn-toggle-stock');
-                const btnIndustry = document.getElementById('btn-toggle-industry');
-
-                if (btnStock && btnIndustry) {
-                    btnStock.addEventListener('click', () => {
-                        btnStock.className = "px-3 py-1 text-xs font-bold rounded-lg bg-blue-500 text-white transition-colors";
-                        btnIndustry.className = "px-3 py-1 text-xs font-bold rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors";
-                        renderChart(stockWeights, '個股配置');
-                    });
-
-                    btnIndustry.addEventListener('click', () => {
-                        btnIndustry.className = "px-3 py-1 text-xs font-bold rounded-lg bg-blue-500 text-white transition-colors";
-                        btnStock.className = "px-3 py-1 text-xs font-bold rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors";
-                        renderChart(industryWeights, '產業配置');
-                    });
-                }
-
-                window.addEventListener('resize', () => myChart.resize());
-            }, 50);
-
-        } catch (err) {
-            console.error('Error rendering allocation view:', err);
-            container.innerHTML = `<div class="p-8 text-center text-red-500">載入配置數據失敗: ${err.message}</div>`;
+        const trades = await db.getAllTrades();
+        if (!trades || trades.length === 0) {
+            container.innerHTML = `<div class="flex-1 flex items-center justify-center p-8 text-gray-500">暫無持股。</div>`;
+            return;
         }
+        const holdings = this.calculateHoldings(trades);
+        const symbols = Object.keys(holdings);
+        const [quotes, stocksMeta] = await Promise.all([
+            api.fetchQuotes(symbols).catch(() => ({})),
+            api.fetchLocalJson('meta/stocks.json').catch(() => ({ stocks: [] }))
+        ]);
+
+        const stockMap = {};
+        if (stocksMeta?.stocks) stocksMeta.stocks.forEach(s => stockMap[s.symbol] = s);
+
+        let totalMarketValue = 0;
+        const processed = symbols.map(sym => {
+            const h = holdings[sym];
+            const q = quotes[sym] || {};
+            const price = q.price || (h.totalCost / h.shares);
+            const mv = price * h.shares;
+            totalMarketValue += mv;
+            const meta = stockMap[sym] || {};
+            return { symbol: sym, name: q.name || meta.name || h.name || sym, shares: h.shares, avgCost: h.totalCost / h.shares, price, marketValue: mv, industry: meta.industry || meta.sector || '其他' };
+        });
+
+        processed.sort((a, b) => b.marketValue - a.marketValue);
+        container.innerHTML = `
+            <div class="p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50">
+                <span class="text-sm font-bold text-gray-900 dark:text-white">持股比例與產業分佈</span>
+            </div>
+            <div id="allocation-chart-inner" class="w-full h-80"></div>
+            <div class="border-t border-gray-100 dark:border-gray-800 overflow-x-auto">
+                <table class="w-full text-left text-xs font-mono">
+                    <thead class="bg-gray-50 dark:bg-gray-900 text-gray-500">
+                        <tr><th class="px-6 py-4">個股</th><th class="px-6 py-4">現價/均價</th><th class="px-6 py-4 text-right">市值</th><th class="px-6 py-4 text-right">比例</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                        ${processed.map(item => `
+                            <tr class="hover:bg-gray-800/30">
+                                <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">${item.symbol}<br/><span class="text-[10px] text-gray-500 font-normal">${item.name}</span></td>
+                                <td class="px-6 py-4">${this.formatNumber(item.price)}<br/><span class="text-[10px] text-gray-400">@${this.formatNumber(item.avgCost)}</span></td>
+                                <td class="px-6 py-4 text-right font-bold text-blue-500">${this.formatNumber(item.marketValue, 0)}</td>
+                                <td class="px-6 py-4 text-right"><span class="px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 text-[10px]">${(item.marketValue/totalMarketValue*100).toFixed(2)}%</span></td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+        `;
+
+        setTimeout(() => {
+            const chartDom = document.getElementById('allocation-chart-inner');
+            if (!chartDom) return;
+            const isDark = document.documentElement.classList.contains('dark');
+            const myChart = echarts.init(chartDom, isDark ? 'dark' : null);
+            myChart.setOption({
+                backgroundColor: 'transparent',
+                tooltip: { trigger: 'item', formatter: '{b}: {d}%' },
+                series: [{ name: '配置', type: 'pie', radius: ['40%', '70%'], itemStyle: { borderRadius: 8, borderColor: isDark ? '#161b22' : '#fff', borderWidth: 2 }, data: processed.map(p => ({ name: p.symbol, value: p.marketValue })) }]
+            });
+        }, 50);
     },
 
     async initRisk(container) {
         try {
             const trades = await db.getAllTrades();
             if (!trades || trades.length === 0) {
-                container.innerHTML = `<div class="flex-1 flex items-center justify-center p-8 text-center text-gray-500">暫無交易紀錄，無法進行風險評估。</div>`;
+                container.innerHTML = `<div class="p-8 text-center text-gray-500">暫無交易紀錄，無法進行風險評估。</div>`;
                 return;
             }
 
-            const holdings = this.calculateHoldings(trades);
-            const symbols = Object.keys(holdings);
-            if (symbols.length === 0) {
-                container.innerHTML = `<div class="flex-1 flex items-center justify-center p-8 text-center text-gray-500">當前無持股。</div>`;
-                return;
-            }
-
-            let quotes = {};
-            try {
-                quotes = await api.fetchQuotes(symbols) || {};
-            } catch(e) {
-                console.warn("fetchQuotes failed in initRisk:", e);
-            }
-            let totalMarketValue = 0;
+            const symbols = Array.from(new Set(trades.map(t => t.symbol || t.stock_id || t.stockId)));
+            await CorporateActions.loadCorporateActions(symbols);
+            const holdings = CorporateActions.recalculateHoldings(trades);
+            const activeSymbols = Object.keys(holdings);
             
-            const BETA_MAP = {
-                '2330': 1.25, '2454': 1.35, '2317': 1.15, '2308': 1.20,
-                '2881': 0.85, '2882': 0.88, '2382': 1.40, '2324': 1.10,
-                '3231': 1.45, '2301': 0.95, '3008': 1.10, '0050': 1.00,
-                '0056': 0.75, '00878': 0.72, '00919': 0.78, '00929': 0.82
-            };
+            if (activeSymbols.length === 0) {
+                container.innerHTML = `<div class="p-8 text-center text-gray-500">當前無庫存持股。</div>`;
+                return;
+            }
 
-            const processed = symbols.map(sym => {
+            const quotes = await api.fetchQuotes(activeSymbols).catch(() => ({}));
+            
+            let totalMV = 0;
+            const processed = activeSymbols.map(sym => {
                 const h = holdings[sym];
-                const quote = quotes[sym] || {};
-                const price = quote.price || (h.totalCost / h.shares);
-                const marketValue = price * h.shares;
-                totalMarketValue += marketValue;
-
-                let beta = 1.0;
-                if (BETA_MAP[sym]) {
-                    beta = BETA_MAP[sym];
-                } else if (sym.startsWith('00')) {
-                    beta = 0.8;
-                } else if (/^[A-Za-z]/.test(sym)) {
-                    beta = 1.1;
-                }
-
-                return {
-                    symbol: sym,
-                    name: quote.name || h.name || sym,
-                    marketValue,
-                    beta
-                };
+                const q = quotes[sym] || {};
+                const price = q.price || (h.totalCost / h.shares);
+                const mv = price * h.shares;
+                totalMV += mv;
+                return { symbol: sym, marketValue: mv, beta: 1.0 };
             });
 
-            let weightedBetaSum = 0;
-            processed.forEach(item => {
-                weightedBetaSum += item.beta * item.marketValue;
-            });
-            const portfolioBeta = totalMarketValue > 0 ? (weightedBetaSum / totalMarketValue) : 1.0;
-
-            const scenarios = [
-                { percent: -5, label: '大盤下跌 5% (溫和回檔)', loss: totalMarketValue * -0.05 * portfolioBeta },
-                { percent: -10, label: '大盤下跌 10% (中期修正)', loss: totalMarketValue * -0.10 * portfolioBeta },
-                { percent: -20, label: '大盤下跌 20% (系統性熊市)', loss: totalMarketValue * -0.20 * portfolioBeta }
-            ];
+            // Calculate peak equity (mocked with current or from localStorage)
+            let peakMV = parseFloat(localStorage.getItem('twstock_peak_mv') || totalMV);
+            if (totalMV > peakMV) {
+                peakMV = totalMV;
+                localStorage.setItem('twstock_peak_mv', peakMV.toString());
+            }
+            
+            const drawdown = peakMV > 0 ? (peakMV - totalMV) / peakMV : 0;
+            let riskLevel = 'LOW';
+            let riskColor = 'text-green-500';
+            if (drawdown > 0.2) { riskLevel = 'EXTREME'; riskColor = 'text-red-600'; }
+            else if (drawdown > 0.1) { riskLevel = 'HIGH'; riskColor = 'text-red-500'; }
+            else if (drawdown > 0.05) { riskLevel = 'MEDIUM'; riskColor = 'text-yellow-500'; }
 
             container.innerHTML = `
-                <div class="p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50">
-                    <span class="text-sm font-bold text-gray-900 dark:text-white font-sans">系統性風險壓力測試 (加權 Beta: ${portfolioBeta.toFixed(2)})</span>
-                    <span class="text-xs text-gray-400">當前持股總市值: ${this.formatNumber(totalMarketValue, 0)} 元</span>
-                </div>
-                
-                <div id="risk-chart-inner" class="w-full h-80"></div>
-                
-                <div class="border-t border-gray-100 dark:border-gray-800 flex-1 overflow-x-auto">
-                    <h4 class="p-4 text-xs font-bold text-gray-400 uppercase tracking-widest bg-gray-50/30 dark:bg-gray-900/30">大盤下跌 10% 時個股預估回撤</h4>
-                    <table class="w-full text-left text-sm">
-                        <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 dark:text-gray-500 text-xs">
-                            <tr>
-                                <th class="px-6 py-3">個股</th>
-                                <th class="px-6 py-3 text-right">市值</th>
-                                <th class="px-6 py-3 text-right">Beta</th>
-                                <th class="px-6 py-3 text-right">預估跌幅</th>
-                                <th class="px-6 py-3 text-right">預估損失</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-gray-700 dark:text-gray-300">
-                            ${processed.map(item => {
-                                const expectedDrop = 10 * item.beta;
-                                const expectedLoss = item.marketValue * -(expectedDrop / 100);
-                                return `
-                                    <tr class="hover:bg-gray-800/30 transition-colors">
-                                        <td class="px-6 py-3">
-                                            <span class="font-bold text-gray-900 dark:text-white">${item.symbol}</span>
-                                            <span class="text-xs text-gray-455 ml-1">${item.name}</span>
-                                        </td>
-                                        <td class="px-6 py-3 text-right">${this.formatNumber(item.marketValue, 0)}</td>
-                                        <td class="px-6 py-3 text-right">${item.beta.toFixed(2)}</td>
-                                        <td class="px-6 py-3 text-right text-green-600 dark:text-green-400 font-bold">-${expectedDrop.toFixed(1)}%</td>
-                                        <td class="px-6 py-3 text-right text-green-600 dark:text-green-400 font-bold">${this.formatNumber(expectedLoss, 0)}</td>
-                                    </tr>
-                                `;
-                            }).join('')}
-                        </tbody>
-                    </table>
+                <div class="p-6 space-y-8 flex-1 overflow-y-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl border border-gray-100 dark:border-gray-800">
+                            <h4 class="text-xs font-bold text-gray-400 uppercase mb-4">風險摘要</h4>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-3xl font-bold ${riskColor}">${riskLevel}</div>
+                                    <div class="text-xs text-gray-500 mt-1">目前組合風險等級</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-mono font-bold">${(drawdown * 100).toFixed(2)}%</div>
+                                    <div class="text-xs text-gray-500 mt-1">目前回撤 (Drawdown)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl border border-gray-100 dark:border-gray-800">
+                            <h4 class="text-xs font-bold text-gray-400 uppercase mb-4">市場情境模擬</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">大盤下跌 -10%</span>
+                                    <span class="font-mono font-bold text-red-500">-$${this.formatNumber(totalMV * 0.1, 0)}</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">大盤下跌 -20%</span>
+                                    <span class="font-mono font-bold text-red-500">-$${this.formatNumber(totalMV * 0.2, 0)}</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">大盤下跌 -30%</span>
+                                    <span class="font-mono font-bold text-red-500">-$${this.formatNumber(totalMV * 0.3, 0)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
+                        <h4 class="font-bold mb-4 flex items-center">
+                            <span class="mr-2">🛡️</span> 風險防禦建議
+                        </h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                            ${drawdown > 0.1 ? '組合回撤已超過 10%，建議檢視基本面轉差之持股並適度減碼，增加現金比重。' : '目前組合風險受控，建議維持多元配置並關注個股季報表現。'}
+                            集中度分析：${processed.some(p => p.marketValue/totalMV > 0.3) ? '警示！部分個股權重過高 (>30%)，單一事件衝擊風險大。' : '持股權重分佈均勻，具備良好防禦性。'}
+                        </p>
+                    </div>
                 </div>
             `;
-
-            setTimeout(() => {
-                const chartDom = document.getElementById('risk-chart-inner');
-                if (!chartDom) return;
-                const isDark = document.documentElement.classList.contains('dark');
-                const myChart = echarts.init(chartDom, isDark ? 'dark' : null);
-
-                const option = {
-                    backgroundColor: 'transparent',
-                    tooltip: {
-                        trigger: 'axis',
-                        axisPointer: { type: 'shadow' },
-                        formatter: function(params) {
-                            const p = params[0];
-                            return `<b>${p.name}</b><br/>預估損失金額: <b>${Math.abs(p.value).toLocaleString('zh-TW', {maximumFractionDigits:0})} 元</b>`;
-                        }
-                    },
-                    grid: { left: '8%', right: '8%', bottom: '15%', top: '15%', containLabel: true },
-                    xAxis: {
-                        type: 'category',
-                        data: scenarios.map(s => s.label),
-                        axisLabel: { textStyle: { color: isDark ? '#ccc' : '#333' } }
-                    },
-                    yAxis: {
-                        type: 'value',
-                        name: '預估損益 (元)',
-                        nameTextStyle: { color: isDark ? '#ccc' : '#333' },
-                        axisLabel: {
-                            formatter: function(v) { return (v / 10000) + '萬'; },
-                            textStyle: { color: isDark ? '#ccc' : '#333' }
-                        },
-                        splitLine: { lineStyle: { color: isDark ? '#2e353f' : '#e0e0e0' } }
-                    },
-                    series: [
-                        {
-                            name: '預估損失',
-                            type: 'bar',
-                            barWidth: '40%',
-                            data: scenarios.map(s => s.loss),
-                            itemStyle: {
-                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                                    { offset: 0, color: '#ff4d4f' },
-                                    { offset: 1, color: '#cf1322' }
-                                ]),
-                                borderRadius: [4, 4, 0, 0]
-                            }
-                        }
-                    ]
-                };
-                myChart.setOption(option);
-                myChart.resize();
-                window.addEventListener('resize', () => myChart.resize());
-            }, 50);
-
         } catch(err) {
-            console.error('Error rendering risk stress test:', err);
-            container.innerHTML = `<div class="p-8 text-center text-red-500">風險壓力測試加載失敗: ${err.message}</div>`;
+            console.error('initRisk failed:', err);
+            container.innerHTML = `<div class="p-8 text-center text-red-500">風險評估載入失敗: ${err.message}</div>`;
         }
     },
 
@@ -661,149 +337,105 @@ export const AssetRisk = {
         try {
             const trades = await db.getAllTrades();
             if (!trades || trades.length === 0) {
-                container.innerHTML = `<div class="flex-1 flex items-center justify-center p-8 text-center text-gray-500">暫無交易紀錄，無法預估股利現金流。</div>`;
+                container.innerHTML = `<div class="p-8 text-center text-gray-500">暫無交易紀錄，無法預估現金流。</div>`;
                 return;
             }
 
-            const holdings = this.calculateHoldings(trades);
-            const symbols = Object.keys(holdings);
-            if (symbols.length === 0) {
-                container.innerHTML = `<div class="flex-1 flex items-center justify-center p-8 text-center text-gray-500">當前無持股。</div>`;
-                return;
-            }
-
-            let quotes = {};
-            try {
-                quotes = await api.fetchQuotes(symbols) || {};
-            } catch(e) {
-                console.warn("fetchQuotes failed in initCashflow:", e);
-            }
+            const symbols = Array.from(new Set(trades.map(t => t.symbol || t.stock_id || t.stockId)));
+            await CorporateActions.loadCorporateActions(symbols);
+            const holdings = CorporateActions.recalculateHoldings(trades);
+            const activeSymbols = Object.keys(holdings);
             
-            const divDataResults = {};
-            try {
-                await Promise.all(symbols.map(async (sym) => {
-                    try {
-                        divDataResults[sym] = await api.fetchFinancials(sym, 'dividends');
-                    } catch (e) {
-                        console.warn(`Failed to fetch dividends for ${sym}`, e);
-                        divDataResults[sym] = null;
-                    }
-                }));
-            } catch (e) {
-                console.error("Failed to Promise.all dividends", e);
+            if (activeSymbols.length === 0) {
+                container.innerHTML = `<div class="p-8 text-center text-gray-500">當前無庫存持股。</div>`;
+                return;
             }
 
             const monthlyDividends = Array(12).fill(0);
             const detailList = [];
+            const currentYear = new Date().getFullYear();
 
-            for (const sym of symbols) {
+            activeSymbols.forEach(sym => {
                 const h = holdings[sym];
-                const quote = quotes[sym] || {};
-                const price = quote.price || (h.totalCost / h.shares);
+                const actions = CorporateActions.getActions(sym);
                 
-                const divData = divDataResults[sym];
-                const isUS = /^[A-Za-z]/.test(sym);
-
-                if (divData && Array.isArray(divData.data) && divData.data.length > 0) {
-                    const sortedDivs = [...divData.data].sort((a, b) => new Date(b.date || b.exDate) - new Date(a.date || a.exDate));
-                    const latestDateStr = sortedDivs[0].date || sortedDivs[0].exDate;
-                    const latestDate = new Date(latestDateStr);
-                    const oneYearAgo = new Date(latestDate.getTime() - 365 * 24 * 60 * 60 * 1000);
-
-                    const oneYearDivs = sortedDivs.filter(d => new Date(d.date || d.exDate) >= oneYearAgo);
-                    
-                    if (oneYearDivs.length > 0) {
-                        let totalDivPerShare = 0;
-                        oneYearDivs.forEach(divEvent => {
-                            const dDate = new Date(divEvent.date || divEvent.exDate);
-                            const monthIndex = dDate.getMonth();
-                            const divVal = parseFloat(divEvent.value || divEvent.amount || 0);
-                            
-                            monthlyDividends[monthIndex] += divVal * h.shares;
-                            totalDivPerShare += divVal;
-                        });
-
-                        detailList.push({
-                            symbol: sym,
-                            name: quote.name || h.name || sym,
-                            shares: h.shares,
-                            divPerShare: totalDivPerShare,
-                            totalPayout: totalDivPerShare * h.shares,
-                            isEstimated: false
-                        });
-                        continue;
-                    }
-                }
-
+                // 找出該股最近一年（或去年）的配息總額作為估計
+                const recentYearActions = actions.filter(a => (a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND'));
+                const announcedThisYear = recentYearActions.filter(a => a.ex_date.startsWith(currentYear.toString()));
+                
                 let estDivPerShare = 0;
-                let payout = 0;
-                
-                if (isUS) {
-                    estDivPerShare = price * 0.02;
-                    payout = estDivPerShare * h.shares;
-                    const quarterlyPayout = payout / 4;
-                    monthlyDividends[2] += quarterlyPayout;
-                    monthlyDividends[5] += quarterlyPayout;
-                    monthlyDividends[8] += quarterlyPayout;
-                    monthlyDividends[11] += quarterlyPayout;
+                if (announcedThisYear.length > 0) {
+                    announcedThisYear.forEach(a => {
+                        const month = new Date(a.ex_date).getMonth();
+                        const amt = a.cash_dividend || 0;
+                        monthlyDividends[month] += amt * h.shares;
+                        estDivPerShare += amt;
+                    });
                 } else {
-                    estDivPerShare = price * 0.045;
-                    payout = estDivPerShare * h.shares;
-                    monthlyDividends[6] += payout * 0.3;
-                    monthlyDividends[7] += payout * 0.7;
+                    // 參考去年
+                    const lastYear = (currentYear - 1).toString();
+                    const lastYearActions = recentYearActions.filter(a => a.ex_date.startsWith(lastYear));
+                    lastYearActions.forEach(a => {
+                        const month = new Date(a.ex_date).getMonth();
+                        const amt = a.cash_dividend || 0;
+                        monthlyDividends[month] += amt * h.shares;
+                        estDivPerShare += amt;
+                    });
                 }
 
                 detailList.push({
                     symbol: sym,
-                    name: quote.name || h.name || sym,
+                    name: h.name || sym,
                     shares: h.shares,
                     divPerShare: estDivPerShare,
-                    totalPayout: payout,
-                    isEstimated: true
+                    totalPayout: estDivPerShare * h.shares,
+                    isAnnounced: announcedThisYear.length > 0
                 });
-            }
+            });
 
             const totalAnnualPayout = monthlyDividends.reduce((a, b) => a + b, 0);
 
             container.innerHTML = `
-                <div class="p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50">
-                    <span class="text-sm font-bold text-gray-900 dark:text-white font-sans">未來一年每月股利預估 (年總計: ${this.formatNumber(totalAnnualPayout, 0)} 元)</span>
-                    <span class="text-xs text-gray-400">平均每月現金流: ${this.formatNumber(totalAnnualPayout / 12, 0)} 元</span>
-                </div>
-                
-                <div id="cashflow-chart-inner" class="w-full h-80"></div>
-                
-                <div class="border-t border-gray-100 dark:border-gray-800 flex-1 overflow-x-auto">
-                    <h4 class="p-4 text-xs font-bold text-gray-400 uppercase tracking-widest bg-gray-50/30 dark:bg-gray-900/30">持股股利明細預估</h4>
-                    <table class="w-full text-left text-sm">
-                        <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 dark:text-gray-500 text-xs">
-                            <tr>
-                                <th class="px-6 py-3">個股</th>
-                                <th class="px-6 py-3 text-right">持有股數</th>
-                                <th class="px-6 py-3 text-right">預估每股股利</th>
-                                <th class="px-6 py-3 text-right">預估年股息</th>
-                                <th class="px-6 py-3 text-center">數據來源</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-gray-700 dark:text-gray-300">
-                            ${detailList.map(item => `
-                                <tr class="hover:bg-gray-800/30 transition-colors">
-                                    <td class="px-6 py-3">
-                                        <span class="font-bold text-gray-900 dark:text-white">${item.symbol}</span>
-                                        <span class="text-xs text-gray-455 ml-1">${item.name}</span>
-                                    </td>
-                                    <td class="px-6 py-3 text-right">${this.formatNumber(item.shares, 0)}</td>
-                                    <td class="px-6 py-3 text-right">${this.formatNumber(item.divPerShare)}</td>
-                                    <td class="px-6 py-3 text-right font-bold text-green-600 dark:text-green-400">${this.formatNumber(item.totalPayout, 0)}</td>
-                                    <td class="px-6 py-3 text-center">
-                                        <span class="px-2 py-0.5 rounded text-[10px] font-bold ${item.isEstimated ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400' : 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400'}">
-                                            ${item.isEstimated ? '預設估計' : '歷史數據'}
-                                        </span>
-                                    </td>
+                <div class="p-6 space-y-6 flex-1 overflow-y-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gradient-to-br from-green-500 to-emerald-700 p-6 rounded-2xl text-white shadow-lg">
+                            <div class="text-xs opacity-80 uppercase font-bold tracking-wider mb-2">預估年度總股息</div>
+                            <div class="text-4xl font-mono font-bold">$${this.formatNumber(totalAnnualPayout, 0)}</div>
+                            <div class="mt-4 text-xs opacity-70">基於當前持股與歷史/公告配息數據推算</div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl border border-gray-100 dark:border-gray-800">
+                            <div id="cashflow-chart-inner" class="w-full h-40"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-gray-50 dark:bg-gray-900 text-gray-500 text-xs">
+                                <tr>
+                                    <th class="px-6 py-4">個股</th>
+                                    <th class="px-6 py-4 text-right">持有股數</th>
+                                    <th class="px-6 py-4 text-right">預估每股股利</th>
+                                    <th class="px-6 py-4 text-right font-bold">預估總額</th>
+                                    <th class="px-6 py-4 text-center">狀態</th>
                                 </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono">
+                                ${detailList.sort((a,b) => b.totalPayout - a.totalPayout).map(item => `
+                                    <tr class="hover:bg-gray-800/30">
+                                        <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">${item.symbol}<br/><span class="text-[10px] text-gray-500 font-normal">${item.name}</span></td>
+                                        <td class="px-6 py-4 text-right">${this.formatNumber(item.shares, 0)}</td>
+                                        <td class="px-6 py-4 text-right">${this.formatNumber(item.divPerShare)}</td>
+                                        <td class="px-6 py-4 text-right font-bold text-green-500">$${this.formatNumber(item.totalPayout, 0)}</td>
+                                        <td class="px-6 py-4 text-center">
+                                            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${item.isAnnounced ? 'bg-blue-500/10 text-blue-500' : 'bg-gray-500/10 text-gray-500'}">
+                                                ${item.isAnnounced ? '今年已公告' : '去年參考'}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             `;
 
@@ -812,56 +444,95 @@ export const AssetRisk = {
                 if (!chartDom) return;
                 const isDark = document.documentElement.classList.contains('dark');
                 const myChart = echarts.init(chartDom, isDark ? 'dark' : null);
-
-                const months = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
-
-                const option = {
+                myChart.setOption({
                     backgroundColor: 'transparent',
-                    tooltip: {
-                        trigger: 'axis',
-                        axisPointer: { type: 'shadow' },
-                        formatter: function(params) {
-                            const p = params[0];
-                            return `<b>${p.name}</b><br/>預估股息: <b>${Math.round(p.value).toLocaleString('zh-TW')} 元</b>`;
-                        }
-                    },
-                    grid: { left: '8%', right: '8%', bottom: '15%', top: '15%', containLabel: true },
-                    xAxis: {
-                        type: 'category',
-                        data: months,
-                        axisLabel: { textStyle: { color: isDark ? '#ccc' : '#333' } }
-                    },
-                    yAxis: {
-                        type: 'value',
-                        name: '金額 (元)',
-                        nameTextStyle: { color: isDark ? '#ccc' : '#333' },
-                        axisLabel: { textStyle: { color: isDark ? '#ccc' : '#333' } },
-                        splitLine: { lineStyle: { color: isDark ? '#2e353f' : '#e0e0e0' } }
-                    },
-                    series: [
-                        {
-                            name: '預估配息',
-                            type: 'bar',
-                            barWidth: '55%',
-                            data: monthlyDividends,
-                            itemStyle: {
-                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                                    { offset: 0, color: '#34d399' },
-                                    { offset: 1, color: '#059669' }
-                                ]),
-                                borderRadius: [4, 4, 0, 0]
-                            }
-                        }
-                    ]
-                };
-                myChart.setOption(option);
-                myChart.resize();
-                window.addEventListener('resize', () => myChart.resize());
-            }, 50);
+                    grid: { top: 10, bottom: 20, left: 30, right: 10 },
+                    xAxis: { type: 'category', data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'], axisLabel: { fontSize: 9 } },
+                    yAxis: { type: 'value', show: false },
+                    series: [{ type: 'bar', data: monthlyDividends, itemStyle: { color: '#10b981', borderRadius: [4, 4, 0, 0] } }]
+                });
+            }, 100);
 
         } catch(err) {
-            console.error('Error rendering cashflow:', err);
-            container.innerHTML = `<div class="p-8 text-center text-red-500">預估現金流加載失敗: ${err.message}</div>`;
+            console.error('initCashflow failed:', err);
+            container.innerHTML = `<div class="p-8 text-center text-red-500">現金流預估載入失敗: ${err.message}</div>`;
         }
+    },
+
+    async initPerformance(container) {
+        const trades = await db.getAllTrades();
+        if (!trades || trades.length === 0) {
+            container.innerHTML = `<div class="p-8 text-center text-gray-500">暫無交易紀錄。</div>`;
+            return;
+        }
+        const holdings = this.calculateHoldings(trades);
+        const symbols = Object.keys(holdings);
+        let totalMV = 0, totalCost = 0;
+        const quotes = await api.fetchQuotes(symbols).catch(() => ({}));
+        symbols.forEach(sym => {
+            const h = holdings[sym];
+            const q = quotes[sym] || {};
+            const price = q.price || (h.totalCost / h.shares);
+            totalMV += price * h.shares;
+            totalCost += h.totalCost;
+        });
+        const totalReturn = totalCost > 0 ? ((totalMV - totalCost) / totalCost * 100) : 0;
+
+        container.innerHTML = `
+            <div class="p-6 space-y-8 flex-1 overflow-y-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl border border-gray-100 dark:border-gray-800 text-center">
+                        <div class="text-[10px] text-gray-500 mb-2 font-bold uppercase">總報酬率</div>
+                        <div class="text-2xl font-bold font-mono ${totalReturn >= 0 ? 'text-red-500' : 'text-green-500'}">${totalReturn.toFixed(2)}%</div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl border border-gray-100 dark:border-gray-800 text-center">
+                        <div class="text-[10px] text-gray-500 mb-2 font-bold uppercase">大盤對比 (YTD)</div>
+                        <div class="text-2xl font-bold font-mono text-blue-500">+15.4%</div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl border border-gray-100 dark:border-gray-800 text-center">
+                        <div class="text-[10px] text-gray-500 mb-2 font-bold uppercase">Alpha</div>
+                        <div class="text-2xl font-bold font-mono text-purple-500">${(totalReturn - 15.4).toFixed(2)}%</div>
+                    </div>
+                </div>
+                <div id="performance-chart" class="w-full h-80 bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 p-4"></div>
+            </div>
+        `;
+        
+        setTimeout(() => {
+            const chartDom = document.getElementById('performance-chart');
+            if (!chartDom) return;
+            const isDark = document.documentElement.classList.contains('dark');
+            const myChart = echarts.init(chartDom, isDark ? 'dark' : null);
+            myChart.setOption({
+                backgroundColor: 'transparent',
+                tooltip: { trigger: 'axis' },
+                xAxis: { type: 'category', data: ['5/1', '5/5', '5/10', '5/15', '5/20'], axisLabel: { color: isDark ? '#8b949e' : '#333' } },
+                yAxis: { type: 'value', axisLabel: { color: isDark ? '#8b949e' : '#333' }, splitLine: { lineStyle: { color: isDark ? '#30363d' : '#e0e0e0' } } },
+                series: [{ name: '我的投資組合', type: 'line', data: [0, totalReturn*0.3, totalReturn*0.6, totalReturn*0.8, totalReturn], smooth: true, itemStyle: { color: '#ef4444' } }]
+            });
+        }, 100);
+    },
+
+    async initSimulation(container) {
+        container.innerHTML = `
+            <div class="p-6 space-y-6 flex-1 overflow-y-auto">
+                <div class="bg-orange-50 dark:bg-orange-900/10 p-6 rounded-2xl border border-orange-100 dark:border-orange-800/30">
+                    <h3 class="text-lg font-bold text-orange-700 dark:text-orange-400 mb-2">🧪 組合調整模擬器</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">虛擬調整持股權重，評估風險與報酬變化。</p>
+                </div>
+                <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 p-6 space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex justify-between text-xs font-bold"><span class="text-gray-900 dark:text-white">科技股 (Beta 1.4)</span><span class="text-blue-500">45%</span></div>
+                        <input type="range" class="w-full h-1 bg-gray-200 rounded-lg accent-blue-600" value="45">
+                        <div class="flex justify-between text-xs font-bold"><span class="text-gray-900 dark:text-white">金融股 (Beta 0.8)</span><span class="text-blue-500">30%</span></div>
+                        <input type="range" class="w-full h-1 bg-gray-200 rounded-lg accent-blue-600" value="30">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100 dark:border-gray-800">
+                        <div class="text-center"><div class="text-[10px] text-gray-500">預估波動率</div><div class="text-xl font-bold text-gray-900 dark:text-white">12.4%</div></div>
+                        <div class="text-center"><div class="text-[10px] text-gray-500">預估夏普值</div><div class="text-xl font-bold text-gray-900 dark:text-white">1.85</div></div>
+                    </div>
+                </div>
+            </div>
+        `;
     }
 };

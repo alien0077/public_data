@@ -167,7 +167,7 @@ export const TrendHunter = {
 
         if (subPage === '量化精選') {
             return `
-                <div id="quant-container" class="p-6 space-y-6 flex-1 flex flex-col overflow-y-auto no-scrollbar max-h-[600px]">
+                <div id="quant-container" class="p-6 space-y-8 flex-1 flex flex-col">
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="quant-stats">
                         <div class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
                             <div class="text-xs text-gray-500 mb-1 font-bold">模型淨值 NAV</div>
@@ -210,13 +210,13 @@ export const TrendHunter = {
                             </table>
                         </div>
                     </div>
-                    <div class="bg-white dark:bg-[#161b22] rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-                        <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+                    <div class="bg-white dark:bg-[#161b22] rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden flex flex-col">
+                        <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 flex-none">
                             <h3 class="font-bold text-gray-900 dark:text-white flex items-center text-sm">
                                 <span class="mr-2">⚡</span> 最新選股訊號 (近 5 日)
                             </h3>
                         </div>
-                        <div class="overflow-x-auto">
+                        <div class="overflow-x-auto flex-1">
                             <table class="w-full text-left" id="quant-signals-table">
                                 <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 text-xs uppercase">
                                     <tr>
@@ -231,6 +231,8 @@ export const TrendHunter = {
                                 </tbody>
                             </table>
                         </div>
+                        <div id="quant-signals-pagination" class="p-4 border-t border-gray-100 dark:border-gray-800 bg-gray-50/30 dark:bg-gray-900/30 flex justify-between items-center text-xs text-gray-500">
+                        </div>
                     </div>
                 </div>
             `;
@@ -238,7 +240,7 @@ export const TrendHunter = {
 
         if (subPage === '精選策略') {
             return `
-                <div id="strategies-container" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 flex-1 overflow-y-auto no-scrollbar max-h-[600px]">
+                <div id="strategies-container" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 flex-1   ">
                     <div class="col-span-full text-center py-12 text-gray-500">正在加載量化策略...</div>
                 </div>
             `;
@@ -246,7 +248,7 @@ export const TrendHunter = {
 
         if (subPage === '今日最熱') {
             return `
-                <div id="hottest-container" class="p-6 grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 overflow-y-auto no-scrollbar max-h-[600px]">
+                <div id="hottest-container" class="p-6 grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1   ">
                     <div class="col-span-full text-center py-12 text-gray-500">正在掃描今日市場熱點...</div>
                 </div>
             `;
@@ -254,7 +256,7 @@ export const TrendHunter = {
 
         if (subPage === 'ETF戰情') {
             return `
-                <div id="etf-container" class="p-6 space-y-6 flex-1 flex flex-col overflow-y-auto no-scrollbar">
+                <div id="etf-container" class="p-6 space-y-6 flex-1 flex flex-col  ">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800 gap-4">
                         <div class="flex items-center space-x-3 w-full sm:w-auto">
                             <span class="text-sm font-bold text-gray-700 dark:text-gray-300">選擇追蹤 ETF:</span>
@@ -684,11 +686,56 @@ export const TrendHunter = {
             const holdingsTable = document.querySelector('#quant-holdings-table tbody');
             const signalsTable = document.querySelector('#quant-signals-table tbody');
             const statsContainer = document.getElementById('quant-stats');
+            const paginationContainer = document.getElementById('quant-signals-pagination');
+            
+            let allSignals = [];
+            let currentPage = 1;
+            const pageSize = 25;
+
+            const renderSignalsPage = (page) => {
+                if (!signalsTable || !paginationContainer) return;
+                const start = (page - 1) * pageSize;
+                const end = start + pageSize;
+                const pageData = allSignals.slice(start, end);
+
+                signalsTable.innerHTML = pageData.map(s => {
+                    const type = (s.type || s.action || 'BUY').toUpperCase();
+                    const cleanStockId = s.symbol || s.stock || s.stock_id || '';
+                    return `
+                        <tr class="hover:bg-gray-800/30 transition-colors cursor-pointer" onclick="window.StockDetail.show('${cleanStockId.split('.')[0]}')">
+                            <td class="px-6 py-4 font-mono text-gray-500">${s.date}</td>
+                            <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">${cleanStockId}</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold ${type === 'BUY' ? 'bg-red-500/10 text-red-500' : 'bg-green-500/10 text-green-500'}">
+                                    ${type === 'BUY' ? '買進 BUY' : '賣出 SELL'}
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-xs text-gray-450">${s.reason || s.label || 'SIGNAL'}</td>
+                        </tr>
+                    `;
+                }).join('') || '<tr><td colspan="4" class="px-6 py-8 text-center text-gray-500">尚無近期訊號</td></tr>';
+
+                const totalPages = Math.ceil(allSignals.length / pageSize) || 1;
+                paginationContainer.innerHTML = `
+                    <button class="px-3 py-1 rounded bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 disabled:opacity-30 transition-all" ${page === 1 ? 'disabled' : ''} id="prev-signals-page">上一頁</button>
+                    <span class="font-mono">第 ${page} 頁 / ${totalPages} 頁 (共 ${allSignals.length} 筆)</span>
+                    <button class="px-3 py-1 rounded bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 disabled:opacity-30 transition-all" ${page === totalPages ? 'disabled' : ''} id="next-signals-page">下一頁</button>
+                `;
+
+                document.getElementById('prev-signals-page')?.addEventListener('click', () => {
+                    currentPage--;
+                    renderSignalsPage(currentPage);
+                });
+                document.getElementById('next-signals-page')?.addEventListener('click', () => {
+                    currentPage++;
+                    renderSignalsPage(currentPage);
+                });
+            };
             
             try {
                 const data = await api.fetchLocalJson('quant/latest_portfolio.json');
                 
-                // 1. 篩選實際持股 (is_held 為 true 且 weight > 0)
+                // 1. 篩選實際持股
                 const activeHoldings = (data.portfolio || []).filter(p => p.is_held);
                 const isBull = data.regime === 'BULL' || data.regime === 'AGGRESSIVE';
                 const cashRatio = data.nav ? ((data.cash || 0) / data.nav) * 100 : 0;
@@ -718,13 +765,11 @@ export const TrendHunter = {
 
                 let stocksMeta = {};
                 try {
-                    const meta = await api.fetchLocalJson('meta/stocks.json');
+                    const meta = await api.getStocksMeta();
                     if (meta && Array.isArray(meta.stocks)) {
-                        meta.stocks.forEach(s => {
-                            stocksMeta[s.symbol] = s.name;
-                        });
+                        meta.stocks.forEach(s => { stocksMeta[s.symbol] = s.name; });
                     }
-                } catch(e) { console.warn("Failed to load stocks meta in quant", e); }
+                } catch(e) {}
 
                 if (holdingsTable) {
                     if (activeHoldings.length === 0) {
@@ -744,7 +789,7 @@ export const TrendHunter = {
                                         <div class="text-xs text-gray-500">${name}</div>
                                     </td>
                                     <td class="px-6 py-4 text-right font-bold text-gray-700 dark:text-gray-300">${((p.weight || 0) * 100).toFixed(1)}%</td>
-                                    <td class="px-6 py-4 text-right text-gray-500">${p.entry_date || '--'}</td>
+                                    <td class="px-6 py-4 text-right text-gray-500 font-mono text-xs">${p.entry_date || '--'}</td>
                                     <td class="px-6 py-4 text-right font-bold ${isProfit ? 'text-red-500' : 'text-green-500'}">
                                         ${isProfit ? '+' : ''}${rawRet.toFixed(2)}%
                                     </td>
@@ -758,46 +803,12 @@ export const TrendHunter = {
                     }
                 }
 
-                if (signalsTable) {
-                    let signals = data.signals;
-                    if (!signals && data.portfolio) {
-                        // 動態篩選：若 entry_date 與最新組合日期一致，且 entry_reason 含有 SIGNAL，或是 action 為 BUY/SELL，則視為近期訊號
-                        signals = data.portfolio
-                            .filter(p => p.entry_date === data.date || p.entry_reason === 'SIGNAL' || p.action === 'BUY' || p.action === 'SELL')
-                            .map(p => ({
-                                date: p.entry_date,
-                                stock: p.stock,
-                                type: p.action || 'BUY',
-                                reason: p.entry_reason || '模型訊號觸發'
-                            }));
-                    }
-                    signals = signals || [];
-                    
-                    if (signals.length === 0) {
-                        signalsTable.innerHTML = `<tr><td colspan="4" class="px-6 py-8 text-center text-gray-500">近期無觸發新訊號。</td></tr>`;
-                    } else {
-                        signalsTable.innerHTML = signals.map(s => {
-                            const isBuy = s.type === 'BUY';
-                            const cleanStockId = s.stock.replace(/\.TW(O)?$/, '');
-                            return `
-                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-900/30 cursor-pointer" onclick="window.StockDetail.show('${cleanStockId}')">
-                                    <td class="px-6 py-4 text-gray-500">${s.date || '--'}</td>
-                                    <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">${cleanStockId}</td>
-                                    <td class="px-6 py-4">
-                                        <span class="px-2 py-0.5 rounded text-xs font-bold ${isBuy ? 'bg-red-500/10 text-red-500' : 'bg-green-500/10 text-green-500'}">
-                                            ${isBuy ? '買進 BUY' : '賣出 SELL'}
-                                        </span>
-                                    </td>
-                                    <td class="px-6 py-4 text-gray-700 dark:text-gray-400 text-xs">${s.reason || '--'}</td>
-                                </tr>
-                            `;
-                        }).join('');
-                    }
-                }
+                // 渲染訊號表格 (分頁)
+                allSignals = data.signals || [];
+                renderSignalsPage(1);
 
             } catch (err) {
-                console.error(err);
-                if (holdingsTable) holdingsTable.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-red-500">載入失敗: ${err.message}</td></tr>`;
+                console.error("量化數據載入失敗:", err);
             }
         }
 

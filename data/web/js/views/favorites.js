@@ -99,7 +99,7 @@ export const Favorites = {
                             ${idx === this._activeTab ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/20' : 'bg-gray-100 dark:bg-gray-800 text-gray-500 hover:text-gray-900 dark:hover:text-white'}"
                             data-index="${idx}">
                             <span class="tab-name">${cat}</span>
-                            <span class="edit-cat absolute -top-1 -right-1 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full w-5 h-5 flex items-center justify-center text-[10px] opacity-0 group-hover:opacity-100 transition-opacity" title="修改名稱">✎</span>
+                            <span class="edit-cat absolute -top-1 -right-1 bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 rounded-full w-5 h-5 flex items-center justify-center text-[10px] shadow-sm border border-gray-100 dark:border-gray-600 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity" title="修改名稱">✎</span>
                         </button>
                     `).join('')}
                 </div>

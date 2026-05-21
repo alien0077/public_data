@@ -4,6 +4,10 @@
  */
 
 const ROUTES = {
+    'dashboard': {
+        title: '儀表板 Dashboard',
+        subPages: []
+    },
     'portfolio': {
         title: '我的持股',
         subPages: []
@@ -32,7 +36,7 @@ const ROUTES = {
 
 class Router {
     constructor() {
-        this.currentPrimary = 'portfolio';
+        this.currentPrimary = 'dashboard';
         this.currentSecondary = null;
     }
 
@@ -41,11 +45,15 @@ class Router {
         this.viewTitle = document.getElementById('view-title');
         
         // 初始載入第一頁
-        this.switchPage('portfolio');
+        this.switchPage('dashboard');
     }
 
     switchPage(primary, secondary = null) {
-        if (!ROUTES[primary]) return;
+        console.log(`Router switching to: ${primary}, ${secondary}`);
+        if (!ROUTES[primary]) {
+            console.error(`Route not found: ${primary}`);
+            return;
+        }
 
         this.currentPrimary = primary;
         const config = ROUTES[primary];

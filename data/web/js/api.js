@@ -6,7 +6,7 @@ const API_BASE = 'https://alienstocks.alien0077.workers.dev/api';
 
 export const api = {
     getSecret() {
-        return sessionStorage.getItem('twstock_secret');
+        return localStorage.getItem('twstock_secret');
     },
 
     _stocksMetaCache: null,
@@ -28,7 +28,8 @@ export const api = {
         const meta = await this.getStocksMeta();
         const stockInfo = meta.stocks?.find(item => item.symbol === s);
         if (stockInfo) {
-            return stockInfo.market === 'TPEx' ? `${s}.TWO` : `${s}.TW`;
+            const market = (stockInfo.market || '').toUpperCase();
+            return (market === 'TPEX' || market === 'TWO' || market === 'OTC') ? `${s}.TWO` : `${s}.TW`;
         }
         // Fallback length check
         return s.length === 4 ? `${s}.TW` : `${s}.TWO`;
@@ -119,7 +120,7 @@ export const api = {
                 if (isLocal && secret === 'local_dev_bypass') {
                     throw new Error(`API Error: ${response.status}`);
                 }
-                sessionStorage.removeItem('twstock_secret');
+                localStorage.removeItem('twstock_secret');
                 window.location.reload();
             }
             throw new Error(`API Error: ${response.status}`);

@@ -8,6 +8,8 @@ import { BattleRecord } from './views/battleRecord.js';
 import { Transaction } from './views/transaction.js';
 import { Favorites } from './views/favorites.js';
 import { router } from './router.js';
+import { CorporateActions } from './corporateActions.js';
+import { Dashboard } from './views/dashboard.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const triggerImportBtn = document.getElementById('trigger-import');
@@ -34,13 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailTradesContainer = document.getElementById('detail-trades');
     
     // View Switchers
+    const navDashboard = document.getElementById('nav-dashboard');
     const navPortfolio = document.getElementById('nav-portfolio');
     const navTrendHunter = document.getElementById('nav-trendHunter');
     const navAssetRisk = document.getElementById('nav-assetRisk');
     const navPerformance = document.getElementById('nav-performance');
     const navAddTrade = document.getElementById('nav-add-trade');
+    const navFavorites = document.getElementById('nav-favorites');
     const themeToggleBtn = document.getElementById('theme-toggle');
     
+    const mobileNavDashboard = document.getElementById('mobile-nav-dashboard');
     const mobileNavPortfolio = document.getElementById('mobile-nav-portfolio');
     const mobileNavTrendHunter = document.getElementById('mobile-nav-trendHunter');
     const mobileNavImport = document.getElementById('mobile-nav-import');
@@ -72,7 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (stockDetailOverlay) stockDetailOverlay.classList.add('hidden');
         currentDetailSymbol = null;
 
-        if (primary === 'trendHunter') {
+        if (primary === 'dashboard') {
+            Dashboard.init();
+        } else if (primary === 'trendHunter') {
             TrendHunter.init(secondary);
         } else if (primary === 'assetRisk') {
             AssetRisk.init(secondary);
@@ -88,6 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 監聽資料變動事件
     window.addEventListener('twstock:data-changed', () => {
         init();
+    });
+
+    if (navDashboard) navDashboard.addEventListener('click', (e) => {
+        e.preventDefault();
+        router.switchPage('dashboard');
     });
 
     if (navPortfolio) navPortfolio.addEventListener('click', (e) => {
@@ -115,9 +127,19 @@ document.addEventListener('DOMContentLoaded', () => {
         router.switchPage('addTrade');
     });
 
+    if (navFavorites) navFavorites.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Sidebar Favorites clicked');
+        router.switchPage('favorites');
+    });
+
+    if (mobileNavDashboard) mobileNavDashboard.addEventListener('click', () => router.switchPage('dashboard'));
     if (mobileNavPortfolio) mobileNavPortfolio.addEventListener('click', () => router.switchPage('portfolio'));
     if (mobileNavTrendHunter) mobileNavTrendHunter.addEventListener('click', () => router.switchPage('trendHunter'));
-    if (mobileNavFavorites) mobileNavFavorites.addEventListener('click', () => router.switchPage('favorites'));
+    if (mobileNavFavorites) mobileNavFavorites.addEventListener('click', () => {
+        console.log('Mobile Favorites clicked');
+        router.switchPage('favorites');
+    });
 
     if (triggerImportBtn && importJsonInput) {
         const handleImportClick = () => importJsonInput.click();
@@ -197,6 +219,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const trades = await db.getAllTrades();
             if (trades.length > 0) {
+                // 載入企業行為
+                const symbols = Array.from(new Set(trades.map(t => t.symbol || t.stock_id || t.stockId)));
+                await CorporateActions.loadCorporateActions(symbols);
+                
                 emptyState.classList.add('hidden');
                 // 先用現有資料渲染一次 (可能沒有現價)
                 renderPortfolio(trades);
@@ -206,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 emptyState.classList.remove('hidden');
             }
         } catch (err) {
-            // Error handling
+            console.error("Initialization failed:", err);
         }
     }
 
@@ -274,49 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function calculateHoldings(trades) {
-        const holdings = {};
-        // 排序交易紀錄，確保按日期處理 (假設有 date 欄位)
-        const sortedTrades = [...trades].sort((a, b) => new Date(a.date || a.timestamp || a.tradeDate) - new Date(b.date || b.timestamp || b.tradeDate));
-
-        sortedTrades.forEach(t => {
-            const sym = t.symbol || t.stock_id || t.stockId;
-            if (!sym) return;
-
-            if (!holdings[sym]) {
-                holdings[sym] = {
-                    symbol: sym,
-                    name: t.name || t.stockName || '',
-                    shares: 0,
-                    totalCost: 0
-                };
-            }
-            
-            const rawType = (t.side || t.type || '').trim().toLowerCase();
-            const qty = parseFloat(t.quantity || t.shares || 0);
-            const price = parseFloat(t.price || 0);
-
-            // 支援：買入, 買進, buy
-            if (rawType === '買入' || rawType === '買進' || rawType === 'buy') {
-                holdings[sym].shares += qty;
-                holdings[sym].totalCost += qty * price;
-            } 
-            // 支援：賣出, sell
-            else if (rawType === '賣出' || rawType === 'sell') {
-                const avgCostBefore = holdings[sym].shares > 0 ? holdings[sym].totalCost / holdings[sym].shares : 0;
-                holdings[sym].shares -= qty;
-                // 賣出後按比例減少剩餘總成本
-                holdings[sym].totalCost = holdings[sym].shares * avgCostBefore;
-            }
-        });
-        
-        // 過濾掉已清空的持股
-        const activeHoldings = {};
-        for (const sym in holdings) {
-            if (holdings[sym].shares > 0.001) { // 避免浮點數殘留
-                activeHoldings[sym] = holdings[sym];
-            }
-        }
-        return activeHoldings;
+        return CorporateActions.recalculateHoldings(trades);
     }
 
     function renderPortfolio(trades, quotes = {}) {
@@ -326,26 +310,36 @@ document.addEventListener('DOMContentLoaded', () => {
         let totalMarketValue = 0;
         let totalCostValue = 0;
         let totalRefMarketValue = 0;
+        let totalRealizedPNL = 0;
+        let totalDividendIncome = 0;
 
         const sortedSymbols = Object.keys(holdings).sort();
 
         sortedSymbols.forEach(sym => {
             const h = holdings[sym];
-            const rawSym = sym.split('.')[0];
-            const quote = quotes[sym] || quotes[rawSym] || {};
+            const quote = quotes[sym] || quotes[sym.split('.')[0]] || {};
             const price = quote.price || 0;
             const refPrice = quote.referencePrice || price;
+            
             const shares = h.shares;
             const avgCost = h.totalCost / shares;
-            const marketValue = price > 0 ? (price * shares) : (avgCost * shares); // 若無現價則用成本估
+            const marketValue = price > 0 ? (price * shares) : (avgCost * shares);
             const costValue = h.totalCost;
-            const pnl = price > 0 ? (marketValue - costValue) : 0;
-            const pnlPercent = costValue > 0 ? (pnl / costValue * 100) : 0;
+            
+            // 未實現損益 (Unrealized)
+            const unrealizedPnl = price > 0 ? (marketValue - costValue) : 0;
+            const unrealizedRoi = costValue > 0 ? (unrealizedPnl / costValue * 100) : 0;
+            
+            // 此檔股票的總損益 = 未實現 + 已實現 + 股利
+            const totalStockPnl = unrealizedPnl + h.realizedPNL + h.totalDividend;
+            
             const changePercent = (price > 0 && refPrice > 0) ? ((price - refPrice) / refPrice * 100) : 0;
 
             totalMarketValue += marketValue;
             totalCostValue += costValue;
             totalRefMarketValue += (refPrice > 0 ? (refPrice * shares) : marketValue);
+            totalRealizedPNL += h.realizedPNL;
+            totalDividendIncome += h.totalDividend;
 
             const row = document.createElement('tr');
             row.className = 'hover:bg-gray-800/30 transition-colors cursor-pointer';
@@ -353,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             row.innerHTML = `
                 <td class="px-3 md:px-6 py-4">
-                    <div class="font-bold text-white">${h.symbol}</div>
+                    <div class="font-bold text-white">${sym}</div>
                     <div class="text-[10px] text-gray-500 truncate max-w-[100px]">${h.name || quote.name || ''}</div>
                 </td>
                 <td class="px-3 md:px-6 py-4 text-right ${getPriceColor(price, refPrice)}">
@@ -371,16 +365,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td class="px-3 md:px-6 py-4 text-right font-bold text-blue-400 hidden md:table-cell">
                     ${formatNumber(marketValue, 0)}
                 </td>
-                <td class="px-3 md:px-6 py-4 text-right ${pnl >= 0 ? 'text-red-500' : 'text-green-500'}">
-                    <div class="font-bold">${price > 0 ? (pnl >= 0 ? '+' : '') + formatNumber(pnl, 0) : '--'}</div>
-                    <div class="text-[10px] opacity-70">${price > 0 ? pnlPercent.toFixed(2) + '%' : ''}</div>
+                <td class="px-3 md:px-6 py-4 text-right ${totalStockPnl >= 0 ? 'text-red-500' : 'text-green-500'}">
+                    <div class="font-bold">${(totalStockPnl >= 0 ? '+' : '') + formatNumber(totalStockPnl, 0)}</div>
+                    <div class="text-[10px] opacity-70">${unrealizedRoi.toFixed(2)}% (未實現)</div>
+                </td>
+                <td class="px-3 md:px-6 py-4 text-right">
+                    <button class="delete-stock p-2 text-gray-500 hover:text-red-500 transition-colors" data-symbol="${sym}">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                    </button>
                 </td>
             `;
+            
+            row.querySelector('.delete-stock').addEventListener('click', async (e) => {
+                e.stopPropagation();
+                const confirmed = confirm(`確定要刪除 ${sym} 的所有持股交易紀錄嗎？`);
+                if (confirmed) {
+                    await deleteStockTrades(sym);
+                }
+            });
+
             portfolioBody.appendChild(row);
         });
 
         // 更新 Summary Cards
-        const totalPnl = totalMarketValue - totalCostValue;
+        // 總盈虧 = (當前市值 - 當前調整後成本) + 歷史已實現損益 + 歷史總股息
+        const totalPnl = (totalMarketValue - totalCostValue) + totalRealizedPNL + totalDividendIncome;
         const totalPnlPercent = totalCostValue > 0 ? (totalPnl / totalCostValue * 100) : 0;
         const dailyPnl = totalMarketValue - totalRefMarketValue;
 
@@ -394,6 +405,19 @@ document.addEventListener('DOMContentLoaded', () => {
         
         dailyPnlEl.textContent = `${dailyPnl >= 0 ? '+' : ''}${formatNumber(dailyPnl, 0)}`;
         dailyPnlEl.className = `text-3xl font-mono font-bold ${dailyPnl >= 0 ? 'text-red-500' : 'text-green-500'}`;
+    }
+
+    async function deleteStockTrades(symbol) {
+        const trades = await db.getAllTrades();
+        const remainingTrades = trades.filter(t => (t.symbol || t.stock_id || t.stockId) !== symbol);
+        
+        await db.clearAllTrades();
+        if (remainingTrades.length > 0) {
+            await db.saveTrades(remainingTrades);
+        }
+        
+        alert(`${symbol} 的紀錄已刪除`);
+        init();
     }
 
     function formatNumber(num, decimals = 2) {
@@ -416,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 檢查是否已登入
-    if (sessionStorage.getItem('twstock_secret')) {
+    if (localStorage.getItem('twstock_secret')) {
         init();
     }
 });

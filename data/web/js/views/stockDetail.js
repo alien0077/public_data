@@ -5,6 +5,7 @@
 import { api } from '../api.js';
 import { charts } from '../charts.js';
 import { db } from '../db.js';
+import { CorporateActions } from '../corporateActions.js';
 
 export const StockDetail = {
     currentSymbol: null,
@@ -268,35 +269,163 @@ export const StockDetail = {
         `;
     },
 
-    async renderTradesTab(container) {
-        const trades = await db.getAllTrades();
-        const relevantTrades = trades.filter(t => (t.symbol || t.stock_id) === this.currentSymbol)
-                                    .sort((a, b) => new Date(b.date || b.timestamp) - new Date(a.date || a.timestamp));
+    parseDate(rawDate) {
+        if (!rawDate) return '未知日期';
+        // Handle YYYYMMDD string or number
+        const s = String(rawDate);
+        if (s.length === 8 && /^\d+$/.test(s)) {
+            return `${s.substring(0, 4)}/${s.substring(4, 6)}/${s.substring(6, 8)}`;
+        }
+        const d = new Date(rawDate);
+        if (isNaN(d.getTime())) return '日期格式錯誤';
+        return d.toLocaleDateString('zh-TW');
+    },
 
+    async renderTradesTab(container) {
+        try {
+            const trades = await db.getAllTrades();
+            await CorporateActions.loadCorporateActions([this.currentSymbol]);
+            const timeline = CorporateActions.buildTransactionTimeline(trades, this.currentSymbol);
+
+            if (timeline.length === 0) {
+                container.innerHTML = `<div class="p-8 text-center text-gray-500">尚無交易或企業行為紀錄。</div>`;
+                return;
+            }
+
+            // Timeline reverse sort (newest on top)
+            timeline.sort((a, b) => {
+                if (a.date !== b.date) return b.date.localeCompare(a.date);
+                return a.type === 'ACTION' ? -1 : 1; // Actions after trades on same day
+            });
+
+            container.innerHTML = `
+                <div class="p-4 flex-1 overflow-y-auto max-h-[calc(100vh-250px)] no-scrollbar">
+                    <h3 class="text-xs font-bold text-gray-400 mb-4 uppercase tracking-wider">個股交易與股權變動時間軸</h3>
+                    <div class="space-y-4 relative before:absolute before:left-[19px] before:top-2 before:bottom-2 before:w-0.5 before:bg-gray-100 dark:before:bg-gray-800">
+                        ${timeline.map(item => {
+                            if (item.type === 'TRADE') {
+                                const t = item.data;
+                                const type = (t.side || t.type || '').toLowerCase();
+                                const isBuy = type.includes('買') || type.includes('buy');
+                                return `
+                                    <div class="relative pl-10">
+                                        <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-white dark:bg-[#0f1115] border-2 ${isBuy ? 'border-red-500' : 'border-green-500'} flex items-center justify-center z-10 shadow-sm">
+                                            <span class="text-xs font-bold ${isBuy ? 'text-red-500' : 'text-green-500'}">${isBuy ? '買' : '賣'}</span>
+                                        </div>
+                                        <div class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-gray-200 transition-colors">
+                                            <div class="flex justify-between items-start mb-1">
+                                                <div class="text-[10px] font-mono text-gray-500">${this.parseDate(item.date)}</div>
+                                                <div class="font-mono font-bold text-gray-900 dark:text-white">${this.formatValue(t.quantity || t.shares, 0)} 股</div>
+                                            </div>
+                                            <div class="flex justify-between items-end">
+                                                <div class="text-sm font-bold ${isBuy ? 'text-red-500' : 'text-green-500'}">${isBuy ? '買入買進' : '賣出結算'}</div>
+                                                <div class="text-xs text-gray-400">成交價 $${this.formatValue(t.price)}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            } else {
+                                const a = item.data;
+                                const type = a.type.toUpperCase();
+                                let color = 'border-yellow-500 text-yellow-600';
+                                let icon = '💰';
+                                let desc = '';
+                                
+                                if (type === 'DIVIDEND' || type === 'CASH_DIVIDEND') {
+                                    desc = `配息 $${a.cash_dividend || 0}`;
+                                    if (a.stock_dividend > 0) {
+                                        desc += ` + 配股 ${a.stock_dividend} 元`;
+                                        color = 'border-green-500 text-green-600';
+                                        icon = '📈';
+                                    }
+                                } else if (type === 'REDUCTION') {
+                                    desc = `減資 ${(a.capital_reduction * 100).toFixed(1)}%`;
+                                    color = 'border-red-400 text-red-500';
+                                    icon = '🔻';
+                                } else if (type === 'SPLIT') {
+                                    desc = `拆分比例 ${a.split_ratio}:1`;
+                                    color = 'border-blue-400 text-blue-500';
+                                    icon = '🔄';
+                                }
+
+                                return `
+                                    <div class="relative pl-10">
+                                        <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-white dark:bg-[#0f1115] border-2 ${color.split(' ')[0]} flex items-center justify-center z-10 shadow-sm">
+                                            <span class="text-sm">${icon}</span>
+                                        </div>
+                                        <div class="bg-gray-50/50 dark:bg-gray-900/30 p-3 rounded-2xl border border-dashed border-gray-200 dark:border-gray-800">
+                                            <div class="text-[10px] font-mono text-gray-500 mb-1">${this.parseDate(item.date)}</div>
+                                            <div class="text-sm font-bold ${color.split(' ')[1]} italic">企業行為：${desc}</div>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+        } catch(err) {
+            console.error('renderTradesTab failed:', err);
+            container.innerHTML = `<div class="p-8 text-center text-red-500">明細載入失敗: ${err.message}</div>`;
+        }
+    },
+
+    async renderFavoriteTab(container) {
+        if (!window.Favorites) {
+            container.innerHTML = `<div class="p-8 text-center text-gray-500">收藏模組未就緒</div>`;
+            return;
+        }
+
+        const categories = window.Favorites._categories;
+        const currentData = window.Favorites._data;
+        
         container.innerHTML = `
-            <div class="p-4">
-                <h3 class="text-sm font-bold text-gray-400 mb-3 uppercase tracking-wider">歷史交易明細</h3>
-                <div class="space-y-2">
-                    ${relevantTrades.map(t => {
-                        const date = new Date(t.date || t.timestamp).toLocaleDateString();
-                        const type = (t.side || t.type || '').toLowerCase();
-                        const isBuy = type.includes('買') || type.includes('buy');
+            <div class="p-4 space-y-6">
+                <h3 class="text-lg font-bold">收藏管理 - ${this.currentSymbol}</h3>
+                <p class="text-sm text-gray-500">請選擇要將此股票加入的收藏分類（可複選）：</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    ${categories.map((cat, idx) => {
+                        const isInCategory = currentData[cat] && currentData[cat].includes(this.currentSymbol);
                         return `
-                            <div class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl flex justify-between items-center border border-gray-100 dark:border-gray-800">
-                                <div>
-                                    <div class="text-xs text-gray-500">${date}</div>
-                                    <div class="font-bold ${isBuy ? 'text-red-500' : 'text-green-500'}">${isBuy ? '買入' : '賣出'}</div>
-                                </div>
-                                <div class="text-right">
-                                    <div class="font-mono font-bold">${this.formatValue(t.quantity || t.shares, 0)} 股</div>
-                                    <div class="text-xs text-gray-400">@ ${this.formatValue(t.price)}</div>
-                                </div>
-                            </div>
+                            <button class="favorite-cat-item p-4 rounded-xl border-2 transition-all flex justify-between items-center
+                                ${isInCategory ? 'border-blue-500 bg-blue-500/10 text-blue-600' : 'border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-500 hover:border-gray-400'}"
+                                onclick="StockDetail.toggleCategory('${cat}', this)">
+                                <span class="font-bold">${cat}</span>
+                                ${isInCategory ? '<span>✅</span>' : '<span>+</span>'}
+                            </button>
                         `;
                     }).join('')}
                 </div>
+                
+                <div class="bg-blue-50 dark:bg-blue-900/10 p-4 rounded-xl text-xs text-blue-600 dark:text-blue-400 leading-relaxed">
+                    💡 您可以在「我的收藏」分頁中修改分類名稱或查看完整清單。
+                </div>
             </div>
         `;
+    },
+
+    toggleCategory(category, element) {
+        if (!window.Favorites) return;
+        
+        const symbols = window.Favorites._data[category] || [];
+        const isCurrentlyIn = symbols.includes(this.currentSymbol);
+        
+        if (isCurrentlyIn) {
+            window.Favorites._data[category] = symbols.filter(s => s !== this.currentSymbol);
+            element.classList.remove('border-blue-500', 'bg-blue-500/10', 'text-blue-600');
+            element.classList.add('border-gray-200', 'dark:border-gray-800', 'bg-gray-50', 'dark:bg-gray-900', 'text-gray-500');
+            element.querySelector('span:last-child').textContent = '+';
+        } else {
+            if (!window.Favorites._data[category]) window.Favorites._data[category] = [];
+            window.Favorites._data[category].push(this.currentSymbol);
+            element.classList.add('border-blue-500', 'bg-blue-500/10', 'text-blue-600');
+            element.classList.remove('border-gray-200', 'dark:border-gray-800', 'bg-gray-50', 'dark:bg-gray-900', 'text-gray-500');
+            element.querySelector('span:last-child').textContent = '✅';
+        }
+        
+        window.Favorites.saveData();
+        this.updateFavoriteUI();
     },
 
     async renderHealthTab(container) {
