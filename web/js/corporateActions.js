@@ -1,202 +1,146 @@
 /**
- * Corporate Actions Engine for TWStockTracker Web
- * Ported from HoldingEngine.swift
+ * Corporate Actions Engine for TWStockTracker Web - High Precision YTD v2
  */
-
 import { api } from './api.js';
 
 export const CorporateActions = {
-    _cache: {}, // symbol -> [actions]
+    _cache: {}, 
     _yearsLoaded: new Set(),
 
     async loadCorporateActions(symbols = []) {
         const years = [2020, 2021, 2022, 2023, 2024, 2025, 2026];
-        
         for (const year of years) {
             if (this._yearsLoaded.has(year)) continue;
-            
             try {
-                const data = await api.fetchLocalJson(`meta/actions/${year}.json`);
+                const data = await api.fetchLocalJson('meta/actions/' + year + '.json');
                 if (data && data.stocks) {
                     data.stocks.forEach(action => {
-                        const sid = action.stock_id;
+                        const sid = String(action.stock_id);
                         if (!this._cache[sid]) this._cache[sid] = [];
                         this._cache[sid].push(action);
                     });
                 }
                 this._yearsLoaded.add(year);
-            } catch (err) {
-                console.warn(`Failed to load corporate actions for ${year}`, err);
-            }
+            } catch (err) { console.warn('Failed year ' + year, err); }
         }
-        
-        // Sort actions by ex_date for each stock
         Object.keys(this._cache).forEach(sid => {
-            this._cache[sid].sort((a, b) => a.ex_date.localeCompare(b.ex_date));
+            this._cache[sid].sort((a, b) => (a.ex_date || '').localeCompare(b.ex_date || ''));
         });
     },
 
-    getActions(symbol) {
-        return this._cache[symbol] || [];
-    },
+    getActions(symbol) { return this._cache[String(symbol)] || []; },
 
-    recalculateHoldings(trades, includeClosed = true) {
+    recalculateHoldings(trades, includeClosed = true, ytdRef = null) {
+        if (!Array.isArray(trades)) return { yearlyStats: {} };
         const holdings = {};
-        const yearlyStats = {}; // year -> { realizedPNL, dividend }
-        
-        const ensureYearly = (year) => {
-            if (!yearlyStats[year]) yearlyStats[year] = { realizedPNL: 0, dividend: 0 };
-        };
+        const yearlyStats = {}; // year -> { realizedPNL, dividend, ytdRealizedPNL }
+        const ensureYearly = (year) => { if (!yearlyStats[year]) yearlyStats[year] = { realizedPNL: 0, dividend: 0, ytdRealizedPNL: 0 }; };
 
-        // Sort trades by date
-        const sortedTrades = [...trades].sort((a, b) => {
-            const dateA = a.date || a.timestamp || a.trade_date || a.tradeDate;
-            const dateB = b.date || b.timestamp || b.trade_date || b.tradeDate;
-            return new Date(dateA) - new Date(dateB);
+        let allEvents = [];
+        trades.filter(t => t).forEach(t => {
+            allEvents.push({ type: 'TRADE', date: t.date || t.timestamp || t.tradeDate || t.trade_date || '1970-01-01', data: t });
+        });
+        
+        const symbols = Array.from(new Set(trades.map(t => String(t.symbol || t.stock_id || t.stockId))));
+        symbols.forEach(sid => {
+            this.getActions(sid).forEach(a => {
+                allEvents.push({ type: 'ACTION', date: a.ex_date, data: a, symbol: sid });
+            });
         });
 
-        sortedTrades.forEach(tx => {
-            const sid = tx.symbol || tx.stock_id || tx.stockId;
+        allEvents.sort((a, b) => a.date.localeCompare(b.date) || (a.type === 'TRADE' ? -1 : 1));
+
+        const yearStart = '2026-01-01';
+
+        allEvents.forEach(evt => {
+            const sid = evt.symbol || evt.data.symbol || evt.data.stock_id || evt.data.stockId;
             if (!sid) return;
 
             if (!holdings[sid]) {
-                holdings[sid] = {
-                    symbol: sid,
-                    name: tx.name || tx.stockName || '',
-                    shares: 0,
-                    totalCost: 0,
-                    realizedPNL: 0,
-                    totalDividend: 0,
-                    actionIndex: 0
-                };
+                holdings[sid] = { symbol: sid, name: evt.data.name || evt.data.stockName || '', shares: 0, totalCost: 0, ytdBasis: 0, realizedPNL: 0, totalDividend: 0, _ytdSnapshotted: false };
             }
-
             const h = holdings[sid];
-            const actions = this.getActions(sid);
-            const txDate = tx.date || tx.timestamp || tx.trade_date || tx.tradeDate;
-            const txYear = new Date(txDate).getFullYear().toString();
-            ensureYearly(txYear);
+            const date = evt.date;
+            const year = date.substring(0, 4);
+            ensureYearly(year);
 
-            // Process actions before this trade
-            while (h.actionIndex < actions.length && actions[h.actionIndex].ex_date <= txDate) {
-                const action = actions[h.actionIndex];
-                const actionYear = action.ex_date.substring(0, 4);
-                ensureYearly(actionYear);
-                
-                const divBefore = h.totalDividend;
-                this._applyAction(h, action);
-                const divGain = h.totalDividend - divBefore;
-                if (divGain > 0) {
-                    yearlyStats[actionYear].dividend += divGain;
-                }
-                h.actionIndex++;
+            if (date >= yearStart && !h._ytdSnapshotted) {
+                if (h.shares > 0 && ytdRef && ytdRef[sid]) h.ytdBasis = h.shares * ytdRef[sid];
+                else h.ytdBasis = h.totalCost;
+                h._ytdSnapshotted = true;
             }
 
-            // Process trade
-            const type = (tx.side || tx.type || '').toUpperCase();
-            const qty = parseFloat(tx.quantity || tx.shares || 0);
-            const price = parseFloat(tx.price || 0);
-            const fee = parseFloat(tx.fee || 0);
-            const tax = parseFloat(tx.tax || 0);
+            if (evt.type === 'TRADE') {
+                const t = evt.data;
+                const side = String(t.side || t.type || '').toUpperCase();
+                const qty = Math.abs(parseFloat(t.quantity || t.shares || 0));
+                const price = parseFloat(t.price || 0);
+                const fee = parseFloat(t.fee || 0);
+                const tax = parseFloat(t.tax || 0);
+                if (!Number.isFinite(qty) || !Number.isFinite(price)) return;
 
-            if (type === 'BUY' || type === '買入' || type === '買進' || type === 'BUYING') {
-                h.shares += qty;
-                h.totalCost += (qty * price) + fee;
-            } else if (type === 'SELL' || type === '賣出' || type === 'SELLING') {
+                if (side.includes('BUY') || side.includes('買')) {
+                    h.shares += qty;
+                    h.totalCost += (qty * price) + fee;
+                    if (date >= yearStart) h.ytdBasis += (qty * price) + fee;
+                } else if (side.includes('SELL') || side.includes('賣')) {
+                    if (h.shares > 0.0001) {
+                        const avgCost = h.totalCost / h.shares;
+                        const avgYtd = h.ytdBasis / h.shares;
+                        const sellVal = (qty * price) - fee - tax;
+                        
+                        const pnl = sellVal - (qty * avgCost);
+                        h.realizedPNL += pnl;
+                        yearlyStats[year].realizedPNL += pnl;
+                        
+                        // 🚀 v2.23.1: Track YTD portion of realized P&L
+                        const ytdPnl = sellVal - (qty * avgYtd);
+                        yearlyStats[year].ytdRealizedPNL += ytdPnl;
+
+                        h.totalCost = Math.max(0, h.totalCost - (qty * avgCost));
+                        h.ytdBasis = Math.max(0, h.ytdBasis - (qty * avgYtd));
+                        h.shares = Math.max(0, h.shares - qty);
+                    }
+                }
+            } else {
                 if (h.shares > 0) {
-                    const avgCost = h.totalCost / h.shares;
-                    const sellValue = (qty * price) - fee - tax;
-                    const pnlGain = sellValue - (qty * avgCost);
-                    h.realizedPNL += pnlGain;
-                    yearlyStats[txYear].realizedPNL += pnlGain;
-                    h.totalCost -= (qty * avgCost);
-                    h.shares -= qty;
+                    const a = evt.data, aType = (a.type || '').toUpperCase();
+                    if (aType.includes('DIVIDEND')) {
+                        const gain = h.shares * (a.cash_dividend || 0);
+                        h.totalDividend += gain;
+                        if (date >= yearStart) yearlyStats[year].dividend += gain;
+                        if (a.stock_dividend > 0) h.shares *= (1.0 + a.stock_dividend / 10.0);
+                    } else if (aType.includes('REDUCTION')) {
+                        h.shares *= (1.0 - (a.capital_reduction || 0));
+                    } else if (aType.includes('SPLIT')) {
+                        h.shares *= (a.split_ratio || 1.0);
+                    }
                 }
             }
+            if (!Number.isFinite(h.shares)) h.shares = 0;
+            if (!Number.isFinite(h.totalCost)) h.totalCost = 0;
+            if (!Number.isFinite(h.ytdBasis)) h.ytdBasis = 0;
         });
 
-        // Process remaining actions
         Object.keys(holdings).forEach(sid => {
             const h = holdings[sid];
-            const actions = this.getActions(sid);
-            while (h.actionIndex < actions.length) {
-                const action = actions[h.actionIndex];
-                const actionYear = action.ex_date.substring(0, 4);
-                ensureYearly(actionYear);
-
-                const divBefore = h.totalDividend;
-                this._applyAction(h, action);
-                const divGain = h.totalDividend - divBefore;
-                if (divGain > 0) {
-                    yearlyStats[actionYear].dividend += divGain;
-                }
-                h.actionIndex++;
+            if (!h._ytdSnapshotted && h.shares > 0) {
+                if (ytdRef && ytdRef[sid]) h.ytdBasis = h.shares * ytdRef[sid];
+                else h.ytdBasis = h.totalCost;
+                h._ytdSnapshotted = true;
             }
         });
 
-        if (includeClosed) {
-            holdings.yearlyStats = yearlyStats;
-            return holdings;
-        }
-
-        // Filter out empty holdings if explicitly requested
-        const activeHoldings = { yearlyStats: yearlyStats };
-        for (const sid in holdings) {
-            if (sid === 'yearlyStats') continue;
-            if (holdings[sid].shares > 0.001) {
-                activeHoldings[sid] = holdings[sid];
-            }
-        }
-        return activeHoldings;
+        holdings.yearlyStats = yearlyStats;
+        return includeClosed ? holdings : Object.fromEntries(Object.entries(holdings).filter(([k,v]) => k==='yearlyStats' || v.shares > 0.001));
     },
 
-    _applyAction(h, action) {
-        if (h.shares <= 0) return;
-
-        const type = action.type.toUpperCase();
-        if (type === 'DIVIDEND' || type === 'CASH_DIVIDEND') {
-            h.totalDividend += h.shares * (action.cash_dividend || 0);
-            if (action.stock_dividend > 0) {
-                h.shares *= (1.0 + action.stock_dividend / 10.0);
-            }
-        } else if (type === 'REDUCTION' || type === 'CAPITAL_REDUCTION') {
-            h.shares *= (1.0 - (action.capital_reduction || 0));
-        } else if (type === 'SPLIT' || type === 'REVERSE_SPLIT') {
-            h.shares *= (action.split_ratio || 1.0);
-        }
-    },
-
-    buildTransactionTimeline(trades, symbol) {
-        const actions = this.getActions(symbol);
-        const symbolTrades = trades.filter(t => (t.symbol || t.stock_id || t.stockId) === symbol);
-        
-        const timeline = [];
-        
-        // Add trades
-        symbolTrades.forEach(t => {
-            timeline.push({
-                type: 'TRADE',
-                date: t.date || t.timestamp || t.trade_date || t.tradeDate,
-                data: t
-            });
-        });
-        
-        // Add actions
-        actions.forEach(a => {
-            timeline.push({
-                type: 'ACTION',
-                date: a.ex_date,
-                data: a
-            });
-        });
-        
-        // Sort by date, actions after trades if on same day
-        timeline.sort((a, b) => {
-            if (a.date !== b.date) return a.date.localeCompare(b.date);
-            return a.type === 'TRADE' ? -1 : 1;
-        });
-        
-        return timeline;
+    buildTransactionTimeline(trades, sym) {
+        const actions = this.getActions(sym);
+        const timeline = trades.filter(t => String(t.symbol || t.stock_id || t.stockId || '').split('.')[0] === String(sym).split('.')[0])
+                               .map(t => ({ type: 'TRADE', date: t.date || t.timestamp || t.tradeDate || t.trade_date || '1970-01-01', data: t }));
+        actions.forEach(a => timeline.push({ type: 'ACTION', date: a.ex_date, data: a }));
+        return timeline.sort((a, b) => b.date.localeCompare(a.date) || (a.type === 'TRADE' ? 1 : -1));
     }
 };
 
