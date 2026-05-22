@@ -371,7 +371,8 @@ export const TrendHunter = {
                 setTimeout(() => {
                     if (!container.contains(chartDom)) return;
                     const isDark = document.documentElement.classList.contains('dark');
-                    const myChart = echarts.init(chartDom, isDark ? 'dark' : null);\n                    window.addEventListener('resize', () => myChart.resize());
+                    const myChart = echarts.init(chartDom, isDark ? 'dark' : null);
+                    window.addEventListener('resize', () => myChart.resize());
 
                     const flowRatios = rotationData.themes.map(t => t.flow_ratio);
                     const avgFlowRatio = flowRatios.reduce((a, b) => a + b, 0) / flowRatios.length;
@@ -600,7 +601,8 @@ export const TrendHunter = {
                 setTimeout(() => {
                     if (!container.contains(chartDom)) return;
                     const isDark = document.documentElement.classList.contains('dark');
-                    const myChart = echarts.init(chartDom, isDark ? 'dark' : null);\n                    window.addEventListener('resize', () => myChart.resize());
+                    const myChart = echarts.init(chartDom, isDark ? 'dark' : null);
+                    window.addEventListener('resize', () => myChart.resize());
 
                     const option = {
                         backgroundColor: 'transparent',

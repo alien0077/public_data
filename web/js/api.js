@@ -49,22 +49,24 @@ export const api = {
     },
 
     async fetchLocalJson(path) {
+        // 🚀 v4.1.4: 移除遞迴相依，改為純粹的本地抓取
         const isLocal = window.location.hostname === 'localhost' || 
                         window.location.hostname === '127.0.0.1' || 
                         window.location.protocol === 'file:';
-        const candidates = isLocal ? [`../data/${path}`, `../../data/${path}`, `../../../data/${path}`] : 
-                                   [`../data/${path}`, `https://alien0077.github.io/Public_Data/data/${path}`];
-        let lastErr = null;
-        for (const url of candidates) {
-            try {
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 10000);
-                const res = await fetch(url, { signal: controller.signal });
-                clearTimeout(timeoutId);
-                if (res.ok) return await res.json();
-            } catch (e) { lastErr = e; }
+        
+        const url = isLocal ? `../data/${path}` : `https://alien0077.github.io/Public_Data/data/${path}`;
+        
+        try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 8000);
+            const res = await fetch(url, { signal: controller.signal });
+            clearTimeout(timeoutId);
+            if (res.ok) return await res.json();
+            throw new Error(`HTTP ${res.status}`);
+        } catch (e) {
+            console.warn(`Local JSON [${path}] fetch failed: ${e.message}`);
+            throw e;
         }
-        throw new Error(`JSON [${path}] failure: ${lastErr?.message}`);
     },
 
     async fetchWithAuth(endpoint, options = {}) {
