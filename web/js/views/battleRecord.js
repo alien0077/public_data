@@ -33,6 +33,30 @@ export const BattleRecord = {
                     </div>
                 </div>
 
+                <!-- Yearly Summary -->
+                <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm">
+                    <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+                        <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
+                            <span class="mr-2">📅</span> 歷年年度結算
+                        </h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-gray-50/30 dark:bg-gray-900/30 text-gray-400 text-[10px] uppercase font-mono">
+                                <tr>
+                                    <th class="px-6 py-3">年度</th>
+                                    <th class="px-6 py-3 text-right">已實現價差</th>
+                                    <th class="px-6 py-3 text-right">年度股利</th>
+                                    <th class="px-6 py-3 text-right">年度合計</th>
+                                </tr>
+                            </thead>
+                            <tbody id="yearly-stats-body" class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-sm">
+                                <tr><td colspan="4" class="px-6 py-8 text-center text-gray-500">計算中...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
                 <!-- Settled Groups -->
                 <div class="space-y-4" id="settled-groups-container">
                     <div class="text-center py-12 text-gray-500">數據分析中...</div>
@@ -209,6 +233,30 @@ export const BattleRecord = {
         document.getElementById('settled-win-count').textContent = winCount;
         document.getElementById('settled-total-dividend').textContent = `$${this.formatNumber(totalDividend, 0)}`;
         document.getElementById('settled-win-rate').textContent = totalSettledCount > 0 ? `${(winCount/totalSettledCount*100).toFixed(1)}%` : '0%';
+
+        // 🚀 v2.20.0: 渲染年度結算
+        const yearlyBody = document.getElementById('yearly-stats-body');
+        if (yearlyBody && holdings.yearlyStats) {
+            const years = Object.keys(holdings.yearlyStats).sort((a, b) => b - a);
+            yearlyBody.innerHTML = years.map(y => {
+                const s = holdings.yearlyStats[y];
+                const total = s.realizedPNL + s.dividend;
+                return `
+                    <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+                        <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">${y}</td>
+                        <td class="px-6 py-4 text-right ${s.realizedPNL >= 0 ? 'text-red-500' : 'text-green-500'}">
+                            ${s.realizedPNL >= 0 ? '+' : ''}${this.formatNumber(s.realizedPNL, 0)}
+                        </td>
+                        <td class="px-6 py-4 text-right text-blue-500 font-bold">
+                            ${this.formatNumber(s.dividend, 0)}
+                        </td>
+                        <td class="px-6 py-4 text-right font-bold ${total >= 0 ? 'text-red-500' : 'text-green-500'}">
+                            ${total >= 0 ? '+' : ''}${this.formatNumber(total, 0)}
+                        </td>
+                    </tr>
+                `;
+            }).join('') || '<tr><td colspan="4" class="px-6 py-8 text-center text-gray-500">尚無年度數據</td></tr>';
+        }
 
         const container = document.getElementById('settled-groups-container');
         container.innerHTML = `

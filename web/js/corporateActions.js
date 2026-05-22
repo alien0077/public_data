@@ -42,7 +42,12 @@ export const CorporateActions = {
 
     recalculateHoldings(trades, includeClosed = true) {
         const holdings = {};
+        const yearlyStats = {}; // year -> { realizedPNL, dividend }
         
+        const ensureYearly = (year) => {
+            if (!yearlyStats[year]) yearlyStats[year] = { realizedPNL: 0, dividend: 0 };
+        };
+
         // Sort trades by date
         const sortedTrades = [...trades].sort((a, b) => {
             const dateA = a.date || a.timestamp || a.trade_date || a.tradeDate;
@@ -69,10 +74,21 @@ export const CorporateActions = {
             const h = holdings[sid];
             const actions = this.getActions(sid);
             const txDate = tx.date || tx.timestamp || tx.trade_date || tx.tradeDate;
+            const txYear = new Date(txDate).getFullYear().toString();
+            ensureYearly(txYear);
 
             // Process actions before this trade
             while (h.actionIndex < actions.length && actions[h.actionIndex].ex_date <= txDate) {
-                this._applyAction(h, actions[h.actionIndex]);
+                const action = actions[h.actionIndex];
+                const actionYear = action.ex_date.substring(0, 4);
+                ensureYearly(actionYear);
+                
+                const divBefore = h.totalDividend;
+                this._applyAction(h, action);
+                const divGain = h.totalDividend - divBefore;
+                if (divGain > 0) {
+                    yearlyStats[actionYear].dividend += divGain;
+                }
                 h.actionIndex++;
             }
 
@@ -90,7 +106,9 @@ export const CorporateActions = {
                 if (h.shares > 0) {
                     const avgCost = h.totalCost / h.shares;
                     const sellValue = (qty * price) - fee - tax;
-                    h.realizedPNL += sellValue - (qty * avgCost);
+                    const pnlGain = sellValue - (qty * avgCost);
+                    h.realizedPNL += pnlGain;
+                    yearlyStats[txYear].realizedPNL += pnlGain;
                     h.totalCost -= (qty * avgCost);
                     h.shares -= qty;
                 }
@@ -102,16 +120,29 @@ export const CorporateActions = {
             const h = holdings[sid];
             const actions = this.getActions(sid);
             while (h.actionIndex < actions.length) {
-                this._applyAction(h, actions[h.actionIndex]);
+                const action = actions[h.actionIndex];
+                const actionYear = action.ex_date.substring(0, 4);
+                ensureYearly(actionYear);
+
+                const divBefore = h.totalDividend;
+                this._applyAction(h, action);
+                const divGain = h.totalDividend - divBefore;
+                if (divGain > 0) {
+                    yearlyStats[actionYear].dividend += divGain;
+                }
                 h.actionIndex++;
             }
         });
 
-        if (includeClosed) return holdings;
+        if (includeClosed) {
+            holdings.yearlyStats = yearlyStats;
+            return holdings;
+        }
 
         // Filter out empty holdings if explicitly requested
-        const activeHoldings = {};
+        const activeHoldings = { yearlyStats: yearlyStats };
         for (const sid in holdings) {
+            if (sid === 'yearlyStats') continue;
             if (holdings[sid].shares > 0.001) {
                 activeHoldings[sid] = holdings[sid];
             }

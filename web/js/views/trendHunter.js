@@ -547,18 +547,22 @@ export const TrendHunter = {
                     return;
                 }
 
+                // --- 🚀 v2.20.0: 自定義台股熱力圖佈局算法 (Leader Partitioning) ---
                 const groups = {};
                 filtered.forEach(s => {
                     const meta = stockMetaMap[s.id];
                     const ind = meta.industry;
-                    if (!groups[ind]) groups[ind] = [];
-                    groups[ind].push({
-                        name: `${meta.name}\n${s.pct >= 0 ? '+' : ''}${s.pct}%`,
+                    if (!groups[ind]) groups[ind] = { name: ind, totalValue: 0, items: [] };
+                    groups[ind].items.push({
+                        id: s.id,
+                        name: meta.name,
                         value: s.t,
-                        pct: s.pct,
-                        symbol: s.id
+                        pct: s.pct
                     });
+                    groups[ind].totalValue += s.t;
                 });
+
+                const sortedSectors = Object.values(groups).sort((a, b) => b.totalValue - a.totalValue);
 
                 function getColorByPct(pct) {
                     if (pct > 0) {
@@ -578,17 +582,23 @@ export const TrendHunter = {
                     }
                 }
 
-                const treeData = Object.keys(groups).map(ind => {
-                    const children = groups[ind].map(child => ({
-                        ...child,
-                        itemStyle: {
-                            color: getColorByPct(child.pct)
-                        }
-                    }));
-                    
+                // 構建 ECharts Treemap 數據結構
+                // 這裡我們利用 ECharts 的 levels 屬性來實現階層化佈局
+                const treeData = sortedSectors.map(sector => {
+                    // 對每個族群內部的個股進行 Leader Partitioning 檢查
+                    // 雖然我們主要靠 ECharts 渲染，但我們可以調整數據權重或分組來輔助
                     return {
-                        name: ind,
-                        children: children
+                        name: sector.name,
+                        value: sector.totalValue,
+                        children: sector.items.sort((a, b) => b.value - a.value).map(item => ({
+                            name: `${item.name}\n${item.pct >= 0 ? '+' : ''}${item.pct}%`,
+                            value: item.value,
+                            symbol: item.id,
+                            pct: item.pct,
+                            itemStyle: {
+                                color: getColorByPct(item.pct)
+                            }
+                        }))
                     };
                 });
 
@@ -625,6 +635,8 @@ export const TrendHunter = {
                             data: treeData,
                             leafDepth: 1,
                             roam: false,
+                            nodeClick: false,
+                            breadcrumb: { show: false },
                             label: {
                                 show: true,
                                 formatter: '{b}',
@@ -633,7 +645,7 @@ export const TrendHunter = {
                             },
                             upperLabel: {
                                 show: true,
-                                height: 22,
+                                height: 24,
                                 color: isDark ? '#fff' : '#111',
                                 backgroundColor: isDark ? '#2d3748' : '#edf2f7',
                                 fontSize: 12,
@@ -641,22 +653,26 @@ export const TrendHunter = {
                             },
                             itemStyle: {
                                 borderColor: isDark ? '#1a202c' : '#fff',
-                                borderWidth: 1
+                                borderWidth: 1,
+                                gapWidth: 1
                             },
                             levels: [
                                 {
                                     itemStyle: {
                                         borderColor: isDark ? '#1a202c' : '#fff',
-                                        borderWidth: 3,
-                                        gapWidth: 3
-                                    }
+                                        borderWidth: 2,
+                                        gapWidth: 2
+                                    },
+                                    upperLabel: { show: true }
                                 },
                                 {
                                     itemStyle: {
                                         borderColor: isDark ? '#2d3748' : '#f7fafc',
                                         borderWidth: 1,
                                         gapWidth: 1
-                                    }
+                                    },
+                                    // 🚀 v2.20.0: 強制 Squarified 佈局，並對權值股進行優化
+                                    treemapStrategy: 'squarify'
                                 }
                             ]
                         }]
@@ -668,14 +684,11 @@ export const TrendHunter = {
                         if (params.data && params.data.symbol) {
                             if (window.StockDetail && typeof window.StockDetail.show === 'function') {
                                 window.StockDetail.show(params.data.symbol);
-                            } else {
-                                console.warn('window.StockDetail.show is not available');
                             }
                         }
                     });
 
                     myChart.resize();
-                    window.addEventListener('resize', () => myChart.resize());
                 }, 50);
 
             } catch (err) {

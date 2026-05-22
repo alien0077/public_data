@@ -7,7 +7,6 @@ export const charts = {
 
     /**
      * Initialize ECharts instance
-     * @param {string} containerId 
      */
     init(containerId) {
         const container = document.getElementById(containerId);
@@ -20,7 +19,6 @@ export const charts = {
         
         this.instance = echarts.init(container);
         
-        // Use a single listener strategy
         if (!this._hasResizeListener) {
             window.addEventListener('resize', () => {
                 if (this.instance) this.instance.resize();
@@ -32,113 +30,69 @@ export const charts = {
 
     /**
      * Render K-line chart
-     * @param {string} symbol 
-     * @param {Object} rawData 
-     * @param {Array} trades 
-     * @param {Object} structureData 
      */
     renderKLine(symbol, rawData, trades = [], structureData = null) {
         if (!this.instance) return;
 
         const data = this.transformKData(rawData);
-        
-        // Calculate average cost markLine
-        const markLines = [];
-        const markAreas = [];
+        if (data.categoryData.length === 0) return;
 
+        // 🚀 完整六條均線 (比照 App)
+        const ma5 = this.calculateMA(5, data.values);
+        const ma10 = this.calculateMA(10, data.values);
+        const ma20 = this.calculateMA(20, data.values);
+        const ma60 = this.calculateMA(60, data.values);
+        const ma120 = this.calculateMA(120, data.values);
+        const ma240 = this.calculateMA(240, data.values);
+        
+        const markLines = [];
         if (trades.length > 0) {
             const avgCost = this.calculateAvgCost(trades, symbol);
             if (avgCost > 0) {
                 markLines.push({
                     yAxis: avgCost,
                     label: {
-                        formatter: `成本: ${avgCost.toFixed(2)}`,
+                        formatter: `成本: ${avgCost.toFixed(1)}`,
                         position: 'start',
                         backgroundColor: '#3b82f6',
                         color: '#fff',
                         padding: [2, 4],
-                        borderRadius: 2
+                        borderRadius: 2,
+                        fontSize: 10
                     },
-                    lineStyle: {
-                        type: 'dashed',
-                        color: '#3b82f6',
-                        width: 1,
-                        opacity: 0.8
-                    }
+                    lineStyle: { type: 'dashed', color: '#3b82f6', width: 1, opacity: 0.8 }
                 });
             }
         }
 
-        // Process Structure Data (BOS/CHOCH/Zones)
-        if (structureData && structureData.lines) {
-            structureData.lines.forEach(line => {
-                if (!line.broken) {
-                    // Active structure lines
-                    markLines.push({
-                        yAxis: line.price,
-                        label: {
-                            formatter: line.type === 'high' ? '強抗' : '強撐',
-                            position: 'end',
-                            backgroundColor: line.type === 'high' ? '#ef4444' : '#22c55e',
-                            color: '#fff',
-                            padding: [2, 4],
-                            fontSize: 10
-                        },
-                        lineStyle: {
-                            type: 'solid',
-                            color: line.type === 'high' ? 'rgba(239, 68, 68, 0.4)' : 'rgba(34, 197, 94, 0.4)',
-                            width: 1
-                        }
-                    });
-                }
-            });
-        }
-
-        if (structureData && structureData.events) {
-            structureData.events.forEach(event => {
-                const dateStr = event.date.replace(/-/g, '/');
-                markLines.push({
-                    name: event.type,
-                    xAxis: dateStr,
-                    label: {
-                        formatter: event.type.includes('BOS') ? 'BOS' : 'CHOCH',
-                        position: 'middle',
-                        color: event.type.includes('UP') ? '#ef4444' : '#22c55e',
-                        fontSize: 9,
-                        fontWeight: 'bold'
-                    },
-                    lineStyle: {
-                        type: 'dotted',
-                        color: 'rgba(139, 148, 158, 0.3)',
-                        width: 1
-                    }
-                });
-            });
-        }
+        const isDark = document.documentElement.classList.contains('dark');
+        const upColor = '#ef4444';
+        const downColor = '#10b981';
 
         const option = {
             backgroundColor: 'transparent',
             animation: false,
             tooltip: {
                 trigger: 'axis',
-                axisPointer: { type: 'cross' },
-                backgroundColor: 'rgba(22, 27, 34, 0.9)',
-                borderColor: '#30363d',
-                borderWidth: 1,
-                textStyle: { color: '#c9d1d9', fontSize: 10 },
-                confine: true
+                axisPointer: { type: 'cross', label: { backgroundColor: '#374151' } },
+                backgroundColor: isDark ? 'rgba(17, 24, 39, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+                borderColor: isDark ? '#374151' : '#e5e7eb',
+                textStyle: { color: isDark ? '#f3f4f6' : '#1f2937', fontSize: 11 },
+                confine: true,
+                padding: 10
             },
+            axisPointer: { link: [{ xAxisIndex: 'all' }] },
             grid: [
-                { left: 40, right: 10, top: 10, height: '70%' },
-                { left: 40, right: 10, top: '82%', height: '15%' }
+                { left: '40', right: '10', top: '5%', height: '72%' },
+                { left: '40', right: '10', top: '82%', height: '15%' }
             ],
             xAxis: [
                 {
                     type: 'category',
                     data: data.categoryData,
                     boundaryGap: true,
-                    axisLine: { lineStyle: { color: '#30363d' } },
-                    axisLabel: { color: '#8b949e', fontSize: 10 },
+                    axisLine: { lineStyle: { color: isDark ? '#374151' : '#e5e7eb' } },
+                    axisLabel: { color: '#9ca3af', fontSize: 10 },
                     splitLine: { show: false }
                 },
                 {
@@ -146,7 +100,7 @@ export const charts = {
                     gridIndex: 1,
                     data: data.categoryData,
                     boundaryGap: true,
-                    axisLine: { lineStyle: { color: '#30363d' } },
+                    axisLine: { lineStyle: { color: isDark ? '#374151' : '#e5e7eb' } },
                     axisTick: { show: false },
                     axisLabel: { show: false },
                     splitLine: { show: false }
@@ -155,10 +109,9 @@ export const charts = {
             yAxis: [
                 {
                     scale: true,
-                    position: 'left',
-                    axisLine: { lineStyle: { color: '#30363d' } },
-                    axisLabel: { color: '#8b949e', fontSize: 10 },
-                    splitLine: { lineStyle: { color: '#161b22' } }
+                    axisLine: { show: false },
+                    axisLabel: { color: '#9ca3af', fontSize: 10 },
+                    splitLine: { lineStyle: { color: isDark ? '#1f2937' : '#f3f4f6' } }
                 },
                 {
                     scale: true,
@@ -174,7 +127,7 @@ export const charts = {
                 {
                     type: 'inside',
                     xAxisIndex: [0, 1],
-                    start: Math.max(0, 100 - (120 / data.categoryData.length * 100)),
+                    start: Math.max(0, 100 - (50 / data.categoryData.length * 100)), // 🚀 預設顯示 50 根，更緊湊
                     end: 100
                 }
             ],
@@ -183,35 +136,31 @@ export const charts = {
                     name: 'K線',
                     type: 'candlestick',
                     data: data.values,
-                    barMaxWidth: 10,
                     itemStyle: {
-                        color: '#ef4444',
-                        color0: '#22c55e',
-                        borderColor: '#ef4444',
-                        borderColor0: '#22c55e',
+                        color: upColor,
+                        color0: downColor,
+                        borderColor: upColor,
+                        borderColor0: downColor,
                         borderWidth: 1
                     },
-                    markLine: {
-                        symbol: ['none', 'none'],
-                        data: markLines
-                    },
-                    markArea: {
-                        silent: true,
-                        data: markAreas
-                    }
+                    markLine: { symbol: ['none', 'none'], data: markLines }
                 },
+                { name: 'MA5', type: 'line', data: ma5, smooth: true, showSymbol: false, lineStyle: { width: 1, color: '#f59e0b' } },
+                { name: 'MA10', type: 'line', data: ma10, smooth: true, showSymbol: false, lineStyle: { width: 1, color: '#fb923c' } },
+                { name: 'MA20', type: 'line', data: ma20, smooth: true, showSymbol: false, lineStyle: { width: 1, color: '#3b82f6' } },
+                { name: 'MA60', type: 'line', data: ma60, smooth: true, showSymbol: false, lineStyle: { width: 1, color: '#a855f7' } },
+                { name: 'MA120', type: 'line', data: ma120, smooth: true, showSymbol: false, lineStyle: { width: 1, color: '#9ca3af' } },
+                { name: 'MA240', type: 'line', data: ma240, smooth: true, showSymbol: false, lineStyle: { width: 1, color: '#16a34a' } },
                 {
                     name: '成交量',
                     type: 'bar',
                     xAxisIndex: 1,
                     yAxisIndex: 1,
                     data: data.volumes,
-                    barMaxWidth: 10,
                     itemStyle: {
                         color: (params) => {
                             const val = data.values[params.dataIndex];
-                            if (!val) return '#8b949e';
-                            return val[1] >= val[0] ? '#ef4444' : '#22c55e';
+                            return val && val[1] >= val[0] ? upColor : downColor;
                         }
                     }
                 }
@@ -222,19 +171,34 @@ export const charts = {
     },
 
     /**
-     * Transform raw Yahoo-style data to ECharts format
-     * @param {Object} rawData 
+     * 計算移動平均線
+     */
+    calculateMA(dayCount, data) {
+        const result = [];
+        for (let i = 0, len = data.length; i < len; i++) {
+            if (i < dayCount - 1) {
+                result.push('-');
+                continue;
+            }
+            let sum = 0;
+            for (let j = 0; j < dayCount; j++) {
+                sum += data[i - j][1];
+            }
+            result.push(+(sum / dayCount).toFixed(2));
+        }
+        return result;
+    },
+
+    /**
+     * 格式化 K 線數據
      */
     transformKData(rawData) {
         const categoryData = [];
         const values = [];
         const volumes = [];
         
-        if (!rawData) {
-            return { categoryData, values, volumes };
-        }
+        if (!rawData) return { categoryData, values, volumes };
         
-        // Handle different possible response structures
         const timestamps = rawData.timestamps || rawData.timestamp || [];
         const opens = rawData.open || [];
         const highs = rawData.high || [];
@@ -243,19 +207,15 @@ export const charts = {
         const vols = rawData.volume || [];
 
         for (let i = 0; i < timestamps.length; i++) {
-            const ts = timestamps[i];
-            const date = new Date(ts * 1000);
-            const dateStr = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
-            categoryData.push(dateStr);
+            if (opens[i] === null || closes[i] === null) continue;
+            const date = new Date(timestamps[i] * 1000);
+            const y = date.getFullYear();
+            const m = String(date.getMonth() + 1).padStart(2, '0');
+            const d = String(date.getDate()).padStart(2, '0');
+            categoryData.push(`${y}/${m}/${d}`);
             
             // ECharts candlestick format: [open, close, low, high]
-            values.push([
-                opens[i],
-                closes[i],
-                lows[i],
-                highs[i]
-            ]);
-            
+            values.push([ opens[i], closes[i], lows[i], highs[i] ]);
             volumes.push(vols[i]);
         }
 
@@ -263,9 +223,7 @@ export const charts = {
     },
 
     /**
-     * Calculate average cost for a specific symbol
-     * @param {Array} trades 
-     * @param {string} symbol 
+     * 計算平均成本
      */
     calculateAvgCost(trades, symbol) {
         const rawSymbol = symbol.split('.')[0];
@@ -273,13 +231,9 @@ export const charts = {
             const tSym = t.symbol || t.stock_id || t.stockId || '';
             return tSym.split('.')[0] === rawSymbol;
         });
-        let shares = 0;
-        let totalCost = 0;
+        let shares = 0, totalCost = 0;
 
-        // Sort trades by date
-        const sorted = [...relevantTrades].sort((a, b) => {
-            return new Date(a.date || a.timestamp) - new Date(b.date || b.timestamp);
-        });
+        const sorted = [...relevantTrades].sort((a, b) => new Date(a.date || a.timestamp) - new Date(b.date || b.timestamp));
 
         sorted.forEach(t => {
             const type = (t.side || t.type || '').toLowerCase();

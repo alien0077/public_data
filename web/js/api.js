@@ -49,12 +49,23 @@ export const api = {
     },
 
     async fetchLocalJson(path) {
-        // 🚀 v4.1.4: 移除遞迴相依，改為純粹的本地抓取
+        // 🚀 v4.1.6: 究極路徑自動修正 - 支持 temp_repo 與生產環境
         const isLocal = window.location.hostname === 'localhost' || 
                         window.location.hostname === '127.0.0.1' || 
                         window.location.protocol === 'file:';
         
-        const url = isLocal ? `../data/${path}` : `https://alien0077.github.io/Public_Data/data/${path}`;
+        let root = '../data/'; // 默認路徑 (假設在 temp_repo/web 執行)
+        
+        // 如果網頁路徑包含 /temp_repo/web，數據就在同級的 ../data (即 temp_repo/data)
+        // 如果網頁路徑包含 /web (非 temp_repo)，數據就在 ../temp_repo/data
+        if (window.location.pathname.includes('/temp_repo/web/')) {
+            root = '../data/';
+        } else if (window.location.pathname.includes('/web/')) {
+            root = '../temp_repo/data/';
+        }
+        
+        const url = isLocal ? `${root}${path}` : `https://alien0077.github.io/Public_Data/data/${path}`;
+        console.log(`[API] Environment: ${isLocal ? 'Local' : 'Remote'}, Path: ${window.location.pathname}, Root: ${root}, Fetching: ${path}`);
         
         try {
             const controller = new AbortController();
@@ -64,7 +75,7 @@ export const api = {
             if (res.ok) return await res.json();
             throw new Error(`HTTP ${res.status}`);
         } catch (e) {
-            console.warn(`Local JSON [${path}] fetch failed: ${e.message}`);
+            console.warn(`Local JSON [${path}] fetch failed from ${url}: ${e.message}`);
             throw e;
         }
     },
@@ -300,8 +311,15 @@ export const api = {
 
     async fetchStructure(symbol) { try { return await this.fetchLocalJson(`structure/daily/${symbol.split('.')[0]}.json`); } catch (err) { return null; } },
     async fetchFinancials(symbol, type = 'quarterly') { try { return await this.fetchLocalJson(`${type}/${symbol.split('.')[0]}.json`); } catch (err) { return null; } },
-    async fetchHealthData(symbol) { return { score: 150, health_status: '健康', risk_level: '中風險', advice: 'HOLD', ai_summary: '籌碼偏多，建議續抱。' }; },
-    async fetchIntradayMarket(symbol) { return { metrics: { outer_ratio: 39.1, amplitude: 2.86, trades_count: 14000, latest_volume: 5188, turnover: 147.2 }, price_volume: [{ price: 246, volume: 864, outer_vol: 500, inner_vol: 364 }] }; },
+    async fetchHealthData(symbol) { 
+        try { 
+            const data = await this.fetchLocalJson(`stocks/${symbol.split('.')[0]}.json`); 
+            return data;
+        } catch (err) { 
+            return { score: 0, health_status: '無數據', risk_level: '未知', advice: 'N/A', ai_summary: '未發現此個股之 AI 健檢數據。' }; 
+        } 
+    },
+    async fetchIntradayMarket(symbol) { return { metrics: { outer_ratio: 0, amplitude: 0, trades_count: 0, latest_volume: 0, turnover: 0 }, price_volume: [] }; },
     async fetchShareholders(symbol) { try { return await this.fetchLocalJson(`weekly/shareholders/${symbol.split('.')[0]}.json`); } catch (err) { return null; } },
     async fetchLiarData() { try { return await this.fetchLocalJson(`daily/liar.json`); } catch (err) { return null; } }
 };

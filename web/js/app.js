@@ -450,8 +450,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // 更新 Summary Cards
-        // 總盈虧 = (當前市值 - 當前調整後成本) + 歷史已實現損益 + 歷史總股息
-        const totalPnl = (totalMarketValue - totalCostValue) + totalRealizedPNL + totalDividendIncome;
+        // 🚀 v2.20.0: 總盈虧僅結算當前年度 (2026)
+        // 今年度盈虧 = 今年度已實現 + 今年度股利 + 當前庫存未實現
+        const currentYear = new Date().getFullYear().toString();
+        const yStats = holdings.yearlyStats?.[currentYear] || { realizedPNL: 0, dividend: 0 };
+        const totalPnl = (totalMarketValue - totalCostValue) + yStats.realizedPNL + yStats.dividend;
+        
         const totalPnlPercent = totalCostValue > 0 ? (totalPnl / totalCostValue * 100) : 0;
         const dailyPnl = totalMarketValue - totalRefMarketValue;
 
@@ -460,6 +464,10 @@ document.addEventListener('DOMContentLoaded', () => {
         totalPnlEl.textContent = `${totalPnl >= 0 ? '+' : ''}${formatNumber(totalPnl, 0)}`;
         totalPnlEl.className = `text-3xl font-mono font-bold ${totalPnl >= 0 ? 'text-red-500' : 'text-green-500'}`;
         
+        // 更新標題為「今年度總盈虧」
+        const pnlTitle = document.querySelector('#total-pnl').previousElementSibling;
+        if (pnlTitle) pnlTitle.textContent = `今年度總盈虧 (${currentYear})`;
+
         totalPnlPercentEl.textContent = `${totalPnlPercent.toFixed(2)}%`;
         totalPnlPercentEl.className = `text-xs mt-1 ${totalPnl >= 0 ? 'text-red-500' : 'text-green-500'}`;
         
