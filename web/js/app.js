@@ -89,7 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Navigation Logic ---
-    router.init();
+    try {
+        router.init();
+    } catch (e) {
+        console.error("Critical: Router init failed", e);
+    }
 
     // 監聽路由變化，執行特定視圖的初始化
     window.addEventListener('router:changed', (e) => {
@@ -99,18 +103,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (stockDetailOverlay) stockDetailOverlay.classList.add('hidden');
         currentDetailSymbol = null;
 
-        if (primary === 'dashboard') {
-            Dashboard.init();
-        } else if (primary === 'trendHunter') {
-            TrendHunter.init(secondary);
-        } else if (primary === 'assetRisk') {
-            AssetRisk.init(secondary);
-        } else if (primary === 'performance') {
-            BattleRecord.init();
-        } else if (primary === 'addTrade') {
-            Transaction.init();
-        } else if (primary === 'favorites') {
-            Favorites.init(secondary);
+        try {
+            if (primary === 'dashboard') {
+                Dashboard.init();
+            } else if (primary === 'trendHunter') {
+                TrendHunter.init(secondary);
+            } else if (primary === 'assetRisk') {
+                AssetRisk.init(secondary);
+            } else if (primary === 'performance') {
+                BattleRecord.init();
+            } else if (primary === 'addTrade') {
+                Transaction.init();
+            } else if (primary === 'favorites') {
+                Favorites.init(secondary);
+            }
+        } catch (err) {
+            console.error(`${primary} view init error:`, err);
         }
     });
 

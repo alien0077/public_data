@@ -43,9 +43,17 @@ class Router {
     init() {
         this.subNavContainer = document.getElementById('sub-nav-container');
         this.viewTitle = document.getElementById('view-title');
-        
+
+        if (!this.viewTitle) {
+            console.warn("Router: 'view-title' element not found.");
+        }
+
         // 初始載入第一頁
-        this.switchPage('dashboard');
+        try {
+            this.switchPage('dashboard');
+        } catch (e) {
+            console.error("Router: Failed to load initial page", e);
+        }
     }
 
     switchPage(primary, secondary = null) {
@@ -57,7 +65,7 @@ class Router {
 
         this.currentPrimary = primary;
         const config = ROUTES[primary];
-        
+
         // 如果沒有指定子分頁，預設選取第一個
         if (!secondary && config.subPages.length > 0) {
             secondary = config.subPages[0];
@@ -65,7 +73,9 @@ class Router {
         this.currentSecondary = secondary;
 
         // 更新標題
-        this.viewTitle.textContent = config.title;
+        if (this.viewTitle) {
+            this.viewTitle.textContent = config.title;
+        }
 
         // 更新 Sidebar / Mobile Nav UI
         this.updateNavUI(primary);
@@ -73,12 +83,12 @@ class Router {
         // 渲染二級導航
         this.renderSubNav(config.subPages, secondary);
 
-        // 切換視圖容器
+        // 切換視圖內容
         this.toggleViews(primary, secondary);
 
-        // 發送頁面切換事件 (供 app.js 其它模組監聽)
-        window.dispatchEvent(new CustomEvent('router:changed', { 
-            detail: { primary, secondary } 
+        // 🚀 v2.19.2: 觸發路由改變事件
+        window.dispatchEvent(new CustomEvent('router:changed', {
+            detail: { primary, secondary }
         }));
     }
 

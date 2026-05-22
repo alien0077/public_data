@@ -22,7 +22,15 @@
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-gray-50 dark:bg-[#0f1115] text-gray-900 dark:text-white overflow-hidden overflow-x-hidden h-screen flex transition-colors duration-300">
+<body class="bg-gray-50 dark:bg-[#0f1115] text-gray-900 dark:text-white transition-colors duration-300">
+    <script>
+        window.onerror = function(msg, url, line, col, error) {
+            console.error("Global Error: " + msg + " at " + url + ":" + line);
+            const statusText = document.getElementById('status-text');
+            if (statusText) statusText.textContent = "系統錯誤: " + msg;
+            return false;
+        };
+    </script>
     <!-- 隱藏的匯入輸入框 -->
     <input type="file" id="import-json" class="hidden" accept=".json">
 
@@ -57,7 +65,7 @@
     </div>
 
     <!-- 主程式容器 -->
-    <div id="main-app" class="hidden flex-1 flex flex-col md:flex-row h-full opacity-0 transition-opacity duration-500">
+    <div id="main-app" class="hidden min-h-screen flex flex-col md:flex-row h-full opacity-0 transition-opacity duration-500">
         <!-- Sidebar -->
         <aside class="hidden md:flex w-64 flex-col bg-white dark:bg-[#161b22] border-r border-gray-200 dark:border-gray-800 transition-colors duration-300">
             <div class="p-6 font-bold text-2xl text-blue-600 dark:text-blue-500 border-b border-gray-100 dark:border-gray-800">TWStock Pro</div>
