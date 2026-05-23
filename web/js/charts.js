@@ -40,6 +40,63 @@ export const charts = {
             });
         }
 
+        // 🚀 Render Structural Levels (BOS/CHOCH)
+        if (structureData && structureData.levels) {
+            structureData.levels.forEach(l => {
+                if (l.is_broken) return;
+                const color = l.type === 'BOS' ? '#ef4444' : '#3b82f6';
+                markLines.push({
+                    yAxis: l.price,
+                    label: { formatter: l.type, position: 'end', fontSize: 9, color: color },
+                    lineStyle: { type: 'solid', color: color, width: 1, opacity: 0.4 }
+                });
+            });
+        }
+
+        // 🚀 Render Trade Icons (markPoints)
+        const markPoints = [];
+        const rawS = symbol.split('.')[0];
+        const relevantTrades = trades.filter(t => (t.symbol || t.stock_id || t.stockId || '').split('.')[0] === rawS);
+        
+        relevantTrades.forEach(t => {
+            const dateStr = this.formatTradeDate(t.date || t.timestamp);
+            const idx = data.categoryData.indexOf(dateStr);
+            if (idx !== -1) {
+                const isBuy = (t.side || t.type || '').toLowerCase().includes('buy') || (t.side || t.type || '').includes('買');
+                markPoints.push({
+                    name: isBuy ? '買入' : '賣出',
+                    coord: [idx, data.values[idx][isBuy ? 2 : 3]], // 0:O, 1:C, 2:L, 3:H
+                    value: isBuy ? 'B' : 'S',
+                    symbol: 'circle',
+                    symbolOffset: [0, isBuy ? 15 : -15],
+                    itemStyle: { color: isBuy ? '#ef4444' : '#10b981' },
+                    symbolSize: 18,
+                    label: { show: true, formatter: isBuy ? 'B' : 'S', fontSize: 9, fontWeight: 'bold', color: '#fff' }
+                });
+            }
+        });
+
+        // 🚀 Render Corporate Action Icons
+        if (window.CorporateActions) {
+            const actions = window.CorporateActions.getActions(symbol);
+            actions.forEach(a => {
+                const dateStr = a.ex_date.replace(/-/g, '/');
+                const idx = data.categoryData.indexOf(dateStr);
+                if (idx !== -1) {
+                    markPoints.push({
+                        name: '除權息',
+                        coord: [idx, data.values[idx][3]], // High
+                        value: 'D',
+                        symbol: 'pin',
+                        symbolOffset: [0, -30],
+                        itemStyle: { color: '#f59e0b' },
+                        symbolSize: 20,
+                        label: { show: true, formatter: 'D', fontSize: 10, color: '#fff' }
+                    });
+                }
+            });
+        }
+
         const isDark = document.documentElement.classList.contains('dark');
         const upColor = '#ef4444';
         const downColor = '#10b981';
@@ -60,27 +117,31 @@ export const charts = {
                 { left: '40', right: '10', top: '82%', height: '15%' }
             ],
             xAxis: [
-                { type: 'category', data: data.categoryData, boundaryGap: true, axisLine: { lineStyle: { color: isDark ? '#374151' : '#e5e7eb' } }, axisLabel: { color: '#9ca3af', fontSize: 10 } },
+                { type: 'category', data: data.categoryData, boundaryGap: true, axisLine: { lineStyle: { color: isDark ? '#374151' : '#e5e7eb' } }, axisLabel: { color: '#9ca3af', fontSize: 10, rotate: 30 } },
                 { type: 'category', gridIndex: 1, data: data.categoryData, boundaryGap: true, axisLine: { lineStyle: { color: isDark ? '#374151' : '#e5e7eb' } }, axisTick: { show: false }, axisLabel: { show: false } }
             ],
             yAxis: [
                 { scale: true, axisLine: { show: false }, axisLabel: { color: '#9ca3af', fontSize: 10 }, splitLine: { lineStyle: { color: isDark ? '#1f2937' : '#f3f4f6' } } },
                 { scale: true, gridIndex: 1, splitNumber: 2, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { show: false } }
             ],
-            dataZoom: [{ type: 'inside', xAxisIndex: [0, 1], start: Math.max(0, 100 - (50 / data.categoryData.length * 100)), end: 100 }],
+            dataZoom: [
+                { type: 'inside', xAxisIndex: [0, 1], start: Math.max(0, 100 - (250 / data.categoryData.length * 100)), end: 100 },
+                { show: true, type: 'slider', xAxisIndex: [0, 1], top: '97%', height: 15, start: Math.max(0, 100 - (250 / data.categoryData.length * 100)), end: 100 }
+            ],
             series: [
                 {
                     name: 'K線', type: 'candlestick', data: data.values,
                     itemStyle: { color: upColor, color0: downColor, borderColor: upColor, borderColor0: downColor },
-                    markLine: { symbol: ['none', 'none'], data: markLines }
+                    markLine: { symbol: ['none', 'none'], data: markLines },
+                    markPoint: { data: markPoints }
                 },
                 // 🚀 Thicker lines (width: 2) for better visibility
-                { name: 'MA5', type: 'line', data: ma5, smooth: true, showSymbol: false, lineStyle: { width: 2, color: '#f59e0b', opacity: 0.9 } },
-                { name: 'MA10', type: 'line', data: ma10, smooth: true, showSymbol: false, lineStyle: { width: 2, color: '#fb923c', opacity: 0.9 } },
-                { name: 'MA20', type: 'line', data: ma20, smooth: true, showSymbol: false, lineStyle: { width: 2, color: '#3b82f6', opacity: 0.9 } },
-                { name: 'MA60', type: 'line', data: ma60, smooth: true, showSymbol: false, lineStyle: { width: 2, color: '#a855f7', opacity: 0.9 } },
-                { name: 'MA120', type: 'line', data: ma120, smooth: true, showSymbol: false, lineStyle: { width: 2, color: '#9ca3af', opacity: 0.9 } },
-                { name: 'MA240', type: 'line', data: ma240, smooth: true, showSymbol: false, lineStyle: { width: 2, color: '#16a34a', opacity: 0.9 } },
+                { name: 'MA5', type: 'line', data: ma5, smooth: true, showSymbol: false, lineStyle: { width: 1.5, color: '#f59e0b', opacity: 0.8 } },
+                { name: 'MA10', type: 'line', data: ma10, smooth: true, showSymbol: false, lineStyle: { width: 1.5, color: '#fb923c', opacity: 0.8 } },
+                { name: 'MA20', type: 'line', data: ma20, smooth: true, showSymbol: false, lineStyle: { width: 1.5, color: '#3b82f6', opacity: 0.8 } },
+                { name: 'MA60', type: 'line', data: ma60, smooth: true, showSymbol: false, lineStyle: { width: 1.5, color: '#a855f7', opacity: 0.8 } },
+                { name: 'MA120', type: 'line', data: ma120, smooth: true, showSymbol: false, lineStyle: { width: 1.5, color: '#9ca3af', opacity: 0.8 } },
+                { name: 'MA240', type: 'line', data: ma240, smooth: true, showSymbol: false, lineStyle: { width: 1.5, color: '#16a34a', opacity: 0.8 } },
                 {
                     name: '成交量', type: 'bar', xAxisIndex: 1, yAxisIndex: 1, data: data.volumes,
                     itemStyle: { color: (p) => { const v = data.values[p.dataIndex]; return v && v[1] >= v[0] ? upColor : downColor; } }
@@ -88,6 +149,13 @@ export const charts = {
             ]
         };
         this.instance.setOption(option);
+    },
+
+    formatTradeDate(val) {
+        if (!val) return '';
+        const d = new Date(typeof val === 'number' ? (val < 10000000000 ? val * 1000 : val) : val);
+        if (isNaN(d.getTime())) return '';
+        return `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}`;
     },
 
     calculateMA(dayCount, data) {

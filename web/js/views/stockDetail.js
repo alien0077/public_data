@@ -106,6 +106,7 @@ export const StockDetail = {
 
         try {
             switch (tab) {
+                case '走勢':
                 case 'K線': await this.renderKLineTab(contentContainer); break;
                 case '健檢': await this.renderHealthTab(contentContainer); break;
                 case '盤面': await this.renderMarketTab(contentContainer); break;
@@ -226,7 +227,7 @@ export const StockDetail = {
         setTimeout(() => {
             const chart = echarts.init(document.getElementById('revenue-chart'), document.documentElement.classList.contains('dark') ? 'dark' : null);
             const sorted = [...data.data].sort((a, b) => a.date.localeCompare(b.date));
-            chart.setOption({ backgroundColor: 'transparent', grid: { top: 20, bottom: 30, left: 50, right: 40 }, tooltip: { trigger: 'axis' }, xAxis: { type: 'category', data: sorted.map(d => d.period) }, yAxis: [{ type: 'value', name: '營收', splitLine: { show: false } }, { type: 'value', name: 'YoY', axisLabel: { formatter: '{value}%' } }], series: [{ name: '營收', type: 'bar', data: sorted.map(d => d.value), itemStyle: { color: '#3b82f6' } }, { name: 'YoY', type: 'line', yAxisIndex: 1, data: sorted.map(d => d.yoy), itemStyle: { color: '#ef4444' } }] });
+            chart.setOption({ backgroundColor: 'transparent', grid: { top: 20, bottom: 70, left: 50, right: 40 }, tooltip: { trigger: 'axis' }, xAxis: { type: 'category', data: sorted.map(d => d.period), axisLabel: { rotate: 35, fontSize: 10, margin: 15 } }, yAxis: [{ type: 'value', name: '營收', splitLine: { show: false } }, { type: 'value', name: 'YoY', axisLabel: { formatter: '{value}%' } }], series: [{ name: '營收', type: 'bar', data: sorted.map(d => d.value), itemStyle: { color: '#3b82f6' } }, { name: 'YoY', type: 'line', yAxisIndex: 1, data: sorted.map(d => d.yoy), itemStyle: { color: '#ef4444' } }] });
         }, 100);
     },
 
@@ -245,7 +246,7 @@ export const StockDetail = {
         setTimeout(() => {
             const isDark = document.documentElement.classList.contains('dark');
             const sorted = [...data.data].sort((a, b) => a.date.localeCompare(b.date));
-            const common = { backgroundColor: 'transparent', grid: { top: 20, bottom: 20, left: 35, right: 5 }, tooltip: { trigger: 'axis' }, xAxis: { type: 'category', data: sorted.map(d => d.period), axisLabel: { fontSize: 8 } } };
+            const common = { backgroundColor: 'transparent', grid: { top: 20, bottom: 65, left: 35, right: 5 }, tooltip: { trigger: 'axis' }, xAxis: { type: 'category', data: sorted.map(d => d.period), axisLabel: { fontSize: 8, rotate: 35, margin: 12 } } };
             const epsC = echarts.init(document.getElementById('eps-chart'), isDark ? 'dark' : null); epsC.setOption({ ...common, series: [{ name: 'EPS', type: 'bar', data: sorted.map(d => d.value), itemStyle: { color: '#3b82f6' } }], yAxis: { type: 'value', splitLine: { show: false } } });
             const margC = echarts.init(document.getElementById('margins-chart'), isDark ? 'dark' : null); margC.setOption({ ...common, legend: { data: ['毛利', '營益', '淨利'], bottom: 0, textStyle: { fontSize: 8 } }, series: [{ name: '毛利', type: 'line', data: sorted.map(d => d.gm), smooth: true }, { name: '營益', type: 'line', data: sorted.map(d => d.om), smooth: true }, { name: '淨利', type: 'line', data: sorted.map(d => d.nm), smooth: true }], yAxis: { type: 'value' } });
             const retC = echarts.init(document.getElementById('returns-chart'), isDark ? 'dark' : null); retC.setOption({ ...common, legend: { data: ['ROE', 'ROA'], bottom: 0, textStyle: { fontSize: 8 } }, series: [{ name: 'ROE', type: 'line', data: sorted.map(d => d.roe), smooth: true }, { name: 'ROA', type: 'line', data: sorted.map(d => d.roa), smooth: true }], yAxis: { type: 'value' } });
@@ -263,25 +264,114 @@ export const StockDetail = {
         setTimeout(() => {
             const chart = echarts.init(document.getElementById('dividend-chart'), document.documentElement.classList.contains('dark') ? 'dark' : null);
             const sorted = [...data.data].sort((a, b) => a.date.localeCompare(b.date));
-            chart.setOption({ backgroundColor: 'transparent', grid: { top: 20, bottom: 40, left: 40, right: 20 }, tooltip: { trigger: 'axis' }, xAxis: { type: 'category', data: sorted.map(d => d.date), axisLabel: { rotate: 45, fontSize: 9 } }, yAxis: { type: 'value' }, series: [{ name: '股利', type: 'bar', data: sorted.map(d => d.value), itemStyle: { color: '#3b82f6' } }] });
+            chart.setOption({ backgroundColor: 'transparent', grid: { top: 20, bottom: 70, left: 40, right: 20 }, tooltip: { trigger: 'axis' }, xAxis: { type: 'category', data: sorted.map(d => d.date), axisLabel: { rotate: 45, fontSize: 9, margin: 15 } }, yAxis: { type: 'value' }, series: [{ name: '股利', type: 'bar', data: sorted.map(d => d.value), itemStyle: { color: '#3b82f6' } }] });
         }, 100);
     },
 
     async renderShareholderTab(container) {
         const [data, chartData] = await Promise.all([api.fetchShareholders(this.currentSymbol), api.fetchChart(this.currentSymbol).catch(() => null)]);
         if (!data) { container.innerHTML = `<div class="p-8 text-center text-gray-500">暫無大股東數據</div>`; return; }
+        
         container.innerHTML = `<div class="p-4 flex flex-col h-full space-y-4 overflow-y-auto no-scrollbar pb-12">
             <h3 class="text-lg font-bold">股權分佈 - ${this.currentSymbol}</h3>
             <div id="shareholder-chart" class="w-full h-56 bg-white dark:bg-gray-900 rounded-2xl border p-2"></div>
             <div class="grid grid-cols-2 gap-3 pb-8">${(data.recent || []).slice(0, 4).map(item => `<div class="bg-gray-50 dark:bg-gray-800 p-3 rounded-xl border border-gray-100 dark:border-gray-700"><div class="text-[10px] text-gray-500 mb-1">${item.date}</div><div class="flex justify-between items-end"><div><div class="text-base font-bold">${item.percentage}%</div><div class="text-[9px] text-gray-400">大股東持股</div></div><div class="text-xs ${parseFloat(item.diff) >= 0 ? 'text-red-500' : 'text-green-500'}">${parseFloat(item.diff) > 0 ? '▲' : '▼'} ${Math.abs(item.diff)}%</div></div></div>`).join('')}</div>
         </div>`;
+
         setTimeout(() => {
-            const chart = echarts.init(document.getElementById('shareholder-chart'), document.documentElement.classList.contains('dark') ? 'dark' : null);
-            const sorted = [...(data.recent || [])].sort((a, b) => a.date.localeCompare(b.date));
-            const priceMap = {}; if (chartData && (chartData.timestamp || chartData.timestamps)) { (chartData.timestamp || chartData.timestamps).forEach((ts, idx) => { priceMap[new Date(ts * 1000).toISOString().split('T')[0]] = (chartData.close || [])[idx]; }); }
-            const lineData = sorted.map(d => { if (priceMap[d.date]) return priceMap[d.date]; const t = new Date(d.date).getTime(); let cp = null, md = Infinity; Object.keys(priceMap).forEach(pd => { const diff = Math.abs(new Date(pd).getTime() - t); if (diff < md && diff < 86400000 * 5) { md = diff; cp = priceMap[pd]; } }); return cp; });
-            chart.setOption({ backgroundColor: 'transparent', grid: { top: 35, bottom: 25, left: 45, right: 45 }, tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } }, legend: { data: ['持股 %', '股價'], bottom: 0 }, xAxis: { type: 'category', data: sorted.map(d => d.date) }, yAxis: [{ type: 'value', name: '持股 %', scale: true, position: 'left', splitLine: { show: false } }, { type: 'value', name: '股價', scale: true, position: 'right', splitLine: { lineStyle: { type: 'dashed' } } }], series: [{ name: '持股 %', type: 'bar', data: sorted.map(d => d.percentage), itemStyle: { color: '#3b82f6' }, barWidth: '30%' }, { name: '股價', type: 'line', yAxisIndex: 1, data: lineData, smooth: true, itemStyle: { color: '#ef4444' } }] });
-        }, 100);
+            const chartDom = document.getElementById('shareholder-chart');
+            if (!chartDom) return;
+            const chart = echarts.init(chartDom, document.documentElement.classList.contains('dark') ? 'dark' : null);
+            
+            // 🚀 v2.2.3: 極致強健的日期解析器 (解決 NaN/Invalid Date 崩潰問題)
+            const parseToDate = (dateStr) => {
+                if (!dateStr) return null;
+                try {
+                    if (dateStr.includes('-W')) {
+                        const parts = dateStr.split('-W');
+                        if (parts.length === 2) {
+                            const y = parseInt(parts[0]), w = parseInt(parts[1]);
+                            const d = new Date(y, 0, 1 + (w - 1) * 7);
+                            const day = d.getDay();
+                            d.setDate(d.getDate() + (5 - day)); // 推算週五
+                            return isNaN(d.getTime()) ? null : d;
+                        }
+                    }
+                    const d = new Date(dateStr);
+                    return isNaN(d.getTime()) ? null : d;
+                } catch(e) { return null; }
+            };
+
+            // 1. 過濾並排序
+            const rawItems = (data.recent || []).filter(item => item.date && item.percentage !== undefined);
+            const sorted = rawItems.sort((a, b) => {
+                const da = parseToDate(a.date), db = parseToDate(b.date);
+                if (!da || !db) return 0;
+                return da - db;
+            });
+            
+            if (sorted.length === 0) {
+                chartDom.innerHTML = `<div class="flex items-center justify-center h-full text-gray-500 text-xs">數據格式異常</div>`;
+                return;
+            }
+
+            const priceMap = {}; 
+            if (chartData && (chartData.timestamp || chartData.timestamps)) { 
+                const tsList = chartData.timestamp || chartData.timestamps;
+                const clList = chartData.close || [];
+                tsList.forEach((ts, idx) => { 
+                    try {
+                        const iso = new Date(ts * 1000).toISOString().split('T')[0];
+                        priceMap[iso] = clList[idx]; 
+                    } catch(e) {}
+                }); 
+            }
+
+            const lineData = sorted.map(d => {
+                const targetDate = parseToDate(d.date);
+                if (!targetDate) return null;
+                
+                const targetISO = targetDate.toISOString().split('T')[0];
+                if (priceMap[targetISO]) return priceMap[targetISO];
+                
+                // 擴大搜索範圍至前後 10 天
+                const t = targetDate.getTime();
+                let closestPrice = null, minDiff = Infinity;
+                Object.keys(priceMap).forEach(pd => {
+                    const diff = Math.abs(new Date(pd).getTime() - t);
+                    if (diff < minDiff && diff <= 86400000 * 10) {
+                        minDiff = diff; closestPrice = priceMap[pd];
+                    }
+                });
+                return closestPrice;
+            });
+
+            chart.setOption({ 
+                backgroundColor: 'transparent', 
+                grid: { top: 40, bottom: 80, left: 45, right: 45 }, 
+                tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } }, 
+                legend: { data: ['持股 %', '股價'], bottom: 5, textStyle: { fontSize: 10 } }, 
+                xAxis: { 
+                    type: 'category', 
+                    data: sorted.map(d => d.date), 
+                    axisLabel: { 
+                        rotate: 35, 
+                        fontSize: 9, 
+                        margin: 15, 
+                        interval: sorted.length > 15 ? 'auto' : 0 
+                    } 
+                }, 
+                yAxis: [
+                    { type: 'value', name: '持股 %', scale: true, position: 'left', splitLine: { show: false }, axisLabel: { fontSize: 9 } }, 
+                    { type: 'value', name: '股價', scale: true, position: 'right', splitLine: { lineStyle: { type: 'dashed', opacity: 0.1 } }, axisLabel: { fontSize: 9 } }
+                ], 
+                series: [
+                    { name: '持股 %', type: 'bar', data: sorted.map(d => d.percentage), itemStyle: { color: '#3b82f6', borderRadius: [3, 3, 0, 0] }, barWidth: sorted.length > 20 ? '50%' : '30%' }, 
+                    { name: '股價', type: 'line', yAxisIndex: 1, data: lineData, smooth: true, symbol: 'circle', symbolSize: 3, itemStyle: { color: '#ef4444' }, lineStyle: { width: 2 } }
+                ] 
+            });
+            window.addEventListener('resize', () => chart.resize());
+        }, 150);
     },
 
     parseDate(rawDate) {
@@ -299,8 +389,17 @@ export const StockDetail = {
             const timeline = CorporateActions.buildTransactionTimeline(trades, this.currentSymbol);
             if (timeline.length === 0) { container.innerHTML = `<div class="p-8 text-center text-gray-500">尚無交易紀錄。</div>`; return; }
             timeline.sort((a, b) => b.date.localeCompare(a.date));
-            container.innerHTML = `<div class="p-4 flex-1 overflow-y-auto no-scrollbar"><div class="space-y-4">
-                ${timeline.map(item => item.type === 'TRADE' ? `<div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800"><div><div class="text-[10px] text-gray-500">${this.parseDate(item.date)}</div><div class="text-sm font-bold ${item.data.side.includes('買') ? 'text-red-500' : 'text-green-500'}">${item.data.side}</div></div><div class="text-right"><div class="text-sm font-bold dark:text-white">${this.formatValue(item.data.quantity, 0)} 股</div><div class="text-xs text-gray-400">$${this.formatValue(item.data.price)}</div></div></div>` : `<div class="p-3 bg-blue-50/50 dark:bg-blue-900/10 rounded-xl border border-dashed border-blue-200 dark:border-blue-800/50"><div class="text-[10px] text-gray-500">${this.parseDate(item.date)}</div><div class="text-xs font-bold text-blue-600 dark:text-blue-400">企業行為：${item.data.type}</div></div>`).join('')}
+            container.innerHTML = `<div class="p-4 flex-1 overflow-y-auto no-scrollbar pb-20"><div class="space-y-4">
+                ${timeline.map(item => {
+                    if (item.type === 'TRADE') {
+                        const side = (item.data.side || item.data.type || '未知').replace('SIDE_', '');
+                        const qty = item.data.quantity || item.data.shares || 0;
+                        const price = item.data.price || 0;
+                        return `<div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800"><div><div class="text-[10px] text-gray-500">${this.parseDate(item.date)}</div><div class="text-sm font-bold ${side.includes('買') || side.includes('BUY') ? 'text-red-500' : 'text-green-500'}">${side}</div></div><div class="text-right"><div class="text-sm font-bold dark:text-white">${this.formatValue(qty, 0)} 股</div><div class="text-xs text-gray-400">$${this.formatValue(price)}</div></div></div>`;
+                    } else {
+                        return `<div class="p-3 bg-blue-50/50 dark:bg-blue-900/10 rounded-xl border border-dashed border-blue-200 dark:border-blue-800/50"><div class="text-[10px] text-gray-500">${this.parseDate(item.date)}</div><div class="text-xs font-bold text-blue-600 dark:text-blue-400">企業行為：${item.data.type || '股利/拆分'}</div></div>`;
+                    }
+                }).join('')}
             </div></div>`;
         } catch(err) { container.innerHTML = `<div class="p-8 text-center text-red-500">載入失敗: ${err.message}</div>`; }
     },

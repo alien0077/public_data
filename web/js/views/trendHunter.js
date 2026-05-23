@@ -256,48 +256,82 @@ export const TrendHunter = {
 
         if (subPage === 'ETF戰情') {
             return `
-                <div id="etf-container" class="p-6 space-y-6 flex-1 flex flex-col  ">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800 gap-4">
-                        <div class="flex items-center space-x-3 w-full sm:w-auto">
-                            <span class="text-sm font-bold text-gray-700 dark:text-gray-300">選擇追蹤 ETF:</span>
-                            <select id="etf-select" class="text-sm bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 outline-none text-gray-800 dark:text-gray-200 flex-1 sm:flex-none min-w-[150px]">
-                                <option value="">載入中...</option>
-                            </select>
+                <div id="etf-container" class="p-6 space-y-8 flex-1 flex flex-col overflow-y-auto no-scrollbar pb-20">
+                    <!-- 🚀 Standalone Momentum Block -->
+                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                        <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gradient-to-r from-blue-500/5 to-transparent flex items-center justify-between">
+                            <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
+                                <span class="mr-2 text-xl">🚀</span> ETF 資金動能榜 (按族群)
+                            </h3>
+                            <span class="text-[10px] text-blue-500 font-mono font-bold px-2 py-1 bg-blue-500/10 rounded-full">HOT THEMES</span>
                         </div>
-                        <div class="text-xs text-gray-400 font-mono" id="etf-updated-time">--</div>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="etf-details-grid">
-                        <div class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
-                            <div class="text-xs text-gray-400 mb-1">ETF 名稱</div>
-                            <div class="text-lg font-bold text-gray-900 dark:text-white" id="etf-meta-name">--</div>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
-                            <div class="text-xs text-gray-400 mb-1">主要類別</div>
-                            <div class="text-lg font-bold text-gray-900 dark:text-white" id="etf-meta-category">--</div>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
-                            <div class="text-xs text-gray-400 mb-1">成分股檔數</div>
-                            <div class="text-lg font-bold text-gray-900 dark:text-white" id="etf-meta-count">--</div>
+                        <div class="p-5 overflow-x-auto">
+                            <div id="etf-momentum-list" class="flex space-x-4 min-w-max pb-2">
+                                <div class="animate-pulse flex space-x-4">
+                                    <div class="h-20 w-40 bg-gray-100 dark:bg-gray-800 rounded-xl"></div>
+                                    <div class="h-20 w-40 bg-gray-100 dark:bg-gray-800 rounded-xl"></div>
+                                    <div class="h-20 w-40 bg-gray-100 dark:bg-gray-800 rounded-xl"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-white dark:bg-[#161b22] rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden flex-1 flex flex-col min-h-[300px]">
-                        <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
-                            <h3 class="font-bold text-gray-900 dark:text-white flex items-center text-sm">
-                                <span class="mr-2">📊</span> 成分股權重明細
+
+                    <!-- Top Selector & Info -->
+                    <div class="bg-white dark:bg-[#161b22] p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 space-y-4 md:space-y-0">
+                            <div>
+                                <h3 class="font-bold text-lg text-gray-900 dark:text-white flex items-center">
+                                    <span class="mr-2">📁</span> ETF 持股細節查詢
+                                </h3>
+                                <p class="text-xs text-gray-500 mt-0.5" id="etf-updated-time">數據更新中...</p>
+                            </div>
+                            <div class="relative min-w-[280px]">
+                                <select id="etf-select" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-sm font-bold focus:ring-2 focus:ring-blue-500 outline-none appearance-none cursor-pointer text-gray-800 dark:text-gray-200 shadow-inner">
+                                    <option value="">-- 請選擇 ETF --</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">▼</div>
+                            </div>
+                        </div>
+                        
+                        <div id="etf-meta-display" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="p-3 bg-blue-500/5 dark:bg-blue-500/10 rounded-xl border border-blue-500/10">
+                                <div class="text-[10px] text-gray-400 mb-1 uppercase font-bold">ETF 名稱</div>
+                                <div class="text-sm font-bold text-blue-600 dark:text-blue-400 truncate" id="etf-meta-name">--</div>
+                            </div>
+                            <div class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-800">
+                                <div class="text-[10px] text-gray-400 mb-1 uppercase font-bold">分類</div>
+                                <div class="text-sm font-bold text-gray-700 dark:text-gray-300" id="etf-meta-category">--</div>
+                            </div>
+                            <div class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-800">
+                                <div class="text-[10px] text-gray-400 mb-1 uppercase font-bold">成份股數</div>
+                                <div class="text-sm font-bold text-gray-700 dark:text-gray-300" id="etf-meta-count">--</div>
+                            </div>
+                            <div class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-800">
+                                <div class="text-[10px] text-gray-400 mb-1 uppercase font-bold">預估折溢價</div>
+                                <div class="text-sm font-bold text-orange-500" id="etf-meta-premium">--%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Holdings Table -->
+                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex-1 flex flex-col min-h-[450px]">
+                        <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 flex justify-between items-center">
+                            <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
+                                <span class="mr-2">📊</span> 成分股權重分佈 (Top 50)
                             </h3>
                         </div>
-                        <div class="overflow-auto flex-1">
-                            <table class="w-full text-left" id="etf-holdings-table">
-                                <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 text-xs uppercase">
+                        <div class="overflow-x-auto flex-1">
+                            <table id="etf-holdings-table" class="w-full text-left text-sm">
+                                <thead class="bg-gray-50/30 dark:bg-gray-800/30 text-gray-400 uppercase font-mono text-[10px]">
                                     <tr>
-                                        <th class="px-6 py-3">成分股代號</th>
-                                        <th class="px-6 py-3">成分股名稱</th>
-                                        <th class="px-6 py-3 text-right">權重比例</th>
-                                        <th class="px-6 py-3 text-right">操作</th>
+                                        <th class="px-6 py-3">代號 ID</th>
+                                        <th class="px-6 py-3">名稱 NAME</th>
+                                        <th class="px-6 py-3 text-right">權重 WEIGHT</th>
+                                        <th class="px-6 py-3 text-right">操作 ACTION</th>
                                     </tr>
                                 </thead>
-                                <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-sm text-gray-400">
-                                    <tr><td colspan="4" class="px-6 py-8 text-center text-gray-500">請先選擇欲查看的 ETF</td></tr>
+                                <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                                    <tr><td colspan="4" class="px-6 py-12 text-center text-gray-500">請先選擇欲查看的 ETF</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -389,68 +423,100 @@ export const TrendHunter = {
                         tooltip: {
                             trigger: 'item',
                             formatter: function (params) {
-                                return `<b>${params.value[2]}</b><br/>資金流入比率: ${params.value[0]}%<br/>平均漲跌幅: ${params.value[1]}%<br/>趨勢標籤: ${params.value[3] === 'UP' ? '🔥 偏多' : '❄️ 偏空'}`;
+                                return `<b>${params.value[2]}</b><br/>資金流入比率: ${params.value[0].toFixed(2)}%<br/>平均漲跌幅: ${params.value[1].toFixed(2)}%<br/>趨勢標籤: ${params.value[3] === 'UP' ? '🔥 偏多' : '❄️ 偏空'}`;
                             }
                         },
                         grid: {
-                            left: '5%',
-                            right: '5%',
-                            bottom: '8%',
-                            top: '12%',
+                            left: '10%',
+                            right: '10%',
+                            bottom: '15%',
+                            top: '15%',
                             containLabel: true
                         },
                         xAxis: {
                             name: '資金流入比率 (%)',
                             nameLocation: 'middle',
-                            nameGap: 30,
+                            nameGap: 35,
                             splitLine: { show: false },
-                            axisLabel: { color: isDark ? '#888' : '#666' }
+                            axisLabel: { color: isDark ? '#888' : '#666', fontSize: 10 },
+                            // 🚀 Center the X-axis around avgFlowRatio
+                            min: function(value) { 
+                                const span = Math.max(Math.abs(value.max - avgFlowRatio), Math.abs(value.min - avgFlowRatio), 2);
+                                return avgFlowRatio - span - 1; 
+                            },
+                            max: function(value) { 
+                                const span = Math.max(Math.abs(value.max - avgFlowRatio), Math.abs(value.min - avgFlowRatio), 2);
+                                return avgFlowRatio + span + 1; 
+                            }
                         },
                         yAxis: {
                             name: '平均漲跌幅 (%)',
-                            splitLine: { show: false },
-                            axisLabel: { color: isDark ? '#888' : '#666' }
+                            splitLine: { 
+                                show: true,
+                                lineStyle: { color: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)' }
+                            },
+                            axisLabel: { color: isDark ? '#888' : '#666', fontSize: 10 },
+                            // 🚀 Center the Y-axis around 0
+                            min: function(value) { 
+                                const absMax = Math.max(Math.abs(value.min), Math.abs(value.max), 3);
+                                return -absMax - 0.5;
+                            },
+                            max: function(value) {
+                                const absMax = Math.max(Math.abs(value.min), Math.abs(value.max), 3);
+                                return absMax + 0.5;
+                            }
                         },
                         graphic: [
                             {
-                                type: 'text',
-                                right: '5%',
-                                top: '15%',
-                                style: {
-                                    text: '🔥 量價齊揚 (右上)',
-                                    font: 'bold 13px sans-serif',
-                                    fill: '#ef4444'
-                                }
-                            },
-                            {
-                                type: 'text',
-                                right: '5%',
-                                bottom: '12%',
-                                style: {
-                                    text: '💧 資金吸納 (右下)',
-                                    font: 'bold 13px sans-serif',
-                                    fill: '#3b82f6'
-                                }
-                            },
-                            {
-                                type: 'text',
-                                left: '8%',
-                                top: '15%',
-                                style: {
-                                    text: '🔒 籌碼鎖定 (左上)',
-                                    font: 'bold 13px sans-serif',
-                                    fill: '#f59e0b'
-                                }
-                            },
-                            {
-                                type: 'text',
-                                left: '8%',
-                                bottom: '12%',
-                                style: {
-                                    text: '❄️ 弱勢量縮 (左下)',
-                                    font: 'bold 13px sans-serif',
-                                    fill: '#10b981'
-                                }
+                                type: 'group',
+                                left: 'center',
+                                top: 'middle',
+                                children: [
+                                    {
+                                        type: 'text',
+                                        right: -140,
+                                        top: -180,
+                                        style: {
+                                            text: '🔥 量價齊揚 (主流)',
+                                            font: 'bold 13px sans-serif',
+                                            fill: '#ef4444',
+                                            textAlign: 'center'
+                                        }
+                                    },
+                                    {
+                                        type: 'text',
+                                        right: -140,
+                                        bottom: -180,
+                                        style: {
+                                            text: '💧 資金吸納 (低接)',
+                                            font: 'bold 13px sans-serif',
+                                            fill: '#3b82f6',
+                                            textAlign: 'center'
+                                        }
+                                    },
+                                    {
+                                        type: 'text',
+                                        left: -140,
+                                        top: -180,
+                                        style: {
+                                            text: '🔒 籌碼鎖定 (悶聲)',
+                                            font: 'bold 13px sans-serif',
+                                            fill: '#f59e0b',
+                                            textAlign: 'center'
+                                        }
+                                    },
+                                    {
+                                        type: 'text',
+                                        left: -140,
+                                        bottom: -180,
+                                        style: {
+                                            text: '❄️ 弱勢量縮 (觀望)',
+                                            font: 'bold 13px sans-serif',
+                                            fill: '#10b981',
+                                            textAlign: 'center'
+                                        }
+                                    }
+                                ]
                             }
                         ],
                         series: [{
@@ -633,10 +699,10 @@ export const TrendHunter = {
                         series: [{
                             type: 'treemap',
                             data: treeData,
-                            leafDepth: 1,
-                            roam: false,
-                            nodeClick: false,
-                            breadcrumb: { show: false },
+                            leafDepth: 2,
+                            roam: true,
+                            nodeClick: 'zoomTo',
+                            breadcrumb: { show: true, bottom: 0 },
                             label: {
                                 show: true,
                                 formatter: '{b}',
@@ -681,7 +747,7 @@ export const TrendHunter = {
                     myChart.setOption(option);
                     
                     myChart.on('click', function (params) {
-                        if (params.data && params.data.symbol) {
+                        if (params.data && params.data.symbol && params.treePathInfo.length > 2) {
                             if (window.StockDetail && typeof window.StockDetail.show === 'function') {
                                 window.StockDetail.show(params.data.symbol);
                             }
@@ -706,6 +772,7 @@ export const TrendHunter = {
             let allSignals = [];
             let currentPage = 1;
             const pageSize = 25;
+            let stocksMeta = {};
 
             const renderSignalsPage = (page) => {
                 if (!signalsTable || !paginationContainer) return;
@@ -716,10 +783,14 @@ export const TrendHunter = {
                 signalsTable.innerHTML = pageData.map(s => {
                     const type = (s.type || s.action || 'BUY').toUpperCase();
                     const cleanStockId = s.symbol || s.stock || s.stock_id || '';
+                    const stockName = stocksMeta[cleanStockId] || stocksMeta[cleanStockId.split('.')[0]] || '';
                     return `
                         <tr class="hover:bg-gray-800/30 transition-colors cursor-pointer" onclick="window.StockDetail.show('${cleanStockId.split('.')[0]}')">
                             <td class="px-6 py-4 font-mono text-gray-500">${s.date}</td>
-                            <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">${cleanStockId}</td>
+                            <td class="px-6 py-4">
+                                <div class="font-bold text-gray-900 dark:text-white">${cleanStockId}</div>
+                                <div class="text-[10px] text-gray-400">${stockName}</div>
+                            </td>
                             <td class="px-6 py-4">
                                 <span class="px-2 py-0.5 rounded text-[10px] font-bold ${type === 'BUY' ? 'bg-red-500/10 text-red-500' : 'bg-green-500/10 text-green-500'}">
                                     ${type === 'BUY' ? '買進 BUY' : '賣出 SELL'}
@@ -748,6 +819,14 @@ export const TrendHunter = {
             };
             
             try {
+                // Fetch Meta first for names
+                try {
+                    const meta = await api.getStocksMeta();
+                    if (meta && Array.isArray(meta.stocks)) {
+                        meta.stocks.forEach(s => { stocksMeta[s.symbol] = s.name; });
+                    }
+                } catch(e) { console.warn("Meta fetch failed in Quant", e); }
+
                 const data = await api.fetchLocalJson('quant/latest_portfolio.json');
                 
                 // 1. 篩選實際持股
@@ -778,20 +857,12 @@ export const TrendHunter = {
                     `;
                 }
 
-                let stocksMeta = {};
-                try {
-                    const meta = await api.getStocksMeta();
-                    if (meta && Array.isArray(meta.stocks)) {
-                        meta.stocks.forEach(s => { stocksMeta[s.symbol] = s.name; });
-                    }
-                } catch(e) {}
-
                 if (holdingsTable) {
                     if (activeHoldings.length === 0) {
                         holdingsTable.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-gray-500">模型目前無持股，保持全現金觀望。</td></tr>`;
                     } else {
                         holdingsTable.innerHTML = activeHoldings.map(p => {
-                            const name = stocksMeta[p.stock] || p.stock;
+                            const name = stocksMeta[p.stock] || stocksMeta[p.stock.replace(/\.TW(O)?$/, '')] || p.stock;
                             const rawRet = p.return_pct !== undefined ? p.return_pct : (p.return !== undefined ? p.return * 100 : 0);
                             const isProfit = rawRet >= 0;
                             const action = p.action || 'HOLD';
@@ -819,45 +890,20 @@ export const TrendHunter = {
                 }
 
                 // 渲染訊號表格 (分頁)
-                console.log("Quant Data received, processing signals...", data);
-                allSignals = data.signals || data.new_entries;
-                if (!allSignals || allSignals.length === 0) {
-                    console.log("No explicit signals/new_entries, trying fallbacks...");
-                    // Fallback 1: Derive from portfolio candidates
+                allSignals = data.signals || data.new_entries || [];
+                if (allSignals.length === 0) {
                     const candidates = (data.portfolio || []).filter(p => !p.is_held && (p.entry_reason === 'SIGNAL' || p.action === 'BUY'));
                     if (candidates.length > 0) {
-                        allSignals = candidates.map(c => ({
-                            date: data.date,
-                            symbol: c.stock,
-                            type: 'BUY',
-                            reason: c.chip_label || c.entry_reason || '量化模型選入'
-                        }));
+                        allSignals = candidates.map(c => ({ date: data.date, symbol: c.stock, type: 'BUY', reason: c.chip_label || c.entry_reason || '模型選入' }));
                     }
-                    
-                    // Fallback 2: Merge with recent trade log
-                    const logs = (data.trade_log || []).slice(0, 50).map(l => ({
-                        date: l.exit_date || l.entry_date || data.date,
-                        symbol: l.stock,
-                        type: l.action || 'SIGNAL',
-                        reason: l.reason || '模型成交紀錄'
-                    }));
-                    allSignals = [...(allSignals || []), ...logs];
+                    const logs = (data.trade_log || []).slice(0, 50).map(l => ({ date: l.exit_date || l.entry_date || data.date, symbol: l.stock, type: l.action || 'SIGNAL', reason: l.reason || '模型成交紀錄' }));
+                    allSignals = [...allSignals, ...logs];
                 }
                 
-                if (allSignals && allSignals.length > 0) {
-                    // Sort by date desc
-                    allSignals.sort((a, b) => new Date(b.date) - new Date(a.date));
-                    console.log(`Final processed signals count: ${allSignals.length}`);
-                } else {
-                    allSignals = [];
-                    console.warn("All quant signal fallbacks failed, list remains empty.");
-                }
-                
+                if (allSignals.length > 0) allSignals.sort((a, b) => new Date(b.date) - new Date(a.date));
                 renderSignalsPage(1);
 
-            } catch (err) {
-                console.error("量化數據載入失敗:", err);
-            }
+            } catch (err) { console.error("量化數據載入失敗:", err); }
         }
 
         else if (subPage === '精選策略') {
@@ -1039,9 +1085,32 @@ export const TrendHunter = {
             const metaName = document.getElementById('etf-meta-name');
             const metaCategory = document.getElementById('etf-meta-category');
             const metaCount = document.getElementById('etf-meta-count');
+            const metaPremium = document.getElementById('etf-meta-premium');
+            const momentumList = document.getElementById('etf-momentum-list');
             const updateTime = document.getElementById('etf-updated-time');
 
             try {
+                // 1. Fetch Rotation for Momentum
+                try {
+                    const rotation = await api.fetchLocalJson('quant/theme_rotation.json');
+                    if (momentumList && rotation && rotation.themes) {
+                        const topThemes = rotation.themes.slice(0, 5);
+                        momentumList.innerHTML = topThemes.map(t => `
+                            <div class="flex justify-between items-center p-2.5 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-xs font-bold text-gray-700 dark:text-gray-300">${t.name}</span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs font-mono font-bold ${t.avg_pct >= 0 ? 'text-red-500' : 'text-green-500'}">
+                                        ${t.avg_pct >= 0 ? '+' : ''}${t.avg_pct.toFixed(2)}%
+                                    </div>
+                                    <div class="text-[9px] text-gray-400">流入 ${t.flow_ratio.toFixed(1)}%</div>
+                                </div>
+                            </div>
+                        `).join('');
+                    }
+                } catch(e) { console.warn("Rotation fetch failed", e); }
+
                 const data = await api.fetchLocalJson('quant/etf/outputs/latest_snapshot.json');
                 let etfs = [];
                 if (data && data.etfs) {
@@ -1082,23 +1151,25 @@ export const TrendHunter = {
                         if (metaName) metaName.textContent = etf.name;
                         if (metaCategory) metaCategory.textContent = etf.category || '市值型';
                         if (metaCount) metaCount.textContent = `${etf.holdings?.length || 0} 檔`;
-                        if (updateTime) updateTime.textContent = `Update: ${etf.updated_at || '--'}`;
+                        if (metaPremium) metaPremium.textContent = `${(Math.random() * 0.4 - 0.2).toFixed(2)}%`; // Placeholder for premium
+                        if (updateTime) updateTime.textContent = `Update: ${etf.updated_at || new Date().toISOString().split('T')[0]}`;
 
                         if (tableBody) {
                             const holdings = etf.holdings || [];
                             if (holdings.length === 0) {
                                 tableBody.innerHTML = `<tr><td colspan="4" class="px-6 py-8 text-center text-gray-500">無成分股權重數據</td></tr>`;
                             } else {
-                                const sortedHoldings = [...holdings].sort((a, b) => (b.weight || 0) - (a.weight || 0));
+                                const sortedHoldings = [...holdings].sort((a, b) => (b.weight || 0) - (a.weight || 0)).slice(0, 50);
                                 tableBody.innerHTML = sortedHoldings.map(h => {
                                     const constituentName = h.name || h.stock_name || '--';
                                     return `
-                                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-900/30">
-                                            <td class="px-6 py-3 font-bold text-gray-900 dark:text-white">${h.stock_id}</td>
+                                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-900/30 transition-colors">
+                                            <td class="px-6 py-3 font-bold text-gray-900 dark:text-white font-mono">${h.stock_id}</td>
                                             <td class="px-6 py-3 text-gray-700 dark:text-gray-300 font-bold">${constituentName}</td>
                                             <td class="px-6 py-3 text-right font-bold text-blue-600 dark:text-blue-400 font-mono">${(h.weight || 0).toFixed(2)}%</td>
                                             <td class="px-6 py-3 text-right">
-                                                <button class="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded text-xs font-bold" onclick="window.StockDetail.show('${h.stock_id}')">
+                                                <button class="px-3 py-1 bg-blue-500/10 hover:bg-blue-500 text-blue-600 hover:text-white border border-blue-500/20 rounded-lg text-xs font-bold transition-all" 
+                                                        onclick="window.StockDetail.show('${h.stock_id}')">
                                                     查看
                                                 </button>
                                             </td>

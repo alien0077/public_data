@@ -169,15 +169,31 @@ export const api = {
         const zoned = new Date().toLocaleString('en-US', { timeZone: tz, hour12: false });
         const m = zoned.match(/(\d+)\/(\d+)\/(\d+), (\d+):(\d+):(\d+)/);
         if (!m) return { market: isTw ? 'TW' : 'US', isTradingDay: false, session: '休市', marketDate: '' };
-        const dStr = `${m[3]}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}`, tVal = parseInt(m[4]) * 100 + parseInt(m[5]);
-        let closed = false;
+        
+        const dStr = `${m[3]}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}`;
+        const tVal = parseInt(m[4]) * 100 + parseInt(m[5]);
+        
+        // 🚀 Fix: Correct weekend detection using the zoned date components
+        const localDate = new Date(parseInt(m[3]), parseInt(m[1]) - 1, parseInt(m[2]));
+        const dayOfWeek = localDate.getDay();
+        let closed = (dayOfWeek === 0 || dayOfWeek === 6); // Sat or Sun
+        
         const calY = cal?.meta?.years?.[m[3]];
-        if (calY) closed = (isTw ? (calY.tw || []) : (calY.us || [])).includes(dStr);
-        else { const d = new Date(zoned); if (d.getDay() === 0 || d.getDay() === 6) closed = true; }
+        if (calY && !closed) {
+            closed = (isTw ? (calY.tw || []) : (calY.us || [])).includes(dStr);
+        }
+        
         let sess = '休市';
         if (!closed) {
-            if (isTw) { if (tVal < 830) sess = '盤前'; else if (tVal <= 1335) sess = '盤中'; else if (tVal <= 1430) sess = '盤後'; }
-            else { if (tVal < 930) sess = '盤前'; else if (tVal <= 1600) sess = '盤中'; else if (tVal <= 2000) sess = '盤後'; }
+            if (isTw) {
+                if (tVal < 830) sess = '盤前';
+                else if (tVal <= 1335) sess = '盤中';
+                else if (tVal <= 1430) sess = '盤後';
+            } else {
+                if (tVal < 930) sess = '盤前';
+                else if (tVal <= 1600) sess = '盤中';
+                else if (tVal <= 2000) sess = '盤後';
+            }
         }
         return { market: isTw ? 'TW' : 'US', marketDate: dStr, isTradingDay: !closed, session: sess };
     },

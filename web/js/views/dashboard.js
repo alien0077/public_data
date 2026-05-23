@@ -129,25 +129,23 @@ export const Dashboard = {
         }
     },
 
-    getMarketSession(market) {
-        const now = new Date();
-        const hour = now.getHours();
-        const min = now.getMinutes();
-        const timeVal = hour * 100 + min;
-
-        if (market === 'TW') {
-            if (timeVal < 830) return { label: '未開盤', color: 'bg-gray-500' };
-            if (timeVal < 900) return { label: '盤前', color: 'bg-orange-500' };
-            if (timeVal < 1335) return { label: '盤中', color: 'bg-red-500 animate-pulse' };
-            if (timeVal < 1430) return { label: '盤後', color: 'bg-blue-500' };
-            return { label: '休市', color: 'bg-gray-700' };
-        } else {
-            // US simplified logic
-            if (timeVal >= 2130 || timeVal < 400) return { label: '盤中', color: 'bg-red-500 animate-pulse' };
-            if (timeVal >= 1600 && timeVal < 2130) return { label: '盤前', color: 'bg-orange-500' };
-            if (timeVal >= 400 && timeVal < 800) return { label: '盤後', color: 'bg-blue-500' };
+    async getMarketSession(market) {
+        const calendar = await api.getCalendar();
+        // Use a dummy symbol to get the market status via the central API logic
+        const status = api.getMarketStatus(market === 'TW' ? '2330' : 'AAPL', calendar);
+        
+        if (!status.isTradingDay || status.session === '休市') {
             return { label: '休市', color: 'bg-gray-700' };
         }
+        
+        const colors = {
+            '未開盤': 'bg-gray-500',
+            '盤前': 'bg-orange-500',
+            '盤中': 'bg-red-500 animate-pulse',
+            '盤後': 'bg-blue-500'
+        };
+
+        return { label: status.session, color: colors[status.session] || 'bg-gray-700' };
     },
 
     renderMarket(quotes, marginData) {
@@ -155,8 +153,23 @@ export const Dashboard = {
         const container = document.getElementById('dashboard-market-stats');
         if (!container) return;
 
-        const twSession = this.getMarketSession('TW');
-        const usSession = this.getMarketSession('US');
+        // Use a wrapper to handle the async getMarketSession
+        const updateMarketUI = async () => {
+            const twSession = await this.getMarketSession('TW');
+            const usSession = await this.getMarketSession('US');
+            
+            const existingTwBadge = container.querySelector('#tw-market-badge');
+            const existingUsBadge = container.querySelector('#us-market-badge');
+            
+            if (existingTwBadge) {
+                existingTwBadge.textContent = twSession.label;
+                existingTwBadge.className = `px-2 py-0.5 rounded text-[10px] text-white font-bold ${twSession.color}`;
+            }
+            if (existingUsBadge) {
+                existingUsBadge.textContent = usSession.label;
+                existingUsBadge.className = `px-2 py-0.5 rounded text-[10px] text-white font-bold ${usSession.color}`;
+            }
+        };
 
         const formatIdx = (val) => {
             const num = parseFloat(val);
@@ -199,7 +212,7 @@ export const Dashboard = {
             <div class="bg-white dark:bg-[#161b22] p-5 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm relative overflow-hidden">
                 <div class="flex justify-between items-center mb-4">
                     <span class="text-xs font-bold text-gray-400 uppercase tracking-widest font-sans">台股市場</span>
-                    <span class="px-2 py-0.5 rounded text-[10px] text-white font-bold ${twSession.color}">${twSession.label}</span>
+                    <span id="tw-market-badge" class="px-2 py-0.5 rounded text-[10px] text-white font-bold bg-gray-500">加載中...</span>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
@@ -222,7 +235,7 @@ export const Dashboard = {
             <div class="bg-white dark:bg-[#161b22] p-5 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm relative lg:col-span-2">
                 <div class="flex justify-between items-center mb-4">
                     <span class="text-xs font-bold text-gray-400 uppercase tracking-widest font-sans">美股與半導體監控</span>
-                    <span class="px-2 py-0.5 rounded text-[10px] text-white font-bold ${usSession.color}">${usSession.label}</span>
+                    <span id="us-market-badge" class="px-2 py-0.5 rounded text-[10px] text-white font-bold bg-gray-500">加載中...</span>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
                     <div class="p-1 min-w-0">
@@ -253,25 +266,42 @@ export const Dashboard = {
                 </div>
             </div>
         `;
+        
+        updateMarketUI();
     },
 
-    renderLiar(data) {
+    async renderLiar(data) {
         const container = document.getElementById('dashboard-liar-summary');
         if (!container) return;
         if (!data || !data.data || data.data.length === 0) {
             container.innerHTML = `<div class="text-center py-4 text-gray-500 text-sm">目前無偵測到說謊事件。</div>`;
             return;
         }
-        container.innerHTML = data.data.slice(0, 3).map(item => `
-            <div class="p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800 cursor-pointer hover:border-red-500/50 transition-all"
-                 onclick="window.StockDetail.show('${item.stockId}')">
-                <div class="flex justify-between items-center mb-1">
-                    <span class="text-[10px] bg-red-500 text-white px-1.5 py-0.5 rounded font-bold">${item.brokerName}</span>
-                    <span class="text-xs font-mono font-bold text-gray-900 dark:text-white">${item.stockId}</span>
+
+        let stocksMeta = {};
+        try {
+            const meta = await api.getStocksMeta();
+            if (meta && Array.isArray(meta.stocks)) {
+                meta.stocks.forEach(s => { stocksMeta[s.symbol] = s.name; });
+            }
+        } catch(e) {}
+
+        container.innerHTML = data.data.slice(0, 3).map(item => {
+            const name = stocksMeta[item.stockId] || stocksMeta[item.stockId.split('.')[0]] || '';
+            return `
+                <div class="p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800 cursor-pointer hover:border-red-500/50 transition-all"
+                     onclick="window.StockDetail.show('${item.stockId}')">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-[10px] bg-red-500 text-white px-1.5 py-0.5 rounded font-bold">${item.brokerName}</span>
+                        <div class="text-right">
+                            <span class="text-xs font-mono font-bold text-gray-900 dark:text-white">${item.stockId}</span>
+                            <div class="text-[10px] text-gray-500">${name}</div>
+                        </div>
+                    </div>
+                    <div class="text-xs text-gray-700 dark:text-gray-300 line-clamp-1">${item.newsTitle}</div>
                 </div>
-                <div class="text-xs text-gray-700 dark:text-gray-300 line-clamp-1">${item.newsTitle}</div>
-            </div>
-        `).join('');
+            `;
+        }).join('');
     },
 
     renderQuant(data) {

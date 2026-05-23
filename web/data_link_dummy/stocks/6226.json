@@ -1,0 +1,48 @@
+{
+  "stock_id": "6226",
+  "name": "6226",
+  "date": "2026-05-21",
+  "close": 12.5,
+  "health_score": 150,
+  "signal": "Bullish",
+  "institutional": {
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 0.119,
+    "trust_buy_days": 0,
+    "dealer_buy_days": 0
+  },
+  "margin": {
+    "margin_change": 0.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
+  },
+  "tdcc": {
+    "big_holder_change": 15.49,
+    "retail_holder_change": 0,
+    "holder_concentration": 22.4
+  },
+  "main_force": {
+    "cost": 12.4,
+    "distance": 0.81,
+    "trend": "UP"
+  },
+  "sector": {
+    "name": "一般",
+    "score": 80
+  },
+  "market_style": {
+    "style": "Growth",
+    "score": 100
+  },
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 5 天"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-21"
+}

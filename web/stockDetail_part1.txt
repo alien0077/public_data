@@ -1,0 +1,121 @@
+/**
+ * Stock Detail Workstation Module
+ * Handles the 12-tab analysis view for a specific stock
+ */
+import { api } from '../api.js';
+import { charts } from '../charts.js';
+import { db } from '../db.js';
+import { CorporateActions } from '../corporateActions.js';
+
+export const StockDetail = {
+    currentSymbol: null,
+    currentTab: 'K線',
+    tabs: ['走勢', 'K線', '健檢', '盤面', '營收', '獲利', '股利', '大股東', '明細'],
+
+    async show(symbol) {
+        this.currentSymbol = symbol;
+        const overlay = document.getElementById('stock-detail');
+        if (!overlay) return;
+
+        overlay.classList.remove('hidden');
+        
+        let liarData = null;
+        try { liarData = await api.fetchLiarData(); } catch(e) { console.warn("fetchLiarData failed:", e); }
+        this.renderLiarWarning(liarData);
+
+        this.renderTabs();
+        this.switchTab(this.currentTab);
+        
+        const detailSymbolEl = document.getElementById('detail-symbol');
+        if (detailSymbolEl) detailSymbolEl.textContent = symbol;
+
+        this.updateFavoriteUI();
+        
+        const toggleBtn = document.getElementById('toggle-favorite-btn');
+        if (toggleBtn) {
+            const newBtn = toggleBtn.cloneNode(true);
+            toggleBtn.parentNode.replaceChild(newBtn, toggleBtn);
+            newBtn.addEventListener('click', () => {
+                if (window.Favorites) {
+                    window.Favorites.toggleFavorite(this.currentSymbol);
+                    this.updateFavoriteUI();
+                }
+            });
+        }
+    },
+
+    updateFavoriteUI() {
+        const toggleBtn = document.getElementById('toggle-favorite-btn');
+        if (!toggleBtn || !window.Favorites) return;
+        if (window.Favorites.isFavorite(this.currentSymbol)) {
+            toggleBtn.classList.add('text-red-500'); toggleBtn.classList.remove('text-gray-300');
+        } else {
+            toggleBtn.classList.remove('text-red-500'); toggleBtn.classList.add('text-gray-300');
+        }
+    },
+
+    renderLiarWarning(data) {
+        let warningContainer = document.getElementById('liar-warning-container');
+        if (!warningContainer) {
+            warningContainer = document.createElement('div');
+            warningContainer.id = 'liar-warning-container';
+            const header = document.querySelector('#stock-detail header');
+            header.after(warningContainer);
+        }
+
+        const liar = data?.data?.find(item => item.stockId === this.currentSymbol);
+        if (liar) {
+            warningContainer.innerHTML = `
+                <div class="m-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center shadow-sm">
+                    <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center mr-4 flex-none"><span class="text-white text-lg font-bold">!</span></div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <h4 class="text-red-500 font-bold text-sm">🚨 外資誠實度嚴重警告！</h4>
+                            <span class="bg-orange-500 text-white text-[10px] px-2 py-0.5 rounded font-bold">說謊指數: ${liar.lyingScore}</span>
+                        </div>
+                        <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+                            ${liar.brokerName}喊多本股至 <span class="font-bold text-red-500">${liar.targetPrice}</span> 元，但近日分點私下狂${liar.netVolume < 0 ? '倒貨' : '吸籌'} <span class="font-bold text-blue-500">${Math.abs(liar.netVolume)}</span> 張！
+                        </p>
+                    </div>
+                </div>
+            `;
+        } else { warningContainer.innerHTML = ''; }
+    },
+
+    renderTabs() {
+        let tabContainer = document.getElementById('detail-tabs');
+        if (!tabContainer) {
+            tabContainer = document.createElement('div');
+            tabContainer.id = 'detail-tabs';
+            tabContainer.className = 'flex overflow-x-auto border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-[#0f1115] no-scrollbar';
+            const warning = document.getElementById('liar-warning-container');
+            if (warning) warning.after(tabContainer); else document.querySelector('#stock-detail header').after(tabContainer);
+        }
+
+        tabContainer.innerHTML = this.tabs.map(tab => `
+            <button class="flex-none px-6 py-3 text-sm font-medium transition-colors ${this.currentTab === tab ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}"
+                    onclick="window.StockDetail.switchTab('${tab}')">${tab}</button>
+        `).join('');
+    },
+
+    async switchTab(tab) {
+        this.currentTab = tab;
+        this.renderTabs();
+        const contentContainer = document.querySelector('#stock-detail .flex-1');
+        contentContainer.innerHTML = '<div class="flex items-center justify-center h-full"><div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div></div>';
+
+        try {
+            switch (tab) {
+                case '走勢':
+                case 'K線': await this.renderKLineTab(contentContainer); break;
+                case '健檢': await this.renderHealthTab(contentContainer); break;
+                case '盤面': await this.renderMarketTab(contentContainer); break;
+                case '營收': await this.renderRevenueTab(contentContainer); break;
+                case '獲利': await this.renderProfitTab(contentContainer); break;
+                case '股利': await this.renderDividendTab(contentContainer); break;
+                case '大股東': await this.renderShareholderTab(contentContainer); break;
+                case '明細': await this.renderTradesTab(contentContainer); break;
+                default: contentContainer.innerHTML = `<div class="flex items-center justify-center h-full text-gray-500">${tab} 模組開發中...</div>`;
+            }
+        } catch (err) { contentContainer.innerHTML = `<div class="flex items-center justify-center h-full text-red-500">載入失敗: ${err.message}</div>`; }
+    },

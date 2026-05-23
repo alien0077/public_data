@@ -1,0 +1,14 @@
+            timeline.sort((a, b) => b.date.localeCompare(a.date));
+            container.innerHTML = `<div class="p-4 flex-1 overflow-y-auto no-scrollbar"><div class="space-y-4">
+                ${timeline.map(item => item.type === 'TRADE' ? `<div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800"><div><div class="text-[10px] text-gray-500">${this.parseDate(item.date)}</div><div class="text-sm font-bold ${(item.data.side || '').includes('買') ? 'text-red-500' : 'text-green-500'}">${item.data.side}</div></div><div class="text-right"><div class="text-sm font-bold dark:text-white">${this.formatValue(item.data.quantity, 0)} 股</div><div class="text-xs text-gray-400">$${this.formatValue(item.data.price)}</div></div></div>` : `<div class="p-3 bg-blue-50/50 dark:bg-blue-900/10 rounded-xl border border-dashed border-blue-200 dark:border-blue-800/50"><div class="text-[10px] text-gray-500">${this.parseDate(item.date)}</div><div class="text-xs font-bold text-blue-600 dark:text-blue-400">企業行為：${item.data.type}</div></div>`).join('')}
+            </div></div>`;
+        } catch(err) { container.innerHTML = `<div class="p-8 text-center text-red-500">載入失敗: ${err.message}</div>`; }
+    },
+
+    formatValue(val, decimals = 2) {
+        if (val === undefined || val === null || isNaN(val)) return '--';
+        return new Intl.NumberFormat('zh-TW', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(val);
+    }
+};
+
+window.StockDetail = StockDetail;

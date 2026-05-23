@@ -1,0 +1,100 @@
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-900 p-3 rounded-xl border border-gray-100 dark:border-gray-800 flex flex-col items-center">
+                    <span class="text-xs text-gray-500 mb-1">今日漲跌</span><span class="text-lg font-bold ${parseFloat(q.changePercent) >= 0 ? 'text-red-500' : 'text-green-500'}">${q.changePercent}%</span>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-900 p-3 rounded-xl border border-gray-100 dark:border-gray-800 flex flex-col items-center">
+                    <span class="text-xs text-gray-500 mb-1">數據源</span><span class="text-[10px] font-bold text-blue-400">${q.source || 'OFFLINE'}</span>
+                </div>
+            </div>
+            <div class="p-4 bg-blue-50/30 dark:bg-blue-900/5 rounded-xl border border-blue-100 dark:border-blue-800/20">
+                <p class="text-xs text-gray-500">提示：更詳細的即時內外盤、振幅與即時分價圖僅在盤中交易時段透過 Fugle API 完整呈現。</p>
+            </div>
+        </div>`;
+    },
+
+    async renderRevenueTab(container) {
+        const data = await api.fetchFinancials(this.currentSymbol, 'monthly');
+        if (!data || !data.data) { container.innerHTML = `<div class="p-8 text-center text-gray-500">暫無營收數據</div>`; return; }
+        container.innerHTML = `<div class="p-4 space-y-4 flex-1 overflow-y-auto no-scrollbar pb-12">
+            <h3 class="text-lg font-bold">營收分析 - ${this.currentSymbol}</h3>
+            <div id="revenue-chart" class="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl border p-2"></div>
+            <div class="overflow-x-auto bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
+                <table class="w-full text-xs text-left"><thead class="bg-gray-50 dark:bg-gray-800 text-gray-500"><tr><th class="px-4 py-3">月份</th><th class="px-4 py-3 text-right">營收</th><th class="px-4 py-3 text-right">YoY</th></tr></thead>
+                <tbody class="divide-y divide-gray-100 dark:divide-gray-800">${data.data.map(item => `<tr><td class="px-4 py-3">${item.period}</td><td class="px-4 py-3 text-right font-bold">${this.formatValue(item.value, 0)}</td><td class="px-4 py-3 text-right ${parseFloat(item.yoy) >= 0 ? 'text-red-500' : 'text-green-500'}">${item.yoy}%</td></tr>`).join('')}</tbody></table>
+            </div>
+        </div>`;
+        setTimeout(() => {
+            const chart = echarts.init(document.getElementById('revenue-chart'), document.documentElement.classList.contains('dark') ? 'dark' : null);
+            const sorted = [...data.data].sort((a, b) => a.date.localeCompare(b.date));
+            chart.setOption({ backgroundColor: 'transparent', grid: { top: 20, bottom: 50, left: 50, right: 40 }, tooltip: { trigger: 'axis' }, xAxis: { type: 'category', data: sorted.map(d => d.period), axisLabel: { rotate: 30, fontSize: 10 } }, yAxis: [{ type: 'value', name: '營收', splitLine: { show: false } }, { type: 'value', name: 'YoY', axisLabel: { formatter: '{value}%' } }], series: [{ name: '營收', type: 'bar', data: sorted.map(d => d.value), itemStyle: { color: '#3b82f6' } }, { name: 'YoY', type: 'line', yAxisIndex: 1, data: sorted.map(d => d.yoy), itemStyle: { color: '#ef4444' } }] });
+        }, 100);
+    },
+
+    async renderProfitTab(container) {
+        const data = await api.fetchFinancials(this.currentSymbol, 'quarterly');
+        if (!data || !data.data) { container.innerHTML = `<div class="p-8 text-center text-gray-500">暫無獲利數據</div>`; return; }
+        container.innerHTML = `<div class="p-4 space-y-6 flex-1 overflow-y-auto no-scrollbar pb-12">
+            <h3 class="text-lg font-bold">獲利分析 - ${this.currentSymbol}</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="space-y-2"><h4 class="text-[10px] font-bold text-blue-500">EPS</h4><div id="eps-chart" class="w-full h-40 bg-white dark:bg-gray-900 rounded-2xl border p-2"></div></div>
+                <div class="space-y-2"><h4 class="text-[10px] font-bold text-green-500">Margins</h4><div id="margins-chart" class="w-full h-40 bg-white dark:bg-gray-900 rounded-2xl border p-2"></div></div>
+                <div class="space-y-2"><h4 class="text-[10px] font-bold text-orange-500">ROE/ROA</h4><div id="returns-chart" class="w-full h-40 bg-white dark:bg-gray-900 rounded-2xl border p-2"></div></div>
+            </div>
+            <div class="overflow-x-auto bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800"><table class="w-full text-xs text-left"><thead class="bg-gray-50 dark:bg-gray-800 text-gray-500"><tr><th class="px-4 py-3">季度</th><th class="px-4 py-3 text-right">EPS</th><th class="px-4 py-3 text-right">毛利率</th><th class="px-4 py-3 text-right">ROE</th></tr></thead><tbody class="divide-y divide-gray-100 dark:divide-gray-800">${data.data.map(item => `<tr><td class="px-4 py-3">${item.period}</td><td class="px-4 py-3 text-right font-bold">${this.formatValue(item.value)}</td><td class="px-4 py-3 text-right">${item.gm}%</td><td class="px-4 py-3 text-right text-orange-500">${item.roe}%</td></tr>`).join('')}</tbody></table></div>
+        </div>`;
+        setTimeout(() => {
+            const isDark = document.documentElement.classList.contains('dark');
+            const sorted = [...data.data].sort((a, b) => a.date.localeCompare(b.date));
+            const common = { backgroundColor: 'transparent', grid: { top: 20, bottom: 35, left: 35, right: 5 }, tooltip: { trigger: 'axis' }, xAxis: { type: 'category', data: sorted.map(d => d.period), axisLabel: { fontSize: 8, rotate: 30 } } };
+            const epsC = echarts.init(document.getElementById('eps-chart'), isDark ? 'dark' : null); epsC.setOption({ ...common, series: [{ name: 'EPS', type: 'bar', data: sorted.map(d => d.value), itemStyle: { color: '#3b82f6' } }], yAxis: { type: 'value', splitLine: { show: false } } });
+            const margC = echarts.init(document.getElementById('margins-chart'), isDark ? 'dark' : null); margC.setOption({ ...common, legend: { data: ['毛利', '營益', '淨利'], bottom: 0, textStyle: { fontSize: 8 } }, series: [{ name: '毛利', type: 'line', data: sorted.map(d => d.gm), smooth: true }, { name: '營益', type: 'line', data: sorted.map(d => d.om), smooth: true }, { name: '淨利', type: 'line', data: sorted.map(d => d.nm), smooth: true }], yAxis: { type: 'value' } });
+            const retC = echarts.init(document.getElementById('returns-chart'), isDark ? 'dark' : null); retC.setOption({ ...common, legend: { data: ['ROE', 'ROA'], bottom: 0, textStyle: { fontSize: 8 } }, series: [{ name: 'ROE', type: 'line', data: sorted.map(d => d.roe), smooth: true }, { name: 'ROA', type: 'line', data: sorted.map(d => d.roa), smooth: true }], yAxis: { type: 'value' } });
+        }, 100);
+    },
+
+    async renderDividendTab(container) {
+        const data = await api.fetchFinancials(this.currentSymbol, 'dividends');
+        if (!data || !data.data) { container.innerHTML = `<div class="p-8 text-center text-gray-500">暫無股利數據</div>`; return; }
+        container.innerHTML = `<div class="p-4 space-y-4 flex-1 overflow-y-auto no-scrollbar pb-12">
+            <h3 class="text-lg font-bold">股利政策 - ${this.currentSymbol}</h3>
+            <div id="dividend-chart" class="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl border p-2"></div>
+            <div class="overflow-x-auto bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800"><table class="w-full text-xs text-left"><thead class="bg-gray-50 dark:bg-gray-800 text-gray-500"><tr><th class="px-4 py-3">除息日</th><th class="px-4 py-3 text-right">現金</th><th class="px-4 py-3 text-right">合計</th></tr></thead><tbody class="divide-y divide-gray-100 dark:divide-gray-800">${data.data.map(item => `<tr><td class="px-4 py-3">${item.date}</td><td class="px-4 py-3 text-right">${this.formatValue(item.cash)}</td><td class="px-4 py-3 text-right font-bold text-blue-500">${this.formatValue(item.value)}</td></tr>`).join('')}</tbody></table></div>
+        </div>`;
+        setTimeout(() => {
+            const chart = echarts.init(document.getElementById('dividend-chart'), document.documentElement.classList.contains('dark') ? 'dark' : null);
+            const sorted = [...data.data].sort((a, b) => a.date.localeCompare(b.date));
+            chart.setOption({ backgroundColor: 'transparent', grid: { top: 20, bottom: 40, left: 40, right: 20 }, tooltip: { trigger: 'axis' }, xAxis: { type: 'category', data: sorted.map(d => d.date), axisLabel: { rotate: 45, fontSize: 9 } }, yAxis: { type: 'value' }, series: [{ name: '股利', type: 'bar', data: sorted.map(d => d.value), itemStyle: { color: '#3b82f6' } }] });
+        }, 100);
+    },
+
+    async renderShareholderTab(container) {
+        const [data, chartData] = await Promise.all([api.fetchShareholders(this.currentSymbol), api.fetchChart(this.currentSymbol).catch(() => null)]);
+        if (!data) { container.innerHTML = `<div class="p-8 text-center text-gray-500">暫無大股東數據</div>`; return; }
+        container.innerHTML = `<div class="p-4 flex flex-col h-full space-y-4 overflow-y-auto no-scrollbar pb-12">
+            <h3 class="text-lg font-bold">股權分佈 - ${this.currentSymbol}</h3>
+            <div id="shareholder-chart" class="w-full h-56 bg-white dark:bg-gray-900 rounded-2xl border p-2"></div>
+            <div class="grid grid-cols-2 gap-3 pb-8">${(data.recent || []).slice(0, 4).map(item => `<div class="bg-gray-50 dark:bg-gray-800 p-3 rounded-xl border border-gray-100 dark:border-gray-700"><div class="text-[10px] text-gray-500 mb-1">${item.date}</div><div class="flex justify-between items-end"><div><div class="text-base font-bold">${item.percentage}%</div><div class="text-[9px] text-gray-400">大股東持股</div></div><div class="text-xs ${parseFloat(item.diff) >= 0 ? 'text-red-500' : 'text-green-500'}">${parseFloat(item.diff) > 0 ? '▲' : '▼'} ${Math.abs(item.diff)}%</div></div></div>`).join('')}</div>
+        </div>`;
+        setTimeout(() => {
+            const chart = echarts.init(document.getElementById('shareholder-chart'), document.documentElement.classList.contains('dark') ? 'dark' : null);
+            const sorted = [...(data.recent || [])].sort((a, b) => a.date.localeCompare(b.date));
+            const priceMap = {}; if (chartData && (chartData.timestamp || chartData.timestamps)) { (chartData.timestamp || chartData.timestamps).forEach((ts, idx) => { priceMap[new Date(ts * 1000).toISOString().split('T')[0]] = (chartData.close || [])[idx]; }); }
+            const lineData = sorted.map(d => { if (priceMap[d.date]) return priceMap[d.date]; const t = new Date(d.date).getTime(); let cp = null, md = Infinity; Object.keys(priceMap).forEach(pd => { const diff = Math.abs(new Date(pd).getTime() - t); if (diff < md && diff < 86400000 * 5) { md = diff; cp = priceMap[pd]; } }); return cp; });
+            chart.setOption({ backgroundColor: 'transparent', grid: { top: 35, bottom: 25, left: 45, right: 45 }, tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } }, legend: { data: ['持股 %', '股價'], bottom: 0 }, xAxis: { type: 'category', data: sorted.map(d => d.date) }, yAxis: [{ type: 'value', name: '持股 %', scale: true, position: 'left', splitLine: { show: false } }, { type: 'value', name: '股價', scale: true, position: 'right', splitLine: { lineStyle: { type: 'dashed' } } }], series: [{ name: '持股 %', type: 'bar', data: sorted.map(d => d.percentage), itemStyle: { color: '#3b82f6' }, barWidth: '30%' }, { name: '股價', type: 'line', yAxisIndex: 1, data: lineData, smooth: true, itemStyle: { color: '#ef4444' } }] });
+        }, 100);
+    },
+
+    parseDate(rawDate) {
+        if (!rawDate) return '未知日期';
+        const s = String(rawDate);
+        if (s.length === 8 && /^\d+$/.test(s)) return `${s.substring(0, 4)}/${s.substring(4, 6)}/${s.substring(6, 8)}`;
+        if (typeof rawDate === 'number' && rawDate > 1000000000) { const d = new Date(rawDate < 10000000000 ? rawDate * 1000 : rawDate); return d.toLocaleDateString('zh-TW'); }
+        const d = new Date(rawDate); return isNaN(d.getTime()) ? s : d.toLocaleDateString('zh-TW');
+    },
+
+    async renderTradesTab(container) {
+        try {
+            const trades = await db.getAllTrades();
+            await CorporateActions.loadCorporateActions([this.currentSymbol]);
+            const timeline = CorporateActions.buildTransactionTimeline(trades, this.currentSymbol);
+            if (timeline.length === 0) { container.innerHTML = `<div class="p-8 text-center text-gray-500">尚無交易紀錄。</div>`; return; }

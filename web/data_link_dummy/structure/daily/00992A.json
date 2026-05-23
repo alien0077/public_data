@@ -1,0 +1,103 @@
+{
+  "symbol": "00992A",
+  "updated_at": "2026-05-21",
+  "lines": [
+    {
+      "id": "H_20",
+      "type": "high",
+      "price": 11.79,
+      "start_idx": 20,
+      "start_date": "2026-01-28",
+      "end_idx": 30,
+      "end_date": "2026-02-11",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "L_27",
+      "type": "low",
+      "price": 11.2,
+      "start_idx": 27,
+      "start_date": "2026-02-06",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_34",
+      "type": "high",
+      "price": 12.92,
+      "start_idx": 34,
+      "start_date": "2026-02-26",
+      "end_idx": 45,
+      "end_date": "2026-03-16",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "L_40",
+      "type": "low",
+      "price": 11.35,
+      "start_idx": 40,
+      "start_date": "2026-03-09",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_48",
+      "type": "high",
+      "price": 13.77,
+      "start_idx": 48,
+      "start_date": "2026-03-19",
+      "end_idx": 60,
+      "end_date": "2026-04-08",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "L_56",
+      "type": "low",
+      "price": 12.49,
+      "start_idx": 56,
+      "start_date": "2026-03-31",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_83",
+      "type": "high",
+      "price": 19.07,
+      "start_idx": 83,
+      "start_date": "2026-05-12",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "type": "BOS_UP",
+      "price": 11.79,
+      "idx": 30,
+      "date": "2026-02-11"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 12.92,
+      "idx": 45,
+      "date": "2026-03-16"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 13.77,
+      "idx": 60,
+      "date": "2026-04-08"
+    }
+  ]
+}
