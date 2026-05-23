@@ -60,6 +60,12 @@ export const CorporateActions = {
                 holdings[sid] = { symbol: sid, name: evt.data.name || evt.data.stockName || '', shares: 0, totalCost: 0, ytdBasis: 0, realizedPNL: 0, totalDividend: 0, _ytdSnapshotted: false };
             }
             const h = holdings[sid];
+            
+            // 🚀 v2.23.2: Ensure name is updated if it was initialized empty by an ACTION
+            if (!h.name && (evt.data.name || evt.data.stockName)) {
+                h.name = evt.data.name || evt.data.stockName;
+            }
+
             const date = evt.date;
             const year = date.substring(0, 4);
             ensureYearly(year);

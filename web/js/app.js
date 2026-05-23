@@ -82,7 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
             reader.onload = async (e) => {
                 try {
                     const data = JSON.parse(e.target.result);
-                    let trades = Array.isArray(data.normalizedTrades) ? data.normalizedTrades : (Array.isArray(data.transactions) ? data.transactions : (Array.isArray(data) ? data : []));
+                    // 🚀 v4.1.1: Prefer 'transactions' master list over 'normalizedTrades' cache
+                    let trades = Array.isArray(data.transactions) ? data.transactions : (Array.isArray(data.normalizedTrades) ? data.normalizedTrades : (Array.isArray(data) ? data : []));
                     if (trades.length > 0) {
                         await db.saveTrades(trades);
                         alert('成功匯入 ' + trades.length + ' 筆紀錄！');
