@@ -1,13 +1,13 @@
 {
   "stock_id": "3229",
   "name": "3229",
-  "date": "2026-05-21",
-  "close": 37.65,
-  "health_score": 106,
+  "date": "2026-05-22",
+  "close": 39.6,
+  "health_score": 123,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.095,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.204,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 70.0
   },
   "main_force": {
-    "cost": 40.27,
-    "distance": -6.51,
+    "cost": 40.33,
+    "distance": -1.81,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,7 +34,14 @@
     "style": "Value",
     "score": 60
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-22"
 }

@@ -1,42 +1,48 @@
 {
   "stock_id": "8111",
   "name": "8111",
-  "date": "2026-05-21",
-  "close": 62.5,
-  "health_score": 103,
+  "date": "2026-05-22",
+  "close": 66.8,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.068,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.307,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 11753.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.02
+    "margin_change": 11820.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 27.77,
+    "big_holder_change": 28.81,
     "retail_holder_change": 0,
-    "holder_concentration": 38.81
+    "holder_concentration": 38.51
   },
   "main_force": {
-    "cost": 66.64,
-    "distance": -6.21,
-    "trend": "DOWN"
+    "cost": 66.43,
+    "distance": 0.56,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-22"
 }

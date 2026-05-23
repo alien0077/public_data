@@ -1,13 +1,13 @@
 {
   "stock_id": "6733",
   "name": "6733",
-  "date": "2026-05-21",
-  "close": 27.8,
-  "health_score": 86,
+  "date": "2026-05-22",
+  "close": 27.7,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.01,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.021,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -19,11 +19,11 @@
   "tdcc": {
     "big_holder_change": 40.24,
     "retail_holder_change": 0,
-    "holder_concentration": 48.25
+    "holder_concentration": 48.24
   },
   "main_force": {
-    "cost": 28.58,
-    "distance": -2.73,
+    "cost": 28.43,
+    "distance": -2.57,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-22"
 }

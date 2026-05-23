@@ -1,29 +1,29 @@
 {
   "stock_id": "6257",
   "name": "6257",
-  "date": "2026-05-21",
-  "close": 216.5,
+  "date": "2026-05-22",
+  "close": 222.0,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 1.677,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.241,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9798.0,
-    "short_change": 134.0,
-    "short_margin_ratio": 1.37
+    "margin_change": 10187.0,
+    "short_change": 130.0,
+    "short_margin_ratio": 1.28
   },
   "tdcc": {
-    "big_holder_change": 42.1,
+    "big_holder_change": 42.97,
     "retail_holder_change": 0,
-    "holder_concentration": 51.59
+    "holder_concentration": 52.48
   },
   "main_force": {
-    "cost": 200.58,
-    "distance": 7.94,
+    "cost": 202.62,
+    "distance": 9.56,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-21"
+  "data_version": "2026-05-22"
 }

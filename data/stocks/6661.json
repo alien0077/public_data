@@ -1,9 +1,9 @@
 {
   "stock_id": "6661",
   "name": "6661",
-  "date": "2026-05-21",
-  "close": 17.5,
-  "health_score": 86,
+  "date": "2026-05-22",
+  "close": 17.85,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -17,24 +17,26 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 61.47,
+    "big_holder_change": 61.51,
     "retail_holder_change": 0,
-    "holder_concentration": 65.66
+    "holder_concentration": 65.7
   },
   "main_force": {
-    "cost": 17.85,
-    "distance": -1.96,
-    "trend": "DOWN"
+    "cost": 17.82,
+    "distance": 0.17,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-22"
 }

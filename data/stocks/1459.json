@@ -1,8 +1,8 @@
 {
   "stock_id": "1459",
   "name": "1459",
-  "date": "2026-05-21",
-  "close": 11.8,
+  "date": "2026-05-22",
+  "close": 11.75,
   "health_score": 66,
   "signal": "Neutral",
   "institutional": {
@@ -12,19 +12,19 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 379.0,
+    "margin_change": 382.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 79.15,
+    "big_holder_change": 79.17,
     "retail_holder_change": 0,
-    "holder_concentration": 85.38
+    "holder_concentration": 85.31
   },
   "main_force": {
-    "cost": 11.82,
-    "distance": -0.17,
-    "trend": "DOWN"
+    "cost": 11.62,
+    "distance": 1.12,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-22"
 }

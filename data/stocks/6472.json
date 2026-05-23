@@ -1,29 +1,29 @@
 {
   "stock_id": "6472",
   "name": "6472",
-  "date": "2026-05-21",
-  "close": 384.0,
-  "health_score": 103,
+  "date": "2026-05-22",
+  "close": 379.5,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.076,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.249,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4486.0,
-    "short_change": 13.0,
+    "margin_change": 4155.0,
+    "short_change": 12.0,
     "short_margin_ratio": 0.29
   },
   "tdcc": {
-    "big_holder_change": 44.3,
+    "big_holder_change": 44.92,
     "retail_holder_change": 0,
-    "holder_concentration": 54.9
+    "holder_concentration": 55.01
   },
   "main_force": {
-    "cost": 398.68,
-    "distance": -3.68,
+    "cost": 397.1,
+    "distance": -4.43,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-21"
+  "data_version": "2026-05-22"
 }

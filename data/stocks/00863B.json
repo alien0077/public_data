@@ -1,12 +1,12 @@
 {
   "stock_id": "00863B",
   "name": "00863B",
-  "date": "2026-05-21",
-  "close": 31.79,
-  "health_score": 86,
+  "date": "2026-05-22",
+  "close": 31.88,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 32.0,
-    "distance": -0.66,
+    "cost": 31.98,
+    "distance": -0.31,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-22"
 }

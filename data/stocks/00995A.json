@@ -1,8 +1,8 @@
 {
   "stock_id": "00995A",
   "name": "00995A",
-  "date": "2026-05-21",
-  "close": 16.67,
+  "date": "2026-05-22",
+  "close": 17.29,
   "health_score": 133,
   "signal": "Bullish",
   "institutional": {
@@ -12,14 +12,18 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1962.0,
-    "short_change": 11.0,
-    "short_margin_ratio": 0.56
+    "margin_change": 2061.0,
+    "short_change": 13.0,
+    "short_margin_ratio": 0.63
   },
-  "tdcc": {},
+  "tdcc": {
+    "big_holder_change": 10.53,
+    "retail_holder_change": 0,
+    "holder_concentration": 14.13
+  },
   "main_force": {
-    "cost": 16.42,
-    "distance": 1.52,
+    "cost": 16.52,
+    "distance": 4.66,
     "trend": "UP"
   },
   "sector": {
@@ -30,14 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
     "ma_bull"
   ],
-  "data_version": "2026-05-21"
+  "data_version": "2026-05-22"
 }

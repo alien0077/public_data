@@ -1,13 +1,13 @@
 {
   "stock_id": "5516",
   "name": "5516",
-  "date": "2026-05-21",
-  "close": 11.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-22",
+  "close": 10.7,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.012,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.004,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 63.07,
+    "big_holder_change": 62.96,
     "retail_holder_change": 0,
-    "holder_concentration": 72.01
+    "holder_concentration": 71.9
   },
   "main_force": {
-    "cost": 11.23,
-    "distance": -2.05,
+    "cost": 11.15,
+    "distance": -4.04,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-22"
 }

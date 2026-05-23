@@ -1,12 +1,12 @@
 {
   "stock_id": "006205",
   "name": "006205",
-  "date": "2026-05-21",
-  "close": 41.51,
-  "health_score": 133,
+  "date": "2026-05-22",
+  "close": 40.72,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -17,26 +17,26 @@
     "short_margin_ratio": 11.11
   },
   "tdcc": {
-    "big_holder_change": 32.46,
+    "big_holder_change": 33.08,
     "retail_holder_change": 0,
-    "holder_concentration": 44.77
+    "holder_concentration": 45.15
   },
   "main_force": {
-    "cost": 41.12,
-    "distance": 0.95,
-    "trend": "UP"
+    "cost": 41.15,
+    "distance": -1.04,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 100
+    "style": "Value",
+    "score": 30
   },
   "events": [],
   "raw_signals": [
-    "ma_bull"
+    "foreign_buy"
   ],
-  "data_version": "2026-05-21"
+  "data_version": "2026-05-22"
 }

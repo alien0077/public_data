@@ -1,10 +1,10 @@
 {
   "stock_id": "00864B",
   "name": "00864B",
-  "date": "2026-05-21",
-  "close": 45.83,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-22",
+  "close": 45.79,
+  "health_score": 93,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -18,9 +18,9 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 46.21,
-    "distance": -0.82,
-    "trend": "DOWN"
+    "cost": 45.74,
+    "distance": 0.11,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -28,9 +28,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-22"
 }

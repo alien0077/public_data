@@ -1,29 +1,29 @@
 {
   "stock_id": "4745",
   "name": "4745",
-  "date": "2026-05-21",
-  "close": 16.6,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-22",
+  "close": 16.55,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.001,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 136.0,
+    "margin_change": 122.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 60.16,
+    "big_holder_change": 58.89,
     "retail_holder_change": 0,
-    "holder_concentration": 69.85
+    "holder_concentration": 69.55
   },
   "main_force": {
-    "cost": 18.85,
-    "distance": -11.94,
+    "cost": 18.8,
+    "distance": -11.97,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-22"
 }

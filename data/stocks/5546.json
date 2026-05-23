@@ -1,13 +1,13 @@
 {
   "stock_id": "5546",
   "name": "5546",
-  "date": "2026-05-21",
-  "close": 17.05,
-  "health_score": 130,
+  "date": "2026-05-22",
+  "close": 16.9,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.001,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 79.73,
+    "big_holder_change": 78.09,
     "retail_holder_change": 0,
-    "holder_concentration": 84.51
+    "holder_concentration": 84.66
   },
   "main_force": {
-    "cost": 16.43,
-    "distance": 3.77,
+    "cost": 16.45,
+    "distance": 2.74,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 5 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-21"
+  "data_version": "2026-05-22"
 }

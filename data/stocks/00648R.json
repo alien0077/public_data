@@ -1,25 +1,25 @@
 {
   "stock_id": "00648R",
   "name": "00648R",
-  "date": "2026-05-21",
-  "close": 4.03,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-22",
+  "close": 4.01,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9725.0,
-    "short_change": 151.0,
-    "short_margin_ratio": 1.55
+    "margin_change": 9798.0,
+    "short_change": 150.0,
+    "short_margin_ratio": 1.53
   },
   "tdcc": {},
   "main_force": {
-    "cost": 4.1,
-    "distance": -1.71,
+    "cost": 4.09,
+    "distance": -1.96,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-22"
 }

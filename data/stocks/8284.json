@@ -1,13 +1,13 @@
 {
   "stock_id": "8284",
   "name": "8284",
-  "date": "2026-05-21",
-  "close": 63.7,
-  "health_score": 106,
+  "date": "2026-05-22",
+  "close": 63.5,
+  "health_score": 123,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.002,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.015,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 43.79,
+    "big_holder_change": 44.33,
     "retail_holder_change": 0,
-    "holder_concentration": 63.05
+    "holder_concentration": 63.57
   },
   "main_force": {
     "cost": 63.71,
-    "distance": -0.02,
+    "distance": -0.33,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 60
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-22"
 }

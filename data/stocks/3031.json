@@ -1,29 +1,29 @@
 {
   "stock_id": "3031",
   "name": "3031",
-  "date": "2026-05-21",
-  "close": 33.6,
-  "health_score": 150,
+  "date": "2026-05-22",
+  "close": 33.75,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.135,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.74,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7056.0,
-    "short_change": 116.0,
-    "short_margin_ratio": 1.64
+    "margin_change": 6935.0,
+    "short_change": 200.0,
+    "short_margin_ratio": 2.88
   },
   "tdcc": {
-    "big_holder_change": 57.66,
+    "big_holder_change": 58.15,
     "retail_holder_change": 0,
-    "holder_concentration": 59.34
+    "holder_concentration": 60.01
   },
   "main_force": {
-    "cost": 30.76,
-    "distance": 9.23,
+    "cost": 30.96,
+    "distance": 9.01,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-21"
+  "data_version": "2026-05-22"
 }

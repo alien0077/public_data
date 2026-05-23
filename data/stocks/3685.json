@@ -1,13 +1,13 @@
 {
   "stock_id": "3685",
   "name": "3685",
-  "date": "2026-05-21",
-  "close": 27.55,
-  "health_score": 103,
+  "date": "2026-05-22",
+  "close": 30.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.069,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.141,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -19,24 +19,30 @@
   "tdcc": {
     "big_holder_change": 45.29,
     "retail_holder_change": 0,
-    "holder_concentration": 60.44
+    "holder_concentration": 59.95
   },
   "main_force": {
-    "cost": 29.64,
-    "distance": -7.05,
-    "trend": "DOWN"
+    "cost": 29.58,
+    "distance": 1.42,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-22"
 }

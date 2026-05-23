@@ -1,47 +1,43 @@
 {
   "stock_id": "6548",
   "name": "6548",
-  "date": "2026-05-21",
-  "close": 51.4,
-  "health_score": 123,
+  "date": "2026-05-22",
+  "close": 51.9,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.186,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.064,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8919.0,
+    "margin_change": 8888.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 82.89,
+    "big_holder_change": 83.24,
     "retail_holder_change": 0,
-    "holder_concentration": 85.59
+    "holder_concentration": 85.79
   },
   "main_force": {
-    "cost": 51.77,
-    "distance": -0.71,
-    "trend": "DOWN"
+    "cost": 51.59,
+    "distance": 0.6,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-21"
+  "data_version": "2026-05-22"
 }

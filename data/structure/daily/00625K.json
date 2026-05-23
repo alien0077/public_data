@@ -1,13 +1,24 @@
 {
   "symbol": "00625K",
-  "updated_at": "2026-05-21",
+  "updated_at": "2026-05-23",
   "lines": [
     {
-      "id": "H_14",
+      "id": "L_5",
+      "type": "low",
+      "price": 6.89,
+      "start_idx": 5,
+      "start_date": "2025-05-06",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_16",
       "type": "high",
-      "price": 8.63,
-      "start_idx": 14,
-      "start_date": "2025-08-25",
+      "price": 8.72,
+      "start_idx": 16,
+      "start_date": "2025-09-03",
       "end_idx": 22,
       "end_date": "2025-09-12",
       "broken": true,
@@ -50,7 +61,7 @@
   "events": [
     {
       "type": "BOS_UP",
-      "price": 8.63,
+      "price": 8.72,
       "idx": 22,
       "date": "2025-09-12"
     },

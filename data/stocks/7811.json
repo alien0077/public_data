@@ -1,13 +1,13 @@
 {
   "stock_id": "7811",
   "name": "7811",
-  "date": "2026-05-21",
-  "close": 77.7,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-22",
+  "close": 77.0,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.006,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 64.6,
+    "big_holder_change": 64.77,
     "retail_holder_change": 0,
-    "holder_concentration": 71.21
+    "holder_concentration": 71.38
   },
   "main_force": {
-    "cost": 81.88,
-    "distance": -5.11,
+    "cost": 81.46,
+    "distance": -5.48,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-22"
 }

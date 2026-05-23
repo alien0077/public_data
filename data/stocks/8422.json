@@ -1,29 +1,29 @@
 {
   "stock_id": "8422",
   "name": "8422",
-  "date": "2026-05-21",
-  "close": 26.3,
+  "date": "2026-05-22",
+  "close": 26.8,
   "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.123,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.03,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 31788.0,
-    "short_change": 113.0,
-    "short_margin_ratio": 0.36
+    "margin_change": 31863.0,
+    "short_change": 112.0,
+    "short_margin_ratio": 0.35
   },
   "tdcc": {
-    "big_holder_change": 35.73,
+    "big_holder_change": 35.69,
     "retail_holder_change": 0,
-    "holder_concentration": 38.73
+    "holder_concentration": 38.88
   },
   "main_force": {
-    "cost": 27.43,
-    "distance": -4.12,
+    "cost": 27.32,
+    "distance": -1.9,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-21"
+  "data_version": "2026-05-22"
 }

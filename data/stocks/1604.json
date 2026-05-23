@@ -1,29 +1,29 @@
 {
   "stock_id": "1604",
   "name": "1604",
-  "date": "2026-05-21",
+  "date": "2026-05-22",
   "close": 23.2,
-  "health_score": 130,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.008,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 257.0,
+    "margin_change": 262.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 52.85,
+    "big_holder_change": 52.95,
     "retail_holder_change": 0,
-    "holder_concentration": 57.9
+    "holder_concentration": 57.99
   },
   "main_force": {
-    "cost": 22.96,
-    "distance": 1.05,
+    "cost": 22.94,
+    "distance": 1.13,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-21"
+  "data_version": "2026-05-22"
 }

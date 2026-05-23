@@ -1,29 +1,29 @@
 {
   "stock_id": "2020",
   "name": "2020",
-  "date": "2026-05-21",
-  "close": 21.45,
-  "health_score": 103,
+  "date": "2026-05-22",
+  "close": 21.3,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.008,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.025,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 724.0,
+    "margin_change": 736.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 44.65,
     "retail_holder_change": 0,
-    "holder_concentration": 49.93
+    "holder_concentration": 49.92
   },
   "main_force": {
-    "cost": 21.86,
-    "distance": -1.88,
+    "cost": 21.8,
+    "distance": -2.29,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 30
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-21"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-22"
 }

@@ -1,25 +1,25 @@
 {
   "stock_id": "00665L",
   "name": "00665L",
-  "date": "2026-05-21",
-  "close": 9.66,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-22",
+  "close": 9.69,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 81730.0,
-    "short_change": 1213.0,
-    "short_margin_ratio": 1.48
+    "margin_change": 82163.0,
+    "short_change": 1184.0,
+    "short_margin_ratio": 1.44
   },
   "tdcc": {},
   "main_force": {
-    "cost": 10.04,
-    "distance": -3.78,
+    "cost": 10.03,
+    "distance": -3.39,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-22"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "4139",
   "name": "4139",
-  "date": "2026-05-21",
-  "close": 23.05,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-22",
+  "close": 23.75,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_ratio": -0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -19,22 +19,24 @@
   "tdcc": {
     "big_holder_change": 49.57,
     "retail_holder_change": 0,
-    "holder_concentration": 67.77
+    "holder_concentration": 67.78
   },
   "main_force": {
-    "cost": 23.78,
-    "distance": -3.07,
-    "trend": "DOWN"
+    "cost": 23.72,
+    "distance": 0.13,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-21"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-22"
 }

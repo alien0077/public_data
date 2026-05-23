@@ -4,23 +4,23 @@
       "dsl": "rs > 90 AND pct > 2",
       "exit_dsl": "rs < 85 OR max_return > 0.25",
       "desc": "TREND Ensemble Fund",
-      "sharpe": 8.45,
-      "total_return": 3.9579,
+      "sharpe": 8.85,
+      "total_return": 4.2945,
       "win_rate": 0.7667,
       "weight": 0.8,
       "age": 10,
-      "score": 8.45
+      "score": 8.85
     },
     {
       "dsl": "rsi < 35",
       "exit_dsl": "rs < 65 OR max_return > 0.25",
       "desc": "MR Ensemble Fund",
-      "sharpe": -9.74,
-      "total_return": -0.5723,
-      "win_rate": 0.1917,
+      "sharpe": -10.65,
+      "total_return": -0.6258,
+      "win_rate": 0.1833,
       "weight": 0.2,
       "age": 10,
-      "score": -9.74
+      "score": -10.65
     }
   ]
 }
