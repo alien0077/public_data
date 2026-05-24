@@ -1,0 +1,38 @@
+# Python 產生的暫存檔
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虛擬環境 (非常重要，絕對不要上傳)
+venv/
+.venv/
+env/
+
+# IDE 設定 (例如 VS Code 或 PyCharm)
+.vscode/
+.idea/
+
+# 作業系統產生的雜物
+.DS_Store
+Thumbs.db
+
+# 敏感資訊 (如果你有存放 API Key 的話)
+.env
+config.ini
+secrets.json
+
+# 資料庫或記錄檔
+*.log
+TWStockTracker/Resources/*.sqlite*
+
+# 除錯
+TWStockTracker/Alien_debug/Build*.txt
+
+# 雲端數據同步工作區 (Public_Data)
+temp_repo/
+temp_pull_workspace/
+temp_sync_workspace/
+local_data_backup/
+
+run.*
+\n# SQLite Databases\nTWStockTracker/Resources/*.sqlite*\n
