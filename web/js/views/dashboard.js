@@ -271,12 +271,17 @@ export const Dashboard = {
     },
 
     async renderLiar(data) {
-        const container = document.getElementById('dashboard-liar-summary');
-        if (!container) return;
+        const dashboardSummary = document.getElementById('dashboard-liar-summary');
+        const mainContainer = document.getElementById('liar-container');
+        const section = document.getElementById('liar-section');
+
         if (!data || !data.data || data.data.length === 0) {
-            container.innerHTML = `<div class="text-center py-4 text-gray-500 text-sm">目前無偵測到說謊事件。</div>`;
+            if (dashboardSummary) dashboardSummary.innerHTML = `<div class="text-center py-4 text-gray-500 text-sm">目前無偵測到說謊事件。</div>`;
+            if (section) section.classList.add('hidden');
             return;
         }
+
+        if (section) section.classList.remove('hidden');
 
         let stocksMeta = {};
         try {
@@ -286,22 +291,56 @@ export const Dashboard = {
             }
         } catch(e) {}
 
-        container.innerHTML = data.data.slice(0, 3).map(item => {
+        const getStatusBadge = (status) => {
+            const map = {
+                'LIE': { label: '說謊', color: 'bg-red-500', icon: '🐜' },
+                'HONEST': { label: '誠實', color: 'bg-green-500', icon: '✅' },
+                'PENDING': { label: '追蹤中', color: 'bg-orange-500', icon: '🕒' }
+            };
+            const s = map[status] || map['PENDING'];
+            return `<span class="${s.color} text-white text-[10px] px-2 py-0.5 rounded-full font-bold flex items-center shadow-sm">
+                        <span class="mr-1">${s.icon}</span>${s.label}
+                    </span>`;
+        };
+
+        const renderCard = (item, isHorizontal = false) => {
             const name = stocksMeta[item.stockId] || stocksMeta[item.stockId.split('.')[0]] || '';
+            const isUpgrade = item.sentiment === 'bullish';
+            const sentimentColor = isUpgrade ? 'text-red-500' : 'text-green-500';
+            const sentimentBg = isUpgrade ? 'bg-red-500/10' : 'bg-green-500/10';
+            
             return `
-                <div class="p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800 cursor-pointer hover:border-red-500/50 transition-all"
+                <div class="${isHorizontal ? 'flex-none w-72' : ''} p-4 bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 cursor-pointer hover:border-blue-500/50 transition-all shadow-sm group"
                      onclick="window.StockDetail.show('${item.stockId}')">
-                    <div class="flex justify-between items-center mb-1">
-                        <span class="text-[10px] bg-red-500 text-white px-1.5 py-0.5 rounded font-bold">${item.brokerName}</span>
-                        <div class="text-right">
-                            <span class="text-xs font-mono font-bold text-gray-900 dark:text-white">${item.stockId}</span>
-                            <div class="text-[10px] text-gray-500">${name}</div>
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <span class="text-[10px] ${isUpgrade ? 'bg-red-500' : 'bg-green-500'} text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider">${item.brokerName}</span>
+                            <div class="mt-1 text-xs font-mono font-bold text-gray-900 dark:text-white">${item.stockId} <span class="text-gray-400 font-normal ml-1">${name}</span></div>
+                        </div>
+                        ${getStatusBadge(item.honestyStatus)}
+                    </div>
+                    <div class="text-sm font-bold text-gray-800 dark:text-gray-200 line-clamp-2 mb-3 leading-snug h-10 group-hover:text-blue-500 transition-colors">${item.newsTitle}</div>
+                    <div class="flex justify-between items-center pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <div class="text-center">
+                            <div class="text-[8px] text-gray-400 uppercase">目標價</div>
+                            <div class="text-sm font-mono font-bold ${sentimentColor}">${item.targetPrice > 0 ? item.targetPrice : '--'}</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-[8px] text-gray-400 uppercase">累積進出</div>
+                            <div class="text-sm font-mono font-bold ${item.cumulativeVolume >= 0 ? 'text-red-500' : 'text-green-500'}">${item.cumulativeVolume > 0 ? '+' : ''}${Math.round(item.cumulativeVolume)} 張</div>
                         </div>
                     </div>
-                    <div class="text-xs text-gray-700 dark:text-gray-300 line-clamp-1">${item.newsTitle}</div>
                 </div>
             `;
-        }).join('');
+        };
+
+        if (dashboardSummary) {
+            dashboardSummary.innerHTML = data.data.slice(0, 3).map(item => renderCard(item)).join('');
+        }
+
+        if (mainContainer) {
+            mainContainer.innerHTML = data.data.map(item => renderCard(item, true)).join('');
+        }
     },
 
     renderQuant(data) {

@@ -60,21 +60,37 @@ export const StockDetail = {
             warningContainer = document.createElement('div');
             warningContainer.id = 'liar-warning-container';
             const header = document.querySelector('#stock-detail header');
-            header.after(warningContainer);
+            if (header) header.after(warningContainer);
         }
 
         const liar = data?.data?.find(item => item.stockId === this.currentSymbol);
         if (liar) {
+            const isLie = liar.honestyStatus === 'LIE';
+            const isHonest = liar.honestyStatus === 'HONEST';
+            const isUpgrade = liar.sentiment === 'bullish';
+            
+            const statusMap = {
+                'LIE': { label: '說謊警告', color: 'bg-red-500', icon: '🚨' },
+                'HONEST': { label: '誠實認證', color: 'bg-green-500', icon: '✅' },
+                'PENDING': { label: '追蹤中', color: 'bg-orange-500', icon: '🕒' }
+            };
+            const s = statusMap[liar.honestyStatus] || statusMap['PENDING'];
+
             warningContainer.innerHTML = `
-                <div class="m-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center shadow-sm">
-                    <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center mr-4 flex-none"><span class="text-white text-lg font-bold">!</span></div>
+                <div class="m-4 p-4 ${isLie ? 'bg-red-500/10 border-red-500/20' : (isHonest ? 'bg-green-500/10 border-green-500/20' : 'bg-orange-500/10 border-orange-500/20')} border rounded-xl flex items-center shadow-sm transition-all">
+                    <div class="w-10 h-10 ${s.color} rounded-full flex items-center justify-center mr-4 flex-none shadow-md">
+                        <span class="text-white text-lg font-bold">${s.icon}</span>
+                    </div>
                     <div class="flex-1">
                         <div class="flex justify-between items-center mb-1">
-                            <h4 class="text-red-500 font-bold text-sm">🚨 外資誠實度嚴重警告！</h4>
-                            <span class="bg-orange-500 text-white text-[10px] px-2 py-0.5 rounded font-bold">說謊指數: ${liar.lyingScore}</span>
+                            <h4 class="${isLie ? 'text-red-500' : (isHonest ? 'text-green-500' : 'text-orange-500')} font-bold text-sm">${s.label}：外資分析師操作監控</h4>
+                            ${isLie ? `<span class="bg-orange-500 text-white text-[10px] px-2 py-0.5 rounded font-bold">說謊指數: ${liar.lyingScore}</span>` : ''}
                         </div>
                         <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
-                            ${liar.brokerName}喊多本股至 <span class="font-bold text-red-500">${liar.targetPrice}</span> 元，但近日分點私下狂${liar.netVolume < 0 ? '倒貨' : '吸籌'} <span class="font-bold text-blue-500">${Math.abs(liar.netVolume)}</span> 張！
+                            <span class="font-bold">${liar.brokerName}</span> 於 ${liar.date} ${isUpgrade ? '看多' : '看空'}本股
+                            ${liar.targetPrice > 0 ? `至 <span class="font-bold ${isUpgrade ? 'text-red-500' : 'text-green-500'}">${liar.targetPrice}</span> 元` : ''}，
+                            追蹤 ${liar.daysTracked} 天以來，分點累積進出 <span class="font-bold ${liar.cumulativeVolume >= 0 ? 'text-red-500' : 'text-green-500'}">${Math.round(liar.cumulativeVolume)}</span> 張。
+                            ${isLie ? '<br/><span class="text-[10px] text-red-400 font-bold">⚠️ 警告：目前操作方向與喊話完全相反！</span>' : ''}
                         </p>
                     </div>
                 </div>
