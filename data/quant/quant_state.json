@@ -1829,7 +1829,7 @@
     "win_rate": 0.4833333333333334
   },
   "portfolio": {
-    "cash": 61.5,
+    "cash": 187938.5,
     "positions": {
       "trend": [
         {
@@ -1840,42 +1840,14 @@
           "max_price": 2745.0,
           "type": "trend",
           "cost": 197640.0,
-          "max_return": 0.06557377049180335
+          "max_return": 0.15118397085610202
         },
         {
           "stock": "3189",
           "entry_date": "2026-05-25",
           "entry_price": 669.0,
           "shares": 553,
-          "max_return": 0.0
-        },
-        {
-          "stock": "6691",
-          "entry_date": "2026-05-25",
-          "entry_price": 646.0,
-          "shares": 484,
-          "max_return": 0.0
-        },
-        {
-          "stock": "1519",
-          "entry_date": "2026-05-25",
-          "entry_price": 830.0,
-          "shares": 46,
-          "max_return": 0.0
-        },
-        {
-          "stock": "3563",
-          "entry_date": "2026-05-25",
-          "entry_price": 892.0,
-          "shares": 33,
-          "max_return": 0.0
-        },
-        {
-          "stock": "6446",
-          "entry_date": "2026-05-25",
-          "entry_price": 840.0,
-          "shares": 5,
-          "max_return": 0.0
+          "max_return": 0.04035874439461873
         },
         {
           "stock": "3665",
@@ -1885,24 +1857,31 @@
           "max_return": 0.0
         },
         {
-          "stock": "6472",
-          "entry_date": "2026-05-25",
-          "entry_price": 366.5,
-          "shares": 3,
-          "max_return": 0.0
-        },
-        {
           "stock": "8021",
           "entry_date": "2026-05-25",
           "entry_price": 464.0,
           "shares": 2,
-          "max_return": 0.0
+          "max_return": 0.0010775862068965747
         },
         {
           "stock": "8291",
           "entry_date": "2026-05-25",
           "entry_price": 100.0,
           "shares": 4,
+          "max_return": 0.10000000000000009
+        },
+        {
+          "stock": "5475",
+          "entry_date": "2026-05-26",
+          "entry_price": 305.0,
+          "shares": 350,
+          "max_return": 0.0
+        },
+        {
+          "stock": "6861",
+          "entry_date": "2026-05-26",
+          "entry_price": 449.5,
+          "shares": 209,
           "max_return": 0.0
         }
       ],
@@ -1960,6 +1939,10 @@
       {
         "date": "2026-05-25",
         "nav": 969911.0
+      },
+      {
+        "date": "2026-05-26",
+        "nav": 1004676.0
       }
     ]
   },
@@ -2931,6 +2914,68 @@
     "mr": 65
   },
   "trade_log": [
+    {
+      "stock": "6861",
+      "entry_date": "2026-05-26",
+      "exit_date": null,
+      "action": "BUY"
+    },
+    {
+      "stock": "5475",
+      "entry_date": "2026-05-26",
+      "exit_date": null,
+      "action": "BUY"
+    },
+    {
+      "stock": "6472",
+      "entry_date": "2026-05-25",
+      "exit_date": "2026-05-26",
+      "exit_price": 355.5,
+      "return": -0.03,
+      "reason": "RS_WEAK (<88, Evolved)",
+      "primary_theme": "\u65b0\u85e5_\u751f\u6280",
+      "action": "SELL"
+    },
+    {
+      "stock": "6446",
+      "entry_date": "2026-05-25",
+      "exit_date": "2026-05-26",
+      "exit_price": 878.0,
+      "return": 0.0452,
+      "reason": "RS_WEAK (<88, Evolved)",
+      "primary_theme": "\u65b0\u85e5_\u751f\u6280",
+      "action": "SELL"
+    },
+    {
+      "stock": "3563",
+      "entry_date": "2026-05-25",
+      "exit_date": "2026-05-26",
+      "exit_price": 890.0,
+      "return": -0.0022,
+      "reason": "RS_WEAK (<88, Evolved)",
+      "primary_theme": "\u5149\u96fb\u9762\u677f",
+      "action": "SELL"
+    },
+    {
+      "stock": "1519",
+      "entry_date": "2026-05-25",
+      "exit_date": "2026-05-26",
+      "exit_price": 851.0,
+      "return": 0.0253,
+      "reason": "RS_WEAK (<88, Evolved)",
+      "primary_theme": "\u91cd\u96fb_\u5f37\u97cc\u96fb\u7db2",
+      "action": "SELL"
+    },
+    {
+      "stock": "6691",
+      "entry_date": "2026-05-25",
+      "exit_date": "2026-05-26",
+      "exit_price": 650.0,
+      "return": 0.0062,
+      "reason": "RS_WEAK (<88, Evolved)",
+      "primary_theme": "\u96fb\u5b50\u5176\u4ed6",
+      "action": "SELL"
+    },
     {
       "stock": "8291",
       "entry_date": "2026-05-25",
