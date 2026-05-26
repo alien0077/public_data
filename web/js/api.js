@@ -220,6 +220,29 @@ export const api = {
     },
     async fetchShareholders(symbol) { try { return await this.fetchLocalJson(`weekly/shareholders/${symbol.split('.')[0]}.json`); } catch (e) { return null; } },
     async fetchETFHoldings() { try { return await this.fetchLocalJson('quant/etf/outputs/latest_snapshot.json'); } catch (e) { return null; } },
+    async fetchExchangeRates() {
+        try {
+            const d = await this.fetchLocalJson('meta/exchange_rate_history.json');
+            if (!d?.data?.length) return null;
+            const latest = d.data[d.data.length - 1];
+            const currencies = [
+                { code: 'USD', label: 'USD', flag: '🇺🇸', key: 'USD_TWD' },
+                { code: 'JPY', label: 'JPY', flag: '🇯🇵', key: 'JPY_TWD' },
+                { code: 'EUR', label: 'EUR', flag: '🇪🇺', key: 'EUR_TWD' },
+                { code: 'GBP', label: 'GBP', flag: '🇬🇧', key: 'GBP_TWD' },
+                { code: 'HKD', label: 'HKD', flag: '🇭🇰', key: 'HKD_TWD' },
+                { code: 'CNY', label: 'CNY', flag: '🇨🇳', key: 'CNY_TWD' },
+                { code: 'AUD', label: 'AUD', flag: '🇦🇺', key: 'AUD_TWD' },
+                { code: 'THB', label: 'THB', flag: '🇹🇭', key: 'THB_TWD' },
+                { code: 'KRW', label: 'KRW', flag: '🇰🇷', key: 'KRW_TWD' },
+                { code: 'MYR', label: 'MYR', flag: '🇲🇾', key: 'MYR_TWD' },
+                { code: 'VND', label: 'VND', flag: '🇻🇳', key: 'VND_TWD' },
+                { code: 'IDR', label: 'IDR', flag: '🇮🇩', key: 'IDR_TWD' }
+            ];
+            const rates = currencies.map(c => ({ ...c, rate: latest[c.key] }));
+            return { date: latest.date, rates };
+        } catch (e) { return null; }
+    },
     async getStockInfo(symbol) {
         const meta = await this.getStocksMeta();
         const s = symbol.split('.')[0];

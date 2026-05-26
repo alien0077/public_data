@@ -10,7 +10,7 @@ import { CorporateActions } from '../corporateActions.js';
 export const StockDetail = {
     currentSymbol: null,
     currentTab: 'K線',
-    tabs: ['走勢', 'K線', '健檢', '盤面', '基本', '營收', '獲利', '股利', '大股東', '明細'],
+    tabs: ['走勢', 'K線', '健檢', '盤面', '新聞', '基本', '營收', '獲利', '股利', '大股東', '明細'],
 
     async show(symbol) {
         this.currentSymbol = symbol;
@@ -126,6 +126,7 @@ export const StockDetail = {
                 case 'K線': await this.renderKLineTab(contentContainer); break;
                 case '健檢': await this.renderHealthTab(contentContainer); break;
                 case '盤面': await this.renderMarketTab(contentContainer); break;
+                case '新聞': await this.renderNewsTab(contentContainer); break;
                 case '基本': await this.renderFundamentalTab(contentContainer); break;
                 case '營收': await this.renderRevenueTab(contentContainer); break;
                 case '獲利': await this.renderProfitTab(contentContainer); break;
@@ -228,6 +229,75 @@ export const StockDetail = {
                 <p class="text-xs text-gray-500">提示：更詳細的即時內外盤、振幅與即時分價圖僅在盤中交易時段透過 Fugle API 完整呈現。</p>
             </div>
         </div>`;
+    },
+
+    async renderNewsTab(container) {
+        container.innerHTML = '<div class="p-4 space-y-4"><div class="text-center py-8 text-gray-500">載入新聞中...</div></div>';
+        try {
+            const symbol = this.currentSymbol.split('.')[0];
+            const rssUrl = `https://feeds.finance.yahoo.com/rss/2.0/headline?s=${symbol}.TW&region=US&lang=en-US`;
+            const response = await fetch(rssUrl);
+            const xmlText = await response.text();
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+            const items = xmlDoc.querySelectorAll('item');
+
+            if (!items || items.length === 0) {
+                container.innerHTML = `<div class="p-8 text-center text-gray-500">目前無相關新聞</div>`;
+                return;
+            }
+
+            const news = Array.from(items).map(item => {
+                const title = item.querySelector('title')?.textContent || '';
+                const description = item.querySelector('description')?.textContent || '';
+                const link = item.querySelector('link')?.textContent || '';
+                const pubDate = item.querySelector('pubDate')?.textContent || '';
+                const source = item.querySelector('source')?.textContent || 'Yahoo Finance';
+                const date = pubDate ? new Date(pubDate).toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit' }) : '';
+                return { title, description, link, pubDate, source, date };
+            }).filter(n => n.title);
+
+            const dateGroups = {};
+            news.forEach(n => {
+                if (!dateGroups[n.date]) dateGroups[n.date] = [];
+                dateGroups[n.date].push(n);
+            });
+
+            container.innerHTML = `
+                <div class="p-4 space-y-4 flex-1 overflow-y-auto no-scrollbar pb-12">
+                    <h3 class="text-lg font-bold flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                        最新新聞
+                    </h3>
+                    ${Object.entries(dateGroups).map(([date, items]) => `
+                        <div>
+                            <div class="text-xs text-gray-400 font-bold mb-2 px-1">${date}</div>
+                            <div class="space-y-2">
+                                ${items.map(item => `
+                                    <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="block bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                                        <div class="flex items-start">
+                                            <span class="text-lg mr-3 mt-0.5 flex-none">📰</span>
+                                            <div class="min-w-0 flex-1">
+                                                <div class="text-sm font-bold dark:text-white leading-snug line-clamp-2 mb-1">${this.escapeHtml(item.title)}</div>
+                                                <div class="flex items-center space-x-2 text-[10px] text-gray-400">
+                                                    <span class="font-medium">${this.escapeHtml(item.source)}</span>
+                                                    <span>·</span>
+                                                    <span>${this.escapeHtml(item.description.replace(/<[^>]+>/g, '').substring(0, 120))}${item.description.replace(/<[^>]+>/g, '').length > 120 ? '...' : ''}</span>
+                                                </div>
+                                            </div>
+                                            <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 flex-none ml-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                        </div>
+                                    </a>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        } catch(e) {
+            console.warn('RSS fetch failed:', e);
+            container.innerHTML = `<div class="p-8 text-center text-gray-500">新聞資料暫時無法取得，請稍後再試</div>`;
+        }
     },
 
     async renderRevenueTab(container) {
@@ -445,6 +515,16 @@ export const StockDetail = {
         const sector = stockInfo?.official_sector || stockInfo?.industry || '--';
         const subIndustry = stockInfo?.sub_industry || '--';
 
+        const etfHoldings = etfSnapshot ? Object.entries(etfSnapshot)
+            .filter(([, etf]) => etf.holdings?.some(h => (h.stock_id || '') === this.currentSymbol.split('.')[0]))
+            .map(([id, etf]) => ({
+                id,
+                name: etf.name,
+                weight: etf.holdings.find(h => h.stock_id === this.currentSymbol.split('.')[0])?.weight || 0
+            }))
+            .sort((a, b) => b.weight - a.weight) : [];
+        const etfTotalWeight = etfHoldings.reduce((s, h) => s + h.weight, 0);
+
         container.innerHTML = `
             <div class="p-4 space-y-6 flex-1 overflow-y-auto no-scrollbar pb-12">
                 <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-5">
@@ -512,6 +592,47 @@ export const StockDetail = {
                         </tbody>
                     </table>
                 </div>` : '<div class="p-8 text-center text-gray-500">暫無財務數據</div>'}
+
+                ${etfHoldings.length > 0 ? `
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/10 dark:to-indigo-900/10 rounded-2xl border border-purple-200 dark:border-purple-800/30 p-5">
+                    <h4 class="text-sm font-bold text-purple-700 dark:text-purple-400 mb-3 flex items-center">
+                        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                        ETF 曝險度
+                    </h4>
+                    <div class="grid grid-cols-2 gap-3 mb-3">
+                        <div class="bg-white/60 dark:bg-gray-800/40 rounded-xl p-3 text-center">
+                            <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">${etfHoldings.length}</div>
+                            <div class="text-[10px] text-gray-500">持有 ETF 檔數</div>
+                        </div>
+                        <div class="bg-white/60 dark:bg-gray-800/40 rounded-xl p-3 text-center">
+                            <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">${etfTotalWeight.toFixed(2)}%</div>
+                            <div class="text-[10px] text-gray-500">合計被動權重</div>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5">
+                        ${etfHoldings.slice(0, 5).map(h => `
+                        <div class="flex items-center justify-between bg-white/40 dark:bg-gray-800/30 rounded-lg px-3 py-2">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs font-mono font-bold text-purple-600 dark:text-purple-400">${h.id}</span>
+                                <span class="text-xs text-gray-600 dark:text-gray-300">${h.name}</span>
+                            </div>
+                            <span class="text-xs font-bold">${h.weight.toFixed(2)}%</span>
+                        </div>`).join('')}
+                        ${etfHoldings.length > 5 ? `<div class="text-center text-[10px] text-gray-400 pt-1">...及其他 ${etfHoldings.length - 5} 檔 ETF</div>` : ''}
+                    </div>
+                </div>` : ''}
+
+                <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-5">
+                    <h4 class="text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+                        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        業務摘要
+                    </h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        本股屬於 <span class="font-bold text-blue-600 dark:text-blue-400">${sector}</span> 產業，
+                        主要業務涵蓋 <span class="font-bold text-blue-600 dark:text-blue-400">${subIndustry}</span> 相關領域。
+                        ${themes.length > 0 ? `近期市場關注主題包括 ${themes.map(t => `<span class="font-medium text-orange-500">${t}</span>`).join('、')}。` : ''}
+                    </p>
+                </div>
             </div>`;
     },
 
@@ -575,6 +696,13 @@ export const StockDetail = {
             });
             window.addEventListener('resize', () => chart.resize());
         }, 100);
+    },
+
+    escapeHtml(str) {
+        if (!str) return '';
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
     },
 
     formatValue(val, decimals = 2) {

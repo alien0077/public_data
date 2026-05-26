@@ -1,14 +1,15 @@
 import { db } from './db.js';
 import { api } from './api.js';
 import { charts } from './charts.js';
-import { TrendHunter } from './views/trendHunter.js';
-import { AssetRisk } from './views/assetRisk.js';
-import { StockDetail } from './views/stockDetail.js';
-import { BattleRecord } from './views/battleRecord.js';
-import { Transaction } from './views/transaction.js';
-import { Favorites } from './views/favorites.js';
+import { TrendHunter } from './views/trendHunter.js?v=2';
+import { AssetRisk } from './views/assetRisk.js?v=2';
+import { StockDetail } from './views/stockDetail.js?v=2';
+import { BattleRecord } from './views/battleRecord.js?v=2';
+import { Transaction } from './views/transaction.js?v=2';
+import { Favorites } from './views/favorites.js?v=2';
 import { router } from './router.js';
 import { CorporateActions } from './corporateActions.js';
+import { Settings } from './views/settings.js';
 import { Dashboard } from './views/dashboard.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,9 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const stockDetailOverlay = document.getElementById('stock-detail');
     const closeDetailBtn = document.getElementById('close-detail');
     const themeToggleBtn = document.getElementById('theme-toggle');
+    const betaWarningEl = document.getElementById('beta-warning');
+    const betaTextEl = document.getElementById('beta-text');
 
     let currentQuotes = {};
     let refreshInterval = null;
+    let currentSort = { key: 'name', asc: true };
+    let lastTrades = [];
+    let lastHoldings = {};
 
     function updateApiStatus(status, isError = false, source = 'OFFLINE') {
         const indicator = document.getElementById('status-indicator');
@@ -43,18 +49,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (themeToggleBtn) themeToggleBtn.addEventListener('click', () => window.ThemeEngine.toggle());
-    try { router.init(); } catch (e) { console.error('Router init failed', e); }
+    try { 
+        router.init(); 
+        // Force portfolio as default (bypasses cached router)
+        const vp = document.getElementById('view-portfolio');
+        if (vp) {
+            document.querySelectorAll('#content-area > [id^="view-"]').forEach(v => v.classList.add('hidden'));
+            vp.classList.remove('hidden');
+            const vt = document.getElementById('view-title');
+            if (vt) vt.textContent = '我的持股';
+        }
+    } catch (e) { console.error('Router init failed', e); }
 
     window.addEventListener('router:changed', (e) => {
         const { primary, secondary } = e.detail;
         if (stockDetailOverlay) stockDetailOverlay.classList.add('hidden');
         try {
-            if (primary === 'dashboard') Dashboard.init();
-            else if (primary === 'trendHunter') TrendHunter.init(secondary);
+            if (primary === 'trendHunter') TrendHunter.init(secondary);
             else if (primary === 'assetRisk') AssetRisk.init(secondary);
             else if (primary === 'performance') BattleRecord.init();
             else if (primary === 'addTrade') Transaction.init();
             else if (primary === 'favorites') Favorites.init(secondary);
+            else if (primary === 'settings') Settings.init();
         } catch (err) { console.error(primary + ' view error:', err); }
     });
 
@@ -64,10 +80,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('click', (e) => { e.preventDefault(); router.switchPage(p); });
     };
-    ['dashboard', 'portfolio', 'trendHunter', 'assetRisk', 'performance', 'addTrade', 'favorites'].forEach(p => {
+    ['portfolio', 'trendHunter', 'assetRisk', 'performance', 'addTrade', 'favorites'].forEach(p => {
         bindPage('nav-' + p, p);
-        bindPage('mobile-nav-' + p, p);
+        const m = document.getElementById('mobile-nav-' + p);
+        if (m) m.addEventListener('click', (e) => { e.preventDefault(); router.switchPage(p); });
     });
+    // Settings: direct handler in case router doesn't have cached route
+    const settingsHandler = (e) => { e.preventDefault(); document.querySelectorAll('#content-area > [id^="view-"]').forEach(v => v.classList.add('hidden')); const vs = document.getElementById('view-settings'); if (vs) { vs.classList.remove('hidden'); Settings.init(); } };
+    document.getElementById('nav-settings')?.addEventListener('click', settingsHandler);
+    document.getElementById('mobile-nav-settings')?.addEventListener('click', settingsHandler);
 
     const triggerImportBtn = document.getElementById('trigger-import');
     const importJsonInput = document.getElementById('import-json');
@@ -111,7 +132,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const symbols = Array.from(new Set(trades.map(t => t.symbol || t.stock_id || t.stockId)));
                 await CorporateActions.loadCorporateActions(symbols);
                 emptyState.classList.add('hidden');
+                lastTrades = trades;
                 renderPortfolio(trades);
+                const ytdRef = await api.fetchYTDRef();
+                const h = CorporateActions.recalculateHoldings(trades, true, ytdRef.prices);
+                lastHoldings = h;
+                renderAssetRow2(trades, h, {});
+                renderExchangeRates();
+                renderMarketSummary({});
+                renderBetaWarning(h);
+                loadAndRenderLiar();
+                renderClosedHoldings(trades);
                 startAutoRefresh();
             } else {
                 emptyState.classList.remove('hidden');
@@ -134,11 +165,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const h = CorporateActions.recalculateHoldings(trades, true, ytdRef.prices);
             const q = await api.fetchQuotes(Object.keys(h).filter(k => k !== 'yearlyStats'));
             currentQuotes = q;
+            lastTrades = trades; lastHoldings = h;
             updateApiStatus('報價同步成功', false, Object.values(q).some(x => x.source && x.source.includes('REALTIME')) ? 'REALTIME' : 'OFFLINE');
             renderPortfolio(trades, q);
+            renderAssetRow2(trades, h, q);
+            renderBetaWarning(h);
+            renderExchangeRates();
+            renderMarketSummary(q);
+            loadAndRenderLiar();
+            renderClosedHoldings(trades);
         } catch (err) {
             updateApiStatus('同步失敗: ' + err.message, true, 'ERROR');
             renderPortfolio(trades, currentQuotes);
+            renderAssetRow2(trades, lastHoldings, currentQuotes);
         }
     }
 
@@ -147,8 +186,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const holdings = CorporateActions.recalculateHoldings(trades, true, ytdRef.prices);
         portfolioBody.innerHTML = '';
         let totalMV = 0, totalYtdBasis = 0, totalRefMV = 0;
+        let rows = [];
 
-        Object.keys(holdings).sort().forEach(sym => {
+        const syms = Object.keys(holdings).filter(s => s !== 'yearlyStats' && holdings[s].shares > 0.001);
+        syms.sort((a, b) => {
+            const ha = holdings[a], hb = holdings[b];
+            const qa = quotes[a] || quotes[a.split('.')[0]] || {};
+            const qb = quotes[b] || quotes[b.split('.')[0]] || {};
+            const pa = parseFloat(qa.price || 0), pb = parseFloat(qb.price || 0);
+            const sha = parseFloat(ha.shares || 0), shb = parseFloat(hb.shares || 0);
+            const mva = pa > 0 ? pa * sha : ha.totalCost, mvb = pb > 0 ? pb * shb : hb.totalCost;
+            const pnla = pa > 0 ? mva - ha.totalCost : 0, pnlb = pb > 0 ? mvb - hb.totalCost : 0;
+            const pcta = (pa > 0 && parseFloat(qa.referencePrice || pa) > 0) ? (pa - parseFloat(qa.referencePrice || pa)) / parseFloat(qa.referencePrice || pa) * 100 : 0;
+            const pctb = (pb > 0 && parseFloat(qb.referencePrice || pb) > 0) ? (pb - parseFloat(qb.referencePrice || pb)) / parseFloat(qb.referencePrice || pb) * 100 : 0;
+            let va, vb;
+            switch (currentSort.key) {
+                case 'name': va = a.toLowerCase(); vb = b.toLowerCase(); break;
+                case 'price': va = pa; vb = pb; break;
+                case 'change': va = pcta; vb = pctb; break;
+                case 'pnl': va = pnla; vb = pnlb; break;
+                default: va = a.toLowerCase(); vb = b.toLowerCase();
+            }
+            if (typeof va === 'string') return currentSort.asc ? va.localeCompare(vb) : vb.localeCompare(va);
+            return currentSort.asc ? (va - vb) : (vb - va);
+        });
+
+        syms.forEach(sym => {
             if (sym === 'yearlyStats') return;
             const h = holdings[sym];
             if (h.shares <= 0.001) return;
@@ -207,6 +270,263 @@ document.addEventListener('DOMContentLoaded', () => {
         if (pt) pt.textContent = '今年度總盈虧 (' + curY + ')';
     }
 
+    function renderAssetRow2(trades, holdings, quotes) {
+        try {
+            const curY = new Date().getFullYear().toString();
+            let totalMV = 0, totalCost = 0, totalDiv = 0;
+            const cashflows = [{ date: new Date(), amount: 0 }];
+            Object.keys(holdings).forEach(sym => {
+                if (sym === 'yearlyStats' || !holdings[sym] || holdings[sym].shares <= 0.001) return;
+                const h = holdings[sym];
+                const q = quotes[sym] || quotes[sym.split('.')[0]] || {};
+                const price = parseFloat(q.price || 0);
+                const shares = parseFloat(h.shares || 0);
+                const mv = price > 0 ? (price * shares) : (h.totalCost || 0);
+                if (!isNaN(mv)) totalMV += mv;
+                if (!isNaN(h.totalCost)) totalCost += h.totalCost;
+                const actions = (CorporateActions && typeof CorporateActions.getActions === 'function') ? (CorporateActions.getActions(sym) || []) : [];
+                const monthlyDividends = {};
+                for (let m = 1; m <= 12; m++) monthlyDividends[m] = 0;
+                actions.forEach(a => {
+                    if (!a.ex_date) return;
+                    const [y, m] = a.ex_date.split('-');
+                    const month = parseInt(m);
+                    if (isNaN(month) || month < 1 || month > 12) return;
+                    if ((a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0) {
+                        if (y === curY) {
+                            monthlyDividends[month] = a.cash_dividend;
+                        }
+                    }
+                });
+                // For months without current year data, look back in time (most recent year first)
+                [...actions].sort((a, b) => (b.ex_date || '').localeCompare(a.ex_date || '')).forEach(a => {
+                    if (!a.ex_date) return;
+                    const [y, m] = a.ex_date.split('-');
+                    const month = parseInt(m);
+                    if (isNaN(month) || month < 1 || month > 12) return;
+                    if ((a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0) {
+                        if (y !== curY && monthlyDividends[month] === 0) {
+                            monthlyDividends[month] = a.cash_dividend;
+                        }
+                    }
+                });
+                totalDiv += Object.values(monthlyDividends).reduce((sum, dps) => sum + dps * shares, 0);
+            });
+            trades.forEach(t => {
+                const sym = t.symbol || t.stock_id || t.stockId;
+                if (!sym) return;
+                const date = new Date(t.date || t.timestamp || t.tradeDate || t.trade_date);
+                if (isNaN(date.getTime())) return;
+                const side = String(t.side || t.type || '').toUpperCase();
+                const qty = Math.abs(parseFloat(t.quantity || t.shares || 0));
+                const price = parseFloat(t.price || 0);
+                const fee = parseFloat(t.fee || 0);
+                const tax = parseFloat(t.tax || 0);
+                if (!qty || !price) return;
+                if (side.includes('BUY') || side.includes('買')) {
+                    cashflows.push({ date, amount: -(qty * price + fee) });
+                } else if (side.includes('SELL') || side.includes('賣')) {
+                    cashflows.push({ date, amount: qty * price - fee - tax });
+                }
+            });
+            Object.keys(holdings).filter(s => s !== 'yearlyStats' && holdings[s].shares > 0.001).forEach(sym => {
+                const h = holdings[sym];
+                const q = quotes[sym] || quotes[sym.split('.')[0]] || {};
+                const price = parseFloat(q.price || 0);
+                const shares = parseFloat(h.shares || 0);
+                const mv = price > 0 ? (price * shares) : (h.totalCost || 0);
+                if (mv > 0) cashflows.push({ date: new Date(), amount: mv });
+            });
+            let irr = 0;
+            if (cashflows.length >= 2 && typeof calculateXIRR === 'function') {
+                irr = calculateXIRR(cashflows);
+            }
+            const totalReturn = totalCost > 0 ? ((totalMV - totalCost) / totalCost * 100) : 0;
+            const retEl = document.getElementById('total-return-pct');
+            if (retEl) { retEl.textContent = totalReturn.toFixed(2) + '%'; retEl.className = 'text-2xl md:text-3xl font-mono font-bold ' + (totalReturn >= 0 ? 'text-red-500' : 'text-green-500'); }
+            const irrEl = document.getElementById('irr-value');
+            if (irrEl) irrEl.textContent = irr !== 0 ? (irr * 100).toFixed(2) + '%' : '--';
+            const divEl = document.getElementById('dividend-estimate');
+            if (divEl) divEl.textContent = totalDiv > 0 ? '$' + formatNumber(totalDiv, 0) : '--';
+        } catch(e) { console.error('renderAssetRow2 error:', e); }
+    }
+
+    async function renderExchangeRates() {
+        try {
+            const data = await api.fetchExchangeRates();
+            const section = document.getElementById('exchange-rate-section');
+            const grid = document.getElementById('exchange-rate-grid');
+            const dateEl = document.getElementById('exchange-rate-date');
+            if (!data || !data.rates || !data.rates.length) { if (section) section.classList.add('hidden'); return; }
+            if (section) section.classList.remove('hidden');
+            if (dateEl) dateEl.textContent = '更新: ' + data.date;
+            if (grid) {
+                const maxRate = Math.max(...data.rates.map(r => r.rate || 0));
+                grid.innerHTML = data.rates.map(r => {
+                    const rate = r.rate || 0;
+                    const isHigh = rate >= (maxRate * 0.5);
+                    return '<div class="bg-white dark:bg-[#161b22] p-3 md:p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300 flex items-center space-x-3">' +
+                        '<span class="text-xl">' + r.flag + '</span>' +
+                        '<div class="min-w-0 flex-1"><div class="text-[10px] text-gray-500 font-bold">' + r.code + '</div>' +
+                        '<div class="text-sm font-mono font-bold ' + (isHigh ? 'text-red-500' : 'text-green-500') + '">' + (rate >= 1 ? rate.toFixed(2) : rate.toFixed(4)) + '</div></div></div>';
+                }).join('');
+            }
+        } catch(e) { console.error('renderExchangeRates error:', e); }
+    }
+
+    async function renderMarketSummary(quotes) {
+        try {
+            const section = document.getElementById('market-summary-section');
+            const content = document.getElementById('market-summary-content');
+            if (!section || !content) return;
+            const indexSymbols = ['IX0001', 'IX0043', '^DJI', '^IXIC', '^GSPC', '^SOX', 'TSM'];
+            let allQuotes = {};
+            try { allQuotes = await api.fetchQuotes(indexSymbols); } catch(e) {}
+            if (Object.keys(allQuotes).length === 0) { section.classList.add('hidden'); return; }
+            section.classList.remove('hidden');
+            const formatIdx = (val) => { const n = parseFloat(val); return isNaN(n) || n === 0 ? '--' : n.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1}); };
+            const getPctColor = (pct) => parseFloat(pct || 0) >= 0 ? 'text-red-500' : 'text-green-500';
+            const getItem = (sym) => {
+                const clean = sym.replace('^', '').toUpperCase();
+                return allQuotes[sym] || allQuotes['^' + clean] || allQuotes[clean] ||
+                    (clean === 'IX0001' ? (allQuotes['TSE'] || allQuotes['^TWII'] || allQuotes['TWII']) : null) ||
+                    (clean === 'IX0043' ? (allQuotes['OTC'] || allQuotes['^TWOII'] || allQuotes['TWOII']) : null) ||
+                    { price: 0, changePercent: 0, source: 'N/A', date: '--' };
+            };
+            const getDateBadge = (item) => {
+                if (item.source === 'REALTIME' || item.source === 'REALTIME_CHART') return '<span class="ml-1 animate-pulse text-blue-500">📡</span>';
+                if (item.date && item.date !== '--') return '<span class="ml-1 text-[8px] bg-gray-100 dark:bg-gray-800 text-gray-400 px-1 rounded">' + item.date.substring(5) + '</span>';
+                return '';
+            };
+            const formatPct = (val) => { const n = parseFloat(val); if (isNaN(n)) return '0.00'; return (n >= 0 ? '+' : '') + n.toFixed(2); };
+            const tse = getItem('IX0001'), otc = getItem('IX0043'), dji = getItem('DJI'), sp = getItem('GSPC'), nas = getItem('IXIC'), sox = getItem('SOX'), tsm = getItem('TSM');
+            content.innerHTML = '<div class="bg-white dark:bg-[#161b22] p-4 md:p-5 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">' +
+                '<div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">台股市場</div>' +
+                '<div class="flex justify-between mb-3"><div><div class="text-[10px] text-gray-500 flex items-center">加權 ' + getDateBadge(tse) + '</div><div class="text-xl font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(tse.price) + '</div><div class="' + getPctColor(tse.changePercent) + ' font-mono font-bold text-xs">' + formatPct(tse.changePercent) + '%</div></div>' +
+                '<div class="text-right"><div class="text-[10px] text-gray-500 flex items-center justify-end">櫃買 ' + getDateBadge(otc) + '</div><div class="text-xl font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(otc.price) + '</div><div class="' + getPctColor(otc.changePercent) + ' font-mono font-bold text-xs">' + formatPct(otc.changePercent) + '%</div></div></div></div>' +
+                '<div class="bg-white dark:bg-[#161b22] p-4 md:p-5 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">' +
+                '<div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">美股</div>' +
+                '<div class="grid grid-cols-2 gap-3">' +
+                '<div><div class="text-[10px] text-gray-500 flex items-center">道瓊 ' + getDateBadge(dji) + '</div><div class="text-base font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(dji.price) + '</div><div class="' + getPctColor(dji.changePercent) + ' text-[10px] font-mono font-bold">' + formatPct(dji.changePercent) + '%</div></div>' +
+                '<div><div class="text-[10px] text-gray-500 flex items-center">標普 ' + getDateBadge(sp) + '</div><div class="text-base font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(sp.price) + '</div><div class="' + getPctColor(sp.changePercent) + ' text-[10px] font-mono font-bold">' + formatPct(sp.changePercent) + '%</div></div>' +
+                '<div><div class="text-[10px] text-gray-500 flex items-center">納指 ' + getDateBadge(nas) + '</div><div class="text-base font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(nas.price) + '</div><div class="' + getPctColor(nas.changePercent) + ' text-[10px] font-mono font-bold">' + formatPct(nas.changePercent) + '%</div></div>' +
+                '<div><div class="text-[10px] text-blue-500 font-bold flex items-center">費半 ' + getDateBadge(sox) + '</div><div class="text-base font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(sox.price) + '</div><div class="' + getPctColor(sox.changePercent) + ' text-[10px] font-mono font-bold">' + formatPct(sox.changePercent) + '%</div></div></div></div>';
+        } catch(e) { console.error('renderMarketSummary error:', e); }
+    }
+
+    async function loadAndRenderLiar() {
+        try {
+            const data = await api.fetchLocalJson('daily/liar.json').catch(() => null);
+            const mainContainer = document.getElementById('liar-container');
+            const section = document.getElementById('liar-section');
+            if (!data || !data.data || data.data.length === 0) {
+                if (section) section.classList.add('hidden');
+                return;
+            }
+            if (section) section.classList.remove('hidden');
+            let stocksMeta = {};
+            try {
+                const meta = await api.getStocksMeta();
+                if (meta && Array.isArray(meta.stocks)) {
+                    meta.stocks.forEach(s => { stocksMeta[s.symbol] = s.name; });
+                }
+            } catch(e) {}
+            const getStatusBadge = (status) => {
+                const map = { 'LIE': { label: '說謊', color: 'bg-red-500', icon: '🐜' }, 'HONEST': { label: '誠實', color: 'bg-green-500', icon: '✅' }, 'PENDING': { label: '追蹤中', color: 'bg-orange-500', icon: '🕒' } };
+                const s = map[status] || map['PENDING'];
+                return '<span class="' + s.color + ' text-white text-[10px] px-2 py-0.5 rounded-full font-bold flex items-center shadow-sm"><span class="mr-1">' + s.icon + '</span>' + s.label + '</span>';
+            };
+            const renderCard = (item) => {
+                const name = stocksMeta[item.stockId] || stocksMeta[item.stockId.split('.')[0]] || '';
+                const isUpgrade = item.sentiment === 'bullish';
+                const sentimentColor = isUpgrade ? 'text-red-500' : 'text-green-500';
+                return '<div class="flex-none w-72 p-4 bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 cursor-pointer hover:border-blue-500/50 transition-all shadow-sm group" onclick="window.StockDetail.show(\'' + item.stockId + '\')">' +
+                    '<div class="flex justify-between items-start mb-3"><div><span class="text-[10px] ' + (isUpgrade ? 'bg-red-500' : 'bg-green-500') + ' text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider">' + item.brokerName + '</span><div class="mt-1 text-xs font-mono font-bold text-gray-900 dark:text-white">' + item.stockId + ' <span class="text-gray-400 font-normal ml-1">' + name + '</span></div></div>' +
+                    getStatusBadge(item.honestyStatus) + '</div>' +
+                    '<div class="text-sm font-bold text-gray-800 dark:text-gray-200 line-clamp-2 mb-3 leading-snug h-10 group-hover:text-blue-500 transition-colors">' + item.newsTitle + '</div>' +
+                    '<div class="flex justify-between items-center pt-3 border-t border-gray-100 dark:border-gray-800"><div class="text-center"><div class="text-[8px] text-gray-400 uppercase">目標價</div><div class="text-sm font-mono font-bold ' + sentimentColor + '">' + (item.targetPrice > 0 ? item.targetPrice : '--') + '</div></div>' +
+                    '<div class="text-center"><div class="text-[8px] text-gray-400 uppercase">累積進出</div><div class="text-sm font-mono font-bold ' + (item.cumulativeVolume >= 0 ? 'text-red-500' : 'text-green-500') + '">' + (item.cumulativeVolume > 0 ? '+' : '') + Math.round(item.cumulativeVolume) + ' 張</div></div></div></div>';
+            };
+            if (mainContainer) mainContainer.innerHTML = data.data.map(item => renderCard(item)).join('');
+        } catch(e) { console.error('loadAndRenderLiar error:', e); }
+    }
+
+    function renderBetaWarning(holdings) {
+        try {
+            const el = document.getElementById('beta-warning');
+            const textEl = document.getElementById('beta-text');
+            if (!el || !textEl) return;
+            let totalWeightedBeta = 0, totalWeight = 0;
+            Object.keys(holdings).forEach(sym => {
+                if (sym === 'yearlyStats' || !holdings[sym] || holdings[sym].shares <= 0.001) return;
+                const weight = holdings[sym].totalCost || 0;
+                totalWeight += weight;
+                totalWeightedBeta += (holdings[sym].beta || 1.0) * weight;
+            });
+            const beta = totalWeight > 0 ? totalWeightedBeta / totalWeight : 1.0;
+            if (beta > 1.5) { el.classList.remove('hidden'); textEl.textContent = '投資組合平均 Beta: ' + beta.toFixed(2); }
+            else { el.classList.add('hidden'); }
+        } catch(e) { console.error('renderBetaWarning error:', e); }
+    }
+
+    function renderClosedHoldings(trades) {
+        try {
+            const section = document.getElementById('history-section');
+            const body = document.getElementById('history-body');
+            const count = document.getElementById('history-count');
+            if (!section || !body || !count) return;
+            const ytdRef = window._ytdRefCache || {};
+            const holdings = CorporateActions.recalculateHoldings(trades, true, ytdRef.prices || {});
+            const closed = Object.keys(holdings).filter(s => s !== 'yearlyStats' && holdings[s].shares <= 0.001);
+            if (closed.length === 0) { section.classList.add('hidden'); return; }
+            section.classList.remove('hidden');
+            count.textContent = closed.length + ' 筆';
+            body.innerHTML = closed.map(sym => {
+                const h = holdings[sym];
+                const totalPnl = (h.realizedPNL || 0) + (h.dividend || 0);
+                return '<div class="p-4 flex justify-between items-center opacity-60 hover:opacity-100 transition-opacity">' +
+                    '<div><div class="text-sm font-bold">' + sym + '</div><div class="text-[10px] text-gray-500">' + (h.name || '') + '</div></div>' +
+                    '<div class="text-right"><div class="text-sm font-bold ' + (totalPnl >= 0 ? 'text-red-500' : 'text-green-500') + '">' + (totalPnl >= 0 ? '+' : '') + formatNumber(totalPnl, 0) + '</div></div></div>';
+            }).join('');
+            const toggle = document.getElementById('history-toggle');
+            const chevron = document.getElementById('history-chevron');
+            if (toggle && !toggle.dataset.listener) {
+                toggle.dataset.listener = '1';
+                toggle.addEventListener('click', () => {
+                    const isOpen = !body.classList.contains('hidden');
+                    body.classList.toggle('hidden');
+                    if (chevron) chevron.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(90deg)';
+                });
+            }
+        } catch(e) { console.error('renderClosedHoldings error:', e); }
+    }
+
+    function setupSortHandlers() {
+        document.querySelectorAll('th[data-sort]').forEach(th => {
+            th.addEventListener('click', () => {
+                const key = th.dataset.sort;
+                if (currentSort.key === key) currentSort.asc = !currentSort.asc;
+                else { currentSort.key = key; currentSort.asc = true; }
+                document.querySelectorAll('th[data-sort] .sort-icon').forEach(icon => icon.textContent = '');
+                const icon = th.querySelector('.sort-icon');
+                if (icon) icon.textContent = currentSort.asc ? ' ▲' : ' ▼';
+                renderPortfolio(lastTrades, currentQuotes);
+            });
+        });
+    }
+
+    async function exportTrades() {
+        const trades = await db.getAllTrades();
+        const blob = new Blob([JSON.stringify({ transactions: trades, exportedAt: new Date().toISOString() })], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'TWStock_backup_' + new Date().toISOString().split('T')[0] + '.json';
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+    window.exportTrades = exportTrades;
+
     async function deleteStockTrades(symbol) {
         if (!confirm('確定要刪除 ' + symbol + ' 的紀錄嗎？')) return;
         const trades = await db.getAllTrades();
@@ -227,5 +547,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.addEventListener('twstock:ready', () => init());
     window.api = api; window.db = db; window.CorporateActions = CorporateActions;
+    setupSortHandlers();
     if (localStorage.getItem('twstock_secret')) init();
 });

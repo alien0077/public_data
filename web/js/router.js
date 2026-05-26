@@ -31,6 +31,10 @@ const ROUTES = {
     'favorites': {
         title: '我的收藏',
         subPages: []
+    },
+    'settings': {
+        title: '設定 Settings',
+        subPages: []
     }
 };
 
@@ -50,7 +54,7 @@ class Router {
 
         // 初始載入第一頁
         try {
-            this.switchPage('dashboard');
+            this.switchPage('portfolio');
         } catch (e) {
             console.error("Router: Failed to load initial page", e);
         }

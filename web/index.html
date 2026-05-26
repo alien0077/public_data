@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TWStock Pro V2</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -70,9 +73,6 @@
         <aside class="hidden md:flex w-64 flex-col bg-white dark:bg-[#161b22] border-r border-gray-200 dark:border-gray-800 transition-colors duration-300">
             <div class="p-6 font-bold text-2xl text-blue-600 dark:text-blue-500 border-b border-gray-100 dark:border-gray-800">TWStock Pro</div>
             <nav class="flex-1 mt-4 px-3 space-y-1">
-                <a href="#" id="nav-dashboard" class="nav-item flex items-center p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                    <span class="mr-3">🏠</span> 儀表板總覽
-                </a>
                 <a href="#" id="nav-portfolio" class="nav-item flex items-center p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <span class="mr-3">📊</span> 我的持股
                 </a>
@@ -91,8 +91,11 @@
                 <a href="#" id="nav-favorites" class="nav-item flex items-center p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <span class="mr-3">❤️</span> 我的收藏
                 </a>
+                <a href="#" id="nav-settings" class="nav-item flex items-center p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <span class="mr-3">⚙️</span> 設定
+                </a>
                 
-                <div class="pt-4 pb-2 px-3 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider">設定</div>
+                <div class="pt-4 pb-2 px-3 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider">工具</div>
                 <button id="sidebar-import" class="w-full flex items-center p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <span class="mr-3">📥</span> 匯入資料
                 </button>
@@ -143,9 +146,75 @@
                 <div id="view-dashboard" class="hidden"></div>
 
                 <!-- Portfolio View -->
-                <div id="view-portfolio">
-                    <!-- Liar Detection Section -->
-                    <div id="liar-section" class="hidden mb-8">
+                <div id="view-portfolio" class="space-y-6">
+
+                    <!-- 1. Beta Risk Warning (hidden) -->
+                    <div id="beta-warning" class="hidden p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center shadow-sm">
+                        <span class="text-2xl mr-4">🔴</span>
+                        <div>
+                            <p class="text-red-500 font-bold text-sm">當前組合對大盤極度敏感，崩盤風險高</p>
+                            <p class="text-xs text-red-400/70 mt-0.5" id="beta-text">投資組合平均 Beta: --</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Asset Overview Row 1 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                        <div class="bg-white dark:bg-[#161b22] p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300">
+                            <p class="text-gray-500 text-xs md:text-sm mb-1">總市值 (TWD)</p>
+                            <h3 class="text-2xl md:text-3xl font-mono font-bold text-gray-900 dark:text-white" id="total-market-value">--</h3>
+                        </div>
+                        <div class="bg-white dark:bg-[#161b22] p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300">
+                            <p class="text-gray-500 text-xs md:text-sm mb-1">日損益</p>
+                            <h3 class="text-2xl md:text-3xl font-mono font-bold" id="daily-pnl">--</h3>
+                        </div>
+                        <div class="bg-white dark:bg-[#161b22] p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300">
+                            <p class="text-gray-500 text-xs md:text-sm mb-1">總盈虧</p>
+                            <h3 class="text-2xl md:text-3xl font-mono font-bold" id="total-pnl">--</h3>
+                            <p class="text-xs mt-1" id="total-pnl-percent">--</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Asset Overview Row 2 -->
+                    <div id="asset-overview-row2" class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                        <div class="bg-white dark:bg-[#161b22] p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300">
+                            <p class="text-gray-500 text-xs md:text-sm mb-1">總報酬率</p>
+                            <h3 class="text-2xl md:text-3xl font-mono font-bold" id="total-return-pct">--</h3>
+                        </div>
+                        <div class="bg-white dark:bg-[#161b22] p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300">
+                            <p class="text-gray-500 text-xs md:text-sm mb-1">年化報酬 (IRR)</p>
+                            <h3 class="text-2xl md:text-3xl font-mono font-bold" id="irr-value">--</h3>
+                        </div>
+                        <div class="bg-white dark:bg-[#161b22] p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300">
+                            <p class="text-gray-500 text-xs md:text-sm mb-1">預估股息</p>
+                            <h3 class="text-2xl md:text-3xl font-mono font-bold text-green-500" id="dividend-estimate">--</h3>
+                        </div>
+                    </div>
+
+                    <!-- 3. Exchange Rates (hidden) -->
+                    <div id="exchange-rate-section" class="hidden">
+                        <div class="flex items-center mb-4">
+                            <span class="text-xl mr-2">💱</span>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white">國際匯率</h3>
+                            <span id="exchange-rate-date" class="ml-2 text-[10px] text-gray-500"></span>
+                        </div>
+                        <div id="exchange-rate-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <!-- Rendered by JS -->
+                        </div>
+                    </div>
+
+                    <!-- 4. Market Summary (hidden) -->
+                    <div id="market-summary-section" class="hidden">
+                        <div class="flex items-center mb-4">
+                            <span class="text-xl mr-2">📊</span>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white">市場概況</h3>
+                        </div>
+                        <div id="market-summary-content" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Rendered by JS -->
+                        </div>
+                    </div>
+
+                    <!-- 5. Liar Detection Section -->
+                    <div id="liar-section" class="hidden">
                         <div class="flex items-center mb-4">
                             <span class="text-xl mr-2">🎭</span>
                             <h3 class="text-lg font-bold text-gray-900 dark:text-white">外資口是心非偵測 (說謊實錄)</h3>
@@ -155,28 +224,11 @@
                         </div>
                     </div>
 
-                    <!-- Dashboard Cards -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8">
-                        <div class="bg-white dark:bg-[#161b22] p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300">
-                            <p class="text-gray-500 text-xs md:text-sm mb-1">總市值 (TWD)</p>
-                            <h3 class="text-2xl md:text-3xl font-mono font-bold text-gray-900 dark:text-white" id="total-market-value">--</h3>
-                        </div>
-                        <div class="bg-white dark:bg-[#161b22] p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300">
-                            <p class="text-gray-500 text-xs md:text-sm mb-1">總盈虧</p>
-                            <h3 class="text-2xl md:text-3xl font-mono font-bold" id="total-pnl">--</h3>
-                            <p class="text-xs mt-1" id="total-pnl-percent">--</p>
-                        </div>
-                        <div class="bg-white dark:bg-[#161b22] p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300">
-                            <p class="text-gray-500 text-xs md:text-sm mb-1">今日盈虧</p>
-                            <h3 class="text-2xl md:text-3xl font-mono font-bold" id="daily-pnl">--</h3>
-                        </div>
-                    </div>
-
-                    <!-- Portfolio Table -->
+                    <!-- 6. Portfolio Table -->
                     <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm transition-colors duration-300">
                         <div class="p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
                             <div class="flex items-center">
-                                <h3 class="font-bold text-gray-900 dark:text-white">持股清單</h3>
+                                <h3 class="font-bold text-gray-900 dark:text-white">即時行情 (未結算持股)</h3>
                                 <span id="price-source-indicator" class="ml-3"></span>
                             </div>
                             <div class="flex space-x-2">
@@ -188,13 +240,13 @@
                             <table class="w-full text-left">
                                 <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 dark:text-gray-500 text-[10px] md:text-xs uppercase">
                                     <tr>
-                                        <th class="px-3 md:px-6 py-4">代碼/名稱</th>
-                                        <th class="px-3 md:px-6 py-4 text-right">現價</th>
-                                        <th class="px-3 md:px-6 py-4 text-right">漲跌</th>
+                                        <th class="px-3 md:px-6 py-4 cursor-pointer hover:text-blue-500 select-none" data-sort="name">代碼/名稱 <span class="sort-icon"></span></th>
+                                        <th class="px-3 md:px-6 py-4 text-right cursor-pointer hover:text-blue-500 select-none" data-sort="price">現價 <span class="sort-icon"></span></th>
+                                        <th class="px-3 md:px-6 py-4 text-right cursor-pointer hover:text-blue-500 select-none" data-sort="change">漲跌 <span class="sort-icon"></span></th>
                                         <th class="px-3 md:px-6 py-4 text-right hidden sm:table-cell">股數 (未結算)</th>
                                         <th class="px-3 md:px-6 py-4 text-right hidden sm:table-cell">平均成本</th>
                                         <th class="px-3 md:px-6 py-4 text-right hidden md:table-cell">市值</th>
-                                        <th class="px-3 md:px-6 py-4 text-right">盈虧</th>
+                                        <th class="px-3 md:px-6 py-4 text-right cursor-pointer hover:text-blue-500 select-none" data-sort="pnl">盈虧 <span class="sort-icon"></span></th>
                                         <th class="px-3 md:px-6 py-4 text-right">操作</th>
                                     </tr>
                                 </thead>
@@ -208,6 +260,25 @@
                             </table>
                         </div>
                     </div>
+
+                    <!-- 7. Closed Holdings (hidden) -->
+                    <div id="history-section" class="hidden">
+                        <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm transition-colors duration-300">
+                            <div class="p-4 border-b border-gray-100 dark:border-gray-800 cursor-pointer select-none hover:bg-gray-50 dark:hover:bg-gray-800/50" id="history-toggle">
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center">
+                                        <h3 class="font-bold text-gray-900 dark:text-white">歷史紀錄 (已結算)</h3>
+                                        <span id="history-count" class="ml-2 text-xs text-gray-500"></span>
+                                    </div>
+                                    <span id="history-chevron" class="text-gray-400 transition-transform">▶</span>
+                                </div>
+                            </div>
+                            <div id="history-body" class="hidden divide-y divide-gray-100 dark:divide-gray-800">
+                                <!-- Rendered by JS -->
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Trends View -->
@@ -239,6 +310,7 @@
                 <div id="view-performance" class="hidden h-full flex flex-col"></div>
                 <div id="view-addTrade" class="hidden h-full flex flex-col"></div>
                 <div id="view-favorites" class="hidden h-full flex flex-col"></div>
+                <div id="view-settings" class="hidden h-full flex flex-col"></div>
 
             </div>
 
@@ -294,29 +366,30 @@
 
     <!-- Mobile Bottom Navigation -->
     <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#161b22] border-t border-gray-800 flex justify-around items-center h-16 z-50">
-        <button id="mobile-nav-dashboard" class="flex flex-col items-center text-blue-400">
-            <span class="text-xl">🏠</span>
-            <span class="text-[10px] mt-1">首頁</span>
-        </button>
-        <button id="mobile-nav-portfolio" class="flex flex-col items-center text-gray-500">
+        <button id="mobile-nav-portfolio" class="flex flex-col items-center text-blue-400">
             <span class="text-xl">📊</span>
-            <span class="text-[10px] mt-1">資產</span>
+            <span class="text-[10px] mt-1">持股</span>
         </button>
         <button id="mobile-nav-trendHunter" class="flex flex-col items-center text-gray-500">
             <span class="text-xl">🌊</span>
             <span class="text-[10px] mt-1">趨勢</span>
         </button>
-        <button id="mobile-nav-favorites" class="flex flex-col items-center text-gray-500">
-            <span class="text-xl">❤️</span>
-            <span class="text-[10px] mt-1">收藏</span>
+        <button id="mobile-nav-assetRisk" class="flex flex-col items-center text-gray-500">
+            <span class="text-xl">🛡️</span>
+            <span class="text-[10px] mt-1">風險</span>
         </button>
-        <button id="mobile-nav-import" class="flex flex-col items-center text-gray-500">
-            <span class="text-xl">📥</span>
-            <span class="text-[10px] mt-1">匯入</span>
+        <button id="mobile-nav-performance" class="flex flex-col items-center text-gray-500">
+            <span class="text-xl">🏆</span>
+            <span class="text-[10px] mt-1">戰績</span>
+        </button>
+        <button id="mobile-nav-settings" class="flex flex-col items-center text-gray-500">
+            <span class="text-xl">⚙️</span>
+            <span class="text-[10px] mt-1">設定</span>
         </button>
     </nav>
 
     <script src="js/auth.js"></script>
-    <script type="module" src="js/app.js"></script>
+    <script src="js/irr.js"></script>
+    <script type="module" src="js/app.js?v=8"></script>
 </body>
 </html>

@@ -358,38 +358,34 @@ export const AssetRisk = {
             activeSymbols.forEach(sym => {
                 const h = holdings[sym];
                 const actions = CorporateActions.getActions(sym);
+                const dividendActions = actions.filter(a => a.ex_date && (a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0);
                 
-                // 找出該股最近一年（或去年）的配息總額作為估計
-                const recentYearActions = actions.filter(a => (a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND'));
-                const announcedThisYear = recentYearActions.filter(a => a.ex_date.startsWith(currentYear.toString()));
+                // Fill each month: prefer current year, then most recent historical
+                const monthDiv = {};
+                for (let m = 0; m < 12; m++) monthDiv[m] = 0;
+                dividendActions.filter(a => a.ex_date.startsWith(currentYear.toString())).forEach(a => {
+                    const m = new Date(a.ex_date).getMonth();
+                    monthDiv[m] = a.cash_dividend;
+                });
+                [...dividendActions].sort((a, b) => (b.ex_date || '').localeCompare(a.ex_date || '')).forEach(a => {
+                    const m = new Date(a.ex_date).getMonth();
+                    if (monthDiv[m] === 0) monthDiv[m] = a.cash_dividend;
+                });
                 
                 let estDivPerShare = 0;
-                if (announcedThisYear.length > 0) {
-                    announcedThisYear.forEach(a => {
-                        const month = new Date(a.ex_date).getMonth();
-                        const amt = a.cash_dividend || 0;
-                        monthlyDividends[month] += amt * h.shares;
-                        estDivPerShare += amt;
-                    });
-                } else {
-                    // 參考去年
-                    const lastYear = (currentYear - 1).toString();
-                    const lastYearActions = recentYearActions.filter(a => a.ex_date.startsWith(lastYear));
-                    lastYearActions.forEach(a => {
-                        const month = new Date(a.ex_date).getMonth();
-                        const amt = a.cash_dividend || 0;
-                        monthlyDividends[month] += amt * h.shares;
-                        estDivPerShare += amt;
-                    });
+                for (let m = 0; m < 12; m++) {
+                    monthlyDividends[m] += monthDiv[m] * h.shares;
+                    estDivPerShare += monthDiv[m];
                 }
 
+                const hasCurrentYear = dividendActions.some(a => a.ex_date.startsWith(currentYear.toString()));
                 detailList.push({
                     symbol: sym,
                     name: h.name || sym,
                     shares: h.shares,
                     divPerShare: estDivPerShare,
                     totalPayout: estDivPerShare * h.shares,
-                    isAnnounced: announcedThisYear.length > 0
+                    isAnnounced: hasCurrentYear
                 });
             });
 
@@ -516,23 +512,119 @@ export const AssetRisk = {
     async initSimulation(container) {
         container.innerHTML = `
             <div class="p-6 space-y-6 flex-1 overflow-y-auto">
-                <div class="bg-orange-50 dark:bg-orange-900/10 p-6 rounded-2xl border border-orange-100 dark:border-orange-800/30">
-                    <h3 class="text-lg font-bold text-orange-700 dark:text-orange-400 mb-2">🧪 組合調整模擬器</h3>
-                    <p class="text-xs text-gray-600 dark:text-gray-400">虛擬調整持股權重，評估風險與報酬變化。</p>
+                <div class="bg-blue-50 dark:bg-blue-900/10 p-6 rounded-2xl border border-blue-100 dark:border-blue-800/30">
+                    <h3 class="text-lg font-bold text-blue-700 dark:text-blue-400 mb-2">📊 投資模擬器</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">設定投資金額、期間與預期報酬率，比較單筆投入與定期定額的差異。</p>
                 </div>
-                <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 p-6 space-y-6">
-                    <div class="space-y-4">
-                        <div class="flex justify-between text-xs font-bold"><span class="text-gray-900 dark:text-white">科技股 (Beta 1.4)</span><span class="text-blue-500">45%</span></div>
-                        <input type="range" class="w-full h-1 bg-gray-200 rounded-lg accent-blue-600" value="45">
-                        <div class="flex justify-between text-xs font-bold"><span class="text-gray-900 dark:text-white">金融股 (Beta 0.8)</span><span class="text-blue-500">30%</span></div>
-                        <input type="range" class="w-full h-1 bg-gray-200 rounded-lg accent-blue-600" value="30">
+
+                <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 p-6 space-y-5">
+                    <div class="space-y-4" id="sim-inputs">
+                        <div>
+                            <label class="text-xs font-bold text-gray-500 block mb-1.5">總投資金額 (元)</label>
+                            <input type="text" id="sim-amount" value="1,000,000" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-right font-mono text-lg outline-none focus:border-blue-500 text-gray-900 dark:text-white">
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold text-gray-500 block mb-1.5">投資期間 (月)</label>
+                            <input type="number" id="sim-months" value="240" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-right font-mono text-lg outline-none focus:border-blue-500 text-gray-900 dark:text-white">
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold text-gray-500 block mb-1.5">年化報酬率 (%)</label>
+                            <input type="text" id="sim-return" value="7" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-right font-mono text-lg outline-none focus:border-blue-500 text-gray-900 dark:text-white">
+                        </div>
+                        <button id="sim-run-btn" class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all p-3 rounded-lg font-bold text-white shadow-lg shadow-blue-900/20">
+                            ▶ 開始模擬
+                        </button>
                     </div>
-                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100 dark:border-gray-800">
-                        <div class="text-center"><div class="text-[10px] text-gray-500">預估波動率</div><div class="text-xl font-bold text-gray-900 dark:text-white">12.4%</div></div>
-                        <div class="text-center"><div class="text-[10px] text-gray-500">預估夏普值</div><div class="text-xl font-bold text-gray-900 dark:text-white">1.85</div></div>
+
+                    <div id="sim-results" class="hidden space-y-6 pt-4 border-t border-gray-100 dark:border-gray-800">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div id="sim-lumpsum" class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-xl border border-gray-100 dark:border-gray-800"></div>
+                            <div id="sim-dca" class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-xl border border-gray-100 dark:border-gray-800"></div>
+                        </div>
+                        <div id="sim-annual-breakdown" class="hidden">
+                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">逐年明細</h4>
+                            <div class="overflow-x-auto bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
+                                <table class="w-full text-xs text-left">
+                                    <thead class="bg-gray-50 dark:bg-gray-800 text-gray-500">
+                                        <tr><th class="px-4 py-3">年份</th><th class="px-4 py-3 text-right">年底價值</th><th class="px-4 py-3 text-right">累積投入</th></tr>
+                                    </thead>
+                                    <tbody id="sim-annual-body" class="divide-y divide-gray-100 dark:divide-gray-800"></tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         `;
+
+        document.getElementById('sim-run-btn')?.addEventListener('click', () => {
+            const rawAmt = (document.getElementById('sim-amount')?.value || '').replace(/,/g, '');
+            const amount = parseFloat(rawAmt) || 0;
+            const months = parseInt(document.getElementById('sim-months')?.value || '0') || 0;
+            const annualRate = (parseFloat(document.getElementById('sim-return')?.value || '0') || 0) / 100;
+            if (amount <= 0 || months <= 0) { alert('請輸入有效的金額與期間'); return; }
+            const monthlyRate = Math.pow(1 + annualRate, 1 / 12) - 1;
+            const n = months;
+
+            // Lump sum
+            const lumpSumFinal = amount * Math.pow(1 + monthlyRate, n);
+            const lumpSumReturn = lumpSumFinal - amount;
+            const lumpSumPct = ((lumpSumFinal / amount) - 1) * 100;
+
+            // DCA (monthly investment)
+            const monthlyInvestment = amount / n;
+            let dcaFinal = 0;
+            for (let i = 0; i < n; i++) {
+                dcaFinal += monthlyInvestment * Math.pow(1 + monthlyRate, n - i);
+            }
+            const dcaTotalInvested = amount;
+            const dcaReturn = dcaFinal - dcaTotalInvested;
+            const dcaPct = ((dcaFinal / dcaTotalInvested) - 1) * 100;
+
+            const fmt = (v) => '$' + new Intl.NumberFormat('zh-TW', { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(v));
+            const color = (v) => v >= 0 ? 'text-red-500' : 'text-green-500';
+
+            document.getElementById('sim-lumpsum').innerHTML = '<div class="text-sm font-bold mb-3">單筆投入 (Lump Sum)</div>' +
+                '<div class="flex justify-between mb-2"><span class="text-[10px] text-gray-500">最終價值</span><span class="text-base font-bold font-mono">' + fmt(lumpSumFinal) + '</span></div>' +
+                '<div class="flex justify-between mb-2"><span class="text-[10px] text-gray-500">總報酬</span><span class="text-sm font-bold font-mono ' + color(lumpSumReturn) + '">' + (lumpSumReturn >= 0 ? '+' : '') + fmt(Math.abs(lumpSumReturn)) + '</span></div>' +
+                '<div class="flex justify-between"><span class="text-[10px] text-gray-500">報酬率</span><span class="text-sm font-bold font-mono ' + color(lumpSumReturn) + '">' + lumpSumPct.toFixed(2) + '%</span></div>';
+
+            document.getElementById('sim-dca').innerHTML = '<div class="text-sm font-bold mb-3">定期定額 (DCA)</div>' +
+                '<div class="flex justify-between mb-2"><span class="text-[10px] text-gray-500">最終價值</span><span class="text-base font-bold font-mono">' + fmt(dcaFinal) + '</span></div>' +
+                '<div class="flex justify-between mb-2"><span class="text-[10px] text-gray-500">總報酬</span><span class="text-sm font-bold font-mono ' + color(dcaReturn) + '">' + (dcaReturn >= 0 ? '+' : '') + fmt(Math.abs(dcaReturn)) + '</span></div>' +
+                '<div class="flex justify-between"><span class="text-[10px] text-gray-500">報酬率</span><span class="text-sm font-bold font-mono ' + color(dcaReturn) + '">' + dcaPct.toFixed(2) + '%</span></div>';
+
+            // Annual breakdown (every 12 months)
+            const annualBody = document.getElementById('sim-annual-body');
+            const annualDiv = document.getElementById('sim-annual-breakdown');
+            if (annualBody && annualDiv) {
+                annualBody.innerHTML = '';
+                for (let y = 1; y <= Math.ceil(n / 12); y++) {
+                    const monthsUpToYear = Math.min(y * 12, n);
+                    let yearEndValue = 0;
+                    let totalInv = 0;
+                    for (let i = 0; i < monthsUpToYear; i++) {
+                        yearEndValue += monthlyInvestment * Math.pow(1 + monthlyRate, monthsUpToYear - i);
+                        totalInv += monthlyInvestment;
+                    }
+                    const tr = document.createElement('tr');
+                    tr.className = 'hover:bg-gray-50 dark:hover:bg-gray-800/30';
+                    tr.innerHTML = '<td class="px-4 py-3 font-medium">第 ' + y + ' 年</td>' +
+                        '<td class="px-4 py-3 text-right font-bold font-mono">' + fmt(yearEndValue) + '</td>' +
+                        '<td class="px-4 py-3 text-right text-gray-500 font-mono">' + fmt(totalInv) + '</td>';
+                    annualBody.appendChild(tr);
+                }
+                annualDiv.classList.remove('hidden');
+            }
+
+            document.getElementById('sim-results')?.classList.remove('hidden');
+            document.getElementById('sim-results')?.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Auto-format amount input with commas
+        document.getElementById('sim-amount')?.addEventListener('input', function() {
+            const raw = this.value.replace(/,/g, '').replace(/[^\d]/g, '');
+            if (raw) this.value = parseInt(raw).toLocaleString('zh-TW');
+        });
     }
 };

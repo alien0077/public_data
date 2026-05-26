@@ -377,11 +377,31 @@ export const Dashboard = {
         const currentYear = new Date().getFullYear().toString();
         activeSymbols.forEach(sym => {
             const h = holdings[sym];
-            const actions = CorporateActions.getActions(sym);
-            const thisYearActions = actions.filter(a => a.ex_date.startsWith(currentYear) && (a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND'));
-            const divPerShare = thisYearActions.length > 0 ? thisYearActions.reduce((sum, a) => sum + (a.cash_dividend || 0), 0) : 
-                actions.filter(a => a.ex_date.startsWith((parseInt(currentYear)-1).toString()) && (a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND')).reduce((sum, a) => sum + (a.cash_dividend || 0), 0);
-            estTotalDiv += divPerShare * h.shares;
+            const actions = CorporateActions.getActions(sym) || [];
+            const monthlyDividends = {};
+            for (let m = 1; m <= 12; m++) monthlyDividends[m] = 0;
+            actions.forEach(a => {
+                if (!a.ex_date) return;
+                const [y, m] = a.ex_date.split('-');
+                const month = parseInt(m);
+                if (isNaN(month) || month < 1 || month > 12) return;
+                if ((a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0) {
+                    if (y === currentYear) {
+                        monthlyDividends[month] = a.cash_dividend;
+                    }
+                }
+            });
+            // Fill empty months from historical data (most recent year first)
+            const histDividends = actions
+                .filter(a => a.ex_date && (a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0 && a.ex_date.split('-')[0] !== currentYear)
+                .sort((a, b) => b.ex_date.localeCompare(a.ex_date));
+            histDividends.forEach(a => {
+                const month = parseInt(a.ex_date.split('-')[1]);
+                if (month >= 1 && month <= 12 && monthlyDividends[month] === 0) {
+                    monthlyDividends[month] = a.cash_dividend;
+                }
+            });
+            estTotalDiv += Object.values(monthlyDividends).reduce((sum, dps) => sum + dps * h.shares, 0);
         });
 
         if (divEl) divEl.innerHTML = `
