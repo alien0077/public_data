@@ -219,6 +219,12 @@ export const api = {
         return { metrics: { outer_ratio: 50, amplitude: 1.5, trades_count: 1200, latest_volume: 500, turnover: 0.5 }, quote: q };
     },
     async fetchShareholders(symbol) { try { return await this.fetchLocalJson(`weekly/shareholders/${symbol.split('.')[0]}.json`); } catch (e) { return null; } },
+    async fetchETFHoldings() { try { return await this.fetchLocalJson('quant/etf/outputs/latest_snapshot.json'); } catch (e) { return null; } },
+    async getStockInfo(symbol) {
+        const meta = await this.getStocksMeta();
+        const s = symbol.split('.')[0];
+        return meta.stocks?.find(item => item.symbol === s) || null;
+    },
     async fetchLiarData() { try { return await this.fetchLocalJson(`daily/liar.json`); } catch (err) { return null; } }
 };
 

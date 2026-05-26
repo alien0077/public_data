@@ -10,7 +10,7 @@ import { CorporateActions } from '../corporateActions.js';
 export const StockDetail = {
     currentSymbol: null,
     currentTab: 'K線',
-    tabs: ['走勢', 'K線', '健檢', '盤面', '營收', '獲利', '股利', '大股東', '明細'],
+    tabs: ['走勢', 'K線', '健檢', '盤面', '基本', '營收', '獲利', '股利', '大股東', '明細'],
 
     async show(symbol) {
         this.currentSymbol = symbol;
@@ -126,6 +126,7 @@ export const StockDetail = {
                 case 'K線': await this.renderKLineTab(contentContainer); break;
                 case '健檢': await this.renderHealthTab(contentContainer); break;
                 case '盤面': await this.renderMarketTab(contentContainer); break;
+                case '基本': await this.renderFundamentalTab(contentContainer); break;
                 case '營收': await this.renderRevenueTab(contentContainer); break;
                 case '獲利': await this.renderProfitTab(contentContainer); break;
                 case '股利': await this.renderDividendTab(contentContainer); break;
@@ -418,6 +419,162 @@ export const StockDetail = {
                 }).join('')}
             </div></div>`;
         } catch(err) { container.innerHTML = `<div class="p-8 text-center text-red-500">載入失敗: ${err.message}</div>`; }
+    },
+
+    async renderFundamentalTab(container) {
+        const [stockInfo, quarterly, quoteMap, etfSnapshot] = await Promise.all([
+            api.getStockInfo(this.currentSymbol),
+            api.fetchFinancials(this.currentSymbol, 'quarterly'),
+            api.fetchQuotes([this.currentSymbol]),
+            api.fetchETFHoldings()
+        ]);
+
+        const isETF = stockInfo?.official_sector === 'ETF' || stockInfo?.industry === 'ETF';
+        if (isETF && etfSnapshot?.[this.currentSymbol]) {
+            this.renderETFComposition(container, etfSnapshot[this.currentSymbol]);
+            return;
+        }
+
+        const price = quoteMap[this.currentSymbol]?.price || 0;
+        const sorted = (quarterly?.data || []).sort((a, b) => b.date.localeCompare(a.date));
+        const last4 = sorted.slice(0, 4);
+        const trailingEPS = last4.reduce((s, q) => s + (q.eps || 0), 0);
+        const per = price > 0 && trailingEPS > 0 ? (price / trailingEPS).toFixed(2) : '--';
+        const latest = sorted[0] || {};
+        const themes = stockInfo?.themes || [];
+        const sector = stockInfo?.official_sector || stockInfo?.industry || '--';
+        const subIndustry = stockInfo?.sub_industry || '--';
+
+        container.innerHTML = `
+            <div class="p-4 space-y-6 flex-1 overflow-y-auto no-scrollbar pb-12">
+                <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-5">
+                    <h3 class="text-lg font-bold mb-4">${stockInfo?.name || this.currentSymbol}</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div><span class="text-gray-500">產業</span><br><span class="font-bold">${sector}</span></div>
+                        <div><span class="text-gray-500">次產業</span><br><span class="font-bold">${subIndustry}</span></div>
+                    </div>
+                    ${themes.length > 0 ? `
+                    <div class="mt-4">
+                        <span class="text-xs text-gray-500">主題標籤</span>
+                        <div class="flex flex-wrap gap-1.5 mt-1">
+                            ${themes.map(t => `<span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold">${t}</span>`).join('')}
+                        </div>
+                    </div>` : ''}
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div class="bg-gray-50 dark:bg-gray-900 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                        <div class="text-[10px] text-gray-500 mb-1">本益比 (PER)</div>
+                        <div class="text-xl font-bold ${per !== '--' ? 'text-blue-500' : 'text-gray-400'}">${per}x</div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-900 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                        <div class="text-[10px] text-gray-500 mb-1">每股盈餘 (EPS)</div>
+                        <div class="text-xl font-bold">${this.formatValue(latest.eps)}</div>
+                        <div class="text-[10px] ${latest.yoy >= 0 ? 'text-red-500' : 'text-green-500'}">YoY ${latest.yoy != null ? `${latest.yoy}%` : '--'}</div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-900 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                        <div class="text-[10px] text-gray-500 mb-1">ROE</div>
+                        <div class="text-xl font-bold text-orange-500">${latest.roe != null ? `${latest.roe}%` : '--'}</div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-900 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                        <div class="text-[10px] text-gray-500 mb-1">毛利率</div>
+                        <div class="text-xl font-bold text-green-500">${latest.gm != null ? `${latest.gm}%` : '--'}</div>
+                    </div>
+                </div>
+
+                ${quarterly?.data ? `
+                <div class="overflow-x-auto bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
+                    <table class="w-full text-xs text-left">
+                        <thead class="bg-gray-50 dark:bg-gray-800 text-gray-500">
+                            <tr>
+                                <th class="px-4 py-3">季度</th>
+                                <th class="px-4 py-3 text-right">EPS</th>
+                                <th class="px-4 py-3 text-right">毛利率</th>
+                                <th class="px-4 py-3 text-right">營益率</th>
+                                <th class="px-4 py-3 text-right">淨利率</th>
+                                <th class="px-4 py-3 text-right">ROE</th>
+                                <th class="px-4 py-3 text-right">ROA</th>
+                                <th class="px-4 py-3 text-right">YoY</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                            ${sorted.slice(0, 8).map(item => `
+                            <tr>
+                                <td class="px-4 py-3 font-medium">${item.period}</td>
+                                <td class="px-4 py-3 text-right font-bold">${this.formatValue(item.eps)}</td>
+                                <td class="px-4 py-3 text-right">${item.gm != null ? item.gm + '%' : '--'}</td>
+                                <td class="px-4 py-3 text-right">${item.om != null ? item.om + '%' : '--'}</td>
+                                <td class="px-4 py-3 text-right">${item.nm != null ? item.nm + '%' : '--'}</td>
+                                <td class="px-4 py-3 text-right text-orange-500">${item.roe != null ? item.roe + '%' : '--'}</td>
+                                <td class="px-4 py-3 text-right">${item.roa != null ? item.roa + '%' : '--'}</td>
+                                <td class="px-4 py-3 text-right ${item.yoy >= 0 ? 'text-red-500' : 'text-green-500'}">${item.yoy != null ? item.yoy + '%' : '--'}</td>
+                            </tr>`).join('')}
+                        </tbody>
+                    </table>
+                </div>` : '<div class="p-8 text-center text-gray-500">暫無財務數據</div>'}
+            </div>`;
+    },
+
+    renderETFComposition(container, etfData) {
+        const holdings = [...etfData.holdings].sort((a, b) => b.weight - a.weight);
+        const top10 = holdings.slice(0, 10);
+        const others = holdings.slice(10);
+        const othersWeight = others.reduce((s, h) => s + (h.weight || 0), 0);
+
+        container.innerHTML = `
+            <div class="p-4 space-y-4 flex-1 overflow-y-auto no-scrollbar pb-12">
+                <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-5">
+                    <h3 class="text-lg font-bold">${etfData.name}</h3>
+                    <div class="flex items-center space-x-3 mt-2">
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 font-bold">${etfData.category || '--'}</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500">${etfData.data_mode === 'full_holdings' ? '完整揭露' : '前幾大持股'}</span>
+                    </div>
+                </div>
+
+                <div id="etf-pie-chart" class="w-full h-64 bg-white dark:bg-gray-900 rounded-2xl border p-2"></div>
+
+                <div class="overflow-x-auto bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
+                    <table class="w-full text-xs text-left">
+                        <thead class="bg-gray-50 dark:bg-gray-800 text-gray-500">
+                            <tr>
+                                <th class="px-4 py-3">#</th>
+                                <th class="px-4 py-3">代碼</th>
+                                <th class="px-4 py-3">名稱</th>
+                                <th class="px-4 py-3 text-right">權重</th>
+                                <th class="px-4 py-3">佔比</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                            ${holdings.map((h, i) => `
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                <td class="px-4 py-3 text-gray-400">${i + 1}</td>
+                                <td class="px-4 py-3 font-bold font-mono">${h.stock_id}</td>
+                                <td class="px-4 py-3">${h.stock_name}</td>
+                                <td class="px-4 py-3 text-right font-bold">${h.weight.toFixed(2)}%</td>
+                                <td class="px-4 py-3">
+                                    <div class="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                                        <div class="bg-blue-500 rounded-full h-1.5" style="width: ${Math.min(h.weight * 3, 100)}%"></div>
+                                    </div>
+                                </td>
+                            </tr>`).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>`;
+
+        setTimeout(() => {
+            const chartDom = document.getElementById('etf-pie-chart');
+            if (!chartDom) return;
+            const chart = echarts.init(chartDom, document.documentElement.classList.contains('dark') ? 'dark' : null);
+            const pieData = top10.map(h => ({ name: h.stock_name, value: h.weight }));
+            if (othersWeight > 0) pieData.push({ name: '其他', value: othersWeight });
+            chart.setOption({
+                backgroundColor: 'transparent',
+                tooltip: { trigger: 'item', formatter: '{b}: {c}%' },
+                series: [{ type: 'pie', radius: ['30%', '60%'], center: ['50%', '50%'], data: pieData, label: { fontSize: 10, formatter: '{b}\n{d}%' }, itemStyle: { borderRadius: 4 } }]
+            });
+            window.addEventListener('resize', () => chart.resize());
+        }, 100);
     },
 
     formatValue(val, decimals = 2) {
