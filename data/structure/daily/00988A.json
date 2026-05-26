@@ -1,6 +1,6 @@
 {
   "symbol": "00988A",
-  "updated_at": "2026-05-23",
+  "updated_at": "2026-05-26",
   "lines": [
     {
       "id": "L_12",
@@ -118,9 +118,9 @@
       "price": 20.38,
       "start_idx": 123,
       "start_date": "2026-05-14",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 130,
+      "end_date": "2026-05-25",
+      "broken": true,
       "strength": 1
     }
   ],
@@ -148,6 +148,12 @@
       "price": 13.48,
       "idx": 98,
       "date": "2026-04-08"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 20.38,
+      "idx": 130,
+      "date": "2026-05-25"
     }
   ]
 }
