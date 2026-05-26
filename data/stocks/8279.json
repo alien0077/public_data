@@ -1,9 +1,9 @@
 {
   "stock_id": "8279",
   "name": "8279",
-  "date": "2026-05-22",
-  "close": 97.5,
-  "health_score": 86,
+  "date": "2026-05-25",
+  "close": 98.0,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -18,19 +18,21 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 98.1,
-    "distance": -0.61,
-    "trend": "DOWN"
+    "cost": 97.8,
+    "distance": 0.2,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-25"
 }

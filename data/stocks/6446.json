@@ -1,20 +1,20 @@
 {
   "stock_id": "6446",
   "name": "6446",
-  "date": "2026-05-22",
-  "close": 810.0,
-  "health_score": 150,
+  "date": "2026-05-25",
+  "close": 840.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.088,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.17,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8201.0,
-    "short_change": 17.0,
-    "short_margin_ratio": 0.21
+    "margin_change": 8365.0,
+    "short_change": 20.0,
+    "short_margin_ratio": 0.24
   },
   "tdcc": {
     "big_holder_change": 43.73,
@@ -22,8 +22,8 @@
     "holder_concentration": 56.13
   },
   "main_force": {
-    "cost": 714.65,
-    "distance": 13.34,
+    "cost": 725.65,
+    "distance": 15.76,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

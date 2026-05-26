@@ -1,20 +1,20 @@
 {
   "stock_id": "8499",
   "name": "8499",
-  "date": "2026-05-22",
-  "close": 316.5,
+  "date": "2026-05-25",
+  "close": 328.0,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.33,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.041,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 646.0,
+    "margin_change": 665.0,
     "short_change": 73.0,
-    "short_margin_ratio": 11.3
+    "short_margin_ratio": 10.98
   },
   "tdcc": {
     "big_holder_change": 72.65,
@@ -22,8 +22,8 @@
     "holder_concentration": 78.79
   },
   "main_force": {
-    "cost": 278.77,
-    "distance": 13.53,
+    "cost": 281.68,
+    "distance": 16.44,
     "trend": "UP"
   },
   "sector": {
@@ -37,16 +37,12 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
+      "title": "外資連買 4 天"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

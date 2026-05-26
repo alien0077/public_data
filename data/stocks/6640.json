@@ -1,18 +1,18 @@
 {
   "stock_id": "6640",
   "name": "6640",
-  "date": "2026-05-22",
-  "close": 1360.0,
-  "health_score": 123,
+  "date": "2026-05-25",
+  "close": 1470.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.148,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 593.0,
+    "margin_change": 592.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,26 @@
     "holder_concentration": 69.1
   },
   "main_force": {
-    "cost": 1406.0,
-    "distance": -3.27,
-    "trend": "DOWN"
+    "cost": 1404.25,
+    "distance": 4.68,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-25"
 }

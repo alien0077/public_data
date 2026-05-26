@@ -1,12 +1,12 @@
 {
   "stock_id": "00778B",
   "name": "00778B",
-  "date": "2026-05-22",
-  "close": 34.04,
-  "health_score": 103,
+  "date": "2026-05-25",
+  "close": 34.21,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -19,20 +19,20 @@
   "tdcc": {},
   "main_force": {
     "cost": 34.16,
-    "distance": -0.35,
-    "trend": "DOWN"
+    "distance": 0.15,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

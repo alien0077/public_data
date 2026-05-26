@@ -1,13 +1,13 @@
 {
   "stock_id": "3485",
   "name": "3485",
-  "date": "2026-05-22",
-  "close": 265.0,
-  "health_score": 103,
+  "date": "2026-05-25",
+  "close": 291.5,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.088,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,17 +22,17 @@
     "holder_concentration": 52.82
   },
   "main_force": {
-    "cost": 277.04,
-    "distance": -4.35,
-    "trend": "DOWN"
+    "cost": 278.07,
+    "distance": 4.83,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [
     {
@@ -41,7 +41,7 @@
     }
   ],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

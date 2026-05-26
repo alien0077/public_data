@@ -1,20 +1,20 @@
 {
   "stock_id": "3305",
   "name": "3305",
-  "date": "2026-05-22",
-  "close": 146.0,
-  "health_score": 150,
+  "date": "2026-05-25",
+  "close": 160.5,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 1.698,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.798,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 11166.0,
-    "short_change": 163.0,
-    "short_margin_ratio": 1.46
+    "margin_change": 11207.0,
+    "short_change": 206.0,
+    "short_margin_ratio": 1.84
   },
   "tdcc": {
     "big_holder_change": 40.61,
@@ -22,8 +22,8 @@
     "holder_concentration": 47.52
   },
   "main_force": {
-    "cost": 121.7,
-    "distance": 19.97,
+    "cost": 124.48,
+    "distance": 28.94,
     "trend": "UP"
   },
   "sector": {
@@ -37,16 +37,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
-    },
-    {
-      "level": "GREEN",
       "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

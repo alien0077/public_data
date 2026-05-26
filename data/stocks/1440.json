@@ -1,18 +1,18 @@
 {
   "stock_id": "1440",
   "name": "1440",
-  "date": "2026-05-22",
-  "close": 11.35,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-25",
+  "close": 12.0,
+  "health_score": 86,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.038,
+    "foreign_buy_ratio": -0.022,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5033.0,
+    "margin_change": 4951.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 78.21
   },
   "main_force": {
-    "cost": 12.1,
-    "distance": -6.2,
+    "cost": 12.07,
+    "distance": -0.58,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,14 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

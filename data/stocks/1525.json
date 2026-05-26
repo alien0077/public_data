@@ -1,18 +1,18 @@
 {
   "stock_id": "1525",
   "name": "1525",
-  "date": "2026-05-22",
-  "close": 64.8,
-  "health_score": 133,
+  "date": "2026-05-25",
+  "close": 71.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.012,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.011,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 244.0,
+    "margin_change": 239.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 87.93
   },
   "main_force": {
-    "cost": 61.09,
-    "distance": 6.07,
+    "cost": 61.6,
+    "distance": 15.26,
     "trend": "UP"
   },
   "sector": {
@@ -41,7 +41,8 @@
     }
   ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

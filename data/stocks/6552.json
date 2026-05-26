@@ -1,20 +1,20 @@
 {
   "stock_id": "6552",
   "name": "6552",
-  "date": "2026-05-22",
-  "close": 31.55,
+  "date": "2026-05-25",
+  "close": 34.7,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.242,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.012,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1473.0,
-    "short_change": 9.0,
-    "short_margin_ratio": 0.61
+    "margin_change": 1259.0,
+    "short_change": 14.0,
+    "short_margin_ratio": 1.11
   },
   "tdcc": {
     "big_holder_change": 55.76,
@@ -22,8 +22,8 @@
     "holder_concentration": 58.37
   },
   "main_force": {
-    "cost": 30.18,
-    "distance": 4.54,
+    "cost": 30.4,
+    "distance": 14.14,
     "trend": "UP"
   },
   "sector": {
@@ -37,6 +37,10 @@
   "events": [
     {
       "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
+    {
+      "level": "GREEN",
       "title": "今日強勢大漲"
     }
   ],
@@ -44,5 +48,5 @@
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

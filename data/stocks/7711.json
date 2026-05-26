@@ -1,13 +1,13 @@
 {
   "stock_id": "7711",
   "name": "7711",
-  "date": "2026-05-22",
-  "close": 389.0,
-  "health_score": 106,
+  "date": "2026-05-25",
+  "close": 396.0,
+  "health_score": 123,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.152,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.139,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 61.66
   },
   "main_force": {
-    "cost": 408.32,
-    "distance": -4.73,
+    "cost": 407.88,
+    "distance": -2.91,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 60
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-25"
 }

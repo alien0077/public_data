@@ -1,20 +1,20 @@
 {
   "stock_id": "1809",
   "name": "1809",
-  "date": "2026-05-22",
-  "close": 41.5,
-  "health_score": 133,
+  "date": "2026-05-25",
+  "close": 45.65,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.04,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.292,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7824.0,
-    "short_change": 193.0,
-    "short_margin_ratio": 2.47
+    "margin_change": 8330.0,
+    "short_change": 197.0,
+    "short_margin_ratio": 2.36
   },
   "tdcc": {
     "big_holder_change": 48.13,
@@ -22,8 +22,8 @@
     "holder_concentration": 53.58
   },
   "main_force": {
-    "cost": 34.26,
-    "distance": 21.13,
+    "cost": 35.26,
+    "distance": 29.47,
     "trend": "UP"
   },
   "sector": {
@@ -41,7 +41,8 @@
     }
   ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

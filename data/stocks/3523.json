@@ -1,13 +1,13 @@
 {
   "stock_id": "3523",
   "name": "3523",
-  "date": "2026-05-22",
-  "close": 9.99,
-  "health_score": 83,
+  "date": "2026-05-25",
+  "close": 10.95,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.005,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 84.58
   },
   "main_force": {
-    "cost": 11.23,
-    "distance": -11.04,
+    "cost": 11.11,
+    "distance": -1.44,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,14 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-05-22"
+  "raw_signals": [],
+  "data_version": "2026-05-25"
 }

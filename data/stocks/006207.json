@@ -1,12 +1,12 @@
 {
   "stock_id": "006207",
   "name": "006207",
-  "date": "2026-05-22",
-  "close": 32.99,
-  "health_score": 86,
+  "date": "2026-05-25",
+  "close": 33.38,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -22,19 +22,22 @@
     "holder_concentration": 16.62
   },
   "main_force": {
-    "cost": 33.2,
-    "distance": -0.63,
-    "trend": "DOWN"
+    "cost": 33.25,
+    "distance": 0.39,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-25"
 }

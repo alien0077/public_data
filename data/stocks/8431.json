@@ -1,20 +1,20 @@
 {
   "stock_id": "8431",
   "name": "8431",
-  "date": "2026-05-22",
-  "close": 60.8,
-  "health_score": 103,
+  "date": "2026-05-25",
+  "close": 59.8,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.262,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3944.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 3860.0,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.03
   },
   "tdcc": {
     "big_holder_change": 15.79,
@@ -22,8 +22,8 @@
     "holder_concentration": 24.34
   },
   "main_force": {
-    "cost": 60.94,
-    "distance": -0.23,
+    "cost": 60.63,
+    "distance": -1.37,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 30
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-22"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-25"
 }

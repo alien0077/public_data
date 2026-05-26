@@ -1,13 +1,13 @@
 {
   "stock_id": "6934",
   "name": "6934",
-  "date": "2026-05-22",
-  "close": 76.8,
-  "health_score": 86,
+  "date": "2026-05-25",
+  "close": 75.8,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.011,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.014,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 62.75
   },
   "main_force": {
-    "cost": 78.42,
-    "distance": -2.07,
+    "cost": 77.91,
+    "distance": -2.71,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-25"
 }

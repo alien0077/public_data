@@ -1,20 +1,20 @@
 {
   "stock_id": "2915",
   "name": "2915",
-  "date": "2026-05-22",
-  "close": 43.3,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-25",
+  "close": 42.6,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.061,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.004,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9045.0,
-    "short_change": 20.0,
-    "short_margin_ratio": 0.22
+    "margin_change": 9155.0,
+    "short_change": 8.0,
+    "short_margin_ratio": 0.09
   },
   "tdcc": {
     "big_holder_change": 61.93,
@@ -22,8 +22,8 @@
     "holder_concentration": 67.78
   },
   "main_force": {
-    "cost": 43.79,
-    "distance": -1.12,
+    "cost": 43.71,
+    "distance": -2.54,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-25"
 }

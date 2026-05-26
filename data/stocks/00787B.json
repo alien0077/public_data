@@ -1,9 +1,9 @@
 {
   "stock_id": "00787B",
   "name": "00787B",
-  "date": "2026-05-22",
-  "close": 32.25,
-  "health_score": 86,
+  "date": "2026-05-25",
+  "close": 32.44,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -18,19 +18,21 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 32.38,
-    "distance": -0.4,
-    "trend": "DOWN"
+    "cost": 32.37,
+    "distance": 0.22,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-25"
 }

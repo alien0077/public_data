@@ -1,18 +1,18 @@
 {
   "stock_id": "1603",
   "name": "1603",
-  "date": "2026-05-22",
+  "date": "2026-05-25",
   "close": 30.7,
-  "health_score": 103,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.04,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.077,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2229.0,
+    "margin_change": 2216.0,
     "short_change": 4.0,
     "short_margin_ratio": 0.18
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 72.27
   },
   "main_force": {
-    "cost": 31.44,
-    "distance": -2.35,
+    "cost": 31.38,
+    "distance": -2.17,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 30
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-22"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-25"
 }

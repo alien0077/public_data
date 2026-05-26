@@ -1,20 +1,20 @@
 {
   "stock_id": "2002",
   "name": "2002",
-  "date": "2026-05-22",
-  "close": 18.15,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-25",
+  "close": 19.95,
+  "health_score": 133,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.096,
+    "foreign_buy_ratio": -0.042,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 40779.0,
-    "short_change": 43.0,
-    "short_margin_ratio": 0.11
+    "margin_change": 60872.0,
+    "short_change": 547.0,
+    "short_margin_ratio": 0.9
   },
   "tdcc": {
     "big_holder_change": 49.21,
@@ -22,19 +22,26 @@
     "holder_concentration": 52.96
   },
   "main_force": {
-    "cost": 18.53,
-    "distance": -2.05,
-    "trend": "DOWN"
+    "cost": 18.58,
+    "distance": 7.37,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-25"
 }

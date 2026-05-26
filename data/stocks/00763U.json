@@ -1,25 +1,25 @@
 {
   "stock_id": "00763U",
   "name": "00763U",
-  "date": "2026-05-22",
-  "close": 34.16,
+  "date": "2026-05-25",
+  "close": 34.36,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1864.0,
+    "margin_change": 1784.0,
     "short_change": 104.0,
-    "short_margin_ratio": 5.58
+    "short_margin_ratio": 5.83
   },
   "tdcc": {},
   "main_force": {
-    "cost": 33.3,
-    "distance": 2.58,
+    "cost": 33.4,
+    "distance": 2.87,
     "trend": "UP"
   },
   "sector": {
@@ -30,10 +30,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

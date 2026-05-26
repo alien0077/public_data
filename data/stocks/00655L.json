@@ -1,25 +1,25 @@
 {
   "stock_id": "00655L",
   "name": "00655L",
-  "date": "2026-05-22",
-  "close": 35.24,
-  "health_score": 86,
+  "date": "2026-05-25",
+  "close": 35.84,
+  "health_score": 123,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2345.0,
-    "short_change": 336.0,
-    "short_margin_ratio": 14.33
+    "margin_change": 2297.0,
+    "short_change": 337.0,
+    "short_margin_ratio": 14.67
   },
   "tdcc": {},
   "main_force": {
     "cost": 36.39,
-    "distance": -3.16,
+    "distance": -1.51,
     "trend": "DOWN"
   },
   "sector": {
@@ -28,9 +28,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 60
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-25"
 }

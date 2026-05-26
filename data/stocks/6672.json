@@ -1,20 +1,20 @@
 {
   "stock_id": "6672",
   "name": "6672",
-  "date": "2026-05-22",
-  "close": 193.0,
-  "health_score": 106,
+  "date": "2026-05-25",
+  "close": 210.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -2.146,
+    "foreign_buy_ratio": -0.288,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6722.0,
-    "short_change": 411.0,
-    "short_margin_ratio": 6.11
+    "margin_change": 7295.0,
+    "short_change": 325.0,
+    "short_margin_ratio": 4.46
   },
   "tdcc": {
     "big_holder_change": 16.15,
@@ -22,17 +22,17 @@
     "holder_concentration": 31.48
   },
   "main_force": {
-    "cost": 202.08,
-    "distance": -4.49,
-    "trend": "DOWN"
+    "cost": 202.05,
+    "distance": 3.93,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 100
   },
   "events": [
     {
@@ -40,6 +40,8 @@
       "title": "今日強勢大漲"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-25"
 }

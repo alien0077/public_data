@@ -1,20 +1,20 @@
 {
   "stock_id": "2603",
   "name": "2603",
-  "date": "2026-05-22",
-  "close": 219.0,
-  "health_score": 166,
+  "date": "2026-05-25",
+  "close": 214.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.318,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.511,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 13707.0,
-    "short_change": 45.0,
-    "short_margin_ratio": 0.33
+    "margin_change": 13104.0,
+    "short_change": 35.0,
+    "short_margin_ratio": 0.27
   },
   "tdcc": {
     "big_holder_change": 64.77,
@@ -22,8 +22,8 @@
     "holder_concentration": 69.65
   },
   "main_force": {
-    "cost": 207.18,
-    "distance": 5.71,
+    "cost": 207.8,
+    "distance": 2.98,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

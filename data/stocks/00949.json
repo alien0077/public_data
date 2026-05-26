@@ -1,18 +1,18 @@
 {
   "stock_id": "00949",
   "name": "00949",
-  "date": "2026-05-22",
-  "close": 20.23,
+  "date": "2026-05-25",
+  "close": 20.41,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 144.0,
+    "margin_change": 123.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 20.19
   },
   "main_force": {
-    "cost": 19.75,
-    "distance": 2.43,
+    "cost": 19.81,
+    "distance": 3.03,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

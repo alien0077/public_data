@@ -1,20 +1,20 @@
 {
   "stock_id": "00885",
   "name": "00885",
-  "date": "2026-05-22",
-  "close": 18.96,
-  "health_score": 86,
+  "date": "2026-05-25",
+  "close": 18.99,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 725.0,
-    "short_change": 158.0,
-    "short_margin_ratio": 21.79
+    "margin_change": 721.0,
+    "short_change": 157.0,
+    "short_margin_ratio": 21.78
   },
   "tdcc": {
     "big_holder_change": 10.73,
@@ -22,8 +22,8 @@
     "holder_concentration": 16.66
   },
   "main_force": {
-    "cost": 19.09,
-    "distance": -0.68,
+    "cost": 19.1,
+    "distance": -0.58,
     "trend": "DOWN"
   },
   "sector": {
@@ -40,6 +40,8 @@
       "title": "短線券資比過高"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-25"
 }

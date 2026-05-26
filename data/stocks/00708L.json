@@ -1,25 +1,25 @@
 {
   "stock_id": "00708L",
   "name": "00708L",
-  "date": "2026-05-22",
-  "close": 89.85,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-25",
+  "close": 91.0,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9814.0,
-    "short_change": 712.0,
-    "short_margin_ratio": 7.25
+    "margin_change": 9710.0,
+    "short_change": 713.0,
+    "short_margin_ratio": 7.34
   },
   "tdcc": {},
   "main_force": {
-    "cost": 94.34,
-    "distance": -4.76,
+    "cost": 94.03,
+    "distance": -3.22,
     "trend": "DOWN"
   },
   "sector": {
@@ -28,9 +28,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-25"
 }

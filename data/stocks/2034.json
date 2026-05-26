@@ -1,20 +1,20 @@
 {
   "stock_id": "2034",
   "name": "2034",
-  "date": "2026-05-22",
-  "close": 19.8,
-  "health_score": 86,
+  "date": "2026-05-25",
+  "close": 20.8,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.078,
+    "foreign_buy_ratio": -0.134,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4838.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 4731.0,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.02
   },
   "tdcc": {
     "big_holder_change": 41.82,
@@ -22,19 +22,26 @@
     "holder_concentration": 48.72
   },
   "main_force": {
-    "cost": 20.52,
-    "distance": -3.51,
-    "trend": "DOWN"
+    "cost": 20.55,
+    "distance": 1.22,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-22"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-25"
 }

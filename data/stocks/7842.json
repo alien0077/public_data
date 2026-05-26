@@ -1,13 +1,13 @@
 {
   "stock_id": "7842",
   "name": "7842",
-  "date": "2026-05-22",
-  "close": 101.0,
-  "health_score": 83,
+  "date": "2026-05-25",
+  "close": 111.0,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.159,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,21 +22,26 @@
     "holder_concentration": 62.0
   },
   "main_force": {
-    "cost": 108.8,
-    "distance": -7.17,
-    "trend": "DOWN"
+    "cost": 109.0,
+    "distance": 1.83,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-05-22"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-25"
 }

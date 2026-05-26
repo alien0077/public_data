@@ -1,20 +1,20 @@
 {
   "stock_id": "1477",
   "name": "1477",
-  "date": "2026-05-22",
-  "close": 219.0,
-  "health_score": 130,
+  "date": "2026-05-25",
+  "close": 215.5,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.245,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.162,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1493.0,
-    "short_change": 17.0,
-    "short_margin_ratio": 1.14
+    "margin_change": 1672.0,
+    "short_change": 16.0,
+    "short_margin_ratio": 0.96
   },
   "tdcc": {
     "big_holder_change": 54.61,
@@ -22,27 +22,19 @@
     "holder_concentration": 64.95
   },
   "main_force": {
-    "cost": 216.95,
-    "distance": 0.94,
-    "trend": "UP"
+    "cost": 216.88,
+    "distance": -0.64,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 30
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-05-22"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-25"
 }

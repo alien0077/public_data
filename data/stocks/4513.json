@@ -1,18 +1,18 @@
 {
   "stock_id": "4513",
   "name": "4513",
-  "date": "2026-05-22",
-  "close": 15.05,
-  "health_score": 130,
-  "signal": "Bullish",
+  "date": "2026-05-25",
+  "close": 14.45,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.115,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2717.0,
+    "margin_change": 2666.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,22 +22,19 @@
     "holder_concentration": 44.65
   },
   "main_force": {
-    "cost": 14.85,
-    "distance": 1.35,
-    "trend": "UP"
+    "cost": 14.81,
+    "distance": -2.43,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 0
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-05-22"
+  "raw_signals": [],
+  "data_version": "2026-05-25"
 }

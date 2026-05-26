@@ -1,20 +1,20 @@
 {
   "stock_id": "6108",
   "name": "6108",
-  "date": "2026-05-22",
-  "close": 19.45,
+  "date": "2026-05-25",
+  "close": 19.85,
   "health_score": 123,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.231,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.08,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2274.0,
-    "short_change": 6.0,
-    "short_margin_ratio": 0.26
+    "margin_change": 2175.0,
+    "short_change": 7.0,
+    "short_margin_ratio": 0.32
   },
   "tdcc": {
     "big_holder_change": 42.73,
@@ -22,8 +22,8 @@
     "holder_concentration": 52.65
   },
   "main_force": {
-    "cost": 19.87,
-    "distance": -2.11,
+    "cost": 19.89,
+    "distance": -0.2,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 60
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-22"
+  "data_version": "2026-05-25"
 }

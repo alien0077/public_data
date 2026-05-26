@@ -1,20 +1,20 @@
 {
   "stock_id": "8011",
   "name": "8011",
-  "date": "2026-05-22",
-  "close": 18.4,
-  "health_score": 103,
+  "date": "2026-05-25",
+  "close": 18.25,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.178,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.087,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3727.0,
+    "margin_change": 3791.0,
     "short_change": 11.0,
-    "short_margin_ratio": 0.3
+    "short_margin_ratio": 0.29
   },
   "tdcc": {
     "big_holder_change": 24.64,
@@ -22,8 +22,8 @@
     "holder_concentration": 30.29
   },
   "main_force": {
-    "cost": 18.94,
-    "distance": -2.85,
+    "cost": 18.86,
+    "distance": -3.23,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 30
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-22"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-25"
 }
