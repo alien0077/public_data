@@ -318,6 +318,9 @@ export const TrendHunter = {
                         </div>
                     </div>
 
+                    <!-- ETF 成分股權重圓餅圖 -->
+                    <div id="etf-pie-chart" class="w-full h-72 bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-2 hidden"></div>
+
                     <!-- ETF 主題資金流 -->
                     <div id="etf-category-summary" class="hidden"></div>
 
@@ -326,9 +329,6 @@ export const TrendHunter = {
 
                     <!-- ETF 換股動向 -->
                     <div id="etf-rebalance" class="hidden"></div>
-
-                    <!-- ETF 成分股權重圓餅圖 -->
-                    <div id="etf-pie-chart" class="w-full h-72 bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-2 hidden"></div>
 
                     <!-- Holdings Table -->
                     <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex-1 flex flex-col min-h-[450px]">

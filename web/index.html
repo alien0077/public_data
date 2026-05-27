@@ -349,6 +349,20 @@
                 </div>
             </div>
 
+            <!-- Dividend Detail Modal -->
+            <div id="dividend-detail" class="hidden absolute inset-0 bg-white dark:bg-[#0f1115] z-20 flex flex-col transition-colors duration-300">
+                <header class="h-16 border-b border-gray-200 dark:border-gray-800 flex items-center px-6 bg-white dark:bg-[#0f1115] transition-colors duration-300">
+                    <button id="close-dividend-detail" class="mr-4 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">預估股息明細</h2>
+                </header>
+                <div class="flex-1 overflow-y-auto p-6" id="dividend-detail-body">
+                </div>
+            </div>
+
             <!-- Empty State Overlay -->
             <div id="empty-state" class="hidden absolute inset-0 bg-[#0f1115] z-10 flex flex-col items-center justify-center">
                  <div class="w-20 h-20 bg-gray-800/50 rounded-full flex items-center justify-center mb-6">

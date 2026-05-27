@@ -124,6 +124,144 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     closeDetailBtn && closeDetailBtn.addEventListener('click', () => stockDetailOverlay.classList.add('hidden'));
 
+    const dividendDetailOverlay = document.getElementById('dividend-detail');
+    const closeDividendBtn = document.getElementById('close-dividend-detail');
+    closeDividendBtn && closeDividendBtn.addEventListener('click', () => dividendDetailOverlay.classList.add('hidden'));
+    document.getElementById('dividend-estimate')?.addEventListener('click', () => {
+        if (dividendDetailOverlay) {
+            renderDividendDetail();
+            dividendDetailOverlay.classList.remove('hidden');
+        }
+    });
+
+    function getSharesAtDate(symbol, targetDateStr) {
+        const targetDate = new Date(targetDateStr);
+        let shares = 0;
+        const sortedTrades = [...lastTrades]
+            .filter(t => (t.symbol || t.stock_id || t.stockId) === symbol)
+            .sort((a, b) => new Date(a.date || a.timestamp || a.tradeDate || 0) - new Date(b.date || b.timestamp || b.tradeDate || 0));
+        for (const t of sortedTrades) {
+            const tradeDate = new Date(t.date || t.timestamp || t.tradeDate);
+            if (tradeDate >= targetDate) break;
+            const qty = parseFloat(t.quantity || t.shares || 0);
+            const side = (t.side || t.type || '').toLowerCase();
+            if (side.includes('buy') || side.includes('買')) shares += qty;
+            else if (side.includes('sell') || side.includes('賣')) shares -= qty;
+        }
+        return Math.max(0, shares);
+    }
+
+    function renderDividendDetail() {
+        const body = document.getElementById('dividend-detail-body');
+        if (!body) return;
+        const symbols = Object.keys(lastHoldings).filter(s => s !== 'yearlyStats' && lastHoldings[s].shares > 0.001);
+        if (symbols.length === 0) {
+            body.innerHTML = '<div class="text-center text-gray-500 py-12">暫無持股資料</div>';
+            return;
+        }
+        const currentYear = new Date().getFullYear();
+        const lastYear = currentYear - 1;
+
+        const rows = symbols.map(sym => {
+            const h = lastHoldings[sym];
+            const actions = CorporateActions.getActions(sym) || [];
+            const allDividendActions = actions
+                .filter(a => a.ex_date && (a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0)
+                .sort((a, b) => (b.ex_date || '').localeCompare(a.ex_date || ''));
+
+            // Select reference year: 2026 > 2025 > most recent available
+            let refDividendActions = allDividendActions.filter(a => {
+                const y = parseInt(a.ex_date.substring(0, 4));
+                return y === currentYear || y === lastYear;
+            });
+            if (refDividendActions.length === 0 && allDividendActions.length > 0) {
+                const mostRecentYear = parseInt(allDividendActions[0].ex_date.substring(0, 4));
+                refDividendActions = allDividendActions.filter(a => parseInt(a.ex_date.substring(0, 4)) === mostRecentYear);
+            }
+
+            // Month-by-month: prefer current year, fallback to older years
+            const monthMap = {};
+            for (let m = 1; m <= 12; m++) monthMap[m] = null;
+
+            refDividendActions.filter(a => a.ex_date.startsWith(currentYear.toString())).forEach(a => {
+                const m = new Date(a.ex_date).getMonth() + 1;
+                monthMap[m] = { ...a, sourceYear: currentYear, label: '今年已公告' };
+            });
+            refDividendActions.forEach(a => {
+                const m = new Date(a.ex_date).getMonth() + 1;
+                if (!monthMap[m]) {
+                    const y = parseInt(a.ex_date.substring(0, 4));
+                    monthMap[m] = { ...a, sourceYear: y, label: y === lastYear ? '去年預估' : `${y}年參考` };
+                }
+            });
+
+            const refActions = Object.values(monthMap).filter(Boolean)
+                .sort((a, b) => a.ex_date.localeCompare(b.ex_date));
+
+            let totalPayout = 0;
+            let totalDivPerShare = 0;
+            let hasCurrentYear = false;
+            const actionDetails = refActions.map(a => {
+                if (a.sourceYear === currentYear) hasCurrentYear = true;
+                const sharesAtDate = getSharesAtDate(sym, a.ex_date);
+                totalDivPerShare += a.cash_dividend;
+                const amount = sharesAtDate * a.cash_dividend;
+                totalPayout += amount;
+                return { ...a, sharesAtDate, amount };
+            });
+
+            return {
+                symbol: sym, name: h.name || sym, shares: h.shares,
+                divPerShare: totalDivPerShare, totalPayout,
+                actions: actionDetails, hasCurrentYear
+            };
+        }).filter(r => r.actions.length > 0).sort((a, b) => b.totalPayout - a.totalPayout);
+
+        if (rows.length === 0) {
+            body.innerHTML = '<div class="text-center text-gray-500 py-12">尚無股利資料</div>';
+            return;
+        }
+
+        body.innerHTML = rows.map(r => `
+            <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden mb-4">
+                <div class="p-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50" onclick="window.StockDetail.show('${r.symbol}')">
+                    <div>
+                        <div class="font-bold text-gray-900 dark:text-white">${r.symbol} ${r.name}</div>
+                        <div class="text-xs text-gray-500">目前持有 ${formatNumber(r.shares, 0)} 股</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm font-bold text-green-500">$${formatNumber(r.totalPayout, 0)}</div>
+                        <div class="text-xs text-gray-400">預估 $${formatNumber(r.divPerShare)}/股</div>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-gray-50 dark:bg-gray-900 text-gray-400">
+                            <tr>
+                                <th class="px-4 py-2">除權息日</th>
+                                <th class="px-4 py-2 text-right">現金股利</th>
+                                <th class="px-4 py-2 text-right">當下持股</th>
+                                <th class="px-4 py-2 text-right">預估金額</th>
+                                <th class="px-4 py-2">類型</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                            ${r.actions.map(a => `
+                                <tr>
+                                    <td class="px-4 py-2 font-mono text-gray-600 dark:text-gray-400">${a.ex_date}</td>
+                                    <td class="px-4 py-2 text-right font-mono font-bold text-green-500">${a.cash_dividend ? a.cash_dividend.toFixed(2) : '--'}</td>
+                                    <td class="px-4 py-2 text-right font-mono text-gray-500">${formatNumber(a.sharesAtDate, 0)}</td>
+                                    <td class="px-4 py-2 text-right font-mono font-bold text-green-500">$${formatNumber(a.amount, 0)}</td>
+                                    <td class="px-4 py-2"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${a.sourceYear === currentYear ? 'bg-blue-500/10 text-blue-500' : 'bg-yellow-500/10 text-yellow-600'}">${a.label}</span></td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `).join('');
+    }
+
     async function init() {
         try {
             if (router.currentPrimary === 'dashboard') Dashboard.init();
@@ -273,6 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderAssetRow2(trades, holdings, quotes) {
         try {
             const curY = new Date().getFullYear().toString();
+            const lastY = (curY - 1).toString();
             let totalMV = 0, totalCost = 0, totalDiv = 0;
             const cashflows = [{ date: new Date(), amount: 0 }];
             Object.keys(holdings).forEach(sym => {
@@ -285,32 +424,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!isNaN(mv)) totalMV += mv;
                 if (!isNaN(h.totalCost)) totalCost += h.totalCost;
                 const actions = (CorporateActions && typeof CorporateActions.getActions === 'function') ? (CorporateActions.getActions(sym) || []) : [];
+                const allDividendActions = actions.filter(a => a.ex_date && (a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0)
+                    .sort((a, b) => (b.ex_date || '').localeCompare(a.ex_date || ''));
+
+                // Select reference year: 2026 > 2025 > most recent available
+                let refActions = allDividendActions.filter(a => {
+                    const y = parseInt(a.ex_date.substring(0, 4));
+                    return y === parseInt(curY) || y === parseInt(lastY);
+                });
+                if (refActions.length === 0 && allDividendActions.length > 0) {
+                    const mostRecentYear = parseInt(allDividendActions[0].ex_date.substring(0, 4));
+                    refActions = allDividendActions.filter(a => parseInt(a.ex_date.substring(0, 4)) === mostRecentYear);
+                }
+
                 const monthlyDividends = {};
-                for (let m = 1; m <= 12; m++) monthlyDividends[m] = 0;
-                actions.forEach(a => {
-                    if (!a.ex_date) return;
-                    const [y, m] = a.ex_date.split('-');
-                    const month = parseInt(m);
+                for (let m = 1; m <= 12; m++) monthlyDividends[m] = { cash: 0, year: null, exDate: null };
+                refActions.filter(a => a.ex_date.startsWith(curY)).forEach(a => {
+                    const month = parseInt(a.ex_date.split('-')[1]);
                     if (isNaN(month) || month < 1 || month > 12) return;
-                    if ((a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0) {
-                        if (y === curY) {
-                            monthlyDividends[month] = a.cash_dividend;
-                        }
+                    monthlyDividends[month] = { cash: a.cash_dividend, year: parseInt(curY), exDate: a.ex_date };
+                });
+                refActions.forEach(a => {
+                    const month = parseInt(a.ex_date.split('-')[1]);
+                    if (isNaN(month) || month < 1 || month > 12) return;
+                    if (monthlyDividends[month].year === null) {
+                        monthlyDividends[month] = { cash: a.cash_dividend, year: parseInt(a.ex_date.substring(0, 4)), exDate: a.ex_date };
                     }
                 });
-                // For months without current year data, look back in time (most recent year first)
-                [...actions].sort((a, b) => (b.ex_date || '').localeCompare(a.ex_date || '')).forEach(a => {
-                    if (!a.ex_date) return;
-                    const [y, m] = a.ex_date.split('-');
-                    const month = parseInt(m);
-                    if (isNaN(month) || month < 1 || month > 12) return;
-                    if ((a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0) {
-                        if (y !== curY && monthlyDividends[month] === 0) {
-                            monthlyDividends[month] = a.cash_dividend;
-                        }
-                    }
+                Object.values(monthlyDividends).forEach(({ cash: dps, year, exDate }) => {
+                    if (dps === 0 || !year) return;
+                    const sharesAtDate = typeof getSharesAtDate === 'function' && exDate ? getSharesAtDate(sym, exDate) : shares;
+                    totalDiv += dps * sharesAtDate;
                 });
-                totalDiv += Object.values(monthlyDividends).reduce((sum, dps) => sum + dps * shares, 0);
             });
             trades.forEach(t => {
                 const sym = t.symbol || t.stock_id || t.stockId;

@@ -354,38 +354,83 @@ export const AssetRisk = {
             const monthlyDividends = Array(12).fill(0);
             const detailList = [];
             const currentYear = new Date().getFullYear();
-
+            const lastYear = currentYear - 1;
             activeSymbols.forEach(sym => {
                 const h = holdings[sym];
                 const actions = CorporateActions.getActions(sym);
-                const dividendActions = actions.filter(a => a.ex_date && (a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0);
+                const allDividendActions = actions.filter(a => a.ex_date && (a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0)
+                    .sort((a, b) => (b.ex_date || '').localeCompare(a.ex_date || ''));
                 
-                // Fill each month: prefer current year, then most recent historical
-                const monthDiv = {};
-                for (let m = 0; m < 12; m++) monthDiv[m] = 0;
-                dividendActions.filter(a => a.ex_date.startsWith(currentYear.toString())).forEach(a => {
-                    const m = new Date(a.ex_date).getMonth();
-                    monthDiv[m] = a.cash_dividend;
-                });
-                [...dividendActions].sort((a, b) => (b.ex_date || '').localeCompare(a.ex_date || '')).forEach(a => {
-                    const m = new Date(a.ex_date).getMonth();
-                    if (monthDiv[m] === 0) monthDiv[m] = a.cash_dividend;
-                });
-                
-                let estDivPerShare = 0;
-                for (let m = 0; m < 12; m++) {
-                    monthlyDividends[m] += monthDiv[m] * h.shares;
-                    estDivPerShare += monthDiv[m];
+                // Select reference year: prefer 2026 > 2025 > most recent available
+                const targetYears = new Set([currentYear, lastYear]);
+                let refActions = allDividendActions.filter(a => targetYears.has(parseInt(a.ex_date.substring(0, 4))));
+                let refYearLabel = null;
+                if (refActions.length === 0 && allDividendActions.length > 0) {
+                    const mostRecentYear = parseInt(allDividendActions[0].ex_date.substring(0, 4));
+                    refActions = allDividendActions.filter(a => parseInt(a.ex_date.substring(0, 4)) === mostRecentYear);
+                    refYearLabel = mostRecentYear;
                 }
 
-                const hasCurrentYear = dividendActions.some(a => a.ex_date.startsWith(currentYear.toString()));
+                // Fill each month: prefer current year, then older years
+                const monthDiv = {};
+                for (let m = 0; m < 12; m++) monthDiv[m] = { cash: 0, year: null, exDate: null, label: null };
+                refActions.filter(a => a.ex_date.startsWith(currentYear.toString())).forEach(a => {
+                    const m = new Date(a.ex_date).getMonth();
+                    monthDiv[m] = { cash: a.cash_dividend, year: currentYear, exDate: a.ex_date, label: '今年已公告' };
+                });
+                [...refActions].forEach(a => {
+                    const m = new Date(a.ex_date).getMonth();
+                    if (monthDiv[m].year === null) {
+                        const y = parseInt(a.ex_date.substring(0, 4));
+                        monthDiv[m] = { cash: a.cash_dividend, year: y, exDate: a.ex_date, label: y === lastYear ? '去年預估' : `${y}年參考` };
+                    }
+                });
+
+                function getSharesAtDate(sym, targetDateStr) {
+                    const targetDate = new Date(targetDateStr);
+                    let shares = 0;
+                    const sortedTrades = [...trades]
+                        .filter(t => (t.symbol || t.stock_id || t.stockId) === sym)
+                        .sort((a, b) => new Date(a.date || a.timestamp || a.tradeDate || 0) - new Date(b.date || b.timestamp || b.tradeDate || 0));
+                    for (const t of sortedTrades) {
+                        const tradeDate = new Date(t.date || t.timestamp || t.tradeDate);
+                        if (tradeDate >= targetDate) break;
+                        const qty = parseFloat(t.quantity || t.shares || 0);
+                        const side = (t.side || t.type || '').toLowerCase();
+                        if (side.includes('buy') || side.includes('買')) shares += qty;
+                        else if (side.includes('sell') || side.includes('賣')) shares -= qty;
+                    }
+                    return Math.max(0, shares);
+                }
+
+                let estDivPerShare = 0;
+                let totalPayout = 0;
+                for (let m = 0; m < 12; m++) {
+                    const { cash: dps, year, exDate } = monthDiv[m];
+                    if (dps === 0 || !year) continue;
+                    const sharesAtDate = exDate ? getSharesAtDate(sym, exDate) : 0;
+                    monthlyDividends[m] += dps * sharesAtDate;
+                    estDivPerShare += dps;
+                    totalPayout += dps * sharesAtDate;
+                }
+
+                const hasCurrentYear = refActions.some(a => a.ex_date.startsWith(currentYear.toString()));
+                const hasLastYear = refActions.some(a => a.ex_date.startsWith(lastYear.toString()));
+                let statusLabel = '歷史參考';
+                if (hasCurrentYear) statusLabel = '今年已公告';
+                else if (hasLastYear) statusLabel = '去年預估';
+                else if (refYearLabel) statusLabel = `${refYearLabel}年參考`;
+
+                const nextExDate = refActions.length > 0 ? refActions[0].ex_date : '--';
                 detailList.push({
                     symbol: sym,
                     name: h.name || sym,
                     shares: h.shares,
                     divPerShare: estDivPerShare,
-                    totalPayout: estDivPerShare * h.shares,
-                    isAnnounced: hasCurrentYear
+                    totalPayout,
+                    isAnnounced: hasCurrentYear,
+                    statusLabel,
+                    exDate: nextExDate
                 });
             });
 
@@ -412,6 +457,7 @@ export const AssetRisk = {
                                     <th class="px-6 py-4 text-right">持有股數</th>
                                     <th class="px-6 py-4 text-right">預估每股股利</th>
                                     <th class="px-6 py-4 text-right font-bold">預估總額</th>
+                                    <th class="px-6 py-4 text-center">除權息日</th>
                                     <th class="px-6 py-4 text-center">狀態</th>
                                 </tr>
                             </thead>
@@ -422,9 +468,10 @@ export const AssetRisk = {
                                         <td class="px-6 py-4 text-right">${this.formatNumber(item.shares, 0)}</td>
                                         <td class="px-6 py-4 text-right">${this.formatNumber(item.divPerShare)}</td>
                                         <td class="px-6 py-4 text-right font-bold text-green-500">$${this.formatNumber(item.totalPayout, 0)}</td>
+                                        <td class="px-6 py-4 text-center font-mono text-gray-600 dark:text-gray-400 text-[11px]">${item.exDate}</td>
                                         <td class="px-6 py-4 text-center">
-                                            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${item.isAnnounced ? 'bg-blue-500/10 text-blue-500' : 'bg-gray-500/10 text-gray-500'}">
-                                                ${item.isAnnounced ? '今年已公告' : '去年參考'}
+                                            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${item.statusLabel === '今年已公告' ? 'bg-blue-500/10 text-blue-500' : item.statusLabel === '去年預估' ? 'bg-yellow-500/10 text-yellow-600' : 'bg-gray-500/10 text-gray-500'}">
+                                                ${item.statusLabel}
                                             </span>
                                         </td>
                                     </tr>
