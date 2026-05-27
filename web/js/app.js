@@ -453,8 +453,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 Object.values(monthlyDividends).forEach(({ cash: dps, year, exDate }) => {
                     if (dps === 0 || !year) return;
-                    const sharesAtDate = typeof getSharesAtDate === 'function' && exDate ? getSharesAtDate(sym, exDate) : shares;
-                    totalDiv += dps * sharesAtDate;
+                    const isHistorical = year !== parseInt(curY);
+                    const sharesToUse = isHistorical ? shares : (typeof getSharesAtDate === 'function' && exDate ? getSharesAtDate(sym, exDate) : shares);
+                    totalDiv += dps * sharesToUse;
                 });
             });
             trades.forEach(t => {

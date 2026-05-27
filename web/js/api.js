@@ -55,10 +55,11 @@ export const api = {
         if (window.location.pathname.includes('/temp_repo/web/')) root = '../data/';
         else if (window.location.pathname.includes('/web/')) root = '../temp_repo/data/';
         const url = isLocal ? `${root}${path}` : `https://alien0077.github.io/Public_Data/data/${path}`;
+        const cb = isLocal && path.startsWith('meta/actions/') ? `?t=${Date.now()}` : '';
         try {
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 8000);
-            const res = await fetch(url, { signal: controller.signal });
+            const res = await fetch(url + cb, { signal: controller.signal, cache: 'no-cache' });
             clearTimeout(timeoutId);
             if (res.ok) return await res.json();
             throw new Error(`HTTP ${res.status}`);

@@ -408,10 +408,11 @@ export const AssetRisk = {
                 for (let m = 0; m < 12; m++) {
                     const { cash: dps, year, exDate } = monthDiv[m];
                     if (dps === 0 || !year) continue;
-                    const sharesAtDate = exDate ? getSharesAtDate(sym, exDate) : 0;
-                    monthlyDividends[m] += dps * sharesAtDate;
+                    const isHistorical = year !== currentYear;
+                    const sharesToUse = isHistorical ? h.shares : (exDate ? getSharesAtDate(sym, exDate) : 0);
+                    monthlyDividends[m] += dps * sharesToUse;
                     estDivPerShare += dps;
-                    totalPayout += dps * sharesAtDate;
+                    totalPayout += dps * sharesToUse;
                 }
 
                 const hasCurrentYear = refActions.some(a => a.ex_date.startsWith(currentYear.toString()));
