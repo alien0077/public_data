@@ -1,18 +1,18 @@
 {
   "stock_id": "2929",
   "name": "2929",
-  "date": "2026-05-25",
-  "close": 5.5,
-  "health_score": 86,
+  "date": "2026-05-26",
+  "close": 6.05,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.027,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2101.0,
+    "margin_change": 2105.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,26 @@
     "holder_concentration": 30.94
   },
   "main_force": {
-    "cost": 5.54,
-    "distance": -0.72,
-    "trend": "DOWN"
+    "cost": 5.56,
+    "distance": 8.81,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-26"
 }

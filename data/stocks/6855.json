@@ -1,13 +1,13 @@
 {
   "stock_id": "6855",
   "name": "6855",
-  "date": "2026-05-25",
-  "close": 102.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-26",
+  "close": 111.0,
+  "health_score": 133,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_ratio": -0.017,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,26 @@
     "holder_concentration": 63.32
   },
   "main_force": {
-    "cost": 104.15,
-    "distance": -2.06,
-    "trend": "DOWN"
+    "cost": 104.45,
+    "distance": 6.27,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-26"
 }

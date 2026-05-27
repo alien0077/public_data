@@ -1,18 +1,18 @@
 {
   "stock_id": "4904",
   "name": "4904",
-  "date": "2026-05-25",
-  "close": 94.2,
-  "health_score": 83,
-  "signal": "Bullish",
+  "date": "2026-05-26",
+  "close": 94.0,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.002,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 667.0,
+    "margin_change": 664.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 93.45
   },
   "main_force": {
-    "cost": 95.98,
-    "distance": -1.85,
-    "trend": "DOWN"
+    "cost": 92.0,
+    "distance": 2.17,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -36,7 +36,7 @@
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

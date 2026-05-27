@@ -1,20 +1,20 @@
 {
   "stock_id": "00985A",
   "name": "00985A",
-  "date": "2026-05-25",
-  "close": 21.93,
-  "health_score": 150,
+  "date": "2026-05-26",
+  "close": 22.04,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1801.0,
+    "margin_change": 1810.0,
     "short_change": 77.0,
-    "short_margin_ratio": 4.28
+    "short_margin_ratio": 4.25
   },
   "tdcc": {
     "big_holder_change": 10.87,
@@ -22,8 +22,8 @@
     "holder_concentration": 14.78
   },
   "main_force": {
-    "cost": 20.88,
-    "distance": 5.03,
+    "cost": 20.98,
+    "distance": 5.05,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "2415",
   "name": "2415",
-  "date": "2026-05-25",
-  "close": 27.0,
-  "health_score": 130,
-  "signal": "Bullish",
+  "date": "2026-05-26",
+  "close": 26.75,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.036,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2491.0,
+    "margin_change": 2490.0,
     "short_change": 3.0,
     "short_margin_ratio": 0.12
   },
@@ -23,21 +23,18 @@
   },
   "main_force": {
     "cost": 26.96,
-    "distance": 0.15,
-    "trend": "UP"
+    "distance": -0.78,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 0
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-05-25"
+  "raw_signals": [],
+  "data_version": "2026-05-26"
 }

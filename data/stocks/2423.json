@@ -1,20 +1,20 @@
 {
   "stock_id": "2423",
   "name": "2423",
-  "date": "2026-05-25",
-  "close": 76.0,
+  "date": "2026-05-26",
+  "close": 81.0,
   "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.132,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 469.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 545.0,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.18
   },
   "tdcc": {
     "big_holder_change": 69.46,
@@ -22,8 +22,8 @@
     "holder_concentration": 76.01
   },
   "main_force": {
-    "cost": 66.8,
-    "distance": 13.77,
+    "cost": 68.04,
+    "distance": 19.05,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

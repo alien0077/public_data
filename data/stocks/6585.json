@@ -1,18 +1,18 @@
 {
   "stock_id": "6585",
   "name": "6585",
-  "date": "2026-05-25",
-  "close": 95.9,
-  "health_score": 150,
+  "date": "2026-05-26",
+  "close": 95.7,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.036,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1987.0,
+    "margin_change": 1990.0,
     "short_change": 1.0,
     "short_margin_ratio": 0.05
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 79.5
   },
   "main_force": {
-    "cost": 89.85,
-    "distance": 6.73,
+    "cost": 90.49,
+    "distance": 5.76,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

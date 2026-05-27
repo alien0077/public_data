@@ -1,20 +1,20 @@
 {
   "stock_id": "6510",
   "name": "6510",
-  "date": "2026-05-25",
-  "close": 3455.0,
-  "health_score": 86,
+  "date": "2026-05-26",
+  "close": 3415.0,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.06,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 729.0,
-    "short_change": 1.0,
-    "short_margin_ratio": 0.14
+    "margin_change": 753.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 38.29,
@@ -22,8 +22,8 @@
     "holder_concentration": 51.94
   },
   "main_force": {
-    "cost": 3649.0,
-    "distance": -5.32,
+    "cost": 3641.25,
+    "distance": -6.21,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-26"
 }

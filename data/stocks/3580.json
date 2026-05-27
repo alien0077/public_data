@@ -1,20 +1,20 @@
 {
   "stock_id": "3580",
   "name": "3580",
-  "date": "2026-05-25",
-  "close": 111.0,
-  "health_score": 133,
+  "date": "2026-05-26",
+  "close": 113.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.139,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4290.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 4224.0,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.05
   },
   "tdcc": {
     "big_holder_change": 7.1,
@@ -22,8 +22,8 @@
     "holder_concentration": 10.95
   },
   "main_force": {
-    "cost": 96.14,
-    "distance": 15.46,
+    "cost": 97.84,
+    "distance": 15.49,
     "trend": "UP"
   },
   "sector": {
@@ -34,14 +34,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

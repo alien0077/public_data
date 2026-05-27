@@ -1,20 +1,20 @@
 {
   "stock_id": "2436",
   "name": "2436",
-  "date": "2026-05-25",
-  "close": 80.5,
-  "health_score": 150,
+  "date": "2026-05-26",
+  "close": 79.6,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.332,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8752.0,
-    "short_change": 3040.0,
-    "short_margin_ratio": 34.73
+    "margin_change": 8252.0,
+    "short_change": 3072.0,
+    "short_margin_ratio": 37.23
   },
   "tdcc": {
     "big_holder_change": 17.62,
@@ -22,8 +22,8 @@
     "holder_concentration": 23.55
   },
   "main_force": {
-    "cost": 73.49,
-    "distance": 9.54,
+    "cost": 73.82,
+    "distance": 7.83,
     "trend": "UP"
   },
   "sector": {
@@ -36,17 +36,12 @@
   },
   "events": [
     {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    },
-    {
       "level": "YELLOW",
       "title": "短線券資比過高"
     }
   ],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "2013",
   "name": "2013",
-  "date": "2026-05-25",
-  "close": 42.8,
-  "health_score": 113,
+  "date": "2026-05-26",
+  "close": 42.5,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.008,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1444.0,
+    "margin_change": 1445.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -23,20 +23,18 @@
   },
   "main_force": {
     "cost": 42.52,
-    "distance": 0.66,
-    "trend": "UP"
+    "distance": -0.05,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 30
   },
   "events": [],
-  "raw_signals": [
-    "ma_bull"
-  ],
-  "data_version": "2026-05-25"
+  "raw_signals": [],
+  "data_version": "2026-05-26"
 }

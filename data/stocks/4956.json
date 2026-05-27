@@ -1,20 +1,20 @@
 {
   "stock_id": "4956",
   "name": "4956",
-  "date": "2026-05-25",
-  "close": 50.4,
-  "health_score": 150,
+  "date": "2026-05-26",
+  "close": 49.95,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 8,
-    "foreign_buy_ratio": 0.453,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7612.0,
-    "short_change": 103.0,
-    "short_margin_ratio": 1.35
+    "margin_change": 7394.0,
+    "short_change": 61.0,
+    "short_margin_ratio": 0.82
   },
   "tdcc": {
     "big_holder_change": 34.91,
@@ -22,8 +22,8 @@
     "holder_concentration": 39.72
   },
   "main_force": {
-    "cost": 46.48,
-    "distance": 8.43,
+    "cost": 46.68,
+    "distance": 7.01,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 8 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

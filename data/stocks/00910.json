@@ -1,20 +1,20 @@
 {
   "stock_id": "00910",
   "name": "00910",
-  "date": "2026-05-25",
-  "close": 84.8,
-  "health_score": 150,
+  "date": "2026-05-26",
+  "close": 84.25,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1904.0,
+    "margin_change": 2074.0,
     "short_change": 20.0,
-    "short_margin_ratio": 1.05
+    "short_margin_ratio": 0.96
   },
   "tdcc": {
     "big_holder_change": 9.9,
@@ -22,8 +22,8 @@
     "holder_concentration": 14.77
   },
   "main_force": {
-    "cost": 71.58,
-    "distance": 18.47,
+    "cost": 72.52,
+    "distance": 16.17,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

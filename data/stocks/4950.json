@@ -1,13 +1,13 @@
 {
   "stock_id": "4950",
   "name": "4950",
-  "date": "2026-05-25",
-  "close": 16.7,
-  "health_score": 86,
+  "date": "2026-05-26",
+  "close": 17.0,
+  "health_score": 123,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 71.74
   },
   "main_force": {
-    "cost": 17.13,
-    "distance": -2.51,
+    "cost": 17.18,
+    "distance": -1.05,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 60
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-26"
 }

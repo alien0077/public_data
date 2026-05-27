@@ -1,18 +1,18 @@
 {
   "stock_id": "6243",
   "name": "6243",
-  "date": "2026-05-25",
-  "close": 35.9,
-  "health_score": 150,
+  "date": "2026-05-26",
+  "close": 35.05,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.236,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1768.0,
+    "margin_change": 1777.0,
     "short_change": 3.0,
     "short_margin_ratio": 0.17
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 24.35
   },
   "main_force": {
-    "cost": 34.3,
-    "distance": 4.66,
+    "cost": 34.36,
+    "distance": 2.01,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

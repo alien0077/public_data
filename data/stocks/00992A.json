@@ -1,20 +1,20 @@
 {
   "stock_id": "00992A",
   "name": "00992A",
-  "date": "2026-05-25",
-  "close": 18.85,
-  "health_score": 150,
+  "date": "2026-05-26",
+  "close": 18.92,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 47464.0,
-    "short_change": 829.0,
-    "short_margin_ratio": 1.75
+    "margin_change": 45787.0,
+    "short_change": 876.0,
+    "short_margin_ratio": 1.91
   },
   "tdcc": {
     "big_holder_change": 13.17,
@@ -22,8 +22,8 @@
     "holder_concentration": 18.04
   },
   "main_force": {
-    "cost": 17.74,
-    "distance": 6.26,
+    "cost": 17.84,
+    "distance": 6.05,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

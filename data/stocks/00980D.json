@@ -1,12 +1,12 @@
 {
   "stock_id": "00980D",
   "name": "00980D",
-  "date": "2026-05-25",
-  "close": 20.21,
-  "health_score": 86,
+  "date": "2026-05-26",
+  "close": 20.26,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -19,18 +19,21 @@
   "tdcc": {},
   "main_force": {
     "cost": 20.24,
-    "distance": -0.15,
-    "trend": "DOWN"
+    "distance": 0.1,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-26"
 }

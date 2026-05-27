@@ -1,9 +1,9 @@
 {
   "stock_id": "00883B",
   "name": "00883B",
-  "date": "2026-05-25",
+  "date": "2026-05-26",
   "close": 31.05,
-  "health_score": 86,
+  "health_score": 93,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -18,9 +18,9 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 31.05,
-    "distance": 0.0,
-    "trend": "DOWN"
+    "cost": 31.04,
+    "distance": 0.03,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -28,9 +28,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-26"
 }

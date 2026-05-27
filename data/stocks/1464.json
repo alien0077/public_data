@@ -1,18 +1,18 @@
 {
   "stock_id": "1464",
   "name": "1464",
-  "date": "2026-05-25",
-  "close": 10.05,
-  "health_score": 83,
+  "date": "2026-05-26",
+  "close": 10.1,
+  "health_score": 93,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.028,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2038.0,
+    "margin_change": 2057.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 60.42
   },
   "main_force": {
-    "cost": 10.06,
-    "distance": -0.1,
-    "trend": "DOWN"
+    "cost": 10.07,
+    "distance": 0.3,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,11 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

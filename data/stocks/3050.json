@@ -1,18 +1,18 @@
 {
   "stock_id": "3050",
   "name": "3050",
-  "date": "2026-05-25",
-  "close": 12.75,
-  "health_score": 130,
+  "date": "2026-05-26",
+  "close": 12.35,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 6,
-    "foreign_buy_ratio": 0.092,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4186.0,
+    "margin_change": 4197.0,
     "short_change": 6.0,
     "short_margin_ratio": 0.14
   },
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 12.24,
-    "distance": 4.17,
+    "distance": 0.9,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 6 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

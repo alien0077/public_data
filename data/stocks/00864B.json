@@ -1,12 +1,12 @@
 {
   "stock_id": "00864B",
   "name": "00864B",
-  "date": "2026-05-25",
-  "close": 45.58,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-26",
+  "close": 45.64,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -19,7 +19,7 @@
   "tdcc": {},
   "main_force": {
     "cost": 45.74,
-    "distance": -0.35,
+    "distance": -0.22,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-26"
 }

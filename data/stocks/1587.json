@@ -1,20 +1,20 @@
 {
   "stock_id": "1587",
   "name": "1587",
-  "date": "2026-05-25",
-  "close": 28.3,
-  "health_score": 103,
-  "signal": "Bullish",
+  "date": "2026-05-26",
+  "close": 28.25,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.211,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2747.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.07
+    "margin_change": 2734.0,
+    "short_change": 4.0,
+    "short_margin_ratio": 0.15
   },
   "tdcc": {
     "big_holder_change": 37.81,
@@ -22,8 +22,8 @@
     "holder_concentration": 48.06
   },
   "main_force": {
-    "cost": 30.41,
-    "distance": -6.94,
+    "cost": 30.21,
+    "distance": -6.49,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,16 +32,9 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-25"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-26"
 }

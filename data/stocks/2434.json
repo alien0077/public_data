@@ -1,18 +1,18 @@
 {
   "stock_id": "2434",
   "name": "2434",
-  "date": "2026-05-25",
-  "close": 30.0,
-  "health_score": 123,
+  "date": "2026-05-26",
+  "close": 30.2,
+  "health_score": 106,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.027,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 18.0,
+    "margin_change": 20.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 80.49
   },
   "main_force": {
-    "cost": 30.67,
-    "distance": -2.18,
+    "cost": 30.66,
+    "distance": -1.5,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 60
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 7 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-25"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-26"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "3054",
   "name": "3054",
-  "date": "2026-05-25",
-  "close": 69.0,
-  "health_score": 150,
+  "date": "2026-05-26",
+  "close": 68.3,
+  "health_score": 106,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.021,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 900.0,
+    "margin_change": 890.0,
     "short_change": 2.0,
     "short_margin_ratio": 0.22
   },
@@ -22,22 +22,19 @@
     "holder_concentration": 87.79
   },
   "main_force": {
-    "cost": 68.93,
-    "distance": 0.1,
-    "trend": "UP"
+    "cost": 68.44,
+    "distance": -0.2,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 100
+    "style": "Value",
+    "score": 60
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-05-25"
+  "raw_signals": [],
+  "data_version": "2026-05-26"
 }

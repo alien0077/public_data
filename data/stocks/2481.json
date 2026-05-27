@@ -1,20 +1,20 @@
 {
   "stock_id": "2481",
   "name": "2481",
-  "date": "2026-05-25",
-  "close": 134.0,
-  "health_score": 166,
+  "date": "2026-05-26",
+  "close": 147.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.355,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 17497.0,
-    "short_change": 882.0,
-    "short_margin_ratio": 5.04
+    "margin_change": 19330.0,
+    "short_change": 1579.0,
+    "short_margin_ratio": 8.17
   },
   "tdcc": {
     "big_holder_change": 58.92,
@@ -22,8 +22,8 @@
     "holder_concentration": 66.05
   },
   "main_force": {
-    "cost": 114.3,
-    "distance": 17.24,
+    "cost": 116.5,
+    "distance": 26.18,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,14 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

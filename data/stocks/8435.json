@@ -1,13 +1,13 @@
 {
   "stock_id": "8435",
   "name": "8435",
-  "date": "2026-05-25",
-  "close": 54.8,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-26",
+  "close": 54.7,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 41.42
   },
   "main_force": {
-    "cost": 55.79,
-    "distance": -1.77,
+    "cost": 55.74,
+    "distance": -1.87,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-26"
 }

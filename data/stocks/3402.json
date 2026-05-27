@@ -1,18 +1,18 @@
 {
   "stock_id": "3402",
   "name": "3402",
-  "date": "2026-05-25",
-  "close": 143.0,
-  "health_score": 133,
+  "date": "2026-05-26",
+  "close": 154.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 1.653,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1395.0,
+    "margin_change": 1723.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 28.63
   },
   "main_force": {
-    "cost": 137.28,
-    "distance": 4.17,
+    "cost": 138.43,
+    "distance": 11.25,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

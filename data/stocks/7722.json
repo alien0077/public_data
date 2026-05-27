@@ -1,20 +1,20 @@
 {
   "stock_id": "7722",
   "name": "7722",
-  "date": "2026-05-25",
-  "close": 261.5,
-  "health_score": 103,
+  "date": "2026-05-26",
+  "close": 261.0,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 6,
-    "foreign_buy_ratio": 0.045,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 368.0,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.82
+    "margin_change": 366.0,
+    "short_change": 4.0,
+    "short_margin_ratio": 1.09
   },
   "tdcc": {
     "big_holder_change": 83.93,
@@ -22,8 +22,8 @@
     "holder_concentration": 85.45
   },
   "main_force": {
-    "cost": 271.4,
-    "distance": -3.65,
+    "cost": 270.35,
+    "distance": -3.46,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 30
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 6 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-05-25"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-26"
 }

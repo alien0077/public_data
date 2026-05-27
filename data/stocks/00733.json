@@ -1,20 +1,20 @@
 {
   "stock_id": "00733",
   "name": "00733",
-  "date": "2026-05-25",
-  "close": 75.6,
-  "health_score": 150,
+  "date": "2026-05-26",
+  "close": 76.55,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 6,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 64.0,
+    "margin_change": 80.0,
     "short_change": 1.0,
-    "short_margin_ratio": 1.56
+    "short_margin_ratio": 1.25
   },
   "tdcc": {
     "big_holder_change": 15.47,
@@ -22,8 +22,8 @@
     "holder_concentration": 19.02
   },
   "main_force": {
-    "cost": 66.84,
-    "distance": 13.11,
+    "cost": 67.64,
+    "distance": 13.17,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 6 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-25"
+  "data_version": "2026-05-26"
 }

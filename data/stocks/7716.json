@@ -1,10 +1,10 @@
 {
   "stock_id": "7716",
   "name": "7716",
-  "date": "2026-05-25",
-  "close": 0.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-26",
+  "close": 25.15,
+  "health_score": 133,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -23,18 +23,20 @@
   },
   "main_force": {
     "cost": 18.71,
-    "distance": -100.0,
-    "trend": "DOWN"
+    "distance": 34.42,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-26"
 }

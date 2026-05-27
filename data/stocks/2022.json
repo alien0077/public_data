@@ -1,18 +1,18 @@
 {
   "stock_id": "2022",
   "name": "2022",
-  "date": "2026-05-25",
-  "close": 8.2,
-  "health_score": 113,
+  "date": "2026-05-26",
+  "close": 7.85,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.011,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1126.0,
+    "margin_change": 1249.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,26 +22,19 @@
     "holder_concentration": 38.95
   },
   "main_force": {
-    "cost": 7.95,
-    "distance": 3.14,
-    "trend": "UP"
+    "cost": 7.94,
+    "distance": -1.13,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 30
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
-  "raw_signals": [
-    "ma_bull"
-  ],
-  "data_version": "2026-05-25"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-05-26"
 }

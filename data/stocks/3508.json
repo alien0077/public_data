@@ -1,13 +1,13 @@
 {
   "stock_id": "3508",
   "name": "3508",
-  "date": "2026-05-25",
-  "close": 19.45,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-26",
+  "close": 21.35,
+  "health_score": 130,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.188,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,27 @@
     "holder_concentration": 42.54
   },
   "main_force": {
-    "cost": 21.46,
-    "distance": -9.37,
-    "trend": "DOWN"
+    "cost": 21.29,
+    "distance": 0.28,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-26"
 }

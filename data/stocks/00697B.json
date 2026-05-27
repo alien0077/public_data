@@ -1,12 +1,12 @@
 {
   "stock_id": "00697B",
   "name": "00697B",
-  "date": "2026-05-25",
-  "close": 35.4,
-  "health_score": 86,
+  "date": "2026-05-26",
+  "close": 35.43,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 35.55,
-    "distance": -0.42,
+    "cost": 35.53,
+    "distance": -0.28,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-26"
 }

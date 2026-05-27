@@ -1,18 +1,18 @@
 {
   "stock_id": "6823",
   "name": "6823",
-  "date": "2026-05-25",
-  "close": 81.4,
-  "health_score": 106,
+  "date": "2026-05-26",
+  "close": 80.6,
+  "health_score": 123,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.013,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 934.0,
+    "margin_change": 938.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 56.56
   },
   "main_force": {
-    "cost": 87.52,
-    "distance": -6.99,
+    "cost": 87.68,
+    "distance": -8.07,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 60
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-26"
 }

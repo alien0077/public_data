@@ -1,20 +1,20 @@
 {
   "stock_id": "3260",
   "name": "3260",
-  "date": "2026-05-25",
-  "close": 407.5,
-  "health_score": 106,
+  "date": "2026-05-26",
+  "close": 410.0,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.301,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 24588.0,
-    "short_change": 50.0,
-    "short_margin_ratio": 0.2
+    "margin_change": 25106.0,
+    "short_change": 11.0,
+    "short_margin_ratio": 0.04
   },
   "tdcc": {
     "big_holder_change": 28.74,
@@ -22,8 +22,8 @@
     "holder_concentration": 34.99
   },
   "main_force": {
-    "cost": 436.78,
-    "distance": -6.7,
+    "cost": 435.28,
+    "distance": -5.81,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 60
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-25"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-26"
 }
