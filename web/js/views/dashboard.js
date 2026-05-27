@@ -272,16 +272,13 @@ export const Dashboard = {
 
     async renderLiar(data) {
         const dashboardSummary = document.getElementById('dashboard-liar-summary');
-        const mainContainer = document.getElementById('liar-container');
-        const section = document.getElementById('liar-section');
 
         if (!data || !data.data || data.data.length === 0) {
-            if (dashboardSummary) dashboardSummary.innerHTML = `<div class="text-center py-4 text-gray-500 text-sm">目前無偵測到說謊事件。</div>`;
-            if (section) section.classList.add('hidden');
+            if (dashboardSummary) {
+                dashboardSummary.innerHTML = `<div class="text-center py-4 text-gray-500 text-sm">目前無偵測到說謊事件。</div>`;
+            }
             return;
         }
-
-        if (section) section.classList.remove('hidden');
 
         let stocksMeta = {};
         try {
@@ -303,14 +300,12 @@ export const Dashboard = {
                     </span>`;
         };
 
-        const renderCard = (item, isHorizontal = false) => {
+        const renderCard = (item) => {
             const name = stocksMeta[item.stockId] || stocksMeta[item.stockId.split('.')[0]] || '';
             const isUpgrade = item.sentiment === 'bullish';
             const sentimentColor = isUpgrade ? 'text-red-500' : 'text-green-500';
-            const sentimentBg = isUpgrade ? 'bg-red-500/10' : 'bg-green-500/10';
-            
             return `
-                <div class="${isHorizontal ? 'flex-none w-72' : ''} p-4 bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 cursor-pointer hover:border-blue-500/50 transition-all shadow-sm group"
+                <div class="p-4 bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 cursor-pointer hover:border-blue-500/50 transition-all shadow-sm group"
                      onclick="window.StockDetail.show('${item.stockId}')">
                     <div class="flex justify-between items-start mb-3">
                         <div>
@@ -336,10 +331,6 @@ export const Dashboard = {
 
         if (dashboardSummary) {
             dashboardSummary.innerHTML = data.data.slice(0, 3).map(item => renderCard(item)).join('');
-        }
-
-        if (mainContainer) {
-            mainContainer.innerHTML = data.data.map(item => renderCard(item, true)).join('');
         }
     },
 

@@ -564,12 +564,10 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const data = await api.fetchLocalJson('daily/liar.json').catch(() => null);
             const mainContainer = document.getElementById('liar-container');
-            const section = document.getElementById('liar-section');
             if (!data || !data.data || data.data.length === 0) {
-                if (section) section.classList.add('hidden');
+                if (mainContainer) mainContainer.innerHTML = '<div class="text-center py-8 text-gray-500 text-sm">尚無外資喊話記錄</div>';
                 return;
             }
-            if (section) section.classList.remove('hidden');
             let stocksMeta = {};
             try {
                 const meta = await api.getStocksMeta();
@@ -586,15 +584,58 @@ document.addEventListener('DOMContentLoaded', () => {
                 const name = stocksMeta[item.stockId] || stocksMeta[item.stockId.split('.')[0]] || '';
                 const isUpgrade = item.sentiment === 'bullish';
                 const sentimentColor = isUpgrade ? 'text-red-500' : 'text-green-500';
-                return '<div class="flex-none w-72 p-4 bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 cursor-pointer hover:border-blue-500/50 transition-all shadow-sm group" onclick="window.StockDetail.show(\'' + item.stockId + '\')">' +
+                return '<div class="liar-marquee-card p-4 bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 cursor-pointer hover:border-blue-500/50 transition-all shadow-sm group" onclick="window.StockDetail.show(\'' + item.stockId + '\')">' +
                     '<div class="flex justify-between items-start mb-3"><div><span class="text-[10px] ' + (isUpgrade ? 'bg-red-500' : 'bg-green-500') + ' text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider">' + item.brokerName + '</span><div class="mt-1 text-xs font-mono font-bold text-gray-900 dark:text-white">' + item.stockId + ' <span class="text-gray-400 font-normal ml-1">' + name + '</span></div></div>' +
                     getStatusBadge(item.honestyStatus) + '</div>' +
                     '<div class="text-sm font-bold text-gray-800 dark:text-gray-200 line-clamp-2 mb-3 leading-snug h-10 group-hover:text-blue-500 transition-colors">' + item.newsTitle + '</div>' +
                     '<div class="flex justify-between items-center pt-3 border-t border-gray-100 dark:border-gray-800"><div class="text-center"><div class="text-[8px] text-gray-400 uppercase">目標價</div><div class="text-sm font-mono font-bold ' + sentimentColor + '">' + (item.targetPrice > 0 ? item.targetPrice : '--') + '</div></div>' +
                     '<div class="text-center"><div class="text-[8px] text-gray-400 uppercase">累積進出</div><div class="text-sm font-mono font-bold ' + (item.cumulativeVolume >= 0 ? 'text-red-500' : 'text-green-500') + '">' + (item.cumulativeVolume > 0 ? '+' : '') + Math.round(item.cumulativeVolume) + ' 張</div></div></div></div>';
             };
-            if (mainContainer) mainContainer.innerHTML = data.data.map(item => renderCard(item)).join('');
+            if (mainContainer) {
+                mainContainer.innerHTML = '<div class="liar-marquee-track">' + data.data.map(item => renderCard(item)).join('') + '</div>';
+                initLiarMarquee(mainContainer, data.data.length);
+            }
         } catch(e) { console.error('loadAndRenderLiar error:', e); }
+    }
+
+    function initLiarMarquee(container, totalItems) {
+        if (totalItems <= 1) return;
+        const track = container.querySelector('.liar-marquee-track');
+        if (!track) return;
+        const CARD_HEIGHT = 150;
+        let currentIndex = 0;
+        for (let i = 0; i < track.children.length; i++) {
+            track.children[i].style.height = CARD_HEIGHT + 'px';
+        }
+        container.style.position = 'relative';
+        container.style.overflow = 'hidden';
+        container.style.height = CARD_HEIGHT + 'px';
+        track.style.position = 'absolute';
+        track.style.top = '0';
+        track.style.left = '0';
+        track.style.width = '100%';
+        track.style.transition = 'transform 0.5s ease';
+        const advance = () => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            track.style.transform = 'translateY(-' + (currentIndex * CARD_HEIGHT) + 'px)';
+        };
+        let timer = setInterval(advance, 3500);
+        container.addEventListener('mouseenter', function() { clearInterval(timer); });
+        container.addEventListener('mouseleave', function() { timer = setInterval(advance, 3500); });
+        let touchStartY = 0;
+        container.addEventListener('touchstart', function(e) {
+            clearInterval(timer);
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+        container.addEventListener('touchend', function(e) {
+            var diff = touchStartY - e.changedTouches[0].clientY;
+            if (Math.abs(diff) > 30) {
+                if (diff > 0 && currentIndex < totalItems - 1) { currentIndex++; }
+                else if (diff < 0 && currentIndex > 0) { currentIndex--; }
+                track.style.transform = 'translateY(-' + (currentIndex * CARD_HEIGHT) + 'px)';
+            }
+            setTimeout(function() { timer = setInterval(advance, 3500); }, 5000);
+        }, { passive: true });
     }
 
     function renderBetaWarning(holdings) {

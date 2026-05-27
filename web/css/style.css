@@ -1,4 +1,14 @@
 /* TWStock Pro Styles */
+
+/* Liar 垂直跑馬燈卡片 */
+.liar-marquee-card {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.liar-marquee-track {
+    will-change: transform;
+}
 /* Autocomplete 下拉選單 */
 .autocomplete-dropdown {
     position: absolute;
