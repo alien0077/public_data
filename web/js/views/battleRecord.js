@@ -178,7 +178,8 @@ export const BattleRecord = {
 
         const symbols = Array.from(new Set(trades.map(t => t.symbol || t.stock_id || t.stockId)));
         await CorporateActions.loadCorporateActions(symbols);
-        const holdings = CorporateActions.recalculateHoldings(trades);
+        const today = new Date().toISOString().slice(0, 10);
+        const holdings = CorporateActions.recalculateHoldings(trades, true, null, today);
         
         const symbolGroups = {};
         trades.forEach(t => {
@@ -227,7 +228,7 @@ export const BattleRecord = {
 
         results.sort((a, b) => b.total - a.total);
 
-        const grandTotal = totalRealizedPNL + totalDividend + totalUnrealizedPNL;
+        const grandTotal = totalRealizedPNL + totalDividend;
         document.getElementById('settled-total-pnl').textContent = `$${this.formatNumber(grandTotal, 0)}`;
         document.getElementById('settled-total-pnl').className = `text-3xl font-mono font-bold ${grandTotal >= 0 ? 'text-red-500' : 'text-green-500'}`;
         document.getElementById('settled-win-count').textContent = winCount;
@@ -261,7 +262,7 @@ export const BattleRecord = {
         const container = document.getElementById('settled-groups-container');
         container.innerHTML = `
             <div class="bg-blue-50 dark:bg-blue-900/10 p-4 rounded-2xl border border-blue-100 dark:border-blue-800/30 text-xs text-blue-600 dark:text-blue-400 mb-6 font-sans text-center">
-                💡 彙總 = 歷史已實現價差 + 累計股利 + 目前部位未實現。
+                💡 全歷史總盈虧 = 已實現價差 + 已入袋股利（截至今日）。個股彙總含未實現損益。
             </div>
             <div class="grid grid-cols-1 gap-4">
                 ${results.map(r => `

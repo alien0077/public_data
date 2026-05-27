@@ -30,7 +30,7 @@ export const CorporateActions = {
 
     getActions(symbol) { return this._cache[String(symbol)] || []; },
 
-    recalculateHoldings(trades, includeClosed = true, ytdRef = null) {
+    recalculateHoldings(trades, includeClosed = true, ytdRef = null, cutoffDate = null) {
         if (!Array.isArray(trades)) return { yearlyStats: {} };
         const holdings = {};
         const yearlyStats = {}; // year -> { realizedPNL, dividend, ytdRealizedPNL }
@@ -42,8 +42,12 @@ export const CorporateActions = {
         });
         
         const symbols = Array.from(new Set(trades.map(t => String(t.symbol || t.stock_id || t.stockId))));
+        const seenActions = new Set();
         symbols.forEach(sid => {
             this.getActions(sid).forEach(a => {
+                const key = sid + '|' + (a.ex_date || '') + '|' + (a.type || '');
+                if (seenActions.has(key)) return;
+                seenActions.add(key);
                 allEvents.push({ type: 'ACTION', date: a.ex_date, data: a, symbol: sid });
             });
         });
@@ -55,9 +59,10 @@ export const CorporateActions = {
         allEvents.forEach(evt => {
             const sid = evt.symbol || evt.data.symbol || evt.data.stock_id || evt.data.stockId;
             if (!sid) return;
+            if (evt.type === 'ACTION' && cutoffDate && evt.date > cutoffDate) return;
 
             if (!holdings[sid]) {
-                holdings[sid] = { symbol: sid, name: evt.data.name || evt.data.stockName || '', shares: 0, totalCost: 0, ytdBasis: 0, realizedPNL: 0, totalDividend: 0, _ytdSnapshotted: false };
+                holdings[sid] = { symbol: sid, name: evt.data.name || evt.data.stockName || '', shares: 0, totalCost: 0, ytdBasis: 0, realizedPNL: 0, totalDividend: 0, _ytdSnapshotted: false, _buyLots: [] };
             }
             const h = holdings[sid];
             
@@ -88,22 +93,32 @@ export const CorporateActions = {
                 if (side.includes('BUY') || side.includes('買')) {
                     h.shares += qty;
                     h.totalCost += (qty * price) + fee;
+                    h._buyLots.push({ shares: qty, price: price, fee: fee, orig: qty });
                     if (date >= yearStart) h.ytdBasis += (qty * price) + fee;
                 } else if (side.includes('SELL') || side.includes('賣')) {
                     if (h.shares > 0.0001) {
-                        const avgCost = h.totalCost / h.shares;
-                        const avgYtd = h.ytdBasis / h.shares;
+                        let toSell = qty;
+                        let cost = 0;
+                        while (toSell > 0.001 && h._buyLots.length > 0) {
+                            const lot = h._buyLots[0];
+                            const use = Math.min(toSell, lot.shares);
+                            cost += use * lot.price + (lot.orig > 0 ? lot.fee * (use / lot.orig) : 0);
+                            toSell -= use;
+                            lot.shares -= use;
+                            if (lot.shares <= 0.001) h._buyLots.shift();
+                        }
                         const sellVal = (qty * price) - fee - tax;
                         
-                        const pnl = sellVal - (qty * avgCost);
+                        const pnl = sellVal - cost;
                         h.realizedPNL += pnl;
                         yearlyStats[year].realizedPNL += pnl;
-                        
-                        // 🚀 v2.23.1: Track YTD portion of realized P&L
+
+                        // YTD tracking: use average (matching pre-FIFO behavior)
+                        const avgYtd = h.ytdBasis / h.shares;
                         const ytdPnl = sellVal - (qty * avgYtd);
                         yearlyStats[year].ytdRealizedPNL += ytdPnl;
 
-                        h.totalCost = Math.max(0, h.totalCost - (qty * avgCost));
+                        h.totalCost = Math.max(0, h.totalCost - cost);
                         h.ytdBasis = Math.max(0, h.ytdBasis - (qty * avgYtd));
                         h.shares = Math.max(0, h.shares - qty);
                     }
@@ -114,12 +129,26 @@ export const CorporateActions = {
                     if (aType.includes('DIVIDEND')) {
                         const gain = h.shares * (a.cash_dividend || 0);
                         h.totalDividend += gain;
-                        if (date >= yearStart) yearlyStats[year].dividend += gain;
-                        if (a.stock_dividend > 0) h.shares *= (1.0 + a.stock_dividend / 10.0);
+                        yearlyStats[year].dividend += gain;
+                        if (a.stock_dividend > 0) {
+                            const newShares = h.shares * (a.stock_dividend / 10.0);
+                            h._buyLots.push({ shares: newShares, price: 0, fee: 0, orig: newShares });
+                            h.shares += newShares;
+                        }
                     } else if (aType.includes('REDUCTION')) {
-                        h.shares *= (1.0 - (a.capital_reduction || 0));
+                        const ratio = (a.capital_reduction || 0);
+                        if (ratio > 0) {
+                            h.shares *= (1.0 - ratio);
+                            h._buyLots.forEach(lot => lot.shares *= (1.0 - ratio));
+                            h._buyLots = h._buyLots.filter(lot => lot.shares > 0.001);
+                        }
                     } else if (aType.includes('SPLIT')) {
-                        h.shares *= (a.split_ratio || 1.0);
+                        const ratio = a.split_ratio || 1.0;
+                        if (ratio !== 1.0) {
+                            const newShares = h.shares * (ratio - 1.0);
+                            h._buyLots.push({ shares: newShares, price: 0, fee: 0, orig: newShares });
+                            h.shares += newShares;
+                        }
                     }
                 }
             }
