@@ -1,45 +1,6 @@
 import { api } from '../api.js';
 import { db } from '../db.js';
 
-const DATA_TYPES = [
-    { id: 'stocks', icon: '📋', name: '市場股票清單' },
-    { id: 'forex', icon: '💱', name: '匯率歷史' },
-    { id: 'tw_daily', icon: '📈', name: '台股日K' },
-    { id: 'tw_index', icon: '📊', name: '台股指數' },
-    { id: 'margin', icon: '🏦', name: '全市場資券' },
-    { id: 'us_daily', icon: '🇺🇸', name: '美股日K' },
-    { id: 'revenue', icon: '💰', name: '月營收' },
-    { id: 'quarterly', icon: '📑', name: '季報' },
-    { id: 'major_holders', icon: '👥', name: '大股東週報' },
-    { id: 'corp_actions', icon: '🏗️', name: '企業行為' },
-    { id: 'quant', icon: '🤖', name: '量化系統' },
-    { id: 'etf', icon: '📦', name: 'ETF戰情' },
-    { id: 'structure', icon: '🧩', name: '結構數據' },
-    { id: 'ai_checkup', icon: '🧠', name: 'AI健檢' }
-];
-
-const SYNC_STATUS_KEY = 'twstock_sync_status';
-
-function getDefaultSyncStatus() {
-    const status = {};
-    DATA_TYPES.forEach(dt => { status[dt.id] = false; });
-    return status;
-}
-
-function loadSyncStatus() {
-    try {
-        const saved = localStorage.getItem(SYNC_STATUS_KEY);
-        return saved ? JSON.parse(saved) : getDefaultSyncStatus();
-    } catch { return getDefaultSyncStatus(); }
-}
-
-function getApiKeyStatus(key) {
-    try {
-        const val = localStorage.getItem(key);
-        return val && val.length > 0 ? '已儲存' : '未設定';
-    } catch { return '未設定'; }
-}
-
 export const Settings = {
     async init() {
         const container = document.getElementById('view-settings');
@@ -49,73 +10,8 @@ export const Settings = {
     },
 
     render(container) {
-        const syncStatus = loadSyncStatus();
-        const fugleStatus = getApiKeyStatus('fugle_api_key');
-        const geminiStatus = getApiKeyStatus('gemini_api_key');
-        const forexStatus = getApiKeyStatus('forex_api_key');
-
         container.innerHTML = `
             <div class="flex flex-col flex-1 overflow-y-auto no-scrollbar p-4 md:p-6 space-y-6">
-                <!-- Data Sync Status -->
-                <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
-                    <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
-                        <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
-                            <span class="mr-2">🔄</span> 數據同步狀態
-                        </h3>
-                    </div>
-                    <div class="p-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                        ${DATA_TYPES.map(dt => {
-                            const synced = syncStatus[dt.id] || false;
-                            return `
-                                <div class="flex items-center justify-between bg-gray-50 dark:bg-gray-900/50 p-3 rounded-xl border border-gray-100 dark:border-gray-800">
-                                    <div class="flex items-center space-x-3 min-w-0">
-                                        <span class="text-lg flex-shrink-0">${dt.icon}</span>
-                                        <span class="text-sm text-gray-700 dark:text-gray-300 truncate">${dt.name}</span>
-                                    </div>
-                                    <span class="flex-shrink-0 text-[10px] font-bold px-2 py-1 rounded-full ${synced ? 'bg-green-500/10 text-green-500' : 'bg-yellow-500/10 text-yellow-500'}">
-                                        ${synced ? '已同步' : '待同步'}
-                                    </span>
-                                </div>
-                            `;
-                        }).join('')}
-                    </div>
-                    <div class="p-4 border-t border-gray-100 dark:border-gray-800 bg-gray-50/30 dark:bg-gray-900/30">
-                        <p class="text-xs text-gray-400">💡 自動同步機制會在每日開盤後自動更新報價與持股損益。手動點擊「手動刷新」可立即同步。</p>
-                    </div>
-                </div>
-
-                <!-- API 管理 -->
-                <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
-                    <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
-                        <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
-                            <span class="mr-2">🔑</span> API 管理
-                        </h3>
-                    </div>
-                    <div class="p-5 space-y-3">
-                        <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800">
-                            <div class="flex items-center space-x-3">
-                                <span class="text-lg">🟣</span>
-                                <span class="text-sm text-gray-700 dark:text-gray-300">Fugle富果</span>
-                            </div>
-                            <span class="text-[10px] font-bold px-2 py-1 rounded-full ${fugleStatus === '已儲存' ? 'bg-green-500/10 text-green-500' : 'bg-yellow-500/10 text-yellow-500'}">${fugleStatus}</span>
-                        </div>
-                        <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800">
-                            <div class="flex items-center space-x-3">
-                                <span class="text-lg">🤖</span>
-                                <span class="text-sm text-gray-700 dark:text-gray-300">Gemini AI</span>
-                            </div>
-                            <span class="text-[10px] font-bold px-2 py-1 rounded-full ${geminiStatus === '已儲存' ? 'bg-green-500/10 text-green-500' : 'bg-yellow-500/10 text-yellow-500'}">${geminiStatus}</span>
-                        </div>
-                        <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800">
-                            <div class="flex items-center space-x-3">
-                                <span class="text-lg">🌐</span>
-                                <span class="text-sm text-gray-700 dark:text-gray-300">匯率API</span>
-                            </div>
-                            <span class="text-[10px] font-bold px-2 py-1 rounded-full ${forexStatus === '已儲存' ? 'bg-green-500/10 text-green-500' : 'bg-yellow-500/10 text-yellow-500'}">${forexStatus}</span>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- 資料管理 -->
                 <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
                     <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
@@ -210,7 +106,7 @@ export const Settings = {
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `TWStock_favorites_${new Date().toISOString().split('T')[0]}.json`;
+            a.download = `${new Date().toISOString().slice(0, 10)}_收藏.json`;
             a.click();
             URL.revokeObjectURL(url);
         } else {

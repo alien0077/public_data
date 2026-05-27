@@ -112,6 +112,12 @@ export const Favorites = {
                     `).join('')}
                 </div>
 
+                <!-- Search to Add -->
+                <div id="fav-search-wrapper" class="relative">
+                    <input type="text" id="fav-search-input" placeholder="🔍 輸入股票代號或名稱來加入收藏..."
+                        class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-3 pl-10 outline-none focus:border-blue-500 transition-colors text-sm text-gray-900 dark:text-white">
+                </div>
+
                 <!-- List Content -->
                 <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm flex-1 flex flex-col transition-colors duration-300">
                     <div class="overflow-x-auto flex-1">
@@ -164,6 +170,64 @@ export const Favorites = {
                 }
             });
         });
+
+        // Search autocomplete
+        const searchInput = document.getElementById('fav-search-input');
+        const searchWrapper = document.getElementById('fav-search-wrapper');
+        if (searchInput && searchWrapper) {
+            const dropdown = document.createElement('div');
+            dropdown.className = 'autocomplete-dropdown';
+            searchWrapper.appendChild(dropdown);
+
+            let debounceTimer;
+            searchInput.addEventListener('input', () => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(async () => {
+                    const q = searchInput.value.trim();
+                    if (q.length < 1) { dropdown.innerHTML = ''; return; }
+                    const meta = await api.getStocksMeta();
+                    const stocks = meta.stocks || [];
+                    const ql = q.toLowerCase();
+                    const matches = stocks.filter(s =>
+                        s.symbol.toLowerCase().includes(ql) || s.name.toLowerCase().includes(ql)
+                    ).slice(0, 8);
+                    if (matches.length === 0) { dropdown.innerHTML = ''; return; }
+                    const cat = this._categories[this._activeTab];
+                    const currentSymbols = new Set(this._data[cat] || []);
+                    dropdown.innerHTML = matches.map(s => {
+                        const exists = currentSymbols.has(s.symbol);
+                        return `
+                            <div class="autocomplete-item ${exists ? 'opacity-40' : ''}" data-symbol="${s.symbol}" data-name="${s.name}">
+                                <span class="sym">${s.symbol}</span>
+                                <span class="name">${s.name}</span>
+                                <span class="action ${exists ? 'text-gray-500' : 'text-blue-400'}">${exists ? '✓ 已加入' : '+ 加入'}</span>
+                            </div>
+                        `;
+                    }).join('');
+                }, 150);
+            });
+
+            searchInput.addEventListener('blur', () => setTimeout(() => { dropdown.innerHTML = ''; }, 200));
+
+            dropdown.addEventListener('mousedown', (e) => {
+                const item = e.target.closest('.autocomplete-item');
+                if (!item || item.dataset.symbol === undefined) return;
+                e.preventDefault();
+                const symbol = item.dataset.symbol;
+                const cat = this._categories[this._activeTab];
+                if (!this._data[cat]) this._data[cat] = [];
+                if (this._data[cat].includes(symbol)) {
+                    alert(`${symbol} 已在「${cat}」中`);
+                    return;
+                }
+                this._data[cat].push(symbol);
+                this.saveData();
+                searchInput.value = '';
+                dropdown.innerHTML = '';
+                this.renderContent();
+                this.refreshQuotes();
+            });
+        }
     },
 
     async renderContent(quotes = {}) {

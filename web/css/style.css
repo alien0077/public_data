@@ -1,4 +1,32 @@
 /* TWStock Pro Styles */
+/* Autocomplete 下拉選單 */
+.autocomplete-dropdown {
+    position: absolute;
+    z-index: 50;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: 4px;
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    max-height: 320px;
+    overflow-y: auto;
+}
+.autocomplete-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #21262d;
+    transition: background 0.15s;
+}
+.autocomplete-item:last-child { border-bottom: none; }
+.autocomplete-item:hover { background: #30363d; }
+.autocomplete-item .sym { font-weight: 700; font-size: 14px; color: #e6edf3; }
+.autocomplete-item .name { font-size: 12px; color: #8b949e; margin-left: 10px; }
+.autocomplete-item .action { margin-left: auto; font-size: 11px; padding: 3px 10px; border-radius: 8px; }
 
 /* 捲軸美化 */
 ::-webkit-scrollbar {

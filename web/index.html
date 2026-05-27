@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TWStock Pro V2</title>
+    <title>Alien存股 V2</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -46,7 +46,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                     </svg>
                 </div>
-                <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">TWStock Pro</h1>
+                <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">Alien存股</h1>
                 <p class="text-gray-400 text-sm mt-1">請輸入存取金鑰</p>
             </div>
             
@@ -71,7 +71,7 @@
     <div id="main-app" class="hidden min-h-screen flex flex-col md:flex-row h-full opacity-0 transition-opacity duration-500">
         <!-- Sidebar -->
         <aside class="hidden md:flex w-64 flex-col bg-white dark:bg-[#161b22] border-r border-gray-200 dark:border-gray-800 transition-colors duration-300">
-            <div class="p-6 font-bold text-2xl text-blue-600 dark:text-blue-500 border-b border-gray-100 dark:border-gray-800">TWStock Pro</div>
+            <div class="p-6 font-bold text-2xl text-blue-600 dark:text-blue-500 border-b border-gray-100 dark:border-gray-800">Alien存股</div>
             <nav class="flex-1 mt-4 px-3 space-y-1">
                 <a href="#" id="nav-portfolio" class="nav-item flex items-center p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <span class="mr-3">📊</span> 我的持股
@@ -85,7 +85,7 @@
                 <a href="#" id="nav-performance" class="nav-item flex items-center p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <span class="mr-3">🏆</span> 歷年戰績
                 </a>
-                <a href="#" id="nav-add-trade" class="nav-item flex items-center p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <a href="#" id="nav-addTrade" class="nav-item flex items-center p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <span class="mr-3">➕</span> 新增交易
                 </a>
                 <a href="#" id="nav-favorites" class="nav-item flex items-center p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
@@ -395,6 +395,14 @@
         <button id="mobile-nav-performance" class="flex flex-col items-center text-gray-500">
             <span class="text-xl">🏆</span>
             <span class="text-[10px] mt-1">戰績</span>
+        </button>
+        <button id="mobile-nav-addTrade" class="flex flex-col items-center text-gray-500">
+            <span class="text-xl">➕</span>
+            <span class="text-[10px] mt-1">交易</span>
+        </button>
+        <button id="mobile-nav-favorites" class="flex flex-col items-center text-gray-500">
+            <span class="text-xl">❤️</span>
+            <span class="text-[10px] mt-1">收藏</span>
         </button>
         <button id="mobile-nav-settings" class="flex flex-col items-center text-gray-500">
             <span class="text-xl">⚙️</span>

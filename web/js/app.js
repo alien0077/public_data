@@ -667,7 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'TWStock_backup_' + new Date().toISOString().split('T')[0] + '.json';
+        a.download = `${new Date().toISOString().slice(0, 10)}_交易.json`;
         a.click();
         URL.revokeObjectURL(url);
     }
