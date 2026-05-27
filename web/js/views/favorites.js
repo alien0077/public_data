@@ -92,6 +92,14 @@ export const Favorites = {
     renderStructure(container) {
         container.innerHTML = `
             <div class="flex flex-col space-y-6 h-full">
+                <!-- Export/Import Buttons -->
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-gray-500">${this._categories[this._activeTab]} — ${(this._data[this._categories[this._activeTab]]||[]).length} 檔</div>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1.5 text-xs font-medium rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors" onclick="Favorites.importWatchlist()">📥 匯入</button>
+                        <button class="px-3 py-1.5 text-xs font-medium rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" onclick="Favorites.exportWatchlist()">📤 匯出</button>
+                    </div>
+                </div>
                 <!-- Categories Tabs -->
                 <div class="flex items-center space-x-2 md:space-x-4 overflow-x-auto no-scrollbar pb-2">
                     ${this._categories.map((cat, idx) => `
@@ -287,6 +295,75 @@ export const Favorites = {
         if (price > refPrice) return 'text-red-500';
         if (price < refPrice) return 'text-green-500';
         return 'text-white';
+    },
+
+    exportWatchlist() {
+        const backup = { version: 1, categories: {} };
+        for (const cat of this._categories) {
+            backup.categories[cat] = (this._data[cat] || []).slice().sort();
+        }
+        const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${new Date().toISOString().slice(0, 10)}_收藏.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+    },
+
+    importWatchlist() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.json';
+        input.onchange = (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                try {
+                    const data = JSON.parse(ev.target.result);
+                    let importCats;
+                    if (data.version === 1 && data.categories) {
+                        importCats = data.categories;
+                    } else if (data.categories) {
+                        importCats = {};
+                        for (const [key, syms] of Object.entries(data.categories)) {
+                            const name = data.categoryNames?.[key] || key;
+                            importCats[name] = syms;
+                        }
+                    }
+                    if (!importCats) { alert('❌ 無法辨識的檔案格式'); return; }
+                    const existingSymbols = new Set();
+                    for (const cat of this._categories) {
+                        for (const sym of (this._data[cat] || [])) existingSymbols.add(sym);
+                    }
+                    let added = 0;
+                    for (const [catName, symbols] of Object.entries(importCats)) {
+                        if (!Array.isArray(symbols)) continue;
+                        if (!this._categories.includes(catName)) {
+                            if (this._categories.length >= 5) continue;
+                            this._categories.push(catName);
+                        }
+                        if (!this._data[catName]) this._data[catName] = [];
+                        for (const sym of symbols) {
+                            if (!existingSymbols.has(sym)) {
+                                this._data[catName].push(sym);
+                                existingSymbols.add(sym);
+                                added++;
+                            }
+                        }
+                    }
+                    this.saveData();
+                    const container = document.getElementById('view-favorites');
+                    if (container) { this.renderStructure(container); this.renderContent(); }
+                    alert(`✅ 匯入完成！新增 ${added} 檔股票。`);
+                } catch (err) {
+                    alert(`❌ 匯入失敗：${err.message}`);
+                }
+            };
+            reader.readAsText(file);
+        };
+        input.click();
     }
 };
 
