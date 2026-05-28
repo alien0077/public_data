@@ -1,18 +1,18 @@
 {
   "stock_id": "7734",
   "name": "7734",
-  "date": "2026-05-26",
-  "close": 3610.0,
-  "health_score": 140,
+  "date": "2026-05-27",
+  "close": 3840.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.079,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.158,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 555.0,
+    "margin_change": 552.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,21 +22,26 @@
     "holder_concentration": 74.94
   },
   "main_force": {
-    "cost": 3636.0,
-    "distance": -0.72,
-    "trend": "DOWN"
+    "cost": 3661.0,
+    "distance": 4.89,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-05-26"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-27"
 }

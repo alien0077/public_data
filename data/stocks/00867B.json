@@ -1,12 +1,12 @@
 {
   "stock_id": "00867B",
   "name": "00867B",
-  "date": "2026-05-26",
-  "close": 0.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-27",
+  "close": 30.92,
+  "health_score": 150,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,19 +18,22 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 26.19,
-    "distance": -100.0,
-    "trend": "DOWN"
+    "cost": 26.18,
+    "distance": 18.11,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-26"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-27"
 }

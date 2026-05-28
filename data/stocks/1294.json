@@ -1,13 +1,13 @@
 {
   "stock_id": "1294",
   "name": "1294",
-  "date": "2026-05-26",
+  "date": "2026-05-27",
   "close": 77.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.003,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.017,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 56.71
   },
   "main_force": {
-    "cost": 78.37,
-    "distance": -1.75,
+    "cost": 78.24,
+    "distance": -1.58,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-26"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-27"
 }

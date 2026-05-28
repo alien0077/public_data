@@ -1,25 +1,25 @@
 {
   "stock_id": "00635U",
   "name": "00635U",
-  "date": "2026-05-26",
-  "close": 47.35,
-  "health_score": 86,
+  "date": "2026-05-27",
+  "close": 47.07,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4845.0,
-    "short_change": 268.0,
-    "short_margin_ratio": 5.53
+    "margin_change": 4922.0,
+    "short_change": 258.0,
+    "short_margin_ratio": 5.24
   },
   "tdcc": {},
   "main_force": {
-    "cost": 48.25,
-    "distance": -1.87,
+    "cost": 48.16,
+    "distance": -2.26,
     "trend": "DOWN"
   },
   "sector": {
@@ -28,9 +28,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-26"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-27"
 }

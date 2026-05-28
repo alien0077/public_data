@@ -1,13 +1,13 @@
 {
   "stock_id": "2072",
   "name": "2072",
-  "date": "2026-05-26",
-  "close": 166.5,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-27",
+  "close": 165.5,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.007,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 75.28
   },
   "main_force": {
-    "cost": 175.68,
-    "distance": -5.23,
+    "cost": 175.22,
+    "distance": -5.55,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-26"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-27"
 }

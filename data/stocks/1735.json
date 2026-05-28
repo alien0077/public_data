@@ -1,20 +1,20 @@
 {
   "stock_id": "1735",
   "name": "1735",
-  "date": "2026-05-26",
+  "date": "2026-05-27",
   "close": 25.95,
-  "health_score": 86,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.041,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 857.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.23
+    "margin_change": 896.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 77.63,
@@ -22,8 +22,8 @@
     "holder_concentration": 78.23
   },
   "main_force": {
-    "cost": 26.49,
-    "distance": -2.04,
+    "cost": 26.41,
+    "distance": -1.74,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-26"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-27"
 }

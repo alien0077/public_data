@@ -1,18 +1,18 @@
 {
   "stock_id": "3630",
   "name": "3630",
-  "date": "2026-05-26",
-  "close": 27.0,
-  "health_score": 110,
-  "signal": "Bullish",
+  "date": "2026-05-27",
+  "close": 26.15,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.033,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.055,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3648.0,
+    "margin_change": 3709.0,
     "short_change": 1.0,
     "short_margin_ratio": 0.03
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 53.89
   },
   "main_force": {
-    "cost": 26.86,
-    "distance": 0.52,
-    "trend": "UP"
+    "cost": 26.79,
+    "distance": -2.39,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
@@ -32,12 +32,9 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 40
+    "score": 0
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-05-26"
+  "raw_signals": [],
+  "data_version": "2026-05-27"
 }

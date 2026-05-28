@@ -1,18 +1,18 @@
 {
   "stock_id": "2029",
   "name": "2029",
-  "date": "2026-05-26",
-  "close": 20.6,
-  "health_score": 133,
+  "date": "2026-05-27",
+  "close": 20.45,
+  "health_score": 110,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.02,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 451.0,
+    "margin_change": 457.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 71.01
   },
   "main_force": {
-    "cost": 20.28,
-    "distance": 1.58,
+    "cost": 20.29,
+    "distance": 0.79,
     "trend": "UP"
   },
   "sector": {
@@ -31,12 +31,13 @@
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 100
+    "style": "Value",
+    "score": 40
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-26"
+  "data_version": "2026-05-27"
 }

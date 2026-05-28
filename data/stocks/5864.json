@@ -1,20 +1,20 @@
 {
   "stock_id": "5864",
   "name": "5864",
-  "date": "2026-05-26",
-  "close": 35.1,
+  "date": "2026-05-27",
+  "close": 38.6,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.539,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.716,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9365.0,
-    "short_change": 7.0,
-    "short_margin_ratio": 0.07
+    "margin_change": 8499.0,
+    "short_change": 10.0,
+    "short_margin_ratio": 0.12
   },
   "tdcc": {
     "big_holder_change": 62.89,
@@ -22,8 +22,8 @@
     "holder_concentration": 71.54
   },
   "main_force": {
-    "cost": 31.77,
-    "distance": 10.48,
+    "cost": 32.33,
+    "distance": 19.39,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-26"
+  "data_version": "2026-05-27"
 }

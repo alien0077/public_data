@@ -1,18 +1,18 @@
 {
   "stock_id": "6111",
   "name": "6111",
-  "date": "2026-05-26",
+  "date": "2026-05-27",
   "close": 45.4,
-  "health_score": 86,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.109,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.059,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2411.0,
+    "margin_change": 2409.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 43.64
   },
   "main_force": {
-    "cost": 46.89,
-    "distance": -3.18,
+    "cost": 46.88,
+    "distance": -3.16,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-26"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-27"
 }

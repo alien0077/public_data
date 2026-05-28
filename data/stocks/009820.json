@@ -1,20 +1,20 @@
 {
   "stock_id": "009820",
   "name": "009820",
-  "date": "2026-05-26",
-  "close": 10.28,
-  "health_score": 113,
+  "date": "2026-05-27",
+  "close": 10.25,
+  "health_score": 110,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2249.0,
+    "margin_change": 2425.0,
     "short_change": 200.0,
-    "short_margin_ratio": 8.89
+    "short_margin_ratio": 8.25
   },
   "tdcc": {
     "big_holder_change": 34.64,
@@ -22,8 +22,8 @@
     "holder_concentration": 44.89
   },
   "main_force": {
-    "cost": 10.01,
-    "distance": 2.7,
+    "cost": 10.02,
+    "distance": 2.3,
     "trend": "UP"
   },
   "sector": {
@@ -31,12 +31,13 @@
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 40
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-26"
+  "data_version": "2026-05-27"
 }

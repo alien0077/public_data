@@ -1,18 +1,18 @@
 {
   "stock_id": "8069",
   "name": "8069",
-  "date": "2026-05-26",
-  "close": 235.0,
+  "date": "2026-05-27",
+  "close": 249.0,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.089,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.108,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6802.0,
+    "margin_change": 7334.0,
     "short_change": 7.0,
     "short_margin_ratio": 0.1
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 78.43
   },
   "main_force": {
-    "cost": 188.85,
-    "distance": 24.44,
+    "cost": 194.3,
+    "distance": 28.15,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-26"
+  "data_version": "2026-05-27"
 }

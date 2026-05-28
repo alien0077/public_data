@@ -397,30 +397,20 @@ export const Favorites = {
                         }
                     }
                     if (!importCats) { alert('❌ 無法辨識的檔案格式'); return; }
-                    const existingSymbols = new Set();
-                    for (const cat of this._categories) {
-                        for (const sym of (this._data[cat] || [])) existingSymbols.add(sym);
-                    }
-                    let added = 0;
+                    const catNames = Object.keys(importCats);
+                    const totalStocks = catNames.reduce((s, c) => s + (importCats[c] || []).length, 0);
+                    if (!confirm(`將以匯入的分類 (${catNames.length} 個) 完全取代現有收藏，共 ${totalStocks} 檔股票。確定？`)) return;
+                    this._categories = catNames;
+                    this._data = {};
                     for (const [catName, symbols] of Object.entries(importCats)) {
-                        if (!Array.isArray(symbols)) continue;
-                        if (!this._categories.includes(catName)) {
-                            if (this._categories.length >= 5) continue;
-                            this._categories.push(catName);
-                        }
-                        if (!this._data[catName]) this._data[catName] = [];
-                        for (const sym of symbols) {
-                            if (!existingSymbols.has(sym)) {
-                                this._data[catName].push(sym);
-                                existingSymbols.add(sym);
-                                added++;
-                            }
+                        if (Array.isArray(symbols)) {
+                            this._data[catName] = [...symbols];
                         }
                     }
                     this.saveData();
                     const container = document.getElementById('view-favorites');
-                    if (container) { this.renderStructure(container); this.renderContent(); }
-                    alert(`✅ 匯入完成！新增 ${added} 檔股票。`);
+                    if (container) { this._activeTab = 0; this.renderStructure(container); this.renderContent(); }
+                    alert(`✅ 匯入完成！共 ${totalStocks} 檔股票，${catNames.length} 個分類。`);
                 } catch (err) {
                     alert(`❌ 匯入失敗：${err.message}`);
                 }

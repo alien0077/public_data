@@ -1,13 +1,13 @@
 {
   "stock_id": "5007",
   "name": "5007",
-  "date": "2026-05-26",
-  "close": 57.0,
-  "health_score": 106,
+  "date": "2026-05-27",
+  "close": 57.4,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.008,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 87.61
   },
   "main_force": {
-    "cost": 57.32,
-    "distance": -0.56,
-    "trend": "DOWN"
+    "cost": 57.28,
+    "distance": 0.21,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-26"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-27"
 }

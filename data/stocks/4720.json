@@ -1,19 +1,19 @@
 {
   "stock_id": "4720",
   "name": "4720",
-  "date": "2026-05-26",
-  "close": 24.8,
-  "health_score": 86,
+  "date": "2026-05-27",
+  "close": 26.9,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_ratio": -0.199,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4807.0,
-    "short_change": 42.0,
+    "margin_change": 6349.0,
+    "short_change": 55.0,
     "short_margin_ratio": 0.87
   },
   "tdcc": {
@@ -22,19 +22,26 @@
     "holder_concentration": 40.08
   },
   "main_force": {
-    "cost": 26.23,
-    "distance": -5.45,
-    "trend": "DOWN"
+    "cost": 26.2,
+    "distance": 2.67,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-26"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-27"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "2010",
   "name": "2010",
-  "date": "2026-05-26",
-  "close": 22.7,
-  "health_score": 86,
+  "date": "2026-05-27",
+  "close": 22.95,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.004,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1935.0,
+    "margin_change": 1933.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 70.15
   },
   "main_force": {
-    "cost": 23.53,
-    "distance": -3.53,
+    "cost": 23.42,
+    "distance": -2.01,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-26"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-27"
 }

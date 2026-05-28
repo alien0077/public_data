@@ -1,20 +1,20 @@
 {
   "stock_id": "2911",
   "name": "2911",
-  "date": "2026-05-26",
-  "close": 9.55,
-  "health_score": 133,
+  "date": "2026-05-27",
+  "close": 9.25,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 101.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 132.0,
+    "short_change": 2.0,
+    "short_margin_ratio": 1.52
   },
   "tdcc": {
     "big_holder_change": 40.56,
@@ -22,8 +22,8 @@
     "holder_concentration": 46.08
   },
   "main_force": {
-    "cost": 6.12,
-    "distance": 56.05,
+    "cost": 6.29,
+    "distance": 47.06,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-26"
+  "data_version": "2026-05-27"
 }

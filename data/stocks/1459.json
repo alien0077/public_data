@@ -1,18 +1,18 @@
 {
   "stock_id": "1459",
   "name": "1459",
-  "date": "2026-05-26",
-  "close": 11.65,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-27",
+  "close": 11.6,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.008,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 422.0,
+    "margin_change": 357.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -23,8 +23,8 @@
   },
   "main_force": {
     "cost": 11.62,
-    "distance": 0.26,
-    "trend": "UP"
+    "distance": -0.17,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
@@ -36,7 +36,7 @@
   },
   "events": [],
   "raw_signals": [
-    "ma_bull"
+    "foreign_buy"
   ],
-  "data_version": "2026-05-26"
+  "data_version": "2026-05-27"
 }

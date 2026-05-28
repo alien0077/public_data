@@ -1,12 +1,12 @@
 {
   "stock_id": "00842B",
   "name": "00842B",
-  "date": "2026-05-26",
-  "close": 30.26,
-  "health_score": 86,
+  "date": "2026-05-27",
+  "close": 30.24,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 30.27,
-    "distance": -0.03,
+    "cost": 30.26,
+    "distance": -0.07,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-26"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-27"
 }

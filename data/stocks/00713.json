@@ -1,20 +1,20 @@
 {
   "stock_id": "00713",
   "name": "00713",
-  "date": "2026-05-26",
-  "close": 55.95,
-  "health_score": 133,
+  "date": "2026-05-27",
+  "close": 56.05,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 167.0,
+    "margin_change": 156.0,
     "short_change": 4.0,
-    "short_margin_ratio": 2.4
+    "short_margin_ratio": 2.56
   },
   "tdcc": {
     "big_holder_change": 23.15,
@@ -22,8 +22,8 @@
     "holder_concentration": 24.27
   },
   "main_force": {
-    "cost": 54.64,
-    "distance": 2.4,
+    "cost": 54.79,
+    "distance": 2.3,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-26"
+  "data_version": "2026-05-27"
 }

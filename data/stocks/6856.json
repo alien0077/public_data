@@ -1,10 +1,10 @@
 {
   "stock_id": "6856",
   "name": "6856",
-  "date": "2026-05-26",
-  "close": 0.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-27",
+  "close": 51.0,
+  "health_score": 133,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -22,19 +22,21 @@
     "holder_concentration": 82.26
   },
   "main_force": {
-    "cost": 43.18,
-    "distance": -100.0,
-    "trend": "DOWN"
+    "cost": 43.13,
+    "distance": 18.25,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-26"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-27"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "1471",
   "name": "1471",
-  "date": "2026-05-26",
+  "date": "2026-05-27",
   "close": 10.35,
-  "health_score": 66,
-  "signal": "Neutral",
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.174,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 22.82
   },
   "main_force": {
-    "cost": 10.88,
-    "distance": -4.87,
+    "cost": 10.81,
+    "distance": -4.26,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-26"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-27"
 }

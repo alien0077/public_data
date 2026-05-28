@@ -1,20 +1,20 @@
 {
   "stock_id": "4127",
   "name": "4127",
-  "date": "2026-05-26",
-  "close": 68.1,
-  "health_score": 133,
+  "date": "2026-05-27",
+  "close": 66.7,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.007,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.031,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1249.0,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.24
+    "margin_change": 1123.0,
+    "short_change": 5.0,
+    "short_margin_ratio": 0.45
   },
   "tdcc": {
     "big_holder_change": 59.17,
@@ -22,8 +22,8 @@
     "holder_concentration": 70.22
   },
   "main_force": {
-    "cost": 44.17,
-    "distance": 54.18,
+    "cost": 45.57,
+    "distance": 46.37,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-26"
+  "data_version": "2026-05-27"
 }

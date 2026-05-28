@@ -1,12 +1,12 @@
 {
   "stock_id": "00678",
   "name": "00678",
-  "date": "2026-05-26",
-  "close": 35.77,
-  "health_score": 133,
+  "date": "2026-05-27",
+  "close": 35.65,
+  "health_score": 110,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -22,8 +22,8 @@
     "holder_concentration": 23.46
   },
   "main_force": {
-    "cost": 35.61,
-    "distance": 0.45,
+    "cost": 35.62,
+    "distance": 0.08,
     "trend": "UP"
   },
   "sector": {
@@ -31,12 +31,13 @@
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 100
+    "style": "Value",
+    "score": 40
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-26"
+  "data_version": "2026-05-27"
 }
