@@ -1829,7 +1829,7 @@
     "win_rate": 0.4833333333333334
   },
   "portfolio": {
-    "cash": 20539.5,
+    "cash": 11784.5,
     "positions": {
       "trend": [
         {
@@ -1851,14 +1851,7 @@
           "entry_date": "2026-05-25",
           "entry_price": 100.0,
           "shares": 4,
-          "max_return": 0.20999999999999996
-        },
-        {
-          "stock": "5475",
-          "entry_date": "2026-05-26",
-          "entry_price": 305.0,
-          "shares": 350,
-          "max_return": 0.0
+          "max_return": 0.33000000000000007
         },
         {
           "stock": "6861",
@@ -1893,6 +1886,20 @@
           "entry_date": "2026-05-27",
           "entry_price": 842.0,
           "shares": 105,
+          "max_return": 0.0
+        },
+        {
+          "stock": "3665",
+          "entry_date": "2026-05-28",
+          "entry_price": 2115.0,
+          "shares": 26,
+          "max_return": 0.0
+        },
+        {
+          "stock": "6472",
+          "entry_date": "2026-05-28",
+          "entry_price": 336.0,
+          "shares": 140,
           "max_return": 0.0
         }
       ],
@@ -1958,6 +1965,10 @@
       {
         "date": "2026-05-27",
         "nav": 984168.5
+      },
+      {
+        "date": "2026-05-28",
+        "nav": 942825.5
       }
     ]
   },
@@ -2929,6 +2940,28 @@
     "mr": 65
   },
   "trade_log": [
+    {
+      "stock": "6472",
+      "entry_date": "2026-05-28",
+      "exit_date": null,
+      "action": "BUY"
+    },
+    {
+      "stock": "3665",
+      "entry_date": "2026-05-28",
+      "exit_date": null,
+      "action": "BUY"
+    },
+    {
+      "stock": "5475",
+      "entry_date": "2026-05-26",
+      "exit_date": "2026-05-28",
+      "exit_price": 266.5,
+      "return": -0.1262,
+      "reason": "STOP_LOSS (10%)",
+      "primary_theme": "\u96fb\u5b50\u5143\u4ef6",
+      "action": "SELL"
+    },
     {
       "stock": "3563",
       "entry_date": "2026-05-27",
