@@ -1,4 +1,5 @@
 import { api } from '../api.js';
+import { getPriceChangeStyle } from '../utils/priceStyle.js';
 
 /**
  * Favorites View
@@ -277,17 +278,18 @@ export const Favorites = {
                 window.StockDetail.show(sym);
             });
 
-            const priceColor = this.getPriceColor(price, refPrice);
+            const style = getPriceChangeStyle(price, refPrice, sym);
+            const priceClass = style.bgClass ? `${style.textClass} ${style.bgClass}` : style.textClass;
             
             row.innerHTML = `
                 <td class="px-3 md:px-6 py-4">
                     <div class="font-bold text-white">${sym}</div>
                     <div class="text-[10px] text-gray-500 truncate max-w-[100px]">${name}</div>
                 </td>
-                <td class="px-3 md:px-6 py-4 text-right ${priceColor}">
+                <td class="px-3 md:px-6 py-4 text-right ${priceClass}">
                     ${price > 0 ? this.formatNumber(price) : '--'}
                 </td>
-                <td class="px-3 md:px-6 py-4 text-right ${priceColor} text-xs font-bold">
+                <td class="px-3 md:px-6 py-4 text-right ${priceClass} text-xs font-bold">
                     ${price > 0 ? `${changePercent > 0 ? '▲' : (changePercent < 0 ? '▼' : '')} ${Math.abs(changePercent).toFixed(2)}%` : '--'}
                 </td>
                 <td class="px-3 md:px-6 py-4 text-right hidden sm:table-cell text-gray-400 text-xs">
@@ -354,11 +356,9 @@ export const Favorites = {
         }).format(num);
     },
 
-    getPriceColor(price, refPrice) {
-        if (!price || !refPrice) return 'text-white';
-        if (price > refPrice) return 'text-red-500';
-        if (price < refPrice) return 'text-green-500';
-        return 'text-white';
+    getPriceColor(price, refPrice, sym) {
+        const style = getPriceChangeStyle(price, refPrice, sym);
+        return style.bgClass ? `${style.textClass} ${style.bgClass}` : style.textClass;
     },
 
     exportWatchlist() {

@@ -6,6 +6,7 @@ import { api } from '../api.js';
 import { charts } from '../charts.js';
 import { db } from '../db.js';
 import { CorporateActions } from '../corporateActions.js';
+import { getPriceChangeStyle } from '../utils/priceStyle.js';
 
 export const StockDetail = {
     currentSymbol: null,
@@ -212,14 +213,22 @@ export const StockDetail = {
         const quoteMap = await api.fetchQuotes([this.currentSymbol]);
         const q = quoteMap[this.currentSymbol] || {};
         
+        const priceStyle = getPriceChangeStyle(parseFloat(q.price), parseFloat(q.referencePrice), this.currentSymbol);
+        const priceSpanClass = priceStyle.isLimit
+            ? `${priceStyle.textClass} ${priceStyle.bgClass} rounded px-2 py-0.5`
+            : priceStyle.textClass;
+        const changeSpanClass = priceStyle.isLimit
+            ? `${priceStyle.textClass} ${priceStyle.bgClass} rounded px-2 py-0.5`
+            : priceStyle.textClass;
+
         container.innerHTML = `<div class="p-4 space-y-6">
             <h3 class="text-orange-500 font-bold flex items-center mb-4"><span class="mr-2">⏱️</span> 即時盤面指標</h3>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
                 <div class="bg-gray-50 dark:bg-gray-900 p-3 rounded-xl border border-gray-100 dark:border-gray-800 flex flex-col items-center">
-                    <span class="text-xs text-gray-500 mb-1">成交價</span><span class="text-lg font-bold ${parseFloat(q.changePercent) >= 0 ? 'text-red-500' : 'text-green-500'}">${this.formatValue(q.price)}</span>
+                    <span class="text-xs text-gray-500 mb-1">成交價</span><span class="text-lg font-bold ${priceSpanClass}">${this.formatValue(q.price)}</span>
                 </div>
                 <div class="bg-gray-50 dark:bg-gray-900 p-3 rounded-xl border border-gray-100 dark:border-gray-800 flex flex-col items-center">
-                    <span class="text-xs text-gray-500 mb-1">今日漲跌</span><span class="text-lg font-bold ${parseFloat(q.changePercent) >= 0 ? 'text-red-500' : 'text-green-500'}">${q.changePercent}%</span>
+                    <span class="text-xs text-gray-500 mb-1">今日漲跌</span><span class="text-lg font-bold ${changeSpanClass}">${q.changePercent}%</span>
                 </div>
                 <div class="bg-gray-50 dark:bg-gray-900 p-3 rounded-xl border border-gray-100 dark:border-gray-800 flex flex-col items-center">
                     <span class="text-xs text-gray-500 mb-1">數據源</span><span class="text-[10px] font-bold text-blue-400">${q.source || 'OFFLINE'}</span>

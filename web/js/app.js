@@ -11,6 +11,7 @@ import { router } from './router.js';
 import { CorporateActions } from './corporateActions.js';
 import { Settings } from './views/settings.js';
 import { Dashboard } from './views/dashboard.js';
+import { getPriceChangeStyle } from './utils/priceStyle.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const portfolioBody = document.getElementById('portfolio-body');
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     manualRefreshBtn && manualRefreshBtn.addEventListener('click', () => refreshQuotes());
     clearPortfolioBtn && clearPortfolioBtn.addEventListener('click', async () => {
         if (confirm('確定要清空持股紀錄嗎？')) {
-            await db.clearAllTrades(); alert('已清空'); renderPortfolio([], {}); emptyState.classList.remove('hidden');
+            await db.clearAllTrades(); alert('已清空'); await init();
         }
     });
     closeDetailBtn && closeDetailBtn.addEventListener('click', () => stockDetailOverlay.classList.add('hidden'));
@@ -283,7 +284,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderClosedHoldings(trades);
                 startAutoRefresh();
             } else {
-                emptyState.classList.remove('hidden');
+                await renderPortfolio([], {});
+                await renderExchangeRates();
+                await renderMarketSummary({});
+                await loadAndRenderLiar();
+                if (portfolioBody.children.length === 0) {
+                    portfolioBody.innerHTML = '<tr><td colspan="8" class="px-6 py-10 text-center text-gray-500 font-mono text-sm">尚無持股資料，請由側邊欄「匯入資料」匯入交易紀錄</td></tr>';
+                }
             }
         } catch (err) { console.error('Init failed:', err); }
     }
@@ -368,13 +375,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const roi = h.totalCost > 0 ? (pnl / h.totalCost * 100) : 0;
             const pct = (price > 0 && refPrice > 0) ? ((price - refPrice) / refPrice * 100) : 0;
 
+            const style = getPriceChangeStyle(price, refPrice, sym);
+            const priceClass = style.bgClass ? style.textClass + ' ' + style.bgClass : style.textClass;
+
             const row = document.createElement('tr');
             row.className = 'hover:bg-gray-800/30 transition-colors cursor-pointer';
             row.addEventListener('click', () => StockDetail.show(sym));
             
             row.innerHTML = '<td class="px-3 md:px-6 py-4"><div class="font-bold text-white">' + sym + '</div><div class="text-[10px] text-gray-500 truncate max-w-[100px]">' + (h.name || q.name || '') + '</div></td>' +
-                '<td class="px-3 md:px-6 py-4 text-right ' + getPriceColor(price, refPrice) + '">' + (price > 0 ? formatNumber(price) : '--') + '</td>' +
-                '<td class="px-3 md:px-6 py-4 text-right ' + getPriceColor(price, refPrice) + ' text-xs">' + (price > 0 ? (pct > 0 ? '▲' : (pct < 0 ? '▼' : '')) + ' ' + Math.abs(pct).toFixed(2) + '%' : '--') + '</td>' +
+                '<td class="px-3 md:px-6 py-4 text-right ' + priceClass + '">' + (price > 0 ? formatNumber(price) : '--') + '</td>' +
+                '<td class="px-3 md:px-6 py-4 text-right ' + priceClass + ' text-xs">' + (price > 0 ? (pct > 0 ? '▲' : (pct < 0 ? '▼' : '')) + ' ' + Math.abs(pct).toFixed(2) + '%' : '--') + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-right hidden sm:table-cell">' + formatNumber(shares, 0) + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-right text-gray-400 text-xs hidden sm:table-cell">' + formatNumber(avgCost) + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-right font-bold text-blue-400 hidden md:table-cell">' + formatNumber(mv, 0) + '</td>' +
@@ -730,9 +740,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isNaN(n)) return '--';
         return new Intl.NumberFormat('zh-TW', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(n);
     }
-    function getPriceColor(p, r) {
-        if (!p || !r) return 'text-white';
-        return p > r ? 'text-red-500' : (p < r ? 'text-green-500' : 'text-white');
+    function getPriceColor(p, r, sym) {
+        const style = getPriceChangeStyle(p, r, sym);
+        return style.bgClass ? style.textClass + ' ' + style.bgClass : style.textClass;
     }
     window.addEventListener('twstock:ready', () => init());
     window.api = api; window.db = db; window.CorporateActions = CorporateActions;
