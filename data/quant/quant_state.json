@@ -1829,7 +1829,7 @@
     "win_rate": 0.4833333333333334
   },
   "portfolio": {
-    "cash": 11784.5,
+    "cash": 1344.5,
     "positions": {
       "trend": [
         {
@@ -1837,7 +1837,7 @@
           "entry_date": "2026-05-25",
           "entry_price": 669.0,
           "shares": 553,
-          "max_return": 0.049327354260089606
+          "max_return": 0.08968609865470856
         },
         {
           "stock": "8021",
@@ -1845,13 +1845,6 @@
           "entry_price": 464.0,
           "shares": 2,
           "max_return": 0.0010775862068965747
-        },
-        {
-          "stock": "8291",
-          "entry_date": "2026-05-25",
-          "entry_price": 100.0,
-          "shares": 4,
-          "max_return": 0.33000000000000007
         },
         {
           "stock": "6861",
@@ -1879,7 +1872,7 @@
           "entry_date": "2026-05-27",
           "entry_price": 877.0,
           "shares": 106,
-          "max_return": 0.0
+          "max_return": 0.06043329532497155
         },
         {
           "stock": "3563",
@@ -1900,6 +1893,13 @@
           "entry_date": "2026-05-28",
           "entry_price": 336.0,
           "shares": 140,
+          "max_return": 0.029761904761904656
+        },
+        {
+          "stock": "8291",
+          "entry_date": "2026-05-29",
+          "entry_price": 120.0,
+          "shares": 91,
           "max_return": 0.0
         }
       ],
@@ -1969,6 +1969,10 @@
       {
         "date": "2026-05-28",
         "nav": 942825.5
+      },
+      {
+        "date": "2026-05-29",
+        "nav": 988135.5
       }
     ]
   },
@@ -2940,6 +2944,22 @@
     "mr": 65
   },
   "trade_log": [
+    {
+      "stock": "8291",
+      "entry_date": "2026-05-29",
+      "exit_date": null,
+      "action": "BUY"
+    },
+    {
+      "stock": "8291",
+      "entry_date": "2026-05-25",
+      "exit_date": "2026-05-29",
+      "exit_price": 120.0,
+      "return": 0.2,
+      "reason": "TRAILING_STOP (Gap:5.0%)",
+      "primary_theme": "\u96fb\u5b50\u5143\u4ef6",
+      "action": "SELL"
+    },
     {
       "stock": "6472",
       "entry_date": "2026-05-28",
