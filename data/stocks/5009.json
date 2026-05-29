@@ -1,20 +1,20 @@
 {
   "stock_id": "5009",
   "name": "5009",
-  "date": "2026-05-27",
-  "close": 35.15,
-  "health_score": 86,
+  "date": "2026-05-28",
+  "close": 35.5,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.098,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.23,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9360.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 9261.0,
+    "short_change": 4.0,
+    "short_margin_ratio": 0.04
   },
   "tdcc": {
     "big_holder_change": 43.99,
@@ -22,8 +22,8 @@
     "holder_concentration": 48.95
   },
   "main_force": {
-    "cost": 35.86,
-    "distance": -1.98,
+    "cost": 35.97,
+    "distance": -1.31,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-28"
 }

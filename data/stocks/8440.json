@@ -1,20 +1,20 @@
 {
   "stock_id": "8440",
   "name": "8440",
-  "date": "2026-05-27",
-  "close": 24.2,
-  "health_score": 150,
+  "date": "2026-05-28",
+  "close": 23.4,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.291,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.442,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1257.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 1129.0,
+    "short_change": 3.0,
+    "short_margin_ratio": 0.27
   },
   "tdcc": {
     "big_holder_change": 29.05,
@@ -22,8 +22,8 @@
     "holder_concentration": 32.7
   },
   "main_force": {
-    "cost": 22.02,
-    "distance": 9.9,
+    "cost": 22.11,
+    "distance": 5.83,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-27"
+  "data_version": "2026-05-28"
 }

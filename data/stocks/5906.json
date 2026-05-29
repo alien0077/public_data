@@ -1,10 +1,10 @@
 {
   "stock_id": "5906",
   "name": "5906",
-  "date": "2026-05-27",
-  "close": 0.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 46.5,
+  "health_score": 133,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -12,7 +12,7 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 244.0,
+    "margin_change": 245.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,21 @@
     "holder_concentration": 87.59
   },
   "main_force": {
-    "cost": 31.21,
-    "distance": -100.0,
-    "trend": "DOWN"
+    "cost": 31.06,
+    "distance": 49.71,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-28"
 }

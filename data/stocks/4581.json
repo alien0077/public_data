@@ -1,18 +1,18 @@
 {
   "stock_id": "4581",
   "name": "4581",
-  "date": "2026-05-27",
-  "close": 49.8,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 49.65,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.012,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.029,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 82.0,
+    "margin_change": 80.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 49.87,
-    "distance": -0.14,
+    "distance": -0.44,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-28"
 }

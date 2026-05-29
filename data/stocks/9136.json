@@ -1,18 +1,18 @@
 {
   "stock_id": "9136",
   "name": "9136",
-  "date": "2026-05-27",
-  "close": 11.45,
-  "health_score": 150,
+  "date": "2026-05-28",
+  "close": 11.15,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.05,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.022,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 13095.0,
+    "margin_change": 13075.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 67.19
   },
   "main_force": {
-    "cost": 3.9,
-    "distance": 193.59,
+    "cost": 4.46,
+    "distance": 150.0,
     "trend": "UP"
   },
   "sector": {
@@ -32,17 +32,11 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-27"
+  "data_version": "2026-05-28"
 }

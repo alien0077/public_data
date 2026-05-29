@@ -1,20 +1,20 @@
 {
   "stock_id": "6138",
   "name": "6138",
-  "date": "2026-05-27",
-  "close": 355.5,
-  "health_score": 150,
+  "date": "2026-05-28",
+  "close": 343.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.169,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.005,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1989.0,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.15
+    "margin_change": 2000.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 30.68,
@@ -22,8 +22,8 @@
     "holder_concentration": 52.59
   },
   "main_force": {
-    "cost": 288.9,
-    "distance": 23.05,
+    "cost": 294.1,
+    "distance": 16.63,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-27"
+  "data_version": "2026-05-28"
 }

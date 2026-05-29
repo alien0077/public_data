@@ -1,10 +1,10 @@
 {
   "stock_id": "00654R",
   "name": "00654R",
-  "date": "2026-05-27",
-  "close": 6.75,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 6.9,
+  "health_score": 133,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -12,25 +12,27 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 642.0,
+    "margin_change": 643.0,
     "short_change": 66.0,
-    "short_margin_ratio": 10.28
+    "short_margin_ratio": 10.26
   },
   "tdcc": {},
   "main_force": {
-    "cost": 6.82,
-    "distance": -1.03,
-    "trend": "DOWN"
+    "cost": 6.83,
+    "distance": 1.02,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-28"
 }

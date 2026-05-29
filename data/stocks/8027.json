@@ -1,20 +1,20 @@
 {
   "stock_id": "8027",
   "name": "8027",
-  "date": "2026-05-27",
-  "close": 249.5,
-  "health_score": 150,
+  "date": "2026-05-28",
+  "close": 245.5,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.112,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.141,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 11043.0,
-    "short_change": 41.0,
-    "short_margin_ratio": 0.37
+    "margin_change": 10780.0,
+    "short_change": 39.0,
+    "short_margin_ratio": 0.36
   },
   "tdcc": {
     "big_holder_change": 22.14,
@@ -22,8 +22,8 @@
     "holder_concentration": 32.85
   },
   "main_force": {
-    "cost": 231.08,
-    "distance": 7.97,
+    "cost": 234.55,
+    "distance": 4.67,
     "trend": "UP"
   },
   "sector": {
@@ -32,12 +32,17 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-27"
+  "data_version": "2026-05-28"
 }

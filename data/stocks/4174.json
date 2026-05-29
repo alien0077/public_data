@@ -1,18 +1,18 @@
 {
   "stock_id": "4174",
   "name": "4174",
-  "date": "2026-05-27",
-  "close": 28.65,
+  "date": "2026-05-28",
+  "close": 28.2,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.028,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.131,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1354.0,
+    "margin_change": 1358.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 42.96
   },
   "main_force": {
-    "cost": 32.42,
-    "distance": -11.63,
+    "cost": 32.24,
+    "distance": -12.53,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-27"
+  "data_version": "2026-05-28"
 }

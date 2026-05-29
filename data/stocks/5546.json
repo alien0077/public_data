@@ -1,13 +1,13 @@
 {
   "stock_id": "5546",
   "name": "5546",
-  "date": "2026-05-27",
-  "close": 16.3,
-  "health_score": 83,
+  "date": "2026-05-28",
+  "close": 16.6,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.008,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.007,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,21 +22,22 @@
     "holder_concentration": 84.66
   },
   "main_force": {
-    "cost": 16.4,
-    "distance": -0.61,
-    "trend": "DOWN"
+    "cost": 16.39,
+    "distance": 1.28,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-27"
+  "data_version": "2026-05-28"
 }

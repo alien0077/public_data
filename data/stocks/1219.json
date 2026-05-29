@@ -1,18 +1,18 @@
 {
   "stock_id": "1219",
   "name": "1219",
-  "date": "2026-05-27",
-  "close": 12.35,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 12.5,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.015,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.014,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 535.0,
+    "margin_change": 538.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 61.71
   },
   "main_force": {
-    "cost": 12.44,
-    "distance": -0.72,
-    "trend": "DOWN"
+    "cost": 12.4,
+    "distance": 0.81,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,12 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-28"
 }

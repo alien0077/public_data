@@ -1,18 +1,18 @@
 {
   "stock_id": "3232",
   "name": "3232",
-  "date": "2026-05-27",
-  "close": 20.85,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 22.9,
+  "health_score": 150,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.024,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.026,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2913.0,
+    "margin_change": 2898.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,27 @@
     "holder_concentration": 57.88
   },
   "main_force": {
-    "cost": 21.16,
-    "distance": -1.47,
-    "trend": "DOWN"
+    "cost": 21.22,
+    "distance": 7.92,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-28"
 }

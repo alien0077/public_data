@@ -1,18 +1,18 @@
 {
   "stock_id": "6854",
   "name": "6854",
-  "date": "2026-05-27",
-  "close": 155.5,
-  "health_score": 130,
+  "date": "2026-05-28",
+  "close": 152.0,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.083,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.09,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3580.0,
+    "margin_change": 3584.0,
     "short_change": 4.0,
     "short_margin_ratio": 0.11
   },
@@ -22,22 +22,19 @@
     "holder_concentration": 67.22
   },
   "main_force": {
-    "cost": 153.75,
-    "distance": 1.14,
-    "trend": "UP"
+    "cost": 153.6,
+    "distance": -1.04,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 30
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-05-27"
+  "raw_signals": [],
+  "data_version": "2026-05-28"
 }

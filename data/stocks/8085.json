@@ -1,18 +1,18 @@
 {
   "stock_id": "8085",
   "name": "8085",
-  "date": "2026-05-27",
-  "close": 11.05,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 11.0,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.032,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.035,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1047.0,
+    "margin_change": 1038.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 42.34
   },
   "main_force": {
-    "cost": 11.97,
-    "distance": -7.69,
+    "cost": 11.88,
+    "distance": -7.41,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-28"
 }

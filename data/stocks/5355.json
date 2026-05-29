@@ -1,13 +1,13 @@
 {
   "stock_id": "5355",
   "name": "5355",
-  "date": "2026-05-27",
-  "close": 6.49,
-  "health_score": 86,
+  "date": "2026-05-28",
+  "close": 6.42,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.005,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.005,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 69.66
   },
   "main_force": {
-    "cost": 6.66,
-    "distance": -2.55,
+    "cost": 6.64,
+    "distance": -3.31,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-28"
 }

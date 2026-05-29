@@ -1,18 +1,18 @@
 {
   "stock_id": "1338",
   "name": "1338",
-  "date": "2026-05-27",
-  "close": 15.7,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 16.1,
+  "health_score": 150,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.007,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.206,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2571.0,
+    "margin_change": 2636.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 42.82
   },
   "main_force": {
-    "cost": 15.91,
-    "distance": -1.32,
-    "trend": "DOWN"
+    "cost": 15.88,
+    "distance": 1.39,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-28"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "3511",
   "name": "3511",
-  "date": "2026-05-27",
+  "date": "2026-05-28",
   "close": 20.1,
-  "health_score": 66,
-  "signal": "Neutral",
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.034,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.054,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2671.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.07
+    "margin_change": 2687.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 51.13,
@@ -22,8 +22,8 @@
     "holder_concentration": 54.99
   },
   "main_force": {
-    "cost": 21.26,
-    "distance": -5.46,
+    "cost": 21.1,
+    "distance": -4.74,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-28"
 }

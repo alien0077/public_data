@@ -1,18 +1,18 @@
 {
   "stock_id": "4171",
   "name": "4171",
-  "date": "2026-05-27",
-  "close": 17.75,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 17.8,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.073,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.017,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 758.0,
+    "margin_change": 749.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 32.38
   },
   "main_force": {
-    "cost": 18.38,
-    "distance": -3.43,
+    "cost": 18.3,
+    "distance": -2.73,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-28"
 }

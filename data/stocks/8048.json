@@ -1,18 +1,18 @@
 {
   "stock_id": "8048",
   "name": "8048",
-  "date": "2026-05-27",
-  "close": 63.6,
-  "health_score": 150,
+  "date": "2026-05-28",
+  "close": 61.4,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.051,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.127,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3030.0,
+    "margin_change": 2988.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,22 +22,19 @@
     "holder_concentration": 39.54
   },
   "main_force": {
-    "cost": 62.22,
-    "distance": 2.22,
-    "trend": "UP"
+    "cost": 62.18,
+    "distance": -1.25,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 100
+    "style": "Value",
+    "score": 30
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-05-27"
+  "raw_signals": [],
+  "data_version": "2026-05-28"
 }

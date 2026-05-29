@@ -1,18 +1,18 @@
 {
   "stock_id": "8097",
   "name": "8097",
-  "date": "2026-05-27",
-  "close": 57.7,
+  "date": "2026-05-28",
+  "close": 57.8,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.035,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.016,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9955.0,
+    "margin_change": 9957.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 71.64
   },
   "main_force": {
-    "cost": 54.02,
-    "distance": 6.81,
+    "cost": 54.32,
+    "distance": 6.41,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-27"
+  "data_version": "2026-05-28"
 }

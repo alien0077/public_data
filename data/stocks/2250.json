@@ -1,18 +1,18 @@
 {
   "stock_id": "2250",
   "name": "2250",
-  "date": "2026-05-27",
-  "close": 60.7,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 60.9,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.104,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.024,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1316.0,
+    "margin_change": 1323.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 52.24
   },
   "main_force": {
-    "cost": 62.98,
-    "distance": -3.62,
+    "cost": 62.86,
+    "distance": -3.12,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-28"
 }

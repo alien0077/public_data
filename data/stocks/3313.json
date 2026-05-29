@@ -1,13 +1,13 @@
 {
   "stock_id": "3313",
   "name": "3313",
-  "date": "2026-05-27",
-  "close": 11.15,
+  "date": "2026-05-28",
+  "close": 11.0,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.006,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.019,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 76.14
   },
   "main_force": {
-    "cost": 11.6,
-    "distance": -3.88,
+    "cost": 11.56,
+    "distance": -4.84,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-27"
+  "data_version": "2026-05-28"
 }

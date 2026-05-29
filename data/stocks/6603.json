@@ -1,18 +1,18 @@
 {
   "stock_id": "6603",
   "name": "6603",
-  "date": "2026-05-27",
-  "close": 22.35,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 24.55,
+  "health_score": 150,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.35,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.355,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6964.0,
+    "margin_change": 6811.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,27 @@
     "holder_concentration": 50.69
   },
   "main_force": {
-    "cost": 23.36,
-    "distance": -4.32,
-    "trend": "DOWN"
+    "cost": 23.32,
+    "distance": 5.27,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-28"
 }

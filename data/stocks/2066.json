@@ -1,18 +1,18 @@
 {
   "stock_id": "2066",
   "name": "2066",
-  "date": "2026-05-27",
-  "close": 55.7,
-  "health_score": 130,
+  "date": "2026-05-28",
+  "close": 57.8,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.032,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.048,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3825.0,
+    "margin_change": 3805.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 68.49
   },
   "main_force": {
-    "cost": 51.66,
-    "distance": 7.82,
+    "cost": 52.24,
+    "distance": 10.64,
     "trend": "UP"
   },
   "sector": {
@@ -32,12 +32,17 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-27"
+  "data_version": "2026-05-28"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "5251",
   "name": "5251",
-  "date": "2026-05-27",
-  "close": 26.8,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 26.65,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.172,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.114,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1794.0,
+    "margin_change": 1776.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 35.2
   },
   "main_force": {
-    "cost": 27.79,
-    "distance": -3.56,
+    "cost": 27.69,
+    "distance": -3.76,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-28"
 }

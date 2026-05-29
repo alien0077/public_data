@@ -1,18 +1,18 @@
 {
   "stock_id": "2442",
   "name": "2442",
-  "date": "2026-05-27",
-  "close": 18.3,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 18.7,
+  "health_score": 130,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.183,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.292,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4940.0,
+    "margin_change": 4923.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 58.38
   },
   "main_force": {
-    "cost": 18.46,
-    "distance": -0.87,
-    "trend": "DOWN"
+    "cost": 18.48,
+    "distance": 1.19,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-28"
 }

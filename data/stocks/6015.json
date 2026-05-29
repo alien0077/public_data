@@ -1,20 +1,20 @@
 {
   "stock_id": "6015",
   "name": "6015",
-  "date": "2026-05-27",
-  "close": 17.95,
-  "health_score": 150,
+  "date": "2026-05-28",
+  "close": 18.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 1.233,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.09,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6141.0,
-    "short_change": 14.0,
-    "short_margin_ratio": 0.23
+    "margin_change": 6057.0,
+    "short_change": 3.0,
+    "short_margin_ratio": 0.05
   },
   "tdcc": {
     "big_holder_change": 44.95,
@@ -22,8 +22,8 @@
     "holder_concentration": 51.29
   },
   "main_force": {
-    "cost": 15.43,
-    "distance": 16.33,
+    "cost": 15.63,
+    "distance": 15.16,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-27"
+  "data_version": "2026-05-28"
 }

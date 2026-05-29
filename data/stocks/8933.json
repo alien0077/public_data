@@ -1,13 +1,13 @@
 {
   "stock_id": "8933",
   "name": "8933",
-  "date": "2026-05-27",
-  "close": 4.3,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 4.73,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.016,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.03,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 52.94
   },
   "main_force": {
-    "cost": 5.33,
-    "distance": -19.32,
+    "cost": 5.26,
+    "distance": -10.08,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-28"
 }

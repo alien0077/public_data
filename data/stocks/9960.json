@@ -1,18 +1,18 @@
 {
   "stock_id": "9960",
   "name": "9960",
-  "date": "2026-05-27",
-  "close": 30.4,
+  "date": "2026-05-28",
+  "close": 30.45,
   "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.042,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 446.0,
+    "margin_change": 464.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 75.31
   },
   "main_force": {
-    "cost": 33.2,
-    "distance": -8.43,
+    "cost": 33.17,
+    "distance": -8.2,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-27"
+  "data_version": "2026-05-28"
 }

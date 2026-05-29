@@ -1,18 +1,18 @@
 {
   "stock_id": "2033",
   "name": "2033",
-  "date": "2026-05-27",
-  "close": 15.1,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-28",
+  "close": 15.25,
+  "health_score": 110,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.052,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.015,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2619.0,
+    "margin_change": 2604.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 74.0
   },
   "main_force": {
-    "cost": 15.24,
-    "distance": -0.92,
-    "trend": "DOWN"
+    "cost": 15.2,
+    "distance": 0.33,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,12 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-27"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-28"
 }
