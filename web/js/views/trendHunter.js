@@ -414,6 +414,16 @@ export const TrendHunter = {
                 }
 
                 container.innerHTML = ''; // 清空 loading
+
+                // 🚀 v10.6: 產業/AI 主題切換開關
+                const toggleHtml = `
+                    <div class="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-0.5 mb-2" style="width:fit-content">
+                        <button class="view-toggle px-3 py-1 text-xs rounded-md font-bold bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 shadow-sm" data-view="industry">🏭 產業分類</button>
+                        <button class="view-toggle px-3 py-1 text-xs rounded-md text-gray-500 dark:text-gray-400" data-view="ai">🤖 AI主題</button>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', toggleHtml);
+
                 const chartDom = document.createElement('div');
                 chartDom.style.width = '100%';
                 chartDom.style.height = '100%';
@@ -425,163 +435,175 @@ export const TrendHunter = {
                     const myChart = echarts.init(chartDom, isDark ? 'dark' : null);
                     window.addEventListener('resize', () => myChart.resize());
 
-                    const flowRatios = rotationData.themes.map(t => t.flow_ratio);
-                    const avgFlowRatio = flowRatios.reduce((a, b) => a + b, 0) / flowRatios.length;
+                    function getActiveData(view) {
+                        return view === 'ai' ? (rotationData.ai_themes || rotationData.themes) : rotationData.themes;
+                    }
 
-                    const seriesData = rotationData.themes.map(t => [
-                        t.flow_ratio, // x
-                        t.avg_pct,    // y
-                        t.name,       // 產業名稱
-                        t.trend       // 趨勢
-                    ]);
+                    function buildOption(data) {
+                        const netFlows = data.map(t => t.net_flow || 0);
+                        const bound = Math.max(...netFlows.map(Math.abs), 5);
+                        const seriesData = data.map(t => [t.net_flow || 0, t.avg_pct, t.name, t.trend, t.flow_ratio]);
 
-                    const option = {
-                        backgroundColor: 'transparent',
-                        tooltip: {
-                            trigger: 'item',
-                            formatter: function (params) {
-                                return `<b>${params.value[2]}</b><br/>資金流入比率: ${params.value[0].toFixed(2)}%<br/>平均漲跌幅: ${params.value[1].toFixed(2)}%<br/>趨勢標籤: ${params.value[3] === 'UP' ? '🔥 偏多' : '❄️ 偏空'}`;
-                            }
-                        },
-                        grid: {
-                            left: '12%',
-                            right: '10%',
-                            bottom: '20%',
-                            top: '22%',
-                            containLabel: true
-                        },
-                        xAxis: {
-                            name: '資金流入比率 (%)',
-                            nameLocation: 'middle',
-                            nameGap: 60,
-                            splitLine: { show: false },
-                            axisLabel: { color: isDark ? '#888' : '#666', fontSize: 10 },
-                            // 🚀 Center the X-axis around avgFlowRatio
-                            min: function(value) { 
-                                const span = Math.max(Math.abs(value.max - avgFlowRatio), Math.abs(value.min - avgFlowRatio), 2);
-                                return avgFlowRatio - span - 1; 
+                        return {
+                            backgroundColor: 'transparent',
+                            tooltip: {
+                                trigger: 'item',
+                                formatter: function (params) {
+                                    const nf = params.value[0];
+                                    const nfStr = nf >= 0 ? `+${nf.toFixed(1)}億` : `${nf.toFixed(1)}億`;
+                                    return `<b>${params.value[2]}</b><br/>法人淨買超: ${nfStr}<br/>平均漲跌幅: ${params.value[1].toFixed(2)}%<br/>成交佔比: ${(params.value[4] || 0).toFixed(1)}%`;
+                                }
                             },
-                            max: function(value) { 
-                                const span = Math.max(Math.abs(value.max - avgFlowRatio), Math.abs(value.min - avgFlowRatio), 2);
-                                return avgFlowRatio + span + 1; 
-                            }
-                        },
-                        yAxis: {
-                            name: '平均漲跌幅 (%)',
-                            nameLocation: 'end',
-                            nameGap: 35,
-                            splitLine: { 
-                                show: true,
-                                lineStyle: { color: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)' }
+                            grid: {
+                                left: '12%',
+                                right: '10%',
+                                bottom: '20%',
+                                top: '22%',
+                                containLabel: true
                             },
-                            axisLabel: { color: isDark ? '#888' : '#666', fontSize: 10 },
-                            // 🚀 Center the Y-axis around 0
-                            min: function(value) { 
-                                const absMax = Math.max(Math.abs(value.min), Math.abs(value.max), 3);
-                                return -absMax - 0.5;
+                            xAxis: {
+                                name: '法人淨買超 (億元)',
+                                nameLocation: 'middle',
+                                nameGap: 60,
+                                splitLine: { show: false },
+                                axisLabel: { color: isDark ? '#888' : '#666', fontSize: 10 },
+                                min: -bound - 2,
+                                max: bound + 2
                             },
-                            max: function(value) {
-                                const absMax = Math.max(Math.abs(value.min), Math.abs(value.max), 3);
-                                return absMax + 0.5;
-                            }
-                        },
-                        graphic: [
-                            {
-                                type: 'group',
-                                left: 'center',
-                                top: 'middle',
-                                children: [
-                                    {
-                                        type: 'text',
-                                        right: -140,
-                                        top: -210,
-                                        style: {
-                                            text: '🔥 量價齊揚 (主流)',
-                                            font: 'bold 13px sans-serif',
-                                            fill: '#ef4444',
-                                            textAlign: 'center'
-                                        }
-                                    },
-                                    {
-                                        type: 'text',
-                                        right: -140,
-                                        bottom: -240,
-                                        style: {
-                                            text: '💧 資金吸納 (低接)',
-                                            font: 'bold 13px sans-serif',
-                                            fill: '#3b82f6',
-                                            textAlign: 'center'
-                                        }
-                                    },
-                                    {
-                                        type: 'text',
-                                        left: -140,
-                                        top: -210,
-                                        style: {
-                                            text: '🔒 籌碼鎖定 (悶聲)',
-                                            font: 'bold 13px sans-serif',
-                                            fill: '#f59e0b',
-                                            textAlign: 'center'
-                                        }
-                                    },
-                                    {
-                                        type: 'text',
-                                        left: -140,
-                                        bottom: -240,
-                                        style: {
-                                            text: '❄️ 弱勢量縮 (觀望)',
-                                            font: 'bold 13px sans-serif',
-                                            fill: '#10b981',
-                                            textAlign: 'center'
-                                        }
-                                    }
-                                ]
-                            }
-                        ],
-                        series: [{
-                            type: 'scatter',
-                            data: seriesData,
-                            symbolSize: function (data) {
-                                return Math.max(10, Math.min(50, data[0] * 1.5 + 8));
-                            },
-                            itemStyle: {
-                                color: function(params) {
-                                    const x = params.value[0];
-                                    const y = params.value[1];
-                                    if (x > avgFlowRatio) {
-                                        return y > 0 ? '#ef4444' : '#3b82f6';
-                                    } else {
-                                        return y > 0 ? '#f59e0b' : '#10b981';
-                                    }
-                                },
-                                shadowBlur: 8,
-                                shadowColor: 'rgba(0, 0, 0, 0.15)',
-                                opacity: 0.85
-                            },
-                            markLine: {
-                                silent: true,
-                                lineStyle: {
-                                    type: 'dashed',
-                                    color: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)'
-                                },
-                                data: [
-                                    { xAxis: avgFlowRatio, name: '平均流入線', label: { position: 'start', distance: 25, color: isDark ? '#aaa' : '#666' } },
-                                    { yAxis: 0, name: '平盤線', label: { position: 'end', color: isDark ? '#aaa' : '#666' } }
-                                ],
-                                label: {
+                            yAxis: {
+                                name: '平均漲跌幅 (%)',
+                                nameLocation: 'end',
+                                nameGap: 35,
+                                splitLine: { 
                                     show: true,
-                                    fontSize: 11,
-                                    formatter: function(p) {
-                                        return p.name;
+                                    lineStyle: { color: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)' }
+                                },
+                                axisLabel: { color: isDark ? '#888' : '#666', fontSize: 10 },
+                                min: function(value) { 
+                                    const absMax = Math.max(Math.abs(value.min), Math.abs(value.max), 3);
+                                    return -absMax - 0.5;
+                                },
+                                max: function(value) {
+                                    const absMax = Math.max(Math.abs(value.min), Math.abs(value.max), 3);
+                                    return absMax + 0.5;
+                                }
+                            },
+                            graphic: [
+                                {
+                                    type: 'group',
+                                    left: 'center',
+                                    top: 'middle',
+                                    children: [
+                                        {
+                                            type: 'text',
+                                            right: -140,
+                                            top: -210,
+                                            style: {
+                                                text: '🔥 量價齊揚 (主流)',
+                                                font: 'bold 13px sans-serif',
+                                                fill: '#ef4444',
+                                                textAlign: 'center'
+                                            }
+                                        },
+                                        {
+                                            type: 'text',
+                                            right: -140,
+                                            bottom: -240,
+                                            style: {
+                                                text: '💧 資金吸納 (低接)',
+                                                font: 'bold 13px sans-serif',
+                                                fill: '#3b82f6',
+                                                textAlign: 'center'
+                                            }
+                                        },
+                                        {
+                                            type: 'text',
+                                            left: -140,
+                                            top: -210,
+                                            style: {
+                                                text: '🔒 籌碼鎖定 (悶聲)',
+                                                font: 'bold 13px sans-serif',
+                                                fill: '#f59e0b',
+                                                textAlign: 'center'
+                                            }
+                                        },
+                                        {
+                                            type: 'text',
+                                            left: -140,
+                                            bottom: -240,
+                                            style: {
+                                                text: '❄️ 弱勢量縮 (觀望)',
+                                                font: 'bold 13px sans-serif',
+                                                fill: '#10b981',
+                                                textAlign: 'center'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            series: [{
+                                type: 'scatter',
+                                data: seriesData,
+                                symbolSize: function (value) {
+                                    const flow = (value && value[4]) || 0;
+                                    return Math.max(10, Math.min(50, flow * 1.5 + 8));
+                                },
+                                itemStyle: {
+                                    color: function(params) {
+                                        const x = params.value[0];
+                                        const y = params.value[1];
+                                        if (x > 0) {
+                                            return y > 0 ? '#ef4444' : '#3b82f6';
+                                        } else {
+                                            return y > 0 ? '#f59e0b' : '#10b981';
+                                        }
+                                    },
+                                    shadowBlur: 8,
+                                    shadowColor: 'rgba(0, 0, 0, 0.15)',
+                                    opacity: 0.85
+                                },
+                                markLine: {
+                                    silent: true,
+                                    lineStyle: {
+                                        type: 'dashed',
+                                        color: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)'
+                                    },
+                                    data: [
+                                        { xAxis: 0, name: '零軸線', label: { position: 'start', distance: 25, color: isDark ? '#aaa' : '#666' } },
+                                        { yAxis: 0, name: '平盤線', label: { position: 'end', color: isDark ? '#aaa' : '#666' } }
+                                    ],
+                                    label: {
+                                        show: true,
+                                        fontSize: 11,
+                                        formatter: function(p) {
+                                            return p.name;
+                                        }
                                     }
                                 }
-                            }
-                        }]
-                    };
+                            }]
+                        };
+                    }
 
+                    let currentView = 'industry';
+                    let option = buildOption(getActiveData(currentView));
                     myChart.setOption(option);
                     myChart.resize();
                     window.addEventListener('resize', () => myChart.resize());
+
+                    // 🚀 v10.6: 切換事件
+                    container.querySelectorAll('.view-toggle').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const view = this.dataset.view;
+                            if (view === currentView) return;
+                            currentView = view;
+                            container.querySelectorAll('.view-toggle').forEach(b => {
+                                b.className = 'view-toggle px-3 py-1 text-xs rounded-md text-gray-500 dark:text-gray-400';
+                            });
+                            this.className = 'view-toggle px-3 py-1 text-xs rounded-md font-bold bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 shadow-sm';
+                            option = buildOption(getActiveData(view));
+                            myChart.setOption(option, true);
+                        });
+                    });
                 }, 50);
 
             } catch (err) {
