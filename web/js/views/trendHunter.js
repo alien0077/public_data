@@ -31,6 +31,12 @@ export const TrendHunter = {
             sideTitle: '熱力指標',
             sideContent: '今日 AI 伺服器供應鏈出現集體量噴，資金有從航運板塊轉移至電子零組件的跡象。'
         },
+        '法人建倉': {
+            title: '法人佈局密碼',
+            description: '偵測法人低檔潛伏建倉的量化籌碼流訊號，掌握 AI 族群輪動先機。',
+            sideTitle: '訊號說明',
+            sideContent: 'A=低檔潛伏建倉: 橫盤+法人吸籌+籌碼沉澱。A+=起跑試探: 量能微溫+均線糾結。B=突發攻擊: 爆量長紅+法人支撐。清單依法人累計買超由大到小排序。'
+        },
         '資金輪動': {
             title: '產業資金輪動圖',
             description: '視覺化呈現資金在不同產業間的轉移路徑，捕捉下一個領漲族群。',
@@ -243,6 +249,21 @@ export const TrendHunter = {
             `;
         }
 
+        if (subPage === '法人建倉') {
+            return `
+                <div id="inst-track-container" class="p-6 space-y-4 flex-1 flex flex-col">
+                    <div id="inst-track-summary" class="hidden"></div>
+                    <div id="inst-track-sectors" class="space-y-3 flex-1"></div>
+                    <div id="inst-track-empty" class="flex-1 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4"></div>
+                            <p class="text-gray-500 text-sm">正在載入法人建倉數據...</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
         if (subPage === '精選策略') {
             return `
                 <div id="strategies-container" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 flex-1   ">
@@ -401,6 +422,120 @@ export const TrendHunter = {
     async initSubPageLogic(subPage) {
         console.log(`SubPage ${subPage} logic initialized`);
         
+        if (subPage === '法人建倉') {
+            const sectorsContainer = document.getElementById('inst-track-sectors');
+            const emptyContainer = document.getElementById('inst-track-empty');
+            const summaryEl = document.getElementById('inst-track-summary');
+            if (!sectorsContainer) return;
+
+            try {
+                const data = await api.fetchLocalJson('quant/institutional_leaderboard.json');
+                if (!data || !data.sectors || data.sectors.length === 0) {
+                    if (emptyContainer) emptyContainer.innerHTML = '<div class="text-center py-12 text-gray-500">目前無符合法人低檔建倉條件的標的</div>';
+                    return;
+                }
+
+                if (emptyContainer) emptyContainer.style.display = 'none';
+
+                if (summaryEl) {
+                    summaryEl.classList.remove('hidden');
+                    summaryEl.innerHTML = `
+                        <div class="bg-gradient-to-r from-blue-600/10 to-indigo-600/10 rounded-2xl border border-blue-500/20 p-4 flex items-center justify-between">
+                            <div>
+                                <span class="text-sm font-bold text-gray-900 dark:text-white">📡 監控中 AI 族群</span>
+                                <span class="ml-2 text-xs text-gray-500">${data.total_tracking} 檔個股法人建倉中</span>
+                            </div>
+                            <span class="text-xs text-gray-400 font-mono">${data.date}</span>
+                        </div>
+                    `;
+                }
+
+                sectorsContainer.innerHTML = data.sectors.map(sector => `
+                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                        <div class="px-5 py-3 flex items-center justify-between cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors sector-accordion-header"
+                             onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180')">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-lg">${sector.emoji || '📁'}</span>
+                                <div>
+                                    <div class="font-bold text-gray-900 dark:text-white text-sm">${sector.display_tag || sector.sector_tag}</div>
+                                    <div class="text-xs ${sector.tracking_count >= 3 ? 'text-orange-500' : 'text-gray-400'}">
+                                        ${sector.tracking_count} 檔個股法人建倉中
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-xs text-gray-400 font-mono">${sector.stocks.length} 檔</span>
+                                <svg class="chevron w-4 h-4 text-gray-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 text-[10px] uppercase">
+                                    <tr>
+                                        <th class="px-5 py-2">股票</th>
+                                        <th class="px-5 py-2 text-right">開始日</th>
+                                        <th class="px-5 py-2 text-right">天數</th>
+                                        <th class="px-5 py-2 text-right">累計買超(張)</th>
+                                        <th class="px-5 py-2 text-right">區間損益</th>
+                                        <th class="px-5 py-2 text-right">訊號</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-xs">
+                                    ${sector.stocks.map(s => {
+                                        const ret = s.current_return || 0;
+                                        const retStr = (ret >= 0 ? '+' : '') + (ret * 100).toFixed(1) + '%';
+                                        const retClass = ret >= 0 ? 'text-red-500' : 'text-green-500';
+                                        const buyStr = s.accumulated_inst_buy >= 1000
+                                            ? (s.accumulated_inst_buy / 1000).toFixed(1) + 'K'
+                                            : s.accumulated_inst_buy.toLocaleString();
+                                        const signalConfig = {
+                                            'B': { icon: '🔴', label: 'B 發動', cls: 'bg-red-500/15 text-red-500 border-red-500/30' },
+                                            'A+': { icon: '🟠', label: 'A+ 起跑', cls: 'bg-orange-500/15 text-orange-500 border-orange-500/30' },
+                                            'A': { icon: '🔵', label: 'A 潛伏', cls: 'bg-blue-500/15 text-blue-500 border-blue-500/30' },
+                                        };
+                                        const sig = signalConfig[s.latest_signal_code];
+                                        const entrySig = signalConfig[s.entry_signal_code];
+                                        const entryBadge = entrySig
+                                            ? `<span class="text-[9px] font-bold px-1.5 py-0.5 rounded border ${entrySig.cls}">進場 ${entrySig.label}</span>`
+                                            : '';
+                                        const signalBadge = sig
+                                            ? `<span class="text-[11px] font-bold px-2 py-1 rounded border ${sig.cls}">${sig.icon} ${sig.label}</span>`
+                                            : '<span class="text-[10px] text-gray-400">追蹤中</span>';
+                                        return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 cursor-pointer transition-colors"
+                                                    onclick="window.StockDetail.show('${s.stock_id}')">
+                                            <td class="px-5 py-2.5">
+                                                <div class="font-bold text-gray-900 dark:text-white">${s.stock_id}</div>
+                                                <div class="text-[10px] text-gray-400">${s.name || ''}</div>
+                                            </td>
+                                            <td class="px-5 py-2.5 text-right text-gray-500">${s.start_date ? s.start_date.substring(5) : '--'}</td>
+                                            <td class="px-5 py-2.5 text-right text-gray-500">${s.tracking_days}d</td>
+                                            <td class="px-5 py-2.5 text-right font-bold text-blue-500">${buyStr}</td>
+                                            <td class="px-5 py-2.5 text-right font-bold ${retClass}">${retStr}</td>
+                                            <td class="px-5 py-2.5 text-right">
+                                                <div class="flex flex-col items-end space-y-1">
+                                                    ${signalBadge}
+                                                    ${entryBadge}
+                                                </div>
+                                            </td>
+                                        </tr>`;
+                                    }).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `).join('');
+
+            } catch (err) {
+                console.error('法人建倉 loading error:', err);
+                if (emptyContainer) {
+                    emptyContainer.innerHTML = '<div class="text-center py-12 text-red-500 text-sm">數據載入失敗: ' + err.message + '</div>';
+                }
+            }
+            return;
+        }
+
         if (subPage === '資金輪動') {
             const container = document.getElementById('trend-chart-container');
             if (!container) return;

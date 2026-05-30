@@ -14,7 +14,7 @@ const ROUTES = {
     },
     'trendHunter': {
         title: '趨勢獵人',
-        subPages: ['量化精選', 'ETF戰情', '精選策略', '今日最熱', '資金輪動', '熱力圖']
+        subPages: ['法人建倉', '量化精選', 'ETF戰情', '精選策略', '今日最熱', '資金輪動', '熱力圖']
     },
     'assetRisk': {
         title: '資產風險',
