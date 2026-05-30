@@ -11,7 +11,10 @@
     "strategy_bias": "趨勢策略優先"
   },
   "nav": 988135.5,
-  "cash": 1344.5,
+  "cash": {
+    "trend": 672.25,
+    "mr": 672.25
+  },
   "portfolio_beta": 1.25,
   "metadata": {
     "holdings_count": 10,
@@ -24,12 +27,12 @@
     {
       "strategy": "TREND",
       "weight": 0.8,
-      "score": 3.4705617564962274
+      "score": 2.086380225734603
     },
     {
       "strategy": "MR",
       "weight": 0.2,
-      "score": 3.470561756496226
+      "score": 0
     }
   ],
   "portfolio": [
@@ -384,7 +387,7 @@
       "themes": [
         "Passive_Components"
       ],
-      "primary_theme": "電子元件",
+      "primary_theme": "被動元件",
       "entry_date": "2026-05-29",
       "beta": 1.48,
       "chip_label": "🚀 籌碼洗清",
@@ -553,7 +556,7 @@
       "themes": [
         "CPO_Optical"
       ],
-      "primary_theme": "網通其他",
+      "primary_theme": "矽光子_CPO",
       "entry_date": "2026-05-29",
       "beta": 1.03,
       "chip_label": "⚠️ 散戶過熱",
@@ -771,7 +774,7 @@
         "Power_Grid",
         "Tesla_Chain"
       ],
-      "primary_theme": "電子元件",
+      "primary_theme": "被動元件",
       "entry_date": "2026-05-29",
       "beta": 1.24,
       "chip_label": null,
@@ -888,7 +891,7 @@
         "Tesla_Chain",
         "Apple_Chain"
       ],
-      "primary_theme": "電子元件",
+      "primary_theme": "被動元件",
       "entry_date": "2026-05-29",
       "beta": 1.41,
       "chip_label": "⚠️ 散戶過熱",
@@ -983,7 +986,7 @@
         "Passive_Components",
         "AI_Server"
       ],
-      "primary_theme": "電子元件",
+      "primary_theme": "被動元件",
       "entry_date": "2026-05-29",
       "beta": 0.9,
       "chip_label": "⚠️ 散戶過熱",
@@ -1012,8 +1015,10 @@
       "weight": 0.0,
       "score": 5.2208,
       "entry_reason": "SIGNAL",
-      "themes": [],
-      "primary_theme": "半導體_其他",
+      "themes": [
+        "AI_Memory"
+      ],
+      "primary_theme": "AI記憶體",
       "entry_date": "2026-05-29",
       "beta": 1.56,
       "chip_label": "🔥 換手帶量",
@@ -1232,7 +1237,7 @@
       "score": 4.6266,
       "entry_reason": "SIGNAL",
       "themes": [],
-      "primary_theme": "網通其他",
+      "primary_theme": "低軌衛星_SpaceX鏈",
       "entry_date": "2026-05-29",
       "beta": 0.86,
       "chip_label": "🔥 換手帶量",
@@ -1249,7 +1254,7 @@
       "themes": [
         "Passive_Components"
       ],
-      "primary_theme": "重電_強韌電網",
+      "primary_theme": "被動元件",
       "entry_date": "2026-05-29",
       "beta": 1.4,
       "chip_label": "🚀 籌碼洗清",
@@ -1312,8 +1317,10 @@
       "weight": 0.0,
       "score": 4.5178,
       "entry_reason": "SIGNAL",
-      "themes": [],
-      "primary_theme": "半導體_其他",
+      "themes": [
+        "AI_Memory"
+      ],
+      "primary_theme": "AI記憶體",
       "entry_date": "2026-05-29",
       "beta": 1.16,
       "chip_label": "🔥 換手帶量",
@@ -1377,9 +1384,10 @@
       "score": 4.4504,
       "entry_reason": "SIGNAL",
       "themes": [
-        "AI_PC"
+        "AI_PC",
+        "AI_Memory"
       ],
-      "primary_theme": "半導體_其他",
+      "primary_theme": "AI記憶體",
       "entry_date": "2026-05-29",
       "beta": 1.61,
       "chip_label": "🔥 換手帶量",
@@ -1728,9 +1736,10 @@
       "score": 3.7627999999999995,
       "entry_reason": "SIGNAL",
       "themes": [
-        "AI_PC"
+        "AI_PC",
+        "AI_Memory"
       ],
-      "primary_theme": "半導體_其他",
+      "primary_theme": "AI記憶體",
       "entry_date": "2026-05-29",
       "beta": 2.07,
       "chip_label": "🚀 籌碼洗清",
@@ -1877,7 +1886,7 @@
       "themes": [
         "Passive_Components"
       ],
-      "primary_theme": "電子元件",
+      "primary_theme": "被動元件",
       "entry_date": "2026-05-29",
       "beta": 0.89,
       "chip_label": "🔥 換手帶量",
@@ -2046,9 +2055,10 @@
       "score": 3.3407999999999998,
       "entry_reason": "SIGNAL",
       "themes": [
-        "HPC_Compute"
+        "HPC_Compute",
+        "ASIC"
       ],
-      "primary_theme": "IC設計_IP",
+      "primary_theme": "ASIC_IP",
       "entry_date": "2026-05-29",
       "beta": 1.71,
       "chip_label": null,
@@ -2287,8 +2297,10 @@
       "weight": 0.0,
       "score": 3.0968,
       "entry_reason": "SIGNAL",
-      "themes": [],
-      "primary_theme": "半導體_其他",
+      "themes": [
+        "AI_Memory"
+      ],
+      "primary_theme": "AI記憶體",
       "entry_date": "2026-05-29",
       "beta": 1.43,
       "chip_label": null,
@@ -3002,7 +3014,7 @@
       "themes": [
         "Passive_Components"
       ],
-      "primary_theme": "電子元件",
+      "primary_theme": "被動元件",
       "entry_date": "2026-05-29",
       "beta": 0.92,
       "chip_label": "🔥 換手帶量",
@@ -3047,7 +3059,7 @@
       "score": 2.4572,
       "entry_reason": "SIGNAL",
       "themes": [],
-      "primary_theme": "電子元件",
+      "primary_theme": "半導體_其他",
       "entry_date": "2026-05-29",
       "beta": 0.64,
       "chip_label": null,
@@ -3508,292 +3520,292 @@
     }
   ],
   "performance": {
-    "backtest_total_return": 1.14241925,
-    "backtest_sharpe": 3.4705617564962274,
-    "backtest_max_drawdown": -0.15659023393768332,
-    "backtest_win_rate": 0.5284552845528455,
+    "backtest_total_return": 0.3302788000000001,
+    "backtest_sharpe": 1.9097881751192947,
+    "backtest_max_drawdown": -0.13901652790213417,
+    "backtest_win_rate": 0.4946236559139785,
     "backtest_equity": [
       {
         "date": "03-04",
-        "equity": 1.31
+        "equity": 1.1788
       },
       {
         "date": "03-05",
-        "equity": 1.35
+        "equity": 1.208
       },
       {
         "date": "03-06",
-        "equity": 1.3365
+        "equity": 1.1984
       },
       {
         "date": "03-09",
-        "equity": 1.2738
+        "equity": 1.1492
       },
       {
         "date": "03-10",
-        "equity": 1.3044
+        "equity": 1.1707
       },
       {
         "date": "03-11",
-        "equity": 1.3996
+        "equity": 1.2242
       },
       {
         "date": "03-12",
-        "equity": 1.3912
+        "equity": 1.2353
       },
       {
         "date": "03-13",
-        "equity": 1.4309
+        "equity": 1.2502
       },
       {
         "date": "03-16",
-        "equity": 1.4772
+        "equity": 1.2652
       },
       {
         "date": "03-17",
-        "equity": 1.5032
+        "equity": 1.2687
       },
       {
         "date": "03-18",
-        "equity": 1.5955
+        "equity": 1.3065
       },
       {
         "date": "03-19",
-        "equity": 1.6112
+        "equity": 1.2999
       },
       {
         "date": "03-20",
-        "equity": 1.5615
+        "equity": 1.2469
       },
       {
         "date": "03-23",
-        "equity": 1.4734
+        "equity": 1.2115
       },
       {
         "date": "03-24",
-        "equity": 1.408
+        "equity": 1.1653
       },
       {
         "date": "03-25",
-        "equity": 1.4749
+        "equity": 1.195
       },
       {
         "date": "03-26",
-        "equity": 1.4445
+        "equity": 1.1674
       },
       {
         "date": "03-27",
-        "equity": 1.454
+        "equity": 1.1563
       },
       {
         "date": "03-30",
-        "equity": 1.4597
+        "equity": 1.1665
       },
       {
         "date": "03-31",
-        "equity": 1.3589
+        "equity": 1.1249
       },
       {
         "date": "04-01",
-        "equity": 1.4311
+        "equity": 1.1684
       },
       {
         "date": "04-02",
-        "equity": 1.4307
+        "equity": 1.1719
       },
       {
         "date": "04-07",
-        "equity": 1.5093
+        "equity": 1.206
       },
       {
         "date": "04-08",
-        "equity": 1.5709
+        "equity": 1.2475
       },
       {
         "date": "04-09",
-        "equity": 1.5809
+        "equity": 1.2314
       },
       {
         "date": "04-10",
-        "equity": 1.6597
+        "equity": 1.2641
       },
       {
         "date": "04-13",
-        "equity": 1.7009
+        "equity": 1.2806
       },
       {
         "date": "04-14",
-        "equity": 1.6811
+        "equity": 1.309
       },
       {
         "date": "04-15",
-        "equity": 1.6951
+        "equity": 1.3228
       },
       {
         "date": "04-16",
-        "equity": 1.7154
+        "equity": 1.3276
       },
       {
         "date": "04-17",
-        "equity": 1.7896
+        "equity": 1.367
       },
       {
         "date": "04-20",
-        "equity": 1.8298
+        "equity": 1.3802
       },
       {
         "date": "04-21",
-        "equity": 1.8265
+        "equity": 1.3723
       },
       {
         "date": "04-22",
-        "equity": 1.8412
+        "equity": 1.3819
       },
       {
         "date": "04-23",
-        "equity": 1.7677
+        "equity": 1.3454
       },
       {
         "date": "04-24",
-        "equity": 1.7141
+        "equity": 1.3115
       },
       {
         "date": "04-27",
-        "equity": 1.6162
+        "equity": 1.2599
       },
       {
         "date": "04-28",
-        "equity": 1.6301
+        "equity": 1.2648
       },
       {
         "date": "04-29",
-        "equity": 1.6332
+        "equity": 1.2601
       },
       {
         "date": "04-30",
-        "equity": 1.687
+        "equity": 1.2958
       },
       {
         "date": "05-04",
-        "equity": 1.7319
+        "equity": 1.313
       },
       {
         "date": "05-05",
-        "equity": 1.7845
+        "equity": 1.3381
       },
       {
         "date": "05-06",
-        "equity": 1.743
+        "equity": 1.3092
       },
       {
         "date": "05-07",
-        "equity": 1.7413
+        "equity": 1.2975
       },
       {
         "date": "05-08",
-        "equity": 1.6275
+        "equity": 1.2454
       },
       {
         "date": "05-11",
-        "equity": 1.6753
+        "equity": 1.2782
       },
       {
         "date": "05-12",
-        "equity": 1.7582
+        "equity": 1.3118
       },
       {
         "date": "05-13",
-        "equity": 1.7431
+        "equity": 1.3046
       },
       {
         "date": "05-14",
-        "equity": 1.7934
+        "equity": 1.305
       },
       {
         "date": "05-15",
-        "equity": 1.7284
+        "equity": 1.2517
       },
       {
         "date": "05-18",
-        "equity": 1.752
+        "equity": 1.2479
       },
       {
         "date": "05-19",
-        "equity": 1.7271
+        "equity": 1.2123
       },
       {
         "date": "05-20",
-        "equity": 1.7399
+        "equity": 1.2032
       },
       {
         "date": "05-21",
-        "equity": 1.8199
+        "equity": 1.2456
       },
       {
         "date": "05-22",
-        "equity": 1.9423
+        "equity": 1.2881
       },
       {
         "date": "05-25",
-        "equity": 2.0159
+        "equity": 1.2953
       },
       {
         "date": "05-26",
-        "equity": 2.1021
+        "equity": 1.3246
       },
       {
         "date": "05-27",
-        "equity": 2.1223
+        "equity": 1.325
       },
       {
         "date": "05-28",
-        "equity": 2.1236
+        "equity": 1.2945
       },
       {
         "date": "05-29",
-        "equity": 2.1424
+        "equity": 1.3303
       }
     ],
     "backtest_drawdown": [
       {
         "date": "03-04",
-        "value": -0.1163
+        "value": -0.0831
       },
       {
         "date": "03-05",
-        "value": -0.0893
+        "value": -0.0603
       },
       {
         "date": "03-06",
-        "value": -0.0985
+        "value": -0.0678
       },
       {
         "date": "03-09",
-        "value": -0.1407
+        "value": -0.1061
       },
       {
         "date": "03-10",
-        "value": -0.1201
+        "value": -0.0894
       },
       {
         "date": "03-11",
-        "value": -0.0559
+        "value": -0.0478
       },
       {
         "date": "03-12",
-        "value": -0.0616
+        "value": -0.0391
       },
       {
         "date": "03-13",
-        "value": -0.0348
+        "value": -0.0275
       },
       {
         "date": "03-16",
-        "value": -0.0035
+        "value": -0.0159
       },
       {
         "date": "03-17",
-        "value": 0.0
+        "value": -0.0132
       },
       {
         "date": "03-18",
@@ -3801,75 +3813,75 @@
       },
       {
         "date": "03-19",
-        "value": 0.0
+        "value": -0.005
       },
       {
         "date": "03-20",
-        "value": -0.0308
+        "value": -0.0456
       },
       {
         "date": "03-23",
-        "value": -0.0855
+        "value": -0.0727
       },
       {
         "date": "03-24",
-        "value": -0.1261
+        "value": -0.1081
       },
       {
         "date": "03-25",
-        "value": -0.0846
+        "value": -0.0853
       },
       {
         "date": "03-26",
-        "value": -0.1034
+        "value": -0.1065
       },
       {
         "date": "03-27",
-        "value": -0.0975
+        "value": -0.115
       },
       {
         "date": "03-30",
-        "value": -0.094
+        "value": -0.1071
       },
       {
         "date": "03-31",
-        "value": -0.1566
+        "value": -0.139
       },
       {
         "date": "04-01",
-        "value": -0.1117
+        "value": -0.1057
       },
       {
         "date": "04-02",
-        "value": -0.112
+        "value": -0.103
       },
       {
         "date": "04-07",
-        "value": -0.0632
+        "value": -0.0769
       },
       {
         "date": "04-08",
-        "value": -0.025
+        "value": -0.0451
       },
       {
         "date": "04-09",
-        "value": -0.0188
+        "value": -0.0575
       },
       {
         "date": "04-10",
-        "value": 0.0
+        "value": -0.0325
       },
       {
         "date": "04-13",
-        "value": 0.0
+        "value": -0.0199
       },
       {
         "date": "04-14",
-        "value": -0.0116
+        "value": 0.0
       },
       {
         "date": "04-15",
-        "value": -0.0034
+        "value": 0.0
       },
       {
         "date": "04-16",
@@ -3885,7 +3897,7 @@
       },
       {
         "date": "04-21",
-        "value": -0.0018
+        "value": -0.0057
       },
       {
         "date": "04-22",
@@ -3893,107 +3905,107 @@
       },
       {
         "date": "04-23",
-        "value": -0.0399
+        "value": -0.0264
       },
       {
         "date": "04-24",
-        "value": -0.069
+        "value": -0.051
       },
       {
         "date": "04-27",
-        "value": -0.1222
+        "value": -0.0883
       },
       {
         "date": "04-28",
-        "value": -0.1147
+        "value": -0.0847
       },
       {
         "date": "04-29",
-        "value": -0.113
+        "value": -0.0881
       },
       {
         "date": "04-30",
-        "value": -0.0838
+        "value": -0.0623
       },
       {
         "date": "05-04",
-        "value": -0.0594
+        "value": -0.0498
       },
       {
         "date": "05-05",
-        "value": -0.0308
+        "value": -0.0317
       },
       {
         "date": "05-06",
-        "value": -0.0534
+        "value": -0.0526
       },
       {
         "date": "05-07",
-        "value": -0.0543
+        "value": -0.0611
       },
       {
         "date": "05-08",
-        "value": -0.1161
+        "value": -0.0988
       },
       {
         "date": "05-11",
-        "value": -0.0901
+        "value": -0.0751
       },
       {
         "date": "05-12",
-        "value": -0.0451
+        "value": -0.0507
       },
       {
         "date": "05-13",
-        "value": -0.0533
+        "value": -0.0559
       },
       {
         "date": "05-14",
-        "value": -0.026
+        "value": -0.0556
       },
       {
         "date": "05-15",
-        "value": -0.0613
+        "value": -0.0942
       },
       {
         "date": "05-18",
-        "value": -0.0485
+        "value": -0.0969
       },
       {
         "date": "05-19",
-        "value": -0.062
+        "value": -0.1227
       },
       {
         "date": "05-20",
-        "value": -0.0551
+        "value": -0.1293
       },
       {
         "date": "05-21",
-        "value": -0.0116
+        "value": -0.0986
       },
       {
         "date": "05-22",
-        "value": 0.0
+        "value": -0.0678
       },
       {
         "date": "05-25",
-        "value": 0.0
+        "value": -0.0627
       },
       {
         "date": "05-26",
-        "value": 0.0
+        "value": -0.0414
       },
       {
         "date": "05-27",
-        "value": 0.0
+        "value": -0.0412
       },
       {
         "date": "05-28",
-        "value": 0.0
+        "value": -0.0632
       },
       {
         "date": "05-29",
-        "value": 0.0
+        "value": -0.0373
       }
     ],
     "live_total_return": -0.011864499999999945,

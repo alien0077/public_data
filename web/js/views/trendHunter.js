@@ -444,16 +444,16 @@ export const TrendHunter = {
                             }
                         },
                         grid: {
-                            left: '10%',
+                            left: '12%',
                             right: '10%',
-                            bottom: '15%',
-                            top: '15%',
+                            bottom: '20%',
+                            top: '22%',
                             containLabel: true
                         },
                         xAxis: {
                             name: '資金流入比率 (%)',
                             nameLocation: 'middle',
-                            nameGap: 35,
+                            nameGap: 60,
                             splitLine: { show: false },
                             axisLabel: { color: isDark ? '#888' : '#666', fontSize: 10 },
                             // 🚀 Center the X-axis around avgFlowRatio
@@ -468,6 +468,8 @@ export const TrendHunter = {
                         },
                         yAxis: {
                             name: '平均漲跌幅 (%)',
+                            nameLocation: 'end',
+                            nameGap: 35,
                             splitLine: { 
                                 show: true,
                                 lineStyle: { color: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)' }
@@ -492,7 +494,7 @@ export const TrendHunter = {
                                     {
                                         type: 'text',
                                         right: -140,
-                                        top: -180,
+                                        top: -210,
                                         style: {
                                             text: '🔥 量價齊揚 (主流)',
                                             font: 'bold 13px sans-serif',
@@ -503,7 +505,7 @@ export const TrendHunter = {
                                     {
                                         type: 'text',
                                         right: -140,
-                                        bottom: -180,
+                                        bottom: -240,
                                         style: {
                                             text: '💧 資金吸納 (低接)',
                                             font: 'bold 13px sans-serif',
@@ -514,7 +516,7 @@ export const TrendHunter = {
                                     {
                                         type: 'text',
                                         left: -140,
-                                        top: -180,
+                                        top: -210,
                                         style: {
                                             text: '🔒 籌碼鎖定 (悶聲)',
                                             font: 'bold 13px sans-serif',
@@ -525,7 +527,7 @@ export const TrendHunter = {
                                     {
                                         type: 'text',
                                         left: -140,
-                                        bottom: -180,
+                                        bottom: -240,
                                         style: {
                                             text: '❄️ 弱勢量縮 (觀望)',
                                             font: 'bold 13px sans-serif',
@@ -563,13 +565,12 @@ export const TrendHunter = {
                                     color: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)'
                                 },
                                 data: [
-                                    { xAxis: avgFlowRatio, name: '平均流入線' },
-                                    { yAxis: 0, name: '平盤線' }
+                                    { xAxis: avgFlowRatio, name: '平均流入線', label: { position: 'start', distance: 25, color: isDark ? '#aaa' : '#666' } },
+                                    { yAxis: 0, name: '平盤線', label: { position: 'end', color: isDark ? '#aaa' : '#666' } }
                                 ],
                                 label: {
                                     show: true,
-                                    position: 'end',
-                                    color: isDark ? '#aaa' : '#666',
+                                    fontSize: 11,
                                     formatter: function(p) {
                                         return p.name;
                                     }
