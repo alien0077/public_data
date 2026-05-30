@@ -11,6 +11,7 @@ import { router } from './router.js';
 import { CorporateActions } from './corporateActions.js';
 import { Settings } from './views/settings.js';
 import { Dashboard } from './views/dashboard.js';
+import { GroupSearch } from './views/groupSearch.js?v=2';
 import { getPriceChangeStyle } from './utils/priceStyle.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -71,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (primary === 'performance') BattleRecord.init();
             else if (primary === 'addTrade') Transaction.init();
             else if (primary === 'favorites') Favorites.init(secondary);
+            else if (primary === 'groupSearch') GroupSearch.init();
             else if (primary === 'settings') Settings.init();
         } catch (err) { console.error(primary + ' view error:', err); }
     });
@@ -81,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('click', (e) => { e.preventDefault(); router.switchPage(p); });
     };
-    ['portfolio', 'trendHunter', 'assetRisk', 'performance', 'addTrade', 'favorites'].forEach(p => {
+    ['portfolio', 'trendHunter', 'assetRisk', 'performance', 'addTrade', 'favorites', 'groupSearch'].forEach(p => {
         bindPage('nav-' + p, p);
         const m = document.getElementById('mobile-nav-' + p);
         if (m) m.addEventListener('click', (e) => { e.preventDefault(); router.switchPage(p); });
@@ -291,6 +293,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (portfolioBody.children.length === 0) {
                     portfolioBody.innerHTML = '<tr><td colspan="8" class="px-6 py-10 text-center text-gray-500 font-mono text-sm">尚無持股資料，請由側邊欄「匯入資料」匯入交易紀錄</td></tr>';
                 }
+            }
+            // 🚀 支援從 group-search.html 帶入的 ?symbol=XXX 參數
+            const params = new URLSearchParams(window.location.search);
+            const symbolParam = params.get('symbol');
+            if (symbolParam) {
+                setTimeout(() => StockDetail.show(symbolParam), 500);
             }
         } catch (err) { console.error('Init failed:', err); }
     }
@@ -745,7 +753,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return style.bgClass ? style.textClass + ' ' + style.bgClass : style.textClass;
     }
     window.addEventListener('twstock:ready', () => init());
-    window.api = api; window.db = db; window.CorporateActions = CorporateActions;
+    window.api = api; window.db = db; window.CorporateActions = CorporateActions; window.StockDetail = StockDetail;
     setupSortHandlers();
     if (localStorage.getItem('twstock_secret')) init();
 });

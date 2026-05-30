@@ -35,6 +35,10 @@ const ROUTES = {
     'settings': {
         title: '設定 Settings',
         subPages: []
+    },
+    'groupSearch': {
+        title: '族群搜尋',
+        subPages: []
     }
 };
 
