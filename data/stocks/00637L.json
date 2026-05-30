@@ -1,36 +1,39 @@
 {
   "stock_id": "00637L",
   "name": "00637L",
-  "date": "2026-05-28",
-  "close": 21.54,
-  "health_score": 106,
+  "date": "2026-05-29",
+  "close": 22.4,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 77427.0,
-    "short_change": 10825.0,
-    "short_margin_ratio": 13.98
+    "margin_change": 73049.0,
+    "short_change": 11185.0,
+    "short_margin_ratio": 15.31
   },
   "tdcc": {},
   "main_force": {
-    "cost": 21.61,
-    "distance": -0.32,
-    "trend": "DOWN"
+    "cost": 21.67,
+    "distance": 3.37,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-29"
 }

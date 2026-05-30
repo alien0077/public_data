@@ -1,19 +1,19 @@
 {
   "stock_id": "6757",
   "name": "6757",
-  "date": "2026-05-28",
-  "close": 54.8,
+  "date": "2026-05-29",
+  "close": 56.7,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.223,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.272,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3361.0,
-    "short_change": 84.0,
+    "margin_change": 3320.0,
+    "short_change": 83.0,
     "short_margin_ratio": 2.5
   },
   "tdcc": {
@@ -22,8 +22,8 @@
     "holder_concentration": 77.61
   },
   "main_force": {
-    "cost": 53.17,
-    "distance": 3.07,
+    "cost": 53.52,
+    "distance": 5.94,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

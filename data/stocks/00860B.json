@@ -1,10 +1,10 @@
 {
   "stock_id": "00860B",
   "name": "00860B",
-  "date": "2026-05-28",
-  "close": 37.62,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-29",
+  "close": 37.68,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -18,19 +18,21 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 37.68,
-    "distance": -0.16,
-    "trend": "DOWN"
+    "cost": 37.67,
+    "distance": 0.03,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-29"
 }

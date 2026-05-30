@@ -1,18 +1,18 @@
 {
   "stock_id": "6794",
   "name": "6794",
-  "date": "2026-05-28",
-  "close": 79.8,
+  "date": "2026-05-29",
+  "close": 79.9,
   "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.003,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.009,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 249.0,
+    "margin_change": 248.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 80.95
   },
   "main_force": {
-    "cost": 80.92,
-    "distance": -1.38,
+    "cost": 80.84,
+    "distance": -1.16,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

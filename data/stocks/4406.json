@@ -1,10 +1,10 @@
 {
   "stock_id": "4406",
   "name": "4406",
-  "date": "2026-05-28",
-  "close": 0.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-29",
+  "close": 9.93,
+  "health_score": 133,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -22,19 +22,21 @@
     "holder_concentration": 74.64
   },
   "main_force": {
-    "cost": 9.51,
-    "distance": -100.0,
-    "trend": "DOWN"
+    "cost": 9.5,
+    "distance": 4.53,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-29"
 }

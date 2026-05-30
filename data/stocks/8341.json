@@ -1,18 +1,18 @@
 {
   "stock_id": "8341",
   "name": "8341",
-  "date": "2026-05-28",
-  "close": 74.8,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-29",
+  "close": 75.2,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.002,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.046,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 332.0,
+    "margin_change": 336.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 49.21
   },
   "main_force": {
-    "cost": 75.68,
-    "distance": -1.16,
+    "cost": 75.71,
+    "distance": -0.67,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-29"
 }

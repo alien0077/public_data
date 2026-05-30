@@ -1,20 +1,20 @@
 {
   "stock_id": "0052",
   "name": "0052",
-  "date": "2026-05-28",
-  "close": 59.4,
-  "health_score": 133,
+  "date": "2026-05-29",
+  "close": 61.5,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 10310.0,
-    "short_change": 83.0,
-    "short_margin_ratio": 0.81
+    "margin_change": 10261.0,
+    "short_change": 106.0,
+    "short_margin_ratio": 1.03
   },
   "tdcc": {
     "big_holder_change": 17.21,
@@ -22,8 +22,8 @@
     "holder_concentration": 19.44
   },
   "main_force": {
-    "cost": 56.73,
-    "distance": 4.71,
+    "cost": 57.17,
+    "distance": 7.57,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

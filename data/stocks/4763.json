@@ -1,18 +1,18 @@
 {
   "stock_id": "4763",
   "name": "4763",
-  "date": "2026-05-28",
-  "close": 40.3,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-29",
+  "close": 40.9,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.387,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.13,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 46954.0,
+    "margin_change": 46763.0,
     "short_change": 36.0,
     "short_margin_ratio": 0.08
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 59.79
   },
   "main_force": {
-    "cost": 42.06,
-    "distance": -4.18,
+    "cost": 41.99,
+    "distance": -2.6,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-29"
 }

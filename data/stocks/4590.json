@@ -1,13 +1,13 @@
 {
   "stock_id": "4590",
   "name": "4590",
-  "date": "2026-05-28",
-  "close": 71.6,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-29",
+  "close": 72.0,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.102,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.064,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 49.08
   },
   "main_force": {
-    "cost": 74.83,
-    "distance": -4.32,
+    "cost": 74.72,
+    "distance": -3.64,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-29"
 }

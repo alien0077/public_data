@@ -1,18 +1,18 @@
 {
   "stock_id": "3218",
   "name": "3218",
-  "date": "2026-05-28",
-  "close": 130.5,
-  "health_score": 86,
+  "date": "2026-05-29",
+  "close": 138.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.026,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 794.0,
+    "margin_change": 779.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,26 @@
     "holder_concentration": 56.08
   },
   "main_force": {
-    "cost": 131.57,
-    "distance": -0.81,
-    "trend": "DOWN"
+    "cost": 131.68,
+    "distance": 4.8,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-29"
 }

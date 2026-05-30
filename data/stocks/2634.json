@@ -1,18 +1,18 @@
 {
   "stock_id": "2634",
   "name": "2634",
-  "date": "2026-05-28",
-  "close": 45.9,
-  "health_score": 83,
+  "date": "2026-05-29",
+  "close": 47.0,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.103,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.154,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 22733.0,
+    "margin_change": 22856.0,
     "short_change": 10.0,
     "short_margin_ratio": 0.04
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 48.0
   },
   "main_force": {
-    "cost": 47.08,
-    "distance": -2.51,
+    "cost": 47.09,
+    "distance": -0.19,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

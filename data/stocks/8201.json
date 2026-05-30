@@ -1,13 +1,13 @@
 {
   "stock_id": "8201",
   "name": "8201",
-  "date": "2026-05-28",
-  "close": 13.0,
-  "health_score": 110,
+  "date": "2026-05-29",
+  "close": 13.45,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.04,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.033,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 56.35
   },
   "main_force": {
-    "cost": 12.8,
-    "distance": 1.56,
+    "cost": 12.83,
+    "distance": 4.83,
     "trend": "UP"
   },
   "sector": {
@@ -31,13 +31,18 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 40
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

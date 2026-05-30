@@ -1,18 +1,18 @@
 {
   "stock_id": "8147",
   "name": "8147",
-  "date": "2026-05-28",
-  "close": 170.0,
-  "health_score": 86,
+  "date": "2026-05-29",
+  "close": 176.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.199,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1283.0,
+    "margin_change": 1282.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,21 @@
     "holder_concentration": 51.01
   },
   "main_force": {
-    "cost": 173.95,
-    "distance": -2.27,
-    "trend": "DOWN"
+    "cost": 174.45,
+    "distance": 0.89,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-29"
 }

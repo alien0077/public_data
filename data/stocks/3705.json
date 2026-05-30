@@ -1,18 +1,18 @@
 {
   "stock_id": "3705",
   "name": "3705",
-  "date": "2026-05-28",
-  "close": 55.6,
-  "health_score": 86,
+  "date": "2026-05-29",
+  "close": 55.8,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.018,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.017,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 422.0,
+    "margin_change": 418.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 67.86
   },
   "main_force": {
-    "cost": 52.61,
-    "distance": 5.68,
+    "cost": 52.63,
+    "distance": 6.02,
     "trend": "UP"
   },
   "sector": {
@@ -31,12 +31,13 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "2464",
   "name": "2464",
-  "date": "2026-05-28",
-  "close": 168.0,
-  "health_score": 133,
+  "date": "2026-05-29",
+  "close": 184.5,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.544,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.9,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 13496.0,
-    "short_change": 1550.0,
-    "short_margin_ratio": 11.48
+    "margin_change": 14387.0,
+    "short_change": 1778.0,
+    "short_margin_ratio": 12.36
   },
   "tdcc": {
     "big_holder_change": 41.61,
@@ -22,8 +22,8 @@
     "holder_concentration": 47.32
   },
   "main_force": {
-    "cost": 131.68,
-    "distance": 27.58,
+    "cost": 135.22,
+    "distance": 36.44,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

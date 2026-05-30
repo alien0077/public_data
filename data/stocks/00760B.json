@@ -1,12 +1,12 @@
 {
   "stock_id": "00760B",
   "name": "00760B",
-  "date": "2026-05-28",
-  "close": 52.9,
-  "health_score": 103,
+  "date": "2026-05-29",
+  "close": 53.3,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,26 +18,21 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 53.13,
-    "distance": -0.43,
-    "trend": "DOWN"
+    "cost": 53.12,
+    "distance": 0.34,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

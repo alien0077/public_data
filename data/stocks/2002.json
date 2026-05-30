@@ -1,20 +1,20 @@
 {
   "stock_id": "2002",
   "name": "2002",
-  "date": "2026-05-28",
-  "close": 18.85,
-  "health_score": 93,
+  "date": "2026-05-29",
+  "close": 19.1,
+  "health_score": 126,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.095,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.014,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 45560.0,
-    "short_change": 651.0,
-    "short_margin_ratio": 1.43
+    "margin_change": 44521.0,
+    "short_change": 659.0,
+    "short_margin_ratio": 1.48
   },
   "tdcc": {
     "big_holder_change": 49.21,
@@ -22,8 +22,8 @@
     "holder_concentration": 52.96
   },
   "main_force": {
-    "cost": 18.63,
-    "distance": 1.18,
+    "cost": 18.65,
+    "distance": 2.41,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

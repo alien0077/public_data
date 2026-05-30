@@ -1,12 +1,12 @@
 {
   "stock_id": "00696B",
   "name": "00696B",
-  "date": "2026-05-28",
-  "close": 28.54,
-  "health_score": 83,
+  "date": "2026-05-29",
+  "close": 28.89,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -19,25 +19,20 @@
   "tdcc": {},
   "main_force": {
     "cost": 28.63,
-    "distance": -0.31,
-    "trend": "DOWN"
+    "distance": 0.91,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

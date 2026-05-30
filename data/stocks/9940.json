@@ -1,20 +1,20 @@
 {
   "stock_id": "9940",
   "name": "9940",
-  "date": "2026-05-28",
-  "close": 18.55,
-  "health_score": 83,
+  "date": "2026-05-29",
+  "close": 18.65,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.004,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.018,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 951.0,
+    "margin_change": 964.0,
     "short_change": 1.0,
-    "short_margin_ratio": 0.11
+    "short_margin_ratio": 0.1
   },
   "tdcc": {
     "big_holder_change": 77.94,
@@ -22,8 +22,8 @@
     "holder_concentration": 81.38
   },
   "main_force": {
-    "cost": 18.41,
-    "distance": 0.76,
+    "cost": 18.35,
+    "distance": 1.63,
     "trend": "UP"
   },
   "sector": {
@@ -32,12 +32,17 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

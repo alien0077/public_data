@@ -1,18 +1,18 @@
 {
   "stock_id": "00882",
   "name": "00882",
-  "date": "2026-05-28",
-  "close": 15.34,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-29",
+  "close": 15.67,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2527.0,
+    "margin_change": 2563.0,
     "short_change": 1.0,
     "short_margin_ratio": 0.04
   },
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 15.9,
-    "distance": -3.52,
+    "distance": -1.45,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-05-29"
 }

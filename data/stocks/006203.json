@@ -1,12 +1,12 @@
 {
   "stock_id": "006203",
   "name": "006203",
-  "date": "2026-05-28",
-  "close": 182.75,
+  "date": "2026-05-29",
+  "close": 190.05,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -22,8 +22,8 @@
     "holder_concentration": 75.92
   },
   "main_force": {
-    "cost": 175.73,
-    "distance": 3.99,
+    "cost": 176.98,
+    "distance": 7.39,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

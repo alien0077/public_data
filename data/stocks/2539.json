@@ -1,20 +1,20 @@
 {
   "stock_id": "2539",
   "name": "2539",
-  "date": "2026-05-28",
-  "close": 34.5,
-  "health_score": 83,
+  "date": "2026-05-29",
+  "close": 36.6,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.03,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1814.0,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.17
+    "margin_change": 1829.0,
+    "short_change": 40.0,
+    "short_margin_ratio": 2.19
   },
   "tdcc": {
     "big_holder_change": 84.96,
@@ -22,8 +22,8 @@
     "holder_concentration": 87.3
   },
   "main_force": {
-    "cost": 38.21,
-    "distance": -9.71,
+    "cost": 37.99,
+    "distance": -3.66,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,20 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

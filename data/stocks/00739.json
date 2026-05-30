@@ -1,12 +1,12 @@
 {
   "stock_id": "00739",
   "name": "00739",
-  "date": "2026-05-28",
-  "close": 28.79,
-  "health_score": 86,
+  "date": "2026-05-29",
+  "close": 29.08,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -22,19 +22,22 @@
     "holder_concentration": 37.23
   },
   "main_force": {
-    "cost": 28.91,
-    "distance": -0.42,
-    "trend": "DOWN"
+    "cost": 28.94,
+    "distance": 0.48,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-29"
 }

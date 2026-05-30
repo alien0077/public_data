@@ -1,20 +1,20 @@
 {
   "stock_id": "4807",
   "name": "4807",
-  "date": "2026-05-28",
-  "close": 25.4,
+  "date": "2026-05-29",
+  "close": 27.9,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.233,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.102,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 857.0,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.35
+    "margin_change": 889.0,
+    "short_change": 6.0,
+    "short_margin_ratio": 0.67
   },
   "tdcc": {
     "big_holder_change": 63.36,
@@ -22,8 +22,8 @@
     "holder_concentration": 72.82
   },
   "main_force": {
-    "cost": 23.24,
-    "distance": 9.29,
+    "cost": 23.6,
+    "distance": 18.22,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,19 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

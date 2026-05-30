@@ -1,20 +1,20 @@
 {
   "stock_id": "8011",
   "name": "8011",
-  "date": "2026-05-28",
-  "close": 17.75,
-  "health_score": 83,
+  "date": "2026-05-29",
+  "close": 18.05,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.071,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.145,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3873.0,
+    "margin_change": 3864.0,
     "short_change": 6.0,
-    "short_margin_ratio": 0.15
+    "short_margin_ratio": 0.16
   },
   "tdcc": {
     "big_holder_change": 24.64,
@@ -22,9 +22,9 @@
     "holder_concentration": 30.29
   },
   "main_force": {
-    "cost": 18.58,
-    "distance": -4.47,
-    "trend": "DOWN"
+    "cost": 17.79,
+    "distance": 1.46,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,11 +32,12 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

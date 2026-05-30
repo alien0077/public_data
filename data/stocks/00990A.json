@@ -1,20 +1,20 @@
 {
   "stock_id": "00990A",
   "name": "00990A",
-  "date": "2026-05-28",
-  "close": 19.23,
-  "health_score": 113,
+  "date": "2026-05-29",
+  "close": 20.15,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 10008.0,
-    "short_change": 433.0,
-    "short_margin_ratio": 4.33
+    "margin_change": 10258.0,
+    "short_change": 263.0,
+    "short_margin_ratio": 2.56
   },
   "tdcc": {
     "big_holder_change": 23.53,
@@ -22,8 +22,8 @@
     "holder_concentration": 34.03
   },
   "main_force": {
-    "cost": 17.79,
-    "distance": 8.09,
+    "cost": 18.0,
+    "distance": 11.94,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

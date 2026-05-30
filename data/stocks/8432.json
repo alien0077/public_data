@@ -1,10 +1,10 @@
 {
   "stock_id": "8432",
   "name": "8432",
-  "date": "2026-05-28",
-  "close": 50.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-29",
+  "close": 50.7,
+  "health_score": 93,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -22,9 +22,9 @@
     "holder_concentration": 61.14
   },
   "main_force": {
-    "cost": 50.31,
-    "distance": -0.62,
-    "trend": "DOWN"
+    "cost": 50.34,
+    "distance": 0.72,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-29"
 }

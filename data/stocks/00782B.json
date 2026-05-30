@@ -1,10 +1,10 @@
 {
   "stock_id": "00782B",
   "name": "00782B",
-  "date": "2026-05-28",
-  "close": 30.13,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-29",
+  "close": 30.46,
+  "health_score": 133,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -18,19 +18,21 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 30.15,
-    "distance": -0.07,
-    "trend": "DOWN"
+    "cost": 30.16,
+    "distance": 0.99,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-29"
 }

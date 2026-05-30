@@ -1,10 +1,10 @@
 {
   "stock_id": "00842B",
   "name": "00842B",
-  "date": "2026-05-28",
-  "close": 30.18,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-05-29",
+  "close": 30.37,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -19,18 +19,20 @@
   "tdcc": {},
   "main_force": {
     "cost": 30.25,
-    "distance": -0.23,
-    "trend": "DOWN"
+    "distance": 0.4,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-05-29"
 }

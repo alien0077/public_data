@@ -1,20 +1,20 @@
 {
   "stock_id": "3019",
   "name": "3019",
-  "date": "2026-05-28",
-  "close": 149.5,
-  "health_score": 130,
+  "date": "2026-05-29",
+  "close": 154.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.454,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.201,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 13926.0,
-    "short_change": 161.0,
-    "short_margin_ratio": 1.16
+    "margin_change": 14000.0,
+    "short_change": 187.0,
+    "short_margin_ratio": 1.34
   },
   "tdcc": {
     "big_holder_change": 31.41,
@@ -22,8 +22,8 @@
     "holder_concentration": 37.44
   },
   "main_force": {
-    "cost": 147.05,
-    "distance": 1.67,
+    "cost": 147.82,
+    "distance": 4.18,
     "trend": "UP"
   },
   "sector": {
@@ -32,12 +32,17 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }

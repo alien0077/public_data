@@ -1,20 +1,20 @@
 {
   "stock_id": "1440",
   "name": "1440",
-  "date": "2026-05-28",
-  "close": 11.9,
-  "health_score": 86,
+  "date": "2026-05-29",
+  "close": 12.55,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.019,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.094,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4953.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 4798.0,
+    "short_change": 171.0,
+    "short_margin_ratio": 3.56
   },
   "tdcc": {
     "big_holder_change": 73.02,
@@ -23,18 +23,26 @@
   },
   "main_force": {
     "cost": 11.93,
-    "distance": -0.25,
-    "trend": "DOWN"
+    "distance": 5.2,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-28"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-05-29"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "2645",
   "name": "2645",
-  "date": "2026-05-28",
-  "close": 164.0,
+  "date": "2026-05-29",
+  "close": 166.5,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.019,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.01,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2958.0,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.1
+    "margin_change": 2951.0,
+    "short_change": 5.0,
+    "short_margin_ratio": 0.17
   },
   "tdcc": {
     "big_holder_change": 79.44,
@@ -22,8 +22,8 @@
     "holder_concentration": 84.05
   },
   "main_force": {
-    "cost": 157.35,
-    "distance": 4.23,
+    "cost": 158.02,
+    "distance": 5.37,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-28"
+  "data_version": "2026-05-29"
 }
