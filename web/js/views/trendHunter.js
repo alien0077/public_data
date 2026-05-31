@@ -207,6 +207,7 @@ export const TrendHunter = {
                                 <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 text-xs uppercase">
                                     <tr>
                                         <th class="px-6 py-3">股號/名稱</th>
+                                        <th class="px-6 py-3 text-left hidden lg:table-cell">原因</th>
                                         <th class="px-6 py-3 text-right">配置權重</th>
                                         <th class="px-6 py-3 text-right hidden sm:table-cell">進場日期</th>
                                         <th class="px-6 py-3 text-right">累積回報</th>
@@ -215,7 +216,7 @@ export const TrendHunter = {
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-sm text-gray-400">
-                                    <tr><td colspan="6" class="px-6 py-8 text-center text-gray-500">加載數據中...</td></tr>
+                                    <tr><td colspan="7" class="px-6 py-8 text-center text-gray-500">加載數據中...</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -1217,11 +1218,16 @@ export const TrendHunter = {
                             const action = p.action || 'HOLD';
                             const actionColor = action === 'BUY' ? 'bg-red-500/10 text-red-500' : (action === 'SELL' ? 'bg-green-500/10 text-green-500' : 'bg-gray-500/10 text-gray-400');
                             const cleanStockId = p.stock.replace(/\.TW(O)?$/, '');
+                            const reason = p.select_reason || '';
+                            const reasonColor = reason.includes('趨勢') ? 'text-red-500 bg-red-500/10' : reason.includes('法人') ? 'text-orange-500 bg-orange-500/10' : reason.includes('ETF') ? 'text-purple-500 bg-purple-500/10' : 'text-blue-500 bg-blue-500/10';
                             return `
                                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-900/30 cursor-pointer" onclick="window.StockDetail.show('${cleanStockId}')">
                                     <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
                                         <div class="font-bold">${cleanStockId}</div>
                                         <div class="text-xs text-gray-500">${name}</div>
+                                    </td>
+                                    <td class="px-6 py-4 text-left hidden lg:table-cell">
+                                        ${reason ? `<span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${reasonColor}">${reason}</span>` : ''}
                                     </td>
                                     <td class="px-6 py-4 text-right font-bold text-gray-700 dark:text-gray-300">${((p.weight || 0) * 100).toFixed(1)}%</td>
                                     <td class="px-6 py-4 text-right text-gray-500 font-mono text-xs hidden sm:table-cell">${p.entry_date || '--'}</td>
@@ -1289,7 +1295,7 @@ export const TrendHunter = {
                 if (allSignals.length === 0) {
                     const candidates = (data.portfolio || []).filter(p => !p.is_held && (p.entry_reason === 'SIGNAL' || p.action === 'BUY'));
                     if (candidates.length > 0) {
-                        allSignals = candidates.map(c => ({ entry_date: data.date, symbol: c.stock, type: 'BUY', reason: c.chip_label || c.entry_reason || '模型選入' }));
+                        allSignals = candidates.map(c => ({ entry_date: data.date, symbol: c.stock, type: 'BUY', reason: c.select_reason || c.chip_label || c.entry_reason || '模型選入' }));
                     }
                 }
                 
