@@ -1741,7 +1741,78 @@ export const TrendHunter = {
                                             </td>
                                         </tr>
                                     `;
-                                }).join('');
+                }).join('');
+
+                // 量化系統運作機制說明
+                try {
+                    const epData = await api.fetchLocalJson('quant/evolved_params.json');
+                    const ep = (epData && epData.global) ? epData.global : {};
+                    const rsExit = ep.rs_exit || '--';
+                    const mrRsi = ep.mr_rsi_exit || '--';
+                    const trailGap = ep.trailing_gap ? (ep.trailing_gap * 100).toFixed(0) : '--';
+                    container.innerHTML += `
+                        <details class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                            <summary class="px-5 py-3 text-xs font-bold text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 cursor-pointer select-none flex items-center">
+                                🧠 量化系統運作機制
+                                <svg class="ml-2 w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </summary>
+                            <div class="px-5 pb-5 text-[11px] text-gray-600 dark:text-gray-400 leading-relaxed space-y-3 font-mono">
+                                <div>
+                                    <div class="font-bold text-gray-700 dark:text-gray-300">📅 train（每週六）</div>
+                                    <div class="pl-3 border-l-2 border-gray-200 dark:border-gray-700 mt-1">
+                                        回放最近 120 天歷史資料，從 100 萬初始資金開始模擬交易。<br>
+                                        計算 TREND / MR / Portfolio 的 Sharpe、總報酬率、勝率。<br>
+                                        訓練結束後自動執行 optimize() 搜尋最佳出場參數，<br>
+                                        以 Portfolio Sharpe 最高為目標調整 RS_exit / MR_RSI_exit。
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-gray-700 dark:text-gray-300">📅 run（每交易日）</div>
+                                    <div class="pl-3 border-l-2 border-gray-200 dark:border-gray-700 mt-1">
+                                        接續前一天的實戰持倉與資金，執行當日交易決策。<br>
+                                        產出 latest_portfolio.json（持股、候選、交易紀錄、績效）。<br>
+                                        產出 latest_strategies.json（策略回測數字 + 演化後參數）。<br>
+                                        每天晚上台灣時間 20:00 由 GitHub Actions 自動執行。
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-gray-700 dark:text-gray-300">🧬 策略演化（Evolution Engine）</div>
+                                    <div class="pl-3 border-l-2 border-gray-200 dark:border-gray-700 mt-1">
+                                        analyze_regret() — 賣出後若股價再漲 15%+ → 放寬該主題 RS 出場閾值；MR 賣出後反彈續強 → 調高 RSI 出場閾值<br>
+                                        optimize() — 每週訓練後對 rs_exit（80~92）、mr_rsi_exit（75~85）做網格搜尋，選出 Portfolio Sharpe 最高的參數組合
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-gray-700 dark:text-gray-300">📊 回測績效計算（PerformanceMetrics）</div>
+                                    <div class="pl-3 border-l-2 border-gray-200 dark:border-gray-700 mt-1">
+                                        淨值曲線 equity → pct_change() → 日報酬率序列<br>
+                                        Total Return =（最終淨值 - 初始資金）/ 初始資金<br>
+                                        Sharpe Ratio = avg(日報酬) / std(日報酬) × √252<br>
+                                        Max Drawdown = min(（淨值 - 歷史高點）/ 歷史高點)<br>
+                                        Win Rate = 獲利交易次數 / 總交易次數
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-gray-900/50 p-3 rounded-lg">
+                                    <span class="font-bold text-gray-700 dark:text-gray-300">⚙️ 當前演化參數</span>
+                                    <div class="grid grid-cols-3 gap-2 mt-2 text-[10px]">
+                                        <div class="bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 text-center">
+                                            <div class="text-gray-400">RS_exit</div>
+                                            <div class="font-bold text-orange-500">${rsExit}</div>
+                                        </div>
+                                        <div class="bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 text-center">
+                                            <div class="text-gray-400">MR_RSI_exit</div>
+                                            <div class="font-bold text-orange-500">${mrRsi}</div>
+                                        </div>
+                                        <div class="bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 text-center">
+                                            <div class="text-gray-400">Trailing Gap</div>
+                                            <div class="font-bold text-orange-500">${trailGap}%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    `;
+                } catch(e) { console.warn('System desc load failed', e); }
                             }
                         }
 
