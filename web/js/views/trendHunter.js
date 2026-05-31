@@ -475,6 +475,7 @@ export const TrendHunter = {
                                 <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 text-[10px] uppercase">
                                     <tr>
                                         <th class="px-5 py-2">股票</th>
+                                        <th class="px-5 py-2 text-left">備註</th>
                                         <th class="px-5 py-2 text-right">開始日</th>
                                         <th class="px-5 py-2 text-right">天數</th>
                                         <th class="px-5 py-2 text-right">累計買超(張)</th>
@@ -508,7 +509,9 @@ export const TrendHunter = {
                                             <td class="px-5 py-2.5">
                                                 <div class="font-bold text-gray-900 dark:text-white">${s.stock_id}</div>
                                                 <div class="text-[10px] text-gray-400">${s.name || ''}</div>
-                                                ${s.note ? `<div class="text-[9px] text-orange-500 mt-0.5 max-w-[120px] truncate" title="${s.note}">${s.note}</div>` : ''}
+                                            </td>
+                                            <td class="px-5 py-2.5 text-left">
+                                                ${s.note ? `<span class="text-[10px] text-orange-500 leading-tight">${s.note}</span>` : '<span class="text-[10px] text-gray-400">--</span>'}
                                             </td>
                                             <td class="px-5 py-2.5 text-right text-gray-500">${s.start_date ? s.start_date.substring(5) : '--'}</td>
                                             <td class="px-5 py-2.5 text-right text-gray-500">${s.tracking_days}d</td>
