@@ -1326,6 +1326,8 @@ export const TrendHunter = {
                                 <div class="text-sm font-bold text-yellow-500">${ratingStars}</div>
                             </div>
                             
+                            ${s.note ? `<p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed bg-blue-50/50 dark:bg-blue-900/10 p-2.5 rounded-lg border border-blue-100 dark:border-blue-900/30">${s.note}</p>` : ''}
+                            
                             <div class="grid grid-cols-3 gap-2 bg-gray-50 dark:bg-gray-900/50 p-3 rounded-xl font-mono text-center">
                                 <div>
                                     <div class="text-[10px] text-gray-400">總報酬率</div>
