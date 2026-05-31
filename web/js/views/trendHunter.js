@@ -1308,13 +1308,22 @@ export const TrendHunter = {
                     tradeLogEl.classList.remove('hidden');
                 }
 
-                // 渲染訊號表格 (分頁)
-                allSignals = data.signals || data.trade_log || [];
-                if (allSignals.length === 0) {
-                    const candidates = (data.portfolio || []).filter(p => !p.is_held && (p.entry_reason === 'SIGNAL' || p.action === 'BUY'));
-                    if (candidates.length > 0) {
-                        allSignals = candidates.map(c => ({ entry_date: data.date, symbol: c.stock, type: 'BUY', reason: c.select_reason || c.chip_label || c.entry_reason || '模型選入' }));
-                    }
+                // 渲染訊號表格 (分頁) — 合併候選股(有select_reason) + trade_log(補歷史)
+                const candidates = (data.portfolio || []).filter(p => !p.is_held && (p.entry_reason === 'SIGNAL'));
+                allSignals = candidates.map(c => ({
+                    entry_date: data.date, symbol: c.stock, type: 'BUY',
+                    select_reason: c.select_reason || '',
+                    reason: c.select_reason || '模型選入'
+                }));
+                if (data.trade_log && data.trade_log.length > 0) {
+                    const tradeSignals = data.trade_log.map(t => ({
+                        entry_date: t.entry_date || t.exit_date || '',
+                        symbol: t.stock, type: t.action === 'SELL' ? 'SELL' : 'BUY',
+                        select_reason: t.select_reason || '',
+                        reason: t.reason || t.select_reason || (t.action === 'SELL' ? '策略出場' : '策略進場')
+                    }));
+                    const seen = new Set(allSignals.map(s => s.symbol + '_' + s.entry_date));
+                    allSignals = [...allSignals, ...tradeSignals.filter(t => !seen.has(t.symbol + '_' + t.entry_date))];
                 }
                 
                 if (allSignals.length > 0) allSignals.sort((a, b) => new Date(b.entry_date || b.date || 0) - new Date(a.entry_date || a.date || 0));
