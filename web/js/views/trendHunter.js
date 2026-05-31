@@ -504,10 +504,11 @@ export const TrendHunter = {
                                             ? `<span class="text-[11px] font-bold px-2 py-1 rounded border ${sig.cls}">${sig.icon} ${sig.label}</span>`
                                             : '<span class="text-[10px] text-gray-400">追蹤中</span>';
                                         return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 cursor-pointer transition-colors"
-                                                    onclick="window.StockDetail.show('${s.stock_id}')">
+                                                     onclick="window.StockDetail.show('${s.stock_id}')">
                                             <td class="px-5 py-2.5">
                                                 <div class="font-bold text-gray-900 dark:text-white">${s.stock_id}</div>
                                                 <div class="text-[10px] text-gray-400">${s.name || ''}</div>
+                                                ${s.note ? `<div class="text-[9px] text-orange-500 mt-0.5 max-w-[120px] truncate" title="${s.note}">${s.note}</div>` : ''}
                                             </td>
                                             <td class="px-5 py-2.5 text-right text-gray-500">${s.start_date ? s.start_date.substring(5) : '--'}</td>
                                             <td class="px-5 py-2.5 text-right text-gray-500">${s.tracking_days}d</td>
