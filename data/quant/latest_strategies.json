@@ -2,33 +2,36 @@
   "strategies": [
     {
       "dsl": "rs > 90 AND pct > 2",
-      "exit_dsl": "rs < 85 OR max_return > 0.25",
+      "exit_dsl": "rs < 80 OR max_return > 0.25",
       "desc": "TREND Ensemble Fund",
-      "note": "TREND（趨勢跟蹤）：RS>90 買最強的，賭它繼續漲（順勢）。跌破 RS85 或移動停利出場。牛市表現最佳。",
-      "sharpe": 2.4277916633599355,
-      "total_return": 0.7831906,
+      "note": "TREND（趨勢跟蹤）：RS>90 買最強的，賭它繼續漲（順勢）。跌破 RS80 或移動停利出場。牛市表現最佳。",
+      "params": "RS≥85進場 | RS<80出場 | 停利5% | 停損-10% | 上限10檔",
+      "sharpe": 1.8420989383093969,
+      "total_return": 0.5361236999999999,
       "win_rate": 0.5423728813559322,
       "weight": 0.8,
       "age": 10,
-      "score": 2.4277916633599355
+      "score": 1.8420989383093969
     },
     {
       "dsl": "rsi < 40",
-      "exit_dsl": "rs < 65 OR max_return > 0.25",
+      "exit_dsl": "rs < 75 OR max_return > 0.25",
       "desc": "MR Ensemble Fund",
-      "note": "MR（均值回歸）：RSI<40 買跌深反轉，賭它反彈（逆勢）。RSI>80 或停損/移動停利出場。低接高拋，波動較低。",
-      "sharpe": 3.1166212269798277,
-      "total_return": 0.46919390000000005,
-      "win_rate": 0.6101694915254238,
+      "note": "MR（均值回歸）：RSI<40 買跌深反轉，賭它反彈（逆勢）。RSI>75 或停損/移動停利出場。低接高拋，波動較低。",
+      "params": "RSI<40進場 | RSI>75出場 | 停利8%移動3% | 停損7% | 保留3席",
+      "sharpe": 3.393034999596572,
+      "total_return": 0.5246431999999999,
+      "win_rate": 0.6016949152542372,
       "weight": 0.2,
       "age": 10,
-      "score": 3.1166212269798277
+      "score": 3.393034999596572
     },
     {
       "dsl": "portfolio_combined",
       "exit_dsl": "risk_management",
       "desc": "Portfolio (TREND+MR)",
-      "note": "多策略加權組合：80% TREND + 20% MR，透過低相關性策略分散風險，追求穩定超額報酬。",
+      "note": "多策略加權組合：積極進攻模式，TREND 80% + MR 20%，透過低相關性策略分散風險。",
+      "params": "TREND 80% | MR 20% | 現金保留10%",
       "sharpe": -0.20593527762146885,
       "total_return": -0.011864499999999945,
       "win_rate": 0.5,

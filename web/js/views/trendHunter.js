@@ -1364,6 +1364,7 @@ export const TrendHunter = {
                             </div>
                             
                             ${s.note ? `<p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed bg-blue-50/50 dark:bg-blue-900/10 p-2.5 rounded-lg border border-blue-100 dark:border-blue-900/30">${s.note}</p>` : ''}
+                            ${s.params ? `<p class="text-[10px] font-mono text-orange-500 leading-relaxed bg-orange-50/50 dark:bg-orange-900/10 px-2.5 py-1.5 rounded-lg border border-orange-200/50 dark:border-orange-900/30">⚙️ ${s.params}</p>` : ''}
                             
                             <div class="grid grid-cols-3 gap-2 bg-gray-50 dark:bg-gray-900/50 p-3 rounded-xl font-mono text-center">
                                 <div>
