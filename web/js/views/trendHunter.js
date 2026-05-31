@@ -936,7 +936,10 @@ export const TrendHunter = {
                                     ${type === 'BUY' ? '買進 BUY' : '賣出 SELL'}
                                 </span>
                             </td>
-                            <td class="px-6 py-4 text-xs text-gray-450">${s.reason || s.label || 'SIGNAL'}</td>
+                            <td class="px-6 py-4 text-xs">
+                                ${s.select_reason ? `<span class="inline-block px-1.5 py-0.5 rounded text-[8px] font-bold mr-1 ${s.select_reason.includes('趨勢') ? 'text-red-500 bg-red-500/10' : s.select_reason.includes('法人') ? 'text-orange-500 bg-orange-500/10' : s.select_reason.includes('ETF') ? 'text-purple-500 bg-purple-500/10' : 'text-blue-500 bg-blue-500/10'}">${s.select_reason}</span>` : ''}
+                                <span class="text-gray-450">${s.reason || s.label || 'SIGNAL'}</span>
+                            </td>
                         </tr>
                     `;
                 }).join('') || '<tr><td colspan="4" class="px-6 py-8 text-center text-gray-500">尚無近期訊號</td></tr>';
@@ -1167,6 +1170,63 @@ export const TrendHunter = {
                     alphaEl.classList.remove('hidden');
                 }
 
+                // 📊 選股來源分布統計
+                const candidates = (data.portfolio || []).filter(p => !p.is_held && (p.entry_reason === 'SIGNAL' || p.action === 'BUY'));
+                const allItems = [...activeHoldings, ...candidates];
+                const srcStats = { 趨勢跟蹤: 0, 法人建倉: 0, 均值回歸: 0, ETF動能: 0 };
+                allItems.forEach(item => {
+                    const r = item.select_reason || item.entry_reason || '';
+                    if (r.includes('趨勢跟蹤')) srcStats['趨勢跟蹤']++;
+                    if (r.includes('法人建倉')) srcStats['法人建倉']++;
+                    if (r.includes('均值回歸')) srcStats['均值回歸']++;
+                    if (r.includes('ETF動能')) srcStats['ETF動能']++;
+                });
+                const totalSrc = Object.values(srcStats).reduce((a, b) => a + b, 0) || 1;
+                const srcBarHtml = `
+                    <div class="bg-white dark:bg-[#161b22] rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">📊 選股來源分布（共 ${allItems.length} 檔）</h3>
+                            <span class="text-[10px] text-gray-500 font-mono">持倉 ${activeHoldings.length} · 候選 ${candidates.length}</span>
+                        </div>
+                        <div class="space-y-2">
+                            ${Object.entries({ '趨勢跟蹤': 'red', '法人建倉': 'orange', '均值回歸': 'blue' }).map(([name, color]) => {
+                                const count = srcStats[name] || 0;
+                                const pct = (count / totalSrc * 100).toFixed(0);
+                                const barColor = color === 'red' ? 'bg-red-500' : color === 'orange' ? 'bg-orange-500' : 'bg-blue-500';
+                                const textColor = color === 'red' ? 'text-red-500' : color === 'orange' ? 'text-orange-500' : 'text-blue-500';
+                                return count > 0 ? `
+                                <div class="flex items-center text-xs">
+                                    <span class="w-16 font-bold ${textColor}">${name}</span>
+                                    <span class="w-10 text-right font-mono text-gray-500">${pct}%</span>
+                                    <div class="flex-1 h-3 bg-gray-100 dark:bg-gray-800 rounded-full mx-2 overflow-hidden">
+                                        <div class="h-full ${barColor} rounded-full" style="width: ${pct}%"></div>
+                                    </div>
+                                    <span class="w-8 text-right font-mono text-gray-400">${count}檔</span>
+                                </div>` : '';
+                            }).join('')}
+                            ${srcStats['ETF動能'] > 0 ? `
+                            <div class="flex items-center text-xs pt-1 border-t border-gray-100 dark:border-gray-800">
+                                <span class="w-16 font-bold text-purple-500">ETF動能</span>
+                                <span class="w-10 text-right font-mono text-gray-500">${(srcStats['ETF動能'] / totalSrc * 100).toFixed(0)}%</span>
+                                <div class="flex-1 h-3 bg-gray-100 dark:bg-gray-800 rounded-full mx-2 overflow-hidden">
+                                    <div class="h-full bg-purple-500 rounded-full" style="width: ${(srcStats['ETF動能'] / totalSrc * 100).toFixed(0)}%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-gray-400">${srcStats['ETF動能']}檔</span>
+                            </div>` : ''}
+                        </div>
+                    </div>
+                `;
+                // Insert stats bar after alpha allocation or at top of quant container
+                const quantContainer = document.getElementById('quant-container');
+                if (quantContainer) {
+                    const holdingsCard = quantContainer.querySelector('.rounded-xl.border');
+                    if (holdingsCard) {
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = srcBarHtml;
+                        quantContainer.insertBefore(tempDiv.firstElementChild, holdingsCard);
+                    }
+                }
+
                 if (holdingsTable) {
                     if (activeHoldings.length === 0) {
                         holdingsTable.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-gray-500">模型目前無持股，保持全現金觀望。</td></tr>`;
@@ -1231,6 +1291,7 @@ export const TrendHunter = {
                                                     </span>
                                                     <span class="text-[10px] font-mono text-gray-500">${t.stock}</span>
                                                 </div>
+                                                ${t.select_reason ? `<div class="mt-1"><span class="inline-block px-1.5 py-0.5 rounded text-[8px] font-bold ${t.select_reason.includes('趨勢') ? 'text-red-500 bg-red-500/10' : t.select_reason.includes('法人') ? 'text-orange-500 bg-orange-500/10' : t.select_reason.includes('ETF') ? 'text-purple-500 bg-purple-500/10' : 'text-blue-500 bg-blue-500/10'}">${t.select_reason}</span></div>` : ''}
                                             </div>
                                             <div class="text-right mx-4 flex-shrink-0">
                                                 <div class="text-[10px] font-mono text-gray-500">
