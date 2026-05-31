@@ -456,6 +456,7 @@ export const TrendHunter = {
                                             'B': { icon: '🔴', label: 'B 發動', cls: 'bg-red-500/15 text-red-500 border-red-500/30' },
                                             'A+': { icon: '🟠', label: 'A+ 起跑', cls: 'bg-orange-500/15 text-orange-500 border-orange-500/30' },
                                             'A': { icon: '🔵', label: 'A 潛伏', cls: 'bg-blue-500/15 text-blue-500 border-blue-500/30' },
+                                            'ABS': { icon: '🟣', label: 'ABS 絕對買超', cls: 'bg-purple-500/15 text-purple-500 border-purple-500/30' },
                                         };
                                         const sig = signalConfig[s.latest_signal_code];
                                         const entrySig = signalConfig[s.entry_signal_code];
