@@ -493,6 +493,64 @@ export const TrendHunter = {
                     </div>
                 `).join('');
 
+                // 📡 訊號規則說明
+                const signalRulesHtml = `
+                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                        <details>
+                            <summary class="px-5 py-3 text-xs font-bold text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 cursor-pointer select-none flex items-center">
+                                📡 法人訊號規則說明
+                                <svg class="ml-2 w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </summary>
+                            <div class="px-5 pb-5 text-[11px] text-gray-600 dark:text-gray-400 leading-relaxed space-y-3">
+                                <div class="p-3 rounded-lg bg-blue-500/5 border border-blue-500/20">
+                                    <div class="font-bold text-blue-600 dark:text-blue-400">🔵 A 低檔潛伏建倉</div>
+                                    <div class="mt-1 pl-2 border-l-2 border-blue-400/30 space-y-1 text-[10px]">
+                                        <div>① 20 日價格區間：大型股 &lt; 12%｜小型股 &lt; 20%（橫盤整理）</div>
+                                        <div>② 距 MA60：大型股 ≤ 10%｜小型股 ≤ 12%（貼近均線）</div>
+                                        <div>③ 20 日法人籌碼集中度 &gt; 3%（法人默默吃貨）</div>
+                                        <div>④ 融資增幅：小於 500 張或 &lt; 2%（散戶沒上車）</div>
+                                        <div>⑤ 借券增幅 &lt; 0.5%（沒人放空）</div>
+                                        <div class="text-gray-400 mt-1">→ 五條件全成立才觸發，用於進入追蹤</div>
+                                    </div>
+                                </div>
+                                <div class="p-3 rounded-lg bg-orange-500/5 border border-orange-500/20">
+                                    <div class="font-bold text-orange-600 dark:text-orange-400">🟠 A+ 起跑試探</div>
+                                    <div class="mt-1 pl-2 border-l-2 border-orange-400/30 space-y-1 text-[10px]">
+                                        <div>① 近 10 天內出現過 A 訊號</div>
+                                        <div>② 量比 0.8~3.0（溫和放量）</div>
+                                        <div>③ 漲幅 -0.5%~5.0%（小漲不追高）</div>
+                                        <div>④ 收盤 &gt; MA5（短線轉強）</div>
+                                        <div>⑤ 均線糾結：MA5-MA10 差距 &lt; 5% 且 MA10-MA20 差距 &lt; 5%</div>
+                                    </div>
+                                </div>
+                                <div class="p-3 rounded-lg bg-red-500/5 border border-red-500/20">
+                                    <div class="font-bold text-red-600 dark:text-red-400">🔴 B 突發攻擊</div>
+                                    <div class="mt-1 pl-2 border-l-2 border-red-400/30 space-y-1 text-[10px]">
+                                        <div>① 量比 &gt; 2.2（爆量）</div>
+                                        <div>② 漲幅 &gt; 3.5%（長紅）</div>
+                                        <div>③ 收盤 &gt; MA20（中期趨勢轉多）</div>
+                                        <div>④ 近 15 日法人籌碼集中度 &gt; 3%（法人撐腰）</div>
+                                    </div>
+                                </div>
+                                <div class="p-3 rounded-lg bg-purple-500/5 border border-purple-500/20">
+                                    <div class="font-bold text-purple-600 dark:text-purple-400">🟣 ABS 絕對買超</div>
+                                    <div class="mt-1 pl-2 border-l-2 border-purple-400/30 space-y-1 text-[10px]">
+                                        <div>① 20 日法人累計買超 &gt; 10 萬張（大型股）或 3 萬張（小型股）</div>
+                                        <div>② 法人籌碼集中度 &gt; 1.2%（比 A 訊號寬鬆）</div>
+                                        <div>③ 不受價格區間 / MA60 距離限制（巨型權值股專用）</div>
+                                        <div class="text-gray-400 mt-1">→ 可進入追蹤，停損放寬至 -5%（A 是 -3%）</div>
+                                    </div>
+                                </div>
+                                <div class="text-[10px] text-gray-400 pt-1">
+                                    <div class="font-bold">📋 退場條件</div>
+                                    <div class="pl-2 mt-1">⚠️ 連續 3 日法人賣超（每日 &gt; 100 張）→ 移出追蹤<br>⚠️ 跌超過進場價 3%（A）或 5%（ABS）→ 停損出場</div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                `;
+                if (sectorsContainer) sectorsContainer.insertAdjacentHTML('beforeend', signalRulesHtml);
+
             } catch (err) {
                 console.error('法人建倉 loading error:', err);
                 if (emptyContainer) {
