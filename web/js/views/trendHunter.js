@@ -96,56 +96,16 @@ export const TrendHunter = {
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
-                <!-- Main Content Area (2/3 width on PC) -->
-                <div class="xl:col-span-2 space-y-6">
-                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden min-h-[500px] flex flex-col">
-                        ${this.getMainContentPlaceholder(subPage)}
-                    </div>
-                </div>
-
-                <!-- Side Panel (1/3 width on PC) -->
-                <div class="space-y-6">
-                    <!-- Market Info / Strategy Description -->
-                    <div class="bg-white dark:bg-[#161b22] p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
-                        <h3 class="font-bold text-lg mb-4 flex items-center">
+            <div class="space-y-6">
+                <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden min-h-[500px] flex flex-col">
+                    <details class="flex-none border-b border-gray-100 dark:border-gray-800">
+                        <summary class="px-5 py-3 text-xs text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 cursor-pointer select-none flex items-center font-bold">
                             <span class="mr-2">💡</span> ${config.sideTitle}
-                        </h3>
-                        <div class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                            ${config.sideContent}
-                        </div>
-                    </div>
-
-                    <!-- Market Sentiment Card -->
-                    <div class="bg-gradient-to-br from-blue-600 to-indigo-700 p-6 rounded-2xl text-white shadow-lg shadow-blue-900/20">
-                        <h3 class="font-bold mb-2 flex items-center text-white">
-                            <span class="mr-2">🎯</span> 市場感測
-                        </h3>
-                        <p class="text-xs text-blue-100 mb-4 opacity-80">Market Sentiment Index</p>
-                        <div class="flex items-center justify-between">
-                            <div class="text-3xl font-bold">偏多</div>
-                            <div class="text-right">
-                                <div class="text-xl font-mono">65%</div>
-                                <div class="text-[10px] text-blue-200">Greed & Fear Index</div>
-                            </div>
-                        </div>
-                        <div class="mt-4 h-1.5 bg-blue-900/30 rounded-full overflow-hidden">
-                            <div class="h-full bg-white w-[65%] rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
-                        </div>
-                    </div>
-
-                    <!-- Useful Links / Tools -->
-                    <div class="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-2xl border border-dashed border-gray-300 dark:border-gray-700">
-                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">相關工具</h4>
-                        <div class="grid grid-cols-2 gap-3">
-                            <button class="p-2 text-xs bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors">
-                                策略回測
-                            </button>
-                            <button class="p-2 text-xs bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors">
-                                匯出報表
-                            </button>
-                        </div>
-                    </div>
+                            <svg class="ml-2 w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </summary>
+                        <div class="px-5 pb-4 text-xs text-gray-500 dark:text-gray-400 leading-relaxed">${config.sideContent}</div>
+                    </details>
+                    ${this.getMainContentPlaceholder(subPage)}
                 </div>
             </div>
         `;
