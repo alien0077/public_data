@@ -4,23 +4,34 @@
       "dsl": "rs > 90 AND pct > 2",
       "exit_dsl": "rs < 85 OR max_return > 0.25",
       "desc": "TREND Ensemble Fund",
-      "sharpe": 2.086380225734603,
-      "total_return": 0.6605576000000002,
-      "win_rate": 0.5932203389830508,
+      "sharpe": 2.4277916633599355,
+      "total_return": 0.7831906,
+      "win_rate": 0.5423728813559322,
       "weight": 0.8,
       "age": 10,
-      "score": 2.086380225734603
+      "score": 2.4277916633599355
     },
     {
-      "dsl": "rsi < 35",
+      "dsl": "rsi < 40",
       "exit_dsl": "rs < 65 OR max_return > 0.25",
       "desc": "MR Ensemble Fund",
-      "sharpe": 0,
-      "total_return": 0.0,
-      "win_rate": 0.0,
+      "sharpe": 3.1166212269798277,
+      "total_return": 0.46919390000000005,
+      "win_rate": 0.6101694915254238,
       "weight": 0.2,
       "age": 10,
-      "score": 0
+      "score": 3.1166212269798277
+    },
+    {
+      "dsl": "portfolio_combined",
+      "exit_dsl": "risk_management",
+      "desc": "Portfolio (TREND+MR)",
+      "sharpe": 2.8368584073806895,
+      "total_return": 0.6261922499999999,
+      "win_rate": 0.6101694915254238,
+      "weight": 1.0,
+      "age": 10,
+      "score": 2.8368584073806895
     }
   ]
 }
