@@ -1309,8 +1309,8 @@ export const TrendHunter = {
                 }
 
                 // 渲染訊號表格 (分頁) — 合併候選股(有select_reason) + trade_log(補歷史)
-                const candidates = (data.portfolio || []).filter(p => !p.is_held && (p.entry_reason === 'SIGNAL'));
-                allSignals = candidates.map(c => ({
+                const signalCandidates = (data.portfolio || []).filter(p => !p.is_held && (p.entry_reason === 'SIGNAL'));
+                allSignals = signalCandidates.map(c => ({
                     entry_date: data.date, symbol: c.stock, type: 'BUY',
                     select_reason: c.select_reason || '',
                     reason: c.select_reason || '模型選入'
