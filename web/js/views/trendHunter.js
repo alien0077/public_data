@@ -1216,15 +1216,12 @@ export const TrendHunter = {
                         </div>
                     </div>
                 `;
-                // Insert stats bar after alpha allocation or at top of quant container
-                const quantContainer = document.getElementById('quant-container');
-                if (quantContainer) {
-                    const holdingsCard = quantContainer.querySelector('.rounded-xl.border');
-                    if (holdingsCard) {
-                        const tempDiv = document.createElement('div');
-                        tempDiv.innerHTML = srcBarHtml;
-                        quantContainer.insertBefore(tempDiv.firstElementChild, holdingsCard);
-                    }
+                // Insert stats bar before the holdings table card
+                const holdingsCard = document.querySelector('#quant-holdings-table')?.closest('.rounded-xl.border');
+                if (holdingsCard && holdingsCard.parentNode) {
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = srcBarHtml;
+                    holdingsCard.parentNode.insertBefore(tempDiv.firstElementChild, holdingsCard);
                 }
 
                 if (holdingsTable) {
