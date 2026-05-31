@@ -99,5 +99,38 @@ export const db = {
                 reject('Clear error: ' + event.target.errorCode);
             };
         });
+    },
+
+    /**
+     * Update a single trade by id
+     * @param {*} id - the key of the record
+     * @param {Object} data - the updated trade object
+     */
+    async updateTrade(id, data) {
+        const database = await this.openDB();
+        return new Promise((resolve, reject) => {
+            const transaction = database.transaction([STORE_NAME], 'readwrite');
+            const store = transaction.objectStore(STORE_NAME);
+            const request = store.put({ ...data, id });
+
+            request.onsuccess = () => resolve();
+            request.onerror = (event) => reject('Update error: ' + event.target.errorCode);
+        });
+    },
+
+    /**
+     * Delete a single trade by id
+     * @param {*} id - the key of the record
+     */
+    async deleteTrade(id) {
+        const database = await this.openDB();
+        return new Promise((resolve, reject) => {
+            const transaction = database.transaction([STORE_NAME], 'readwrite');
+            const store = transaction.objectStore(STORE_NAME);
+            const request = store.delete(id);
+
+            request.onsuccess = () => resolve();
+            request.onerror = (event) => reject('Delete error: ' + event.target.errorCode);
+        });
     }
 };

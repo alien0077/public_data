@@ -98,8 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (triggerImportBtn && importJsonInput) {
         const hImp = () => importJsonInput.click();
         triggerImportBtn.addEventListener('click', hImp);
-        document.getElementById('sidebar-import')?.addEventListener('click', hImp);
-        document.getElementById('mobile-nav-import')?.addEventListener('click', hImp);
+
         importJsonInput.addEventListener('change', async (event) => {
             const file = event.target.files[0]; if (!file) return;
             const reader = new FileReader();

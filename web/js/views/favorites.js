@@ -99,6 +99,7 @@ export const Favorites = {
                     <div class="flex space-x-2">
                         <button class="px-3 py-1.5 text-xs font-medium rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors" onclick="Favorites.importWatchlist()">📥 匯入</button>
                         <button class="px-3 py-1.5 text-xs font-medium rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" onclick="Favorites.exportWatchlist()">📤 匯出</button>
+                        <button class="px-3 py-1.5 text-xs font-medium rounded-xl bg-red-50 dark:bg-red-900/20 text-red-500 hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors" onclick="Favorites.clearAll()">🗑️ 清空全部</button>
                     </div>
                 </div>
                 <!-- Categories Tabs -->
@@ -334,6 +335,16 @@ export const Favorites = {
         } catch (err) {
             console.error("Failed to refresh favorite quotes", err);
         }
+    },
+
+    clearAll() {
+        if (!confirm('確定要清空所有收藏分類中的所有股票嗎？此操作無法復原！')) return;
+        for (const cat of this._categories) {
+            this._data[cat] = [];
+        }
+        this.saveData();
+        const container = document.getElementById('view-favorites');
+        if (container) { this.renderStructure(container); this.renderContent(); }
     },
 
     startAutoRefresh() {

@@ -485,18 +485,60 @@ export const StockDetail = {
             const timeline = CorporateActions.buildTransactionTimeline(trades, this.currentSymbol);
             if (timeline.length === 0) { container.innerHTML = `<div class="p-8 text-center text-gray-500">尚無交易紀錄。</div>`; return; }
             timeline.sort((a, b) => b.date.localeCompare(a.date));
+            const self = this;
             container.innerHTML = `<div class="p-4 flex-1 overflow-y-auto no-scrollbar pb-20"><div class="space-y-4">
                 ${timeline.map(item => {
                     if (item.type === 'TRADE') {
-                        const side = (item.data.side || item.data.type || '未知').replace('SIDE_', '');
-                        const qty = item.data.quantity || item.data.shares || 0;
-                        const price = item.data.price || 0;
-                        return `<div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800"><div><div class="text-[10px] text-gray-500">${this.parseDate(item.date)}</div><div class="text-sm font-bold ${side.includes('買') || side.includes('BUY') ? 'text-red-500' : 'text-green-500'}">${side}</div></div><div class="text-right"><div class="text-sm font-bold dark:text-white">${this.formatValue(qty, 0)} 股</div><div class="text-xs text-gray-400">$${this.formatValue(price)}</div></div></div>`;
+                        const trade = item.data;
+                        const id = trade.id;
+                        const side = (trade.side || trade.type || '未知').replace('SIDE_', '');
+                        const qty = trade.quantity || trade.shares || 0;
+                        const price = trade.price || 0;
+                        return `<div class="p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="text-[10px] text-gray-500">${self.parseDate(item.date)}</div>
+                                    <div class="text-sm font-bold ${side.includes('買') || side.includes('BUY') ? 'text-red-500' : 'text-green-500'}">${side}</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-bold dark:text-white">${self.formatValue(qty, 0)} 股</div>
+                                    <div class="text-xs text-gray-400">$${self.formatValue(price)}</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-end space-x-2 mt-2 pt-2 border-t border-gray-200 dark:border-gray-700">
+                                <button class="edit-trade text-xs text-blue-500 hover:text-blue-400 font-medium" data-id="${id}">✏️ 編輯</button>
+                                <button class="delete-trade text-xs text-red-500 hover:text-red-400 font-medium" data-id="${id}">🗑️ 刪除</button>
+                            </div>
+                        </div>`;
                     } else {
-                        return `<div class="p-3 bg-blue-50/50 dark:bg-blue-900/10 rounded-xl border border-dashed border-blue-200 dark:border-blue-800/50"><div class="text-[10px] text-gray-500">${this.parseDate(item.date)}</div><div class="text-xs font-bold text-blue-600 dark:text-blue-400">企業行為：${item.data.type || '股利/拆分'}</div></div>`;
+                        return `<div class="p-3 bg-blue-50/50 dark:bg-blue-900/10 rounded-xl border border-dashed border-blue-200 dark:border-blue-800/50"><div class="text-[10px] text-gray-500">${self.parseDate(item.date)}</div><div class="text-xs font-bold text-blue-600 dark:text-blue-400">企業行為：${item.data.type || '股利/拆分'}</div></div>`;
                     }
                 }).join('')}
             </div></div>`;
+
+            // Bind edit buttons
+            container.querySelectorAll('.edit-trade').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const rawId = btn.dataset.id;
+                    const id = isNaN(Number(rawId)) ? rawId : Number(rawId);
+                    const allTrades = await db.getAllTrades();
+                    const trade = allTrades.find(t => t.id === id);
+                    if (!trade) { alert('找不到此交易 (id=' + rawId + ')'); return; }
+                    self.showEditModal(trade, id, container);
+                });
+            });
+
+            // Bind delete buttons
+            container.querySelectorAll('.delete-trade').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const rawId = btn.dataset.id;
+                    const id = isNaN(Number(rawId)) ? rawId : Number(rawId);
+                    if (!confirm('確定要刪除此筆交易嗎？')) return;
+                    await db.deleteTrade(id);
+                    if (typeof window.init === 'function') window.init();
+                    self.renderTradesTab(container);
+                });
+            });
         } catch(err) { container.innerHTML = `<div class="p-8 text-center text-red-500">載入失敗: ${err.message}</div>`; }
     },
 
@@ -717,6 +759,71 @@ export const StockDetail = {
     formatValue(val, decimals = 2) {
         if (val === undefined || val === null || isNaN(val)) return '--';
         return new Intl.NumberFormat('zh-TW', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(val);
+    },
+
+    showEditModal(trade, id, container) {
+        const qty = trade.quantity || trade.shares || 0;
+        const price = trade.price || 0;
+        const fee = trade.fee || 0;
+        const tax = trade.tax || 0;
+
+        // Create modal overlay
+        const modal = document.createElement('div');
+        modal.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px)';
+        modal.innerHTML = `
+            <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-700 shadow-xl w-full max-w-sm mx-4 overflow-hidden">
+                <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+                    <h3 class="font-bold text-gray-900 dark:text-white text-sm">✏️ 編輯交易</h3>
+                </div>
+                <div class="p-5 space-y-4">
+                    <div>
+                        <label class="text-xs font-bold text-gray-500 dark:text-gray-400 block mb-1">股數</label>
+                        <input type="number" id="edit-qty" value="${qty}" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-3 outline-none focus:border-blue-500 transition-colors text-sm text-gray-900 dark:text-white">
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold text-gray-500 dark:text-gray-400 block mb-1">成交價格</label>
+                        <input type="number" id="edit-price" value="${price}" step="0.01" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-3 outline-none focus:border-blue-500 transition-colors text-sm text-gray-900 dark:text-white">
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold text-gray-500 dark:text-gray-400 block mb-1">手續費</label>
+                        <input type="number" id="edit-fee" value="${fee}" step="0.01" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-3 outline-none focus:border-blue-500 transition-colors text-sm text-gray-900 dark:text-white">
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold text-gray-500 dark:text-gray-400 block mb-1">交易稅</label>
+                        <input type="number" id="edit-tax" value="${tax}" step="0.01" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-3 outline-none focus:border-blue-500 transition-colors text-sm text-gray-900 dark:text-white">
+                    </div>
+                    <div class="flex space-x-3 pt-2">
+                        <button id="edit-cancel" class="flex-1 py-3 text-sm font-bold rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">取消</button>
+                        <button id="edit-save" class="flex-1 py-3 text-sm font-bold rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-colors">儲存</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        const focusInput = modal.querySelector('#edit-qty');
+        setTimeout(() => focusInput.focus(), 100);
+
+        modal.querySelector('#edit-cancel').addEventListener('click', () => modal.remove());
+
+        modal.querySelector('#edit-save').addEventListener('click', async () => {
+            const newQty = Number(modal.querySelector('#edit-qty').value);
+            const newPrice = Number(modal.querySelector('#edit-price').value);
+            const newFee = Number(modal.querySelector('#edit-fee').value);
+            const newTax = Number(modal.querySelector('#edit-tax').value);
+
+            if (!newQty || newQty <= 0) { alert('請輸入有效的股數'); return; }
+            if (!newPrice || newPrice <= 0) { alert('請輸入有效的價格'); return; }
+
+            const updated = { ...trade, quantity: newQty, shares: newQty, price: newPrice, fee: newFee, tax: newTax };
+            await db.updateTrade(id, updated);
+            modal.remove();
+            if (typeof window.init === 'function') window.init();
+            this.renderTradesTab(container);
+        });
+
+        // Close on backdrop click
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
     }
 };
 

@@ -78,8 +78,26 @@ export const GroupSearch = {
             return;
         }
 
+        const SYNONYMS = {
+            '載板': 'PCB_CCL_ABF', 'abf': 'PCB_CCL_ABF', 'ic載板': 'PCB_CCL_ABF',
+            'pcb': 'PCB_CCL_ABF', 'ccl': 'PCB_CCL_ABF',
+            '鑽孔': 'PCB_CCL_Drilling',
+            '網通': 'Networking', '光通': 'Fiber_Optic',
+            '散熱': 'Cooling_Module',
+            '重電': 'Heavy_Electrical',
+            '綠能': 'Green_Energy',
+            '軍工': 'Defense',
+            '生技': 'Biotechnology',
+            '航運': 'Shipping',
+            '低軌': '低軌衛星_SpaceX鏈', '衛星': '低軌衛星_SpaceX鏈',
+        };
+
         const query = q.toLowerCase();
-        const names = Object.keys(this._groupIndex).filter(function(name) { return name.toLowerCase().indexOf(query) !== -1; }).sort().slice(0, 30);
+        const synonymTargets = Object.keys(SYNONYMS).filter(function(k) { return k.toLowerCase().indexOf(query) !== -1; }).map(function(k) { return SYNONYMS[k]; });
+        const names = Object.keys(this._groupIndex).filter(function(name) {
+            if (name.toLowerCase().indexOf(query) !== -1) return true;
+            return synonymTargets.some(function(t) { return name.toLowerCase().indexOf(t.toLowerCase()) !== -1; });
+        }).sort().slice(0, 30);
 
         if (names.length === 0) {
             document.getElementById('gs-results').innerHTML = '<div class="text-center text-gray-500 py-16"><div class="text-5xl mb-4">🔎</div><p>沒有找到符合「' + this._esc(q) + '」的族群</p></div>';
