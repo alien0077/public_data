@@ -32,12 +32,12 @@
       "desc": "Portfolio (TREND+MR)",
       "note": "多策略加權組合：積極進攻模式，TREND 80% + MR 20%，透過低相關性策略分散風險。",
       "params": "TREND 80% | MR 20% | 現金保留10%",
-      "sharpe": -0.20593527762146885,
-      "total_return": -0.011864499999999945,
-      "win_rate": 0.5,
+      "sharpe": 0.4665831953684226,
+      "total_return": 0.007691499999999962,
+      "win_rate": 0.5294117647058824,
       "weight": 1.0,
       "age": 10,
-      "score": -0.20593527762146885
+      "score": 0.4665831953684226
     },
     {
       "dsl": "multi_factor_ai",
@@ -58,7 +58,7 @@
       "exit_dsl": "risk_management",
       "desc": "總帳戶",
       "capital": 4000000,
-      "nav": 988135.5,
+      "nav": 1007691.5,
       "note": "TREND + MR + Portfolio + Multi-Factor AI 四策略各100萬實戰比較",
       "params": "TREND 100萬 | MR 100萬 | Portfolio 100萬 | MF AI 100萬",
       "sharpe": 0,
