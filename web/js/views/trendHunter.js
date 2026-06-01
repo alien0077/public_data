@@ -135,6 +135,7 @@ export const TrendHunter = {
             return `
                 <div id="quant-container" class="p-6 space-y-6 flex-1 flex flex-col">
                     <div id="regime-banner" class="hidden"></div>
+                    <div id="quant-strategy-selector"></div>
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="quant-stats">
                         <div class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
                             <div class="text-xs text-gray-500 mb-1 font-bold">模型淨值 NAV</div>
@@ -967,11 +968,18 @@ export const TrendHunter = {
             const signalsTable = document.querySelector('#quant-signals-table tbody');
             const statsContainer = document.getElementById('quant-stats');
             const paginationContainer = document.getElementById('quant-signals-pagination');
+            const strategySelector = document.getElementById('quant-strategy-selector');
             
             let allSignals = [];
             let currentPage = 1;
             const pageSize = 25;
             let stocksMeta = {};
+            let strategyData = {};
+            let currentStrategy = 'portfolio_combined';
+            const strategyNames = {
+                'trend': 'TREND', 'mr': 'MR',
+                'portfolio_combined': '組合', 'multi_factor': 'Multi-Factor'
+            };
 
             const renderSignalsPage = (page) => {
                 if (!signalsTable || !paginationContainer) return;
@@ -1019,27 +1027,20 @@ export const TrendHunter = {
                     renderSignalsPage(currentPage);
                 });
             };
-            
-            try {
-                // Fetch Meta first for names
-                try {
-                    const meta = await api.getStocksMeta();
-                    if (meta && Array.isArray(meta.stocks)) {
-                        meta.stocks.forEach(s => { stocksMeta[s.symbol] = s.name; });
-                    }
-                } catch(e) { console.warn("Meta fetch failed in Quant", e); }
 
-                const data = await api.fetchLocalJson('quant/latest_portfolio.json');
-                
-                // 1. 篩選實際持股
+            const renderStrategy = (data) => {
+                // 清除上次渲染的殘留元素
+                document.querySelector('#quant-source-stats')?.remove();
+                document.querySelector('#quant-source-stats-placeholder')?.remove();
+
                 const activeHoldings = (data.portfolio || []).filter(p => p.is_held);
                 const isBull = data.regime === 'BULL' || data.regime === 'AGGRESSIVE';
                 const cashRatio = data.nav ? ((data.cash || 0) / data.nav) * 100 : 0;
-                
+
                 if (statsContainer && data) {
                     statsContainer.innerHTML = `
                         <div class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
-                            <div class="text-xs text-gray-500 mb-1 font-bold">模型淨值 NAV</div>
+                            <div class="text-xs text-gray-500 mb-1 font-bold">${strategyNames[currentStrategy] || currentStrategy} NAV</div>
                             <div class="text-xl font-bold font-mono text-blue-600 dark:text-blue-400">$${(data.nav || 0).toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0})}</div>
                         </div>
                         <div class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
@@ -1058,7 +1059,6 @@ export const TrendHunter = {
                         </div>
                     `;
                 }
-
                 // Regime Banner
                 const regimeBanner = document.getElementById('regime-banner');
                 if (regimeBanner && data.regime) {
@@ -1094,7 +1094,6 @@ export const TrendHunter = {
                         `;
                     }
                 }
-
                 // Live PMS
                 const livePmsEl = document.getElementById('quant-live-pms');
                 if (livePmsEl && data.performance) {
@@ -1143,8 +1142,7 @@ export const TrendHunter = {
                             const isDark = document.documentElement.classList.contains('dark');
                             const chart = echarts.init(chartDom, isDark ? 'dark' : null);
                             chart.setOption({
-                                backgroundColor: 'transparent',
-                                grid: { left: '5%', right: '5%', top: '5%', bottom: '5%' },
+                                backgroundColor: 'transparent', grid: { left: '5%', right: '5%', top: '5%', bottom: '5%' },
                                 xAxis: { type: 'category', data: equity.map(e => e.date || ''), show: false },
                                 yAxis: { type: 'value', show: false, scale: true },
                                 series: [{
@@ -1157,33 +1155,24 @@ export const TrendHunter = {
                         }, 100);
                     }
                 }
-
                 // Virtual Account
                 const capitalEl = document.getElementById('quant-capital-dashboard');
                 if (capitalEl && data.metadata) {
-                    const meta = data.metadata;
-                    const nav = data.nav || 0;
-                    const totalCap = meta.total_capital || nav;
-                    const usedCap = meta.used_capital || 0;
+                    const meta = data.metadata; const nav = data.nav || 0;
+                    const totalCap = meta.total_capital || nav; const usedCap = meta.used_capital || 0;
                     const dashCash = data.cash !== undefined ? data.cash : (totalCap - usedCap);
                     const usageRatio = totalCap > 0 ? usedCap / totalCap : 0;
                     capitalEl.innerHTML = `
                         <div class="bg-white dark:bg-[#161b22] rounded-xl border border-gray-200 dark:border-gray-800 p-5">
                             <div class="flex items-center justify-between mb-4">
-                                <h3 class="font-bold text-gray-900 dark:text-white flex items-center text-sm">
-                                    <span class="mr-2">💰</span> 虛擬金帳戶狀態
-                                </h3>
+                                <h3 class="font-bold text-gray-900 dark:text-white flex items-center text-sm"><span class="mr-2">💰</span> 虛擬金帳戶狀態</h3>
                                 <span class="text-xs font-mono font-bold text-blue-500">NAV: $${nav.toLocaleString(undefined, {maximumFractionDigits: 0})}</span>
                             </div>
                             <div class="flex justify-between mb-3">
-                                <div>
-                                    <div class="text-[10px] text-gray-500 mb-0.5">可用現金 (Cash)</div>
-                                    <div class="text-sm font-bold font-mono text-gray-900 dark:text-white">$${dashCash.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-[10px] text-gray-500 mb-0.5">已用資金 (Used)</div>
-                                    <div class="text-sm font-bold font-mono text-orange-500">$${usedCap.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
-                                </div>
+                                <div><div class="text-[10px] text-gray-500 mb-0.5">可用現金 (Cash)</div>
+                                    <div class="text-sm font-bold font-mono text-gray-900 dark:text-white">$${dashCash.toLocaleString(undefined, {maximumFractionDigits: 0})}</div></div>
+                                <div class="text-right"><div class="text-[10px] text-gray-500 mb-0.5">已用資金 (Used)</div>
+                                    <div class="text-sm font-bold font-mono text-orange-500">$${usedCap.toLocaleString(undefined, {maximumFractionDigits: 0})}</div></div>
                             </div>
                             <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                                 <div class="h-full rounded-full bg-gradient-to-r from-orange-400 to-green-500" style="width: ${(usageRatio * 100).toFixed(0)}%"></div>
@@ -1196,49 +1185,42 @@ export const TrendHunter = {
                     `;
                     capitalEl.classList.remove('hidden');
                 }
-
                 // Alpha Allocation
                 const alphaEl = document.getElementById('quant-alpha-allocation');
                 if (alphaEl && data.alpha_allocation && data.alpha_allocation.length > 0) {
                     const alphaLabel = { 'TREND': '趨勢對沖', 'MR': '反轉對沖' };
                     alphaEl.innerHTML = `
                         <div class="bg-white dark:bg-[#161b22] rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                            <h3 class="font-bold text-gray-900 dark:text-white flex items-center text-sm mb-4">
-                                <span class="mr-2">🧠</span> Alpha 策略權重分佈
-                            </h3>
-                            <div class="grid grid-cols-2 gap-4">
-                                ${[...data.alpha_allocation].sort((a, b) => b.weight - a.weight).map(a => {
-                                    const label = alphaLabel[a.strategy] || a.strategy;
-                                    const scoreLabel = a.strategy === 'TREND' ? 'Beta' : 'Alpha';
-                                    return `
-                                        <div class="bg-gray-50 dark:bg-gray-900/50 p-3 rounded-xl">
-                                            <div class="flex items-center justify-between mb-2">
-                                                <span class="text-xs font-bold">${label}</span>
-                                                <span class="text-[10px] text-gray-500">(${scoreLabel}: ${(a.score || 0).toFixed(2)})</span>
-                                            </div>
-                                            <div class="text-lg font-bold font-mono text-orange-500">${(a.weight * 100).toFixed(0)}%</div>
-                                            <div class="h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full mt-2 overflow-hidden">
-                                                <div class="h-full bg-orange-500 rounded-full" style="width: ${(a.weight * 100).toFixed(0)}%"></div>
-                                            </div>
-                                        </div>
-                                    `;
-                                }).join('')}
+                            <h3 class="font-bold text-gray-900 dark:text-white flex items-center text-sm mb-4"><span class="mr-2">🧠</span> Alpha 策略權重分佈</h3>
+                            <div class="grid grid-cols-2 gap-4">${[...data.alpha_allocation].sort((a, b) => b.weight - a.weight).map(a => {
+                                const label = alphaLabel[a.strategy] || a.strategy;
+                                const scoreLabel = a.strategy === 'TREND' ? 'Beta' : 'Alpha';
+                                return `<div class="bg-gray-50 dark:bg-gray-900/50 p-3 rounded-xl">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-xs font-bold">${label}</span>
+                                        <span class="text-[10px] text-gray-500">(${scoreLabel}: ${(a.score || 0).toFixed(2)})</span>
+                                    </div>
+                                    <div class="text-lg font-bold font-mono text-orange-500">${(a.weight * 100).toFixed(0)}%</div>
+                                    <div class="h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full mt-2 overflow-hidden">
+                                        <div class="h-full bg-orange-500 rounded-full" style="width: ${(a.weight * 100).toFixed(0)}%"></div>
+                                    </div>
+                                </div>`; }).join('')}
                             </div>
                         </div>
                     `;
                     alphaEl.classList.remove('hidden');
                 }
-
-                // 📊 選股來源分布統計
+                // 選股來源分布統計
                 const candidates = (data.portfolio || []).filter(p => !p.is_held && (p.entry_reason === 'SIGNAL' || p.action === 'BUY'));
                 const allItems = [...activeHoldings, ...candidates];
-                const srcStats = { 趨勢跟蹤: 0, 法人建倉: 0, 均值回歸: 0, ETF動能: 0 };
+                const srcStats = { 趨勢跟蹤: 0, 法人建倉: 0, 均值回歸: 0, ETF動能: 0, 其他: 0 };
                 allItems.forEach(item => {
                     const r = item.select_reason || item.entry_reason || '';
                     if (r.includes('趨勢跟蹤')) srcStats['趨勢跟蹤']++;
-                    if (r.includes('法人建倉')) srcStats['法人建倉']++;
-                    if (r.includes('均值回歸')) srcStats['均值回歸']++;
-                    if (r.includes('ETF動能')) srcStats['ETF動能']++;
+                    else if (r.includes('法人建倉')) srcStats['法人建倉']++;
+                    else if (r.includes('均值回歸')) srcStats['均值回歸']++;
+                    else if (r.includes('ETF動能')) srcStats['ETF動能']++;
+                    else srcStats['其他']++;
                 });
                 const totalSrc = Object.values(srcStats).reduce((a, b) => a + b, 0) || 1;
                 const srcBarHtml = `
@@ -1247,42 +1229,40 @@ export const TrendHunter = {
                             <h3 class="font-bold text-gray-900 dark:text-white text-sm">📊 選股來源分布（共 ${allItems.length} 檔）</h3>
                             <span class="text-[10px] text-gray-500 font-mono">持倉 ${activeHoldings.length} · 候選 ${candidates.length}</span>
                         </div>
-                        <div class="space-y-2">
-                            ${Object.entries({ '趨勢跟蹤': 'red', '法人建倉': 'orange', '均值回歸': 'blue' }).map(([name, color]) => {
-                                const count = srcStats[name] || 0;
-                                const pct = (count / totalSrc * 100).toFixed(0);
-                                const barColor = color === 'red' ? 'bg-red-500' : color === 'orange' ? 'bg-orange-500' : 'bg-blue-500';
-                                const textColor = color === 'red' ? 'text-red-500' : color === 'orange' ? 'text-orange-500' : 'text-blue-500';
-                                return count > 0 ? `
-                                <div class="flex items-center text-xs">
-                                    <span class="w-16 font-bold ${textColor}">${name}</span>
-                                    <span class="w-10 text-right font-mono text-gray-500">${pct}%</span>
-                                    <div class="flex-1 h-3 bg-gray-100 dark:bg-gray-800 rounded-full mx-2 overflow-hidden">
-                                        <div class="h-full ${barColor} rounded-full" style="width: ${pct}%"></div>
-                                    </div>
-                                    <span class="w-8 text-right font-mono text-gray-400">${count}檔</span>
-                                </div>` : '';
-                            }).join('')}
-                            ${srcStats['ETF動能'] > 0 ? `
-                            <div class="flex items-center text-xs pt-1 border-t border-gray-100 dark:border-gray-800">
-                                <span class="w-16 font-bold text-purple-500">ETF動能</span>
-                                <span class="w-10 text-right font-mono text-gray-500">${(srcStats['ETF動能'] / totalSrc * 100).toFixed(0)}%</span>
+                        <div class="space-y-2">${Object.entries({ '趨勢跟蹤': 'red', '法人建倉': 'orange', '均值回歸': 'blue' }).map(([name, color]) => {
+                            const count = srcStats[name] || 0; const pct = (count / totalSrc * 100).toFixed(0);
+                            const barColor = color === 'red' ? 'bg-red-500' : color === 'orange' ? 'bg-orange-500' : 'bg-blue-500';
+                            const textColor = color === 'red' ? 'text-red-500' : color === 'orange' ? 'text-orange-500' : 'text-blue-500';
+                            return count > 0 ? `<div class="flex items-center text-xs">
+                                <span class="w-16 font-bold ${textColor}">${name}</span>
+                                <span class="w-10 text-right font-mono text-gray-500">${pct}%</span>
                                 <div class="flex-1 h-3 bg-gray-100 dark:bg-gray-800 rounded-full mx-2 overflow-hidden">
-                                    <div class="h-full bg-purple-500 rounded-full" style="width: ${(srcStats['ETF動能'] / totalSrc * 100).toFixed(0)}%"></div>
-                                </div>
-                                <span class="w-8 text-right font-mono text-gray-400">${srcStats['ETF動能']}檔</span>
-                            </div>` : ''}
-                        </div>
-                    </div>
-                `;
-                // Insert stats bar before the holdings table card
+                                    <div class="h-full ${barColor} rounded-full" style="width: ${pct}%"></div></div>
+                                <span class="w-8 text-right font-mono text-gray-400">${count}檔</span>
+                            </div>` : '';
+                        }).join('')}
+                        ${srcStats['ETF動能'] > 0 ? `<div class="flex items-center text-xs pt-1 border-t border-gray-100 dark:border-gray-800">
+                            <span class="w-16 font-bold text-purple-500">ETF動能</span>
+                            <span class="w-10 text-right font-mono text-gray-500">${(srcStats['ETF動能'] / totalSrc * 100).toFixed(0)}%</span>
+                            <div class="flex-1 h-3 bg-gray-100 dark:bg-gray-800 rounded-full mx-2 overflow-hidden">
+                                <div class="h-full bg-purple-500 rounded-full" style="width: ${(srcStats['ETF動能'] / totalSrc * 100).toFixed(0)}%"></div></div>
+                            <span class="w-8 text-right font-mono text-gray-400">${srcStats['ETF動能']}檔</span>
+                        </div>` : ''}
+                        ${srcStats['其他'] > 0 ? `<div class="flex items-center text-xs pt-1 border-t border-gray-100 dark:border-gray-800">
+                            <span class="w-16 font-bold text-gray-500">其他</span>
+                            <span class="w-10 text-right font-mono text-gray-500">${(srcStats['其他'] / totalSrc * 100).toFixed(0)}%</span>
+                            <div class="flex-1 h-3 bg-gray-100 dark:bg-gray-800 rounded-full mx-2 overflow-hidden">
+                                <div class="h-full bg-gray-400 rounded-full" style="width: ${(srcStats['其他'] / totalSrc * 100).toFixed(0)}%"></div></div>
+                            <span class="w-8 text-right font-mono text-gray-400">${srcStats['其他']}檔</span>
+                        </div>` : ''}</div></div>`;
                 const holdingsCard = document.querySelector('#quant-holdings-table')?.closest('.rounded-xl.border');
                 if (holdingsCard && holdingsCard.parentNode) {
+                    const existing = document.querySelector('#quant-source-stats');
+                    if (existing) existing.remove();
                     const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = srcBarHtml;
+                    tempDiv.innerHTML = `<div id="quant-source-stats">${srcBarHtml}</div>`;
                     holdingsCard.parentNode.insertBefore(tempDiv.firstElementChild, holdingsCard);
                 }
-
                 if (holdingsTable) {
                     if (activeHoldings.length === 0) {
                         holdingsTable.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-gray-500">模型目前無持股，保持全現金觀望。</td></tr>`;
@@ -1290,36 +1270,24 @@ export const TrendHunter = {
                         holdingsTable.innerHTML = activeHoldings.map(p => {
                             const name = stocksMeta[p.stock] || stocksMeta[p.stock.replace(/\.TW(O)?$/, '')] || p.stock;
                             const rawRet = p.return_pct !== undefined ? p.return_pct : (p.return !== undefined ? p.return * 100 : 0);
-                            const isProfit = rawRet >= 0;
-                            const action = p.action || 'HOLD';
+                            const isProfit = rawRet >= 0; const action = p.action || 'HOLD';
                             const actionColor = action === 'BUY' ? 'bg-red-500/10 text-red-500' : (action === 'SELL' ? 'bg-green-500/10 text-green-500' : 'bg-gray-500/10 text-gray-400');
                             const cleanStockId = p.stock.replace(/\.TW(O)?$/, '');
                             const reason = p.select_reason || '';
                             const reasonColor = reason.includes('趨勢') ? 'text-red-500 bg-red-500/10' : reason.includes('法人') ? 'text-orange-500 bg-orange-500/10' : reason.includes('ETF') ? 'text-purple-500 bg-purple-500/10' : 'text-blue-500 bg-blue-500/10';
-                            return `
-                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-900/30 cursor-pointer" onclick="window.StockDetail.show('${cleanStockId}')">
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
-                                        <div class="font-bold">${cleanStockId}</div>
-                                        <div class="text-xs text-gray-500">${name}</div>
-                                    </td>
-                                    <td class="px-6 py-4 text-left hidden lg:table-cell">
-                                        ${reason ? `<span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${reasonColor}">${reason}</span>` : ''}
-                                    </td>
-                                    <td class="px-6 py-4 text-right font-bold text-gray-700 dark:text-gray-300">${((p.weight || 0) * 100).toFixed(1)}%</td>
-                                    <td class="px-6 py-4 text-right text-gray-500 font-mono text-xs hidden sm:table-cell">${p.entry_date || '--'}</td>
-                                    <td class="px-6 py-4 text-right font-bold ${isProfit ? 'text-red-500' : 'text-green-500'}">
-                                        ${isProfit ? '+' : ''}${rawRet.toFixed(2)}%
-                                    </td>
-                                    <td class="px-6 py-4 text-right text-xs text-gray-500 hidden md:table-cell">${p.chips || p.chip_label || ''}</td>
-                                    <td class="px-6 py-4 text-right">
-                                        <span class="px-2 py-1 rounded text-xs font-bold ${actionColor}">${action}</span>
-                                    </td>
-                                </tr>
-                            `;
+                            return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-900/30 cursor-pointer" onclick="window.StockDetail.show('${cleanStockId}')">
+                                <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                    <div class="font-bold">${cleanStockId}</div><div class="text-xs text-gray-500">${name}</div></td>
+                                <td class="px-6 py-4 text-left hidden lg:table-cell">${reason ? `<span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${reasonColor}">${reason}</span>` : ''}</td>
+                                <td class="px-6 py-4 text-right font-bold text-gray-700 dark:text-gray-300">${((p.weight || 0) * 100).toFixed(1)}%</td>
+                                <td class="px-6 py-4 text-right text-gray-500 font-mono text-xs hidden sm:table-cell">${p.entry_date || '--'}</td>
+                                <td class="px-6 py-4 text-right font-bold ${isProfit ? 'text-red-500' : 'text-green-500'}">${isProfit ? '+' : ''}${rawRet.toFixed(2)}%</td>
+                                <td class="px-6 py-4 text-right text-xs text-gray-500 hidden md:table-cell">${p.chips || p.chip_label || ''}</td>
+                                <td class="px-6 py-4 text-right"><span class="px-2 py-1 rounded text-xs font-bold ${actionColor}">${action}</span></td>
+                            </tr>`;
                         }).join('');
                     }
                 }
-
                 // Trade Log
                 const tradeLogEl = document.getElementById('quant-trade-log');
                 if (tradeLogEl && data.trade_log && data.trade_log.length > 0) {
@@ -1327,67 +1295,89 @@ export const TrendHunter = {
                     tradeLogEl.innerHTML = `
                         <div class="bg-white dark:bg-[#161b22] rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
                             <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 flex-none">
-                                <h3 class="font-bold text-gray-900 dark:text-white flex items-center text-sm">
-                                    <span class="mr-2">🕐</span> 實戰動態日誌 (近期進出場)
-                                </h3>
+                                <h3 class="font-bold text-gray-900 dark:text-white flex items-center text-sm"><span class="mr-2">🕐</span> 實戰動態日誌 (近期進出場)</h3>
                             </div>
-                            <div class="divide-y divide-gray-100 dark:divide-gray-800">
-                                ${trades.map(t => {
-                                    const isBuy = t.action === 'BUY' || !t.exit_date;
-                                    const stockName = stocksMeta[t.stock] || '';
-                                    const ret = t.return;
-                                    const hasReturn = ret !== undefined && ret !== null;
-                                    return `
-                                        <div class="p-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-900/30">
-                                            <div class="min-w-0 flex-1">
-                                                <div class="font-bold text-sm text-gray-900 dark:text-white">${stockName || t.stock}</div>
-                                                <div class="flex items-center space-x-2 mt-1">
-                                                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${isBuy ? 'bg-blue-500/10 text-blue-500' : 'bg-orange-500/10 text-orange-500'}">
-                                                        ${isBuy ? '已買入' : '已賣出'}
-                                                    </span>
-                                                    <span class="text-[10px] font-mono text-gray-500">${t.stock}</span>
-                                                </div>
-                                                ${t.select_reason ? `<div class="mt-1"><span class="inline-block px-1.5 py-0.5 rounded text-[8px] font-bold ${t.select_reason.includes('趨勢') ? 'text-red-500 bg-red-500/10' : t.select_reason.includes('法人') ? 'text-orange-500 bg-orange-500/10' : t.select_reason.includes('ETF') ? 'text-purple-500 bg-purple-500/10' : 'text-blue-500 bg-blue-500/10'}">${t.select_reason}</span></div>` : ''}
-                                            </div>
-                                            <div class="text-right mx-4 flex-shrink-0">
-                                                <div class="text-[10px] font-mono text-gray-500">
-                                                    ${t.exit_date ? `${t.entry_date} → ${t.exit_date}` : `買入於 ${t.entry_date}`}
-                                                </div>
-                                                <div class="text-[10px] text-gray-500">${t.reason || t.entry_reason || (isBuy ? '策略進場' : '策略出場')}</div>
-                                            </div>
-                                            <div class="text-right min-w-[70px] flex-shrink-0">
-                                                ${hasReturn ? `<span class="text-sm font-bold font-mono ${ret >= 0 ? 'text-red-500' : 'text-green-500'}">${(ret * 100).toFixed(2)}%</span>` : '<span class="text-xs font-bold text-blue-500">持倉中</span>'}
-                                            </div>
+                            <div class="divide-y divide-gray-100 dark:divide-gray-800">${trades.map(t => {
+                                const isBuy = t.action === 'BUY' || !t.exit_date;
+                                const stockName = stocksMeta[t.stock] || ''; const ret = t.return;
+                                const hasReturn = ret !== undefined && ret !== null;
+                                return `<div class="p-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-900/30">
+                                    <div class="min-w-0 flex-1">
+                                        <div class="font-bold text-sm text-gray-900 dark:text-white">${stockName || t.stock}</div>
+                                        <div class="flex items-center space-x-2 mt-1">
+                                            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${isBuy ? 'bg-blue-500/10 text-blue-500' : 'bg-orange-500/10 text-orange-500'}">${isBuy ? '已買入' : '已賣出'}</span>
+                                            <span class="text-[10px] font-mono text-gray-500">${t.stock}</span>
                                         </div>
-                                    `;
-                                }).join('')}
-                            </div>
-                        </div>
-                    `;
+                                        ${t.select_reason ? `<div class="mt-1"><span class="inline-block px-1.5 py-0.5 rounded text-[8px] font-bold ${t.select_reason.includes('趨勢') ? 'text-red-500 bg-red-500/10' : t.select_reason.includes('法人') ? 'text-orange-500 bg-orange-500/10' : t.select_reason.includes('ETF') ? 'text-purple-500 bg-purple-500/10' : 'text-blue-500 bg-blue-500/10'}">${t.select_reason}</span></div>` : ''}
+                                    </div>
+                                    <div class="text-right mx-4 flex-shrink-0">
+                                        <div class="text-[10px] font-mono text-gray-500">${t.exit_date ? `${t.entry_date} → ${t.exit_date}` : `買入於 ${t.entry_date}`}</div>
+                                        <div class="text-[10px] text-gray-500">${t.reason || t.entry_reason || (isBuy ? '策略進場' : '策略出場')}</div>
+                                    </div>
+                                    <div class="text-right min-w-[70px] flex-shrink-0">
+                                        ${hasReturn ? `<span class="text-sm font-bold font-mono ${ret >= 0 ? 'text-red-500' : 'text-green-500'}">${(ret * 100).toFixed(2)}%</span>` : '<span class="text-xs font-bold text-blue-500">持倉中</span>'}
+                                    </div>
+                                </div>`;
+                            }).join('')}</div>
+                        </div>`;
                     tradeLogEl.classList.remove('hidden');
+                } else if (tradeLogEl) {
+                    tradeLogEl.classList.add('hidden');
                 }
-
-                // 渲染訊號表格 (分頁) — 合併候選股(有select_reason) + trade_log(補歷史)
+                // Signals table
                 const signalCandidates = (data.portfolio || []).filter(p => !p.is_held && (p.entry_reason === 'SIGNAL'));
                 allSignals = signalCandidates.map(c => ({
                     entry_date: data.date, symbol: c.stock, type: 'BUY',
-                    select_reason: c.select_reason || '',
-                    reason: c.select_reason || '模型選入'
+                    select_reason: c.select_reason || '', reason: c.select_reason || '模型選入'
                 }));
                 if (data.trade_log && data.trade_log.length > 0) {
                     const tradeSignals = data.trade_log.map(t => ({
-                        entry_date: t.entry_date || t.exit_date || '',
-                        symbol: t.stock, type: t.action === 'SELL' ? 'SELL' : 'BUY',
+                        entry_date: t.entry_date || t.exit_date || '', symbol: t.stock,
+                        type: t.action === 'SELL' ? 'SELL' : 'BUY',
                         select_reason: t.select_reason || '',
                         reason: t.reason || t.select_reason || (t.action === 'SELL' ? '策略出場' : '策略進場')
                     }));
                     const seen = new Set(allSignals.map(s => s.symbol + '_' + s.entry_date));
                     allSignals = [...allSignals, ...tradeSignals.filter(t => !seen.has(t.symbol + '_' + t.entry_date))];
                 }
-                
                 if (allSignals.length > 0) allSignals.sort((a, b) => new Date(b.entry_date || b.date || 0) - new Date(a.entry_date || a.date || 0));
                 renderSignalsPage(1);
+            };
 
+            // Data loader + strategy switcher
+            try {
+                const meta = await api.getStocksMeta();
+                if (meta && Array.isArray(meta.stocks)) {
+                    meta.stocks.forEach(s => { stocksMeta[s.symbol] = s.name; });
+                }
+            } catch(e) { console.warn("Meta fetch failed", e); }
+
+            try {
+                const sf = ['trend', 'mr', 'portfolio_combined', 'multi_factor'];
+                const loaded = await Promise.all(
+                    sf.map(s => api.fetchLocalJson(`quant/live_${s}.json`).catch(() => null))
+                );
+                strategyData = {};
+                sf.forEach((s, i) => { if (loaded[i]) strategyData[s] = loaded[i]; });
+                if (!strategyData[currentStrategy]) currentStrategy = Object.keys(strategyData)[0] || 'portfolio_combined';
+                if (strategySelector) {
+                    strategySelector.innerHTML = sf.map(sid => `
+                        <button class="strategy-btn px-4 py-2 rounded-xl text-sm font-bold transition-all ${currentStrategy === sid ? 'bg-blue-600 text-white shadow-md' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'}" data-strategy="${sid}">
+                            ${strategyNames[sid] || sid}
+                            ${strategyData[sid] ? `<span class="ml-1 text-[10px] opacity-70">$${(strategyData[sid].nav || 0).toLocaleString()}</span>` : ''}
+                        </button>
+                    `).join('');
+                    strategySelector.querySelectorAll('.strategy-btn').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            currentStrategy = btn.dataset.strategy;
+                            renderStrategy(strategyData[currentStrategy]);
+                            strategySelector.querySelectorAll('.strategy-btn').forEach(b => {
+                                b.className = 'strategy-btn px-4 py-2 rounded-xl text-sm font-bold transition-all ' + (b.dataset.strategy === currentStrategy ? 'bg-blue-600 text-white shadow-md' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700');
+                            });
+                        });
+                    });
+                }
+                renderStrategy(strategyData[currentStrategy]);
             } catch (err) { console.error("量化數據載入失敗:", err); }
         }
 

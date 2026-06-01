@@ -5,7 +5,7 @@
       "exit_dsl": "rs < 80 OR max_return > 0.25",
       "desc": "TREND Ensemble Fund",
       "note": "TREND（趨勢跟蹤）：RS>90 買最強的，賭它繼續漲（順勢）。跌破 RS80 或移動停利出場。牛市表現最佳。",
-      "params": "RS≥85進場 | RS<80出場 | 停利5% | 停損-10% | 上限10檔",
+      "params": "RS≥85進場 | RS<80出場 | 停利6% | 停損-10% | 上限10檔",
       "sharpe": 1.8420989383093969,
       "total_return": 0.5361236999999999,
       "win_rate": 0.5423728813559322,
@@ -38,6 +38,35 @@
       "weight": 1.0,
       "age": 10,
       "score": -0.20593527762146885
+    },
+    {
+      "dsl": "multi_factor_ai",
+      "exit_dsl": "10ma_reentry",
+      "desc": "Multi-Factor AI",
+      "capital": 1000000,
+      "note": "22因子加權評分（RS/RSI/法人/營收/獲利/籌碼等），遺傳演算法每週最佳化。10MA離場，站回再進。",
+      "params": "Score≥threshold進場 | <10MA離場 | 站回+高分再進 | 同主題上限2檔",
+      "sharpe": 1.5,
+      "total_return": 0,
+      "win_rate": 0.5,
+      "weight": 0.25,
+      "age": 1,
+      "score": 1.5
+    },
+    {
+      "dsl": "total_account",
+      "exit_dsl": "risk_management",
+      "desc": "總帳戶",
+      "capital": 4000000,
+      "nav": 988135.5,
+      "note": "TREND + MR + Portfolio + Multi-Factor AI 四策略各100萬實戰比較",
+      "params": "TREND 100萬 | MR 100萬 | Portfolio 100萬 | MF AI 100萬",
+      "sharpe": 0,
+      "total_return": 0,
+      "win_rate": 0.5,
+      "weight": 1.0,
+      "age": 1,
+      "score": 0
     }
   ]
 }
