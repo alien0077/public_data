@@ -1,13 +1,13 @@
 {
   "stock_id": "4111",
   "name": "4111",
-  "date": "2026-05-29",
-  "close": 30.0,
-  "health_score": 106,
+  "date": "2026-06-01",
+  "close": 30.05,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_ratio": -0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,21 @@
     "holder_concentration": 42.02
   },
   "main_force": {
-    "cost": 30.01,
-    "distance": -0.03,
-    "trend": "DOWN"
+    "cost": 30.04,
+    "distance": 0.03,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-06-01"
 }

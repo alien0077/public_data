@@ -1705,9 +1705,9 @@
       "win_rate": 0.635593220338983
     },
     "portfolio": {
-      "sharpe": 3.719583648500888,
-      "total_return": 0.5076915,
-      "win_rate": 0.5294117647058824
+      "sharpe": 3.476389973395548,
+      "total_return": 0.4795316999999999,
+      "win_rate": 0.5
     }
   },
   "ensemble_performance": {
@@ -1840,8 +1840,8 @@
   },
   "portfolio": {
     "cash": {
-      "trend": 83436.25,
-      "mr": 9.25,
+      "trend": 92281.45,
+      "mr": 690.25,
       "ai_inst": 500000.0
     },
     "positions": {
@@ -1893,7 +1893,7 @@
           "entry_date": "2026-05-28",
           "entry_price": 2115.0,
           "shares": 26,
-          "max_return": 0.0023640661938533203
+          "max_return": 0.0378250591016549
         },
         {
           "stock": "6472",
@@ -1901,24 +1901,9 @@
           "entry_price": 336.0,
           "shares": 140,
           "max_return": 0.061011904761904656
-        },
-        {
-          "stock": "8291",
-          "entry_date": "2026-05-29",
-          "entry_price": 120.0,
-          "shares": 91,
-          "max_return": 0.0
         }
       ],
-      "mr": [
-        {
-          "stock": "2881",
-          "entry_date": "2026-06-01",
-          "entry_price": 110.5,
-          "shares": 6,
-          "max_return": 0.0
-        }
-      ],
+      "mr": [],
       "ai_inst": []
     },
     "nav_history": [
@@ -1993,6 +1978,10 @@
       {
         "date": "2026-06-01",
         "nav": 1507691.5
+      },
+      {
+        "date": "2026-06-02",
+        "nav": 1479531.7
       }
     ]
   },
@@ -2964,6 +2953,28 @@
     "mr": 75
   },
   "trade_log": [
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": "2026-06-02",
+      "exit_price": 113.5,
+      "return": 0.0271,
+      "reason": "RSI_OVERBOUGHT (>75)",
+      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd",
+      "primary_theme": "\u91d1\u63a7\u6bcd\u9ad4",
+      "action": "SELL"
+    },
+    {
+      "stock": "8291",
+      "entry_date": "2026-05-29",
+      "exit_date": "2026-06-02",
+      "exit_price": 97.2,
+      "return": -0.19,
+      "reason": "STOP_LOSS (10%)",
+      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
+      "primary_theme": "\u96fb\u5b50\u5143\u4ef6",
+      "action": "SELL"
+    },
     {
       "stock": "2881",
       "entry_date": "2026-06-01",

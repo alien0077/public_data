@@ -1,18 +1,18 @@
 {
   "stock_id": "2643",
   "name": "2643",
-  "date": "2026-05-29",
-  "close": 66.4,
-  "health_score": 86,
+  "date": "2026-06-01",
+  "close": 66.9,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_ratio": -0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 58.0,
+    "margin_change": 59.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,21 @@
     "holder_concentration": 65.0
   },
   "main_force": {
-    "cost": 66.76,
-    "distance": -0.54,
-    "trend": "DOWN"
+    "cost": 66.78,
+    "distance": 0.18,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-06-01"
 }

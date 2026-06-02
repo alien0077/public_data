@@ -1,20 +1,20 @@
 {
   "stock_id": "00895",
   "name": "00895",
-  "date": "2026-05-29",
-  "close": 52.65,
-  "health_score": 150,
+  "date": "2026-06-01",
+  "close": 52.45,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 85.0,
+    "margin_change": 100.0,
     "short_change": 12.0,
-    "short_margin_ratio": 14.12
+    "short_margin_ratio": 12.0
   },
   "tdcc": {
     "big_holder_change": 8.76,
@@ -22,8 +22,8 @@
     "holder_concentration": 10.66
   },
   "main_force": {
-    "cost": 49.56,
-    "distance": 6.23,
+    "cost": 49.84,
+    "distance": 5.24,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

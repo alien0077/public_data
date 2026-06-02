@@ -1,13 +1,13 @@
 {
   "stock_id": "8482",
   "name": "8482",
-  "date": "2026-05-29",
-  "close": 48.3,
-  "health_score": 83,
+  "date": "2026-06-01",
+  "close": 49.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.003,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.014,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,21 +22,22 @@
     "holder_concentration": 95.51
   },
   "main_force": {
-    "cost": 48.92,
-    "distance": -1.27,
-    "trend": "DOWN"
+    "cost": 48.91,
+    "distance": 0.18,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "1416",
   "name": "1416",
-  "date": "2026-05-29",
-  "close": 11.1,
-  "health_score": 83,
+  "date": "2026-06-01",
+  "close": 11.25,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.032,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.092,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3747.0,
+    "margin_change": 3736.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 55.21
   },
   "main_force": {
-    "cost": 10.61,
-    "distance": 4.62,
+    "cost": 10.62,
+    "distance": 5.93,
     "trend": "UP"
   },
   "sector": {
@@ -31,18 +31,18 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

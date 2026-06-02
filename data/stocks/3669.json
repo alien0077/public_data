@@ -1,12 +1,12 @@
 {
   "stock_id": "3669",
   "name": "3669",
-  "date": "2026-05-29",
-  "close": 38.2,
-  "health_score": 103,
+  "date": "2026-06-01",
+  "close": 41.6,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 2,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,21 +18,27 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 38.89,
-    "distance": -1.77,
-    "trend": "DOWN"
+    "cost": 38.82,
+    "distance": 7.16,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-01"
 }

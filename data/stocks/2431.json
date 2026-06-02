@@ -1,18 +1,18 @@
 {
   "stock_id": "2431",
   "name": "2431",
-  "date": "2026-05-29",
-  "close": 10.45,
-  "health_score": 103,
+  "date": "2026-06-01",
+  "close": 10.9,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.221,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.288,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1968.0,
+    "margin_change": 1953.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -23,25 +23,20 @@
   },
   "main_force": {
     "cost": 10.5,
-    "distance": -0.48,
-    "trend": "DOWN"
+    "distance": 3.81,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "2062",
   "name": "2062",
-  "date": "2026-05-29",
-  "close": 18.7,
+  "date": "2026-06-01",
+  "close": 18.85,
   "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.041,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.057,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1722.0,
+    "margin_change": 1718.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 61.8
   },
   "main_force": {
-    "cost": 19.42,
-    "distance": -3.71,
+    "cost": 19.32,
+    "distance": -2.43,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

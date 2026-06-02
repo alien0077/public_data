@@ -1,13 +1,13 @@
 {
   "stock_id": "6937",
   "name": "6937",
-  "date": "2026-05-29",
-  "close": 303.0,
-  "health_score": 86,
+  "date": "2026-06-01",
+  "close": 311.0,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.356,
+    "foreign_buy_ratio": -0.099,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,21 @@
     "holder_concentration": 63.81
   },
   "main_force": {
-    "cost": 309.6,
-    "distance": -2.13,
-    "trend": "DOWN"
+    "cost": 308.4,
+    "distance": 0.84,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-06-01"
 }

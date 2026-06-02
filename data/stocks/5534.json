@@ -1,20 +1,20 @@
 {
   "stock_id": "5534",
   "name": "5534",
-  "date": "2026-05-29",
-  "close": 74.1,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-01",
+  "close": 74.7,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.173,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.045,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3840.0,
+    "margin_change": 3833.0,
     "short_change": 14.0,
-    "short_margin_ratio": 0.36
+    "short_margin_ratio": 0.37
   },
   "tdcc": {
     "big_holder_change": 58.98,
@@ -22,8 +22,8 @@
     "holder_concentration": 68.37
   },
   "main_force": {
-    "cost": 76.56,
-    "distance": -3.21,
+    "cost": 76.41,
+    "distance": -2.24,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-01"
 }

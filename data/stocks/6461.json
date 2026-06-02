@@ -1,13 +1,13 @@
 {
   "stock_id": "6461",
   "name": "6461",
-  "date": "2026-05-29",
+  "date": "2026-06-01",
   "close": 15.3,
-  "health_score": 66,
-  "signal": "Neutral",
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.042,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 63.36
   },
   "main_force": {
-    "cost": 16.38,
-    "distance": -6.59,
+    "cost": 16.28,
+    "distance": -6.02,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-01"
 }

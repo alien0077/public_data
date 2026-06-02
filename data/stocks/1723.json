@@ -1,20 +1,20 @@
 {
   "stock_id": "1723",
   "name": "1723",
-  "date": "2026-05-29",
-  "close": 82.3,
+  "date": "2026-06-01",
+  "close": 83.9,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.04,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.126,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 872.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.23
+    "margin_change": 869.0,
+    "short_change": 4.0,
+    "short_margin_ratio": 0.46
   },
   "tdcc": {
     "big_holder_change": 47.32,
@@ -22,8 +22,8 @@
     "holder_concentration": 52.2
   },
   "main_force": {
-    "cost": 80.26,
-    "distance": 2.54,
+    "cost": 80.6,
+    "distance": 4.09,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

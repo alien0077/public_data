@@ -1,20 +1,20 @@
 {
   "stock_id": "6176",
   "name": "6176",
-  "date": "2026-05-29",
-  "close": 106.5,
+  "date": "2026-06-01",
+  "close": 105.0,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.064,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.872,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5269.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 5511.0,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.04
   },
   "tdcc": {
     "big_holder_change": 49.93,
@@ -22,8 +22,8 @@
     "holder_concentration": 58.58
   },
   "main_force": {
-    "cost": 99.81,
-    "distance": 6.7,
+    "cost": 100.17,
+    "distance": 4.82,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

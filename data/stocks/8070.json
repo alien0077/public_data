@@ -1,20 +1,20 @@
 {
   "stock_id": "8070",
   "name": "8070",
-  "date": "2026-05-29",
-  "close": 52.5,
-  "health_score": 150,
+  "date": "2026-06-01",
+  "close": 52.8,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.12,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.214,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6398.0,
-    "short_change": 66.0,
-    "short_margin_ratio": 1.03
+    "margin_change": 7152.0,
+    "short_change": 64.0,
+    "short_margin_ratio": 0.89
   },
   "tdcc": {
     "big_holder_change": 73.7,
@@ -22,8 +22,8 @@
     "holder_concentration": 77.39
   },
   "main_force": {
-    "cost": 47.18,
-    "distance": 11.28,
+    "cost": 47.4,
+    "distance": 11.39,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "6640",
   "name": "6640",
-  "date": "2026-05-29",
-  "close": 1365.0,
-  "health_score": 86,
+  "date": "2026-06-01",
+  "close": 1315.0,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.113,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 554.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 581.0,
+    "short_change": 10.0,
+    "short_margin_ratio": 1.72
   },
   "tdcc": {
     "big_holder_change": 63.84,
@@ -22,8 +22,8 @@
     "holder_concentration": 68.22
   },
   "main_force": {
-    "cost": 1398.25,
-    "distance": -2.38,
+    "cost": 1389.75,
+    "distance": -5.38,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-01"
 }

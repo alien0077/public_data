@@ -1,25 +1,25 @@
 {
   "stock_id": "00852L",
   "name": "00852L",
-  "date": "2026-05-29",
-  "close": 32.68,
-  "health_score": 113,
+  "date": "2026-06-01",
+  "close": 33.1,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 254.0,
+    "margin_change": 236.0,
     "short_change": 77.0,
-    "short_margin_ratio": 30.31
+    "short_margin_ratio": 32.63
   },
   "tdcc": {},
   "main_force": {
-    "cost": 31.77,
-    "distance": 2.86,
+    "cost": 31.86,
+    "distance": 3.89,
     "trend": "UP"
   },
   "sector": {
@@ -28,7 +28,7 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
   "events": [
     {
@@ -37,7 +37,8 @@
     }
   ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

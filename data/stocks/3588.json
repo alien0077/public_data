@@ -1,20 +1,20 @@
 {
   "stock_id": "3588",
   "name": "3588",
-  "date": "2026-05-29",
-  "close": 61.8,
-  "health_score": 103,
+  "date": "2026-06-01",
+  "close": 63.6,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.14,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.445,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1269.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.16
+    "margin_change": 1252.0,
+    "short_change": 8.0,
+    "short_margin_ratio": 0.64
   },
   "tdcc": {
     "big_holder_change": 18.4,
@@ -22,26 +22,27 @@
     "holder_concentration": 28.5
   },
   "main_force": {
-    "cost": 61.86,
-    "distance": -0.1,
-    "trend": "DOWN"
+    "cost": 61.98,
+    "distance": 2.61,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
     }
   ],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

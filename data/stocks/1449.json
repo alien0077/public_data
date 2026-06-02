@@ -1,20 +1,20 @@
 {
   "stock_id": "1449",
   "name": "1449",
-  "date": "2026-05-29",
-  "close": 12.8,
-  "health_score": 133,
+  "date": "2026-06-01",
+  "close": 14.05,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.265,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.022,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3705.0,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.08
+    "margin_change": 4111.0,
+    "short_change": 7.0,
+    "short_margin_ratio": 0.17
   },
   "tdcc": {
     "big_holder_change": 33.53,
@@ -22,8 +22,8 @@
     "holder_concentration": 39.67
   },
   "main_force": {
-    "cost": 12.79,
-    "distance": 0.08,
+    "cost": 12.84,
+    "distance": 9.42,
     "trend": "UP"
   },
   "sector": {
@@ -41,7 +41,8 @@
     }
   ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

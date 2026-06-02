@@ -1,13 +1,13 @@
 {
   "stock_id": "8443",
   "name": "8443",
-  "date": "2026-05-29",
-  "close": 11.15,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-01",
+  "close": 11.25,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.042,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.013,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 69.24
   },
   "main_force": {
-    "cost": 11.49,
-    "distance": -2.96,
+    "cost": 11.46,
+    "distance": -1.83,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-01"
 }

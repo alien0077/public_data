@@ -1,20 +1,20 @@
 {
   "stock_id": "6443",
   "name": "6443",
-  "date": "2026-05-29",
-  "close": 40.7,
-  "health_score": 110,
+  "date": "2026-06-01",
+  "close": 42.1,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.022,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 1.192,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 20501.0,
+    "margin_change": 20419.0,
     "short_change": 600.0,
-    "short_margin_ratio": 2.93
+    "short_margin_ratio": 2.94
   },
   "tdcc": {
     "big_holder_change": 15.52,
@@ -22,8 +22,8 @@
     "holder_concentration": 18.28
   },
   "main_force": {
-    "cost": 40.14,
-    "distance": 1.4,
+    "cost": 40.44,
+    "distance": 4.1,
     "trend": "UP"
   },
   "sector": {
@@ -31,13 +31,18 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 40
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

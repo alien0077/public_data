@@ -1,13 +1,13 @@
 {
   "stock_id": "6908",
   "name": "6908",
-  "date": "2026-05-29",
-  "close": 38.0,
-  "health_score": 83,
+  "date": "2026-06-01",
+  "close": 40.95,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.03,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.051,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -23,25 +23,25 @@
   },
   "main_force": {
     "cost": 39.05,
-    "distance": -2.69,
-    "trend": "DOWN"
+    "distance": 4.87,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

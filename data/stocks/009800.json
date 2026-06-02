@@ -1,20 +1,20 @@
 {
   "stock_id": "009800",
   "name": "009800",
-  "date": "2026-05-29",
-  "close": 13.22,
-  "health_score": 133,
+  "date": "2026-06-01",
+  "close": 13.26,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1463.0,
+    "margin_change": 1514.0,
     "short_change": 9.0,
-    "short_margin_ratio": 0.62
+    "short_margin_ratio": 0.59
   },
   "tdcc": {
     "big_holder_change": 17.72,
@@ -22,8 +22,8 @@
     "holder_concentration": 22.81
   },
   "main_force": {
-    "cost": 12.74,
-    "distance": 3.77,
+    "cost": 12.79,
+    "distance": 3.67,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

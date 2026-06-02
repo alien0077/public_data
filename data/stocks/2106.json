@@ -1,18 +1,18 @@
 {
   "stock_id": "2106",
   "name": "2106",
-  "date": "2026-05-29",
-  "close": 16.75,
-  "health_score": 86,
+  "date": "2026-06-01",
+  "close": 17.05,
+  "health_score": 146,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.003,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.082,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2929.0,
+    "margin_change": 2958.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 79.72
   },
   "main_force": {
-    "cost": 16.94,
-    "distance": -1.12,
-    "trend": "DOWN"
+    "cost": 16.93,
+    "distance": 0.71,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-01"
 }

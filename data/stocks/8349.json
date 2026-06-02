@@ -1,18 +1,18 @@
 {
   "stock_id": "8349",
   "name": "8349",
-  "date": "2026-05-29",
-  "close": 41.5,
-  "health_score": 86,
+  "date": "2026-06-01",
+  "close": 41.7,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.009,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1988.0,
+    "margin_change": 1984.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 71.56
   },
   "main_force": {
-    "cost": 42.21,
-    "distance": -1.68,
+    "cost": 42.04,
+    "distance": -0.81,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-01"
 }

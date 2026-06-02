@@ -1,20 +1,20 @@
 {
   "stock_id": "9103",
   "name": "9103",
-  "date": "2026-05-29",
-  "close": 5.23,
-  "health_score": 113,
+  "date": "2026-06-01",
+  "close": 5.16,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.029,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.029,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3211.0,
-    "short_change": 19.0,
-    "short_margin_ratio": 0.59
+    "margin_change": 3104.0,
+    "short_change": 29.0,
+    "short_margin_ratio": 0.93
   },
   "tdcc": {
     "big_holder_change": 3.89,
@@ -22,8 +22,8 @@
     "holder_concentration": 10.18
   },
   "main_force": {
-    "cost": 4.98,
-    "distance": 5.02,
+    "cost": 5.0,
+    "distance": 3.2,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

@@ -1,19 +1,19 @@
 {
   "stock_id": "6005",
   "name": "6005",
-  "date": "2026-05-29",
-  "close": 38.5,
+  "date": "2026-06-01",
+  "close": 39.6,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.077,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.02,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5427.0,
-    "short_change": 65.0,
+    "margin_change": 6021.0,
+    "short_change": 72.0,
     "short_margin_ratio": 1.2
   },
   "tdcc": {
@@ -22,8 +22,8 @@
     "holder_concentration": 75.72
   },
   "main_force": {
-    "cost": 31.99,
-    "distance": 20.35,
+    "cost": 32.52,
+    "distance": 21.77,
     "trend": "UP"
   },
   "sector": {
@@ -37,16 +37,12 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
+      "title": "外資連買 4 天"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

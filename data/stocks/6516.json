@@ -1,18 +1,18 @@
 {
   "stock_id": "6516",
   "name": "6516",
-  "date": "2026-05-29",
-  "close": 56.6,
-  "health_score": 86,
+  "date": "2026-06-01",
+  "close": 58.1,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.088,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 956.0,
+    "margin_change": 952.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 53.86
   },
   "main_force": {
-    "cost": 57.33,
-    "distance": -1.27,
-    "trend": "DOWN"
+    "cost": 57.24,
+    "distance": 1.5,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-01"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "3057",
   "name": "3057",
-  "date": "2026-05-29",
-  "close": 20.45,
+  "date": "2026-06-01",
+  "close": 22.4,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.265,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.643,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 33.44
   },
   "main_force": {
-    "cost": 19.97,
-    "distance": 2.4,
+    "cost": 20.08,
+    "distance": 11.55,
     "trend": "UP"
   },
   "sector": {
@@ -37,12 +37,16 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

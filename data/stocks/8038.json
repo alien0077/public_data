@@ -1,13 +1,13 @@
 {
   "stock_id": "8038",
   "name": "8038",
-  "date": "2026-05-29",
-  "close": 41.0,
-  "health_score": 86,
+  "date": "2026-06-01",
+  "close": 41.55,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.122,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 20.04
   },
   "main_force": {
-    "cost": 41.99,
-    "distance": -2.36,
+    "cost": 41.9,
+    "distance": -0.84,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-01"
 }

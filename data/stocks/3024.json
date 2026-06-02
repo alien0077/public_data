@@ -1,20 +1,20 @@
 {
   "stock_id": "3024",
   "name": "3024",
-  "date": "2026-05-29",
-  "close": 14.8,
+  "date": "2026-06-01",
+  "close": 14.0,
   "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.121,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.377,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6337.0,
-    "short_change": 52.0,
-    "short_margin_ratio": 0.82
+    "margin_change": 5917.0,
+    "short_change": 46.0,
+    "short_margin_ratio": 0.78
   },
   "tdcc": {
     "big_holder_change": 38.19,
@@ -22,8 +22,8 @@
     "holder_concentration": 51.11
   },
   "main_force": {
-    "cost": 15.71,
-    "distance": -5.79,
+    "cost": 15.74,
+    "distance": -11.05,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

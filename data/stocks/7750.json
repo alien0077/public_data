@@ -1,18 +1,18 @@
 {
   "stock_id": "7750",
   "name": "7750",
-  "date": "2026-05-29",
-  "close": 2390.0,
-  "health_score": 86,
+  "date": "2026-06-01",
+  "close": 2250.0,
+  "health_score": 120,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.028,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.601,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 749.0,
+    "margin_change": 779.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 77.92
   },
   "main_force": {
-    "cost": 2580.75,
-    "distance": -7.39,
+    "cost": 2560.75,
+    "distance": -12.14,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-01"
 }

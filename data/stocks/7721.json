@@ -1,20 +1,20 @@
 {
   "stock_id": "7721",
   "name": "7721",
-  "date": "2026-05-29",
-  "close": 72.8,
-  "health_score": 103,
+  "date": "2026-06-01",
+  "close": 80.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.013,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.594,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 768.0,
+    "margin_change": 1012.0,
     "short_change": 1.0,
-    "short_margin_ratio": 0.13
+    "short_margin_ratio": 0.1
   },
   "tdcc": {
     "big_holder_change": 52.04,
@@ -22,21 +22,27 @@
     "holder_concentration": 61.81
   },
   "main_force": {
-    "cost": 75.82,
-    "distance": -3.98,
-    "trend": "DOWN"
+    "cost": 75.94,
+    "distance": 5.35,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-01"
 }

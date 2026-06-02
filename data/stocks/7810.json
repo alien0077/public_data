@@ -1,13 +1,13 @@
 {
   "stock_id": "7810",
   "name": "7810",
-  "date": "2026-05-29",
-  "close": 232.0,
-  "health_score": 133,
+  "date": "2026-06-01",
+  "close": 244.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.39,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 46.83
   },
   "main_force": {
-    "cost": 230.58,
-    "distance": 0.62,
+    "cost": 231.62,
+    "distance": 5.34,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

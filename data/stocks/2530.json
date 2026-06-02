@@ -1,20 +1,20 @@
 {
   "stock_id": "2530",
   "name": "2530",
-  "date": "2026-05-29",
-  "close": 18.7,
-  "health_score": 83,
+  "date": "2026-06-01",
+  "close": 19.7,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.039,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.063,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5699.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.04
+    "margin_change": 5712.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 81.29,
@@ -22,8 +22,8 @@
     "holder_concentration": 85.25
   },
   "main_force": {
-    "cost": 20.37,
-    "distance": -8.2,
+    "cost": 20.34,
+    "distance": -3.15,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

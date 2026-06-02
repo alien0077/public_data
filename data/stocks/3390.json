@@ -1,20 +1,20 @@
 {
   "stock_id": "3390",
   "name": "3390",
-  "date": "2026-05-29",
-  "close": 28.1,
-  "health_score": 113,
+  "date": "2026-06-01",
+  "close": 28.75,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.408,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3349.0,
-    "short_change": 14.0,
-    "short_margin_ratio": 0.42
+    "margin_change": 3366.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 19.51,
@@ -22,8 +22,8 @@
     "holder_concentration": 29.57
   },
   "main_force": {
-    "cost": 27.55,
-    "distance": 2.0,
+    "cost": 27.73,
+    "distance": 3.68,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

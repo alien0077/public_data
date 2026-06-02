@@ -1,13 +1,13 @@
 {
   "stock_id": "6796",
   "name": "6796",
-  "date": "2026-05-29",
-  "close": 60.9,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-01",
+  "close": 61.9,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.062,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.112,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 49.38
   },
   "main_force": {
-    "cost": 64.65,
-    "distance": -5.8,
+    "cost": 64.15,
+    "distance": -3.51,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-01"
 }

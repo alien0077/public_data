@@ -1,18 +1,18 @@
 {
   "stock_id": "5706",
   "name": "5706",
-  "date": "2026-05-29",
-  "close": 50.7,
-  "health_score": 130,
+  "date": "2026-06-01",
+  "close": 51.6,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.077,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.34,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 966.0,
+    "margin_change": 943.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 40.33
   },
   "main_force": {
-    "cost": 50.49,
-    "distance": 0.42,
+    "cost": 50.52,
+    "distance": 2.14,
     "trend": "UP"
   },
   "sector": {
@@ -32,12 +32,17 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

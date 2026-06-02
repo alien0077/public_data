@@ -1,18 +1,18 @@
 {
   "stock_id": "8487",
   "name": "8487",
-  "date": "2026-05-29",
-  "close": 80.7,
-  "health_score": 113,
+  "date": "2026-06-01",
+  "close": 82.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.008,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.083,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 11.0,
+    "margin_change": 19.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 55.76
   },
   "main_force": {
-    "cost": 74.21,
-    "distance": 8.75,
+    "cost": 74.54,
+    "distance": 10.01,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

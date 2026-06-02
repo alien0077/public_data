@@ -1,13 +1,13 @@
 {
   "stock_id": "6614",
   "name": "6614",
-  "date": "2026-05-29",
-  "close": 39.25,
-  "health_score": 103,
+  "date": "2026-06-01",
+  "close": 40.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.009,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.02,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,21 +22,27 @@
     "holder_concentration": 74.5
   },
   "main_force": {
-    "cost": 39.99,
-    "distance": -1.85,
-    "trend": "DOWN"
+    "cost": 39.94,
+    "distance": 0.15,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
   ],
-  "data_version": "2026-05-29"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-01"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "3035",
   "name": "3035",
-  "date": "2026-05-29",
-  "close": 207.0,
-  "health_score": 130,
+  "date": "2026-06-01",
+  "close": 211.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -1.042,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.092,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 14919.0,
-    "short_change": 178.0,
-    "short_margin_ratio": 1.19
+    "margin_change": 14846.0,
+    "short_change": 162.0,
+    "short_margin_ratio": 1.09
   },
   "tdcc": {
     "big_holder_change": 24.13,
@@ -22,8 +22,8 @@
     "holder_concentration": 28.93
   },
   "main_force": {
-    "cost": 193.68,
-    "distance": 6.88,
+    "cost": 195.79,
+    "distance": 7.77,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

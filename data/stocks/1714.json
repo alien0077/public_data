@@ -1,20 +1,20 @@
 {
   "stock_id": "1714",
   "name": "1714",
-  "date": "2026-05-29",
-  "close": 9.5,
-  "health_score": 103,
+  "date": "2026-06-01",
+  "close": 9.81,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.094,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.34,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6399.0,
-    "short_change": 4.0,
-    "short_margin_ratio": 0.06
+    "margin_change": 6484.0,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.03
   },
   "tdcc": {
     "big_holder_change": 56.32,
@@ -22,21 +22,22 @@
     "holder_concentration": 62.96
   },
   "main_force": {
-    "cost": 9.59,
-    "distance": -0.94,
-    "trend": "DOWN"
+    "cost": 9.61,
+    "distance": 2.08,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }

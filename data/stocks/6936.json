@@ -1,18 +1,18 @@
 {
   "stock_id": "6936",
   "name": "6936",
-  "date": "2026-05-29",
-  "close": 32.9,
-  "health_score": 83,
+  "date": "2026-06-01",
+  "close": 33.4,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.01,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.016,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 249.0,
+    "margin_change": 250.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 75.86
   },
   "main_force": {
-    "cost": 32.1,
-    "distance": 2.49,
+    "cost": 32.08,
+    "distance": 4.11,
     "trend": "UP"
   },
   "sector": {
@@ -32,12 +32,17 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-05-29"
+  "data_version": "2026-06-01"
 }
