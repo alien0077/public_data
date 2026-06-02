@@ -12,10 +12,10 @@
     "used_capital": 663.0
   },
   "performance": {
-    "live_total_return": 0.5246431999999999,
-    "live_sharpe": 3.393034999596572,
+    "live_total_return": 0.051465000000000094,
+    "live_sharpe": 0.8819142765509502,
     "live_max_drawdown": -0.06156263312749583,
-    "live_win_rate": 0.6016949152542372,
+    "live_win_rate": 0.16101694915254236,
     "live_equity": [
       {
         "date": "2026-05-03",
@@ -87,7 +87,7 @@
       },
       {
         "date": "2026-06-01",
-        "equity": 1.0077
+        "equity": 1.5077
       }
     ],
     "live_drawdown": [
@@ -169,7 +169,7 @@
     {
       "stock": "2881",
       "is_held": true,
-      "weight": 0.0007,
+      "weight": 0.0004,
       "score": 2.0,
       "entry_reason": "MR_HELD",
       "select_reason": "均值回歸·ETF動能",
@@ -3521,8 +3521,85 @@
   "new_entries": [
     "2881"
   ],
-  "exits": [],
+  "exits": [
+    "2881",
+    "2881",
+    "2881",
+    "2881"
+  ],
   "trade_log": [
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "均值回歸·ETF動能"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": "2026-06-01",
+      "exit_price": 110.5,
+      "return": 0.0,
+      "reason": "RSI_OVERBOUGHT (>75)",
+      "select_reason": "均值回歸·ETF動能",
+      "primary_theme": "金控母體",
+      "action": "SELL"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "均值回歸·ETF動能"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": "2026-06-01",
+      "exit_price": 110.5,
+      "return": 0.0,
+      "reason": "RSI_OVERBOUGHT (>75)",
+      "select_reason": "均值回歸·ETF動能",
+      "primary_theme": "金控母體",
+      "action": "SELL"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "均值回歸·ETF動能"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": "2026-06-01",
+      "exit_price": 110.5,
+      "return": 0.0,
+      "reason": "RSI_OVERBOUGHT (>75)",
+      "select_reason": "均值回歸·ETF動能",
+      "primary_theme": "金控母體",
+      "action": "SELL"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "均值回歸·ETF動能"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": "2026-06-01",
+      "exit_price": 110.5,
+      "return": 0.0,
+      "reason": "RSI_OVERBOUGHT (>75)",
+      "select_reason": "均值回歸·ETF動能",
+      "primary_theme": "金控母體",
+      "action": "SELL"
+    },
     {
       "stock": "2881",
       "entry_date": "2026-06-01",

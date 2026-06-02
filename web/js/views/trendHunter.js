@@ -37,6 +37,18 @@ export const TrendHunter = {
             sideTitle: '訊號說明',
             sideContent: 'A=低檔潛伏建倉: 橫盤+法人吸籌+籌碼沉澱。A+=起跑試探: 量能微溫+均線糾結。B=突發攻擊: 爆量長紅+法人支撐。清單依法人累計買超由大到小排序。'
         },
+        '短期快篩': {
+            title: '法人短期快篩',
+            description: '以最近 10 個交易日法人買盤數據，快速掃描哪些 AI 股被法人持續積極建倉。',
+            sideTitle: '快篩說明',
+            sideContent: '純粹看法人買盤行為：無價格限制、無停損、無狀態機。依累計買超排序，輔以買入天數一致性判斷。🔥 積極布局(≥80%天數買超) / 👀 持續買進(≥60%) / ⚡ 加速建倉(近3日買超為前期2倍以上)。'
+        },
+        '族群本益比': {
+            title: 'AI 族群本益比',
+            description: '依 AI 產業分組，列出各檔個股目前的本益比，快速掌握哪些標的處於低基期。',
+            sideTitle: '本益比說明',
+            sideContent: 'PE = 收盤價 ÷ 最近期年度 EPS。🔵 低基期 = PE 低於產業中位數 20% 以上；中性 = 落在中位數 ±20% 區間；🔴 偏高 = 高於中位數 20% 以上；虧損中 = EPS ≤ 0。方便判斷各產業內相對便宜的標的。'
+        },
         '資金輪動': {
             title: '產業資金輪動圖',
             description: '視覺化呈現資金在不同產業間的轉移路徑，捕捉下一個領漲族群。',
@@ -220,6 +232,35 @@ export const TrendHunter = {
                         <div class="text-center">
                             <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4"></div>
                             <p class="text-gray-500 text-sm">正在載入法人建倉數據...</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        if (subPage === '短期快篩') {
+            return `
+                <div id="rapid-screen-container" class="p-6 space-y-4 flex-1 flex flex-col">
+                    <div id="rapid-screen-summary" class="hidden"></div>
+                    <div id="rapid-screen-list" class="space-y-1 flex-1"></div>
+                    <div id="rapid-screen-empty" class="flex-1 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-600 mb-4"></div>
+                            <p class="text-gray-500 text-sm">正在掃描法人買盤數據...</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        if (subPage === '族群本益比') {
+            return `
+                <div id="sector-pe-container" class="p-6 space-y-4 flex-1 flex flex-col">
+                    <div id="sector-pe-list" class="space-y-3 flex-1"></div>
+                    <div id="sector-pe-empty" class="flex-1 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600 mb-4"></div>
+                            <p class="text-gray-500 text-sm">正在計算本益比數據...</p>
                         </div>
                     </div>
                 </div>
@@ -542,10 +583,6 @@ export const TrendHunter = {
                                         <div class="text-gray-400 mt-1">→ 可進入追蹤，停損放寬至 -5%（A 是 -3%）</div>
                                     </div>
                                 </div>
-                                <div class="text-[10px] text-gray-400 pt-1">
-                                    <div class="font-bold">📋 退場條件</div>
-                                    <div class="pl-2 mt-1">⚠️ 連續 3 日法人賣超（每日 &gt; 100 張）→ 移出追蹤<br>⚠️ 跌超過進場價 3%（A）或 5%（ABS）→ 停損出場</div>
-                                </div>
                             </div>
                         </details>
                     </div>
@@ -554,6 +591,176 @@ export const TrendHunter = {
 
             } catch (err) {
                 console.error('法人建倉 loading error:', err);
+                if (emptyContainer) {
+                    emptyContainer.innerHTML = '<div class="text-center py-12 text-red-500 text-sm">數據載入失敗: ' + err.message + '</div>';
+                }
+            }
+            return;
+        }
+
+        if (subPage === '短期快篩') {
+            const listContainer = document.getElementById('rapid-screen-list');
+            const emptyContainer = document.getElementById('rapid-screen-empty');
+            const summaryEl = document.getElementById('rapid-screen-summary');
+            if (!listContainer) return;
+
+            try {
+                const data = await api.fetchLocalJson('quant/rapid_screen.json');
+                if (!data || !data.stocks || data.stocks.length === 0) {
+                    if (emptyContainer) emptyContainer.innerHTML = '<div class="text-center py-12 text-gray-500">目前無符合短期快篩條件的標的</div>';
+                    return;
+                }
+
+                if (emptyContainer) emptyContainer.style.display = 'none';
+
+                if (summaryEl) {
+                    summaryEl.classList.remove('hidden');
+                    summaryEl.innerHTML = `
+                        <div class="bg-gradient-to-r from-cyan-600/10 to-blue-600/10 rounded-2xl border border-cyan-500/20 p-4 flex items-center justify-between">
+                            <div>
+                                <span class="text-sm font-bold text-gray-900 dark:text-white">📡 法人積極買進 AI 股</span>
+                                <span class="ml-2 text-xs text-gray-500">${data.stocks.length} 檔個股 · ${data.window_days} 日窗口</span>
+                            </div>
+                            <span class="text-xs text-gray-400 font-mono">${data.date}</span>
+                        </div>
+                    `;
+                }
+
+                listContainer.innerHTML = `
+                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 text-[10px] uppercase">
+                                    <tr>
+                                        <th class="px-4 py-2">股票</th>
+                                        <th class="px-4 py-2 text-left">產業</th>
+                                        <th class="px-4 py-2 text-right">累計買超</th>
+                                        <th class="px-4 py-2 text-right">買入/${data.window_days}</th>
+                                        <th class="px-4 py-2 text-right hidden md:table-cell">一致性</th>
+                                        <th class="px-4 py-2 text-right hidden sm:table-cell">日均買超</th>
+                                        <th class="px-4 py-2 text-right hidden lg:table-cell">近3日</th>
+                                        <th class="px-4 py-2 text-right">訊號</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-xs">
+                                    ${data.stocks.map(s => {
+                                        const buyStr = s.total_inst_buy >= 1000
+                                            ? (s.total_inst_buy / 1000).toFixed(1) + 'K'
+                                            : s.total_inst_buy.toLocaleString();
+                                        const avgStr = s.avg_daily_buy >= 1000
+                                            ? (s.avg_daily_buy / 1000).toFixed(1) + 'K'
+                                            : s.avg_daily_buy.toLocaleString();
+                                        const r3Str = s.recent_3d_buy >= 1000
+                                            ? (s.recent_3d_buy / 1000).toFixed(1) + 'K'
+                                            : s.recent_3d_buy.toLocaleString();
+
+                                        let labelColor = 'bg-gray-500/15 text-gray-500 border-gray-500/30';
+                                        if (s.label.includes('🔥')) labelColor = 'bg-red-500/15 text-red-500 border-red-500/30';
+                                        else if (s.label.includes('👀')) labelColor = 'bg-orange-500/15 text-orange-500 border-orange-500/30';
+                                        else if (s.label.includes('⚡')) labelColor = 'bg-blue-500/15 text-blue-500 border-blue-500/30';
+
+                                        return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 cursor-pointer transition-colors"
+                                                     onclick="window.StockDetail.show('${s.stock_id}')">
+                                            <td class="px-4 py-2.5">
+                                                <div class="font-bold text-gray-900 dark:text-white">${s.stock_id}</div>
+                                                <div class="text-[10px] text-gray-400">${s.name || ''}</div>
+                                            </td>
+                                            <td class="px-4 py-2.5 text-left text-gray-500 text-[10px]">${s.sector_tag || '--'}</td>
+                                            <td class="px-4 py-2.5 text-right font-bold text-cyan-600 dark:text-cyan-400">${buyStr}</td>
+                                            <td class="px-4 py-2.5 text-right text-gray-600 dark:text-gray-300">${s.buy_days}/${s.total_days || data.window_days}</td>
+                                            <td class="px-4 py-2.5 text-right hidden md:table-cell">
+                                                <span class="${s.consistency >= 0.8 ? 'text-green-500' : s.consistency >= 0.6 ? 'text-orange-500' : 'text-gray-500'}">${(s.consistency * 100).toFixed(0)}%</span>
+                                            </td>
+                                            <td class="px-4 py-2.5 text-right text-gray-500 hidden sm:table-cell">${avgStr}</td>
+                                            <td class="px-4 py-2.5 text-right text-gray-500 hidden lg:table-cell">${r3Str}</td>
+                                            <td class="px-4 py-2.5 text-right">
+                                                <span class="text-[10px] font-bold px-2 py-1 rounded border ${labelColor}">${s.label}</span>
+                                            </td>
+                                        </tr>`;
+                                    }).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+            } catch (err) {
+                console.error('短期快篩 loading error:', err);
+                if (emptyContainer) {
+                    emptyContainer.innerHTML = '<div class="text-center py-12 text-red-500 text-sm">數據載入失敗: ' + err.message + '</div>';
+                }
+            }
+            return;
+        }
+
+        if (subPage === '族群本益比') {
+            const listContainer = document.getElementById('sector-pe-list');
+            const emptyContainer = document.getElementById('sector-pe-empty');
+            if (!listContainer) return;
+
+            try {
+                const data = await api.fetchLocalJson('quant/sector_pe.json');
+                if (!data || !data.sectors || data.sectors.length === 0) {
+                    if (emptyContainer) emptyContainer.innerHTML = '<div class="text-center py-12 text-gray-500">暫無本益比數據</div>';
+                    return;
+                }
+
+                if (emptyContainer) emptyContainer.style.display = 'none';
+
+                listContainer.innerHTML = data.sectors.map(sector => `
+                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                        <div class="px-5 py-3 flex items-center justify-between cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors sector-accordion-header"
+                             onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180')">
+                            <div class="flex items-center space-x-3">
+                                <div>
+                                    <div class="font-bold text-gray-900 dark:text-white text-sm">${sector.display_tag || sector.sector_tag}</div>
+                                    <div class="text-xs text-gray-400">${sector.stock_count} 檔 · 中位數 PE: ${sector.median_pe || '--'}</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-xs text-gray-400 font-mono">${sector.stock_count} 檔</span>
+                                <svg class="chevron w-4 h-4 text-gray-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 text-[10px] uppercase">
+                                    <tr>
+                                        <th class="px-4 py-2">股票</th>
+                                        <th class="px-4 py-2 text-right">股價</th>
+                                        <th class="px-4 py-2 text-right">EPS</th>
+                                        <th class="px-4 py-2 text-right">本益比</th>
+                                        <th class="px-4 py-2 text-right">評價</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-xs">
+                                    ${sector.stocks.map(s => {
+                                        const peStr = s.pe_ratio !== null ? s.pe_ratio.toFixed(1) : '--';
+                                        let labelColor = 'text-gray-500';
+                                        if (s.label.includes('🔵')) labelColor = 'text-blue-500';
+                                        else if (s.label.includes('🔴')) labelColor = 'text-red-500';
+                                        else if (s.label.includes('虧損')) labelColor = 'text-gray-400';
+                                        const epsStr = s.eps !== null ? s.eps.toFixed(2) : '--';
+                                        return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 cursor-pointer transition-colors"
+                                                     onclick="window.StockDetail.show('${s.stock_id}')">
+                                            <td class="px-4 py-2.5">
+                                                <div class="font-bold text-gray-900 dark:text-white">${s.stock_id}</div>
+                                                <div class="text-[10px] text-gray-400">${s.name || ''}</div>
+                                            </td>
+                                            <td class="px-4 py-2.5 text-right text-gray-600 dark:text-gray-300">${s.close.toFixed(1)}</td>
+                                            <td class="px-4 py-2.5 text-right text-gray-500">${epsStr}</td>
+                                            <td class="px-4 py-2.5 text-right font-bold ${s.pe_ratio !== null ? (s.pe_ratio < 15 ? 'text-green-500' : s.pe_ratio > 30 ? 'text-red-500' : 'text-gray-900 dark:text-white') : 'text-gray-400'}">${peStr}</td>
+                                            <td class="px-4 py-2.5 text-right"><span class="text-[10px] font-bold ${labelColor}">${s.label}</span></td>
+                                        </tr>`;
+                                    }).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (err) {
+                console.error('族群本益比 loading error:', err);
                 if (emptyContainer) {
                     emptyContainer.innerHTML = '<div class="text-center py-12 text-red-500 text-sm">數據載入失敗: ' + err.message + '</div>';
                 }
@@ -978,6 +1185,7 @@ export const TrendHunter = {
             let currentStrategy = 'portfolio_combined';
             const strategyNames = {
                 'trend': 'TREND', 'mr': 'MR',
+                'ai_inst': 'AI_INST',
                 'portfolio_combined': '組合', 'multi_factor': 'Multi-Factor'
             };
 
@@ -1353,7 +1561,7 @@ export const TrendHunter = {
             } catch(e) { console.warn("Meta fetch failed", e); }
 
             try {
-                const sf = ['trend', 'mr', 'portfolio_combined', 'multi_factor'];
+                const sf = ['trend', 'mr', 'ai_inst', 'portfolio_combined', 'multi_factor'];
                 const loaded = await Promise.all(
                     sf.map(s => api.fetchLocalJson(`quant/live_${s}.json`).catch(() => null))
                 );

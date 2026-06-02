@@ -1,238 +1,171 @@
 {
   "date": "2026-06-01",
   "regime": "AGGRESSIVE",
-  "regime_config": {
-    "max_positions": 10,
-    "daily_entry_limit": 2,
-    "entry_rs": 85,
-    "cash_reserve": 0.1,
-    "mode": "積極進攻",
-    "description": "加權指數站穩 60MA，市場多頭格局，系統積極建倉",
-    "strategy_bias": "趨勢策略優先"
-  },
-  "nav": 1507691.5,
-  "cash": 583445.5,
+  "cash": 500000.0,
+  "nav": 500000.0,
   "portfolio_beta": 1.25,
   "metadata": {
-    "holdings_count": 10,
+    "holdings_count": 0,
     "candidates_count": 200,
     "live_days": 18,
-    "total_capital": 1507691.5,
-    "used_capital": 924246.0
+    "total_capital": 500000.0,
+    "used_capital": 0.0
   },
-  "alpha_allocation": [
-    {
-      "strategy": "TREND",
-      "weight": 0.8,
-      "score": 2.361136747143654
-    },
-    {
-      "strategy": "MR",
-      "weight": 0.2,
-      "score": 0.8819142765509502
-    }
-  ],
+  "performance": {
+    "live_total_return": 2.5524573999999998,
+    "live_sharpe": 5.621565578271879,
+    "live_max_drawdown": -0.06156263312749583,
+    "live_win_rate": 0.635593220338983,
+    "live_equity": [
+      {
+        "date": "2026-05-03",
+        "equity": 1.0
+      },
+      {
+        "date": "2026-05-04",
+        "equity": 1.0
+      },
+      {
+        "date": "2026-05-07",
+        "equity": 0.9965
+      },
+      {
+        "date": "2026-05-08",
+        "equity": 0.9403
+      },
+      {
+        "date": "2026-05-11",
+        "equity": 0.9653
+      },
+      {
+        "date": "2026-05-13",
+        "equity": 0.971
+      },
+      {
+        "date": "2026-05-14",
+        "equity": 0.9897
+      },
+      {
+        "date": "2026-05-15",
+        "equity": 0.9557
+      },
+      {
+        "date": "2026-05-19",
+        "equity": 0.9386
+      },
+      {
+        "date": "2026-05-20",
+        "equity": 0.9451
+      },
+      {
+        "date": "2026-05-21",
+        "equity": 0.9433
+      },
+      {
+        "date": "2026-05-22",
+        "equity": 0.9544
+      },
+      {
+        "date": "2026-05-25",
+        "equity": 0.9699
+      },
+      {
+        "date": "2026-05-26",
+        "equity": 1.0047
+      },
+      {
+        "date": "2026-05-27",
+        "equity": 0.9842
+      },
+      {
+        "date": "2026-05-28",
+        "equity": 0.9428
+      },
+      {
+        "date": "2026-05-29",
+        "equity": 0.9881
+      },
+      {
+        "date": "2026-06-01",
+        "equity": 1.5077
+      }
+    ],
+    "live_drawdown": [
+      {
+        "date": "05-03",
+        "value": 0.0
+      },
+      {
+        "date": "05-04",
+        "value": 0.0
+      },
+      {
+        "date": "05-07",
+        "value": -0.0035
+      },
+      {
+        "date": "05-08",
+        "value": -0.0597
+      },
+      {
+        "date": "05-11",
+        "value": -0.0347
+      },
+      {
+        "date": "05-13",
+        "value": -0.029
+      },
+      {
+        "date": "05-14",
+        "value": -0.0103
+      },
+      {
+        "date": "05-15",
+        "value": -0.0443
+      },
+      {
+        "date": "05-19",
+        "value": -0.0614
+      },
+      {
+        "date": "05-20",
+        "value": -0.0549
+      },
+      {
+        "date": "05-21",
+        "value": -0.0567
+      },
+      {
+        "date": "05-22",
+        "value": -0.0456
+      },
+      {
+        "date": "05-25",
+        "value": -0.0301
+      },
+      {
+        "date": "05-26",
+        "value": 0.0
+      },
+      {
+        "date": "05-27",
+        "value": -0.0204
+      },
+      {
+        "date": "05-28",
+        "value": -0.0616
+      },
+      {
+        "date": "05-29",
+        "value": -0.0165
+      },
+      {
+        "date": "06-01",
+        "value": 0.0
+      }
+    ]
+  },
   "portfolio": [
-    {
-      "stock": "3189",
-      "is_held": true,
-      "weight": 0.2839,
-      "score": 2.0,
-      "entry_reason": "TREND_HELD",
-      "select_reason": "趨勢跟蹤·ETF動能",
-      "themes": [
-        "AI_PC"
-      ],
-      "primary_theme": "PCB_CCL_ABF",
-      "entry_date": "2026-05-25",
-      "return": 0.157,
-      "max_return": 0.157,
-      "beta": 1.76,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "chip_label": "🚀 籌碼洗清",
-      "event_alert": "🎤 法說預警 (06-03)",
-      "evolution_note": null
-    },
-    {
-      "stock": "8021",
-      "is_held": true,
-      "weight": 0.0006,
-      "score": 2.0,
-      "entry_reason": "TREND_HELD",
-      "select_reason": "趨勢跟蹤",
-      "themes": [
-        "PCB_CCL_Drilling"
-      ],
-      "primary_theme": "電子其他",
-      "entry_date": "2026-05-25",
-      "return": 0.0,
-      "max_return": 0.0011,
-      "beta": 1.65,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "chip_label": "🚀 籌碼洗清",
-      "event_alert": null,
-      "evolution_note": "💡 電子其他 族群近期爆發力強，系統已自動放寬 RS 出場門檻。"
-    },
-    {
-      "stock": "6691",
-      "is_held": true,
-      "weight": 0.0628,
-      "score": 2.0,
-      "entry_reason": "TREND_HELD",
-      "select_reason": "趨勢跟蹤",
-      "themes": [],
-      "primary_theme": "電子其他",
-      "entry_date": "2026-05-27",
-      "return": -0.0386,
-      "max_return": 0.0,
-      "beta": 0.79,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "chip_label": null,
-      "event_alert": null,
-      "evolution_note": "💡 電子其他 族群近期爆發力強，系統已自動放寬 RS 出場門檻。"
-    },
-    {
-      "stock": "1519",
-      "is_held": true,
-      "weight": 0.0641,
-      "score": 2.0,
-      "entry_reason": "TREND_HELD",
-      "select_reason": "趨勢跟蹤",
-      "themes": [
-        "Power_Grid"
-      ],
-      "primary_theme": "重電_強韌電網",
-      "entry_date": "2026-05-27",
-      "return": -0.0091,
-      "max_return": 0.0,
-      "beta": 1.13,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "chip_label": null,
-      "event_alert": null,
-      "evolution_note": null
-    },
-    {
-      "stock": "6446",
-      "is_held": true,
-      "weight": 0.0676,
-      "score": 2.0,
-      "entry_reason": "TREND_HELD",
-      "select_reason": "趨勢跟蹤",
-      "themes": [],
-      "primary_theme": "新藥_生技",
-      "entry_date": "2026-05-27",
-      "return": 0.0969,
-      "max_return": 0.0969,
-      "beta": 0.43,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "chip_label": null,
-      "event_alert": null,
-      "evolution_note": "💡 新藥_生技 族群近期爆發力強，系統已自動放寬 RS 出場門檻。"
-    },
-    {
-      "stock": "3563",
-      "is_held": true,
-      "weight": 0.0575,
-      "score": 2.0,
-      "entry_reason": "TREND_HELD",
-      "select_reason": "趨勢跟蹤",
-      "themes": [],
-      "primary_theme": "光電面板",
-      "entry_date": "2026-05-27",
-      "return": -0.0202,
-      "max_return": 0.0,
-      "beta": 0.95,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "chip_label": null,
-      "event_alert": null,
-      "evolution_note": null
-    },
-    {
-      "stock": "3665",
-      "is_held": true,
-      "weight": 0.0366,
-      "score": 2.0,
-      "entry_reason": "TREND_HELD",
-      "select_reason": "趨勢跟蹤·ETF動能",
-      "themes": [
-        "Tesla_Chain"
-      ],
-      "primary_theme": "電子其他",
-      "entry_date": "2026-05-28",
-      "return": 0.0024,
-      "max_return": 0.0024,
-      "beta": 1.24,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "chip_label": null,
-      "event_alert": null,
-      "evolution_note": "💡 電子其他 族群近期爆發力強，系統已自動放寬 RS 出場門檻。"
-    },
-    {
-      "stock": "6472",
-      "is_held": true,
-      "weight": 0.0331,
-      "score": 2.0,
-      "entry_reason": "TREND_HELD",
-      "select_reason": "趨勢跟蹤",
-      "themes": [],
-      "primary_theme": "新藥_生技",
-      "entry_date": "2026-05-28",
-      "return": 0.061,
-      "max_return": 0.061,
-      "beta": 0.61,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "chip_label": null,
-      "event_alert": "🎤 法說預警 (06-03)",
-      "evolution_note": "💡 新藥_生技 族群近期爆發力強，系統已自動放寬 RS 出場門檻。"
-    },
-    {
-      "stock": "8291",
-      "is_held": true,
-      "weight": 0.0065,
-      "score": 2.0,
-      "entry_reason": "TREND_HELD",
-      "select_reason": "趨勢跟蹤",
-      "themes": [],
-      "primary_theme": "電子元件",
-      "entry_date": "2026-05-29",
-      "return": -0.1,
-      "max_return": 0.0,
-      "beta": -0.46,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "chip_label": null,
-      "event_alert": null,
-      "evolution_note": "💡 電子元件 族群近期爆發力強，系統已自動放寬 RS 出場門檻。"
-    },
-    {
-      "stock": "2881",
-      "is_held": true,
-      "weight": 0.0004,
-      "score": 2.0,
-      "entry_reason": "MR_HELD",
-      "select_reason": "均值回歸·ETF動能",
-      "themes": [
-        "Weight_Stocks"
-      ],
-      "primary_theme": "金控母體",
-      "entry_date": "2026-06-01",
-      "return": 0.0,
-      "max_return": 0.0,
-      "beta": 0.27,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "chip_label": null,
-      "event_alert": null,
-      "evolution_note": null
-    },
     {
       "stock": "1773",
       "is_held": false,
@@ -3564,816 +3497,7 @@
       "event_alert": null
     }
   ],
-  "new_entries": [
-    "2881"
-  ],
-  "exits": [
-    "2881"
-  ],
-  "trade_log": [
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "均值回歸·ETF動能"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-01",
-      "exit_price": 110.5,
-      "return": 0.0,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "均值回歸·ETF動能",
-      "primary_theme": "金控母體",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "均值回歸·ETF動能"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-01",
-      "exit_price": 110.5,
-      "return": 0.0,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "均值回歸·ETF動能",
-      "primary_theme": "金控母體",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "均值回歸·ETF動能"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-01",
-      "exit_price": 110.5,
-      "return": 0.0,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "均值回歸·ETF動能",
-      "primary_theme": "金控母體",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "均值回歸·ETF動能"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-01",
-      "exit_price": 110.5,
-      "return": 0.0,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "均值回歸·ETF動能",
-      "primary_theme": "金控母體",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "均值回歸·ETF動能"
-    },
-    {
-      "stock": "6861",
-      "entry_date": "2026-05-26",
-      "exit_date": "2026-06-01",
-      "exit_price": 396.0,
-      "return": -0.119,
-      "reason": "STOP_LOSS (10%)",
-      "select_reason": "趨勢跟蹤",
-      "primary_theme": "顯示面板",
-      "action": "SELL"
-    },
-    {
-      "stock": "8291",
-      "entry_date": "2026-05-29",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "8291",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-29",
-      "exit_price": 120.0,
-      "return": 0.2,
-      "reason": "TRAILING_STOP (Gap:5.0%)",
-      "primary_theme": "電子元件",
-      "action": "SELL"
-    },
-    {
-      "stock": "6472",
-      "entry_date": "2026-05-28",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "3665",
-      "entry_date": "2026-05-28",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "5475",
-      "entry_date": "2026-05-26",
-      "exit_date": "2026-05-28",
-      "exit_price": 266.5,
-      "return": -0.1262,
-      "reason": "STOP_LOSS (10%)",
-      "primary_theme": "電子元件",
-      "action": "SELL"
-    },
-    {
-      "stock": "3563",
-      "entry_date": "2026-05-27",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "6446",
-      "entry_date": "2026-05-27",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "1519",
-      "entry_date": "2026-05-27",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "6691",
-      "entry_date": "2026-05-27",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "3665",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-27",
-      "exit_price": 2115.0,
-      "return": -0.1132,
-      "reason": "STOP_LOSS (10%)",
-      "primary_theme": "電子其他",
-      "action": "SELL"
-    }
-  ],
-  "performance": {
-    "backtest_total_return": 0.9290743666666665,
-    "backtest_sharpe": 6.049454910020809,
-    "backtest_max_drawdown": -0.06128770113285854,
-    "backtest_win_rate": 0.7272727272727273,
-    "backtest_equity": [
-      {
-        "date": "03-05",
-        "equity": 1.2668
-      },
-      {
-        "date": "03-06",
-        "equity": 1.2576
-      },
-      {
-        "date": "03-09",
-        "equity": 1.2235
-      },
-      {
-        "date": "03-10",
-        "equity": 1.2425
-      },
-      {
-        "date": "03-11",
-        "equity": 1.2702
-      },
-      {
-        "date": "03-12",
-        "equity": 1.2705
-      },
-      {
-        "date": "03-13",
-        "equity": 1.2767
-      },
-      {
-        "date": "03-16",
-        "equity": 1.2986
-      },
-      {
-        "date": "03-17",
-        "equity": 1.2977
-      },
-      {
-        "date": "03-18",
-        "equity": 1.3175
-      },
-      {
-        "date": "03-19",
-        "equity": 1.3046
-      },
-      {
-        "date": "03-20",
-        "equity": 1.29
-      },
-      {
-        "date": "03-23",
-        "equity": 1.259
-      },
-      {
-        "date": "03-24",
-        "equity": 1.243
-      },
-      {
-        "date": "03-25",
-        "equity": 1.2761
-      },
-      {
-        "date": "03-26",
-        "equity": 1.2717
-      },
-      {
-        "date": "03-27",
-        "equity": 1.2717
-      },
-      {
-        "date": "03-30",
-        "equity": 1.2604
-      },
-      {
-        "date": "03-31",
-        "equity": 1.2368
-      },
-      {
-        "date": "04-01",
-        "equity": 1.2586
-      },
-      {
-        "date": "04-02",
-        "equity": 1.2574
-      },
-      {
-        "date": "04-07",
-        "equity": 1.295
-      },
-      {
-        "date": "04-08",
-        "equity": 1.3345
-      },
-      {
-        "date": "04-09",
-        "equity": 1.3409
-      },
-      {
-        "date": "04-10",
-        "equity": 1.3586
-      },
-      {
-        "date": "04-13",
-        "equity": 1.3492
-      },
-      {
-        "date": "04-14",
-        "equity": 1.3393
-      },
-      {
-        "date": "04-15",
-        "equity": 1.3547
-      },
-      {
-        "date": "04-16",
-        "equity": 1.3922
-      },
-      {
-        "date": "04-17",
-        "equity": 1.4126
-      },
-      {
-        "date": "04-20",
-        "equity": 1.4431
-      },
-      {
-        "date": "04-21",
-        "equity": 1.4594
-      },
-      {
-        "date": "04-22",
-        "equity": 1.48
-      },
-      {
-        "date": "04-23",
-        "equity": 1.4582
-      },
-      {
-        "date": "04-24",
-        "equity": 1.4947
-      },
-      {
-        "date": "04-27",
-        "equity": 1.5045
-      },
-      {
-        "date": "04-28",
-        "equity": 1.5169
-      },
-      {
-        "date": "04-29",
-        "equity": 1.5052
-      },
-      {
-        "date": "04-30",
-        "equity": 1.5551
-      },
-      {
-        "date": "05-04",
-        "equity": 1.5868
-      },
-      {
-        "date": "05-05",
-        "equity": 1.5973
-      },
-      {
-        "date": "05-06",
-        "equity": 1.6158
-      },
-      {
-        "date": "05-07",
-        "equity": 1.6485
-      },
-      {
-        "date": "05-08",
-        "equity": 1.6011
-      },
-      {
-        "date": "05-11",
-        "equity": 1.6457
-      },
-      {
-        "date": "05-12",
-        "equity": 1.6852
-      },
-      {
-        "date": "05-13",
-        "equity": 1.6623
-      },
-      {
-        "date": "05-14",
-        "equity": 1.6864
-      },
-      {
-        "date": "05-15",
-        "equity": 1.6601
-      },
-      {
-        "date": "05-18",
-        "equity": 1.6651
-      },
-      {
-        "date": "05-19",
-        "equity": 1.6625
-      },
-      {
-        "date": "05-20",
-        "equity": 1.6472
-      },
-      {
-        "date": "05-21",
-        "equity": 1.7236
-      },
-      {
-        "date": "05-22",
-        "equity": 1.7568
-      },
-      {
-        "date": "05-25",
-        "equity": 1.8222
-      },
-      {
-        "date": "05-26",
-        "equity": 1.8823
-      },
-      {
-        "date": "05-27",
-        "equity": 1.9358
-      },
-      {
-        "date": "05-28",
-        "equity": 1.8957
-      },
-      {
-        "date": "05-29",
-        "equity": 1.9152
-      },
-      {
-        "date": "06-01",
-        "equity": 1.9291
-      }
-    ],
-    "backtest_drawdown": [
-      {
-        "date": "03-05",
-        "value": -0.0177
-      },
-      {
-        "date": "03-06",
-        "value": -0.0248
-      },
-      {
-        "date": "03-09",
-        "value": -0.0513
-      },
-      {
-        "date": "03-10",
-        "value": -0.0365
-      },
-      {
-        "date": "03-11",
-        "value": -0.015
-      },
-      {
-        "date": "03-12",
-        "value": -0.0148
-      },
-      {
-        "date": "03-13",
-        "value": -0.01
-      },
-      {
-        "date": "03-16",
-        "value": 0.0
-      },
-      {
-        "date": "03-17",
-        "value": -0.0007
-      },
-      {
-        "date": "03-18",
-        "value": 0.0
-      },
-      {
-        "date": "03-19",
-        "value": -0.0098
-      },
-      {
-        "date": "03-20",
-        "value": -0.0209
-      },
-      {
-        "date": "03-23",
-        "value": -0.0445
-      },
-      {
-        "date": "03-24",
-        "value": -0.0566
-      },
-      {
-        "date": "03-25",
-        "value": -0.0315
-      },
-      {
-        "date": "03-26",
-        "value": -0.0348
-      },
-      {
-        "date": "03-27",
-        "value": -0.0348
-      },
-      {
-        "date": "03-30",
-        "value": -0.0434
-      },
-      {
-        "date": "03-31",
-        "value": -0.0613
-      },
-      {
-        "date": "04-01",
-        "value": -0.0447
-      },
-      {
-        "date": "04-02",
-        "value": -0.0456
-      },
-      {
-        "date": "04-07",
-        "value": -0.0171
-      },
-      {
-        "date": "04-08",
-        "value": 0.0
-      },
-      {
-        "date": "04-09",
-        "value": 0.0
-      },
-      {
-        "date": "04-10",
-        "value": 0.0
-      },
-      {
-        "date": "04-13",
-        "value": -0.0069
-      },
-      {
-        "date": "04-14",
-        "value": -0.0142
-      },
-      {
-        "date": "04-15",
-        "value": -0.0029
-      },
-      {
-        "date": "04-16",
-        "value": 0.0
-      },
-      {
-        "date": "04-17",
-        "value": 0.0
-      },
-      {
-        "date": "04-20",
-        "value": 0.0
-      },
-      {
-        "date": "04-21",
-        "value": 0.0
-      },
-      {
-        "date": "04-22",
-        "value": 0.0
-      },
-      {
-        "date": "04-23",
-        "value": -0.0148
-      },
-      {
-        "date": "04-24",
-        "value": 0.0
-      },
-      {
-        "date": "04-27",
-        "value": 0.0
-      },
-      {
-        "date": "04-28",
-        "value": 0.0
-      },
-      {
-        "date": "04-29",
-        "value": -0.0077
-      },
-      {
-        "date": "04-30",
-        "value": 0.0
-      },
-      {
-        "date": "05-04",
-        "value": 0.0
-      },
-      {
-        "date": "05-05",
-        "value": 0.0
-      },
-      {
-        "date": "05-06",
-        "value": 0.0
-      },
-      {
-        "date": "05-07",
-        "value": 0.0
-      },
-      {
-        "date": "05-08",
-        "value": -0.0288
-      },
-      {
-        "date": "05-11",
-        "value": -0.0017
-      },
-      {
-        "date": "05-12",
-        "value": 0.0
-      },
-      {
-        "date": "05-13",
-        "value": -0.0136
-      },
-      {
-        "date": "05-14",
-        "value": 0.0
-      },
-      {
-        "date": "05-15",
-        "value": -0.0156
-      },
-      {
-        "date": "05-18",
-        "value": -0.0126
-      },
-      {
-        "date": "05-19",
-        "value": -0.0142
-      },
-      {
-        "date": "05-20",
-        "value": -0.0233
-      },
-      {
-        "date": "05-21",
-        "value": 0.0
-      },
-      {
-        "date": "05-22",
-        "value": 0.0
-      },
-      {
-        "date": "05-25",
-        "value": 0.0
-      },
-      {
-        "date": "05-26",
-        "value": 0.0
-      },
-      {
-        "date": "05-27",
-        "value": 0.0
-      },
-      {
-        "date": "05-28",
-        "value": -0.0207
-      },
-      {
-        "date": "05-29",
-        "value": -0.0106
-      },
-      {
-        "date": "06-01",
-        "value": -0.0035
-      }
-    ],
-    "live_total_return": 0.5076915,
-    "live_sharpe": 3.719583648500888,
-    "live_max_drawdown": -0.06156263312749583,
-    "live_win_rate": 0.5294117647058824,
-    "live_equity": [
-      {
-        "date": "05-03",
-        "equity": 1.0
-      },
-      {
-        "date": "05-04",
-        "equity": 1.0
-      },
-      {
-        "date": "05-07",
-        "equity": 0.9965
-      },
-      {
-        "date": "05-08",
-        "equity": 0.9403
-      },
-      {
-        "date": "05-11",
-        "equity": 0.9653
-      },
-      {
-        "date": "05-13",
-        "equity": 0.971
-      },
-      {
-        "date": "05-14",
-        "equity": 0.9897
-      },
-      {
-        "date": "05-15",
-        "equity": 0.9557
-      },
-      {
-        "date": "05-19",
-        "equity": 0.9386
-      },
-      {
-        "date": "05-20",
-        "equity": 0.9451
-      },
-      {
-        "date": "05-21",
-        "equity": 0.9433
-      },
-      {
-        "date": "05-22",
-        "equity": 0.9544
-      },
-      {
-        "date": "05-25",
-        "equity": 0.9699
-      },
-      {
-        "date": "05-26",
-        "equity": 1.0047
-      },
-      {
-        "date": "05-27",
-        "equity": 0.9842
-      },
-      {
-        "date": "05-28",
-        "equity": 0.9428
-      },
-      {
-        "date": "05-29",
-        "equity": 0.9881
-      },
-      {
-        "date": "06-01",
-        "equity": 1.5077
-      }
-    ],
-    "live_drawdown": [
-      {
-        "date": "05-03",
-        "value": 0.0
-      },
-      {
-        "date": "05-04",
-        "value": 0.0
-      },
-      {
-        "date": "05-07",
-        "value": -0.0035
-      },
-      {
-        "date": "05-08",
-        "value": -0.0597
-      },
-      {
-        "date": "05-11",
-        "value": -0.0347
-      },
-      {
-        "date": "05-13",
-        "value": -0.029
-      },
-      {
-        "date": "05-14",
-        "value": -0.0103
-      },
-      {
-        "date": "05-15",
-        "value": -0.0443
-      },
-      {
-        "date": "05-19",
-        "value": -0.0614
-      },
-      {
-        "date": "05-20",
-        "value": -0.0549
-      },
-      {
-        "date": "05-21",
-        "value": -0.0567
-      },
-      {
-        "date": "05-22",
-        "value": -0.0456
-      },
-      {
-        "date": "05-25",
-        "value": -0.0301
-      },
-      {
-        "date": "05-26",
-        "value": 0.0
-      },
-      {
-        "date": "05-27",
-        "value": -0.0204
-      },
-      {
-        "date": "05-28",
-        "value": -0.0616
-      },
-      {
-        "date": "05-29",
-        "value": -0.0165
-      },
-      {
-        "date": "06-01",
-        "value": 0.0
-      }
-    ]
-  }
+  "new_entries": [],
+  "exits": [],
+  "trade_log": []
 }

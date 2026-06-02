@@ -1,19 +1,19 @@
 {
   "date": "2026-06-01",
   "regime": "AGGRESSIVE",
-  "cash": 83445.5,
-  "nav": 1007691.5,
+  "cash": 583445.5,
+  "nav": 1507691.5,
   "portfolio_beta": 1.25,
   "metadata": {
     "holdings_count": 10,
     "candidates_count": 200,
     "live_days": 18,
-    "total_capital": 1007691.5,
+    "total_capital": 1507691.5,
     "used_capital": 924246.0
   },
   "performance": {
-    "live_total_return": 0.007691499999999962,
-    "live_sharpe": 0.4665831953684226,
+    "live_total_return": 0.5076915,
+    "live_sharpe": 3.719583648500888,
     "live_max_drawdown": -0.06156263312749583,
     "live_win_rate": 0.5294117647058824,
     "live_equity": [
@@ -87,7 +87,7 @@
       },
       {
         "date": "2026-06-01",
-        "equity": 1.0077
+        "equity": 1.5077
       }
     ],
     "live_drawdown": [
@@ -169,7 +169,7 @@
     {
       "stock": "3189",
       "is_held": true,
-      "weight": 0.4248,
+      "weight": 0.2839,
       "score": 2.0,
       "entry_reason": "TREND_HELD",
       "select_reason": "趨勢跟蹤·ETF動能",
@@ -190,7 +190,7 @@
     {
       "stock": "8021",
       "is_held": true,
-      "weight": 0.0009,
+      "weight": 0.0006,
       "score": 2.0,
       "entry_reason": "TREND_HELD",
       "select_reason": "趨勢跟蹤",
@@ -211,7 +211,7 @@
     {
       "stock": "6691",
       "is_held": true,
-      "weight": 0.0939,
+      "weight": 0.0628,
       "score": 2.0,
       "entry_reason": "TREND_HELD",
       "select_reason": "趨勢跟蹤",
@@ -230,7 +230,7 @@
     {
       "stock": "1519",
       "is_held": true,
-      "weight": 0.0958,
+      "weight": 0.0641,
       "score": 2.0,
       "entry_reason": "TREND_HELD",
       "select_reason": "趨勢跟蹤",
@@ -246,12 +246,12 @@
       "advice_color": "GREEN",
       "chip_label": null,
       "event_alert": null,
-      "evolution_note": "💡 重電_強韌電網 族群近期爆發力強，系統已自動放寬 RS 出場門檻。"
+      "evolution_note": null
     },
     {
       "stock": "6446",
       "is_held": true,
-      "weight": 0.1012,
+      "weight": 0.0676,
       "score": 2.0,
       "entry_reason": "TREND_HELD",
       "select_reason": "趨勢跟蹤",
@@ -270,7 +270,7 @@
     {
       "stock": "3563",
       "is_held": true,
-      "weight": 0.086,
+      "weight": 0.0575,
       "score": 2.0,
       "entry_reason": "TREND_HELD",
       "select_reason": "趨勢跟蹤",
@@ -289,7 +289,7 @@
     {
       "stock": "3665",
       "is_held": true,
-      "weight": 0.0547,
+      "weight": 0.0366,
       "score": 2.0,
       "entry_reason": "TREND_HELD",
       "select_reason": "趨勢跟蹤·ETF動能",
@@ -310,7 +310,7 @@
     {
       "stock": "6472",
       "is_held": true,
-      "weight": 0.0495,
+      "weight": 0.0331,
       "score": 2.0,
       "entry_reason": "TREND_HELD",
       "select_reason": "趨勢跟蹤",
@@ -329,7 +329,7 @@
     {
       "stock": "8291",
       "is_held": true,
-      "weight": 0.0098,
+      "weight": 0.0065,
       "score": 2.0,
       "entry_reason": "TREND_HELD",
       "select_reason": "趨勢跟蹤",
@@ -348,7 +348,7 @@
     {
       "stock": "2881",
       "is_held": true,
-      "weight": 0.0007,
+      "weight": 0.0004,
       "score": 2.0,
       "entry_reason": "MR_HELD",
       "select_reason": "均值回歸·ETF動能",
@@ -3701,9 +3701,81 @@
     "2881"
   ],
   "exits": [
-    "6861"
+    "2881"
   ],
   "trade_log": [
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "均值回歸·ETF動能"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": "2026-06-01",
+      "exit_price": 110.5,
+      "return": 0.0,
+      "reason": "RSI_OVERBOUGHT (>75)",
+      "select_reason": "均值回歸·ETF動能",
+      "primary_theme": "金控母體",
+      "action": "SELL"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "均值回歸·ETF動能"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": "2026-06-01",
+      "exit_price": 110.5,
+      "return": 0.0,
+      "reason": "RSI_OVERBOUGHT (>75)",
+      "select_reason": "均值回歸·ETF動能",
+      "primary_theme": "金控母體",
+      "action": "SELL"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "均值回歸·ETF動能"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": "2026-06-01",
+      "exit_price": 110.5,
+      "return": 0.0,
+      "reason": "RSI_OVERBOUGHT (>75)",
+      "select_reason": "均值回歸·ETF動能",
+      "primary_theme": "金控母體",
+      "action": "SELL"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "均值回歸·ETF動能"
+    },
+    {
+      "stock": "2881",
+      "entry_date": "2026-06-01",
+      "exit_date": "2026-06-01",
+      "exit_price": 110.5,
+      "return": 0.0,
+      "reason": "RSI_OVERBOUGHT (>75)",
+      "select_reason": "均值回歸·ETF動能",
+      "primary_theme": "金控母體",
+      "action": "SELL"
+    },
     {
       "stock": "2881",
       "entry_date": "2026-06-01",
@@ -3791,78 +3863,6 @@
       "exit_price": 2115.0,
       "return": -0.1132,
       "reason": "STOP_LOSS (10%)",
-      "primary_theme": "電子其他",
-      "action": "SELL"
-    },
-    {
-      "stock": "3081",
-      "entry_date": "2026-05-04",
-      "exit_date": "2026-05-27",
-      "exit_price": 2885.0,
-      "return": 0.051,
-      "reason": "TRAILING_STOP (Gap:5.0%)",
-      "primary_theme": "網通其他",
-      "action": "SELL"
-    },
-    {
-      "stock": "6861",
-      "entry_date": "2026-05-26",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "5475",
-      "entry_date": "2026-05-26",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "6472",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-26",
-      "exit_price": 355.5,
-      "return": -0.03,
-      "reason": "RS_WEAK (<88, Evolved)",
-      "primary_theme": "新藥_生技",
-      "action": "SELL"
-    },
-    {
-      "stock": "6446",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-26",
-      "exit_price": 878.0,
-      "return": 0.0452,
-      "reason": "RS_WEAK (<88, Evolved)",
-      "primary_theme": "新藥_生技",
-      "action": "SELL"
-    },
-    {
-      "stock": "3563",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-26",
-      "exit_price": 890.0,
-      "return": -0.0022,
-      "reason": "RS_WEAK (<88, Evolved)",
-      "primary_theme": "光電面板",
-      "action": "SELL"
-    },
-    {
-      "stock": "1519",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-26",
-      "exit_price": 851.0,
-      "return": 0.0253,
-      "reason": "RS_WEAK (<88, Evolved)",
-      "primary_theme": "重電_強韌電網",
-      "action": "SELL"
-    },
-    {
-      "stock": "6691",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-26",
-      "exit_price": 650.0,
-      "return": 0.0062,
-      "reason": "RS_WEAK (<88, Evolved)",
       "primary_theme": "電子其他",
       "action": "SELL"
     }
