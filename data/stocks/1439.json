@@ -1,13 +1,13 @@
 {
   "stock_id": "1439",
   "name": "1439",
-  "date": "2026-06-01",
+  "date": "2026-06-02",
   "close": 25.6,
-  "health_score": 110,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.008,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,9 +22,9 @@
     "holder_concentration": 84.99
   },
   "main_force": {
-    "cost": 24.6,
-    "distance": 4.07,
-    "trend": "UP"
+    "cost": 25.88,
+    "distance": -1.08,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
@@ -32,17 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 40
+    "score": 30
   },
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
     }
   ],
   "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
+    "foreign_buy"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "3607",
   "name": "3607",
-  "date": "2026-06-01",
-  "close": 16.2,
+  "date": "2026-06-02",
+  "close": 17.8,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.076,
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 0.438,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2268.0,
-    "short_change": 4.0,
-    "short_margin_ratio": 0.18
+    "margin_change": 2219.0,
+    "short_change": 6.0,
+    "short_margin_ratio": 0.27
   },
   "tdcc": {
     "big_holder_change": 21.38,
@@ -22,8 +22,8 @@
     "holder_concentration": 34.98
   },
   "main_force": {
-    "cost": 14.72,
-    "distance": 10.05,
+    "cost": 14.9,
+    "distance": 19.46,
     "trend": "UP"
   },
   "sector": {
@@ -37,12 +37,16 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 4 天"
+      "title": "外資連買 5 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

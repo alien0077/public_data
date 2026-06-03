@@ -1,18 +1,18 @@
 {
   "stock_id": "7556",
   "name": "7556",
-  "date": "2026-06-01",
-  "close": 278.5,
-  "health_score": 130,
+  "date": "2026-06-02",
+  "close": 272.0,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.007,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 483.0,
+    "margin_change": 495.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,22 +22,19 @@
     "holder_concentration": 64.66
   },
   "main_force": {
-    "cost": 274.9,
-    "distance": 1.31,
-    "trend": "UP"
+    "cost": 274.23,
+    "distance": -0.81,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 30
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-06-01"
+  "raw_signals": [],
+  "data_version": "2026-06-02"
 }

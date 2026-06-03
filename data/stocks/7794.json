@@ -1,9 +1,9 @@
 {
   "stock_id": "7794",
   "name": "7794",
-  "date": "2026-06-01",
-  "close": 29.8,
-  "health_score": 86,
+  "date": "2026-06-02",
+  "close": 32.75,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -22,19 +22,26 @@
     "holder_concentration": 81.67
   },
   "main_force": {
-    "cost": 29.9,
-    "distance": -0.33,
-    "trend": "DOWN"
+    "cost": 29.88,
+    "distance": 9.61,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-01"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-06-02"
 }

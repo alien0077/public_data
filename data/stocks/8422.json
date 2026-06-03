@@ -1,20 +1,20 @@
 {
   "stock_id": "8422",
   "name": "8422",
-  "date": "2026-06-01",
-  "close": 27.7,
-  "health_score": 130,
+  "date": "2026-06-02",
+  "close": 27.35,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.502,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.104,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 31936.0,
+    "margin_change": 32070.0,
     "short_change": 165.0,
-    "short_margin_ratio": 0.52
+    "short_margin_ratio": 0.51
   },
   "tdcc": {
     "big_holder_change": 35.83,
@@ -22,8 +22,8 @@
     "holder_concentration": 38.93
   },
   "main_force": {
-    "cost": 27.06,
-    "distance": 2.37,
+    "cost": 27.01,
+    "distance": 1.26,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

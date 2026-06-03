@@ -1,20 +1,20 @@
 {
   "stock_id": "2027",
   "name": "2027",
-  "date": "2026-06-01",
-  "close": 43.2,
-  "health_score": 166,
+  "date": "2026-06-02",
+  "close": 43.65,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.095,
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 0.332,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 33914.0,
-    "short_change": 402.0,
-    "short_margin_ratio": 1.19
+    "margin_change": 34441.0,
+    "short_change": 385.0,
+    "short_margin_ratio": 1.12
   },
   "tdcc": {
     "big_holder_change": 69.35,
@@ -22,8 +22,8 @@
     "holder_concentration": 73.11
   },
   "main_force": {
-    "cost": 40.57,
-    "distance": 6.48,
+    "cost": 40.86,
+    "distance": 6.83,
     "trend": "UP"
   },
   "sector": {
@@ -37,12 +37,12 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 4 天"
+      "title": "外資連買 5 天"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

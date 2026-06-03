@@ -1,20 +1,20 @@
 {
   "stock_id": "8104",
   "name": "8104",
-  "date": "2026-06-01",
-  "close": 41.5,
-  "health_score": 133,
+  "date": "2026-06-02",
+  "close": 40.55,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.492,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.15,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4779.0,
-    "short_change": 69.0,
-    "short_margin_ratio": 1.44
+    "margin_change": 4616.0,
+    "short_change": 59.0,
+    "short_margin_ratio": 1.28
   },
   "tdcc": {
     "big_holder_change": 36.13,
@@ -22,8 +22,8 @@
     "holder_concentration": 41.54
   },
   "main_force": {
-    "cost": 35.64,
-    "distance": 16.44,
+    "cost": 35.91,
+    "distance": 12.92,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "00662",
   "name": "00662",
-  "date": "2026-06-01",
-  "close": 122.75,
-  "health_score": 133,
+  "date": "2026-06-02",
+  "close": 123.15,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 952.0,
+    "margin_change": 939.0,
     "short_change": 6.0,
-    "short_margin_ratio": 0.63
+    "short_margin_ratio": 0.64
   },
   "tdcc": {
     "big_holder_change": 34.04,
@@ -22,8 +22,8 @@
     "holder_concentration": 37.93
   },
   "main_force": {
-    "cost": 118.45,
-    "distance": 3.63,
+    "cost": 118.98,
+    "distance": 3.5,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

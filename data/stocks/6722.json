@@ -1,13 +1,13 @@
 {
   "stock_id": "6722",
   "name": "6722",
-  "date": "2026-06-01",
-  "close": 37.5,
-  "health_score": 83,
+  "date": "2026-06-02",
+  "close": 40.9,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.042,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.046,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 76.31
   },
   "main_force": {
-    "cost": 36.42,
-    "distance": 2.97,
+    "cost": 36.66,
+    "distance": 11.57,
     "trend": "UP"
   },
   "sector": {
@@ -31,13 +31,18 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

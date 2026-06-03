@@ -1,20 +1,20 @@
 {
   "stock_id": "5371",
   "name": "5371",
-  "date": "2026-06-01",
+  "date": "2026-06-02",
   "close": 73.9,
-  "health_score": 130,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.225,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 19438.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 19407.0,
+    "short_change": 3.0,
+    "short_margin_ratio": 0.02
   },
   "tdcc": {
     "big_holder_change": 39.13,
@@ -22,8 +22,8 @@
     "holder_concentration": 43.63
   },
   "main_force": {
-    "cost": 71.47,
-    "distance": 3.4,
+    "cost": 71.46,
+    "distance": 3.41,
     "trend": "UP"
   },
   "sector": {
@@ -36,8 +36,7 @@
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

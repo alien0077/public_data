@@ -1,18 +1,18 @@
 {
   "stock_id": "009812",
   "name": "009812",
-  "date": "2026-06-01",
-  "close": 12.07,
-  "health_score": 113,
+  "date": "2026-06-02",
+  "close": 12.1,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 20.0,
+    "margin_change": 22.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,7 +22,7 @@
     "holder_concentration": 36.8
   },
   "main_force": {
-    "cost": 12.05,
+    "cost": 12.08,
     "distance": 0.17,
     "trend": "UP"
   },
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

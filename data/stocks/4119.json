@@ -1,20 +1,20 @@
 {
   "stock_id": "4119",
   "name": "4119",
-  "date": "2026-06-01",
-  "close": 41.9,
-  "health_score": 103,
-  "signal": "Bullish",
+  "date": "2026-06-02",
+  "close": 41.0,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.09,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.016,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 647.0,
+    "margin_change": 643.0,
     "short_change": 1.0,
-    "short_margin_ratio": 0.15
+    "short_margin_ratio": 0.16
   },
   "tdcc": {
     "big_holder_change": 42.72,
@@ -22,8 +22,8 @@
     "holder_concentration": 45.64
   },
   "main_force": {
-    "cost": 42.82,
-    "distance": -2.15,
+    "cost": 42.51,
+    "distance": -3.55,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,9 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-06-01"
+  "raw_signals": [],
+  "data_version": "2026-06-02"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "00989A",
   "name": "00989A",
-  "date": "2026-06-01",
-  "close": 18.22,
+  "date": "2026-06-02",
+  "close": 18.35,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 164.0,
+    "margin_change": 209.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 15.72
   },
   "main_force": {
-    "cost": 17.33,
-    "distance": 5.14,
+    "cost": 17.43,
+    "distance": 5.28,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

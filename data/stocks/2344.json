@@ -1,20 +1,20 @@
 {
   "stock_id": "2344",
   "name": "2344",
-  "date": "2026-06-01",
-  "close": 168.0,
-  "health_score": 150,
+  "date": "2026-06-02",
+  "close": 184.5,
+  "health_score": 166,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.15,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.287,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 139920.0,
-    "short_change": 4637.0,
-    "short_margin_ratio": 3.31
+    "margin_change": 139602.0,
+    "short_change": 6647.0,
+    "short_margin_ratio": 4.76
   },
   "tdcc": {
     "big_holder_change": 71.13,
@@ -22,8 +22,8 @@
     "holder_concentration": 74.03
   },
   "main_force": {
-    "cost": 127.49,
-    "distance": 31.78,
+    "cost": 131.78,
+    "distance": 40.01,
     "trend": "UP"
   },
   "sector": {
@@ -41,7 +41,8 @@
     }
   ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

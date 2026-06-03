@@ -1,20 +1,20 @@
 {
   "stock_id": "1760",
   "name": "1760",
-  "date": "2026-06-01",
-  "close": 60.7,
+  "date": "2026-06-02",
+  "close": 60.4,
   "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.045,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.069,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1020.0,
+    "margin_change": 1036.0,
     "short_change": 7.0,
-    "short_margin_ratio": 0.69
+    "short_margin_ratio": 0.68
   },
   "tdcc": {
     "big_holder_change": 33.8,
@@ -22,8 +22,8 @@
     "holder_concentration": 42.54
   },
   "main_force": {
-    "cost": 60.14,
-    "distance": 0.93,
+    "cost": 59.83,
+    "distance": 0.95,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Value",
     "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

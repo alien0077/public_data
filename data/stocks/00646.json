@@ -1,12 +1,12 @@
 {
   "stock_id": "00646",
   "name": "00646",
-  "date": "2026-06-01",
-  "close": 74.95,
-  "health_score": 150,
+  "date": "2026-06-02",
+  "close": 75.0,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -22,8 +22,8 @@
     "holder_concentration": 41.58
   },
   "main_force": {
-    "cost": 73.6,
-    "distance": 1.83,
+    "cost": 73.77,
+    "distance": 1.67,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

@@ -1,25 +1,25 @@
 {
   "stock_id": "5243",
   "name": "5243",
-  "date": "2026-06-01",
+  "date": "2026-06-02",
   "close": 124.0,
-  "health_score": 113,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 12282.0,
-    "short_change": 66.0,
-    "short_margin_ratio": 0.54
+    "margin_change": 11680.0,
+    "short_change": 68.0,
+    "short_margin_ratio": 0.58
   },
   "tdcc": {},
   "main_force": {
-    "cost": 113.4,
-    "distance": 9.35,
+    "cost": 114.15,
+    "distance": 8.63,
     "trend": "UP"
   },
   "sector": {
@@ -32,7 +32,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

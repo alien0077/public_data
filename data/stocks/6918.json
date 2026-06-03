@@ -1,13 +1,13 @@
 {
   "stock_id": "6918",
   "name": "6918",
-  "date": "2026-06-01",
-  "close": 73.5,
+  "date": "2026-06-02",
+  "close": 73.7,
   "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.056,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.009,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 49.8
   },
   "main_force": {
-    "cost": 74.63,
-    "distance": -1.51,
+    "cost": 74.64,
+    "distance": -1.26,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

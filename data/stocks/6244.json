@@ -1,20 +1,20 @@
 {
   "stock_id": "6244",
   "name": "6244",
-  "date": "2026-06-01",
-  "close": 30.6,
-  "health_score": 150,
+  "date": "2026-06-02",
+  "close": 29.7,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.748,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 13607.0,
-    "short_change": 1.0,
-    "short_margin_ratio": 0.01
+    "margin_change": 13570.0,
+    "short_change": 20.0,
+    "short_margin_ratio": 0.15
   },
   "tdcc": {
     "big_holder_change": 29.86,
@@ -22,8 +22,8 @@
     "holder_concentration": 35.26
   },
   "main_force": {
-    "cost": 29.16,
-    "distance": 4.94,
+    "cost": 29.26,
+    "distance": 1.5,
     "trend": "UP"
   },
   "sector": {
@@ -32,12 +32,11 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

@@ -1,6 +1,6 @@
 {
   "symbol": "009812",
-  "updated_at": "2026-06-03",
+  "updated_at": "2026-06-04",
   "lines": [
     {
       "id": "L_15",
@@ -25,17 +25,6 @@
       "strength": 1
     },
     {
-      "id": "H_36",
-      "type": "high",
-      "price": 10.58,
-      "start_idx": 36,
-      "start_date": "2025-11-13",
-      "end_idx": 48,
-      "end_date": "2025-12-01",
-      "broken": true,
-      "strength": 1
-    },
-    {
       "id": "L_40",
       "type": "low",
       "price": 10.16,
@@ -44,17 +33,6 @@
       "end_idx": null,
       "end_date": null,
       "broken": false,
-      "strength": 1
-    },
-    {
-      "id": "H_51",
-      "type": "high",
-      "price": 10.65,
-      "start_idx": 51,
-      "start_date": "2025-12-04",
-      "end_idx": 57,
-      "end_date": "2025-12-12",
-      "broken": true,
       "strength": 1
     },
     {
@@ -206,9 +184,9 @@
       "price": 12.28,
       "start_idx": 152,
       "start_date": "2026-05-13",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 167,
+      "end_date": "2026-06-03",
+      "broken": true,
       "strength": 1
     },
     {
@@ -228,25 +206,13 @@
       "price": 12.26,
       "start_idx": 160,
       "start_date": "2026-05-25",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 167,
+      "end_date": "2026-06-03",
+      "broken": true,
       "strength": 1
     }
   ],
   "events": [
-    {
-      "type": "BOS_UP",
-      "price": 10.58,
-      "idx": 48,
-      "date": "2025-12-01"
-    },
-    {
-      "type": "BOS_UP",
-      "price": 10.65,
-      "idx": 57,
-      "date": "2025-12-12"
-    },
     {
       "type": "BOS_UP",
       "price": 10.75,
@@ -294,6 +260,18 @@
       "price": 11.93,
       "idx": 148,
       "date": "2026-05-07"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 12.28,
+      "idx": 167,
+      "date": "2026-06-03"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 12.26,
+      "idx": 167,
+      "date": "2026-06-03"
     }
   ]
 }

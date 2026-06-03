@@ -1,18 +1,18 @@
 {
   "stock_id": "1906",
   "name": "1906",
-  "date": "2026-06-01",
-  "close": 10.3,
+  "date": "2026-06-02",
+  "close": 10.45,
   "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.019,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.011,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7270.0,
+    "margin_change": 7267.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 74.33
   },
   "main_force": {
-    "cost": 10.61,
-    "distance": -2.92,
+    "cost": 10.56,
+    "distance": -1.04,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

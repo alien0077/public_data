@@ -1,25 +1,25 @@
 {
   "stock_id": "00676R",
   "name": "00676R",
-  "date": "2026-06-01",
-  "close": 5.63,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-02",
+  "close": 5.62,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 25022.0,
-    "short_change": 279.0,
-    "short_margin_ratio": 1.12
+    "margin_change": 24815.0,
+    "short_change": 290.0,
+    "short_margin_ratio": 1.17
   },
   "tdcc": {},
   "main_force": {
-    "cost": 6.11,
-    "distance": -7.86,
+    "cost": 6.08,
+    "distance": -7.57,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-01"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-02"
 }

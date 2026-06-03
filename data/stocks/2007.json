@@ -1,13 +1,13 @@
 {
   "stock_id": "2007",
   "name": "2007",
-  "date": "2026-06-01",
-  "close": 7.64,
-  "health_score": 130,
+  "date": "2026-06-02",
+  "close": 7.6,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.072,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.018,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 76.39
   },
   "main_force": {
-    "cost": 7.27,
-    "distance": 5.09,
+    "cost": 7.28,
+    "distance": 4.4,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

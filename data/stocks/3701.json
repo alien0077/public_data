@@ -1,20 +1,20 @@
 {
   "stock_id": "3701",
   "name": "3701",
-  "date": "2026-06-01",
-  "close": 55.7,
-  "health_score": 103,
+  "date": "2026-06-02",
+  "close": 56.6,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.098,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.075,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9049.0,
-    "short_change": 34.0,
-    "short_margin_ratio": 0.38
+    "margin_change": 9196.0,
+    "short_change": 31.0,
+    "short_margin_ratio": 0.34
   },
   "tdcc": {
     "big_holder_change": 70.71,
@@ -22,8 +22,8 @@
     "holder_concentration": 73.39
   },
   "main_force": {
-    "cost": 57.9,
-    "distance": -3.8,
+    "cost": 57.37,
+    "distance": -1.34,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 30
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-06-01"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-02"
 }

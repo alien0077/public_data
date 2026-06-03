@@ -1,13 +1,13 @@
 {
   "stock_id": "6598",
   "name": "6598",
-  "date": "2026-06-01",
-  "close": 24.2,
-  "health_score": 130,
+  "date": "2026-06-02",
+  "close": 24.3,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.038,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.029,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 50.79
   },
   "main_force": {
-    "cost": 23.94,
-    "distance": 1.09,
+    "cost": 24.03,
+    "distance": 1.12,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

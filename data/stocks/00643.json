@@ -1,18 +1,18 @@
 {
   "stock_id": "00643",
   "name": "00643",
-  "date": "2026-06-01",
-  "close": 19.84,
-  "health_score": 86,
+  "date": "2026-06-02",
+  "close": 20.03,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1080.0,
+    "margin_change": 1040.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 38.61
   },
   "main_force": {
-    "cost": 20.29,
-    "distance": -2.22,
+    "cost": 20.3,
+    "distance": -1.33,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-01"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-02"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "00878",
   "name": "00878",
-  "date": "2026-06-01",
-  "close": 31.99,
+  "date": "2026-06-02",
+  "close": 32.49,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3017.0,
-    "short_change": 109.0,
-    "short_margin_ratio": 3.61
+    "margin_change": 6693.0,
+    "short_change": 144.0,
+    "short_margin_ratio": 2.15
   },
   "tdcc": {
     "big_holder_change": 10.6,
@@ -22,8 +22,8 @@
     "holder_concentration": 12.7
   },
   "main_force": {
-    "cost": 28.18,
-    "distance": 13.52,
+    "cost": 28.5,
+    "distance": 14.0,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

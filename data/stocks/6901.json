@@ -1,20 +1,20 @@
 {
   "stock_id": "6901",
   "name": "6901",
-  "date": "2026-06-01",
-  "close": 13.15,
+  "date": "2026-06-02",
+  "close": 13.2,
   "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.061,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.032,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3436.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 3421.0,
+    "short_change": 4.0,
+    "short_margin_ratio": 0.12
   },
   "tdcc": {
     "big_holder_change": 83.58,
@@ -22,8 +22,8 @@
     "holder_concentration": 84.89
   },
   "main_force": {
-    "cost": 13.42,
-    "distance": -2.01,
+    "cost": 13.4,
+    "distance": -1.49,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,15 +37,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
+      "title": "外資連買 4 天"
     }
   ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

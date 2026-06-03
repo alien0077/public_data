@@ -1,13 +1,13 @@
 {
   "stock_id": "6573",
   "name": "6573",
-  "date": "2026-06-01",
-  "close": 15.75,
-  "health_score": 133,
+  "date": "2026-06-02",
+  "close": 17.3,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.139,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.13,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 65.43
   },
   "main_force": {
-    "cost": 13.58,
-    "distance": 15.98,
+    "cost": 13.8,
+    "distance": 25.36,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

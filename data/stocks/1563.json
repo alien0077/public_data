@@ -1,20 +1,20 @@
 {
   "stock_id": "1563",
   "name": "1563",
-  "date": "2026-06-01",
-  "close": 69.9,
+  "date": "2026-06-02",
+  "close": 69.8,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.461,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.012,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3573.0,
-    "short_change": 70.0,
-    "short_margin_ratio": 1.96
+    "margin_change": 3952.0,
+    "short_change": 139.0,
+    "short_margin_ratio": 3.52
   },
   "tdcc": {
     "big_holder_change": 32.6,
@@ -22,8 +22,8 @@
     "holder_concentration": 44.7
   },
   "main_force": {
-    "cost": 48.5,
-    "distance": 44.12,
+    "cost": 49.93,
+    "distance": 39.8,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

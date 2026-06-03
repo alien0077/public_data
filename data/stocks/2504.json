@@ -1,18 +1,18 @@
 {
   "stock_id": "2504",
   "name": "2504",
-  "date": "2026-06-01",
-  "close": 35.5,
+  "date": "2026-06-02",
+  "close": 35.2,
   "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.004,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.009,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4164.0,
+    "margin_change": 4226.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 76.39
   },
   "main_force": {
-    "cost": 34.71,
-    "distance": 2.28,
+    "cost": 32.17,
+    "distance": 9.42,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

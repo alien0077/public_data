@@ -1,20 +1,20 @@
 {
   "stock_id": "3545",
   "name": "3545",
-  "date": "2026-06-01",
-  "close": 59.6,
-  "health_score": 133,
+  "date": "2026-06-02",
+  "close": 59.5,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.124,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.045,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5049.0,
+    "margin_change": 5101.0,
     "short_change": 69.0,
-    "short_margin_ratio": 1.37
+    "short_margin_ratio": 1.35
   },
   "tdcc": {
     "big_holder_change": 19.19,
@@ -22,8 +22,8 @@
     "holder_concentration": 24.86
   },
   "main_force": {
-    "cost": 57.68,
-    "distance": 3.33,
+    "cost": 58.0,
+    "distance": 2.59,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

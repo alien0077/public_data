@@ -1,13 +1,13 @@
 {
   "stock_id": "2072",
   "name": "2072",
-  "date": "2026-06-01",
-  "close": 174.0,
-  "health_score": 130,
+  "date": "2026-06-02",
+  "close": 175.0,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.101,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.06,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 75.43
   },
   "main_force": {
-    "cost": 173.42,
-    "distance": 0.33,
+    "cost": 173.25,
+    "distance": 1.01,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

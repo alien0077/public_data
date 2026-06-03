@@ -1,20 +1,20 @@
 {
   "stock_id": "2069",
   "name": "2069",
-  "date": "2026-06-01",
-  "close": 19.6,
-  "health_score": 150,
+  "date": "2026-06-02",
+  "close": 19.7,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.106,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.144,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 725.0,
+    "margin_change": 742.0,
     "short_change": 3.0,
-    "short_margin_ratio": 0.41
+    "short_margin_ratio": 0.4
   },
   "tdcc": {
     "big_holder_change": 52.76,
@@ -22,8 +22,8 @@
     "holder_concentration": 61.74
   },
   "main_force": {
-    "cost": 19.43,
-    "distance": 0.87,
+    "cost": 19.49,
+    "distance": 1.08,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

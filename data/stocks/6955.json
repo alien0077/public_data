@@ -1,12 +1,12 @@
 {
   "stock_id": "6955",
   "name": "6955",
-  "date": "2026-06-01",
-  "close": 145.0,
+  "date": "2026-06-02",
+  "close": 146.0,
   "health_score": 110,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0.008,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -22,8 +22,8 @@
     "holder_concentration": 60.26
   },
   "main_force": {
-    "cost": 138.62,
-    "distance": 4.6,
+    "cost": 137.8,
+    "distance": 5.95,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Value",
     "score": 40
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

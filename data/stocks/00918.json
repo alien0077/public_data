@@ -1,20 +1,20 @@
 {
   "stock_id": "00918",
   "name": "00918",
-  "date": "2026-06-01",
-  "close": 30.46,
-  "health_score": 133,
+  "date": "2026-06-02",
+  "close": 31.41,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5863.0,
-    "short_change": 170.0,
-    "short_margin_ratio": 2.9
+    "margin_change": 7867.0,
+    "short_change": 172.0,
+    "short_margin_ratio": 2.19
   },
   "tdcc": {
     "big_holder_change": 10.82,
@@ -22,8 +22,8 @@
     "holder_concentration": 12.87
   },
   "main_force": {
-    "cost": 26.42,
-    "distance": 15.29,
+    "cost": 26.8,
+    "distance": 17.2,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

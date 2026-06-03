@@ -1,13 +1,13 @@
 {
   "stock_id": "7819",
   "name": "7819",
-  "date": "2026-06-01",
-  "close": 45.75,
-  "health_score": 83,
+  "date": "2026-06-02",
+  "close": 48.65,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.139,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -28,11 +28,14 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-06-01"
+  "raw_signals": [],
+  "data_version": "2026-06-02"
 }

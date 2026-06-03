@@ -1,18 +1,18 @@
 {
   "stock_id": "2008",
   "name": "2008",
-  "date": "2026-06-01",
-  "close": 29.0,
-  "health_score": 150,
+  "date": "2026-06-02",
+  "close": 29.2,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.007,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 173.0,
+    "margin_change": 172.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 92.35
   },
   "main_force": {
-    "cost": 27.89,
-    "distance": 3.98,
+    "cost": 27.97,
+    "distance": 4.4,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "2014",
   "name": "2014",
-  "date": "2026-06-01",
-  "close": 18.5,
-  "health_score": 150,
+  "date": "2026-06-02",
+  "close": 18.2,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.261,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.061,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2020.0,
+    "margin_change": 2019.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 48.78
   },
   "main_force": {
-    "cost": 17.8,
-    "distance": 3.93,
+    "cost": 17.84,
+    "distance": 2.02,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

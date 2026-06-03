@@ -1,20 +1,20 @@
 {
   "stock_id": "3518",
   "name": "3518",
-  "date": "2026-06-01",
-  "close": 31.9,
-  "health_score": 103,
+  "date": "2026-06-02",
+  "close": 33.75,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.728,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.185,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3885.0,
-    "short_change": 73.0,
-    "short_margin_ratio": 1.88
+    "margin_change": 3982.0,
+    "short_change": 57.0,
+    "short_margin_ratio": 1.43
   },
   "tdcc": {
     "big_holder_change": 28.94,
@@ -22,8 +22,8 @@
     "holder_concentration": 40.28
   },
   "main_force": {
-    "cost": 35.24,
-    "distance": -9.48,
+    "cost": 35.1,
+    "distance": -3.85,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,12 @@
     "style": "Value",
     "score": 30
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-06-01"
+  "raw_signals": [],
+  "data_version": "2026-06-02"
 }

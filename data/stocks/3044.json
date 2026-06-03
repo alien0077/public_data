@@ -1,20 +1,20 @@
 {
   "stock_id": "3044",
   "name": "3044",
-  "date": "2026-06-01",
-  "close": 518.0,
-  "health_score": 150,
+  "date": "2026-06-02",
+  "close": 508.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.362,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.143,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5632.0,
-    "short_change": 30.0,
-    "short_margin_ratio": 0.53
+    "margin_change": 5691.0,
+    "short_change": 22.0,
+    "short_margin_ratio": 0.39
   },
   "tdcc": {
     "big_holder_change": 70.53,
@@ -22,8 +22,8 @@
     "holder_concentration": 80.86
   },
   "main_force": {
-    "cost": 493.78,
-    "distance": 4.91,
+    "cost": 494.95,
+    "distance": 2.64,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

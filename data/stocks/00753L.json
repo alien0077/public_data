@@ -1,25 +1,25 @@
 {
   "stock_id": "00753L",
   "name": "00753L",
-  "date": "2026-06-01",
-  "close": 9.69,
-  "health_score": 83,
+  "date": "2026-06-02",
+  "close": 10.28,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 106867.0,
-    "short_change": 1008.0,
-    "short_margin_ratio": 0.94
+    "margin_change": 103322.0,
+    "short_change": 1103.0,
+    "short_margin_ratio": 1.07
   },
   "tdcc": {},
   "main_force": {
     "cost": 10.3,
-    "distance": -5.92,
+    "distance": -0.19,
     "trend": "DOWN"
   },
   "sector": {
@@ -28,11 +28,20 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-06-01"
+  "data_version": "2026-06-02"
 }

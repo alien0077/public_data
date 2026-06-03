@@ -1,18 +1,18 @@
 {
   "stock_id": "1731",
   "name": "1731",
-  "date": "2026-06-01",
-  "close": 21.4,
-  "health_score": 86,
+  "date": "2026-06-02",
+  "close": 21.3,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.02,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.014,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 297.0,
+    "margin_change": 313.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 56.36
   },
   "main_force": {
-    "cost": 21.55,
-    "distance": -0.7,
+    "cost": 21.53,
+    "distance": -1.07,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-01"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-02"
 }
