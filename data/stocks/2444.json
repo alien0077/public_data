@@ -1,13 +1,13 @@
 {
   "stock_id": "2444",
   "name": "2444",
-  "date": "2026-06-02",
-  "close": 13.2,
+  "date": "2026-06-03",
+  "close": 13.45,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.265,
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 0.557,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 26.39
   },
   "main_force": {
-    "cost": 12.93,
-    "distance": 2.09,
+    "cost": 12.92,
+    "distance": 4.1,
     "trend": "UP"
   },
   "sector": {
@@ -37,16 +37,12 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 4 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
+      "title": "外資連買 5 天"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

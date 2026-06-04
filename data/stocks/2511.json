@@ -1,18 +1,18 @@
 {
   "stock_id": "2511",
   "name": "2511",
-  "date": "2026-06-02",
-  "close": 7.88,
-  "health_score": 113,
+  "date": "2026-06-03",
+  "close": 8.01,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.009,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.048,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3435.0,
+    "margin_change": 3600.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 79.63
   },
   "main_force": {
-    "cost": 7.71,
-    "distance": 2.2,
+    "cost": 7.72,
+    "distance": 3.76,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

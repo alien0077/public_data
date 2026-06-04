@@ -1,18 +1,18 @@
 {
   "stock_id": "3052",
   "name": "3052",
-  "date": "2026-06-02",
-  "close": 10.6,
-  "health_score": 113,
+  "date": "2026-06-03",
+  "close": 10.8,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.032,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.159,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1501.0,
+    "margin_change": 1480.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -23,7 +23,7 @@
   },
   "main_force": {
     "cost": 10.57,
-    "distance": 0.28,
+    "distance": 2.18,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "1615",
   "name": "1615",
-  "date": "2026-06-02",
-  "close": 44.05,
-  "health_score": 113,
+  "date": "2026-06-03",
+  "close": 46.6,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.048,
+    "foreign_buy_ratio": -0.075,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 198.0,
+    "margin_change": 254.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 80.41
   },
   "main_force": {
-    "cost": 43.55,
-    "distance": 1.15,
+    "cost": 43.6,
+    "distance": 6.88,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,16 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

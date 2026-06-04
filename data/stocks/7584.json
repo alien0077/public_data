@@ -1,13 +1,13 @@
 {
   "stock_id": "7584",
   "name": "7584",
-  "date": "2026-06-02",
-  "close": 23.6,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-03",
+  "close": 25.25,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.019,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 71.67
   },
   "main_force": {
-    "cost": 28.0,
-    "distance": -15.71,
+    "cost": 27.64,
+    "distance": -8.65,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-03"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "5531",
   "name": "5531",
-  "date": "2026-06-02",
-  "close": 7.86,
-  "health_score": 103,
+  "date": "2026-06-03",
+  "close": 7.96,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.01,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
     "margin_change": 2698.0,
-    "short_change": 5.0,
-    "short_margin_ratio": 0.19
+    "short_change": 9.0,
+    "short_margin_ratio": 0.33
   },
   "tdcc": {
     "big_holder_change": 83.49,
@@ -22,21 +22,27 @@
     "holder_concentration": 86.1
   },
   "main_force": {
-    "cost": 7.97,
-    "distance": -1.38,
-    "trend": "DOWN"
+    "cost": 7.95,
+    "distance": 0.13,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
   ],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

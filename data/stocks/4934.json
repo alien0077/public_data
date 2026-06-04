@@ -1,13 +1,13 @@
 {
   "stock_id": "4934",
   "name": "4934",
-  "date": "2026-06-02",
-  "close": 17.05,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-03",
+  "close": 17.55,
+  "health_score": 150,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.121,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.453,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 34.03
   },
   "main_force": {
-    "cost": 17.51,
-    "distance": -2.63,
-    "trend": "DOWN"
+    "cost": 17.47,
+    "distance": 0.46,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

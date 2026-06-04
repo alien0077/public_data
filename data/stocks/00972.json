@@ -1,10 +1,10 @@
 {
   "stock_id": "00972",
   "name": "00972",
-  "date": "2026-06-02",
-  "close": 18.96,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-03",
+  "close": 19.23,
+  "health_score": 133,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -22,19 +22,21 @@
     "holder_concentration": 29.16
   },
   "main_force": {
-    "cost": 19.19,
-    "distance": -1.2,
-    "trend": "DOWN"
+    "cost": 19.21,
+    "distance": 0.1,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

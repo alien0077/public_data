@@ -1,18 +1,18 @@
 {
   "stock_id": "6418",
   "name": "6418",
-  "date": "2026-06-02",
-  "close": 30.7,
-  "health_score": 86,
+  "date": "2026-06-03",
+  "close": 31.4,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.09,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1055.0,
+    "margin_change": 979.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 55.58
   },
   "main_force": {
-    "cost": 30.8,
-    "distance": -0.32,
-    "trend": "DOWN"
+    "cost": 30.73,
+    "distance": 2.18,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

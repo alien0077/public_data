@@ -1,20 +1,20 @@
 {
   "stock_id": "2597",
   "name": "2597",
-  "date": "2026-06-02",
-  "close": 173.5,
+  "date": "2026-06-03",
+  "close": 176.0,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.089,
+    "foreign_buy_ratio": -0.336,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 814.0,
+    "margin_change": 368.0,
     "short_change": 122.0,
-    "short_margin_ratio": 14.99
+    "short_margin_ratio": 33.15
   },
   "tdcc": {
     "big_holder_change": 75.03,
@@ -22,8 +22,8 @@
     "holder_concentration": 79.33
   },
   "main_force": {
-    "cost": 161.1,
-    "distance": 7.7,
+    "cost": 162.12,
+    "distance": 8.56,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "YELLOW",
+      "title": "短線券資比過高"
+    }
+  ],
   "raw_signals": [
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

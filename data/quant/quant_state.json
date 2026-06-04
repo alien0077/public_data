@@ -1705,9 +1705,9 @@
       "win_rate": 0.635593220338983
     },
     "portfolio": {
-      "sharpe": 3.4408921026610915,
-      "total_return": 0.49141769999999996,
-      "win_rate": 0.5263157894736842
+      "sharpe": 3.092414660173713,
+      "total_return": 0.4361613999999998,
+      "win_rate": 0.5
     }
   },
   "ensemble_performance": {
@@ -1840,19 +1840,12 @@
   },
   "portfolio": {
     "cash": {
-      "trend": 92281.45,
+      "trend": 474957.45,
       "mr": 87.25,
-      "ai_inst": 125131.5
+      "ai_inst": 62596.799999999996
     },
     "positions": {
       "trend": [
-        {
-          "stock": "3189",
-          "entry_date": "2026-05-25",
-          "entry_price": 669.0,
-          "shares": 553,
-          "max_return": 0.15695067264573992
-        },
         {
           "stock": "8021",
           "entry_date": "2026-05-25",
@@ -1900,7 +1893,7 @@
           "entry_date": "2026-05-28",
           "entry_price": 336.0,
           "shares": 140,
-          "max_return": 0.061011904761904656
+          "max_return": 0.0803571428571428
         }
       ],
       "mr": [
@@ -1932,6 +1925,17 @@
           "max_return": 0.0,
           "consecutive_buy_days": 5,
           "total_inst_buy": 14130226,
+          "b_signal_triggered": false,
+          "phase": "ACCUMULATING"
+        },
+        {
+          "stock": "3704",
+          "entry_date": "2026-06-04",
+          "entry_price": 47.7,
+          "shares": 1311,
+          "max_return": 0.0,
+          "consecutive_buy_days": 5,
+          "total_inst_buy": 6135158,
           "b_signal_triggered": false,
           "phase": "ACCUMULATING"
         }
@@ -2017,6 +2021,10 @@
       {
         "date": "2026-06-03",
         "nav": 1491417.7
+      },
+      {
+        "date": "2026-06-04",
+        "nav": 1436161.4
       }
     ]
   },
@@ -2988,6 +2996,24 @@
     "mr": 75
   },
   "trade_log": [
+    {
+      "stock": "3704",
+      "entry_date": "2026-06-04",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009"
+    },
+    {
+      "stock": "3189",
+      "entry_date": "2026-05-25",
+      "exit_date": "2026-06-04",
+      "exit_price": 692.0,
+      "return": 0.0344,
+      "reason": "TRAILING_STOP (Gap:5.5%)",
+      "select_reason": "\u8da8\u52e2\u8ddf\u8e64\u00b7ETF\u52d5\u80fd",
+      "primary_theme": "PCB_CCL_ABF",
+      "action": "SELL"
+    },
     {
       "stock": "4938",
       "entry_date": "2026-06-03",

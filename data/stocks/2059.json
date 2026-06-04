@@ -1,18 +1,18 @@
 {
   "stock_id": "2059",
   "name": "2059",
-  "date": "2026-06-02",
-  "close": 5075.0,
-  "health_score": 150,
+  "date": "2026-06-03",
+  "close": 5350.0,
+  "health_score": 166,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.022,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.023,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 371.0,
+    "margin_change": 373.0,
     "short_change": 2.0,
     "short_margin_ratio": 0.54
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 68.3
   },
   "main_force": {
-    "cost": 4966.75,
-    "distance": 2.18,
+    "cost": 5014.25,
+    "distance": 6.7,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

@@ -1,20 +1,20 @@
 {
   "stock_id": "1809",
   "name": "1809",
-  "date": "2026-06-02",
-  "close": 52.6,
+  "date": "2026-06-03",
+  "close": 56.2,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.898,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 1.116,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9976.0,
-    "short_change": 243.0,
-    "short_margin_ratio": 2.44
+    "margin_change": 9298.0,
+    "short_change": 284.0,
+    "short_margin_ratio": 3.05
   },
   "tdcc": {
     "big_holder_change": 45.92,
@@ -22,8 +22,8 @@
     "holder_concentration": 50.99
   },
   "main_force": {
-    "cost": 41.08,
-    "distance": 28.04,
+    "cost": 42.19,
+    "distance": 33.21,
     "trend": "UP"
   },
   "sector": {
@@ -37,6 +37,10 @@
   "events": [
     {
       "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
+    {
+      "level": "GREEN",
       "title": "今日強勢大漲"
     }
   ],
@@ -44,5 +48,5 @@
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

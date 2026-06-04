@@ -1,12 +1,12 @@
 {
   "stock_id": "8930",
   "name": "8930",
-  "date": "2026-06-02",
-  "close": 28.15,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-03",
+  "close": 28.35,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -22,8 +22,8 @@
     "holder_concentration": 67.49
   },
   "main_force": {
-    "cost": 28.73,
-    "distance": -2.02,
+    "cost": 28.65,
+    "distance": -1.05,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-03"
 }

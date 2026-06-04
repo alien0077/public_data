@@ -1,20 +1,20 @@
 {
   "stock_id": "2880",
   "name": "2880",
-  "date": "2026-06-02",
-  "close": 34.05,
+  "date": "2026-06-03",
+  "close": 36.4,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.342,
+    "foreign_buy_ratio": -0.174,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1064.0,
-    "short_change": 35.0,
-    "short_margin_ratio": 3.29
+    "margin_change": 850.0,
+    "short_change": 66.0,
+    "short_margin_ratio": 7.76
   },
   "tdcc": {
     "big_holder_change": 78.02,
@@ -22,8 +22,8 @@
     "holder_concentration": 80.46
   },
   "main_force": {
-    "cost": 32.03,
-    "distance": 6.31,
+    "cost": 32.21,
+    "distance": 13.01,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

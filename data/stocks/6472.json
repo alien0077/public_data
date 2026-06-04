@@ -1,18 +1,18 @@
 {
   "stock_id": "6472",
   "name": "6472",
-  "date": "2026-06-02",
-  "close": 350.0,
-  "health_score": 86,
+  "date": "2026-06-03",
+  "close": 354.0,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.075,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.108,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3938.0,
+    "margin_change": 3906.0,
     "short_change": 11.0,
     "short_margin_ratio": 0.28
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 54.88
   },
   "main_force": {
-    "cost": 376.9,
-    "distance": -7.14,
+    "cost": 374.12,
+    "distance": -5.38,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-03"
 }

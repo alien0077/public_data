@@ -1,20 +1,20 @@
 {
   "stock_id": "2049",
   "name": "2049",
-  "date": "2026-06-02",
-  "close": 364.0,
+  "date": "2026-06-03",
+  "close": 369.0,
   "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.26,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.114,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5016.0,
-    "short_change": 162.0,
-    "short_margin_ratio": 3.23
+    "margin_change": 5087.0,
+    "short_change": 166.0,
+    "short_margin_ratio": 3.26
   },
   "tdcc": {
     "big_holder_change": 61.51,
@@ -22,8 +22,8 @@
     "holder_concentration": 70.36
   },
   "main_force": {
-    "cost": 370.45,
-    "distance": -1.74,
+    "cost": 373.12,
+    "distance": -1.1,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-03"
 }

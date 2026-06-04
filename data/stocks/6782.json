@@ -1,18 +1,18 @@
 {
   "stock_id": "6782",
   "name": "6782",
-  "date": "2026-06-02",
-  "close": 194.0,
-  "health_score": 103,
+  "date": "2026-06-03",
+  "close": 195.5,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.097,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.056,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 483.0,
+    "margin_change": 485.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,26 +22,21 @@
     "holder_concentration": 46.26
   },
   "main_force": {
-    "cost": 194.08,
-    "distance": -0.04,
-    "trend": "DOWN"
+    "cost": 192.55,
+    "distance": 1.53,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

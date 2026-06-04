@@ -1,20 +1,20 @@
 {
   "stock_id": "4420",
   "name": "4420",
-  "date": "2026-06-02",
-  "close": 38.55,
-  "health_score": 86,
+  "date": "2026-06-03",
+  "close": 39.45,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.064,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 308.0,
-    "short_change": 1.0,
-    "short_margin_ratio": 0.32
+    "margin_change": 306.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 54.11,
@@ -22,8 +22,8 @@
     "holder_concentration": 59.14
   },
   "main_force": {
-    "cost": 39.9,
-    "distance": -3.38,
+    "cost": 39.8,
+    "distance": -0.88,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-03"
 }

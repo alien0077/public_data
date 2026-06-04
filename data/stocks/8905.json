@@ -1,13 +1,13 @@
 {
   "stock_id": "8905",
   "name": "8905",
-  "date": "2026-06-02",
-  "close": 29.55,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-03",
+  "close": 30.0,
+  "health_score": 130,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 92.37
   },
   "main_force": {
-    "cost": 29.72,
-    "distance": -0.57,
-    "trend": "DOWN"
+    "cost": 29.3,
+    "distance": 2.39,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

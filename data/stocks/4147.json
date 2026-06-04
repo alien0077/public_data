@@ -1,20 +1,20 @@
 {
   "stock_id": "4147",
   "name": "4147",
-  "date": "2026-06-02",
-  "close": 52.7,
+  "date": "2026-06-03",
+  "close": 55.8,
   "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_ratio": -0.038,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9285.0,
-    "short_change": 4.0,
-    "short_margin_ratio": 0.04
+    "margin_change": 9353.0,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 43.42,
@@ -22,8 +22,8 @@
     "holder_concentration": 51.93
   },
   "main_force": {
-    "cost": 49.84,
-    "distance": 5.74,
+    "cost": 50.16,
+    "distance": 11.24,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

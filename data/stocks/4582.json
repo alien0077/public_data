@@ -1,13 +1,13 @@
 {
   "stock_id": "4582",
   "name": "4582",
-  "date": "2026-06-02",
-  "close": 25.9,
-  "health_score": 86,
+  "date": "2026-06-03",
+  "close": 26.0,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.025,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.122,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -31,6 +31,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-03"
 }

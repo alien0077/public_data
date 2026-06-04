@@ -1,20 +1,20 @@
 {
   "stock_id": "2393",
   "name": "2393",
-  "date": "2026-06-02",
-  "close": 64.6,
+  "date": "2026-06-03",
+  "close": 65.6,
   "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.292,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.179,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2449.0,
+    "margin_change": 2495.0,
     "short_change": 34.0,
-    "short_margin_ratio": 1.39
+    "short_margin_ratio": 1.36
   },
   "tdcc": {
     "big_holder_change": 58.12,
@@ -22,8 +22,8 @@
     "holder_concentration": 66.16
   },
   "main_force": {
-    "cost": 66.54,
-    "distance": -2.92,
+    "cost": 66.17,
+    "distance": -0.86,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-03"
 }

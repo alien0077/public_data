@@ -1,20 +1,20 @@
 {
   "stock_id": "8182",
   "name": "8182",
-  "date": "2026-06-02",
-  "close": 43.2,
-  "health_score": 113,
+  "date": "2026-06-03",
+  "close": 45.25,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.021,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2738.0,
+    "margin_change": 2533.0,
     "short_change": 2.0,
-    "short_margin_ratio": 0.07
+    "short_margin_ratio": 0.08
   },
   "tdcc": {
     "big_holder_change": 64.83,
@@ -22,8 +22,8 @@
     "holder_concentration": 69.06
   },
   "main_force": {
-    "cost": 40.34,
-    "distance": 7.09,
+    "cost": 40.64,
+    "distance": 11.34,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

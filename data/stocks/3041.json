@@ -1,19 +1,19 @@
 {
   "stock_id": "3041",
   "name": "3041",
-  "date": "2026-06-02",
-  "close": 25.65,
-  "health_score": 113,
+  "date": "2026-06-03",
+  "close": 26.5,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.009,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.615,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3660.0,
-    "short_change": 62.0,
+    "margin_change": 3790.0,
+    "short_change": 64.0,
     "short_margin_ratio": 1.69
   },
   "tdcc": {
@@ -22,8 +22,8 @@
     "holder_concentration": 25.64
   },
   "main_force": {
-    "cost": 24.87,
-    "distance": 3.14,
+    "cost": 24.98,
+    "distance": 6.08,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

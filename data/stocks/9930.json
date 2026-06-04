@@ -1,13 +1,13 @@
 {
   "stock_id": "9930",
   "name": "9930",
-  "date": "2026-06-02",
-  "close": 69.8,
-  "health_score": 130,
+  "date": "2026-06-03",
+  "close": 69.5,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.017,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 78.19
   },
   "main_force": {
-    "cost": 64.82,
-    "distance": 7.68,
+    "cost": 64.78,
+    "distance": 7.29,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 5 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "3684",
   "name": "3684",
-  "date": "2026-06-02",
-  "close": 59.1,
-  "health_score": 86,
+  "date": "2026-06-03",
+  "close": 62.2,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.244,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 397.0,
+    "margin_change": 408.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,27 @@
     "holder_concentration": 61.44
   },
   "main_force": {
-    "cost": 59.58,
-    "distance": -0.81,
-    "trend": "DOWN"
+    "cost": 59.74,
+    "distance": 4.12,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

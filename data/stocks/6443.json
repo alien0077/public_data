@@ -1,20 +1,20 @@
 {
   "stock_id": "6443",
   "name": "6443",
-  "date": "2026-06-02",
-  "close": 42.55,
-  "health_score": 133,
+  "date": "2026-06-03",
+  "close": 42.9,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.772,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 1.081,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 20327.0,
+    "margin_change": 20203.0,
     "short_change": 600.0,
-    "short_margin_ratio": 2.95
+    "short_margin_ratio": 2.97
   },
   "tdcc": {
     "big_holder_change": 15.52,
@@ -22,8 +22,8 @@
     "holder_concentration": 18.28
   },
   "main_force": {
-    "cost": 40.69,
-    "distance": 4.57,
+    "cost": 40.95,
+    "distance": 4.76,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

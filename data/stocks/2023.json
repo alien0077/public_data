@@ -1,18 +1,18 @@
 {
   "stock_id": "2023",
   "name": "2023",
-  "date": "2026-06-02",
-  "close": 13.7,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-03",
+  "close": 14.1,
+  "health_score": 130,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.008,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.095,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3940.0,
+    "margin_change": 3905.0,
     "short_change": 3.0,
     "short_margin_ratio": 0.08
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 78.63
   },
   "main_force": {
-    "cost": 13.82,
-    "distance": -0.87,
-    "trend": "DOWN"
+    "cost": 13.83,
+    "distance": 1.95,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

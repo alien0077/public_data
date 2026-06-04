@@ -1,20 +1,20 @@
 {
   "stock_id": "8021",
   "name": "8021",
-  "date": "2026-06-02",
-  "close": 445.0,
-  "health_score": 166,
+  "date": "2026-06-03",
+  "close": 470.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.024,
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 0.474,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 11659.0,
-    "short_change": 287.0,
-    "short_margin_ratio": 2.46
+    "margin_change": 11456.0,
+    "short_change": 291.0,
+    "short_margin_ratio": 2.54
   },
   "tdcc": {
     "big_holder_change": 38.55,
@@ -22,8 +22,8 @@
     "holder_concentration": 47.98
   },
   "main_force": {
-    "cost": 431.5,
-    "distance": 3.13,
+    "cost": 433.8,
+    "distance": 8.34,
     "trend": "UP"
   },
   "sector": {
@@ -37,12 +37,16 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 4 天"
+      "title": "外資連買 5 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

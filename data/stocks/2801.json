@@ -1,20 +1,20 @@
 {
   "stock_id": "2801",
   "name": "2801",
-  "date": "2026-06-02",
-  "close": 20.6,
-  "health_score": 130,
+  "date": "2026-06-03",
+  "close": 21.1,
+  "health_score": 166,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.094,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.03,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8581.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 10311.0,
+    "short_change": 15.0,
+    "short_margin_ratio": 0.15
   },
   "tdcc": {
     "big_holder_change": 72.12,
@@ -22,8 +22,8 @@
     "holder_concentration": 76.11
   },
   "main_force": {
-    "cost": 20.44,
-    "distance": 0.78,
+    "cost": 20.45,
+    "distance": 3.18,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

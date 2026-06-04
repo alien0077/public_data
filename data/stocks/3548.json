@@ -1,18 +1,18 @@
 {
   "stock_id": "3548",
   "name": "3548",
-  "date": "2026-06-02",
-  "close": 96.0,
-  "health_score": 106,
+  "date": "2026-06-03",
+  "close": 98.5,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.183,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4186.0,
+    "margin_change": 4167.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 34.31
   },
   "main_force": {
-    "cost": 97.55,
-    "distance": -1.59,
-    "trend": "DOWN"
+    "cost": 97.28,
+    "distance": 1.25,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

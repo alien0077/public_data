@@ -1,18 +1,18 @@
 {
   "stock_id": "2115",
   "name": "2115",
-  "date": "2026-06-02",
-  "close": 21.65,
+  "date": "2026-06-03",
+  "close": 21.85,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.017,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.028,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 780.0,
+    "margin_change": 779.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 69.4
   },
   "main_force": {
-    "cost": 19.43,
-    "distance": 11.43,
+    "cost": 19.49,
+    "distance": 12.11,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

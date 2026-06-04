@@ -1,9 +1,9 @@
 {
   "stock_id": "6496",
   "name": "6496",
-  "date": "2026-06-02",
-  "close": 23.8,
-  "health_score": 86,
+  "date": "2026-06-03",
+  "close": 24.05,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -22,19 +22,21 @@
     "holder_concentration": 66.03
   },
   "main_force": {
-    "cost": 24.01,
-    "distance": -0.87,
-    "trend": "DOWN"
+    "cost": 23.97,
+    "distance": 0.33,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

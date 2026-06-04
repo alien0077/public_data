@@ -1,13 +1,13 @@
 {
   "stock_id": "6831",
   "name": "6831",
-  "date": "2026-06-02",
-  "close": 686.0,
-  "health_score": 103,
+  "date": "2026-06-03",
+  "close": 726.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -1.763,
+    "foreign_buy_ratio": -0.103,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,19 +22,26 @@
     "holder_concentration": 62.57
   },
   "main_force": {
-    "cost": 708.95,
-    "distance": -3.24,
-    "trend": "DOWN"
+    "cost": 717.2,
+    "distance": 1.23,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "1907",
   "name": "1907",
-  "date": "2026-06-02",
-  "close": 24.35,
-  "health_score": 130,
+  "date": "2026-06-03",
+  "close": 25.05,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.024,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.15,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 24449.0,
+    "margin_change": 24462.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 84.15
   },
   "main_force": {
-    "cost": 24.32,
-    "distance": 0.12,
+    "cost": 24.38,
+    "distance": 2.75,
     "trend": "UP"
   },
   "sector": {
@@ -32,12 +32,17 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

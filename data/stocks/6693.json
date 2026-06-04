@@ -1,20 +1,20 @@
 {
   "stock_id": "6693",
   "name": "6693",
-  "date": "2026-06-02",
-  "close": 148.0,
-  "health_score": 86,
+  "date": "2026-06-03",
+  "close": 154.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.684,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3679.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 3650.0,
+    "short_change": 5.0,
+    "short_margin_ratio": 0.14
   },
   "tdcc": {
     "big_holder_change": 31.39,
@@ -22,19 +22,22 @@
     "holder_concentration": 44.29
   },
   "main_force": {
-    "cost": 148.15,
-    "distance": -0.1,
-    "trend": "DOWN"
+    "cost": 148.32,
+    "distance": 3.83,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

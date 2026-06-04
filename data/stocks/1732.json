@@ -1,18 +1,18 @@
 {
   "stock_id": "1732",
   "name": "1732",
-  "date": "2026-06-02",
-  "close": 26.2,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-03",
+  "close": 26.5,
+  "health_score": 150,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.077,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.137,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 526.0,
+    "margin_change": 528.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,22 @@
     "holder_concentration": 46.4
   },
   "main_force": {
-    "cost": 26.47,
-    "distance": -1.02,
-    "trend": "DOWN"
+    "cost": 26.48,
+    "distance": 0.08,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "6934",
   "name": "6934",
-  "date": "2026-06-02",
-  "close": 71.9,
-  "health_score": 83,
+  "date": "2026-06-03",
+  "close": 73.4,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.097,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 62.93
   },
   "main_force": {
-    "cost": 75.2,
-    "distance": -4.39,
+    "cost": 74.9,
+    "distance": -2.0,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

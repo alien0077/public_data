@@ -1,18 +1,18 @@
 {
   "stock_id": "1444",
   "name": "1444",
-  "date": "2026-06-02",
-  "close": 6.8,
-  "health_score": 133,
+  "date": "2026-06-03",
+  "close": 7.48,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.012,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.027,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 998.0,
+    "margin_change": 943.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 64.98
   },
   "main_force": {
-    "cost": 6.03,
-    "distance": 12.77,
+    "cost": 6.1,
+    "distance": 22.62,
     "trend": "UP"
   },
   "sector": {
@@ -34,9 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

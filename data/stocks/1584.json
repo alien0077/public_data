@@ -1,20 +1,20 @@
 {
   "stock_id": "1584",
   "name": "1584",
-  "date": "2026-06-02",
-  "close": 19.85,
-  "health_score": 86,
+  "date": "2026-06-03",
+  "close": 20.5,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.367,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6805.0,
-    "short_change": 1.0,
-    "short_margin_ratio": 0.01
+    "margin_change": 6867.0,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.03
   },
   "tdcc": {
     "big_holder_change": 36.37,
@@ -22,19 +22,22 @@
     "holder_concentration": 41.17
   },
   "main_force": {
-    "cost": 19.87,
-    "distance": -0.1,
-    "trend": "DOWN"
+    "cost": 19.9,
+    "distance": 3.02,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

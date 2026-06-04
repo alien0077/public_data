@@ -1,18 +1,18 @@
 {
   "stock_id": "2471",
   "name": "2471",
-  "date": "2026-06-02",
+  "date": "2026-06-03",
   "close": 54.2,
-  "health_score": 150,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.196,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.04,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1526.0,
+    "margin_change": 1511.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 22.94
   },
   "main_force": {
-    "cost": 51.29,
-    "distance": 5.67,
+    "cost": 51.36,
+    "distance": 5.53,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

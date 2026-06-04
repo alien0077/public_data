@@ -1,20 +1,20 @@
 {
   "stock_id": "3530",
   "name": "3530",
-  "date": "2026-06-02",
-  "close": 68.3,
-  "health_score": 133,
+  "date": "2026-06-03",
+  "close": 68.4,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.057,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1353.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.15
+    "margin_change": 1358.0,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.07
   },
   "tdcc": {
     "big_holder_change": 53.76,
@@ -22,8 +22,8 @@
     "holder_concentration": 57.73
   },
   "main_force": {
-    "cost": 68.11,
-    "distance": 0.28,
+    "cost": 68.0,
+    "distance": 0.59,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-02"
+  "data_version": "2026-06-03"
 }

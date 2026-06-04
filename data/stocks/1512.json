@@ -1,13 +1,13 @@
 {
   "stock_id": "1512",
   "name": "1512",
-  "date": "2026-06-02",
-  "close": 6.96,
-  "health_score": 103,
+  "date": "2026-06-03",
+  "close": 7.11,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.008,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.025,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,21 +22,27 @@
     "holder_concentration": 53.88
   },
   "main_force": {
-    "cost": 7.02,
-    "distance": -0.85,
-    "trend": "DOWN"
+    "cost": 7.01,
+    "distance": 1.43,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
   ],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }

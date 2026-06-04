@@ -1,25 +1,25 @@
 {
   "stock_id": "00651R",
   "name": "00651R",
-  "date": "2026-06-02",
-  "close": 5.17,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-03",
+  "close": 5.2,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1826.0,
+    "margin_change": 1785.0,
     "short_change": 269.0,
-    "short_margin_ratio": 14.73
+    "short_margin_ratio": 15.07
   },
   "tdcc": {},
   "main_force": {
-    "cost": 5.19,
-    "distance": -0.39,
+    "cost": 5.2,
+    "distance": 0.0,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-03"
 }

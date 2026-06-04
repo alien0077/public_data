@@ -1,18 +1,18 @@
 {
   "stock_id": "6208",
   "name": "6208",
-  "date": "2026-06-02",
-  "close": 91.5,
-  "health_score": 86,
+  "date": "2026-06-03",
+  "close": 90.6,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.051,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1504.0,
+    "margin_change": 1498.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 65.77
   },
   "main_force": {
-    "cost": 92.24,
-    "distance": -0.8,
+    "cost": 93.02,
+    "distance": -2.6,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-03"
 }

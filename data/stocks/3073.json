@@ -1,18 +1,18 @@
 {
   "stock_id": "3073",
   "name": "3073",
-  "date": "2026-06-02",
-  "close": 20.5,
-  "health_score": 86,
+  "date": "2026-06-03",
+  "close": 22.55,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.114,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 734.0,
+    "margin_change": 777.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,19 +22,27 @@
     "holder_concentration": 54.73
   },
   "main_force": {
-    "cost": 20.91,
-    "distance": -1.96,
-    "trend": "DOWN"
+    "cost": 20.92,
+    "distance": 7.79,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-02"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "foreign_buy",
+    "ma_bull"
+  ],
+  "data_version": "2026-06-03"
 }
