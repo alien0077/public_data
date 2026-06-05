@@ -1,18 +1,18 @@
 {
   "stock_id": "3150",
   "name": "3150",
-  "date": "2026-06-03",
-  "close": 20.2,
-  "health_score": 133,
+  "date": "2026-06-04",
+  "close": 19.9,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.018,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.018,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 231.0,
+    "margin_change": 235.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 54.18
   },
   "main_force": {
-    "cost": 19.27,
-    "distance": 4.83,
+    "cost": 19.34,
+    "distance": 2.9,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

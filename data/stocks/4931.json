@@ -1,20 +1,20 @@
 {
   "stock_id": "4931",
   "name": "4931",
-  "date": "2026-06-03",
-  "close": 254.0,
-  "health_score": 133,
+  "date": "2026-06-04",
+  "close": 260.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.396,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 1.265,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9182.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.02
+    "margin_change": 8376.0,
+    "short_change": 104.0,
+    "short_margin_ratio": 1.24
   },
   "tdcc": {
     "big_holder_change": 12.82,
@@ -22,8 +22,8 @@
     "holder_concentration": 29.81
   },
   "main_force": {
-    "cost": 203.75,
-    "distance": 24.66,
+    "cost": 208.55,
+    "distance": 24.67,
     "trend": "UP"
   },
   "sector": {
@@ -34,14 +34,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

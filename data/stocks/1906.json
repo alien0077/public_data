@@ -1,18 +1,18 @@
 {
   "stock_id": "1906",
   "name": "1906",
-  "date": "2026-06-03",
-  "close": 10.7,
-  "health_score": 113,
+  "date": "2026-06-04",
+  "close": 11.45,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.017,
+    "foreign_buy_ratio": -0.129,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7277.0,
+    "margin_change": 7368.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 74.33
   },
   "main_force": {
-    "cost": 10.54,
-    "distance": 1.52,
+    "cost": 10.56,
+    "distance": 8.43,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,16 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

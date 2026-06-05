@@ -1,20 +1,20 @@
 {
   "stock_id": "8926",
   "name": "8926",
-  "date": "2026-06-03",
-  "close": 70.4,
+  "date": "2026-06-04",
+  "close": 72.4,
   "health_score": 166,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.264,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.244,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6905.0,
-    "short_change": 103.0,
-    "short_margin_ratio": 1.49
+    "margin_change": 7369.0,
+    "short_change": 112.0,
+    "short_margin_ratio": 1.52
   },
   "tdcc": {
     "big_holder_change": 55.31,
@@ -22,8 +22,8 @@
     "holder_concentration": 60.62
   },
   "main_force": {
-    "cost": 60.65,
-    "distance": 16.08,
+    "cost": 61.94,
+    "distance": 16.89,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "4169",
   "name": "4169",
-  "date": "2026-06-03",
-  "close": 155.0,
-  "health_score": 93,
+  "date": "2026-06-04",
+  "close": 159.0,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.096,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.062,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 54.04
   },
   "main_force": {
-    "cost": 154.45,
-    "distance": 0.36,
+    "cost": 154.75,
+    "distance": 2.75,
     "trend": "UP"
   },
   "sector": {
@@ -31,12 +31,13 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 40
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

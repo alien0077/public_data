@@ -1,20 +1,20 @@
 {
   "stock_id": "2017",
   "name": "2017",
-  "date": "2026-06-03",
-  "close": 9.68,
+  "date": "2026-06-04",
+  "close": 9.86,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.236,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.045,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7609.0,
+    "margin_change": 7121.0,
     "short_change": 12.0,
-    "short_margin_ratio": 0.16
+    "short_margin_ratio": 0.17
   },
   "tdcc": {
     "big_holder_change": 56.7,
@@ -22,8 +22,8 @@
     "holder_concentration": 61.34
   },
   "main_force": {
-    "cost": 8.86,
-    "distance": 9.26,
+    "cost": 8.91,
+    "distance": 10.66,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

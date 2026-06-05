@@ -1,12 +1,12 @@
 {
   "stock_id": "00956",
   "name": "00956",
-  "date": "2026-06-03",
-  "close": 12.31,
-  "health_score": 123,
+  "date": "2026-06-04",
+  "close": 12.24,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -22,8 +22,8 @@
     "holder_concentration": 17.76
   },
   "main_force": {
-    "cost": 12.33,
-    "distance": -0.16,
+    "cost": 12.32,
+    "distance": -0.65,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 60
+    "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

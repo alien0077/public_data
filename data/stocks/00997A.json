@@ -1,20 +1,20 @@
 {
   "stock_id": "00997A",
   "name": "00997A",
-  "date": "2026-06-03",
-  "close": 14.02,
-  "health_score": 166,
+  "date": "2026-06-04",
+  "close": 13.84,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6603.0,
-    "short_change": 14.0,
-    "short_margin_ratio": 0.21
+    "margin_change": 6946.0,
+    "short_change": 13.0,
+    "short_margin_ratio": 0.19
   },
   "tdcc": {
     "big_holder_change": 13.54,
@@ -22,8 +22,8 @@
     "holder_concentration": 19.98
   },
   "main_force": {
-    "cost": 12.73,
-    "distance": 10.13,
+    "cost": 12.8,
+    "distance": 8.12,
     "trend": "UP"
   },
   "sector": {
@@ -34,19 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

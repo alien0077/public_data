@@ -1,20 +1,20 @@
 {
   "stock_id": "1529",
   "name": "1529",
-  "date": "2026-06-03",
-  "close": 24.65,
-  "health_score": 150,
+  "date": "2026-06-04",
+  "close": 24.2,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.295,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.595,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3187.0,
-    "short_change": 9.0,
-    "short_margin_ratio": 0.28
+    "margin_change": 3335.0,
+    "short_change": 13.0,
+    "short_margin_ratio": 0.39
   },
   "tdcc": {
     "big_holder_change": 40.31,
@@ -22,8 +22,8 @@
     "holder_concentration": 46.22
   },
   "main_force": {
-    "cost": 21.73,
-    "distance": 13.44,
+    "cost": 21.8,
+    "distance": 11.01,
     "trend": "UP"
   },
   "sector": {
@@ -34,19 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

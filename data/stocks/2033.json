@@ -1,18 +1,18 @@
 {
   "stock_id": "2033",
   "name": "2033",
-  "date": "2026-06-03",
-  "close": 16.0,
-  "health_score": 150,
+  "date": "2026-06-04",
+  "close": 15.95,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.063,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.031,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2598.0,
+    "margin_change": 2592.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 74.16
   },
   "main_force": {
-    "cost": 15.22,
-    "distance": 5.12,
+    "cost": 15.26,
+    "distance": 4.52,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

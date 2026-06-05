@@ -1,12 +1,12 @@
 {
   "stock_id": "00761B",
   "name": "00761B",
-  "date": "2026-06-03",
-  "close": 34.42,
-  "health_score": 133,
+  "date": "2026-06-04",
+  "close": 34.37,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -19,7 +19,7 @@
   "tdcc": {},
   "main_force": {
     "cost": 34.1,
-    "distance": 0.94,
+    "distance": 0.79,
     "trend": "UP"
   },
   "sector": {
@@ -28,11 +28,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

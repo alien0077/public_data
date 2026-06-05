@@ -1,9 +1,9 @@
 {
   "stock_id": "6929",
   "name": "6929",
-  "date": "2026-06-03",
-  "close": 22.2,
-  "health_score": 86,
+  "date": "2026-06-04",
+  "close": 23.5,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
@@ -22,19 +22,26 @@
     "holder_concentration": 89.53
   },
   "main_force": {
-    "cost": 23.04,
-    "distance": -3.65,
-    "trend": "DOWN"
+    "cost": 22.96,
+    "distance": 2.35,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-03"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-06-04"
 }

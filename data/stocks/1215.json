@@ -1,20 +1,20 @@
 {
   "stock_id": "1215",
   "name": "1215",
-  "date": "2026-06-03",
-  "close": 114.0,
+  "date": "2026-06-04",
+  "close": 116.0,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.481,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.026,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 392.0,
+    "margin_change": 518.0,
     "short_change": 13.0,
-    "short_margin_ratio": 3.32
+    "short_margin_ratio": 2.51
   },
   "tdcc": {
     "big_holder_change": 60.13,
@@ -22,8 +22,8 @@
     "holder_concentration": 63.73
   },
   "main_force": {
-    "cost": 129.51,
-    "distance": -11.98,
+    "cost": 128.75,
+    "distance": -9.9,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

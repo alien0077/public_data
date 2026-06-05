@@ -1,18 +1,18 @@
 {
   "stock_id": "00701",
   "name": "00701",
-  "date": "2026-06-03",
-  "close": 35.71,
-  "health_score": 150,
+  "date": "2026-06-04",
+  "close": 35.78,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 6,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 66.0,
+    "margin_change": 81.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 8.17
   },
   "main_force": {
-    "cost": 32.68,
-    "distance": 9.27,
+    "cost": 32.89,
+    "distance": 8.79,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 6 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

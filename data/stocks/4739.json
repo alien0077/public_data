@@ -1,20 +1,20 @@
 {
   "stock_id": "4739",
   "name": "4739",
-  "date": "2026-06-03",
-  "close": 114.5,
-  "health_score": 150,
+  "date": "2026-06-04",
+  "close": 118.5,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.047,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.45,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8372.0,
-    "short_change": 170.0,
-    "short_margin_ratio": 2.03
+    "margin_change": 9108.0,
+    "short_change": 211.0,
+    "short_margin_ratio": 2.32
   },
   "tdcc": {
     "big_holder_change": 32.24,
@@ -22,8 +22,8 @@
     "holder_concentration": 43.96
   },
   "main_force": {
-    "cost": 100.16,
-    "distance": 14.32,
+    "cost": 101.42,
+    "distance": 16.84,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

@@ -1,18 +1,18 @@
 {
   "stock_id": "4166",
   "name": "4166",
-  "date": "2026-06-03",
-  "close": 23.45,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-04",
+  "close": 23.85,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.019,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 828.0,
+    "margin_change": 824.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 81.97
   },
   "main_force": {
-    "cost": 24.87,
-    "distance": -5.71,
+    "cost": 24.75,
+    "distance": -3.64,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-03"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-04"
 }

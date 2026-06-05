@@ -1,18 +1,18 @@
 {
   "stock_id": "8011",
   "name": "8011",
-  "date": "2026-06-03",
-  "close": 19.6,
-  "health_score": 130,
+  "date": "2026-06-04",
+  "close": 19.05,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.237,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.069,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3904.0,
+    "margin_change": 3915.0,
     "short_change": 5.0,
     "short_margin_ratio": 0.13
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 30.13
   },
   "main_force": {
-    "cost": 17.77,
-    "distance": 10.3,
+    "cost": 17.72,
+    "distance": 7.51,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 5 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

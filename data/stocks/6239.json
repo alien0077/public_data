@@ -1,20 +1,20 @@
 {
   "stock_id": "6239",
   "name": "6239",
-  "date": "2026-06-03",
-  "close": 343.0,
+  "date": "2026-06-04",
+  "close": 354.0,
   "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.179,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.285,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 23616.0,
-    "short_change": 208.0,
-    "short_margin_ratio": 0.88
+    "margin_change": 25263.0,
+    "short_change": 214.0,
+    "short_margin_ratio": 0.85
   },
   "tdcc": {
     "big_holder_change": 67.85,
@@ -22,8 +22,8 @@
     "holder_concentration": 74.36
   },
   "main_force": {
-    "cost": 282.58,
-    "distance": 21.38,
+    "cost": 288.75,
+    "distance": 22.6,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

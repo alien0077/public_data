@@ -1,18 +1,18 @@
 {
   "stock_id": "1337",
   "name": "1337",
-  "date": "2026-06-03",
-  "close": 5.21,
-  "health_score": 113,
+  "date": "2026-06-04",
+  "close": 5.13,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.135,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.081,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 21388.0,
+    "margin_change": 21198.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 47.85
   },
   "main_force": {
-    "cost": 4.87,
-    "distance": 6.98,
+    "cost": 4.88,
+    "distance": 5.12,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

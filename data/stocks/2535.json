@@ -1,20 +1,20 @@
 {
   "stock_id": "2535",
   "name": "2535",
-  "date": "2026-06-03",
-  "close": 80.8,
-  "health_score": 113,
+  "date": "2026-06-04",
+  "close": 80.2,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.01,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.03,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 319.0,
+    "margin_change": 313.0,
     "short_change": 12.0,
-    "short_margin_ratio": 3.76
+    "short_margin_ratio": 3.83
   },
   "tdcc": {
     "big_holder_change": 54.8,
@@ -22,8 +22,8 @@
     "holder_concentration": 61.06
   },
   "main_force": {
-    "cost": 76.64,
-    "distance": 5.43,
+    "cost": 76.89,
+    "distance": 4.3,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

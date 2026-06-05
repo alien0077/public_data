@@ -1,20 +1,20 @@
 {
   "stock_id": "6411",
   "name": "6411",
-  "date": "2026-06-03",
-  "close": 100.5,
-  "health_score": 113,
+  "date": "2026-06-04",
+  "close": 99.1,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.12,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.09,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2270.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 2285.0,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.04
   },
   "tdcc": {
     "big_holder_change": 23.74,
@@ -22,8 +22,8 @@
     "holder_concentration": 41.48
   },
   "main_force": {
-    "cost": 92.24,
-    "distance": 8.95,
+    "cost": 93.1,
+    "distance": 6.44,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "8933",
   "name": "8933",
-  "date": "2026-06-03",
-  "close": 4.55,
-  "health_score": 83,
+  "date": "2026-06-04",
+  "close": 4.79,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.013,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.027,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 53.01
   },
   "main_force": {
-    "cost": 4.99,
-    "distance": -8.82,
+    "cost": 4.94,
+    "distance": -3.04,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,11 +32,14 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-06-03"
+  "raw_signals": [],
+  "data_version": "2026-06-04"
 }

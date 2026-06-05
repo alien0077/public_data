@@ -1,12 +1,12 @@
 {
   "stock_id": "00724B",
   "name": "00724B",
-  "date": "2026-06-03",
-  "close": 33.69,
-  "health_score": 133,
+  "date": "2026-06-04",
+  "close": 33.67,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -19,7 +19,7 @@
   "tdcc": {},
   "main_force": {
     "cost": 33.5,
-    "distance": 0.57,
+    "distance": 0.51,
     "trend": "UP"
   },
   "sector": {
@@ -28,11 +28,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

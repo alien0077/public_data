@@ -1,18 +1,18 @@
 {
   "stock_id": "1586",
   "name": "1586",
-  "date": "2026-06-03",
-  "close": 22.1,
-  "health_score": 86,
+  "date": "2026-06-04",
+  "close": 21.6,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.023,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.056,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 14994.0,
+    "margin_change": 14984.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 72.26
   },
   "main_force": {
-    "cost": 22.15,
-    "distance": -0.23,
+    "cost": 22.14,
+    "distance": -2.44,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-03"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-04"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "5292",
   "name": "5292",
-  "date": "2026-06-03",
-  "close": 222.5,
-  "health_score": 103,
+  "date": "2026-06-04",
+  "close": 225.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.022,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.04,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,21 +22,22 @@
     "holder_concentration": 53.04
   },
   "main_force": {
-    "cost": 224.95,
-    "distance": -1.09,
-    "trend": "DOWN"
+    "cost": 224.68,
+    "distance": 0.14,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "foreign_buy",
+    "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

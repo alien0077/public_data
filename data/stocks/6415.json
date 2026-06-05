@@ -1,20 +1,20 @@
 {
   "stock_id": "6415",
   "name": "6415",
-  "date": "2026-06-03",
-  "close": 599.0,
+  "date": "2026-06-04",
+  "close": 570.0,
   "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.236,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.06,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5647.0,
-    "short_change": 102.0,
-    "short_margin_ratio": 1.81
+    "margin_change": 5663.0,
+    "short_change": 97.0,
+    "short_margin_ratio": 1.71
   },
   "tdcc": {
     "big_holder_change": 64.8,
@@ -22,8 +22,8 @@
     "holder_concentration": 79.68
   },
   "main_force": {
-    "cost": 538.55,
-    "distance": 11.22,
+    "cost": 545.83,
+    "distance": 4.43,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }

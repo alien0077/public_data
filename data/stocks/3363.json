@@ -1,20 +1,20 @@
 {
   "stock_id": "3363",
   "name": "3363",
-  "date": "2026-06-03",
-  "close": 884.0,
+  "date": "2026-06-04",
+  "close": 840.0,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.463,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.135,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7129.0,
-    "short_change": 5.0,
-    "short_margin_ratio": 0.07
+    "margin_change": 6870.0,
+    "short_change": 32.0,
+    "short_margin_ratio": 0.47
   },
   "tdcc": {
     "big_holder_change": 32.76,
@@ -22,8 +22,8 @@
     "holder_concentration": 43.64
   },
   "main_force": {
-    "cost": 835.35,
-    "distance": 5.82,
+    "cost": 836.6,
+    "distance": 0.41,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,10 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-03"
+  "data_version": "2026-06-04"
 }
