@@ -32,6 +32,17 @@ export const Dashboard = {
                             </div>
                         </div>
                     </div>
+                    <!-- 🚀 v10.12: 新增市場視覺化看板 -->
+                    <div id="dashboard-intelligence-charts" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-orange-100 dark:border-orange-900/20 pt-5 hidden">
+                        <div class="space-y-2">
+                            <div class="text-[10px] font-bold text-gray-400 uppercase">產業熱力圖</div>
+                            <img id="intel-chart-heatmap" src="" class="w-full rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm" alt="Heatmap">
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-[10px] font-bold text-gray-400 uppercase">法人資金流向</div>
+                            <img id="intel-chart-flow" src="" class="w-full rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm" alt="Capital Flow">
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Market Summary -->
@@ -471,12 +482,17 @@ export const Dashboard = {
         const container = document.getElementById("dashboard-ai-intelligence");
         if (!container) return;
 
+        // 🚀 v10.12: 只要有任一數據或圖片存在，就顯示看板
         if (risk || narrative) {
             container.classList.remove("hidden");
+            
             if (narrative) {
                 document.getElementById("ai-narrative-date").textContent = narrative.date || narrative.updated_at?.substring(0, 10) || "";
                 document.getElementById("ai-narrative-text").textContent = narrative.market_summary || "";
+            } else {
+                document.getElementById("ai-narrative-text").textContent = "今日 AI 報告正在生成中，請稍後。";
             }
+
             if (risk) {
                 const scoreEl = document.getElementById("market-risk-score");
                 const statusEl = document.getElementById("market-risk-status");
@@ -487,6 +503,20 @@ export const Dashboard = {
                 const color = score > 80 ? "text-red-500" : (score > 60 ? "text-orange-500" : (score < 30 ? "text-blue-500" : "text-green-500"));
                 scoreEl.className = `text-4xl font-black ${color}`;
                 statusEl.className = `text-xs font-bold mt-1 ${color}`;
+            }
+
+            // 🚀 加載視覺化圖表 (圖片通常是靜態路徑)
+            const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            const imgPath = isLocal ? '../data/charts/' : 'https://alien0077.github.io/Public_Data/data/charts/';
+            
+            const chartsContainer = document.getElementById("dashboard-intelligence-charts");
+            const heatmapImg = document.getElementById("intel-chart-heatmap");
+            const flowImg = document.getElementById("intel-chart-flow");
+
+            if (chartsContainer && heatmapImg && flowImg) {
+                chartsContainer.classList.remove("hidden");
+                heatmapImg.src = `${imgPath}market_heatmap.png?t=${Date.now()}`;
+                flowImg.src = `${imgPath}capital_flow.png?t=${Date.now()}`;
             }
         }
     },

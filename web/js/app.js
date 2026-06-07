@@ -53,13 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (themeToggleBtn) themeToggleBtn.addEventListener('click', () => window.ThemeEngine.toggle());
     try { 
         router.init(); 
-        // Force portfolio as default (bypasses cached router)
-        const vp = document.getElementById('view-portfolio');
-        if (vp) {
+        // 🚀 v10.12: 改為以儀表板為預設首頁
+        const vd = document.getElementById('view-dashboard');
+        if (vd) {
             document.querySelectorAll('#content-area > [id^="view-"]').forEach(v => v.classList.add('hidden'));
-            vp.classList.remove('hidden');
+            vd.classList.remove('hidden');
             const vt = document.getElementById('view-title');
-            if (vt) vt.textContent = '我的持股';
+            if (vt) vt.textContent = '儀表板 Dashboard';
+            Dashboard.init();
         }
     } catch (e) { console.error('Router init failed', e); }
 
@@ -84,14 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('click', (e) => { e.preventDefault(); router.switchPage(p); });
     };
-    ['portfolio', 'trendHunter', 'assetRisk', 'performance', 'addTrade', 'favorites', 'groupSearch'].forEach(p => {
+    ['dashboard', 'portfolio', 'trendHunter', 'assetRisk', 'performance', 'addTrade', 'favorites', 'groupSearch'].forEach(p => {
         bindPage('nav-' + p, p);
         const m = document.getElementById('mobile-nav-' + p);
         if (m) m.addEventListener('click', (e) => { e.preventDefault(); router.switchPage(p); });
     });
     // Settings: direct handler in case router doesn't have cached route
     const settingsHandler = (e) => { e.preventDefault(); document.querySelectorAll('#content-area > [id^="view-"]').forEach(v => v.classList.add('hidden')); const vs = document.getElementById('view-settings'); if (vs) { vs.classList.remove('hidden'); Settings.init(); } };
-    document.getElementById('nav-settings')?.addEventListener('click', settingsHandler);
+document.getElementById('nav-settings')?.addEventListener('click', settingsHandler);
     document.getElementById('mobile-nav-settings')?.addEventListener('click', settingsHandler);
 
     const triggerImportBtn = document.getElementById('trigger-import');

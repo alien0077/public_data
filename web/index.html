@@ -73,6 +73,9 @@
         <aside class="hidden md:flex w-64 flex-col bg-white dark:bg-[#161b22] border-r border-gray-200 dark:border-gray-800 transition-colors duration-300">
             <div class="p-6 font-bold text-2xl text-blue-600 dark:text-blue-500 border-b border-gray-100 dark:border-gray-800">Alien存股</div>
             <nav class="flex-1 mt-4 px-3 space-y-1">
+                <a href="#" id="nav-dashboard" class="nav-item flex items-center p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <span class="mr-3">🏠</span> 儀表板
+                </a>
                 <a href="#" id="nav-portfolio" class="nav-item flex items-center p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <span class="mr-3">📊</span> 我的持股
                 </a>
@@ -380,6 +383,10 @@
 
     <!-- Mobile Bottom Navigation -->
     <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#161b22] border-t border-gray-800 flex justify-around items-center h-16 z-50">
+        <button id="mobile-nav-dashboard" class="flex flex-col items-center text-gray-500">
+            <span class="text-xl">🏠</span>
+            <span class="text-[10px] mt-1">儀表板</span>
+        </button>
         <button id="mobile-nav-portfolio" class="flex flex-col items-center text-blue-400">
             <span class="text-xl">📊</span>
             <span class="text-[10px] mt-1">持股</span>
