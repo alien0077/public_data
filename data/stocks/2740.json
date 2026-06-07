@@ -5,6 +5,7 @@
   "close": 29.35,
   "health_score": 66,
   "signal": "Neutral",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -13,6 +14,8 @@
   },
   "margin": {
     "margin_change": 0.0,
+    "margin_slope": 0.0,
+    "maintenance_ratio": 137.02,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -34,7 +37,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
-  "raw_signals": [],
+  "events": [
+    {
+      "level": "RED",
+      "title": "融資維持率低迷 (137.02%)"
+    }
+  ],
+  "raw_signals": [
+    "融資斷頭預警"
+  ],
   "data_version": "2026-06-05"
 }

@@ -5,6 +5,7 @@
   "close": 173.5,
   "health_score": 103,
   "signal": "Bullish",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
     "foreign_buy_days": 1,
     "foreign_buy_ratio": 0.678,
@@ -12,8 +13,10 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3173.0,
-    "short_change": 2.0,
+    "margin_change": -87.0,
+    "margin_slope": -32.6,
+    "maintenance_ratio": 126.73,
+    "short_change": -3258.0,
     "short_margin_ratio": 0.06
   },
   "tdcc": {
@@ -34,9 +37,14 @@
     "style": "Value",
     "score": 30
   },
-  "events": [],
+  "events": [
+    {
+      "level": "RED",
+      "title": "融資維持率低迷 (126.73%)"
+    }
+  ],
   "raw_signals": [
-    "foreign_buy"
+    "融資斷頭預警"
   ],
   "data_version": "2026-06-05"
 }

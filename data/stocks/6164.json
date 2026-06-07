@@ -5,6 +5,7 @@
   "close": 13.1,
   "health_score": 130,
   "signal": "Bullish",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
     "foreign_buy_days": 3,
     "foreign_buy_ratio": 0.217,
@@ -12,8 +13,10 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4370.0,
-    "short_change": 2.0,
+    "margin_change": -12.0,
+    "margin_slope": 17.4,
+    "maintenance_ratio": 176.93,
+    "short_change": -4380.0,
     "short_margin_ratio": 0.05
   },
   "tdcc": {
@@ -40,9 +43,6 @@
       "title": "外資連買 3 天"
     }
   ],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
+  "raw_signals": [],
   "data_version": "2026-06-05"
 }

@@ -5,6 +5,7 @@
   "close": 13.2,
   "health_score": 110,
   "signal": "Bullish",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
     "foreign_buy_days": 3,
     "foreign_buy_ratio": 0.05,
@@ -12,8 +13,10 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7290.0,
-    "short_change": 254.0,
+    "margin_change": 79.0,
+    "margin_slope": 59.8,
+    "maintenance_ratio": 172.41,
+    "short_change": -6957.0,
     "short_margin_ratio": 3.48
   },
   "tdcc": {
@@ -41,8 +44,7 @@
     }
   ],
   "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
+    "散戶接刀中"
   ],
   "data_version": "2026-06-05"
 }

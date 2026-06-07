@@ -5,6 +5,7 @@
   "close": 43.7,
   "health_score": 130,
   "signal": "Bullish",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
     "foreign_buy_days": 2,
     "foreign_buy_ratio": 0.392,
@@ -12,8 +13,10 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1429.0,
-    "short_change": 5.0,
+    "margin_change": -102.0,
+    "margin_slope": -4.6,
+    "maintenance_ratio": 167.39,
+    "short_change": -1526.0,
     "short_margin_ratio": 0.35
   },
   "tdcc": {
@@ -35,9 +38,6 @@
     "score": 70
   },
   "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
+  "raw_signals": [],
   "data_version": "2026-06-05"
 }

@@ -34,7 +34,8 @@ export const Dashboard = {
                     </div>
                 </div>
 
-                <!-- Market Summary -->                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="dashboard-market-stats">
+                <!-- Market Summary -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="dashboard-market-stats">
                     <div class="bg-white dark:bg-[#161b22] p-6 rounded-2xl border border-gray-200 dark:border-gray-800 animate-pulse">
                         <div class="h-4 w-24 bg-gray-200 dark:bg-gray-800 rounded mb-4"></div>
                         <div class="h-8 w-32 bg-gray-200 dark:bg-gray-800 rounded"></div>
@@ -87,25 +88,23 @@ export const Dashboard = {
                                 </h3>
                             </div>
                             <div class="p-5 space-y-4" id="dashboard-liar-summary">
-        try {
-            // Split into independent promises to avoid one failure blocking all
-            const quotesPromise = api.fetchQuotes(indexSymbols).catch(err => { console.error("Dashboard: fetchQuotes failed", err); return {}; });
-            const marginPromise = api.fetchLocalJson(`daily/tw_market_margin/${latestMargin}.json`).catch(() => null);
-            const liarPromise = api.fetchLocalJson("daily/liar.json").catch(() => null);
-            const quantPromise = api.fetchLocalJson("quant/latest_portfolio.json").catch(() => null);
-            const tradesPromise = db.getAllTrades().catch(() => []);
-            const riskPromise = api.fetchLocalJson("meta/market_risk.json").catch(() => null);
-            const narrativePromise = api.fetchLocalJson("meta/market_narrative.json").catch(() => null);
+                                <div class="text-center py-4 text-gray-500 text-sm">監控中...</div>
+                            </div>
+                        </div>
 
-            const [quotes, marginData, liarData, quantData, trades, riskData, narrativeData] = await Promise.all([
-                quotesPromise, marginPromise, liarPromise, quantPromise, tradesPromise, riskPromise, narrativePromise
-            ]);
-
-            this.renderMarket(quotes, marginData);
-            this.renderLiar(liarData);
-            this.renderQuant(quantData);
-            this.renderPortfolioSummary(trades);
-            this.renderIntelligence(riskData, narrativeData);                </div>
+                        <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm">
+                            <div class="p-5 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                                <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
+                                    <span class="mr-2">💰</span> 預估配息總覽
+                                </h3>
+                                <button onclick="router.switchPage('assetRisk', '現金流')" class="text-xs text-blue-500 font-bold hover:underline">現金流</button>
+                            </div>
+                            <div class="p-6" id="dashboard-dividend-summary">
+                                <div class="text-center py-4 text-gray-500 text-sm">計算中...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         `;
 
@@ -122,32 +121,26 @@ export const Dashboard = {
         }
 
         const latestMargin = indexData?.latest_daily_tw_market_margin || '2026-05-20';
-        // 🚀 v2.15.2: 使用帶有 ^ 的標準 Yahoo 代碼，確保即時與備援一致
         const indexSymbols = ['IX0001', 'IX0043', '^DJI', '^IXIC', '^GSPC', '^SOX', 'TSM']; 
         
         try {
-            // Split into independent promises to avoid one failure blocking all
             const quotesPromise = api.fetchQuotes(indexSymbols).catch(err => { console.error('Dashboard: fetchQuotes failed', err); return {}; });
             const marginPromise = api.fetchLocalJson(`daily/tw_market_margin/${latestMargin}.json`).catch(() => null);
             const liarPromise = api.fetchLocalJson('daily/liar.json').catch(() => null);
             const quantPromise = api.fetchLocalJson('quant/latest_portfolio.json').catch(() => null);
             const tradesPromise = db.getAllTrades().catch(() => []);
+            const riskPromise = api.fetchLocalJson('meta/market_risk.json').catch(() => null);
+            const narrativePromise = api.fetchLocalJson('meta/market_narrative.json').catch(() => null);
 
-            const [quotes, marginData, liarData, quantData, trades] = await Promise.all([
-                quotesPromise, marginPromise, liarPromise, quantPromise, tradesPromise
+            const [quotes, marginData, liarData, quantData, trades, riskData, narrativeData] = await Promise.all([
+                quotesPromise, marginPromise, liarPromise, quantPromise, tradesPromise, riskPromise, narrativePromise
             ]);
-
-            console.log('Dashboard: Data receive check', { 
-                hasQuotes: Object.keys(quotes).length > 0, 
-                hasMargin: !!marginData, 
-                hasLiar: !!liarData, 
-                hasQuant: !!quantData 
-            });
 
             this.renderMarket(quotes, marginData);
             this.renderLiar(liarData);
             this.renderQuant(quantData);
             this.renderPortfolioSummary(trades);
+            this.renderIntelligence(riskData, narrativeData);
 
         } catch (err) {
             console.error('Dashboard: Top-level render error', err);
@@ -156,7 +149,6 @@ export const Dashboard = {
 
     async getMarketSession(market) {
         const calendar = await api.getCalendar();
-        // Use a dummy symbol to get the market status via the central API logic
         const status = api.getMarketStatus(market === 'TW' ? '2330' : 'AAPL', calendar);
         
         if (!status.isTradingDay || status.session === '休市') {
@@ -174,11 +166,9 @@ export const Dashboard = {
     },
 
     renderMarket(quotes, marginData) {
-        console.log('Dashboard: Executing renderMarket...');
         const container = document.getElementById('dashboard-market-stats');
         if (!container) return;
 
-        // Use a wrapper to handle the async getMarketSession
         const updateMarketUI = async () => {
             const twSession = await this.getMarketSession('TW');
             const usSession = await this.getMarketSession('US');
@@ -297,11 +287,10 @@ export const Dashboard = {
 
     async renderLiar(data) {
         const dashboardSummary = document.getElementById('dashboard-liar-summary');
+        if (!dashboardSummary) return;
 
         if (!data || !data.data || data.data.length === 0) {
-            if (dashboardSummary) {
-                dashboardSummary.innerHTML = `<div class="text-center py-4 text-gray-500 text-sm">目前無偵測到說謊事件。</div>`;
-            }
+            dashboardSummary.innerHTML = `<div class="text-center py-4 text-gray-500 text-sm">目前無偵測到說謊事件。</div>`;
             return;
         }
 
@@ -355,42 +344,33 @@ export const Dashboard = {
             `;
         };
 
-        if (dashboardSummary) {
-            const cardsHtml = data.data.map(item => renderCard(item)).join('');
-            dashboardSummary.innerHTML = `
-                <div id="liar-marquee-wrapper" style="position:relative; overflow:hidden; height:180px;">
-                    <div id="liar-marquee-track" style="position:absolute; left:0; right:0; transition:transform 0.5s ease-in-out;">
-                        ${cardsHtml}
-                    </div>
+        const cardsHtml = data.data.map(item => renderCard(item)).join('');
+        dashboardSummary.innerHTML = `
+            <div id="liar-marquee-wrapper" style="position:relative; overflow:hidden; height:180px;">
+                <div id="liar-marquee-track" style="position:absolute; left:0; right:0; transition:transform 0.5s ease-in-out;">
+                    ${cardsHtml}
                 </div>
-            `;
+            </div>
+        `;
 
-            const track = document.getElementById('liar-marquee-track');
-            const cards = track.querySelectorAll('[data-stock]');
-            let currentIndex = 0;
+        const track = document.getElementById('liar-marquee-track');
+        const cards = track.querySelectorAll('[data-stock]');
+        let currentIndex = 0;
 
-            cards.forEach((card, i) => {
-                card.style.position = 'absolute';
-                card.style.left = '0';
-                card.style.right = '0';
-                card.style.top = `${i * 180}px`;
-                card.onclick = () => window.StockDetail.show(card.getAttribute('data-stock'));
-            });
+        cards.forEach((card, i) => {
+            card.style.position = 'absolute';
+            card.style.left = '0';
+            card.style.right = '0';
+            card.style.top = `${i * 180}px`;
+            card.onclick = () => window.StockDetail.show(card.getAttribute('data-stock'));
+        });
 
-            const wrapper = document.getElementById('liar-marquee-wrapper');
-            wrapper.style.height = '180px';
-
-            function updateMarquee() {
-                track.style.transform = `translateY(-${currentIndex * 180}px)`;
-            }
-
-            if (cards.length > 0) {
-                if (this._liarTimer) clearInterval(this._liarTimer);
-                this._liarTimer = setInterval(() => {
-                    currentIndex = (currentIndex + 1) % cards.length;
-                    updateMarquee();
-                }, 3000);
-            }
+        if (cards.length > 0) {
+            if (this._liarTimer) clearInterval(this._liarTimer);
+            this._liarTimer = setInterval(() => {
+                currentIndex = (currentIndex + 1) % cards.length;
+                if (track) track.style.transform = `translateY(-${currentIndex * 180}px)`;
+            }, 3000);
         }
     },
 
@@ -404,7 +384,7 @@ export const Dashboard = {
                 <div class="text-xl font-bold ${isBull ? 'text-red-500' : 'text-green-500'}">${data?.regime || '--'}</div>
             </div>
             <div class="text-center">
-                <div class="text-[10px] text-gray-500 mb-1">模型淨值</div>
+                <div class="text-[10px] text-gray-500 mb-1">模型淨值 NAV</div>
                 <div class="text-xl font-mono font-bold text-blue-500">${data?.nav ? data.nav.toFixed(2) : '--'}</div>
             </div>
         `;
@@ -437,30 +417,27 @@ export const Dashboard = {
                 const month = parseInt(m);
                 if (isNaN(month) || month < 1 || month > 12) return;
                 if ((a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0) {
-                    if (y === currentYear) {
-                        monthlyDividends[month] = a.cash_dividend;
-                    }
+                    if (y === currentYear) monthlyDividends[month] = a.cash_dividend;
                 }
             });
-            // Fill empty months from historical data (most recent year first)
             const histDividends = actions
                 .filter(a => a.ex_date && (a.type === 'DIVIDEND' || a.type === 'CASH_DIVIDEND') && a.cash_dividend > 0 && a.ex_date.split('-')[0] !== currentYear)
                 .sort((a, b) => b.ex_date.localeCompare(a.ex_date));
             histDividends.forEach(a => {
                 const month = parseInt(a.ex_date.split('-')[1]);
-                if (month >= 1 && month <= 12 && monthlyDividends[month] === 0) {
-                    monthlyDividends[month] = a.cash_dividend;
-                }
+                if (month >= 1 && month <= 12 && monthlyDividends[month] === 0) monthlyDividends[month] = a.cash_dividend;
             });
             estTotalDiv += Object.values(monthlyDividends).reduce((sum, dps) => sum + dps * h.shares, 0);
         });
 
-        if (divEl) divEl.innerHTML = `
-            <div class="flex items-end space-x-2">
-                <div class="text-4xl font-mono font-bold text-green-500">$${this.formatNumber(estTotalDiv, 0)}</div>
-                <div class="text-xs text-gray-400 mb-2">/ 年預估</div>
-            </div>
-        `;
+        if (divEl) {
+            divEl.innerHTML = `
+                <div class="flex items-end space-x-2">
+                    <div class="text-4xl font-mono font-bold text-green-500">$${this.formatNumber(estTotalDiv, 0)}</div>
+                    <div class="text-xs text-gray-400 mb-2">/ 年預估</div>
+                </div>
+            `;
+        }
 
         let totalMV = 0;
         const quotes = await api.fetchQuotes(activeSymbols).catch(() => ({}));
@@ -473,25 +450,22 @@ export const Dashboard = {
         if (totalMV > peakMV) { peakMV = totalMV; localStorage.setItem('twstock_peak_mv', peakMV.toString()); }
         const drawdown = peakMV > 0 ? (peakMV - totalMV) / peakMV : 0;
 
-        if (riskEl) riskEl.innerHTML = `
-            <div class="flex justify-between items-center mb-4">
-                <div>
-                    <div class="text-xs text-gray-500 mb-1 uppercase font-bold">目前回撤</div>
-                    <div class="text-3xl font-mono font-bold text-gray-900 dark:text-white">${(drawdown * 100).toFixed(2)}%</div>
+        if (riskEl) {
+            riskEl.innerHTML = `
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <div class="text-xs text-gray-500 mb-1 uppercase font-bold">目前回撤</div>
+                        <div class="text-3xl font-mono font-bold text-gray-900 dark:text-white">${(drawdown * 100).toFixed(2)}%</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xs text-gray-500 mb-1 uppercase font-bold">歷史最高</div>
+                        <div class="text-xl font-mono text-blue-500">$${this.formatNumber(peakMV, 0)}</div>
+                    </div>
                 </div>
-                <div class="text-right">
-                    <div class="text-xs text-gray-500 mb-1 uppercase font-bold">歷史最高</div>
-                    <div class="text-xl font-mono text-blue-500">$${this.formatNumber(peakMV, 0)}</div>
-                </div>
-            </div>
-            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-1.5"><div class="bg-red-500 h-1.5 rounded-full" style="width: ${Math.min(100, drawdown * 400)}%"></div></div>
-        `;
+                <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-1.5"><div class="bg-red-500 h-1.5 rounded-full" style="width: ${Math.min(100, drawdown * 400)}%"></div></div>
+            `;
+        }
     },
-
-    formatNumber(num, decimals = 2) {
-        return new Intl.NumberFormat('zh-TW', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(num);
-    }
-};
 
     renderIntelligence(risk, narrative) {
         const container = document.getElementById("dashboard-ai-intelligence");
@@ -515,4 +489,11 @@ export const Dashboard = {
                 statusEl.className = `text-xs font-bold mt-1 ${color}`;
             }
         }
-    },window.Dashboard = Dashboard;
+    },
+
+    formatNumber(num, decimals = 2) {
+        return new Intl.NumberFormat('zh-TW', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(num);
+    }
+};
+
+window.Dashboard = Dashboard;

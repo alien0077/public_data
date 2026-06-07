@@ -5,6 +5,7 @@
   "close": 242.5,
   "health_score": 150,
   "signal": "Bullish",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": -0.426,
@@ -12,8 +13,10 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1538.0,
-    "short_change": 180.0,
+    "margin_change": -238.0,
+    "margin_slope": -111.8,
+    "maintenance_ratio": 227.83,
+    "short_change": -1596.0,
     "short_margin_ratio": 11.7
   },
   "tdcc": {
@@ -36,7 +39,7 @@
   },
   "events": [],
   "raw_signals": [
-    "ma_bull"
+    "主力洗盤完成"
   ],
   "data_version": "2026-06-05"
 }

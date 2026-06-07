@@ -67,7 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const { primary, secondary } = e.detail;
         if (stockDetailOverlay) stockDetailOverlay.classList.add('hidden');
         try {
-            if (primary === 'trendHunter') TrendHunter.init(secondary);
+            if (primary === 'dashboard') Dashboard.init();
+            else if (primary === 'trendHunter') TrendHunter.init(secondary);
             else if (primary === 'assetRisk') AssetRisk.init(secondary);
             else if (primary === 'performance') BattleRecord.init();
             else if (primary === 'addTrade') Transaction.init();
