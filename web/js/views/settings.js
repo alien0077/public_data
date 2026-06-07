@@ -53,7 +53,7 @@ export const Settings = {
                         </div>
                         <div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800">
                             <span class="text-sm text-gray-500">App版本</span>
-                            <span class="text-sm font-bold text-gray-900 dark:text-white">V2.0.0</span>
+                            <span class="text-sm font-bold text-gray-900 dark:text-white">V2.1.0</span>
                         </div>
                         <div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-100 dark:border-gray-800">
                             <span class="text-sm text-gray-500">更新日期</span>

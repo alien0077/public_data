@@ -306,7 +306,8 @@ export const Dashboard = {
             const sentimentColor = isUpgrade ? 'text-red-500' : 'text-green-500';
             return `
                 <div class="p-4 bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 cursor-pointer hover:border-blue-500/50 transition-all shadow-sm group"
-                     onclick="window.StockDetail.show('${item.stockId}')">
+                     data-stock="${item.stockId}"
+                     style="min-height:170px; box-sizing:border-box;">
                     <div class="flex justify-between items-start mb-3">
                         <div>
                             <span class="text-[10px] ${isUpgrade ? 'bg-red-500' : 'bg-green-500'} text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider">${item.brokerName}</span>
@@ -330,7 +331,41 @@ export const Dashboard = {
         };
 
         if (dashboardSummary) {
-            dashboardSummary.innerHTML = data.data.slice(0, 3).map(item => renderCard(item)).join('');
+            const cardsHtml = data.data.map(item => renderCard(item)).join('');
+            dashboardSummary.innerHTML = `
+                <div id="liar-marquee-wrapper" style="position:relative; overflow:hidden; height:180px;">
+                    <div id="liar-marquee-track" style="position:absolute; left:0; right:0; transition:transform 0.5s ease-in-out;">
+                        ${cardsHtml}
+                    </div>
+                </div>
+            `;
+
+            const track = document.getElementById('liar-marquee-track');
+            const cards = track.querySelectorAll('[data-stock]');
+            let currentIndex = 0;
+
+            cards.forEach((card, i) => {
+                card.style.position = 'absolute';
+                card.style.left = '0';
+                card.style.right = '0';
+                card.style.top = `${i * 180}px`;
+                card.onclick = () => window.StockDetail.show(card.getAttribute('data-stock'));
+            });
+
+            const wrapper = document.getElementById('liar-marquee-wrapper');
+            wrapper.style.height = '180px';
+
+            function updateMarquee() {
+                track.style.transform = `translateY(-${currentIndex * 180}px)`;
+            }
+
+            if (cards.length > 0) {
+                if (this._liarTimer) clearInterval(this._liarTimer);
+                this._liarTimer = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % cards.length;
+                    updateMarquee();
+                }, 3000);
+            }
         }
     },
 

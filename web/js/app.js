@@ -641,9 +641,9 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex = (currentIndex + 1) % totalItems;
             track.style.transform = 'translateY(-' + (currentIndex * CARD_HEIGHT) + 'px)';
         };
-        let timer = setInterval(advance, 3500);
+        let timer = setInterval(advance, 3000);
         container.addEventListener('mouseenter', function() { clearInterval(timer); });
-        container.addEventListener('mouseleave', function() { timer = setInterval(advance, 3500); });
+        container.addEventListener('mouseleave', function() { timer = setInterval(advance, 3000); });
         let touchStartY = 0;
         container.addEventListener('touchstart', function(e) {
             clearInterval(timer);

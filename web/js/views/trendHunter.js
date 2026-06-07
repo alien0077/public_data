@@ -1627,8 +1627,11 @@ export const TrendHunter = {
                     const runDays = s.run_days || s.age || '--';
                     const entryDsl = s.rules?.entry || s.dsl || '--';
                     const exitDsl = s.rules?.exit || s.exit_dsl || '--';
-                    const rawReturn = s.cagr !== undefined ? s.cagr : (s.return_pct !== undefined ? s.return_pct : (s.total_return !== undefined ? s.total_return * 100 : 0));
-                    const isProfit = rawReturn >= 0;
+                    const showDash = s.dsl === 'total_account';
+                    const btReturn = s.backtest_total_return !== undefined ? s.backtest_total_return * 100 : (s.cagr !== undefined ? s.cagr : (s.return_pct !== undefined ? s.return_pct : 0));
+                    const btSharpe = s.backtest_sharpe !== undefined ? s.backtest_sharpe : (s.sharpe || 0);
+                    const btWinRate = s.backtest_win_rate !== undefined ? s.backtest_win_rate : (s.win_rate || 0);
+                    const isProfit = btReturn >= 0;
                     return `
                         <div class="bg-white dark:bg-[#161b22] p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow flex flex-col space-y-4">
                             <div class="flex justify-between items-start">
@@ -1645,17 +1648,17 @@ export const TrendHunter = {
                             <div class="grid grid-cols-3 gap-2 bg-gray-50 dark:bg-gray-900/50 p-3 rounded-xl font-mono text-center">
                                 <div>
                                     <div class="text-[10px] text-gray-400">總報酬率</div>
-                                    <div class="text-xs font-bold ${isProfit ? 'text-red-500' : 'text-green-500'}">
-                                        ${isProfit ? '+' : ''}${rawReturn.toFixed(1)}%
+                                    <div class="text-xs font-bold ${showDash ? 'text-gray-400' : (isProfit ? 'text-red-500' : 'text-green-500')}">
+                                        ${showDash ? '--' : (isProfit ? '+' : '') + btReturn.toFixed(1) + '%'}
                                     </div>
                                 </div>
                                 <div>
                                     <div class="text-[10px] text-gray-400">夏普值</div>
-                                    <div class="text-xs font-bold text-blue-500">${(s.sharpe || 0).toFixed(2)}</div>
+                                    <div class="text-xs font-bold text-blue-500">${showDash ? '--' : btSharpe.toFixed(2)}</div>
                                 </div>
                                 <div>
                                     <div class="text-[10px] text-gray-400">歷史勝率</div>
-                                    <div class="text-xs font-bold text-purple-500">${((s.win_rate || 0) * 100).toFixed(0)}%</div>
+                                    <div class="text-xs font-bold text-purple-500">${showDash ? '--' : (btWinRate * 100).toFixed(0) + '%'}</div>
                                 </div>
                             </div>
 
