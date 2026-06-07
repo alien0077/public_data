@@ -1,29 +1,29 @@
 {
   "stock_id": "4933",
   "name": "4933",
-  "date": "2026-06-04",
-  "close": 75.6,
+  "date": "2026-06-05",
+  "close": 73.9,
   "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.066,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.107,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1429.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 1411.0,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.14
   },
   "tdcc": {
     "big_holder_change": 59.67,
     "retail_holder_change": 0,
-    "holder_concentration": 63.23
+    "holder_concentration": 64.35
   },
   "main_force": {
-    "cost": 72.56,
-    "distance": 4.19,
+    "cost": 72.8,
+    "distance": 1.51,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

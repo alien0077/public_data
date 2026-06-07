@@ -1,29 +1,29 @@
 {
   "stock_id": "00700",
   "name": "00700",
-  "date": "2026-06-04",
-  "close": 16.95,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-05",
+  "close": 16.93,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 195.0,
+    "margin_change": 187.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 3.19,
+    "big_holder_change": 3.45,
     "retail_holder_change": 0,
-    "holder_concentration": 12.86
+    "holder_concentration": 14.79
   },
   "main_force": {
-    "cost": 17.26,
-    "distance": -1.8,
+    "cost": 17.22,
+    "distance": -1.68,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-05"
 }

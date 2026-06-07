@@ -1,10 +1,10 @@
 {
   "stock_id": "6198",
   "name": "6198",
-  "date": "2026-06-04",
-  "close": 20.3,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-05",
+  "close": 20.65,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0.0,
@@ -17,24 +17,26 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 92.85,
+    "big_holder_change": 92.87,
     "retail_holder_change": 0,
-    "holder_concentration": 94.17
+    "holder_concentration": 94.19
   },
   "main_force": {
-    "cost": 20.39,
-    "distance": -0.44,
-    "trend": "DOWN"
+    "cost": 20.34,
+    "distance": 1.52,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-06-05"
 }

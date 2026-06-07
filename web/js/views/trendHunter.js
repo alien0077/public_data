@@ -186,10 +186,11 @@ export const TrendHunter = {
                                         <th class="px-6 py-3 text-right">累積回報</th>
                                         <th class="px-6 py-3 text-right hidden md:table-cell">籌碼特徵</th>
                                         <th class="px-6 py-3 text-right">操作建議</th>
+                                        <th class="px-6 py-3 text-right hidden md:table-cell">本益比</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-sm text-gray-400">
-                                    <tr><td colspan="7" class="px-6 py-8 text-center text-gray-500">加載數據中...</td></tr>
+                                    <tr><td colspan="8" class="px-6 py-8 text-center text-gray-500">加載數據中...</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -208,11 +209,12 @@ export const TrendHunter = {
                                         <th class="px-6 py-3">訊號日期</th>
                                         <th class="px-6 py-3">股號</th>
                                         <th class="px-6 py-3">訊號類型</th>
+                                        <th class="px-6 py-3 text-right">本益比</th>
                                         <th class="px-6 py-3">觸發原因</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-sm text-gray-400">
-                                    <tr><td colspan="4" class="px-6 py-8 text-center text-gray-500">加載數據中...</td></tr>
+                                    <tr><td colspan="5" class="px-6 py-8 text-center text-gray-500">加載數據中...</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -483,6 +485,7 @@ export const TrendHunter = {
                                         <th class="px-5 py-2 text-right">天數</th>
                                         <th class="px-5 py-2 text-right">累計買超(張)</th>
                                         <th class="px-5 py-2 text-right">區間損益</th>
+                                        <th class="px-5 py-2 text-right hidden sm:table-cell">本益比</th>
                                         <th class="px-5 py-2 text-right">訊號</th>
                                     </tr>
                                 </thead>
@@ -508,6 +511,9 @@ export const TrendHunter = {
                                         const signalBadge = sig
                                             ? `<span class="text-[11px] font-bold px-2 py-1 rounded border ${sig.cls}">${sig.icon} ${sig.label}</span>`
                                             : '<span class="text-[10px] text-gray-400">追蹤中</span>';
+                                        const peRatio = s.pe_ratio;
+                                        const peColor = peRatio < 15 ? 'text-green-500' : peRatio < 25 ? 'text-gray-600 dark:text-gray-300' : 'text-orange-500';
+                                        const peStr = peRatio ? peRatio.toFixed(1) : '--';
                                         return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 cursor-pointer transition-colors"
                                                      onclick="window.StockDetail.show('${s.stock_id}')">
                                             <td class="px-5 py-2.5">
@@ -521,6 +527,7 @@ export const TrendHunter = {
                                             <td class="px-5 py-2.5 text-right text-gray-500">${s.tracking_days}d</td>
                                             <td class="px-5 py-2.5 text-right font-bold text-blue-500">${buyStr}</td>
                                             <td class="px-5 py-2.5 text-right font-bold ${retClass}">${retStr}</td>
+                                            <td class="px-5 py-2.5 text-right hidden sm:table-cell font-bold ${peColor}">${peStr}</td>
                                             <td class="px-5 py-2.5 text-right">
                                                 <div class="flex flex-col items-end space-y-1">
                                                     ${signalBadge}
@@ -639,6 +646,7 @@ export const TrendHunter = {
                                         <th class="px-4 py-2 text-right hidden md:table-cell">一致性</th>
                                         <th class="px-4 py-2 text-right hidden sm:table-cell">日均買超</th>
                                         <th class="px-4 py-2 text-right hidden lg:table-cell">近3日</th>
+                                        <th class="px-4 py-2 text-right hidden lg:table-cell">本益比</th>
                                         <th class="px-4 py-2 text-right">訊號</th>
                                     </tr>
                                 </thead>
@@ -658,6 +666,9 @@ export const TrendHunter = {
                                         if (s.label.includes('🔥')) labelColor = 'bg-red-500/15 text-red-500 border-red-500/30';
                                         else if (s.label.includes('👀')) labelColor = 'bg-orange-500/15 text-orange-500 border-orange-500/30';
                                         else if (s.label.includes('⚡')) labelColor = 'bg-blue-500/15 text-blue-500 border-blue-500/30';
+                                        const peRatio = s.pe_ratio;
+                                        const peColor = peRatio < 15 ? 'text-green-500' : peRatio < 25 ? 'text-gray-600 dark:text-gray-300' : 'text-orange-500';
+                                        const peStr = peRatio ? peRatio.toFixed(1) : '--';
 
                                         return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 cursor-pointer transition-colors"
                                                      onclick="window.StockDetail.show('${s.stock_id}')">
@@ -673,6 +684,7 @@ export const TrendHunter = {
                                             </td>
                                             <td class="px-4 py-2.5 text-right text-gray-500 hidden sm:table-cell">${avgStr}</td>
                                             <td class="px-4 py-2.5 text-right text-gray-500 hidden lg:table-cell">${r3Str}</td>
+                                            <td class="px-4 py-2.5 text-right hidden lg:table-cell font-bold ${peColor}">${peStr}</td>
                                             <td class="px-4 py-2.5 text-right">
                                                 <span class="text-[10px] font-bold px-2 py-1 rounded border ${labelColor}">${s.label}</span>
                                             </td>
@@ -1211,13 +1223,14 @@ export const TrendHunter = {
                                     ${type === 'BUY' ? '買進 BUY' : '賣出 SELL'}
                                 </span>
                             </td>
+                            <td class="px-6 py-4 text-right font-bold ${s.pe_ratio < 15 ? 'text-green-500' : s.pe_ratio >= 25 ? 'text-orange-500' : 'text-gray-600 dark:text-gray-300'}">${s.pe_ratio ? s.pe_ratio.toFixed(1) : '--'}</td>
                             <td class="px-6 py-4 text-xs">
                                 ${s.select_reason ? `<span class="inline-block px-1.5 py-0.5 rounded text-[8px] font-bold mr-1 ${s.select_reason.includes('趨勢') ? 'text-red-500 bg-red-500/10' : s.select_reason.includes('法人') ? 'text-orange-500 bg-orange-500/10' : s.select_reason.includes('ETF') ? 'text-purple-500 bg-purple-500/10' : 'text-blue-500 bg-blue-500/10'}">${s.select_reason}</span>` : ''}
                                 <span class="text-gray-450">${s.reason || s.label || 'SIGNAL'}</span>
                             </td>
                         </tr>
                     `;
-                }).join('') || '<tr><td colspan="4" class="px-6 py-8 text-center text-gray-500">尚無近期訊號</td></tr>';
+                }).join('') || '<tr><td colspan="5" class="px-6 py-8 text-center text-gray-500">尚無近期訊號</td></tr>';
 
                 const totalPages = Math.ceil(allSignals.length / pageSize) || 1;
                 paginationContainer.innerHTML = `
@@ -1473,7 +1486,7 @@ export const TrendHunter = {
                 }
                 if (holdingsTable) {
                     if (activeHoldings.length === 0) {
-                        holdingsTable.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-gray-500">模型目前無持股，保持全現金觀望。</td></tr>`;
+                        holdingsTable.innerHTML = `<tr><td colspan="7" class="px-6 py-8 text-center text-gray-500">模型目前無持股，保持全現金觀望。</td></tr>`;
                     } else {
                         holdingsTable.innerHTML = activeHoldings.map(p => {
                             const name = stocksMeta[p.stock] || stocksMeta[p.stock.replace(/\.TW(O)?$/, '')] || p.stock;
@@ -1483,6 +1496,9 @@ export const TrendHunter = {
                             const cleanStockId = p.stock.replace(/\.TW(O)?$/, '');
                             const reason = p.select_reason || '';
                             const reasonColor = reason.includes('趨勢') ? 'text-red-500 bg-red-500/10' : reason.includes('法人') ? 'text-orange-500 bg-orange-500/10' : reason.includes('ETF') ? 'text-purple-500 bg-purple-500/10' : 'text-blue-500 bg-blue-500/10';
+                            const peRatio = p.pe_ratio;
+                            const peColor = peRatio < 15 ? 'text-green-500' : peRatio < 25 ? 'text-gray-600 dark:text-gray-300' : 'text-orange-500';
+                            const peStr = peRatio ? peRatio.toFixed(1) : '--';
                             return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-900/30 cursor-pointer" onclick="window.StockDetail.show('${cleanStockId}')">
                                 <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
                                     <div class="font-bold">${cleanStockId}</div><div class="text-xs text-gray-500">${name}</div></td>
@@ -1492,6 +1508,7 @@ export const TrendHunter = {
                                 <td class="px-6 py-4 text-right font-bold ${isProfit ? 'text-red-500' : 'text-green-500'}">${isProfit ? '+' : ''}${rawRet.toFixed(2)}%</td>
                                 <td class="px-6 py-4 text-right text-xs text-gray-500 hidden md:table-cell">${p.chips || p.chip_label || ''}</td>
                                 <td class="px-6 py-4 text-right"><span class="px-2 py-1 rounded text-xs font-bold ${actionColor}">${action}</span></td>
+                                <td class="px-6 py-4 text-right hidden md:table-cell font-bold ${peColor}">${peStr}</td>
                             </tr>`;
                         }).join('');
                     }
@@ -1536,14 +1553,16 @@ export const TrendHunter = {
                 const signalCandidates = (data.portfolio || []).filter(p => !p.is_held && (p.entry_reason === 'SIGNAL'));
                 allSignals = signalCandidates.map(c => ({
                     entry_date: data.date, symbol: c.stock, type: 'BUY',
-                    select_reason: c.select_reason || '', reason: c.select_reason || '模型選入'
+                    select_reason: c.select_reason || '', reason: c.select_reason || '模型選入',
+                    pe_ratio: c.pe_ratio
                 }));
                 if (data.trade_log && data.trade_log.length > 0) {
                     const tradeSignals = data.trade_log.map(t => ({
                         entry_date: t.entry_date || t.exit_date || '', symbol: t.stock,
                         type: t.action === 'SELL' ? 'SELL' : 'BUY',
                         select_reason: t.select_reason || '',
-                        reason: t.reason || t.select_reason || (t.action === 'SELL' ? '策略出場' : '策略進場')
+                        reason: t.reason || t.select_reason || (t.action === 'SELL' ? '策略出場' : '策略進場'),
+                        pe_ratio: t.pe_ratio
                     }));
                     const seen = new Set(allSignals.map(s => s.symbol + '_' + s.entry_date));
                     allSignals = [...allSignals, ...tradeSignals.filter(t => !seen.has(t.symbol + '_' + t.entry_date))];

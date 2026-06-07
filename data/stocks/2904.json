@@ -1,13 +1,13 @@
 {
   "stock_id": "2904",
   "name": "2904",
-  "date": "2026-06-04",
-  "close": 14.35,
-  "health_score": 103,
-  "signal": "Bullish",
+  "date": "2026-06-05",
+  "close": 14.25,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.008,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 54.27
   },
   "main_force": {
-    "cost": 14.58,
-    "distance": -1.58,
+    "cost": 14.5,
+    "distance": -1.72,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,16 +32,9 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 7 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-06-04"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-05"
 }

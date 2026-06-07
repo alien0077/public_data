@@ -1,13 +1,13 @@
 {
   "stock_id": "9912",
   "name": "9912",
-  "date": "2026-06-04",
+  "date": "2026-06-05",
   "close": 12.55,
-  "health_score": 150,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.022,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 56.82,
+    "big_holder_change": 56.92,
     "retail_holder_change": 0,
-    "holder_concentration": 61.19
+    "holder_concentration": 61.29
   },
   "main_force": {
-    "cost": 12.46,
-    "distance": 0.72,
+    "cost": 12.45,
+    "distance": 0.8,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 7 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

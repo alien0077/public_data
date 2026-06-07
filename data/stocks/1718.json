@@ -1,29 +1,29 @@
 {
   "stock_id": "1718",
   "name": "1718",
-  "date": "2026-06-04",
-  "close": 9.68,
-  "health_score": 133,
+  "date": "2026-06-05",
+  "close": 9.85,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.005,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 1.13,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 17979.0,
-    "short_change": 313.0,
-    "short_margin_ratio": 1.74
+    "margin_change": 12347.0,
+    "short_change": 3781.0,
+    "short_margin_ratio": 30.62
   },
   "tdcc": {
-    "big_holder_change": 49.76,
+    "big_holder_change": 51.38,
     "retail_holder_change": 0,
-    "holder_concentration": 55.86
+    "holder_concentration": 57.16
   },
   "main_force": {
-    "cost": 6.87,
-    "distance": 40.9,
+    "cost": 7.05,
+    "distance": 39.72,
     "trend": "UP"
   },
   "sector": {
@@ -36,12 +36,13 @@
   },
   "events": [
     {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
+      "level": "YELLOW",
+      "title": "短線券資比過高"
     }
   ],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

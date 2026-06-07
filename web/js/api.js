@@ -249,6 +249,7 @@ export const api = {
         const s = symbol.split('.')[0];
         return meta.stocks?.find(item => item.symbol === s) || null;
     },
+    async fetchSectorPE() { try { return await this.fetchLocalJson('quant/sector_pe.json'); } catch (err) { return null; } },
     async fetchLiarData() { try { return await this.fetchLocalJson(`daily/liar.json`); } catch (err) { return null; } }
 };
 

@@ -558,9 +558,16 @@ export const StockDetail = {
 
         const price = quoteMap[this.currentSymbol]?.price || 0;
         const sorted = (quarterly?.data || []).sort((a, b) => b.date.localeCompare(a.date));
-        const last4 = sorted.slice(0, 4);
-        const trailingEPS = last4.reduce((s, q) => s + (q.eps || 0), 0);
-        const per = price > 0 && trailingEPS > 0 ? (price / trailingEPS).toFixed(2) : '--';
+        const q4Record = sorted.find(q => q.period && q.period.endsWith('-Q4'));
+        let ttmEps = 0;
+        if (q4Record && q4Record.eps > 0) {
+            const fyYear = q4Record.period.substring(0, 4);
+            const q1Record = sorted.find(q => q.period === fyYear + '-Q1');
+            const base = q1Record && q1Record.eps > 0 ? q4Record.eps - q1Record.eps : q4Record.eps;
+            const newer = sorted.filter(q => q.period > q4Record.period && !q.period.endsWith('-Q4'));
+            ttmEps = base + newer.reduce((s, q) => s + (q.eps || 0), 0);
+        }
+        const per = price > 0 && ttmEps > 0 ? (price / ttmEps).toFixed(2) : '--';
         const latest = sorted[0] || {};
         const themes = stockInfo?.themes || [];
         const sector = stockInfo?.official_sector || stockInfo?.industry || '--';

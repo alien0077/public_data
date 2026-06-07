@@ -1,13 +1,13 @@
 {
   "stock_id": "2020",
   "name": "2020",
-  "date": "2026-06-04",
-  "close": 21.85,
+  "date": "2026-06-05",
+  "close": 21.6,
   "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.027,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.011,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 44.65,
+    "big_holder_change": 44.66,
     "retail_holder_change": 0,
-    "holder_concentration": 49.85
+    "holder_concentration": 50.0
   },
   "main_force": {
-    "cost": 21.53,
-    "distance": 1.49,
+    "cost": 21.52,
+    "distance": 0.37,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

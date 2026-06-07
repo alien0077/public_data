@@ -3,7 +3,7 @@ import { api } from './api.js';
 import { charts } from './charts.js';
 import { TrendHunter } from './views/trendHunter.js?v=3';
 import { AssetRisk } from './views/assetRisk.js?v=2';
-import { StockDetail } from './views/stockDetail.js?v=2';
+import { StockDetail } from './views/stockDetail.js?v=3';
 import { BattleRecord } from './views/battleRecord.js?v=2';
 import { Transaction } from './views/transaction.js?v=2';
 import { Favorites } from './views/favorites.js?v=2';
@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 await renderMarketSummary({});
                 await loadAndRenderLiar();
                 if (portfolioBody.children.length === 0) {
-                    portfolioBody.innerHTML = '<tr><td colspan="8" class="px-6 py-10 text-center text-gray-500 font-mono text-sm">尚無持股資料，請由側邊欄「匯入資料」匯入交易紀錄</td></tr>';
+                    portfolioBody.innerHTML = '<tr><td colspan="9" class="px-6 py-10 text-center text-gray-500 font-mono text-sm">尚無持股資料，請由側邊欄「匯入資料」匯入交易紀錄</td></tr>';
                 }
             }
             // 🚀 支援從 group-search.html 帶入的 ?symbol=XXX 參數
@@ -389,14 +389,14 @@ document.addEventListener('DOMContentLoaded', () => {
             row.className = 'hover:bg-gray-800/30 transition-colors cursor-pointer';
             row.addEventListener('click', () => StockDetail.show(sym));
             
-            row.innerHTML = '<td class="px-3 md:px-6 py-4"><div class="font-bold text-white">' + sym + '</div><div class="text-[10px] text-gray-500 truncate max-w-[100px]">' + (h.name || q.name || '') + '</div></td>' +
+            row.innerHTML = '<td class="px-3 md:px-6 py-4"><div class="font-bold text-gray-900 dark:text-white">' + sym + '</div><div class="text-[10px] text-gray-500 truncate max-w-[100px]">' + (h.name || q.name || '') + '</div></td>' +
                 '<td class="px-3 md:px-6 py-4 text-right ' + priceClass + '">' + (price > 0 ? formatNumber(price) : '--') + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-right ' + priceClass + ' text-xs">' + (price > 0 ? (pct > 0 ? '▲' : (pct < 0 ? '▼' : '')) + ' ' + Math.abs(pct).toFixed(2) + '%' : '--') + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-right hidden sm:table-cell">' + formatNumber(shares, 0) + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-right text-gray-400 text-xs hidden sm:table-cell">' + formatNumber(avgCost) + '</td>' +
-                '<td class="px-3 md:px-6 py-4 text-right font-bold text-blue-400 hidden md:table-cell">' + formatNumber(mv, 0) + '</td>' +
-                '<td class="px-3 md:px-6 py-4 text-right ' + (pnl >= 0 ? 'text-red-500' : 'text-green-500') + '"><div class="font-bold">' + (pnl >= 0 ? '+' : '') + formatNumber(pnl, 0) + '</div><div class="text-[10px] opacity-70">' + roi.toFixed(2) + '% (未實現)</div></td>' +
-                '<td class="px-3 md:px-6 py-4 text-right"><button class="delete-stock p-2 text-gray-500 hover:text-red-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button></td>';
+'<td class="px-3 md:px-6 py-4 text-right font-bold text-blue-400 hidden md:table-cell">' + formatNumber(mv, 0) + '</td>' +
+'<td class="px-3 md:px-6 py-4 text-right ' + (pnl >= 0 ? 'text-red-500' : 'text-green-500') + '"><div class="font-bold">' + (pnl >= 0 ? '+' : '') + formatNumber(pnl, 0) + '</div><div class="text-[10px] opacity-70">' + roi.toFixed(2) + '% (未實現)</div></td>' +
+'<td class="px-3 md:px-6 py-4 text-right"><button class="delete-stock p-2 text-gray-500 hover:text-red-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button></td>';
             
             row.querySelector('.delete-stock').addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -563,19 +563,22 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             const formatPct = (val) => { const n = parseFloat(val); if (isNaN(n)) return '0.00'; return (n >= 0 ? '+' : '') + n.toFixed(2); };
             const tse = getItem('IX0001'), otc = getItem('IX0043'), dji = getItem('DJI'), sp = getItem('GSPC'), nas = getItem('IXIC'), sox = getItem('SOX'), tsm = getItem('TSM');
-            content.innerHTML = '<div class="bg-white dark:bg-[#161b22] p-4 md:p-5 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">' +
-                '<div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">台股市場</div>' +
-                '<div class="grid grid-cols-2 gap-3">' +
-                '<div><div class="text-[10px] text-gray-500 flex items-center">加權 ' + getDateBadge(tse) + '</div><div class="text-xl font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(tse.price) + '</div><div class="' + getPctColor(tse.changePercent) + ' font-mono font-bold text-xs">' + formatPct(tse.changePercent) + '%</div></div>' +
-                '<div><div class="text-[10px] text-gray-500 flex items-center">櫃買 ' + getDateBadge(otc) + '</div><div class="text-xl font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(otc.price) + '</div><div class="' + getPctColor(otc.changePercent) + ' font-mono font-bold text-xs">' + formatPct(otc.changePercent) + '%</div></div></div></div>' +
-                '<div class="bg-white dark:bg-[#161b22] p-4 md:p-5 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">' +
-                '<div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">美股</div>' +
-                '<div class="grid grid-cols-2 md:grid-cols-5 gap-3">' +
-                '<div><div class="text-[10px] text-gray-500 flex items-center">道瓊 ' + getDateBadge(dji) + '</div><div class="text-base font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(dji.price) + '</div><div class="' + getPctColor(dji.changePercent) + ' text-[10px] font-mono font-bold">' + formatPct(dji.changePercent) + '%</div></div>' +
-                '<div><div class="text-[10px] text-gray-500 flex items-center">標普 ' + getDateBadge(sp) + '</div><div class="text-base font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(sp.price) + '</div><div class="' + getPctColor(sp.changePercent) + ' text-[10px] font-mono font-bold">' + formatPct(sp.changePercent) + '%</div></div>' +
-                '<div><div class="text-[10px] text-gray-500 flex items-center">納指 ' + getDateBadge(nas) + '</div><div class="text-base font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(nas.price) + '</div><div class="' + getPctColor(nas.changePercent) + ' text-[10px] font-mono font-bold">' + formatPct(nas.changePercent) + '%</div></div>' +
-                '<div class="bg-blue-500/5 p-1.5 rounded-xl border border-blue-500/10"><div class="text-[10px] text-blue-600 font-bold flex items-center">費半 ' + getDateBadge(sox) + '</div><div class="text-base font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(sox.price) + '</div><div class="' + getPctColor(sox.changePercent) + ' text-[10px] font-mono font-bold">' + formatPct(sox.changePercent) + '%</div></div>' +
-                '<div class="bg-red-500/5 p-1.5 rounded-xl border border-red-500/10"><div class="text-[10px] text-red-600 font-bold flex items-center">台積 ADR ' + getDateBadge(tsm) + '</div><div class="text-base font-mono font-bold text-gray-900 dark:text-white">' + formatIdx(tsm.price) + '</div><div class="' + getPctColor(tsm.changePercent) + ' text-[10px] font-mono font-bold">' + formatPct(tsm.changePercent) + '%</div></div></div></div>';
+            const idxItem = (label, badge, price, pct) => {
+                const c = parseFloat(pct || 0) >= 0 ? 'text-red-500' : 'text-green-500';
+                const bg = label === '費半' ? 'bg-blue-500/5' : label === '台積ADR' ? 'bg-red-500/5' : '';
+                return '<div class="' + bg + ' min-w-[80px] flex-1 px-2 py-1.5"><div class="text-[9px] md:text-[10px] text-gray-500 flex items-center whitespace-nowrap">' + label + ' ' + badge + '</div><div class="text-xs md:text-sm font-mono font-bold text-gray-900 dark:text-white truncate">' + price + '</div><div class="' + c + ' text-[9px] md:text-[10px] font-mono font-bold">' + formatPct(pct) + '%</div></div>';
+            };
+            content.innerHTML = '<div class="md:col-span-2 bg-white dark:bg-[#161b22] p-3 md:p-4 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">' +
+                '<div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">📊 市場概況</div>' +
+                '<div class="flex flex-wrap">' +
+                idxItem('加權', getDateBadge(tse), formatIdx(tse.price), tse.changePercent) +
+                idxItem('櫃買', getDateBadge(otc), formatIdx(otc.price), otc.changePercent) +
+                idxItem('道瓊', getDateBadge(dji), formatIdx(dji.price), dji.changePercent) +
+                idxItem('標普', getDateBadge(sp), formatIdx(sp.price), sp.changePercent) +
+                idxItem('納指', getDateBadge(nas), formatIdx(nas.price), nas.changePercent) +
+                idxItem('費半', getDateBadge(sox), formatIdx(sox.price), sox.changePercent) +
+                idxItem('台積ADR', getDateBadge(tsm), formatIdx(tsm.price), tsm.changePercent) +
+                '</div></div>';
         } catch(e) { console.error('renderMarketSummary error:', e); }
     }
 

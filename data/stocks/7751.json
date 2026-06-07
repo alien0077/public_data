@@ -1,13 +1,13 @@
 {
   "stock_id": "7751",
   "name": "7751",
-  "date": "2026-06-04",
-  "close": 1580.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-05",
+  "close": 1545.0,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.089,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.063,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -19,11 +19,11 @@
   "tdcc": {
     "big_holder_change": 36.95,
     "retail_holder_change": 0,
-    "holder_concentration": 47.15
+    "holder_concentration": 48.79
   },
   "main_force": {
-    "cost": 1709.75,
-    "distance": -7.59,
+    "cost": 1690.0,
+    "distance": -8.58,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,6 +35,8 @@
     "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-05"
 }

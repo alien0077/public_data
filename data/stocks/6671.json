@@ -1,13 +1,13 @@
 {
   "stock_id": "6671",
   "name": "6671",
-  "date": "2026-06-04",
+  "date": "2026-06-05",
   "close": 26.9,
-  "health_score": 83,
-  "signal": "Bullish",
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.061,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.016,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 58.35,
+    "big_holder_change": 58.6,
     "retail_holder_change": 0,
-    "holder_concentration": 74.66
+    "holder_concentration": 75.5
   },
   "main_force": {
-    "cost": 28.11,
-    "distance": -4.3,
+    "cost": 27.95,
+    "distance": -3.76,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-06-04"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-05"
 }

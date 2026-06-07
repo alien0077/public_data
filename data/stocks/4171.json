@@ -1,43 +1,47 @@
 {
   "stock_id": "4171",
   "name": "4171",
-  "date": "2026-06-04",
-  "close": 18.15,
-  "health_score": 130,
+  "date": "2026-06-05",
+  "close": 18.0,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.033,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 761.0,
+    "margin_change": 767.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 27.56,
+    "big_holder_change": 27.64,
     "retail_holder_change": 0,
-    "holder_concentration": 32.51
+    "holder_concentration": 32.59
   },
   "main_force": {
-    "cost": 18.11,
-    "distance": 0.22,
-    "trend": "UP"
+    "cost": 18.08,
+    "distance": -0.44,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 0
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
   ],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-05"
 }

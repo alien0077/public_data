@@ -1,29 +1,29 @@
 {
   "stock_id": "8240",
   "name": "8240",
-  "date": "2026-06-04",
-  "close": 61.1,
+  "date": "2026-06-05",
+  "close": 59.7,
   "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.02,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.054,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2640.0,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.08
+    "margin_change": 2604.0,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.04
   },
   "tdcc": {
     "big_holder_change": 47.02,
     "retail_holder_change": 0,
-    "holder_concentration": 53.47
+    "holder_concentration": 53.94
   },
   "main_force": {
-    "cost": 65.06,
-    "distance": -6.09,
+    "cost": 64.67,
+    "distance": -7.69,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,9 +34,14 @@
     "style": "Value",
     "score": 0
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

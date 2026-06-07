@@ -1,29 +1,29 @@
 {
   "stock_id": "2881",
   "name": "2881",
-  "date": "2026-06-04",
-  "close": 114.0,
+  "date": "2026-06-05",
+  "close": 118.0,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.139,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.032,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7632.0,
-    "short_change": 261.0,
-    "short_margin_ratio": 3.42
+    "margin_change": 7553.0,
+    "short_change": 318.0,
+    "short_margin_ratio": 4.21
   },
   "tdcc": {
     "big_holder_change": 83.95,
     "retail_holder_change": 0,
-    "holder_concentration": 86.07
+    "holder_concentration": 86.08
   },
   "main_force": {
-    "cost": 101.64,
-    "distance": 12.16,
+    "cost": 102.71,
+    "distance": 14.89,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 7 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

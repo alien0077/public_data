@@ -1,29 +1,29 @@
 {
   "stock_id": "3653",
   "name": "3653",
-  "date": "2026-06-04",
-  "close": 3730.0,
+  "date": "2026-06-05",
+  "close": 3620.0,
   "health_score": 110,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.228,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2879.0,
-    "short_change": 4.0,
-    "short_margin_ratio": 0.14
+    "margin_change": 2829.0,
+    "short_change": 3.0,
+    "short_margin_ratio": 0.11
   },
   "tdcc": {
-    "big_holder_change": 57.79,
+    "big_holder_change": 59.29,
     "retail_holder_change": 0,
-    "holder_concentration": 68.39
+    "holder_concentration": 68.4
   },
   "main_force": {
-    "cost": 3597.25,
-    "distance": 3.69,
+    "cost": 3595.75,
+    "distance": 0.67,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

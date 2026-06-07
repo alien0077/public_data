@@ -1,12 +1,12 @@
 {
   "stock_id": "00717",
   "name": "00717",
-  "date": "2026-06-04",
-  "close": 15.03,
-  "health_score": 86,
+  "date": "2026-06-05",
+  "close": 15.05,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -18,8 +18,8 @@
   },
   "tdcc": {},
   "main_force": {
-    "cost": 15.06,
-    "distance": -0.2,
+    "cost": 15.05,
+    "distance": 0.0,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,6 +31,8 @@
     "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-05"
 }

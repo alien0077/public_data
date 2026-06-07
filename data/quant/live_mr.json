@@ -1,221 +1,86 @@
 {
   "date": "2026-06-05",
   "regime": "AGGRESSIVE",
-  "cash": 87.25,
-  "nav": 690.25,
-  "portfolio_beta": 0.11,
+  "cash": 401591.0,
+  "nav": 1000000.0,
+  "portfolio_beta": 1.02,
   "metadata": {
-    "holdings_count": 1,
+    "holdings_count": 2,
     "candidates_count": 200,
-    "live_days": 22,
-    "total_capital": 690.25,
-    "used_capital": 603.0
+    "live_days": 2,
+    "total_capital": 1000000.0,
+    "used_capital": 598409.0
   },
   "performance": {
-    "live_total_return": 0.029898999999999898,
+    "live_total_return": 0.0,
     "live_sharpe": 0.7164216088818848,
-    "live_max_drawdown": -0.06156263312749583,
+    "live_max_drawdown": 0.0,
     "live_win_rate": 0.09322033898305085,
     "live_equity": [
       {
-        "date": "2026-05-03",
-        "equity": 1.0
-      },
-      {
-        "date": "2026-05-04",
-        "equity": 1.0
-      },
-      {
-        "date": "2026-05-07",
-        "equity": 0.9965
-      },
-      {
-        "date": "2026-05-08",
-        "equity": 0.9403
-      },
-      {
-        "date": "2026-05-11",
-        "equity": 0.9653
-      },
-      {
-        "date": "2026-05-13",
-        "equity": 0.971
-      },
-      {
-        "date": "2026-05-14",
-        "equity": 0.9897
-      },
-      {
-        "date": "2026-05-15",
-        "equity": 0.9557
-      },
-      {
-        "date": "2026-05-19",
-        "equity": 0.9386
-      },
-      {
-        "date": "2026-05-20",
-        "equity": 0.9451
-      },
-      {
-        "date": "2026-05-21",
-        "equity": 0.9433
-      },
-      {
-        "date": "2026-05-22",
-        "equity": 0.9544
-      },
-      {
-        "date": "2026-05-25",
-        "equity": 0.9699
-      },
-      {
-        "date": "2026-05-26",
-        "equity": 1.0047
-      },
-      {
-        "date": "2026-05-27",
-        "equity": 0.9842
-      },
-      {
-        "date": "2026-05-28",
-        "equity": 0.9428
-      },
-      {
-        "date": "2026-05-29",
-        "equity": 0.9881
-      },
-      {
-        "date": "2026-06-01",
-        "equity": 1.5077
-      },
-      {
-        "date": "2026-06-02",
-        "equity": 1.4795
-      },
-      {
-        "date": "2026-06-03",
-        "equity": 1.4914
-      },
-      {
         "date": "2026-06-04",
-        "equity": 1.4362
+        "equity": 1.0
       },
       {
         "date": "2026-06-05",
-        "equity": 1.4242
+        "equity": 1.0
       }
     ],
     "live_drawdown": [
       {
-        "date": "05-03",
-        "value": 0.0
-      },
-      {
-        "date": "05-04",
-        "value": 0.0
-      },
-      {
-        "date": "05-07",
-        "value": -0.0035
-      },
-      {
-        "date": "05-08",
-        "value": -0.0597
-      },
-      {
-        "date": "05-11",
-        "value": -0.0347
-      },
-      {
-        "date": "05-13",
-        "value": -0.029
-      },
-      {
-        "date": "05-14",
-        "value": -0.0103
-      },
-      {
-        "date": "05-15",
-        "value": -0.0443
-      },
-      {
-        "date": "05-19",
-        "value": -0.0614
-      },
-      {
-        "date": "05-20",
-        "value": -0.0549
-      },
-      {
-        "date": "05-21",
-        "value": -0.0567
-      },
-      {
-        "date": "05-22",
-        "value": -0.0456
-      },
-      {
-        "date": "05-25",
-        "value": -0.0301
-      },
-      {
-        "date": "05-26",
-        "value": 0.0
-      },
-      {
-        "date": "05-27",
-        "value": -0.0204
-      },
-      {
-        "date": "05-28",
-        "value": -0.0616
-      },
-      {
-        "date": "05-29",
-        "value": -0.0165
-      },
-      {
-        "date": "06-01",
-        "value": 0.0
-      },
-      {
-        "date": "06-02",
-        "value": -0.0187
-      },
-      {
-        "date": "06-03",
-        "value": -0.0108
-      },
-      {
         "date": "06-04",
-        "value": -0.0474
+        "value": 0.0
       },
       {
         "date": "06-05",
-        "value": -0.0554
+        "value": 0.0
       }
     ]
   },
   "portfolio": [
     {
-      "stock": "6191",
+      "stock": "2059",
       "is_held": true,
-      "weight": 0.0004,
+      "weight": 0.1049,
+      "score": 2.0,
+      "entry_reason": "MR_HELD",
+      "select_reason": "均值回歸·ETF動能",
+      "themes": [
+        "AI_Server"
+      ],
+      "primary_theme": "伺服器機殼_滑軌",
+      "entry_date": "2026-06-05",
+      "return": 0.0,
+      "max_return": 0.0,
+      "beta": 1.31,
+      "advice": "HOLD",
+      "advice_color": "GREEN",
+      "chip_label": "🔥 換手帶量",
+      "event_alert": null,
+      "evolution_note": null,
+      "pe_ratio": 54.44
+    },
+    {
+      "stock": "6789",
+      "is_held": true,
+      "weight": 0.0946,
       "score": 2.0,
       "entry_reason": "MR_HELD",
       "select_reason": "均值回歸",
-      "themes": [],
-      "primary_theme": "電子元件",
-      "entry_date": "2026-06-03",
+      "themes": [
+        "CPO_Optical"
+      ],
+      "primary_theme": "半導體_其他",
+      "entry_date": "2026-06-05",
       "return": 0.0,
       "max_return": 0.0,
-      "beta": -0.24,
-      "advice": "REDUCE",
-      "advice_color": "YELLOW",
+      "beta": 1.35,
+      "advice": "HOLD",
+      "advice_color": "GREEN",
       "chip_label": null,
       "event_alert": null,
-      "evolution_note": "💡 電子元件 族群近期爆發力強，系統已自動放寬 RS 出場門檻。"
+      "evolution_note": null,
+      "pe_ratio": 127.93
     },
     {
       "stock": "3189",
@@ -229,11 +94,31 @@
       ],
       "primary_theme": "PCB_CCL_ABF",
       "entry_date": "2026-06-05",
-      "beta": -0.19,
+      "beta": 1.67,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 202.85
+    },
+    {
+      "stock": "8021",
+      "is_held": false,
+      "weight": 0.0,
+      "score": 24.874200000000002,
+      "entry_reason": "SIGNAL",
+      "select_reason": "趨勢跟蹤",
+      "themes": [
+        "PCB_CCL_Drilling"
+      ],
+      "primary_theme": "電子其他",
+      "entry_date": "2026-06-05",
+      "beta": 1.59,
+      "chip_label": "🚀 籌碼洗清",
+      "advice": "HOLD",
+      "advice_color": "GREEN",
+      "event_alert": null,
+      "pe_ratio": 166.55
     },
     {
       "stock": "8291",
@@ -245,11 +130,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.33,
+      "beta": -0.27,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "7610",
@@ -261,11 +147,12 @@
       "themes": [],
       "primary_theme": "綠能環保",
       "entry_date": "2026-06-05",
-      "beta": 0.13,
+      "beta": 0.57,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 321.1
     },
     {
       "stock": "3026",
@@ -279,11 +166,12 @@
       ],
       "primary_theme": "被動元件",
       "entry_date": "2026-06-05",
-      "beta": 0.39,
+      "beta": 1.39,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 95.14
     },
     {
       "stock": "5475",
@@ -295,11 +183,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.78,
+      "beta": 0.73,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "3167",
@@ -313,11 +202,12 @@
       ],
       "primary_theme": "一般機械",
       "entry_date": "2026-06-05",
-      "beta": 0.09,
+      "beta": 0.86,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 116.85
     },
     {
       "stock": "6147",
@@ -329,11 +219,12 @@
       "themes": [],
       "primary_theme": "封測_材料",
       "entry_date": "2026-06-05",
-      "beta": 0.2,
+      "beta": 1.11,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 72.19
     },
     {
       "stock": "4973",
@@ -345,11 +236,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.63,
+      "beta": 1.17,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 81.28
     },
     {
       "stock": "6274",
@@ -363,11 +255,12 @@
       ],
       "primary_theme": "PCB_CCL_ABF",
       "entry_date": "2026-06-05",
-      "beta": 0.03,
+      "beta": 2.0,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 132.73
     },
     {
       "stock": "5386",
@@ -379,11 +272,12 @@
       "themes": [],
       "primary_theme": "電腦週邊",
       "entry_date": "2026-06-05",
-      "beta": -0.04,
+      "beta": 2.04,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 59.35
     },
     {
       "stock": "3081",
@@ -397,11 +291,12 @@
       ],
       "primary_theme": "矽光子_CPO",
       "entry_date": "2026-06-05",
-      "beta": 0.06,
+      "beta": 0.97,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 569.74
     },
     {
       "stock": "3037",
@@ -417,11 +312,12 @@
       ],
       "primary_theme": "PCB_CCL_ABF",
       "entry_date": "2026-06-05",
-      "beta": 0.31,
+      "beta": 1.7,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 213.01
     },
     {
       "stock": "6217",
@@ -433,11 +329,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.83,
+      "beta": 1.03,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "6861",
@@ -449,11 +346,12 @@
       "themes": [],
       "primary_theme": "顯示面板",
       "entry_date": "2026-06-05",
-      "beta": 0.23,
+      "beta": 1.34,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 91.54
     },
     {
       "stock": "8926",
@@ -465,11 +363,12 @@
       "themes": [],
       "primary_theme": "油電燃氣業",
       "entry_date": "2026-06-05",
-      "beta": 0.32,
+      "beta": 0.23,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 28.41
     },
     {
       "stock": "6451",
@@ -483,11 +382,12 @@
       ],
       "primary_theme": "矽光子_CPO",
       "entry_date": "2026-06-05",
-      "beta": 0.54,
+      "beta": 1.27,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 2561.54
     },
     {
       "stock": "8358",
@@ -499,11 +399,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.18,
+      "beta": 1.03,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 141.57
     },
     {
       "stock": "8033",
@@ -515,11 +416,12 @@
       "themes": [],
       "primary_theme": "無人機_UAV",
       "entry_date": "2026-06-05",
-      "beta": -0.03,
+      "beta": 0.52,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 231.9
     },
     {
       "stock": "4764",
@@ -531,11 +433,12 @@
       "themes": [],
       "primary_theme": "化學特化",
       "entry_date": "2026-06-05",
-      "beta": 0.88,
+      "beta": 1.17,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 231.15
     },
     {
       "stock": "6173",
@@ -551,11 +454,12 @@
       ],
       "primary_theme": "被動元件",
       "entry_date": "2026-06-05",
-      "beta": 0.16,
+      "beta": 0.96,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 68.56
     },
     {
       "stock": "2327",
@@ -575,11 +479,12 @@
       ],
       "primary_theme": "被動元件",
       "entry_date": "2026-06-05",
-      "beta": -0.06,
+      "beta": 1.34,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 66.81
     },
     {
       "stock": "4991",
@@ -591,11 +496,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": -0.03,
+      "beta": 1.18,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 4360.0
     },
     {
       "stock": "8064",
@@ -607,11 +513,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": 0.88,
+      "beta": 0.77,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 122.06
     },
     {
       "stock": "6727",
@@ -623,11 +530,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 1.09,
+      "beta": 0.7,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 69.49
     },
     {
       "stock": "2426",
@@ -639,11 +547,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": 0.54,
+      "beta": 1.18,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 327.62
     },
     {
       "stock": "5289",
@@ -655,11 +564,12 @@
       "themes": [],
       "primary_theme": "電腦週邊",
       "entry_date": "2026-06-05",
-      "beta": 0.77,
+      "beta": 1.7,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 80.8
     },
     {
       "stock": "3555",
@@ -671,11 +581,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.45,
+      "beta": 1.24,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 176.56
     },
     {
       "stock": "2383",
@@ -689,11 +600,12 @@
       ],
       "primary_theme": "PCB_CCL_ABF",
       "entry_date": "2026-06-05",
-      "beta": 0.13,
+      "beta": 1.55,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 117.23
     },
     {
       "stock": "4542",
@@ -705,11 +617,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.0,
+      "beta": 0.7,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 223.44
     },
     {
       "stock": "2492",
@@ -723,11 +636,12 @@
       ],
       "primary_theme": "被動元件",
       "entry_date": "2026-06-05",
-      "beta": -0.08,
+      "beta": 1.18,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 87.76
     },
     {
       "stock": "6515",
@@ -741,11 +655,12 @@
       ],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": -0.34,
+      "beta": 0.87,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 179.52
     },
     {
       "stock": "6291",
@@ -757,11 +672,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.07,
+      "beta": 0.97,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 91.82
     },
     {
       "stock": "2472",
@@ -776,11 +692,12 @@
       ],
       "primary_theme": "被動元件",
       "entry_date": "2026-06-05",
-      "beta": 0.05,
+      "beta": 0.55,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 41.64
     },
     {
       "stock": "6223",
@@ -794,11 +711,12 @@
       ],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.08,
+      "beta": 1.14,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 172.14
     },
     {
       "stock": "2360",
@@ -812,11 +730,12 @@
       ],
       "primary_theme": "電子其他",
       "entry_date": "2026-06-05",
-      "beta": 0.43,
+      "beta": 1.53,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 92.6
     },
     {
       "stock": "2344",
@@ -831,11 +750,12 @@
       ],
       "primary_theme": "AI記憶體",
       "entry_date": "2026-06-05",
-      "beta": 0.42,
+      "beta": 1.57,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 184.09
     },
     {
       "stock": "4958",
@@ -850,11 +770,12 @@
       ],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.16,
+      "beta": 1.01,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 72.94
     },
     {
       "stock": "5228",
@@ -866,11 +787,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.07,
+      "beta": 0.25,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "8046",
@@ -884,11 +806,12 @@
       ],
       "primary_theme": "PCB_CCL_ABF",
       "entry_date": "2026-06-05",
-      "beta": 0.03,
+      "beta": 1.13,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 280.73
     },
     {
       "stock": "2337",
@@ -902,11 +825,12 @@
       ],
       "primary_theme": "AI記憶體",
       "entry_date": "2026-06-05",
-      "beta": 0.27,
+      "beta": 1.38,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "2454",
@@ -922,11 +846,12 @@
       ],
       "primary_theme": "IC設計_HPC_存儲",
       "entry_date": "2026-06-05",
-      "beta": 0.59,
+      "beta": 1.49,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 64.99
     },
     {
       "stock": "4971",
@@ -938,11 +863,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": -0.51,
+      "beta": 0.8,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 406.06
     },
     {
       "stock": "6715",
@@ -954,11 +880,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.28,
+      "beta": 1.32,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 241.11
     },
     {
       "stock": "6683",
@@ -970,11 +897,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.44,
+      "beta": 0.94,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 104.41
     },
     {
       "stock": "6658",
@@ -986,11 +914,12 @@
       "themes": [],
       "primary_theme": "電子其他",
       "entry_date": "2026-06-05",
-      "beta": 0.86,
+      "beta": 0.43,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 136.23
     },
     {
       "stock": "8027",
@@ -1004,11 +933,12 @@
       ],
       "primary_theme": "一般機械",
       "entry_date": "2026-06-05",
-      "beta": -0.01,
+      "beta": 0.28,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "2408",
@@ -1023,11 +953,12 @@
       ],
       "primary_theme": "AI記憶體",
       "entry_date": "2026-06-05",
-      "beta": 0.25,
+      "beta": 1.94,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 169.01
     },
     {
       "stock": "3105",
@@ -1041,11 +972,12 @@
       ],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.24,
+      "beta": 1.01,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 120.88
     },
     {
       "stock": "3163",
@@ -1059,11 +991,12 @@
       ],
       "primary_theme": "矽光子_CPO",
       "entry_date": "2026-06-05",
-      "beta": -0.1,
+      "beta": 1.18,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 163.99
     },
     {
       "stock": "3481",
@@ -1075,11 +1008,12 @@
       "themes": [],
       "primary_theme": "顯示面板",
       "entry_date": "2026-06-05",
-      "beta": 0.68,
+      "beta": 1.64,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 1790.0
     },
     {
       "stock": "3581",
@@ -1091,11 +1025,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.57,
+      "beta": 1.32,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 214.2
     },
     {
       "stock": "8043",
@@ -1109,11 +1044,12 @@
       ],
       "primary_theme": "被動元件",
       "entry_date": "2026-06-05",
-      "beta": -0.15,
+      "beta": 0.69,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 95.51
     },
     {
       "stock": "4807",
@@ -1125,11 +1061,12 @@
       "themes": [],
       "primary_theme": "貿易百貨業",
       "entry_date": "2026-06-05",
-      "beta": -0.22,
+      "beta": 0.36,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "3491",
@@ -1141,11 +1078,12 @@
       "themes": [],
       "primary_theme": "低軌衛星_SpaceX鏈",
       "entry_date": "2026-06-05",
-      "beta": -0.0,
+      "beta": 1.63,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 247.13
     },
     {
       "stock": "6830",
@@ -1157,11 +1095,12 @@
       "themes": [],
       "primary_theme": "電子其他",
       "entry_date": "2026-06-05",
-      "beta": 0.49,
+      "beta": 0.73,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 465.67
     },
     {
       "stock": "2308",
@@ -1178,11 +1117,12 @@
       ],
       "primary_theme": "電源供應器",
       "entry_date": "2026-06-05",
-      "beta": -0.19,
+      "beta": 1.77,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 99.39
     },
     {
       "stock": "8042",
@@ -1194,11 +1134,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.06,
+      "beta": 0.91,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 163.48
     },
     {
       "stock": "6265",
@@ -1210,11 +1151,12 @@
       "themes": [],
       "primary_theme": "電子通路",
       "entry_date": "2026-06-05",
-      "beta": 0.75,
+      "beta": 1.4,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 84.71
     },
     {
       "stock": "2303",
@@ -1228,11 +1170,12 @@
       ],
       "primary_theme": "晶圓代工",
       "entry_date": "2026-06-05",
-      "beta": -0.48,
+      "beta": 1.0,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 39.37
     },
     {
       "stock": "6182",
@@ -1244,11 +1187,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.19,
+      "beta": 1.7,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 950.0
     },
     {
       "stock": "5864",
@@ -1260,11 +1204,12 @@
       "themes": [],
       "primary_theme": "銀行保險",
       "entry_date": "2026-06-05",
-      "beta": -0.28,
+      "beta": 0.94,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 20.94
     },
     {
       "stock": "3532",
@@ -1276,11 +1221,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.98,
+      "beta": 1.8,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 183.54
     },
     {
       "stock": "6207",
@@ -1292,11 +1238,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.31,
+      "beta": 0.43,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 160.56
     },
     {
       "stock": "3605",
@@ -1308,11 +1255,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.23,
+      "beta": 0.37,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 17.24
     },
     {
       "stock": "2368",
@@ -1326,11 +1274,12 @@
       ],
       "primary_theme": "低軌衛星_SpaceX鏈",
       "entry_date": "2026-06-05",
-      "beta": 0.26,
+      "beta": 1.55,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 67.54
     },
     {
       "stock": "1809",
@@ -1342,11 +1291,12 @@
       "themes": [],
       "primary_theme": "玻璃陶瓷",
       "entry_date": "2026-06-05",
-      "beta": 0.79,
+      "beta": 0.99,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 313.68
     },
     {
       "stock": "6141",
@@ -1358,11 +1308,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.39,
+      "beta": 0.64,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "2485",
@@ -1374,11 +1325,12 @@
       "themes": [],
       "primary_theme": "低軌衛星_SpaceX鏈",
       "entry_date": "2026-06-05",
-      "beta": 0.25,
+      "beta": 0.64,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "3054",
@@ -1390,11 +1342,12 @@
       "themes": [],
       "primary_theme": "食品工業",
       "entry_date": "2026-06-05",
-      "beta": 0.44,
+      "beta": 0.92,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 42.76
     },
     {
       "stock": "5274",
@@ -1410,11 +1363,12 @@
       ],
       "primary_theme": "IC設計_HPC_存儲",
       "entry_date": "2026-06-05",
-      "beta": 0.29,
+      "beta": 1.49,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 168.45
     },
     {
       "stock": "4919",
@@ -1426,11 +1380,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": -0.08,
+      "beta": 1.43,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 342.31
     },
     {
       "stock": "4741",
@@ -1442,11 +1397,12 @@
       "themes": [],
       "primary_theme": "化學特化",
       "entry_date": "2026-06-05",
-      "beta": 0.6,
+      "beta": 0.01,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 216.9
     },
     {
       "stock": "6531",
@@ -1460,11 +1416,12 @@
       ],
       "primary_theme": "AI記憶體",
       "entry_date": "2026-06-05",
-      "beta": 0.07,
+      "beta": 1.01,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 130.49
     },
     {
       "stock": "4760",
@@ -1476,11 +1433,12 @@
       "themes": [],
       "primary_theme": "電子其他",
       "entry_date": "2026-06-05",
-      "beta": -0.03,
+      "beta": 1.2,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 58.3
     },
     {
       "stock": "3711",
@@ -1497,11 +1455,12 @@
       ],
       "primary_theme": "封測_材料",
       "entry_date": "2026-06-05",
-      "beta": 0.15,
+      "beta": 1.79,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 61.58
     },
     {
       "stock": "6187",
@@ -1515,11 +1474,12 @@
       ],
       "primary_theme": "半導體設備_CoWoS",
       "entry_date": "2026-06-05",
-      "beta": -0.16,
+      "beta": 0.5,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 72.45
     },
     {
       "stock": "3583",
@@ -1533,11 +1493,12 @@
       ],
       "primary_theme": "半導體設備_CoWoS",
       "entry_date": "2026-06-05",
-      "beta": 0.12,
+      "beta": 0.46,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 62.81
     },
     {
       "stock": "4908",
@@ -1551,11 +1512,12 @@
       ],
       "primary_theme": "矽光子_CPO",
       "entry_date": "2026-06-05",
-      "beta": 0.2,
+      "beta": 0.78,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 114.39
     },
     {
       "stock": "6405",
@@ -1567,11 +1529,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": 0.84,
+      "beta": 0.72,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "6127",
@@ -1583,11 +1546,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.01,
+      "beta": 0.47,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 160.85
     },
     {
       "stock": "2486",
@@ -1601,11 +1565,12 @@
       ],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": -0.04,
+      "beta": 1.44,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 1270.45
     },
     {
       "stock": "5498",
@@ -1617,11 +1582,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.44,
+      "beta": 1.13,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "2313",
@@ -1636,11 +1602,12 @@
       ],
       "primary_theme": "低軌衛星_SpaceX鏈",
       "entry_date": "2026-06-05",
-      "beta": -0.14,
+      "beta": 1.18,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 47.01
     },
     {
       "stock": "2464",
@@ -1654,11 +1621,12 @@
       ],
       "primary_theme": "機器人_AI視覺",
       "entry_date": "2026-06-05",
-      "beta": 0.18,
+      "beta": 0.96,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 317.31
     },
     {
       "stock": "3090",
@@ -1670,11 +1638,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.15,
+      "beta": 0.89,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 40.33
     },
     {
       "stock": "7734",
@@ -1686,11 +1655,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": -0.49,
+      "beta": 0.89,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 91.19
     },
     {
       "stock": "3443",
@@ -1705,11 +1675,12 @@
       ],
       "primary_theme": "ASIC_IP",
       "entry_date": "2026-06-05",
-      "beta": -0.01,
+      "beta": 1.64,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 156.77
     },
     {
       "stock": "8289",
@@ -1721,11 +1692,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.09,
+      "beta": 0.56,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 1685.0
     },
     {
       "stock": "6588",
@@ -1737,11 +1709,12 @@
       "themes": [],
       "primary_theme": "網通其他",
       "entry_date": "2026-06-05",
-      "beta": -0.04,
+      "beta": 0.56,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "3135",
@@ -1753,11 +1726,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.33,
+      "beta": 1.34,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 35.94
     },
     {
       "stock": "2455",
@@ -1771,11 +1745,12 @@
       ],
       "primary_theme": "網通其他",
       "entry_date": "2026-06-05",
-      "beta": -0.43,
+      "beta": 0.77,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 134.34
     },
     {
       "stock": "2351",
@@ -1787,11 +1762,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": -0.18,
+      "beta": 0.86,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 120.78
     },
     {
       "stock": "2345",
@@ -1806,11 +1782,12 @@
       ],
       "primary_theme": "網通設備",
       "entry_date": "2026-06-05",
-      "beta": -0.18,
+      "beta": 1.8,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 52.83
     },
     {
       "stock": "6672",
@@ -1822,11 +1799,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.14,
+      "beta": 0.74,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 45.15
     },
     {
       "stock": "3260",
@@ -1838,11 +1816,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.43,
+      "beta": 1.56,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 18.18
     },
     {
       "stock": "6415",
@@ -1854,11 +1833,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": -0.52,
+      "beta": 0.99,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 90.94
     },
     {
       "stock": "6016",
@@ -1870,11 +1850,12 @@
       "themes": [],
       "primary_theme": "銀行保險",
       "entry_date": "2026-06-05",
-      "beta": -0.24,
+      "beta": 1.02,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 18.18
     },
     {
       "stock": "8271",
@@ -1886,11 +1867,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.95,
+      "beta": 1.21,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 33.13
     },
     {
       "stock": "3234",
@@ -1902,11 +1884,12 @@
       "themes": [],
       "primary_theme": "網通其他",
       "entry_date": "2026-06-05",
-      "beta": 0.58,
+      "beta": 1.05,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "6449",
@@ -1918,11 +1901,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.23,
+      "beta": 0.71,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 50.27
     },
     {
       "stock": "3675",
@@ -1934,11 +1918,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": -0.14,
+      "beta": 0.36,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 143.82
     },
     {
       "stock": "6924",
@@ -1950,11 +1935,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.08,
+      "beta": -0.43,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 27.64
     },
     {
       "stock": "5464",
@@ -1966,11 +1952,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.23,
+      "beta": 0.23,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 38.85
     },
     {
       "stock": "3229",
@@ -1982,11 +1969,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.17,
+      "beta": 0.86,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 316.79
     },
     {
       "stock": "7709",
@@ -1998,11 +1986,12 @@
       "themes": [],
       "primary_theme": "一般機械",
       "entry_date": "2026-06-05",
-      "beta": 0.18,
+      "beta": 0.54,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 44.96
     },
     {
       "stock": "6426",
@@ -2014,11 +2003,12 @@
       "themes": [],
       "primary_theme": "網通其他",
       "entry_date": "2026-06-05",
-      "beta": 0.28,
+      "beta": 0.61,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "3498",
@@ -2030,11 +2020,12 @@
       "themes": [],
       "primary_theme": "電子其他",
       "entry_date": "2026-06-05",
-      "beta": 0.22,
+      "beta": 0.69,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 271.88
     },
     {
       "stock": "3042",
@@ -2046,11 +2037,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.15,
+      "beta": 0.67,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 40.15
     },
     {
       "stock": "2467",
@@ -2064,11 +2056,12 @@
       ],
       "primary_theme": "半導體設備_CoWoS",
       "entry_date": "2026-06-05",
-      "beta": 0.17,
+      "beta": 0.81,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 105.45
     },
     {
       "stock": "4989",
@@ -2080,11 +2073,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.33,
+      "beta": 0.95,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "2491",
@@ -2096,11 +2090,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": 0.26,
+      "beta": 0.6,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 24.27
     },
     {
       "stock": "8996",
@@ -2112,11 +2107,12 @@
       "themes": [],
       "primary_theme": "散熱模組",
       "entry_date": "2026-06-05",
-      "beta": 0.48,
+      "beta": 0.57,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 124.04
     },
     {
       "stock": "8299",
@@ -2130,11 +2126,12 @@
       ],
       "primary_theme": "IC設計_HPC_存儲",
       "entry_date": "2026-06-05",
-      "beta": 0.03,
+      "beta": 1.74,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 58.36
     },
     {
       "stock": "3006",
@@ -2148,11 +2145,12 @@
       ],
       "primary_theme": "AI記憶體",
       "entry_date": "2026-06-05",
-      "beta": 0.64,
+      "beta": 1.38,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 255.75
     },
     {
       "stock": "2243",
@@ -2164,11 +2162,12 @@
       "themes": [],
       "primary_theme": "車用零件",
       "entry_date": "2026-06-05",
-      "beta": 0.6,
+      "beta": 0.43,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 22.99
     },
     {
       "stock": "6584",
@@ -2180,11 +2179,12 @@
       "themes": [],
       "primary_theme": "伺服器機殼_滑軌",
       "entry_date": "2026-06-05",
-      "beta": -0.74,
+      "beta": 1.0,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 116.28
     },
     {
       "stock": "3017",
@@ -2201,11 +2201,12 @@
       ],
       "primary_theme": "散熱模組",
       "entry_date": "2026-06-05",
-      "beta": 0.12,
+      "beta": 1.3,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 52.88
     },
     {
       "stock": "6116",
@@ -2217,11 +2218,12 @@
       "themes": [],
       "primary_theme": "顯示面板",
       "entry_date": "2026-06-05",
-      "beta": 0.71,
+      "beta": 1.32,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "6465",
@@ -2233,11 +2235,12 @@
       "themes": [],
       "primary_theme": "網通其他",
       "entry_date": "2026-06-05",
-      "beta": -0.13,
+      "beta": 0.54,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 63.84
     },
     {
       "stock": "6285",
@@ -2249,11 +2252,12 @@
       "themes": [],
       "primary_theme": "低軌衛星_SpaceX鏈",
       "entry_date": "2026-06-05",
-      "beta": 0.21,
+      "beta": 0.92,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 45.55
     },
     {
       "stock": "3221",
@@ -2265,11 +2269,12 @@
       "themes": [],
       "primary_theme": "網通其他",
       "entry_date": "2026-06-05",
-      "beta": -0.63,
+      "beta": 0.69,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 713.75
     },
     {
       "stock": "2478",
@@ -2283,11 +2288,12 @@
       ],
       "primary_theme": "被動元件",
       "entry_date": "2026-06-05",
-      "beta": -0.15,
+      "beta": 0.56,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 43.48
     },
     {
       "stock": "3430",
@@ -2299,11 +2305,12 @@
       "themes": [],
       "primary_theme": "化學特化",
       "entry_date": "2026-06-05",
-      "beta": 0.28,
+      "beta": 0.75,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 45.87
     },
     {
       "stock": "8096",
@@ -2315,11 +2322,12 @@
       "themes": [],
       "primary_theme": "電子通路",
       "entry_date": "2026-06-05",
-      "beta": -0.13,
+      "beta": 1.11,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 144.38
     },
     {
       "stock": "3264",
@@ -2331,11 +2339,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.02,
+      "beta": 1.22,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 38.15
     },
     {
       "stock": "3093",
@@ -2347,11 +2356,12 @@
       "themes": [],
       "primary_theme": "電子其他",
       "entry_date": "2026-06-05",
-      "beta": 0.91,
+      "beta": 0.75,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 52.46
     },
     {
       "stock": "4979",
@@ -2365,11 +2375,12 @@
       ],
       "primary_theme": "矽光子_CPO",
       "entry_date": "2026-06-05",
-      "beta": -0.14,
+      "beta": 1.48,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 109.76
     },
     {
       "stock": "2061",
@@ -2381,11 +2392,12 @@
       "themes": [],
       "primary_theme": "電器電纜",
       "entry_date": "2026-06-05",
-      "beta": 0.25,
+      "beta": 1.07,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "6834",
@@ -2397,11 +2409,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.25,
+      "beta": 0.79,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 140.0
     },
     {
       "stock": "6213",
@@ -2415,11 +2428,12 @@
       ],
       "primary_theme": "PCB_CCL_ABF",
       "entry_date": "2026-06-05",
-      "beta": 0.01,
+      "beta": 1.46,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 61.18
     },
     {
       "stock": "1785",
@@ -2431,11 +2445,12 @@
       "themes": [],
       "primary_theme": "電子其他",
       "entry_date": "2026-06-05",
-      "beta": 0.4,
+      "beta": 1.19,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 43.47
     },
     {
       "stock": "8155",
@@ -2449,11 +2464,12 @@
       ],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.62,
+      "beta": 0.94,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 53.92
     },
     {
       "stock": "3577",
@@ -2465,11 +2481,12 @@
       "themes": [],
       "primary_theme": "電腦週邊",
       "entry_date": "2026-06-05",
-      "beta": -0.15,
+      "beta": -0.01,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 58.23
     },
     {
       "stock": "1727",
@@ -2481,11 +2498,12 @@
       "themes": [],
       "primary_theme": "車用零件_EV",
       "entry_date": "2026-06-05",
-      "beta": 0.15,
+      "beta": 0.76,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 2325.0
     },
     {
       "stock": "4916",
@@ -2497,11 +2515,12 @@
       "themes": [],
       "primary_theme": "電腦週邊",
       "entry_date": "2026-06-05",
-      "beta": -0.37,
+      "beta": 0.6,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 67.8
     },
     {
       "stock": "6770",
@@ -2513,11 +2532,12 @@
       "themes": [],
       "primary_theme": "晶圓代工",
       "entry_date": "2026-06-05",
-      "beta": 0.33,
+      "beta": 1.57,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "3016",
@@ -2529,11 +2549,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.06,
+      "beta": 1.26,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 1542.86
     },
     {
       "stock": "3363",
@@ -2547,11 +2568,12 @@
       ],
       "primary_theme": "矽光子_CPO",
       "entry_date": "2026-06-05",
-      "beta": -0.29,
+      "beta": 1.19,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 5675.0
     },
     {
       "stock": "3624",
@@ -2563,11 +2585,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.35,
+      "beta": 0.63,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 58.06
     },
     {
       "stock": "6175",
@@ -2579,11 +2602,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.02,
+      "beta": 0.12,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 36.04
     },
     {
       "stock": "2855",
@@ -2595,11 +2619,12 @@
       "themes": [],
       "primary_theme": "銀行保險",
       "entry_date": "2026-06-05",
-      "beta": -0.17,
+      "beta": 0.84,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 19.7
     },
     {
       "stock": "00735",
@@ -2611,11 +2636,12 @@
       "themes": [],
       "primary_theme": "ETF",
       "entry_date": "2026-06-05",
-      "beta": -0.13,
+      "beta": 1.49,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "3673",
@@ -2627,11 +2653,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": 0.35,
+      "beta": 0.44,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 31.73
     },
     {
       "stock": "00877",
@@ -2643,11 +2670,12 @@
       "themes": [],
       "primary_theme": "ETF",
       "entry_date": "2026-06-05",
-      "beta": -0.03,
+      "beta": 0.59,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "6419",
@@ -2659,11 +2687,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": 0.46,
+      "beta": 0.93,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 14.61
     },
     {
       "stock": "3455",
@@ -2675,11 +2704,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": -0.2,
+      "beta": 0.65,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 82.4
     },
     {
       "stock": "2316",
@@ -2691,11 +2721,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.1,
+      "beta": 0.92,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 12.48
     },
     {
       "stock": "6257",
@@ -2707,11 +2738,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": -0.02,
+      "beta": 1.07,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 36.32
     },
     {
       "stock": "2481",
@@ -2723,11 +2755,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.01,
+      "beta": 0.27,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 52.88
     },
     {
       "stock": "2399",
@@ -2739,11 +2772,12 @@
       "themes": [],
       "primary_theme": "電腦週邊",
       "entry_date": "2026-06-05",
-      "beta": 0.24,
+      "beta": 0.95,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 325.0
     },
     {
       "stock": "4960",
@@ -2755,11 +2789,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": 0.45,
+      "beta": 0.77,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "2489",
@@ -2771,11 +2806,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": 0.34,
+      "beta": 1.01,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 39.67
     },
     {
       "stock": "2484",
@@ -2787,11 +2823,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.26,
+      "beta": 0.75,
       "chip_label": "🔥 換手帶量",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 81.23
     },
     {
       "stock": "6197",
@@ -2803,11 +2840,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.07,
+      "beta": 1.12,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 37.49
     },
     {
       "stock": "6739",
@@ -2819,11 +2857,12 @@
       "themes": [],
       "primary_theme": "電子其他",
       "entry_date": "2026-06-05",
-      "beta": 0.37,
+      "beta": 1.08,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 75.64
     },
     {
       "stock": "6435",
@@ -2835,11 +2874,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.06,
+      "beta": 0.94,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 28.62
     },
     {
       "stock": "3149",
@@ -2851,11 +2891,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": -0.11,
+      "beta": 0.81,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "3615",
@@ -2867,11 +2908,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": 0.39,
+      "beta": 0.25,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 73.41
     },
     {
       "stock": "6196",
@@ -2885,11 +2927,12 @@
       ],
       "primary_theme": "電子其他",
       "entry_date": "2026-06-05",
-      "beta": -0.03,
+      "beta": 0.96,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 32.52
     },
     {
       "stock": "4967",
@@ -2901,11 +2944,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.41,
+      "beta": 1.05,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 21.36
     },
     {
       "stock": "6278",
@@ -2917,11 +2961,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": 0.38,
+      "beta": 0.8,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 21.99
     },
     {
       "stock": "1597",
@@ -2933,11 +2978,12 @@
       "themes": [],
       "primary_theme": "一般機械",
       "entry_date": "2026-06-05",
-      "beta": 0.31,
+      "beta": 0.75,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 184.07
     },
     {
       "stock": "4722",
@@ -2949,11 +2995,12 @@
       "themes": [],
       "primary_theme": "化學特化",
       "entry_date": "2026-06-05",
-      "beta": 0.04,
+      "beta": 0.73,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 138.5
     },
     {
       "stock": "6155",
@@ -2967,11 +3014,12 @@
       ],
       "primary_theme": "被動元件",
       "entry_date": "2026-06-05",
-      "beta": 0.19,
+      "beta": 0.6,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 107.16
     },
     {
       "stock": "9136",
@@ -2987,7 +3035,8 @@
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "6239",
@@ -2999,11 +3048,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.42,
+      "beta": 1.23,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 45.19
     },
     {
       "stock": "6693",
@@ -3015,11 +3065,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.5,
+      "beta": 0.42,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 47.45
     },
     {
       "stock": "4939",
@@ -3031,11 +3082,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.13,
+      "beta": 0.55,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 314.21
     },
     {
       "stock": "6166",
@@ -3047,11 +3099,12 @@
       "themes": [],
       "primary_theme": "電腦週邊",
       "entry_date": "2026-06-05",
-      "beta": -0.22,
+      "beta": 0.58,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 56.6
     },
     {
       "stock": "1711",
@@ -3063,11 +3116,12 @@
       "themes": [],
       "primary_theme": "化學特化",
       "entry_date": "2026-06-05",
-      "beta": 0.59,
+      "beta": 0.49,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 107.84
     },
     {
       "stock": "6548",
@@ -3079,11 +3133,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.63,
+      "beta": 0.53,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 55.03
     },
     {
       "stock": "3030",
@@ -3095,11 +3150,12 @@
       "themes": [],
       "primary_theme": "電子其他",
       "entry_date": "2026-06-05",
-      "beta": 0.68,
+      "beta": 0.92,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 34.89
     },
     {
       "stock": "4577",
@@ -3111,11 +3167,12 @@
       "themes": [],
       "primary_theme": "電子其他",
       "entry_date": "2026-06-05",
-      "beta": 0.84,
+      "beta": 0.81,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "8150",
@@ -3127,11 +3184,12 @@
       "themes": [],
       "primary_theme": "封測_材料",
       "entry_date": "2026-06-05",
-      "beta": 0.36,
+      "beta": 1.46,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 138.29
     },
     {
       "stock": "8028",
@@ -3143,11 +3201,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.23,
+      "beta": 0.88,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 77.23
     },
     {
       "stock": "3131",
@@ -3161,11 +3220,12 @@
       ],
       "primary_theme": "半導體設備_CoWoS",
       "entry_date": "2026-06-05",
-      "beta": -0.06,
+      "beta": 0.63,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 69.26
     },
     {
       "stock": "3236",
@@ -3177,11 +3237,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.1,
+      "beta": 0.78,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 168.44
     },
     {
       "stock": "3209",
@@ -3193,11 +3254,12 @@
       "themes": [],
       "primary_theme": "電子通路",
       "entry_date": "2026-06-05",
-      "beta": -0.08,
+      "beta": 0.24,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 24.34
     },
     {
       "stock": "6488",
@@ -3209,11 +3271,12 @@
       "themes": [],
       "primary_theme": "半導體_其他",
       "entry_date": "2026-06-05",
-      "beta": 0.28,
+      "beta": 1.84,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 53.04
     },
     {
       "stock": "6949",
@@ -3225,11 +3288,12 @@
       "themes": [],
       "primary_theme": "生技製藥",
       "entry_date": "2026-06-05",
-      "beta": -0.03,
+      "beta": 0.43,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "5351",
@@ -3243,11 +3307,12 @@
       ],
       "primary_theme": "AI記憶體",
       "entry_date": "2026-06-05",
-      "beta": 0.52,
+      "beta": 1.34,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "00935",
@@ -3259,11 +3324,12 @@
       "themes": [],
       "primary_theme": "ETF",
       "entry_date": "2026-06-05",
-      "beta": -0.0,
+      "beta": 1.35,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "00911",
@@ -3275,11 +3341,12 @@
       "themes": [],
       "primary_theme": "ETF",
       "entry_date": "2026-06-05",
-      "beta": -0.09,
+      "beta": 0.98,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "00947",
@@ -3291,11 +3358,12 @@
       "themes": [],
       "primary_theme": "ETF",
       "entry_date": "2026-06-05",
-      "beta": 0.13,
+      "beta": 1.44,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "8210",
@@ -3309,11 +3377,12 @@
       ],
       "primary_theme": "伺服器機殼_滑軌",
       "entry_date": "2026-06-05",
-      "beta": 0.16,
+      "beta": 1.08,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 47.14
     },
     {
       "stock": "3450",
@@ -3327,11 +3396,12 @@
       ],
       "primary_theme": "矽光子_CPO",
       "entry_date": "2026-06-05",
-      "beta": 0.6,
+      "beta": 1.4,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 100.0
     },
     {
       "stock": "4949",
@@ -3343,11 +3413,12 @@
       "themes": [],
       "primary_theme": "光電面板",
       "entry_date": "2026-06-05",
-      "beta": 0.54,
+      "beta": 0.81,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 49.16
     },
     {
       "stock": "6903",
@@ -3359,11 +3430,12 @@
       "themes": [],
       "primary_theme": "電子其他",
       "entry_date": "2026-06-05",
-      "beta": 0.6,
+      "beta": 0.81,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 37.01
     },
     {
       "stock": "00928",
@@ -3375,11 +3447,12 @@
       "themes": [],
       "primary_theme": "ETF",
       "entry_date": "2026-06-05",
-      "beta": 0.1,
+      "beta": 1.21,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "2409",
@@ -3391,11 +3464,12 @@
       "themes": [],
       "primary_theme": "顯示面板",
       "entry_date": "2026-06-05",
-      "beta": 0.71,
+      "beta": 1.25,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 30.11
     },
     {
       "stock": "00913",
@@ -3407,11 +3481,12 @@
       "themes": [],
       "primary_theme": "ETF",
       "entry_date": "2026-06-05",
-      "beta": 0.08,
+      "beta": 1.27,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "1802",
@@ -3423,11 +3498,12 @@
       "themes": [],
       "primary_theme": "玻璃陶瓷",
       "entry_date": "2026-06-05",
-      "beta": 0.43,
+      "beta": 1.27,
       "chip_label": "⚠️ 散戶過熱",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "3357",
@@ -3439,11 +3515,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": -0.19,
+      "beta": 0.92,
       "chip_label": "🚀 籌碼洗清",
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 28.85
     },
     {
       "stock": "00981A",
@@ -3455,11 +3532,12 @@
       "themes": [],
       "primary_theme": "主動式 ETF",
       "entry_date": "2026-06-05",
-      "beta": 0.01,
+      "beta": 1.29,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "4931",
@@ -3471,11 +3549,12 @@
       "themes": [],
       "primary_theme": "電腦週邊",
       "entry_date": "2026-06-05",
-      "beta": -0.06,
+      "beta": 0.85,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 77.48
     },
     {
       "stock": "00830",
@@ -3487,11 +3566,12 @@
       "themes": [],
       "primary_theme": "ETF",
       "entry_date": "2026-06-05",
-      "beta": -0.15,
+      "beta": 1.14,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": null
     },
     {
       "stock": "6290",
@@ -3503,11 +3583,12 @@
       "themes": [],
       "primary_theme": "電子元件",
       "entry_date": "2026-06-05",
-      "beta": 0.24,
+      "beta": 0.92,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 40.15
     },
     {
       "stock": "8438",
@@ -3519,11 +3600,12 @@
       "themes": [],
       "primary_theme": "綠能環保",
       "entry_date": "2026-06-05",
-      "beta": -0.26,
+      "beta": 0.75,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 39.86
     },
     {
       "stock": "7750",
@@ -3535,128 +3617,35 @@
       "themes": [],
       "primary_theme": "一般機械",
       "entry_date": "2026-06-05",
-      "beta": 0.12,
+      "beta": 0.61,
       "chip_label": null,
       "advice": "HOLD",
       "advice_color": "GREEN",
-      "event_alert": null
-    },
-    {
-      "stock": "6234",
-      "is_held": false,
-      "weight": 0.0,
-      "score": 2.0968,
-      "entry_reason": "SIGNAL",
-      "select_reason": "趨勢跟蹤",
-      "themes": [],
-      "primary_theme": "光電面板",
-      "entry_date": "2026-06-05",
-      "beta": 0.21,
-      "chip_label": null,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "event_alert": null
+      "event_alert": null,
+      "pe_ratio": 64.35
     }
   ],
-  "new_entries": [],
+  "new_entries": [
+    "2059",
+    "6789"
+  ],
   "exits": [],
   "trade_log": [
     {
-      "stock": "6191",
-      "entry_date": "2026-06-03",
+      "stock": "6789",
+      "entry_date": "2026-06-05",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "均值回歸"
+      "select_reason": "均值回歸",
+      "pe_ratio": 127.93
     },
     {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-02",
-      "exit_price": 113.5,
-      "return": 0.0271,
-      "reason": "RSI_OVERBOUGHT (>75)",
+      "stock": "2059",
+      "entry_date": "2026-06-05",
+      "exit_date": null,
+      "action": "BUY",
       "select_reason": "均值回歸·ETF動能",
-      "primary_theme": "金控母體",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "均值回歸·ETF動能"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-01",
-      "exit_price": 110.5,
-      "return": 0.0,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "均值回歸·ETF動能",
-      "primary_theme": "金控母體",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "均值回歸·ETF動能"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-01",
-      "exit_price": 110.5,
-      "return": 0.0,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "均值回歸·ETF動能",
-      "primary_theme": "金控母體",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "均值回歸·ETF動能"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-01",
-      "exit_price": 110.5,
-      "return": 0.0,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "均值回歸·ETF動能",
-      "primary_theme": "金控母體",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "均值回歸·ETF動能"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-01",
-      "exit_price": 110.5,
-      "return": 0.0,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "均值回歸·ETF動能",
-      "primary_theme": "金控母體",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "均值回歸·ETF動能"
+      "pe_ratio": 54.44
     }
   ]
 }

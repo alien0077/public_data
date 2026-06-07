@@ -1,13 +1,13 @@
 {
   "stock_id": "7818",
   "name": "7818",
-  "date": "2026-06-04",
-  "close": 65.3,
-  "health_score": 83,
-  "signal": "Bullish",
+  "date": "2026-06-05",
+  "close": 64.3,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.007,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.02,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 87.27,
+    "big_holder_change": 87.49,
     "retail_holder_change": 0,
-    "holder_concentration": 88.55
+    "holder_concentration": 88.65
   },
   "main_force": {
-    "cost": 65.91,
-    "distance": -0.93,
+    "cost": 65.8,
+    "distance": -2.28,
     "trend": "DOWN"
   },
   "sector": {
@@ -34,14 +34,7 @@
     "style": "Value",
     "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy"
-  ],
-  "data_version": "2026-06-04"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-05"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "9937",
   "name": "9937",
-  "date": "2026-06-04",
-  "close": 56.5,
-  "health_score": 130,
-  "signal": "Bullish",
+  "date": "2026-06-05",
+  "close": 55.7,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.003,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,32 +17,24 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 82.46,
+    "big_holder_change": 82.45,
     "retail_holder_change": 0,
-    "holder_concentration": 89.02
+    "holder_concentration": 89.04
   },
   "main_force": {
-    "cost": 56.0,
-    "distance": 0.89,
-    "trend": "UP"
+    "cost": 55.94,
+    "distance": -0.43,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 7 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-06-04"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-05"
 }

@@ -1,40 +1,42 @@
 {
   "stock_id": "7786",
   "name": "7786",
-  "date": "2026-06-04",
-  "close": 121.5,
-  "health_score": 86,
+  "date": "2026-06-05",
+  "close": 125.0,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.025,
+    "foreign_buy_ratio": -0.1,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 208.0,
+    "margin_change": 364.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 76.71,
+    "big_holder_change": 76.79,
     "retail_holder_change": 0,
-    "holder_concentration": 81.49
+    "holder_concentration": 81.8
   },
   "main_force": {
-    "cost": 122.82,
-    "distance": -1.07,
-    "trend": "DOWN"
+    "cost": 122.1,
+    "distance": 2.38,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-06-05"
 }

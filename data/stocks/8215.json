@@ -1,29 +1,29 @@
 {
   "stock_id": "8215",
   "name": "8215",
-  "date": "2026-06-04",
-  "close": 30.5,
-  "health_score": 130,
+  "date": "2026-06-05",
+  "close": 29.65,
+  "health_score": 146,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.395,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.001,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4613.0,
+    "margin_change": 4469.0,
     "short_change": 41.0,
-    "short_margin_ratio": 0.89
+    "short_margin_ratio": 0.92
   },
   "tdcc": {
-    "big_holder_change": 50.22,
+    "big_holder_change": 50.99,
     "retail_holder_change": 0,
-    "holder_concentration": 53.36
+    "holder_concentration": 54.09
   },
   "main_force": {
-    "cost": 28.73,
-    "distance": 6.16,
+    "cost": 28.86,
+    "distance": 2.74,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

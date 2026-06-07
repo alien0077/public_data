@@ -1,12 +1,12 @@
 {
   "stock_id": "5514",
   "name": "5514",
-  "date": "2026-06-04",
+  "date": "2026-06-05",
   "close": 13.75,
   "health_score": 110,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -19,11 +19,11 @@
   "tdcc": {
     "big_holder_change": 87.52,
     "retail_holder_change": 0,
-    "holder_concentration": 92.46
+    "holder_concentration": 92.45
   },
   "main_force": {
-    "cost": 11.82,
-    "distance": 16.33,
+    "cost": 11.74,
+    "distance": 17.12,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Value",
     "score": 40
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

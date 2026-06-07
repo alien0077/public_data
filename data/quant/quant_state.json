@@ -1690,24 +1690,24 @@
   ],
   "strategy_performance": {
     "trend": {
-      "sharpe": 1.2791895364949497,
-      "total_return": 0.14450709999999978,
+      "sharpe": 1.2792429697878005,
+      "total_return": 0.0,
       "win_rate": 0.1016949152542373
     },
     "mr": {
       "sharpe": 0.7164216088818848,
-      "total_return": 0.029898999999999898,
+      "total_return": 0.0,
       "win_rate": 0.09322033898305085
     },
     "ai_inst": {
-      "sharpe": 4.515428380886929,
-      "total_return": 1.7828279000000005,
+      "sharpe": 4.515789101150224,
+      "total_return": 0.0,
       "win_rate": 0.5847457627118644
     },
     "portfolio": {
-      "sharpe": 2.9630537295220956,
-      "total_return": 0.42416429999999994,
-      "win_rate": 0.47619047619047616
+      "sharpe": 0,
+      "total_return": 2.0,
+      "win_rate": 1.0
     }
   },
   "ensemble_performance": {
@@ -1840,71 +1840,48 @@
   },
   "portfolio": {
     "cash": {
-      "trend": 954212.45,
-      "mr": 87.25,
-      "ai_inst": 31356.799999999996
+      "trend": 1000000.0,
+      "mr": 401591.0,
+      "ai_inst": 250157.99999999997
     },
     "positions": {
-      "trend": [
-        {
-          "stock": "8021",
-          "entry_date": "2026-05-25",
-          "entry_price": 464.0,
-          "shares": 2,
-          "max_return": 0.012931034482758674
-        }
-      ],
+      "trend": [],
       "mr": [
         {
-          "stock": "6191",
-          "entry_date": "2026-06-03",
-          "entry_price": 100.5,
-          "shares": 6,
+          "stock": "2059",
+          "entry_date": "2026-06-05",
+          "entry_price": 5620.0,
+          "shares": 56,
+          "max_return": 0.0
+        },
+        {
+          "stock": "6789",
+          "entry_date": "2026-06-05",
+          "entry_price": 513.0,
+          "shares": 553,
           "max_return": 0.0
         }
       ],
       "ai_inst": [
         {
-          "stock": "3231",
-          "entry_date": "2026-06-03",
-          "entry_price": 194.0,
-          "shares": 1288,
+          "stock": "2382",
+          "entry_date": "2026-06-05",
+          "entry_price": 390.5,
+          "shares": 1280,
           "max_return": 0.0,
           "consecutive_buy_days": 5,
-          "total_inst_buy": 160473532,
+          "total_inst_buy": 54937599,
           "b_signal_triggered": false,
           "phase": "ACCUMULATING"
         },
         {
           "stock": "4938",
-          "entry_date": "2026-06-03",
-          "entry_price": 98.5,
-          "shares": 1269,
-          "max_return": 0.0,
-          "consecutive_buy_days": 5,
-          "total_inst_buy": 14130226,
-          "b_signal_triggered": false,
-          "phase": "ACCUMULATING"
-        },
-        {
-          "stock": "3704",
-          "entry_date": "2026-06-04",
-          "entry_price": 47.7,
-          "shares": 1311,
-          "max_return": 0.0,
-          "consecutive_buy_days": 5,
-          "total_inst_buy": 6135158,
-          "b_signal_triggered": false,
-          "phase": "ACCUMULATING"
-        },
-        {
-          "stock": "2382",
           "entry_date": "2026-06-05",
-          "entry_price": 390.5,
-          "shares": 80,
+          "entry_price": 96.9,
+          "shares": 2580,
           "max_return": 0.0,
           "consecutive_buy_days": 5,
-          "total_inst_buy": 54937599,
+          "total_inst_buy": 9920458,
           "b_signal_triggered": false,
           "phase": "ACCUMULATING"
         }
@@ -1912,101 +1889,53 @@
     },
     "nav_history": [
       {
-        "date": "2026-05-03",
-        "nav": 1000000.0
-      },
-      {
-        "date": "2026-05-04",
-        "nav": 1000000.0
-      },
-      {
-        "date": "2026-05-07",
-        "nav": 996483.0
-      },
-      {
-        "date": "2026-05-08",
-        "nav": 940340.0
-      },
-      {
-        "date": "2026-05-11",
-        "nav": 965275.0
-      },
-      {
-        "date": "2026-05-13",
-        "nav": 971013.0
-      },
-      {
-        "date": "2026-05-14",
-        "nav": 989703.0
-      },
-      {
-        "date": "2026-05-15",
-        "nav": 955691.0
-      },
-      {
-        "date": "2026-05-19",
-        "nav": 938591.0
-      },
-      {
-        "date": "2026-05-20",
-        "nav": 945071.0
-      },
-      {
-        "date": "2026-05-21",
-        "nav": 943271.0
-      },
-      {
-        "date": "2026-05-22",
-        "nav": 954431.0
-      },
-      {
-        "date": "2026-05-25",
-        "nav": 969911.0
-      },
-      {
-        "date": "2026-05-26",
-        "nav": 1004676.0
-      },
-      {
-        "date": "2026-05-27",
-        "nav": 984168.5
-      },
-      {
-        "date": "2026-05-28",
-        "nav": 942825.5
-      },
-      {
-        "date": "2026-05-29",
-        "nav": 988135.5
-      },
-      {
-        "date": "2026-06-01",
-        "nav": 1507691.5
-      },
-      {
-        "date": "2026-06-02",
-        "nav": 1479531.7
-      },
-      {
-        "date": "2026-06-03",
-        "nav": 1491417.7
-      },
-      {
         "date": "2026-06-04",
-        "nav": 1436161.4
+        "nav": 1000000.0
       },
       {
         "date": "2026-06-05",
-        "nav": 1424164.3
+        "nav": 3000000.0
       }
-    ]
+    ],
+    "strategy_navs": {
+      "trend": [
+        {
+          "date": "2026-06-04",
+          "nav": 1000000.0
+        },
+        {
+          "date": "2026-06-05",
+          "nav": 1000000.0
+        }
+      ],
+      "mr": [
+        {
+          "date": "2026-06-04",
+          "nav": 1000000.0
+        },
+        {
+          "date": "2026-06-05",
+          "nav": 1000000.0
+        }
+      ],
+      "ai_inst": [
+        {
+          "date": "2026-06-04",
+          "nav": 1000000.0
+        },
+        {
+          "date": "2026-06-05",
+          "nav": 1000000.0
+        }
+      ]
+    }
   },
   "backtest_history": [],
   "backtest_performance": {
-    "total_return": 0.6524113333333332,
-    "sharpe": 4.5027188375163325,
-    "max_drawdown": -0.056459197286898584,
-    "win_rate": 0.6,
+    "total_return": 0.6524767666666669,
+    "sharpe": 4.503081514956268,
+    "max_drawdown": -0.05646234770143745,
+    "win_rate": 0.5555555555555556,
     "equity_curve": [
       {
         "date": "12-04",
@@ -2094,7 +2023,7 @@
       },
       {
         "date": "01-06",
-        "equity": 1.0742
+        "equity": 1.0743
       },
       {
         "date": "01-07",
@@ -2142,7 +2071,7 @@
       },
       {
         "date": "01-22",
-        "equity": 1.1514
+        "equity": 1.1513
       },
       {
         "date": "01-23",
@@ -2222,7 +2151,7 @@
       },
       {
         "date": "03-03",
-        "equity": 1.2037
+        "equity": 1.2038
       },
       {
         "date": "03-04",
@@ -2230,7 +2159,7 @@
       },
       {
         "date": "03-05",
-        "equity": 1.1957
+        "equity": 1.1958
       },
       {
         "date": "03-06",
@@ -2238,19 +2167,19 @@
       },
       {
         "date": "03-09",
-        "equity": 1.1594
+        "equity": 1.1595
       },
       {
         "date": "03-10",
-        "equity": 1.1763
+        "equity": 1.1764
       },
       {
         "date": "03-11",
-        "equity": 1.2006
+        "equity": 1.2007
       },
       {
         "date": "03-12",
-        "equity": 1.1992
+        "equity": 1.1993
       },
       {
         "date": "03-13",
@@ -2282,11 +2211,11 @@
       },
       {
         "date": "03-24",
-        "equity": 1.1772
+        "equity": 1.1773
       },
       {
         "date": "03-25",
-        "equity": 1.2068
+        "equity": 1.2069
       },
       {
         "date": "03-26",
@@ -2326,11 +2255,11 @@
       },
       {
         "date": "04-10",
-        "equity": 1.2802
+        "equity": 1.2803
       },
       {
         "date": "04-13",
-        "equity": 1.2709
+        "equity": 1.271
       },
       {
         "date": "04-14",
@@ -2342,7 +2271,7 @@
       },
       {
         "date": "04-16",
-        "equity": 1.3097
+        "equity": 1.3096
       },
       {
         "date": "04-17",
@@ -2382,11 +2311,11 @@
       },
       {
         "date": "04-30",
-        "equity": 1.4343
+        "equity": 1.4344
       },
       {
         "date": "05-04",
-        "equity": 1.4621
+        "equity": 1.4622
       },
       {
         "date": "05-05",
@@ -2410,15 +2339,15 @@
       },
       {
         "date": "05-12",
-        "equity": 1.5337
+        "equity": 1.5338
       },
       {
         "date": "05-13",
-        "equity": 1.5177
+        "equity": 1.5178
       },
       {
         "date": "05-14",
-        "equity": 1.5443
+        "equity": 1.5444
       },
       {
         "date": "05-15",
@@ -2430,7 +2359,7 @@
       },
       {
         "date": "05-19",
-        "equity": 1.5234
+        "equity": 1.5235
       },
       {
         "date": "05-20",
@@ -2442,23 +2371,23 @@
       },
       {
         "date": "05-22",
-        "equity": 1.5966
+        "equity": 1.5967
       },
       {
         "date": "05-25",
-        "equity": 1.6469
+        "equity": 1.647
       },
       {
         "date": "05-26",
-        "equity": 1.7004
+        "equity": 1.7005
       },
       {
         "date": "05-27",
-        "equity": 1.744
+        "equity": 1.7441
       },
       {
         "date": "05-28",
-        "equity": 1.7151
+        "equity": 1.7152
       },
       {
         "date": "05-29",
@@ -2470,7 +2399,7 @@
       },
       {
         "date": "06-02",
-        "equity": 1.7051
+        "equity": 1.7052
       },
       {
         "date": "06-03",
@@ -2478,11 +2407,11 @@
       },
       {
         "date": "06-04",
-        "equity": 1.6493
+        "equity": 1.6494
       },
       {
         "date": "06-05",
-        "equity": 1.6524
+        "equity": 1.6525
       }
     ],
     "drawdown_curve": [
@@ -2584,7 +2513,7 @@
       },
       {
         "date": "01-09",
-        "value": -0.0218
+        "value": -0.0219
       },
       {
         "date": "01-12",
@@ -2592,7 +2521,7 @@
       },
       {
         "date": "01-13",
-        "value": -0.0156
+        "value": -0.0157
       },
       {
         "date": "01-14",
@@ -2696,7 +2625,7 @@
       },
       {
         "date": "03-02",
-        "value": -0.0024
+        "value": -0.0023
       },
       {
         "date": "03-03",
@@ -2716,7 +2645,7 @@
       },
       {
         "date": "03-09",
-        "value": -0.0506
+        "value": -0.0505
       },
       {
         "date": "03-10",
@@ -2776,7 +2705,7 @@
       },
       {
         "date": "03-30",
-        "value": -0.0379
+        "value": -0.038
       },
       {
         "date": "03-31",
@@ -2788,11 +2717,11 @@
       },
       {
         "date": "04-02",
-        "value": -0.0388
+        "value": -0.0389
       },
       {
         "date": "04-07",
-        "value": -0.0117
+        "value": -0.0118
       },
       {
         "date": "04-08",
@@ -2970,6 +2899,13 @@
   },
   "trade_log": [
     {
+      "stock": "4938",
+      "entry_date": "2026-06-05",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009"
+    },
+    {
       "stock": "2382",
       "entry_date": "2026-06-05",
       "exit_date": null,
@@ -2977,492 +2913,18 @@
       "select_reason": "\u6cd5\u4eba\u5efa\u5009"
     },
     {
-      "stock": "6472",
-      "entry_date": "2026-05-28",
-      "exit_date": "2026-06-05",
-      "exit_price": 371.5,
-      "return": 0.1057,
-      "reason": "RS_WEAK (<80, Evolved)",
-      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
-      "primary_theme": "\u65b0\u85e5_\u751f\u6280",
-      "action": "SELL"
-    },
-    {
-      "stock": "3665",
-      "entry_date": "2026-05-28",
-      "exit_date": "2026-06-05",
-      "exit_price": 2200.0,
-      "return": 0.0402,
-      "reason": "RS_WEAK (<80, Evolved)",
-      "select_reason": "\u8da8\u52e2\u8ddf\u8e64\u00b7ETF\u52d5\u80fd",
-      "primary_theme": "\u96fb\u5b50\u5176\u4ed6",
-      "action": "SELL"
-    },
-    {
-      "stock": "3563",
-      "entry_date": "2026-05-27",
-      "exit_date": "2026-06-05",
-      "exit_price": 786.0,
-      "return": -0.0665,
-      "reason": "RS_WEAK (<80, Evolved)",
-      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
-      "primary_theme": "\u5149\u96fb\u9762\u677f",
-      "action": "SELL"
-    },
-    {
-      "stock": "6446",
-      "entry_date": "2026-05-27",
-      "exit_date": "2026-06-05",
-      "exit_price": 937.0,
-      "return": 0.0684,
-      "reason": "RS_WEAK (<80, Evolved)",
-      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
-      "primary_theme": "\u65b0\u85e5_\u751f\u6280",
-      "action": "SELL"
-    },
-    {
-      "stock": "1519",
-      "entry_date": "2026-05-27",
-      "exit_date": "2026-06-05",
-      "exit_price": 851.0,
-      "return": -0.0308,
-      "reason": "RS_WEAK (<80, Evolved)",
-      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
-      "primary_theme": "\u91cd\u96fb_\u5f37\u97cc\u96fb\u7db2",
-      "action": "SELL"
-    },
-    {
-      "stock": "6691",
-      "entry_date": "2026-05-27",
-      "exit_date": "2026-06-05",
-      "exit_price": 642.0,
-      "return": -0.0475,
-      "reason": "RS_WEAK (<80, Evolved)",
-      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
-      "primary_theme": "\u96fb\u5b50\u5176\u4ed6",
-      "action": "SELL"
-    },
-    {
-      "stock": "3704",
-      "entry_date": "2026-06-04",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "\u6cd5\u4eba\u5efa\u5009"
-    },
-    {
-      "stock": "3189",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-06-04",
-      "exit_price": 692.0,
-      "return": 0.0344,
-      "reason": "TRAILING_STOP (Gap:5.5%)",
-      "select_reason": "\u8da8\u52e2\u8ddf\u8e64\u00b7ETF\u52d5\u80fd",
-      "primary_theme": "PCB_CCL_ABF",
-      "action": "SELL"
-    },
-    {
-      "stock": "4938",
-      "entry_date": "2026-06-03",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "\u6cd5\u4eba\u5efa\u5009"
-    },
-    {
-      "stock": "3231",
-      "entry_date": "2026-06-03",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "\u6cd5\u4eba\u5efa\u5009"
-    },
-    {
-      "stock": "6191",
-      "entry_date": "2026-06-03",
+      "stock": "6789",
+      "entry_date": "2026-06-05",
       "exit_date": null,
       "action": "BUY",
       "select_reason": "\u5747\u503c\u56de\u6b78"
     },
     {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-02",
-      "exit_price": 113.5,
-      "return": 0.0271,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd",
-      "primary_theme": "\u91d1\u63a7\u6bcd\u9ad4",
-      "action": "SELL"
-    },
-    {
-      "stock": "8291",
-      "entry_date": "2026-05-29",
-      "exit_date": "2026-06-02",
-      "exit_price": 97.2,
-      "return": -0.19,
-      "reason": "STOP_LOSS (10%)",
-      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
-      "primary_theme": "\u96fb\u5b50\u5143\u4ef6",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
+      "stock": "2059",
+      "entry_date": "2026-06-05",
       "exit_date": null,
       "action": "BUY",
       "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-01",
-      "exit_price": 110.5,
-      "return": 0.0,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd",
-      "primary_theme": "\u91d1\u63a7\u6bcd\u9ad4",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-01",
-      "exit_price": 110.5,
-      "return": 0.0,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd",
-      "primary_theme": "\u91d1\u63a7\u6bcd\u9ad4",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-01",
-      "exit_price": 110.5,
-      "return": 0.0,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd",
-      "primary_theme": "\u91d1\u63a7\u6bcd\u9ad4",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": "2026-06-01",
-      "exit_price": 110.5,
-      "return": 0.0,
-      "reason": "RSI_OVERBOUGHT (>75)",
-      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd",
-      "primary_theme": "\u91d1\u63a7\u6bcd\u9ad4",
-      "action": "SELL"
-    },
-    {
-      "stock": "2881",
-      "entry_date": "2026-06-01",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd"
-    },
-    {
-      "stock": "6861",
-      "entry_date": "2026-05-26",
-      "exit_date": "2026-06-01",
-      "exit_price": 396.0,
-      "return": -0.119,
-      "reason": "STOP_LOSS (10%)",
-      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
-      "primary_theme": "\u986f\u793a\u9762\u677f",
-      "action": "SELL"
-    },
-    {
-      "stock": "8291",
-      "entry_date": "2026-05-29",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "8291",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-29",
-      "exit_price": 120.0,
-      "return": 0.2,
-      "reason": "TRAILING_STOP (Gap:5.0%)",
-      "primary_theme": "\u96fb\u5b50\u5143\u4ef6",
-      "action": "SELL"
-    },
-    {
-      "stock": "6472",
-      "entry_date": "2026-05-28",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "3665",
-      "entry_date": "2026-05-28",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "5475",
-      "entry_date": "2026-05-26",
-      "exit_date": "2026-05-28",
-      "exit_price": 266.5,
-      "return": -0.1262,
-      "reason": "STOP_LOSS (10%)",
-      "primary_theme": "\u96fb\u5b50\u5143\u4ef6",
-      "action": "SELL"
-    },
-    {
-      "stock": "3563",
-      "entry_date": "2026-05-27",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "6446",
-      "entry_date": "2026-05-27",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "1519",
-      "entry_date": "2026-05-27",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "6691",
-      "entry_date": "2026-05-27",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "3665",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-27",
-      "exit_price": 2115.0,
-      "return": -0.1132,
-      "reason": "STOP_LOSS (10%)",
-      "primary_theme": "\u96fb\u5b50\u5176\u4ed6",
-      "action": "SELL"
-    },
-    {
-      "stock": "3081",
-      "entry_date": "2026-05-04",
-      "exit_date": "2026-05-27",
-      "exit_price": 2885.0,
-      "return": 0.051,
-      "reason": "TRAILING_STOP (Gap:5.0%)",
-      "primary_theme": "\u7db2\u901a\u5176\u4ed6",
-      "action": "SELL"
-    },
-    {
-      "stock": "6861",
-      "entry_date": "2026-05-26",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "5475",
-      "entry_date": "2026-05-26",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "6472",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-26",
-      "exit_price": 355.5,
-      "return": -0.03,
-      "reason": "RS_WEAK (<88, Evolved)",
-      "primary_theme": "\u65b0\u85e5_\u751f\u6280",
-      "action": "SELL"
-    },
-    {
-      "stock": "6446",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-26",
-      "exit_price": 878.0,
-      "return": 0.0452,
-      "reason": "RS_WEAK (<88, Evolved)",
-      "primary_theme": "\u65b0\u85e5_\u751f\u6280",
-      "action": "SELL"
-    },
-    {
-      "stock": "3563",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-26",
-      "exit_price": 890.0,
-      "return": -0.0022,
-      "reason": "RS_WEAK (<88, Evolved)",
-      "primary_theme": "\u5149\u96fb\u9762\u677f",
-      "action": "SELL"
-    },
-    {
-      "stock": "1519",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-26",
-      "exit_price": 851.0,
-      "return": 0.0253,
-      "reason": "RS_WEAK (<88, Evolved)",
-      "primary_theme": "\u91cd\u96fb_\u5f37\u97cc\u96fb\u7db2",
-      "action": "SELL"
-    },
-    {
-      "stock": "6691",
-      "entry_date": "2026-05-25",
-      "exit_date": "2026-05-26",
-      "exit_price": 650.0,
-      "return": 0.0062,
-      "reason": "RS_WEAK (<88, Evolved)",
-      "primary_theme": "\u96fb\u5b50\u5176\u4ed6",
-      "action": "SELL"
-    },
-    {
-      "stock": "8291",
-      "entry_date": "2026-05-25",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "8021",
-      "entry_date": "2026-05-25",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "6472",
-      "entry_date": "2026-05-25",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "3665",
-      "entry_date": "2026-05-25",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "6446",
-      "entry_date": "2026-05-25",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "3563",
-      "entry_date": "2026-05-25",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "1519",
-      "entry_date": "2026-05-25",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "6691",
-      "entry_date": "2026-05-25",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "3189",
-      "entry_date": "2026-05-25",
-      "exit_date": null,
-      "action": "BUY"
-    },
-    {
-      "stock": "6515",
-      "entry_date": "2026-05-04",
-      "exit_date": "2026-05-19",
-      "exit_price": 9490.0,
-      "return": -0.1131,
-      "reason": "STOP_LOSS (10%)",
-      "primary_theme": "\u534a\u5c0e\u9ad4_\u5176\u4ed6",
-      "action": "SELL"
-    },
-    {
-      "stock": "6861",
-      "entry_date": "2026-05-04",
-      "exit_date": "2026-05-15",
-      "return": 0.251,
-      "reason": "TAKE_PROFIT (25%)",
-      "entry_reason": "SIGNAL",
-      "action": "SELL"
-    },
-    {
-      "stock": "6683",
-      "entry_date": "2026-05-04",
-      "exit_date": "2026-05-14",
-      "return": -0.1756,
-      "reason": "STOP_LOSS (10%)",
-      "entry_reason": "SIGNAL",
-      "action": "SELL"
-    },
-    {
-      "stock": "6515",
-      "entry_date": "2026-05-04",
-      "exit_date": null,
-      "return": null,
-      "reason": null,
-      "entry_reason": "SIGNAL",
-      "action": "BUY"
-    },
-    {
-      "stock": "6830",
-      "entry_date": "2026-05-04",
-      "exit_date": "2026-05-11",
-      "return": -0.1849,
-      "reason": "STOP_LOSS (10%)",
-      "entry_reason": "SIGNAL",
-      "action": "SELL"
-    },
-    {
-      "stock": "6861",
-      "entry_date": "2026-05-04",
-      "exit_date": null,
-      "return": null,
-      "reason": null,
-      "entry_reason": "SIGNAL",
-      "action": "BUY"
-    },
-    {
-      "stock": "6683",
-      "entry_date": "2026-05-04",
-      "exit_date": null,
-      "return": null,
-      "reason": null,
-      "entry_reason": "SIGNAL",
-      "action": "BUY"
-    },
-    {
-      "stock": "3081",
-      "entry_date": "2026-05-04",
-      "exit_date": null,
-      "return": null,
-      "reason": null,
-      "entry_reason": "SIGNAL",
-      "action": "BUY"
     }
   ]
 }

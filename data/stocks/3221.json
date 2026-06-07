@@ -1,29 +1,29 @@
 {
   "stock_id": "3221",
   "name": "3221",
-  "date": "2026-06-04",
-  "close": 55.3,
-  "health_score": 113,
+  "date": "2026-06-05",
+  "close": 57.1,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.448,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.282,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4646.0,
-    "short_change": 19.0,
-    "short_margin_ratio": 0.41
+    "margin_change": 4636.0,
+    "short_change": 67.0,
+    "short_margin_ratio": 1.45
   },
   "tdcc": {
-    "big_holder_change": 16.07,
+    "big_holder_change": 11.95,
     "retail_holder_change": 0,
-    "holder_concentration": 33.63
+    "holder_concentration": 28.23
   },
   "main_force": {
-    "cost": 51.37,
-    "distance": 7.65,
+    "cost": 51.96,
+    "distance": 9.89,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

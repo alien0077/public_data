@@ -6,12 +6,12 @@
       "desc": "TREND Ensemble Fund",
       "note": "TREND（趨勢跟蹤）：RS>90 買最強的，賭它繼續漲（順勢）。跌破 RS80 或移動停利出場。牛市表現最佳。",
       "params": "RS≥85進場 | RS<80出場 | 停利6% | 停損-10% | 上限10檔",
-      "sharpe": 1.2791895364949497,
-      "total_return": 0.14450709999999978,
+      "sharpe": 1.2792429697878005,
+      "total_return": 0.0,
       "win_rate": 0.1016949152542373,
       "weight": 0.8,
       "age": 10,
-      "score": 1.2791895364949497
+      "score": 1.2792429697878005
     },
     {
       "dsl": "rsi < 40",
@@ -20,7 +20,7 @@
       "note": "MR（均值回歸）：RSI<40 買跌深反轉，賭它反彈（逆勢）。RSI>75 或停損/移動停利出場。低接高拋，波動較低。",
       "params": "RSI<40進場 | RSI>75出場 | 停利8%移動3% | 停損7% | 保留3席",
       "sharpe": 0.7164216088818848,
-      "total_return": 0.029898999999999898,
+      "total_return": 0.0,
       "win_rate": 0.09322033898305085,
       "weight": 0.2,
       "age": 10,
@@ -32,12 +32,12 @@
       "desc": "AI_INST Ensemble Fund",
       "note": "AI_INST（法人建倉）：AI 股法人連續買超 5 天進場，B 訊號發動後跌破 10MA 出場。追隨法人腳步，鎖定 AI 族群。",
       "params": "法人連買≥5天進場 | B訊號+跌破10MA出場 | 停損-15% | 上限5檔",
-      "sharpe": 4.515428380886929,
-      "total_return": 1.7828279000000005,
+      "sharpe": 4.515789101150224,
+      "total_return": 0.0,
       "win_rate": 0.5847457627118644,
       "weight": 1.0,
       "age": 10,
-      "score": 4.515428380886929
+      "score": 4.515789101150224
     },
     {
       "dsl": "portfolio_combined",
@@ -45,12 +45,12 @@
       "desc": "Portfolio (TREND+MR)",
       "note": "多策略加權組合：積極進攻模式，TREND 80% + MR 20%，AI_INST 獨立資金池不疊加。",
       "params": "TREND 80% | MR 20% | AI_INST 獨立 | 現金保留10%",
-      "sharpe": 2.9630537295220956,
-      "total_return": 0.42416429999999994,
-      "win_rate": 0.47619047619047616,
+      "sharpe": 0,
+      "total_return": 2.0,
+      "win_rate": 1.0,
       "weight": 1.0,
       "age": 10,
-      "score": 2.9630537295220956
+      "score": 0
     },
     {
       "dsl": "multi_factor_ai",
@@ -71,7 +71,7 @@
       "exit_dsl": "risk_management",
       "desc": "總帳戶",
       "capital": 5000000,
-      "nav": 1424164.3,
+      "nav": 3000000.0,
       "note": "TREND + MR + Portfolio + Multi-Factor AI + AI_INST 五策略各100萬實戰比較",
       "params": "TREND 100萬 | MR 100萬 | Portfolio 100萬 | MF AI 100萬 | AI_INST 100萬",
       "sharpe": 0,

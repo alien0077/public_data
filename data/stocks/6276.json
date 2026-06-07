@@ -1,13 +1,13 @@
 {
   "stock_id": "6276",
   "name": "6276",
-  "date": "2026-06-04",
-  "close": 27.6,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-05",
+  "close": 27.95,
+  "health_score": 103,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.041,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.041,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 48.78,
+    "big_holder_change": 48.75,
     "retail_holder_change": 0,
-    "holder_concentration": 52.38
+    "holder_concentration": 52.35
   },
   "main_force": {
-    "cost": 28.5,
-    "distance": -3.16,
+    "cost": 28.37,
+    "distance": -1.48,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-05"
 }

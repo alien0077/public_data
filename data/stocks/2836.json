@@ -1,29 +1,29 @@
 {
   "stock_id": "2836",
   "name": "2836",
-  "date": "2026-06-04",
-  "close": 12.2,
-  "health_score": 150,
+  "date": "2026-06-05",
+  "close": 12.05,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.013,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.018,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6385.0,
+    "margin_change": 6382.0,
     "short_change": 50.0,
     "short_margin_ratio": 0.78
   },
   "tdcc": {
-    "big_holder_change": 81.67,
+    "big_holder_change": 81.87,
     "retail_holder_change": 0,
-    "holder_concentration": 84.8
+    "holder_concentration": 85.01
   },
   "main_force": {
-    "cost": 11.84,
-    "distance": 3.04,
+    "cost": 11.85,
+    "distance": 1.69,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

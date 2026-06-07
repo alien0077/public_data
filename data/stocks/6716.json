@@ -1,29 +1,29 @@
 {
   "stock_id": "6716",
   "name": "6716",
-  "date": "2026-06-04",
-  "close": 102.5,
-  "health_score": 113,
+  "date": "2026-06-05",
+  "close": 101.0,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.083,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1132.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 1102.0,
+    "short_change": 3.0,
+    "short_margin_ratio": 0.27
   },
   "tdcc": {
     "big_holder_change": 22.4,
     "retail_holder_change": 0,
-    "holder_concentration": 38.31
+    "holder_concentration": 34.97
   },
   "main_force": {
-    "cost": 99.84,
-    "distance": 2.66,
+    "cost": 100.23,
+    "distance": 0.77,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

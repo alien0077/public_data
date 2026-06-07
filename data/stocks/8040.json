@@ -1,29 +1,29 @@
 {
   "stock_id": "8040",
   "name": "8040",
-  "date": "2026-06-04",
-  "close": 103.5,
-  "health_score": 113,
+  "date": "2026-06-05",
+  "close": 102.5,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.298,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.258,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4547.0,
-    "short_change": 6.0,
-    "short_margin_ratio": 0.13
+    "margin_change": 4435.0,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.05
   },
   "tdcc": {
-    "big_holder_change": 45.81,
+    "big_holder_change": 45.9,
     "retail_holder_change": 0,
-    "holder_concentration": 54.12
+    "holder_concentration": 53.27
   },
   "main_force": {
-    "cost": 100.12,
-    "distance": 3.38,
+    "cost": 101.36,
+    "distance": 1.12,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

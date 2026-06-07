@@ -1,13 +1,13 @@
 {
   "stock_id": "5525",
   "name": "5525",
-  "date": "2026-06-04",
-  "close": 22.15,
-  "health_score": 103,
+  "date": "2026-06-05",
+  "close": 22.8,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.012,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.008,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,31 +17,26 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 84.14,
+    "big_holder_change": 84.13,
     "retail_holder_change": 0,
-    "holder_concentration": 88.47
+    "holder_concentration": 88.46
   },
   "main_force": {
-    "cost": 22.18,
-    "distance": -0.14,
-    "trend": "DOWN"
+    "cost": 22.14,
+    "distance": 2.98,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 7 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

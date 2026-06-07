@@ -1,40 +1,42 @@
 {
   "stock_id": "4530",
   "name": "4530",
-  "date": "2026-06-04",
-  "close": 0.0,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-05",
+  "close": 25.3,
+  "health_score": 113,
+  "signal": "Bullish",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_ratio": -0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 28.0,
+    "margin_change": 25.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 64.46,
     "retail_holder_change": 0,
-    "holder_concentration": 72.96
+    "holder_concentration": 73.02
   },
   "main_force": {
     "cost": 22.96,
-    "distance": -100.0,
-    "trend": "DOWN"
+    "distance": 10.19,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "ma_bull"
+  ],
+  "data_version": "2026-06-05"
 }

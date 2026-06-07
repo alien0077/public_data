@@ -1,25 +1,25 @@
 {
   "stock_id": "00687B",
   "name": "00687B",
-  "date": "2026-06-04",
-  "close": 27.82,
-  "health_score": 130,
+  "date": "2026-06-05",
+  "close": 27.87,
+  "health_score": 146,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 10627.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 7614.0,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.03
   },
   "tdcc": {},
   "main_force": {
-    "cost": 27.57,
-    "distance": 0.91,
+    "cost": 27.58,
+    "distance": 1.05,
     "trend": "UP"
   },
   "sector": {
@@ -30,10 +30,15 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

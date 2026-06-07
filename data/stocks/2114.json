@@ -1,29 +1,29 @@
 {
   "stock_id": "2114",
   "name": "2114",
-  "date": "2026-06-04",
-  "close": 91.4,
-  "health_score": 113,
+  "date": "2026-06-05",
+  "close": 93.5,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.027,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.062,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 24.0,
+    "margin_change": 30.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 56.77,
     "retail_holder_change": 0,
-    "holder_concentration": 64.63
+    "holder_concentration": 64.9
   },
   "main_force": {
-    "cost": 85.34,
-    "distance": 7.1,
+    "cost": 85.7,
+    "distance": 9.1,
     "trend": "UP"
   },
   "sector": {
@@ -32,11 +32,12 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 70
+    "score": 100
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

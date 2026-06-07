@@ -1,29 +1,29 @@
 {
   "stock_id": "2032",
   "name": "2032",
-  "date": "2026-06-04",
+  "date": "2026-06-05",
   "close": 18.3,
-  "health_score": 133,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.03,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.051,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3075.0,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.1
+    "margin_change": 3065.0,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.07
   },
   "tdcc": {
-    "big_holder_change": 48.72,
+    "big_holder_change": 48.71,
     "retail_holder_change": 0,
-    "holder_concentration": 57.74
+    "holder_concentration": 58.84
   },
   "main_force": {
-    "cost": 17.35,
-    "distance": 5.48,
+    "cost": 17.43,
+    "distance": 4.99,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

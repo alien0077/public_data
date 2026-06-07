@@ -1,29 +1,29 @@
 {
   "stock_id": "6830",
   "name": "6830",
-  "date": "2026-06-04",
-  "close": 676.0,
-  "health_score": 86,
+  "date": "2026-06-05",
+  "close": 624.0,
+  "health_score": 83,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.5,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.216,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4885.0,
-    "short_change": 267.0,
-    "short_margin_ratio": 5.47
+    "margin_change": 4771.0,
+    "short_change": 253.0,
+    "short_margin_ratio": 5.3
   },
   "tdcc": {
-    "big_holder_change": 17.82,
+    "big_holder_change": 17.95,
     "retail_holder_change": 0,
-    "holder_concentration": 35.66
+    "holder_concentration": 35.54
   },
   "main_force": {
-    "cost": 722.7,
-    "distance": -6.46,
+    "cost": 714.55,
+    "distance": -12.67,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-05"
 }

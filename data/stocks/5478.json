@@ -1,18 +1,18 @@
 {
   "stock_id": "5478",
   "name": "5478",
-  "date": "2026-06-04",
-  "close": 103.5,
+  "date": "2026-06-05",
+  "close": 104.0,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.01,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.065,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 383.0,
+    "margin_change": 374.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 79.45
   },
   "main_force": {
-    "cost": 99.0,
-    "distance": 4.55,
+    "cost": 99.39,
+    "distance": 4.64,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

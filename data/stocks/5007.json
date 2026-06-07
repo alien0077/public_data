@@ -1,13 +1,13 @@
 {
   "stock_id": "5007",
   "name": "5007",
-  "date": "2026-06-04",
-  "close": 57.7,
-  "health_score": 130,
+  "date": "2026-06-05",
+  "close": 57.1,
+  "health_score": 86,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.001,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,32 +17,24 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 84.19,
+    "big_holder_change": 84.54,
     "retail_holder_change": 0,
-    "holder_concentration": 87.78
+    "holder_concentration": 87.82
   },
   "main_force": {
-    "cost": 57.24,
-    "distance": 0.8,
-    "trend": "UP"
+    "cost": 57.2,
+    "distance": -0.17,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 30
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 7 天"
-    }
-  ],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
-  ],
-  "data_version": "2026-06-04"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-05"
 }

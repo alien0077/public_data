@@ -1,29 +1,29 @@
 {
   "stock_id": "4426",
   "name": "4426",
-  "date": "2026-06-04",
-  "close": 9.4,
-  "health_score": 150,
+  "date": "2026-06-05",
+  "close": 8.49,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.226,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.403,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 886.0,
+    "margin_change": 889.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 53.81,
+    "big_holder_change": 53.96,
     "retail_holder_change": 0,
-    "holder_concentration": 61.99
+    "holder_concentration": 61.6
   },
   "main_force": {
-    "cost": 7.94,
-    "distance": 18.39,
+    "cost": 7.97,
+    "distance": 6.52,
     "trend": "UP"
   },
   "sector": {
@@ -34,19 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 7 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

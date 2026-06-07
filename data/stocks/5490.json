@@ -1,29 +1,29 @@
 {
   "stock_id": "5490",
   "name": "5490",
-  "date": "2026-06-04",
-  "close": 29.65,
-  "health_score": 150,
+  "date": "2026-06-05",
+  "close": 29.15,
+  "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.018,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.082,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1962.0,
+    "margin_change": 1952.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 24.52,
+    "big_holder_change": 25.64,
     "retail_holder_change": 0,
-    "holder_concentration": 35.39
+    "holder_concentration": 35.65
   },
   "main_force": {
-    "cost": 28.84,
-    "distance": 2.81,
+    "cost": 28.9,
+    "distance": 0.87,
     "trend": "UP"
   },
   "sector": {
@@ -32,12 +32,17 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

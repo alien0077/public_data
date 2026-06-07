@@ -1,12 +1,12 @@
 {
   "stock_id": "00857B",
   "name": "00857B",
-  "date": "2026-06-04",
-  "close": 23.17,
+  "date": "2026-06-05",
+  "close": 23.21,
   "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
@@ -19,7 +19,7 @@
   "tdcc": {},
   "main_force": {
     "cost": 22.97,
-    "distance": 0.87,
+    "distance": 1.04,
     "trend": "UP"
   },
   "sector": {
@@ -30,10 +30,15 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

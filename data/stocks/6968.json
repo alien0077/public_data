@@ -1,43 +1,47 @@
 {
   "stock_id": "6968",
   "name": "6968",
-  "date": "2026-06-04",
-  "close": 44.05,
-  "health_score": 130,
+  "date": "2026-06-05",
+  "close": 43.45,
+  "health_score": 103,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.073,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.018,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 320.0,
+    "margin_change": 306.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 44.32,
     "retail_holder_change": 0,
-    "holder_concentration": 58.84
+    "holder_concentration": 58.85
   },
   "main_force": {
-    "cost": 43.42,
-    "distance": 1.45,
-    "trend": "UP"
+    "cost": 43.46,
+    "distance": -0.02,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 30
   },
-  "events": [],
-  "raw_signals": [
-    "foreign_buy",
-    "ma_bull"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
   ],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-05"
 }

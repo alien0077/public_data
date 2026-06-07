@@ -1,25 +1,25 @@
 {
   "stock_id": "00795B",
   "name": "00795B",
-  "date": "2026-06-04",
-  "close": 26.66,
-  "health_score": 110,
+  "date": "2026-06-05",
+  "close": 26.74,
+  "health_score": 146,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2877.0,
+    "margin_change": 2856.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {},
   "main_force": {
     "cost": 26.45,
-    "distance": 0.79,
+    "distance": 1.1,
     "trend": "UP"
   },
   "sector": {
@@ -27,13 +27,18 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 40
+    "style": "Growth",
+    "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

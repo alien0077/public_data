@@ -1,29 +1,29 @@
 {
   "stock_id": "2515",
   "name": "2515",
-  "date": "2026-06-04",
-  "close": 13.25,
+  "date": "2026-06-05",
+  "close": 13.15,
   "health_score": 130,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.102,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.085,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 28575.0,
-    "short_change": 52.0,
-    "short_margin_ratio": 0.18
+    "margin_change": 28332.0,
+    "short_change": 46.0,
+    "short_margin_ratio": 0.16
   },
   "tdcc": {
-    "big_holder_change": 53.33,
+    "big_holder_change": 53.39,
     "retail_holder_change": 0,
-    "holder_concentration": 60.45
+    "holder_concentration": 60.66
   },
   "main_force": {
     "cost": 12.93,
-    "distance": 2.47,
+    "distance": 1.7,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

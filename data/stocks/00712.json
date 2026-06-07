@@ -1,29 +1,29 @@
 {
   "stock_id": "00712",
   "name": "00712",
-  "date": "2026-06-04",
-  "close": 8.68,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-05",
+  "close": 8.71,
+  "health_score": 83,
+  "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 18075.0,
-    "short_change": 9069.0,
-    "short_margin_ratio": 50.17
+    "margin_change": 18095.0,
+    "short_change": 9080.0,
+    "short_margin_ratio": 50.18
   },
   "tdcc": {
-    "big_holder_change": 20.52,
+    "big_holder_change": 19.99,
     "retail_holder_change": 0,
-    "holder_concentration": 31.04
+    "holder_concentration": 30.79
   },
   "main_force": {
-    "cost": 8.81,
-    "distance": -1.48,
+    "cost": 8.8,
+    "distance": -1.02,
     "trend": "DOWN"
   },
   "sector": {
@@ -40,6 +40,8 @@
       "title": "短線券資比過高"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-05"
 }

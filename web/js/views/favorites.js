@@ -131,6 +131,7 @@ export const Favorites = {
                                     <th class="px-3 md:px-6 py-4 text-right">漲跌幅</th>
                                     <th class="px-3 md:px-6 py-4 text-right hidden sm:table-cell">最高</th>
                                     <th class="px-3 md:px-6 py-4 text-right hidden sm:table-cell">最低</th>
+                                    <th class="px-3 md:px-6 py-4 text-right hidden sm:table-cell">本益比</th>
                                     <th class="px-3 md:px-6 py-4 text-right">操作</th>
                                 </tr>
                             </thead>
@@ -242,7 +243,7 @@ export const Favorites = {
         if (symbols.length === 0) {
             body.innerHTML = `
                 <tr>
-                    <td colspan="6" class="px-6 py-10 text-center text-gray-500">
+                    <td colspan="7" class="px-6 py-10 text-center text-gray-500">
                         這個分類還沒有收藏任何股票，請從其他畫面將股票加入收藏！
                     </td>
                 </tr>
@@ -254,6 +255,19 @@ export const Favorites = {
         
         // 若有從 api.getStocksMeta() 取得的資料可以輔助名稱
         const meta = await api.getStocksMeta();
+        const peData = await api.fetchSectorPE();
+        const peMap = {};
+        if (peData && peData.sectors) {
+            peData.sectors.forEach(sector => {
+                (sector.stocks || []).forEach(s => { peMap[s.stock_id] = s.pe_ratio; });
+            });
+        }
+        const peAll = await api.fetchLocalJson('quant/pe_ratio.json');
+        if (peAll && peAll.stocks) {
+            Object.entries(peAll.stocks).forEach(([sid, info]) => {
+                if (peMap[sid] == null && info.pe) { peMap[sid] = info.pe; }
+            });
+        }
 
         symbols.forEach(sym => {
             const quote = quotes[sym] || {};
@@ -281,10 +295,13 @@ export const Favorites = {
 
             const style = getPriceChangeStyle(price, refPrice, sym);
             const priceClass = style.bgClass ? `${style.textClass} ${style.bgClass}` : style.textClass;
+            const peRatio = peMap[sym];
+            const peColor = peRatio < 15 ? 'text-green-500' : peRatio < 25 ? 'text-gray-400' : 'text-orange-500';
+            const peStr = peRatio ? peRatio.toFixed(1) : '--';
             
             row.innerHTML = `
                 <td class="px-3 md:px-6 py-4">
-                    <div class="font-bold text-white">${sym}</div>
+                    <div class="font-bold text-gray-900 dark:text-white">${sym}</div>
                     <div class="text-[10px] text-gray-500 truncate max-w-[100px]">${name}</div>
                 </td>
                 <td class="px-3 md:px-6 py-4 text-right ${priceClass}">
@@ -299,6 +316,7 @@ export const Favorites = {
                 <td class="px-3 md:px-6 py-4 text-right hidden sm:table-cell text-gray-400 text-xs">
                     ${low > 0 ? this.formatNumber(low) : '--'}
                 </td>
+                <td class="px-3 md:px-6 py-4 text-right hidden sm:table-cell font-bold ${peColor}">${peStr}</td>
                 <td class="px-3 md:px-6 py-4 text-right">
                     <button class="remove-fav text-gray-500 hover:text-red-500 transition-colors" data-symbol="${sym}" title="移除收藏">
                         <svg class="w-5 h-5 inline-block" fill="currentColor" viewBox="0 0 24 24">

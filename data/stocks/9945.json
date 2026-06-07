@@ -1,29 +1,29 @@
 {
   "stock_id": "9945",
   "name": "9945",
-  "date": "2026-06-04",
-  "close": 25.2,
-  "health_score": 133,
+  "date": "2026-06-05",
+  "close": 25.15,
+  "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.061,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 24531.0,
-    "short_change": 14.0,
-    "short_margin_ratio": 0.06
+    "margin_change": 23623.0,
+    "short_change": 34.0,
+    "short_margin_ratio": 0.14
   },
   "tdcc": {
-    "big_holder_change": 60.52,
+    "big_holder_change": 60.89,
     "retail_holder_change": 0,
-    "holder_concentration": 64.47
+    "holder_concentration": 64.71
   },
   "main_force": {
-    "cost": 23.57,
-    "distance": 6.92,
+    "cost": 23.66,
+    "distance": 6.3,
     "trend": "UP"
   },
   "sector": {
@@ -36,7 +36,8 @@
   },
   "events": [],
   "raw_signals": [
+    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

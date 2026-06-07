@@ -1,29 +1,29 @@
 {
   "stock_id": "8171",
   "name": "8171",
-  "date": "2026-06-04",
-  "close": 25.9,
-  "health_score": 150,
+  "date": "2026-06-05",
+  "close": 24.75,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.091,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.152,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8335.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 8372.0,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.01
   },
   "tdcc": {
-    "big_holder_change": 51.99,
+    "big_holder_change": 51.95,
     "retail_holder_change": 0,
-    "holder_concentration": 60.83
+    "holder_concentration": 60.77
   },
   "main_force": {
-    "cost": 23.75,
-    "distance": 9.05,
+    "cost": 23.8,
+    "distance": 3.99,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

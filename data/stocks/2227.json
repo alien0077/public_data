@@ -1,13 +1,13 @@
 {
   "stock_id": "2227",
   "name": "2227",
-  "date": "2026-06-04",
-  "close": 50.3,
-  "health_score": 110,
+  "date": "2026-06-05",
+  "close": 49.95,
+  "health_score": 93,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.002,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -22,8 +22,8 @@
     "holder_concentration": 93.51
   },
   "main_force": {
-    "cost": 49.97,
-    "distance": 0.66,
+    "cost": 49.78,
+    "distance": 0.34,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Value",
     "score": 40
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 7 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

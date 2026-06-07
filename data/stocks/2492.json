@@ -1,29 +1,29 @@
 {
   "stock_id": "2492",
   "name": "2492",
-  "date": "2026-06-04",
-  "close": 392.0,
+  "date": "2026-06-05",
+  "close": 416.0,
   "health_score": 146,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.213,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.259,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 13537.0,
-    "short_change": 332.0,
-    "short_margin_ratio": 2.45
+    "margin_change": 13198.0,
+    "short_change": 325.0,
+    "short_margin_ratio": 2.46
   },
   "tdcc": {
-    "big_holder_change": 68.4,
+    "big_holder_change": 69.62,
     "retail_holder_change": 0,
-    "holder_concentration": 72.37
+    "holder_concentration": 72.84
   },
   "main_force": {
-    "cost": 293.1,
-    "distance": 33.74,
+    "cost": 306.1,
+    "distance": 35.9,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,15 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

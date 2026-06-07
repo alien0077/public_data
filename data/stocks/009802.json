@@ -1,29 +1,29 @@
 {
   "stock_id": "009802",
   "name": "009802",
-  "date": "2026-06-04",
-  "close": 20.63,
-  "health_score": 130,
+  "date": "2026-06-05",
+  "close": 20.1,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 5,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1796.0,
-    "short_change": 24.0,
-    "short_margin_ratio": 1.34
+    "margin_change": 1814.0,
+    "short_change": 14.0,
+    "short_margin_ratio": 0.77
   },
   "tdcc": {
-    "big_holder_change": 9.23,
+    "big_holder_change": 9.73,
     "retail_holder_change": 0,
-    "holder_concentration": 14.77
+    "holder_concentration": 14.86
   },
   "main_force": {
-    "cost": 18.84,
-    "distance": 9.5,
+    "cost": 18.95,
+    "distance": 6.07,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 5 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

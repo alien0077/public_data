@@ -1,47 +1,40 @@
 {
   "stock_id": "6510",
   "name": "6510",
-  "date": "2026-06-04",
-  "close": 3505.0,
-  "health_score": 130,
-  "signal": "Bullish",
+  "date": "2026-06-05",
+  "close": 3300.0,
+  "health_score": 66,
+  "signal": "Neutral",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.205,
+    "foreign_buy_ratio": -0.18,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 795.0,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 839.0,
+    "short_change": 3.0,
+    "short_margin_ratio": 0.36
   },
   "tdcc": {
-    "big_holder_change": 37.59,
+    "big_holder_change": 37.89,
     "retail_holder_change": 0,
-    "holder_concentration": 51.39
+    "holder_concentration": 49.09
   },
   "main_force": {
-    "cost": 3500.75,
-    "distance": 0.12,
-    "trend": "UP"
+    "cost": 3486.75,
+    "distance": -5.36,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
-  "raw_signals": [
-    "ma_bull"
-  ],
-  "data_version": "2026-06-04"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-05"
 }

@@ -1,13 +1,13 @@
 {
   "stock_id": "9925",
   "name": "9925",
-  "date": "2026-06-04",
-  "close": 40.5,
-  "health_score": 130,
+  "date": "2026-06-05",
+  "close": 40.45,
+  "health_score": 113,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.023,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.005,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -19,11 +19,11 @@
   "tdcc": {
     "big_holder_change": 62.01,
     "retail_holder_change": 0,
-    "holder_concentration": 68.5
+    "holder_concentration": 68.46
   },
   "main_force": {
     "cost": 40.26,
-    "distance": 0.6,
+    "distance": 0.47,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

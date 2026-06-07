@@ -1,29 +1,29 @@
 {
   "stock_id": "3665",
   "name": "3665",
-  "date": "2026-06-04",
-  "close": 2155.0,
-  "health_score": 83,
+  "date": "2026-06-05",
+  "close": 2200.0,
+  "health_score": 120,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.348,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.072,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3356.0,
-    "short_change": 12.0,
-    "short_margin_ratio": 0.36
+    "margin_change": 3287.0,
+    "short_change": 14.0,
+    "short_margin_ratio": 0.43
   },
   "tdcc": {
-    "big_holder_change": 44.63,
+    "big_holder_change": 43.58,
     "retail_holder_change": 0,
-    "holder_concentration": 62.05
+    "holder_concentration": 60.14
   },
   "main_force": {
-    "cost": 2268.75,
-    "distance": -5.01,
+    "cost": 2241.25,
+    "distance": -1.84,
     "trend": "DOWN"
   },
   "sector": {
@@ -32,9 +32,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-05"
 }

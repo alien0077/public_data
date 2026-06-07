@@ -1,13 +1,13 @@
 {
   "stock_id": "4534",
   "name": "4534",
-  "date": "2026-06-04",
-  "close": 31.65,
-  "health_score": 150,
+  "date": "2026-06-05",
+  "close": 33.15,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.47,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.35,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
@@ -17,13 +17,13 @@
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 26.35,
+    "big_holder_change": 27.7,
     "retail_holder_change": 0,
-    "holder_concentration": 33.18
+    "holder_concentration": 37.71
   },
   "main_force": {
-    "cost": 24.99,
-    "distance": 26.65,
+    "cost": 25.45,
+    "distance": 30.26,
     "trend": "UP"
   },
   "sector": {
@@ -34,15 +34,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

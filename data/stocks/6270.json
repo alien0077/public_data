@@ -1,29 +1,29 @@
 {
   "stock_id": "6270",
   "name": "6270",
-  "date": "2026-06-04",
-  "close": 29.65,
+  "date": "2026-06-05",
+  "close": 32.6,
   "health_score": 150,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.329,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.687,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1991.0,
+    "margin_change": 2798.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 36.59,
     "retail_holder_change": 0,
-    "holder_concentration": 42.51
+    "holder_concentration": 44.15
   },
   "main_force": {
-    "cost": 27.27,
-    "distance": 8.73,
+    "cost": 27.52,
+    "distance": 18.46,
     "trend": "UP"
   },
   "sector": {
@@ -34,10 +34,19 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "foreign_buy",
     "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

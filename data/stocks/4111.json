@@ -1,42 +1,42 @@
 {
   "stock_id": "4111",
   "name": "4111",
-  "date": "2026-06-04",
-  "close": 30.1,
-  "health_score": 123,
+  "date": "2026-06-05",
+  "close": 30.15,
+  "health_score": 133,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.017,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 655.0,
+    "margin_change": 665.0,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 28.16,
+    "big_holder_change": 29.95,
     "retail_holder_change": 0,
-    "holder_concentration": 42.02
+    "holder_concentration": 42.85
   },
   "main_force": {
-    "cost": 30.1,
-    "distance": 0.0,
-    "trend": "DOWN"
+    "cost": 30.08,
+    "distance": 0.23,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 60
+    "style": "Growth",
+    "score": 100
   },
   "events": [],
   "raw_signals": [
-    "foreign_buy"
+    "ma_bull"
   ],
-  "data_version": "2026-06-04"
+  "data_version": "2026-06-05"
 }

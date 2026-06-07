@@ -1,25 +1,25 @@
 {
   "stock_id": "00642U",
   "name": "00642U",
-  "date": "2026-06-04",
-  "close": 30.08,
-  "health_score": 106,
+  "date": "2026-06-05",
+  "close": 29.42,
+  "health_score": 123,
   "signal": "Bullish",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7005.0,
+    "margin_change": 7043.0,
     "short_change": 2869.0,
-    "short_margin_ratio": 40.96
+    "short_margin_ratio": 40.74
   },
   "tdcc": {},
   "main_force": {
-    "cost": 30.11,
-    "distance": -0.1,
+    "cost": 30.13,
+    "distance": -2.36,
     "trend": "DOWN"
   },
   "sector": {
@@ -36,6 +36,8 @@
       "title": "短線券資比過高"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-04"
+  "raw_signals": [
+    "foreign_buy"
+  ],
+  "data_version": "2026-06-05"
 }
