@@ -182,33 +182,45 @@ export const StockDetail = {
         const data = await api.fetchHealthData(this.currentSymbol);
         if (!data) { container.innerHTML = `<div class="p-8 text-center text-gray-500">暫無健檢數據</div>`; return; }
         
-        // 🚀 修正欄位映射 (health_score, signal)
         const score = data.health_score || data.score || 0;
-        const status = data.signal || data.health_status || '未知';
-        const risk = data.risk_level || (score > 100 ? '低風險' : '中高風險');
-        const advice = data.advice || (score > 100 ? '偏多操作' : '觀望為宜');
-        const summary = data.ai_summary || `本股健康得分為 ${score}，目前信號為 ${status}。主要支撐見 ${data.main_force?.cost || '--'}。`;
+        const status = data.signal || data.health_status || "未知";
+        const risk = data.risk_level || (score > 60 ? "低風險" : "中高風險");
+        const summary = data.ai_narrative || data.ai_summary || `本股健康得分為 ${score}，目前信號為 ${status}。主要支撐見 ${data.main_force?.cost || "--"}。`;
 
-        const scoreColor = score >= 100 ? 'text-green-500 border-green-500' : 'text-yellow-500 border-yellow-500';
-        container.innerHTML = `<div class="p-4 space-y-6">
+        const scoreColor = score >= 80 ? "text-green-500 border-green-500" : "text-yellow-500 border-yellow-500";
+        const maintenance = data.margin?.maintenance_ratio || 0;
+        const slope = data.margin?.margin_slope || 0;
+
+        container.innerHTML = `<div class="p-4 space-y-6 flex-1 overflow-y-auto no-scrollbar pb-12">
             <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800 flex items-center justify-between">
-                <div class="w-32 h-32 rounded-full border-8 ${scoreColor} flex flex-col items-center justify-center bg-white dark:bg-[#0f1115]">
-                    <span class="text-4xl font-bold">${score}</span><span class="text-xs text-gray-500">健康分</span>
+                <div class="w-24 h-24 rounded-full border-8 ${scoreColor} flex flex-col items-center justify-center bg-white dark:bg-[#0f1115]">
+                    <span class="text-2xl font-bold">${score}</span><span class="text-[8px] text-gray-500 uppercase">Health</span>
                 </div>
-                <div class="flex-1 ml-6 space-y-3">
-                    <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-lg w-fit"><span class="text-green-500">💚</span><span class="text-sm text-gray-500">健康度:</span><span class="text-sm font-bold text-green-500">${status}</span></div>
-                    <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-lg w-fit"><span class="text-yellow-500">⚠️</span><span class="text-sm text-gray-500">風險度:</span><span class="text-sm font-bold text-yellow-500">${risk}</span></div>
-                    <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-lg w-fit"><span class="text-orange-500">⚡</span><span class="text-sm text-gray-500">操作建議:</span><span class="text-sm font-bold text-orange-500">${advice}</span></div>
+                <div class="flex-1 ml-6 space-y-2">
+                    <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-lg w-fit"><span class="text-sm">💚</span><span class="text-xs text-gray-500">健康度:</span><span class="text-xs font-bold text-green-500">${status}</span></div>
+                    <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-lg w-fit"><span class="text-sm">⚠️</span><span class="text-xs text-gray-500">風險度:</span><span class="text-xs font-bold text-yellow-500">${risk}</span></div>
                 </div>
             </div>
+
             <div class="bg-purple-50 dark:bg-purple-900/10 rounded-2xl p-6 border border-purple-100 dark:border-purple-800/30">
-                <h3 class="text-lg font-bold text-purple-700 dark:text-purple-400 mb-4 flex items-center"><span class="mr-2">✨</span> AI 持股健檢</h3>
+                <h3 class="text-sm font-bold text-purple-700 dark:text-purple-400 mb-3 flex items-center"><span class="mr-2">✨</span> AI 盤後敘事解讀</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">${summary}</p>
             </div>
-        </div>`;
-    },
 
-    async renderMarketTab(container) {
+            <div class="grid grid-cols-2 gap-3">
+                <div class="bg-gray-50 dark:bg-gray-900 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                    <div class="text-[10px] text-gray-500 mb-1">融資維持率</div>
+                    <div class="text-lg font-bold ${maintenance < 145 ? "text-red-500" : "text-green-500"}">${maintenance.toFixed(1)}%</div>
+                    <div class="text-[10px] text-gray-400">${maintenance < 140 ? "⚠️ 斷頭預警" : "狀態穩定"}</div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-900 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                    <div class="text-[10px] text-gray-500 mb-1">5日融資斜率</div>
+                    <div class="text-lg font-bold ${slope > 0 ? "text-red-500" : "text-blue-500"}">${slope > 0 ? "+" : ""}${slope.toFixed(0)}</div>
+                    <div class="text-[10px] text-gray-400">${slope > 1000 ? "融資爆增" : "籌碼平穩"}</div>
+                </div>
+            </div>
+        </div>`;
+    },    async renderMarketTab(container) {
         // 🚀 從 api.fetchQuotes 獲取真實報價數據來填充盤面
         const quoteMap = await api.fetchQuotes([this.currentSymbol]);
         const q = quoteMap[this.currentSymbol] || {};
