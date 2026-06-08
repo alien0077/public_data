@@ -4,10 +4,6 @@
  */
 
 const ROUTES = {
-    'dashboard': {
-        title: '儀表板 Dashboard',
-        subPages: []
-    },
     'portfolio': {
         title: '我的持股',
         subPages: []
@@ -44,7 +40,7 @@ const ROUTES = {
 
 class Router {
     constructor() {
-        this.currentPrimary = 'dashboard';
+        this.currentPrimary = 'portfolio';
         this.currentSecondary = null;
     }
 

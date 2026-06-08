@@ -10,7 +10,6 @@ import { Favorites } from './views/favorites.js?v=2';
 import { router } from './router.js';
 import { CorporateActions } from './corporateActions.js';
 import { Settings } from './views/settings.js';
-import { Dashboard } from './views/dashboard.js';
 import { GroupSearch } from './views/groupSearch.js?v=2';
 import { getPriceChangeStyle } from './utils/priceStyle.js';
 
@@ -53,23 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (themeToggleBtn) themeToggleBtn.addEventListener('click', () => window.ThemeEngine.toggle());
     try { 
         router.init(); 
-        // 🚀 v10.12: 改為以儀表板為預設首頁
-        const vd = document.getElementById('view-dashboard');
-        if (vd) {
-            document.querySelectorAll('#content-area > [id^="view-"]').forEach(v => v.classList.add('hidden'));
-            vd.classList.remove('hidden');
-            const vt = document.getElementById('view-title');
-            if (vt) vt.textContent = '儀表板 Dashboard';
-            Dashboard.init();
-        }
     } catch (e) { console.error('Router init failed', e); }
 
     window.addEventListener('router:changed', (e) => {
         const { primary, secondary } = e.detail;
         if (stockDetailOverlay) stockDetailOverlay.classList.add('hidden');
         try {
-            if (primary === 'dashboard') Dashboard.init();
-            else if (primary === 'trendHunter') TrendHunter.init(secondary);
+            if (primary === 'trendHunter') TrendHunter.init(secondary);
             else if (primary === 'assetRisk') AssetRisk.init(secondary);
             else if (primary === 'performance') BattleRecord.init();
             else if (primary === 'addTrade') Transaction.init();
@@ -85,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('click', (e) => { e.preventDefault(); router.switchPage(p); });
     };
-    ['dashboard', 'portfolio', 'trendHunter', 'assetRisk', 'performance', 'addTrade', 'favorites', 'groupSearch'].forEach(p => {
+    ['portfolio', 'trendHunter', 'assetRisk', 'performance', 'addTrade', 'favorites', 'groupSearch'].forEach(p => {
         bindPage('nav-' + p, p);
         const m = document.getElementById('mobile-nav-' + p);
         if (m) m.addEventListener('click', (e) => { e.preventDefault(); router.switchPage(p); });
@@ -268,7 +257,6 @@ document.getElementById('nav-settings')?.addEventListener('click', settingsHandl
 
     async function init() {
         try {
-            if (router.currentPrimary === 'dashboard') Dashboard.init();
             const trades = await db.getAllTrades();
             if (trades.length > 0) {
                 const symbols = Array.from(new Set(trades.map(t => t.symbol || t.stock_id || t.stockId)));
@@ -283,6 +271,7 @@ document.getElementById('nav-settings')?.addEventListener('click', settingsHandl
                 renderExchangeRates();
                 renderMarketSummary({});
                 renderBetaWarning(h);
+                renderMarketHealth();
                 loadAndRenderLiar();
                 renderClosedHoldings(trades);
                 startAutoRefresh();
@@ -290,6 +279,7 @@ document.getElementById('nav-settings')?.addEventListener('click', settingsHandl
                 await renderPortfolio([], {});
                 await renderExchangeRates();
                 await renderMarketSummary({});
+                await renderMarketHealth();
                 await loadAndRenderLiar();
                 if (portfolioBody.children.length === 0) {
                     portfolioBody.innerHTML = '<tr><td colspan="9" class="px-6 py-10 text-center text-gray-500 font-mono text-sm">尚無持股資料，請由側邊欄「匯入資料」匯入交易紀錄</td></tr>';
@@ -326,6 +316,7 @@ document.getElementById('nav-settings')?.addEventListener('click', settingsHandl
             renderBetaWarning(h);
             renderExchangeRates();
             renderMarketSummary(q);
+            renderMarketHealth();
             loadAndRenderLiar();
             renderClosedHoldings(trades);
         } catch (err) {
@@ -710,6 +701,125 @@ document.getElementById('nav-settings')?.addEventListener('click', settingsHandl
                 });
             }
         } catch(e) { console.error('renderClosedHoldings error:', e); }
+    }
+
+    async function renderMarketHealth() {
+        try {
+            const section = document.getElementById('market-health-section');
+            const content = document.getElementById('market-health-content');
+            if (!section || !content) return;
+
+            const riskData = await api.fetchLocalJson('meta/market_risk.json').catch(() => null);
+            if (!riskData) {
+                section.classList.add('hidden');
+                return;
+            }
+
+            const d = riskData.stocks?.[0] || riskData.data?.[0] || riskData;
+            if (!d || !d.risk_score) {
+                section.classList.add('hidden');
+                return;
+            }
+
+            section.classList.remove('hidden');
+
+            const riskScore = d.risk_score;
+            const status = d.status || '--';
+            const sentiment = d.retail_sentiment || '計算中';
+            const marginRatio = d.margin_ratio || 1.0;
+            const marginBalance = d.margin_balance || 0;
+            const shortBalance = d.short_balance || 0;
+            const shortMarginRatio = d.short_margin_ratio || 0;
+            const summaryText = d.summary_text || '';
+
+            const scoreColor = riskScore < 30 ? 'text-green-500' : riskScore < 50 ? 'text-blue-500' : riskScore < 70 ? 'text-orange-500' : 'text-red-500';
+            const statusColor = riskScore < 30 ? 'bg-green-500' : riskScore < 50 ? 'bg-blue-500' : riskScore < 70 ? 'bg-orange-500' : 'bg-red-500';
+            const sentimentColor = sentiment === '市場情緒過熱' ? 'text-red-500' : sentiment === '散戶偏積極' ? 'text-orange-500' : sentiment === '籌碼冷清' ? 'text-blue-500' : 'text-green-500';
+            const sentimentBg = sentiment === '市場情緒過熱' ? 'bg-red-500/10' : sentiment === '散戶偏積極' ? 'bg-orange-500/10' : sentiment === '籌碼冷清' ? 'bg-blue-500/10' : 'bg-green-500/10';
+            const marginBarColor = marginRatio > 1.1 ? 'bg-red-500' : marginRatio > 1.05 ? 'bg-orange-500' : marginRatio < 0.9 ? 'bg-blue-500' : 'bg-green-500';
+
+            content.innerHTML = `
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="w-full md:w-48 h-40" id="market-health-gauge"></div>
+                    <div class="flex-1 space-y-3">
+                        <div class="flex items-baseline space-x-2">
+                            <span class="text-4xl font-black ${scoreColor}">${riskScore}</span>
+                            <span class="text-xs text-gray-400">/ 100</span>
+                            <span class="${statusColor} text-white text-[10px] px-2 py-0.5 rounded-full font-bold ml-2">${status}</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="inline-block w-2 h-2 rounded-full ${sentimentColor.replace('text-', 'bg-')}"></span>
+                            <span class="text-sm font-bold ${sentimentColor}">${sentiment}</span>
+                            <span class="text-xs text-gray-500">券資指標</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 pt-2">
+                            <div class="text-center">
+                                <div class="text-[9px] text-gray-400 uppercase">融資餘額</div>
+                                <div class="text-base font-mono font-bold">${(marginBalance / 100000000).toFixed(0)}<span class="text-[9px] text-gray-400"> 億</span></div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-[9px] text-gray-400 uppercase">融券餘額</div>
+                                <div class="text-base font-mono font-bold">${(shortBalance / 10000).toFixed(1)}<span class="text-[9px] text-gray-400"> 萬張</span></div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-[9px] text-gray-400 uppercase">券資比</div>
+                                <div class="text-base font-mono font-bold">${shortMarginRatio.toFixed(1)}<span class="text-[9px] text-gray-400">%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-[10px] text-gray-500">融資水位 (vs MA20)</span>
+                        <span class="text-[10px] font-bold font-mono">${(marginRatio * 100).toFixed(1)}%</span>
+                    </div>
+                    <div class="w-full h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                        <div class="h-full rounded-full ${marginBarColor}" style="width: ${Math.min(100, marginRatio / 1.5 * 100)}%"></div>
+                    </div>
+                    <div class="text-[10px] text-gray-500 leading-relaxed mt-1">${summaryText}</div>
+                </div>
+            `;
+
+            const gaugeContainer = document.getElementById('market-health-gauge');
+            if (gaugeContainer && typeof echarts !== 'undefined') {
+                const chart = echarts.init(gaugeContainer);
+                chart.setOption({
+                    series: [{
+                        type: 'gauge',
+                        startAngle: 210,
+                        endAngle: -30,
+                        min: 0,
+                        max: 100,
+                        splitNumber: 5,
+                        radius: '90%',
+                        center: ['50%', '55%'],
+                        axisLine: {
+                            lineStyle: {
+                                width: 8,
+                                color: [
+                                    [0.3, '#22c55e'],
+                                    [0.5, '#3b82f6'],
+                                    [0.7, '#f97316'],
+                                    [1.0, '#ef4444']
+                                ]
+                            }
+                        },
+                        axisTick: { show: false },
+                        splitLine: { show: false },
+                        axisLabel: { show: false },
+                        pointer: {
+                            length: '55%',
+                            width: 3,
+                            itemStyle: { color: 'auto' }
+                        },
+                        title: { show: false },
+                        detail: { show: false },
+                        data: [{ value: riskScore, name: '' }]
+                    }]
+                });
+                window.addEventListener('resize', () => chart.resize());
+            }
+        } catch(e) { console.error('renderMarketHealth error:', e); }
     }
 
     function setupSortHandlers() {
