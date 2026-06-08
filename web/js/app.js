@@ -272,6 +272,7 @@ document.getElementById('nav-settings')?.addEventListener('click', settingsHandl
                 renderMarketSummary({});
                 renderBetaWarning(h);
                 renderMarketHealth();
+                renderAIIntelligence();
                 loadAndRenderLiar();
                 renderClosedHoldings(trades);
                 startAutoRefresh();
@@ -280,6 +281,7 @@ document.getElementById('nav-settings')?.addEventListener('click', settingsHandl
                 await renderExchangeRates();
                 await renderMarketSummary({});
                 await renderMarketHealth();
+                await renderAIIntelligence();
                 await loadAndRenderLiar();
                 if (portfolioBody.children.length === 0) {
                     portfolioBody.innerHTML = '<tr><td colspan="9" class="px-6 py-10 text-center text-gray-500 font-mono text-sm">尚無持股資料，請由側邊欄「匯入資料」匯入交易紀錄</td></tr>';
@@ -820,6 +822,50 @@ document.getElementById('nav-settings')?.addEventListener('click', settingsHandl
                 window.addEventListener('resize', () => chart.resize());
             }
         } catch(e) { console.error('renderMarketHealth error:', e); }
+    }
+
+    async function renderAIIntelligence() {
+        const section = document.getElementById('ai-intelligence-section');
+        const content = document.getElementById('ai-intelligence-content');
+        if (!section || !content) return;
+
+        try {
+            const [risk, narrative] = await Promise.all([
+                api.fetchLocalJson('meta/market_risk.json').catch(() => null),
+                api.fetchLocalJson('meta/market_narrative.json').catch(() => null)
+            ]);
+
+            if (!risk && !narrative) return;
+            section.classList.remove('hidden');
+
+            const riskScore = risk?.risk_score || 0;
+            const riskColor = riskScore > 80 ? 'text-red-500' : riskScore > 60 ? 'text-orange-500' : riskScore < 30 ? 'text-blue-500' : 'text-green-500';
+            const narrativeDate = narrative?.date || narrative?.updated_at?.substring(0, 10) || '';
+            const narrativeText = narrative?.market_summary || '今日 AI 報告正在生成中，請稍後。';
+
+            content.innerHTML = `
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="flex-1 space-y-3">
+                        <div class="flex items-center space-x-2 text-orange-600 dark:text-orange-400">
+                            <span class="text-xl">✨</span>
+                            <h3 class="font-bold">AI 盤後敘事分析</h3>
+                            <span class="text-[10px] bg-orange-100 dark:bg-orange-900/40 px-2 py-0.5 rounded text-orange-700 dark:text-orange-300">${narrativeDate}</span>
+                        </div>
+                        <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">${narrativeText}</p>
+                    </div>
+                    <div class="w-full md:w-64 flex flex-col justify-center items-center md:items-end border-t md:border-t-0 md:border-l border-orange-200 dark:border-orange-800/30 pt-4 md:pt-0 md:pl-6">
+                        <div class="text-center md:text-right">
+                            <div class="text-[10px] font-bold text-gray-500 uppercase mb-1">大盤資券風險</div>
+                            <div class="flex items-baseline justify-center md:justify-end space-x-1">
+                                <span class="text-4xl font-black ${riskColor}">${risk?.risk_score || '--'}</span>
+                                <span class="text-xs text-gray-400">/ 100</span>
+                            </div>
+                            <div class="text-xs font-bold mt-1 ${riskColor}">${risk?.status || ''}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } catch(e) { console.error('renderAIIntelligence error:', e); }
     }
 
     function setupSortHandlers() {
