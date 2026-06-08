@@ -1847,47 +1847,47 @@
   "portfolio": {
     "cash": {
       "trend": 1000000.0,
-      "mr": 401591.0,
-      "ai_inst": 250157.99999999997
+      "mr": 400105.0,
+      "ai_inst": 250718.2
     },
     "positions": {
       "trend": [],
       "mr": [
         {
-          "stock": "2059",
-          "entry_date": "2026-06-05",
-          "entry_price": 5620.0,
-          "shares": 56,
+          "stock": "6239",
+          "entry_date": "2026-06-08",
+          "entry_price": 309.0,
+          "shares": 987,
           "max_return": 0.0
         },
         {
-          "stock": "6789",
-          "entry_date": "2026-06-05",
-          "entry_price": 513.0,
-          "shares": 553,
+          "stock": "6488",
+          "entry_date": "2026-06-08",
+          "entry_price": 768.0,
+          "shares": 384,
           "max_return": 0.0
         }
       ],
       "ai_inst": [
         {
-          "stock": "2382",
-          "entry_date": "2026-06-05",
-          "entry_price": 390.5,
-          "shares": 1280,
+          "stock": "4938",
+          "entry_date": "2026-06-08",
+          "entry_price": 92.1,
+          "shares": 5428,
           "max_return": 0.0,
           "consecutive_buy_days": 5,
-          "total_inst_buy": 54937599,
+          "total_inst_buy": 9255913,
           "b_signal_triggered": false,
           "phase": "ACCUMULATING"
         },
         {
-          "stock": "4938",
-          "entry_date": "2026-06-05",
-          "entry_price": 96.9,
-          "shares": 2580,
+          "stock": "3583",
+          "entry_date": "2026-06-08",
+          "entry_price": 807.0,
+          "shares": 309,
           "max_return": 0.0,
           "consecutive_buy_days": 5,
-          "total_inst_buy": 9920458,
+          "total_inst_buy": 1089115,
           "b_signal_triggered": false,
           "phase": "ACCUMULATING"
         }
@@ -1895,42 +1895,42 @@
     },
     "nav_history": [
       {
-        "date": "2026-06-04",
+        "date": "2026-06-07",
         "nav": 1000000.0
       },
       {
-        "date": "2026-06-05",
+        "date": "2026-06-08",
         "nav": 3000000.0
       }
     ],
     "strategy_navs": {
       "trend": [
         {
-          "date": "2026-06-04",
+          "date": "2026-06-07",
           "nav": 1000000.0
         },
         {
-          "date": "2026-06-05",
+          "date": "2026-06-08",
           "nav": 1000000.0
         }
       ],
       "mr": [
         {
-          "date": "2026-06-04",
+          "date": "2026-06-07",
           "nav": 1000000.0
         },
         {
-          "date": "2026-06-05",
+          "date": "2026-06-08",
           "nav": 1000000.0
         }
       ],
       "ai_inst": [
         {
-          "date": "2026-06-04",
+          "date": "2026-06-07",
           "nav": 1000000.0
         },
         {
-          "date": "2026-06-05",
+          "date": "2026-06-08",
           "nav": 1000000.0
         }
       ]
@@ -2905,29 +2905,29 @@
   },
   "trade_log": [
     {
+      "stock": "3583",
+      "entry_date": "2026-06-08",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009"
+    },
+    {
       "stock": "4938",
-      "entry_date": "2026-06-05",
+      "entry_date": "2026-06-08",
       "exit_date": null,
       "action": "BUY",
       "select_reason": "\u6cd5\u4eba\u5efa\u5009"
     },
     {
-      "stock": "2382",
-      "entry_date": "2026-06-05",
+      "stock": "6488",
+      "entry_date": "2026-06-08",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "\u6cd5\u4eba\u5efa\u5009"
+      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd"
     },
     {
-      "stock": "6789",
-      "entry_date": "2026-06-05",
-      "exit_date": null,
-      "action": "BUY",
-      "select_reason": "\u5747\u503c\u56de\u6b78"
-    },
-    {
-      "stock": "2059",
-      "entry_date": "2026-06-05",
+      "stock": "6239",
+      "entry_date": "2026-06-08",
       "exit_date": null,
       "action": "BUY",
       "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd"

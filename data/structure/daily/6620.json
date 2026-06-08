@@ -1,6 +1,6 @@
 {
   "symbol": "6620",
-  "updated_at": "2026-06-07",
+  "updated_at": "2026-06-08",
   "lines": [
     {
       "id": "L_7",
@@ -96,9 +96,9 @@
       "price": 70.7,
       "start_idx": 97,
       "start_date": "2026-05-26",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 106,
+      "end_date": "2026-06-08",
+      "broken": true,
       "strength": 1
     }
   ],
@@ -114,6 +114,12 @@
       "price": 74.3,
       "idx": 50,
       "date": "2026-03-17"
+    },
+    {
+      "type": "CHOCH_DOWN",
+      "price": 70.7,
+      "idx": 106,
+      "date": "2026-06-08"
     }
   ]
 }
