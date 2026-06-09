@@ -10,32 +10,6 @@ export const Dashboard = {
 
         container.innerHTML = `
             <div class="p-4 md:p-6 space-y-8 flex-1 overflow-y-auto no-scrollbar">
-                <!-- AI Market Intelligence -->
-                <div id="dashboard-ai-intelligence" class="bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/10 dark:to-amber-900/10 rounded-2xl border border-orange-200 dark:border-orange-800/30 p-5 md:p-6 overflow-hidden hidden">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="flex-1 space-y-3">
-                            <div class="flex items-center space-x-2 text-orange-600 dark:text-orange-400">
-                                <span class="text-xl">✨</span>
-                                <h3 class="font-bold">AI 盤後敘事分析</h3>
-                                <span id="ai-narrative-date" class="text-[10px] bg-orange-100 dark:bg-orange-900/40 px-2 py-0.5 rounded text-orange-700 dark:text-orange-300"></span>
-                            </div>
-                            <p id="ai-narrative-text" class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">加載中...</p>
-                        </div>
-                        <div class="w-full md:w-64 flex flex-col justify-center items-center md:items-end border-t md:border-t-0 md:border-l border-orange-200 dark:border-orange-800/30 pt-4 md:pt-0 md:pl-6 space-y-4">
-                            <div class="text-center md:text-right">
-                                <div class="text-[10px] font-bold text-gray-500 uppercase mb-1">大盤資券風險</div>
-                                <div class="flex items-baseline justify-center md:justify-end space-x-1">
-                                    <span id="market-risk-score" class="text-4xl font-black">--</span>
-                                    <span class="text-xs text-gray-400">/ 100</span>
-                                </div>
-                                <div id="market-risk-status" class="text-xs font-bold mt-1">--</div>
-                                <div id="market-risk-sentiment" class="text-[10px] mt-1 hidden"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
                 <!-- Market Summary -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="dashboard-market-stats">
                     <div class="bg-white dark:bg-[#161b22] p-6 rounded-2xl border border-gray-200 dark:border-gray-800 animate-pulse">
@@ -466,42 +440,6 @@ export const Dashboard = {
                 </div>
                 <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-1.5"><div class="bg-red-500 h-1.5 rounded-full" style="width: ${Math.min(100, drawdown * 400)}%"></div></div>
             `;
-        }
-    },
-
-    renderIntelligence(risk, narrative) {
-        const container = document.getElementById("dashboard-ai-intelligence");
-        if (!container) return;
-
-        if (risk || narrative) {
-            container.classList.remove("hidden");
-            
-            if (narrative) {
-                document.getElementById("ai-narrative-date").textContent = narrative.date || narrative.updated_at?.substring(0, 10) || "";
-                document.getElementById("ai-narrative-text").textContent = narrative.market_summary || "今日 AI 報告正在生成中，請稍後。";
-            } else {
-                document.getElementById("ai-narrative-text").textContent = "今日 AI 報告正在生成中，請稍後。";
-            }
-
-            if (risk) {
-                const scoreEl = document.getElementById("market-risk-score");
-                const statusEl = document.getElementById("market-risk-status");
-                const sentimentEl = document.getElementById("market-risk-sentiment");
-                const score = risk.risk_score || 0;
-                scoreEl.textContent = score;
-                statusEl.textContent = risk.status || "";
-
-                const color = score > 80 ? "text-red-500" : (score > 60 ? "text-orange-500" : (score < 30 ? "text-blue-500" : "text-green-500"));
-                scoreEl.className = `text-4xl font-black ${color}`;
-                statusEl.className = `text-xs font-bold mt-1 ${color}`;
-
-                if (risk.retail_sentiment && sentimentEl) {
-                    const sColor = risk.retail_sentiment === '市場情緒過熱' ? 'text-red-500' : risk.retail_sentiment === '散戶偏積極' ? 'text-orange-500' : risk.retail_sentiment === '籌碼冷清' ? 'text-blue-500' : 'text-green-500';
-                    sentimentEl.textContent = '散戶情緒: ' + risk.retail_sentiment;
-                    sentimentEl.className = `text-[10px] mt-1 ${sColor}`;
-                    sentimentEl.classList.remove('hidden');
-                }
-            }
         }
     },
 

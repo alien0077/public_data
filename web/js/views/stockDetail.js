@@ -214,21 +214,21 @@ export const StockDetail = {
                 </div>
             </div>
 
-            <div class="bg-purple-50 dark:bg-purple-900/10 rounded-2xl p-6 border border-purple-100 dark:border-purple-800/30">
-                <h3 class="text-sm font-bold text-purple-700 dark:text-purple-400 mb-3 flex items-center"><span class="mr-2">✨</span> AI 盤後敘事解讀</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">${summary}</p>
-            </div>
-
             <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800">
                 <div class="flex items-center justify-between mb-4">
                     <h3 class="text-sm font-bold flex items-center"><span class="mr-2">📊</span> 籌碼健檢</h3>
                     ${chipLabel ? `<span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${chipColor}">${chipLabel}</span>` : ""}
                 </div>
                 <div class="flex flex-col items-center">
-                    <div class="relative w-28 h-14 overflow-hidden mb-1">
-                        <div class="absolute inset-0 rounded-t-full border-8 border-gray-100 dark:border-gray-800" style="clip: rect(0,112px,56px,0)"></div>
-                        <div class="absolute inset-0 rounded-t-full border-8" style="clip: rect(0,112px,56px,0); border-color: ${gaugeColor}; transform: rotate(${Math.min(shortMarginRatio / 50 * 180, 180)}deg)"></div>
-                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-5 bg-gray-800 dark:bg-gray-200 rounded-full origin-bottom" style="transform: translateX(-50%) rotate(${Math.min(shortMarginRatio / 50 * 180, 180) - 90}deg)"></div>
+                    <div class="relative w-28 h-14 mb-1">
+                        <svg viewBox="0 0 112 56" class="w-28 h-14">
+                            <path d="M 8 56 A 48 48 0 0 1 104 56" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" class="text-gray-200 dark:text-gray-700"/>
+                            <path d="M 8 56 A 48 48 0 0 1 104 56" fill="none" stroke="${gaugeColor}" stroke-width="8" stroke-linecap="round"
+                                stroke-dasharray="${Math.min(shortMarginRatio / 50 * 151, 151)} 151"/>
+                            <line x1="56" y1="56" x2="56" y2="20" stroke="#374151" stroke-width="2" stroke-linecap="round"
+                                transform="rotate(${Math.min(shortMarginRatio / 50 * 180, 180)} 56 56)" class="dark:stroke-gray-300"/>
+                            <circle cx="56" cy="56" r="3" fill="#374151" class="dark:fill-gray-300"/>
+                        </svg>
                     </div>
                     <div class="text-2xl font-black font-mono" style="color:${gaugeColor}">${shortMarginRatio.toFixed(1)}<span class="text-xs text-gray-400">%</span></div>
                     <div class="text-[10px] text-gray-500 mt-0.5">券資比</div>
