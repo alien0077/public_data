@@ -1,16 +1,16 @@
 {
-  "date": "2026-06-08",
+  "date": "2026-06-09",
   "regime": "AGGRESSIVE",
   "capital": 1000000,
-  "cash": 545151.5,
+  "cash": 13691.0,
   "nav": 1000000.0,
   "portfolio_beta": 0,
   "metadata": {
-    "holdings_count": 6,
-    "candidates_count": 19,
+    "holdings_count": 13,
+    "candidates_count": 15,
     "live_days": 1,
     "total_capital": 1000000.0,
-    "used_capital": 454848.5
+    "used_capital": 986309.0
   },
   "performance": {
     "live_total_return": 0,
@@ -19,7 +19,7 @@
     "live_win_rate": 0.5,
     "live_equity": [
       {
-        "date": "2026-06-08",
+        "date": "2026-06-09",
         "equity": 1.0
       }
     ],
@@ -27,248 +27,277 @@
   },
   "portfolio": [
     {
-      "stock": "8996",
+      "stock": "3583",
       "is_held": true,
       "weight": 0.0762,
-      "score": 2.3025319576263428,
+      "score": 3.2224788665771484,
+      "primary_theme": "半導體設備_CoWoS",
+      "entry_date": "2026-06-09",
+      "return": 0.0,
+      "select_reason": "MF_AI"
+    },
+    {
+      "stock": "2383",
+      "is_held": true,
+      "weight": 0.076,
+      "score": 2.819962739944458,
+      "primary_theme": "PCB_CCL_ABF",
+      "entry_date": "2026-06-09",
+      "return": 0.0,
+      "select_reason": "MF_AI"
+    },
+    {
+      "stock": "2454",
+      "is_held": true,
+      "weight": 0.0761,
+      "score": 2.4559266567230225,
+      "primary_theme": "IC設計_HPC_存儲",
+      "entry_date": "2026-06-09",
+      "return": 0.0,
+      "select_reason": "MF_AI"
+    },
+    {
+      "stock": "6442",
+      "is_held": true,
+      "weight": 0.0756,
+      "score": 2.262129783630371,
+      "primary_theme": "矽光子_CPO",
+      "entry_date": "2026-06-09",
+      "return": 0.0,
+      "select_reason": "MF_AI"
+    },
+    {
+      "stock": "8996",
+      "is_held": true,
+      "weight": 0.0758,
+      "score": 2.0352225303649902,
       "primary_theme": "散熱模組",
-      "entry_date": "2026-06-08",
+      "entry_date": "2026-06-09",
+      "return": 0.0,
+      "select_reason": "MF_AI"
+    },
+    {
+      "stock": "3032",
+      "is_held": true,
+      "weight": 0.0768,
+      "score": 2.001929521560669,
+      "primary_theme": "電源供應器",
+      "entry_date": "2026-06-09",
+      "return": 0.0,
+      "select_reason": "MF_AI"
+    },
+    {
+      "stock": "2308",
+      "is_held": true,
+      "weight": 0.0749,
+      "score": 1.9542953968048096,
+      "primary_theme": "電源供應器",
+      "entry_date": "2026-06-09",
+      "return": 0.0,
+      "select_reason": "MF_AI"
+    },
+    {
+      "stock": "8210",
+      "is_held": true,
+      "weight": 0.0755,
+      "score": 1.8142116069793701,
+      "primary_theme": "伺服器機殼_滑軌",
+      "entry_date": "2026-06-09",
+      "return": 0.0,
+      "select_reason": "MF_AI"
+    },
+    {
+      "stock": "6187",
+      "is_held": true,
+      "weight": 0.0768,
+      "score": 1.5959844589233398,
+      "primary_theme": "半導體設備_CoWoS",
+      "entry_date": "2026-06-09",
       "return": 0.0,
       "select_reason": "MF_AI"
     },
     {
       "stock": "2059",
       "is_held": true,
-      "weight": 0.0742,
-      "score": 1.4299861192703247,
+      "weight": 0.0747,
+      "score": 1.5430572032928467,
       "primary_theme": "伺服器機殼_滑軌",
-      "entry_date": "2026-06-08",
-      "return": 0.0,
-      "select_reason": "MF_AI"
-    },
-    {
-      "stock": "6669",
-      "is_held": true,
-      "weight": 0.0738,
-      "score": 1.398637056350708,
-      "primary_theme": "AI伺服器代工",
-      "entry_date": "2026-06-08",
-      "return": 0.0,
-      "select_reason": "MF_AI"
-    },
-    {
-      "stock": "3015",
-      "is_held": true,
-      "weight": 0.0769,
-      "score": 0.2602115869522095,
-      "primary_theme": "電源供應器",
-      "entry_date": "2026-06-08",
-      "return": 0.0,
-      "select_reason": "MF_AI"
-    },
-    {
-      "stock": "3325",
-      "is_held": true,
-      "weight": 0.0769,
-      "score": 0.20645251870155334,
-      "primary_theme": "伺服器機殼_滑軌",
-      "entry_date": "2026-06-08",
+      "entry_date": "2026-06-09",
       "return": 0.0,
       "select_reason": "MF_AI"
     },
     {
       "stock": "2382",
       "is_held": true,
-      "weight": 0.0768,
-      "score": -0.36896470189094543,
+      "weight": 0.0769,
+      "score": 1.4662790298461914,
       "primary_theme": "AI伺服器代工",
-      "entry_date": "2026-06-08",
+      "entry_date": "2026-06-09",
       "return": 0.0,
       "select_reason": "MF_AI"
     },
     {
-      "stock": "3583",
+      "stock": "6669",
+      "is_held": true,
+      "weight": 0.0742,
+      "score": 1.4621392488479614,
+      "primary_theme": "AI伺服器代工",
+      "entry_date": "2026-06-09",
+      "return": 0.0,
+      "select_reason": "MF_AI"
+    },
+    {
+      "stock": "8046",
+      "is_held": true,
+      "weight": 0.0768,
+      "score": 1.197055459022522,
+      "primary_theme": "PCB_CCL_ABF",
+      "entry_date": "2026-06-09",
+      "return": 0.0,
+      "select_reason": "MF_AI"
+    },
+    {
+      "stock": "6640",
       "is_held": false,
-      "score": 4.509030342102051,
+      "score": 4.202762603759766,
       "weight": 0,
       "primary_theme": "半導體設備_CoWoS",
       "entry_reason": "SIGNAL"
     },
     {
-      "stock": "2303",
+      "stock": "3017",
       "is_held": false,
-      "score": 3.974720001220703,
+      "score": 3.844313621520996,
       "weight": 0,
-      "primary_theme": "晶圓代工",
+      "primary_theme": "散熱模組",
       "entry_reason": "SIGNAL"
     },
     {
       "stock": "6117",
       "is_held": false,
-      "score": 3.611804962158203,
+      "score": 3.709444284439087,
       "weight": 0,
       "primary_theme": "伺服器機殼_滑軌",
       "entry_reason": "SIGNAL"
     },
     {
-      "stock": "2376",
+      "stock": "3189",
       "is_held": false,
-      "score": 3.570803642272949,
+      "score": 3.2252418994903564,
       "weight": 0,
-      "primary_theme": "AI伺服器代工",
-      "entry_reason": "SIGNAL"
-    },
-    {
-      "stock": "2454",
-      "is_held": false,
-      "score": 3.525346040725708,
-      "weight": 0,
-      "primary_theme": "IC設計_HPC_存儲",
-      "entry_reason": "SIGNAL"
-    },
-    {
-      "stock": "4908",
-      "is_held": false,
-      "score": 3.174858808517456,
-      "weight": 0,
-      "primary_theme": "矽光子_CPO",
+      "primary_theme": "PCB_CCL_ABF",
       "entry_reason": "SIGNAL"
     },
     {
       "stock": "2467",
       "is_held": false,
-      "score": 3.1019392013549805,
+      "score": 2.8979716300964355,
       "weight": 0,
       "primary_theme": "半導體設備_CoWoS",
       "entry_reason": "SIGNAL"
     },
     {
-      "stock": "8150",
+      "stock": "6147",
       "is_held": false,
-      "score": 3.051765203475952,
+      "score": 2.8463659286499023,
       "weight": 0,
       "primary_theme": "封測_材料",
       "entry_reason": "SIGNAL"
     },
     {
-      "stock": "3163",
+      "stock": "6412",
       "is_held": false,
-      "score": 3.023418426513672,
+      "score": 2.6377739906311035,
       "weight": 0,
-      "primary_theme": "矽光子_CPO",
+      "primary_theme": "電源供應器",
       "entry_reason": "SIGNAL"
     },
     {
-      "stock": "4977",
+      "stock": "3693",
       "is_held": false,
-      "score": 3.0121593475341797,
-      "weight": 0,
-      "primary_theme": "矽光子_CPO",
-      "entry_reason": "SIGNAL"
-    },
-    {
-      "stock": "8299",
-      "is_held": false,
-      "score": 3.008399248123169,
-      "weight": 0,
-      "primary_theme": "IC設計_HPC_存儲",
-      "entry_reason": "SIGNAL"
-    },
-    {
-      "stock": "2383",
-      "is_held": false,
-      "score": 2.9336020946502686,
-      "weight": 0,
-      "primary_theme": "PCB_CCL_ABF",
-      "entry_reason": "SIGNAL"
-    },
-    {
-      "stock": "6640",
-      "is_held": false,
-      "score": 2.845696449279785,
-      "weight": 0,
-      "primary_theme": "半導體設備_CoWoS",
-      "entry_reason": "SIGNAL"
-    },
-    {
-      "stock": "6213",
-      "is_held": false,
-      "score": 2.4931960105895996,
-      "weight": 0,
-      "primary_theme": "PCB_CCL_ABF",
-      "entry_reason": "SIGNAL"
-    },
-    {
-      "stock": "3131",
-      "is_held": false,
-      "score": 2.3243536949157715,
-      "weight": 0,
-      "primary_theme": "半導體設備_CoWoS",
-      "entry_reason": "SIGNAL"
-    },
-    {
-      "stock": "6584",
-      "is_held": false,
-      "score": 2.240246534347534,
+      "score": 2.561537504196167,
       "weight": 0,
       "primary_theme": "伺服器機殼_滑軌",
       "entry_reason": "SIGNAL"
     },
     {
-      "stock": "2356",
+      "stock": "3163",
       "is_held": false,
-      "score": 2.1958563327789307,
-      "weight": 0,
-      "primary_theme": "AI伺服器代工",
-      "entry_reason": "SIGNAL"
-    },
-    {
-      "stock": "6442",
-      "is_held": false,
-      "score": 2.193222761154175,
+      "score": 2.3952198028564453,
       "weight": 0,
       "primary_theme": "矽光子_CPO",
       "entry_reason": "SIGNAL"
     },
     {
-      "stock": "6282",
+      "stock": "6213",
       "is_held": false,
-      "score": 2.141667127609253,
+      "score": 2.3675763607025146,
       "weight": 0,
-      "primary_theme": "電源供應器",
+      "primary_theme": "PCB_CCL_ABF",
+      "entry_reason": "SIGNAL"
+    },
+    {
+      "stock": "4908",
+      "is_held": false,
+      "score": 2.319760322570801,
+      "weight": 0,
+      "primary_theme": "矽光子_CPO",
+      "entry_reason": "SIGNAL"
+    },
+    {
+      "stock": "3338",
+      "is_held": false,
+      "score": 2.280975580215454,
+      "weight": 0,
+      "primary_theme": "散熱模組",
+      "entry_reason": "SIGNAL"
+    },
+    {
+      "stock": "3324",
+      "is_held": false,
+      "score": 2.2375071048736572,
+      "weight": 0,
+      "primary_theme": "散熱模組",
+      "entry_reason": "SIGNAL"
+    },
+    {
+      "stock": "3081",
+      "is_held": false,
+      "score": 2.222856044769287,
+      "weight": 0,
+      "primary_theme": "矽光子_CPO",
+      "entry_reason": "SIGNAL"
+    },
+    {
+      "stock": "3680",
+      "is_held": false,
+      "score": 2.080095052719116,
+      "weight": 0,
+      "primary_theme": "半導體設備_CoWoS",
       "entry_reason": "SIGNAL"
     }
   ],
   "new_entries": [
+    "3583",
+    "2383",
+    "2454",
+    "6442",
     "8996",
+    "3032",
+    "2308",
+    "8210",
+    "6187",
     "2059",
+    "2382",
     "6669",
-    "3015",
-    "3325",
-    "2382"
+    "8046"
   ],
   "exits": [],
   "trade_log": [
     {
-      "stock": "2382",
+      "stock": "8046",
       "action": "BUY",
-      "entry_date": "2026-06-08",
-      "exit_date": null,
-      "return": 0,
-      "reason": "SCORE_ENTRY"
-    },
-    {
-      "stock": "3325",
-      "action": "BUY",
-      "entry_date": "2026-06-08",
-      "exit_date": null,
-      "return": 0,
-      "reason": "SCORE_ENTRY"
-    },
-    {
-      "stock": "3015",
-      "action": "BUY",
-      "entry_date": "2026-06-08",
+      "entry_date": "2026-06-09",
       "exit_date": null,
       "return": 0,
       "reason": "SCORE_ENTRY"
@@ -276,7 +305,15 @@
     {
       "stock": "6669",
       "action": "BUY",
-      "entry_date": "2026-06-08",
+      "entry_date": "2026-06-09",
+      "exit_date": null,
+      "return": 0,
+      "reason": "SCORE_ENTRY"
+    },
+    {
+      "stock": "2382",
+      "action": "BUY",
+      "entry_date": "2026-06-09",
       "exit_date": null,
       "return": 0,
       "reason": "SCORE_ENTRY"
@@ -284,7 +321,39 @@
     {
       "stock": "2059",
       "action": "BUY",
-      "entry_date": "2026-06-08",
+      "entry_date": "2026-06-09",
+      "exit_date": null,
+      "return": 0,
+      "reason": "SCORE_ENTRY"
+    },
+    {
+      "stock": "6187",
+      "action": "BUY",
+      "entry_date": "2026-06-09",
+      "exit_date": null,
+      "return": 0,
+      "reason": "SCORE_ENTRY"
+    },
+    {
+      "stock": "8210",
+      "action": "BUY",
+      "entry_date": "2026-06-09",
+      "exit_date": null,
+      "return": 0,
+      "reason": "SCORE_ENTRY"
+    },
+    {
+      "stock": "2308",
+      "action": "BUY",
+      "entry_date": "2026-06-09",
+      "exit_date": null,
+      "return": 0,
+      "reason": "SCORE_ENTRY"
+    },
+    {
+      "stock": "3032",
+      "action": "BUY",
+      "entry_date": "2026-06-09",
       "exit_date": null,
       "return": 0,
       "reason": "SCORE_ENTRY"
@@ -292,7 +361,39 @@
     {
       "stock": "8996",
       "action": "BUY",
-      "entry_date": "2026-06-08",
+      "entry_date": "2026-06-09",
+      "exit_date": null,
+      "return": 0,
+      "reason": "SCORE_ENTRY"
+    },
+    {
+      "stock": "6442",
+      "action": "BUY",
+      "entry_date": "2026-06-09",
+      "exit_date": null,
+      "return": 0,
+      "reason": "SCORE_ENTRY"
+    },
+    {
+      "stock": "2454",
+      "action": "BUY",
+      "entry_date": "2026-06-09",
+      "exit_date": null,
+      "return": 0,
+      "reason": "SCORE_ENTRY"
+    },
+    {
+      "stock": "2383",
+      "action": "BUY",
+      "entry_date": "2026-06-09",
+      "exit_date": null,
+      "return": 0,
+      "reason": "SCORE_ENTRY"
+    },
+    {
+      "stock": "3583",
+      "action": "BUY",
+      "entry_date": "2026-06-09",
       "exit_date": null,
       "return": 0,
       "reason": "SCORE_ENTRY"
