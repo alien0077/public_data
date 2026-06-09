@@ -778,6 +778,11 @@ document.getElementById('nav-settings')?.addEventListener('click', settingsHandl
                     <div class="w-full h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
                         <div class="h-full rounded-full ${marginBarColor}" style="width: ${Math.min(100, marginRatio / 1.5 * 100)}%"></div>
                     </div>
+                    ${d.maintenance_rate ? `
+                    <div class="flex justify-between items-center pt-1">
+                        <span class="text-[10px] text-gray-500">融資維持率</span>
+                        <span class="text-[10px] font-bold font-mono ${d.maintenance_rate < 140 ? "text-red-500" : d.maintenance_rate < 150 ? "text-orange-500" : "text-green-500"}">${d.maintenance_rate.toFixed(1)}%${d.maintenance_rate < 140 ? " ⚠️" : ""}</span>
+                    </div>` : ""}
                     <div class="text-[10px] text-gray-500 leading-relaxed mt-1">${summaryText}</div>
                 </div>
             `;

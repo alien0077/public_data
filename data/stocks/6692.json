@@ -1,22 +1,22 @@
 {
   "stock_id": "6692",
   "name": "6692",
-  "date": "2026-06-05",
-  "close": 25.75,
-  "health_score": 83,
-  "signal": "Bullish",
+  "date": "2026-06-08",
+  "close": 25.7,
+  "health_score": 66,
+  "signal": "Neutral",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.003,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.005,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
     "margin_change": -3.0,
-    "margin_slope": 1.8,
-    "maintenance_ratio": 153.33,
-    "short_change": -418.0,
+    "margin_slope": 0.0,
+    "maintenance_ratio": 154.58,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 71.28
   },
   "main_force": {
-    "cost": 27.99,
-    "distance": -8.0,
+    "cost": 27.71,
+    "distance": -7.25,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,12 +37,9 @@
     "style": "Value",
     "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
+  "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

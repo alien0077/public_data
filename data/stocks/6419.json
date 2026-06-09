@@ -1,22 +1,22 @@
 {
   "stock_id": "6419",
   "name": "6419",
-  "date": "2026-06-05",
-  "close": 140.0,
+  "date": "2026-06-08",
+  "close": 131.0,
   "health_score": 103,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.19,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.35,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -6.0,
-    "margin_slope": 10.2,
-    "maintenance_ratio": 152.41,
-    "short_change": -567.0,
+    "margin_change": -102.0,
+    "margin_slope": -20.6,
+    "maintenance_ratio": 142.89,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 35.59
   },
   "main_force": {
-    "cost": 153.1,
-    "distance": -8.56,
+    "cost": 152.8,
+    "distance": -14.27,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,7 +37,11 @@
     "style": "Value",
     "score": 30
   },
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-05"
+  "raw_signals": [
+    "融資斷頭預警"
+  ],
+  "data_version": "2026-06-08"
 }

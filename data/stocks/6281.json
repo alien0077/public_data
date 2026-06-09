@@ -1,22 +1,22 @@
 {
   "stock_id": "6281",
   "name": "6281",
-  "date": "2026-06-05",
-  "close": 52.1,
-  "health_score": 130,
+  "date": "2026-06-08",
+  "close": 51.0,
+  "health_score": 93,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.085,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.069,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -11.0,
-    "margin_slope": 5.4,
-    "maintenance_ratio": 170.46,
-    "short_change": -91.0,
+    "margin_change": 0.0,
+    "margin_slope": 3.2,
+    "maintenance_ratio": 166.93,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 55.86
   },
   "main_force": {
-    "cost": 50.94,
-    "distance": 2.28,
+    "cost": 50.92,
+    "distance": 0.16,
     "trend": "UP"
   },
   "sector": {
@@ -34,17 +34,12 @@
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 40
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 7 天"
-    }
-  ],
-  "raw_signals": [
-    "主力洗盤完成"
-  ],
-  "data_version": "2026-06-05"
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-08"
 }

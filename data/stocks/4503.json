@@ -1,23 +1,23 @@
 {
   "stock_id": "4503",
   "name": "4503",
-  "date": "2026-06-05",
-  "close": 39.1,
+  "date": "2026-06-08",
+  "close": 38.2,
   "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.029,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.033,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5.0,
-    "margin_slope": 16.2,
-    "maintenance_ratio": 155.64,
-    "short_change": -2479.0,
-    "short_margin_ratio": 0.08
+    "margin_change": -20.0,
+    "margin_slope": 10.4,
+    "maintenance_ratio": 153.67,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.16
   },
   "tdcc": {
     "big_holder_change": 59.79,
@@ -25,8 +25,8 @@
     "holder_concentration": 65.02
   },
   "main_force": {
-    "cost": 41.87,
-    "distance": -6.62,
+    "cost": 41.43,
+    "distance": -7.8,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,14 +37,14 @@
     "style": "Value",
     "score": 0
   },
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
     }
   ],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-05"
+  "raw_signals": [],
+  "data_version": "2026-06-08"
 }

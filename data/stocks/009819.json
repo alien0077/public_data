@@ -1,23 +1,23 @@
 {
   "stock_id": "009819",
   "name": "009819",
-  "date": "2026-06-05",
-  "close": 10.75,
-  "health_score": 130,
+  "date": "2026-06-08",
+  "close": 10.33,
+  "health_score": 83,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 5,
+    "foreign_buy_days": 6,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -20.0,
-    "margin_slope": 585.2,
-    "maintenance_ratio": 172.94,
-    "short_change": -4094.0,
-    "short_margin_ratio": 34.73
+    "margin_change": -235.0,
+    "margin_slope": 519.0,
+    "maintenance_ratio": 166.02,
+    "short_change": -1400.0,
+    "short_margin_ratio": 12.79
   },
   "tdcc": {
     "big_holder_change": 5.86,
@@ -25,28 +25,26 @@
     "holder_concentration": 10.43
   },
   "main_force": {
-    "cost": 10.36,
-    "distance": 3.76,
-    "trend": "UP"
+    "cost": 10.37,
+    "distance": -0.39,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 0
   },
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 5 天"
-    },
-    {
-      "level": "RED",
-      "title": "短線券資比過熱 (警示)"
+      "title": "外資連買 6 天"
     }
   ],
   "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

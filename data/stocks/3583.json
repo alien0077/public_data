@@ -1,23 +1,23 @@
 {
   "stock_id": "3583",
   "name": "3583",
-  "date": "2026-06-05",
-  "close": 868.0,
-  "health_score": 123,
+  "date": "2026-06-08",
+  "close": 807.0,
+  "health_score": 103,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.244,
+    "foreign_buy_days": 6,
+    "foreign_buy_ratio": 0.579,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -7.0,
-    "margin_slope": -19.2,
-    "maintenance_ratio": 163.97,
-    "short_change": -1450.0,
-    "short_margin_ratio": 38.17
+    "margin_change": -149.0,
+    "margin_slope": -49.6,
+    "maintenance_ratio": 152.95,
+    "short_change": -2.0,
+    "short_margin_ratio": 40.69
   },
   "tdcc": {
     "big_holder_change": 51.67,
@@ -25,8 +25,8 @@
     "holder_concentration": 59.52
   },
   "main_force": {
-    "cost": 882.3,
-    "distance": -1.62,
+    "cost": 879.35,
+    "distance": -8.23,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,12 +35,14 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 60
+    "score": 30
   },
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 5 天"
+      "title": "外資連買 6 天"
     },
     {
       "level": "RED",
@@ -48,5 +50,5 @@
     }
   ],
   "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

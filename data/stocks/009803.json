@@ -1,8 +1,8 @@
 {
   "stock_id": "009803",
   "name": "009803",
-  "date": "2026-06-05",
-  "close": 21.93,
+  "date": "2026-06-08",
+  "close": 21.78,
   "health_score": 113,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
@@ -13,11 +13,11 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -14.0,
-    "margin_slope": 35.2,
-    "maintenance_ratio": 174.46,
-    "short_change": -265.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 102.0,
+    "margin_slope": 38.0,
+    "maintenance_ratio": 172.77,
+    "short_change": 264.0,
+    "short_margin_ratio": 74.79
   },
   "tdcc": {
     "big_holder_change": 12.9,
@@ -25,8 +25,8 @@
     "holder_concentration": 16.8
   },
   "main_force": {
-    "cost": 20.95,
-    "distance": 4.68,
+    "cost": 21.01,
+    "distance": 3.66,
     "trend": "UP"
   },
   "sector": {
@@ -37,7 +37,14 @@
     "style": "Growth",
     "score": 70
   },
-  "events": [],
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "events": [
+    {
+      "level": "RED",
+      "title": "短線券資比過熱 (警示)"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

@@ -1,22 +1,22 @@
 {
   "stock_id": "00984A",
   "name": "00984A",
-  "date": "2026-06-05",
-  "close": 16.33,
+  "date": "2026-06-08",
+  "close": 15.64,
   "health_score": 130,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 2,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -150.0,
-    "margin_slope": -26.2,
-    "maintenance_ratio": 175.14,
-    "short_change": -595.0,
+    "margin_change": 5.0,
+    "margin_slope": -40.6,
+    "maintenance_ratio": 167.31,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 16.54
   },
   "main_force": {
-    "cost": 15.54,
-    "distance": 5.08,
+    "cost": 15.58,
+    "distance": 0.39,
     "trend": "UP"
   },
   "sector": {
@@ -37,7 +37,11 @@
     "style": "Growth",
     "score": 70
   },
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-05"
+  "raw_signals": [
+    "散戶接刀中"
+  ],
+  "data_version": "2026-06-08"
 }

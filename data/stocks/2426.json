@@ -1,23 +1,23 @@
 {
   "stock_id": "2426",
   "name": "2426",
-  "date": "2026-06-05",
-  "close": 68.8,
+  "date": "2026-06-08",
+  "close": 62.0,
   "health_score": 103,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.375,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.005,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -2360.0,
-    "margin_slope": -734.4,
-    "maintenance_ratio": 158.27,
-    "short_change": -23777.0,
-    "short_margin_ratio": 0.26
+    "margin_change": -913.0,
+    "margin_slope": -657.4,
+    "maintenance_ratio": 143.08,
+    "short_change": 253.0,
+    "short_margin_ratio": 1.5
   },
   "tdcc": {
     "big_holder_change": 40.43,
@@ -25,8 +25,8 @@
     "holder_concentration": 45.96
   },
   "main_force": {
-    "cost": 72.45,
-    "distance": -5.04,
+    "cost": 72.22,
+    "distance": -14.15,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,7 +37,11 @@
     "style": "Value",
     "score": 30
   },
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-05"
+  "raw_signals": [
+    "融資斷頭預警"
+  ],
+  "data_version": "2026-06-08"
 }

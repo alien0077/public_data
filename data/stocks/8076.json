@@ -1,23 +1,23 @@
 {
   "stock_id": "8076",
   "name": "8076",
-  "date": "2026-06-05",
-  "close": 28.2,
-  "health_score": 133,
+  "date": "2026-06-08",
+  "close": 27.25,
+  "health_score": 130,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.267,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.072,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 118.0,
-    "margin_slope": 163.4,
-    "maintenance_ratio": 190.13,
-    "short_change": -10119.0,
-    "short_margin_ratio": 0.02
+    "margin_change": -263.0,
+    "margin_slope": 116.8,
+    "maintenance_ratio": 182.76,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.04
   },
   "tdcc": {
     "big_holder_change": 26.75,
@@ -25,8 +25,8 @@
     "holder_concentration": 34.3
   },
   "main_force": {
-    "cost": 24.72,
-    "distance": 14.08,
+    "cost": 24.85,
+    "distance": 9.66,
     "trend": "UP"
   },
   "sector": {
@@ -35,11 +35,11 @@
   },
   "market_style": {
     "style": "Growth",
-    "score": 100
+    "score": 70
   },
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
   "events": [],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-05"
+  "raw_signals": [],
+  "data_version": "2026-06-08"
 }

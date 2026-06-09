@@ -1,23 +1,23 @@
 {
   "stock_id": "2034",
   "name": "2034",
-  "date": "2026-06-05",
-  "close": 20.5,
-  "health_score": 150,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "date": "2026-06-08",
+  "close": 20.05,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.105,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.046,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -66.0,
-    "margin_slope": -16.2,
-    "maintenance_ratio": 169.65,
-    "short_change": -4815.0,
-    "short_margin_ratio": 0.0
+    "margin_change": -51.0,
+    "margin_slope": 27.0,
+    "maintenance_ratio": 166.33,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.02
   },
   "tdcc": {
     "big_holder_change": 42.09,
@@ -25,24 +25,21 @@
     "holder_concentration": 48.93
   },
   "main_force": {
-    "cost": 20.14,
-    "distance": 1.79,
-    "trend": "UP"
+    "cost": 20.09,
+    "distance": -0.2,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 100
+    "style": "Value",
+    "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 5 天"
-    }
-  ],
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

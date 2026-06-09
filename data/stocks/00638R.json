@@ -1,11 +1,11 @@
 {
   "stock_id": "00638R",
   "name": "00638R",
-  "date": "2026-06-05",
-  "close": 6.5,
-  "health_score": 86,
+  "date": "2026-06-08",
+  "close": 6.67,
+  "health_score": 113,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -13,27 +13,31 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -24.0,
-    "margin_slope": -6.8,
-    "maintenance_ratio": 166.41,
-    "short_change": -956.0,
-    "short_margin_ratio": 0.43
+    "margin_change": -31.0,
+    "margin_slope": -13.4,
+    "maintenance_ratio": 170.76,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.44
   },
   "tdcc": {},
   "main_force": {
     "cost": 6.51,
-    "distance": -0.15,
-    "trend": "DOWN"
+    "distance": 2.46,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-05"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-08"
 }

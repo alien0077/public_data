@@ -1,23 +1,23 @@
 {
   "stock_id": "5410",
   "name": "5410",
-  "date": "2026-06-05",
-  "close": 40.05,
+  "date": "2026-06-08",
+  "close": 39.25,
   "health_score": 130,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.655,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.091,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 34.0,
-    "margin_slope": 2.6,
-    "maintenance_ratio": 172.75,
-    "short_change": -2296.0,
-    "short_margin_ratio": 0.04
+    "margin_change": -81.0,
+    "margin_slope": 5.4,
+    "maintenance_ratio": 168.82,
+    "short_change": -1.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 26.33,
@@ -25,8 +25,8 @@
     "holder_concentration": 34.45
   },
   "main_force": {
-    "cost": 38.64,
-    "distance": 3.65,
+    "cost": 38.75,
+    "distance": 1.29,
     "trend": "UP"
   },
   "sector": {
@@ -37,12 +37,14 @@
     "style": "Growth",
     "score": 70
   },
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
     }
   ],
   "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

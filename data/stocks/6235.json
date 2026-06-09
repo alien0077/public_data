@@ -1,23 +1,23 @@
 {
   "stock_id": "6235",
   "name": "6235",
-  "date": "2026-06-05",
-  "close": 44.15,
-  "health_score": 93,
+  "date": "2026-06-08",
+  "close": 41.3,
+  "health_score": 83,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.131,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.105,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "margin_slope": 50.0,
-    "maintenance_ratio": 173.22,
-    "short_change": -5000.0,
-    "short_margin_ratio": 1.21
+    "margin_change": -192.0,
+    "margin_slope": -17.4,
+    "maintenance_ratio": 162.5,
+    "short_change": -41.0,
+    "short_margin_ratio": 0.41
   },
   "tdcc": {
     "big_holder_change": 36.57,
@@ -25,9 +25,9 @@
     "holder_concentration": 41.02
   },
   "main_force": {
-    "cost": 42.48,
-    "distance": 3.93,
-    "trend": "UP"
+    "cost": 42.36,
+    "distance": -2.5,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
@@ -35,9 +35,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 40
+    "score": 0
   },
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

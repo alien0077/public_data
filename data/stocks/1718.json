@@ -1,23 +1,23 @@
 {
   "stock_id": "1718",
   "name": "1718",
-  "date": "2026-06-05",
-  "close": 9.85,
-  "health_score": 150,
+  "date": "2026-06-08",
+  "close": 10.0,
+  "health_score": 133,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 1.13,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.056,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -5632.0,
-    "margin_slope": 12.4,
-    "maintenance_ratio": 232.86,
-    "short_change": -14198.0,
-    "short_margin_ratio": 30.62
+    "margin_change": 1289.0,
+    "margin_slope": 60.0,
+    "maintenance_ratio": 230.84,
+    "short_change": -2047.0,
+    "short_margin_ratio": 12.72
   },
   "tdcc": {
     "big_holder_change": 51.38,
@@ -25,8 +25,8 @@
     "holder_concentration": 57.16
   },
   "main_force": {
-    "cost": 7.05,
-    "distance": 39.72,
+    "cost": 7.22,
+    "distance": 38.5,
     "trend": "UP"
   },
   "sector": {
@@ -37,14 +37,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "RED",
-      "title": "短線券資比過熱 (警示)"
-    }
-  ],
-  "raw_signals": [
-    "主力洗盤完成"
-  ],
-  "data_version": "2026-06-05"
+  "chip_status": "neutral",
+  "chip_warning": "",
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-08"
 }

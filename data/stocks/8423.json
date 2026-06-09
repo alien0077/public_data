@@ -1,22 +1,22 @@
 {
   "stock_id": "8423",
   "name": "8423",
-  "date": "2026-06-05",
-  "close": 17.75,
-  "health_score": 66,
-  "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "date": "2026-06-08",
+  "close": 17.8,
+  "health_score": 110,
+  "signal": "Bullish",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.005,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "margin_slope": -0.4,
-    "maintenance_ratio": 166.57,
-    "short_change": -495.0,
+    "margin_change": 4.0,
+    "margin_slope": 1.0,
+    "maintenance_ratio": 167.04,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
@@ -26,8 +26,8 @@
   },
   "main_force": {
     "cost": 17.76,
-    "distance": -0.06,
-    "trend": "DOWN"
+    "distance": 0.23,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -35,9 +35,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 40
   },
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

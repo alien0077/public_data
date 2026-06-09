@@ -1,23 +1,23 @@
 {
   "stock_id": "6116",
   "name": "6116",
-  "date": "2026-06-05",
-  "close": 18.45,
+  "date": "2026-06-08",
+  "close": 16.65,
   "health_score": 130,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.041,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.061,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -304.0,
-    "margin_slope": -3221.8,
-    "maintenance_ratio": 219.49,
-    "short_change": -18609.0,
-    "short_margin_ratio": 40.09
+    "margin_change": -350.0,
+    "margin_slope": -793.6,
+    "maintenance_ratio": 193.38,
+    "short_change": -347.0,
+    "short_margin_ratio": 39.4
   },
   "tdcc": {
     "big_holder_change": 42.81,
@@ -25,8 +25,8 @@
     "holder_concentration": 45.01
   },
   "main_force": {
-    "cost": 14.01,
-    "distance": 31.69,
+    "cost": 14.35,
+    "distance": 16.03,
     "trend": "UP"
   },
   "sector": {
@@ -37,12 +37,18 @@
     "style": "Growth",
     "score": 70
   },
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
     {
       "level": "RED",
       "title": "短線券資比過熱 (警示)"
     }
   ],
   "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

@@ -1,21 +1,21 @@
 {
   "stock_id": "1506",
   "name": "1506",
-  "date": "2026-06-05",
-  "close": 10.2,
-  "health_score": 103,
+  "date": "2026-06-08",
+  "close": 10.05,
+  "health_score": 83,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 8,
-    "foreign_buy_ratio": 0.013,
+    "foreign_buy_days": 9,
+    "foreign_buy_ratio": 0.004,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
     "margin_change": 0.0,
     "margin_slope": 0.0,
-    "maintenance_ratio": 165.37,
+    "maintenance_ratio": 163.57,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 76.93
   },
   "main_force": {
-    "cost": 10.28,
-    "distance": -0.78,
+    "cost": 10.24,
+    "distance": -1.86,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,14 +35,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 8 天"
+      "title": "外資連買 9 天"
     }
   ],
   "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

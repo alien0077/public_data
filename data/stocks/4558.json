@@ -1,22 +1,22 @@
 {
   "stock_id": "4558",
   "name": "4558",
-  "date": "2026-06-05",
-  "close": 19.6,
-  "health_score": 123,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "date": "2026-06-08",
+  "close": 19.15,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.004,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.01,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -4.0,
-    "margin_slope": -1.0,
-    "maintenance_ratio": 164.82,
-    "short_change": -298.0,
+    "margin_change": 0.0,
+    "margin_slope": 0.8,
+    "maintenance_ratio": 161.52,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 73.04
   },
   "main_force": {
-    "cost": 19.82,
-    "distance": -1.11,
+    "cost": 19.76,
+    "distance": -3.09,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,11 +35,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 60
+    "score": 0
   },
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
   "events": [],
-  "raw_signals": [
-    "主力洗盤完成"
-  ],
-  "data_version": "2026-06-05"
+  "raw_signals": [],
+  "data_version": "2026-06-08"
 }

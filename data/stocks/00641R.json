@@ -1,11 +1,11 @@
 {
   "stock_id": "00641R",
   "name": "00641R",
-  "date": "2026-06-05",
-  "close": 3.84,
-  "health_score": 66,
-  "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "date": "2026-06-08",
+  "close": 3.94,
+  "health_score": 113,
+  "signal": "Bullish",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -13,27 +13,29 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 37.0,
-    "margin_slope": 12.8,
-    "maintenance_ratio": 164.52,
-    "short_change": -7091.0,
-    "short_margin_ratio": 6.57
+    "margin_change": 289.0,
+    "margin_slope": 69.0,
+    "maintenance_ratio": 168.81,
+    "short_change": 9.0,
+    "short_margin_ratio": 6.44
   },
   "tdcc": {},
   "main_force": {
     "cost": 3.89,
-    "distance": -1.29,
-    "trend": "DOWN"
+    "distance": 1.29,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

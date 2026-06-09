@@ -1,23 +1,23 @@
 {
   "stock_id": "5498",
   "name": "5498",
-  "date": "2026-06-05",
-  "close": 61.8,
+  "date": "2026-06-08",
+  "close": 57.6,
   "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.128,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.121,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -154.0,
-    "margin_slope": -55.6,
-    "maintenance_ratio": 153.96,
-    "short_change": -7394.0,
-    "short_margin_ratio": 0.07
+    "margin_change": -249.0,
+    "margin_slope": -87.2,
+    "maintenance_ratio": 144.75,
+    "short_change": 16.0,
+    "short_margin_ratio": 0.3
   },
   "tdcc": {
     "big_holder_change": 30.25,
@@ -25,8 +25,8 @@
     "holder_concentration": 33.43
   },
   "main_force": {
-    "cost": 66.9,
-    "distance": -7.62,
+    "cost": 66.32,
+    "distance": -13.15,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,9 +37,11 @@
     "style": "Value",
     "score": 0
   },
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [],
   "raw_signals": [
-    "主力洗盤完成"
+    "融資斷頭預警"
   ],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

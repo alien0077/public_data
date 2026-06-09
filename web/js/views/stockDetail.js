@@ -190,6 +190,18 @@ export const StockDetail = {
         const scoreColor = score >= 80 ? "text-green-500 border-green-500" : "text-yellow-500 border-yellow-500";
         const maintenance = data.margin?.maintenance_ratio || 0;
         const slope = data.margin?.margin_slope || 0;
+        const shortMarginRatio = data.margin?.short_margin_ratio || 0;
+
+        const chipStatus = data.chip_status || "";
+        const chipWarning = data.chip_warning || "";
+
+        const chipLabelMap = { strong: "籌碼穩定", caution: "籌碼過熱", danger: "籌碼渙散", neutral: "中性" };
+        const chipColorMap = { strong: "text-green-500 bg-green-500/10 border-green-500/30", caution: "text-orange-500 bg-orange-500/10 border-orange-500/30", danger: "text-red-500 bg-red-500/10 border-red-500/30", neutral: "text-gray-500 bg-gray-500/10 border-gray-500/30" };
+        const chipLabel = chipLabelMap[chipStatus] || "";
+        const chipColor = chipColorMap[chipStatus] || chipColorMap.neutral;
+        const showWarning = (chipStatus === "caution" || chipStatus === "danger") && chipWarning;
+
+        const gaugeColor = shortMarginRatio < 10 ? "#22c55e" : shortMarginRatio < 30 ? "#f97316" : "#ef4444";
 
         container.innerHTML = `<div class="p-4 space-y-6 flex-1 overflow-y-auto no-scrollbar pb-12">
             <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800 flex items-center justify-between">
@@ -205,6 +217,23 @@ export const StockDetail = {
             <div class="bg-purple-50 dark:bg-purple-900/10 rounded-2xl p-6 border border-purple-100 dark:border-purple-800/30">
                 <h3 class="text-sm font-bold text-purple-700 dark:text-purple-400 mb-3 flex items-center"><span class="mr-2">✨</span> AI 盤後敘事解讀</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">${summary}</p>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-sm font-bold flex items-center"><span class="mr-2">📊</span> 籌碼健檢</h3>
+                    ${chipLabel ? `<span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${chipColor}">${chipLabel}</span>` : ""}
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="relative w-28 h-14 overflow-hidden mb-1">
+                        <div class="absolute inset-0 rounded-t-full border-8 border-gray-100 dark:border-gray-800" style="clip: rect(0,112px,56px,0)"></div>
+                        <div class="absolute inset-0 rounded-t-full border-8" style="clip: rect(0,112px,56px,0); border-color: ${gaugeColor}; transform: rotate(${Math.min(shortMarginRatio / 50 * 180, 180)}deg)"></div>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-5 bg-gray-800 dark:bg-gray-200 rounded-full origin-bottom" style="transform: translateX(-50%) rotate(${Math.min(shortMarginRatio / 50 * 180, 180) - 90}deg)"></div>
+                    </div>
+                    <div class="text-2xl font-black font-mono" style="color:${gaugeColor}">${shortMarginRatio.toFixed(1)}<span class="text-xs text-gray-400">%</span></div>
+                    <div class="text-[10px] text-gray-500 mt-0.5">券資比</div>
+                </div>
+                ${showWarning ? `<div class="mt-4 flex items-start space-x-2 p-3 rounded-xl ${chipStatus === "danger" ? "bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800/30" : "bg-orange-50 dark:bg-orange-900/10 border border-orange-200 dark:border-orange-800/30"}"><span class="text-sm mt-0.5">⚠️</span><span class="text-xs ${chipStatus === "danger" ? "text-red-600" : "text-orange-600"} font-medium">${chipWarning}</span></div>` : ""}
             </div>
 
             <div class="grid grid-cols-2 gap-3">

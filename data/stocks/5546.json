@@ -1,22 +1,22 @@
 {
   "stock_id": "5546",
   "name": "5546",
-  "date": "2026-06-05",
-  "close": 17.1,
-  "health_score": 150,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "date": "2026-06-08",
+  "close": 15.4,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 8,
-    "foreign_buy_ratio": 0.016,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.008,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -1.0,
-    "margin_slope": 0.0,
-    "maintenance_ratio": 172.41,
-    "short_change": -26.0,
+    "margin_change": 3.0,
+    "margin_slope": 0.6,
+    "maintenance_ratio": 155.65,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
@@ -25,24 +25,23 @@
     "holder_concentration": 85.22
   },
   "main_force": {
-    "cost": 16.53,
-    "distance": 3.45,
-    "trend": "UP"
+    "cost": 16.49,
+    "distance": -6.61,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 100
+    "style": "Value",
+    "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 8 天"
-    }
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "events": [],
+  "raw_signals": [
+    "散戶接刀中"
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

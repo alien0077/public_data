@@ -1,22 +1,22 @@
 {
   "stock_id": "2540",
   "name": "2540",
-  "date": "2026-06-05",
-  "close": 53.0,
-  "health_score": 103,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "date": "2026-06-08",
+  "close": 51.2,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.007,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.03,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -34.0,
-    "margin_slope": 0.0,
-    "maintenance_ratio": 162.92,
-    "short_change": -3061.0,
+    "margin_change": 29.0,
+    "margin_slope": -6.0,
+    "maintenance_ratio": 157.44,
+    "short_change": 0.0,
     "short_margin_ratio": 0.03
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 90.97
   },
   "main_force": {
-    "cost": 54.22,
-    "distance": -2.25,
+    "cost": 54.2,
+    "distance": -5.54,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,14 +35,13 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
+  "chip_status": "neutral",
+  "chip_warning": "",
+  "events": [],
+  "raw_signals": [
+    "散戶接刀中"
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

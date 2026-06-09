@@ -1,39 +1,41 @@
 {
   "stock_id": "00634R",
   "name": "00634R",
-  "date": "2026-06-05",
-  "close": 3.05,
-  "health_score": 86,
+  "date": "2026-06-08",
+  "close": 3.13,
+  "health_score": 130,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1.0,
-    "margin_slope": -6.2,
-    "maintenance_ratio": 166.67,
-    "short_change": -2077.0,
+    "margin_change": 52.0,
+    "margin_slope": 4.2,
+    "maintenance_ratio": 170.48,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {},
   "main_force": {
-    "cost": 3.05,
-    "distance": 0.0,
-    "trend": "DOWN"
+    "cost": 3.06,
+    "distance": 2.29,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-05"
+  "data_version": "2026-06-08"
 }

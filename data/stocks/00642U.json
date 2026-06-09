@@ -1,28 +1,28 @@
 {
   "stock_id": "00642U",
   "name": "00642U",
-  "date": "2026-06-05",
-  "close": 29.42,
-  "health_score": 123,
+  "date": "2026-06-08",
+  "close": 29.89,
+  "health_score": 106,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 38.0,
-    "margin_slope": -159.2,
-    "maintenance_ratio": 162.74,
-    "short_change": -4136.0,
-    "short_margin_ratio": 40.74
+    "margin_change": 57.0,
+    "margin_slope": -132.0,
+    "maintenance_ratio": 165.45,
+    "short_change": 1.0,
+    "short_margin_ratio": 40.42
   },
   "tdcc": {},
   "main_force": {
-    "cost": 30.13,
-    "distance": -2.36,
+    "cost": 30.11,
+    "distance": -0.73,
     "trend": "DOWN"
   },
   "sector": {
@@ -33,14 +33,14 @@
     "style": "Value",
     "score": 60
   },
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
   "events": [
     {
       "level": "RED",
       "title": "短線券資比過熱 (警示)"
     }
   ],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-05"
+  "raw_signals": [],
+  "data_version": "2026-06-08"
 }

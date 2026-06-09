@@ -1,22 +1,22 @@
 {
   "stock_id": "2911",
   "name": "2911",
-  "date": "2026-06-05",
-  "close": 8.8,
-  "health_score": 150,
+  "date": "2026-06-08",
+  "close": 8.51,
+  "health_score": 133,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 8,
-    "foreign_buy_ratio": 0.032,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.019,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -13.0,
-    "margin_slope": 3.2,
-    "maintenance_ratio": 198.2,
-    "short_change": -123.0,
+    "margin_change": -3.0,
+    "margin_slope": 1.8,
+    "maintenance_ratio": 187.12,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 45.29
   },
   "main_force": {
-    "cost": 7.4,
-    "distance": 18.92,
+    "cost": 7.58,
+    "distance": 12.27,
     "trend": "UP"
   },
   "sector": {
@@ -37,18 +37,9 @@
     "style": "Growth",
     "score": 100
   },
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 8 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
-  "raw_signals": [
-    "主力洗盤完成"
-  ],
-  "data_version": "2026-06-05"
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-08"
 }
