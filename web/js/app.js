@@ -9,7 +9,7 @@ import { Transaction } from './views/transaction.js?v=2';
 import { Favorites } from './views/favorites.js?v=2';
 import { router } from './router.js';
 import { CorporateActions } from './corporateActions.js';
-import { Settings } from './views/settings.js';
+import { Settings } from './views/settings.js?cb=2';
 import { GroupSearch } from './views/groupSearch.js?v=2';
 import { getPriceChangeStyle } from './utils/priceStyle.js';
 
@@ -74,15 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('click', (e) => { e.preventDefault(); router.switchPage(p); });
     };
-    ['portfolio', 'trendHunter', 'assetRisk', 'performance', 'addTrade', 'favorites', 'groupSearch'].forEach(p => {
+    ['portfolio', 'trendHunter', 'assetRisk', 'performance', 'addTrade', 'favorites', 'groupSearch', 'settings'].forEach(p => {
         bindPage('nav-' + p, p);
         const m = document.getElementById('mobile-nav-' + p);
         if (m) m.addEventListener('click', (e) => { e.preventDefault(); router.switchPage(p); });
     });
-    // Settings: direct handler in case router doesn't have cached route
-    const settingsHandler = (e) => { e.preventDefault(); document.querySelectorAll('#content-area > [id^="view-"]').forEach(v => v.classList.add('hidden')); const vs = document.getElementById('view-settings'); if (vs) { vs.classList.remove('hidden'); Settings.init(); } };
-document.getElementById('nav-settings')?.addEventListener('click', settingsHandler);
-    document.getElementById('mobile-nav-settings')?.addEventListener('click', settingsHandler);
 
     const triggerImportBtn = document.getElementById('trigger-import');
     const importJsonInput = document.getElementById('import-json');

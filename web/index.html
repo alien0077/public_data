@@ -323,7 +323,7 @@
             </div>
 
             <!-- Stock Detail Overlay -->
-            <div id="stock-detail" class="hidden absolute inset-0 bg-white dark:bg-[#0f1115] z-20 flex flex-col transition-colors duration-300">
+            <div id="stock-detail" class="hidden fixed left-[256px] right-0 top-0 bottom-0 bg-white dark:bg-[#0f1115] z-20 flex flex-col overflow-y-auto transition-colors duration-300">
                 <header class="h-16 border-b border-gray-200 dark:border-gray-800 flex items-center px-6 bg-white dark:bg-[#0f1115] transition-colors duration-300">
                     <button id="close-detail" class="mr-4 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
                         <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -358,7 +358,7 @@
             </div>
 
             <!-- Dividend Detail Modal -->
-            <div id="dividend-detail" class="hidden absolute inset-0 bg-white dark:bg-[#0f1115] z-20 flex flex-col transition-colors duration-300">
+            <div id="dividend-detail" class="hidden fixed left-[256px] right-0 top-0 bottom-0 bg-white dark:bg-[#0f1115] z-20 flex flex-col transition-colors duration-300">
                 <header class="h-16 border-b border-gray-200 dark:border-gray-800 flex items-center px-6 bg-white dark:bg-[#0f1115] transition-colors duration-300">
                     <button id="close-dividend-detail" class="mr-4 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
                         <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -424,6 +424,6 @@
 
     <script src="js/auth.js"></script>
     <script src="js/irr.js"></script>
-    <script type="module" src="js/app.js?v=9"></script>
+    <script type="module" src="js/app.js?v=11"></script>
 </body>
 </html>

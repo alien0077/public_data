@@ -19,23 +19,41 @@ export const Settings = {
                             <span class="mr-2">📂</span> 資料管理
                         </h3>
                     </div>
-                    <div class="p-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <button id="settings-import-trades" class="flex items-center justify-center space-x-2 p-3 bg-blue-500/10 hover:bg-blue-500/20 text-blue-500 rounded-xl border border-blue-500/20 transition-all">
-                            <span>📥</span>
-                            <span class="text-sm font-bold">匯入交易備份(JSON)</span>
-                        </button>
-                        <button id="settings-export-trades" class="flex items-center justify-center space-x-2 p-3 bg-green-500/10 hover:bg-green-500/20 text-green-500 rounded-xl border border-green-500/20 transition-all">
-                            <span>📤</span>
-                            <span class="text-sm font-bold">導出交易備份(JSON)</span>
-                        </button>
-                        <button id="settings-clear-trades" class="flex items-center justify-center space-x-2 p-3 bg-red-500/10 hover:bg-red-500/20 text-red-500 rounded-xl border border-red-500/20 transition-all">
-                            <span>🗑️</span>
-                            <span class="text-sm font-bold">清空所有交易紀錄</span>
-                        </button>
-                        <button id="settings-import-favorites" class="flex items-center justify-center space-x-2 p-3 bg-purple-500/10 hover:bg-purple-500/20 text-purple-500 rounded-xl border border-purple-500/20 transition-all">
-                            <span>⭐</span>
-                            <span class="text-sm font-bold">匯入/導出收藏名單(JSON)</span>
-                        </button>
+                    <div class="p-5 space-y-4">
+                        <div>
+                            <p class="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">📈 交易相關</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <button id="settings-import-trades" class="flex items-center justify-center space-x-2 p-3 bg-blue-500/10 hover:bg-blue-500/20 text-blue-500 rounded-xl border border-blue-500/20 transition-all">
+                                    <span>📥</span>
+                                    <span class="text-sm font-bold">匯入交易備份(JSON)</span>
+                                </button>
+                                <button id="settings-export-trades" class="flex items-center justify-center space-x-2 p-3 bg-green-500/10 hover:bg-green-500/20 text-green-500 rounded-xl border border-green-500/20 transition-all">
+                                    <span>📤</span>
+                                    <span class="text-sm font-bold">導出交易備份(JSON)</span>
+                                </button>
+                                <button id="settings-clear-trades" class="flex items-center justify-center space-x-2 p-3 bg-red-500/10 hover:bg-red-500/20 text-red-500 rounded-xl border border-red-500/20 transition-all">
+                                    <span>🗑️</span>
+                                    <span class="text-sm font-bold">清空所有交易紀錄</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">⭐ 收藏相關</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <button id="settings-import-fav" class="flex items-center justify-center space-x-2 p-3 bg-purple-500/10 hover:bg-purple-500/20 text-purple-500 rounded-xl border border-purple-500/20 transition-all">
+                                    <span>📥</span>
+                                    <span class="text-sm font-bold">匯入收藏名單(JSON)</span>
+                                </button>
+                                <button id="settings-export-fav" class="flex items-center justify-center space-x-2 p-3 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-500 rounded-xl border border-indigo-500/20 transition-all">
+                                    <span>📤</span>
+                                    <span class="text-sm font-bold">導出收藏名單(JSON)</span>
+                                </button>
+                                <button id="settings-clear-fav" class="flex items-center justify-center space-x-2 p-3 bg-red-500/10 hover:bg-red-500/20 text-red-500 rounded-xl border border-red-500/20 transition-all">
+                                    <span>🗑️</span>
+                                    <span class="text-sm font-bold">清空收藏名單</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -172,46 +190,59 @@ export const Settings = {
             }
         });
 
-        document.getElementById('settings-import-favorites')?.addEventListener('click', () => {
-            this.handleFavoritesIO();
+        document.getElementById('settings-import-fav')?.addEventListener('click', () => {
+            this.importFavorites();
+        });
+        document.getElementById('settings-export-fav')?.addEventListener('click', () => {
+            this.exportFavorites();
+        });
+        document.getElementById('settings-clear-fav')?.addEventListener('click', () => {
+            this.clearFavorites();
         });
     },
 
-    handleFavoritesIO() {
-        const action = confirm('點擊「確定」匯出收藏名單，點擊「取消」匯入收藏名單。') ? 'export' : 'import';
-        if (action === 'export') {
-            const data = {
-                categories: JSON.parse(localStorage.getItem('twstock_favorite_categories') || '["我的最愛","觀察中","定存股","潛力股","投機短線"]'),
-                items: JSON.parse(localStorage.getItem('twstock_favorite_data') || '{}'),
-                exportedAt: new Date().toISOString()
-            };
-            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `${new Date().toISOString().slice(0, 10)}_收藏.json`;
-            a.click();
-            URL.revokeObjectURL(url);
-        } else {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = '.json';
-            input.addEventListener('change', async (e) => {
-                const file = e.target.files[0];
-                if (!file) return;
-                try {
-                    const text = await file.text();
-                    const data = JSON.parse(text);
-                    if (data.categories && data.items) {
-                        localStorage.setItem('twstock_favorite_categories', JSON.stringify(data.categories));
-                        localStorage.setItem('twstock_favorite_data', JSON.stringify(data.items));
-                        alert('收藏名單匯入成功！');
-                    } else {
-                        alert('無效的收藏名單格式。');
-                    }
-                } catch { alert('解析 JSON 失敗。'); }
-            });
-            input.click();
+    exportFavorites() {
+        const data = {
+            categories: JSON.parse(localStorage.getItem('twstock_favorite_categories') || '["我的最愛","觀察中","定存股","潛力股","投機短線"]'),
+            items: JSON.parse(localStorage.getItem('twstock_favorite_data') || '{}'),
+            exportedAt: new Date().toISOString()
+        };
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${new Date().toISOString().slice(0, 10)}_收藏.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+    },
+
+    importFavorites() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.json';
+        input.addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            try {
+                const text = await file.text();
+                const data = JSON.parse(text);
+                if (data.categories && data.items) {
+                    localStorage.setItem('twstock_favorite_categories', JSON.stringify(data.categories));
+                    localStorage.setItem('twstock_favorite_data', JSON.stringify(data.items));
+                    alert('收藏名單匯入成功！');
+                } else {
+                    alert('無效的收藏名單格式。');
+                }
+            } catch { alert('解析 JSON 失敗。'); }
+        });
+        input.click();
+    },
+
+    clearFavorites() {
+        if (confirm('確定要清空所有收藏名單嗎？此操作無法復原！')) {
+            localStorage.removeItem('twstock_favorite_categories');
+            localStorage.removeItem('twstock_favorite_data');
+            alert('已清空收藏名單');
         }
     }
 };

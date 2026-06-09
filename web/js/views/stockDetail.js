@@ -104,9 +104,8 @@ export const StockDetail = {
         if (!tabContainer) {
             tabContainer = document.createElement('div');
             tabContainer.id = 'detail-tabs';
-            tabContainer.className = 'flex overflow-x-auto border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-[#0f1115] no-scrollbar';
-            const warning = document.getElementById('liar-warning-container');
-            if (warning) warning.after(tabContainer); else document.querySelector('#stock-detail header').after(tabContainer);
+            tabContainer.className = 'flex overflow-x-auto border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-[#0f1115] no-scrollbar min-h-[44px]';
+            document.querySelector('#stock-detail header').after(tabContainer);
         }
 
         tabContainer.innerHTML = this.tabs.map(tab => `

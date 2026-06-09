@@ -139,18 +139,17 @@ class Router {
         
         // 根據螢幕寬度選擇渲染樣式 (Tailwind class 處理)
         let html = `
-            <div class="flex items-center space-x-1 md:space-x-8 overflow-x-auto no-scrollbar py-2 px-4 md:px-6">
+            <div class="grid grid-cols-3 md:grid-cols-5 gap-1 py-2 px-4 md:px-6">
         `;
 
         subPages.forEach(page => {
             const isActive = page === activeSub;
-            // PC: Underline style, Mobile: Segmented style
             html += `
                 <button onclick="router.switchPage('${this.currentPrimary}', '${page}')" 
-                    class="flex-shrink-0 px-4 py-1.5 md:py-3 text-sm font-medium transition-all duration-200 
+                    class="px-2 py-1.5 md:py-2 text-sm font-medium transition-all duration-200 text-center rounded-lg
                     ${isActive 
-                        ? 'text-blue-600 dark:text-blue-400 md:border-b-2 md:border-blue-600 dark:md:border-blue-400 bg-blue-100/50 dark:bg-blue-600/20 md:bg-transparent dark:md:bg-transparent rounded-full md:rounded-none' 
-                        : 'text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}"
+                        ? 'text-blue-600 dark:text-blue-400 bg-blue-100/50 dark:bg-blue-600/20' 
+                        : 'text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}"
                 >
                     ${page}
                 </button>
