@@ -221,6 +221,16 @@
                         </div>
                     </div>
 
+                    <!-- 4.6 大盤乖離警示 -->
+                    <div id="market-divergence-section" class="hidden">
+                        <div class="flex items-center mb-4">
+                            <span class="text-xl mr-2">📉</span>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white">大盤乖離警示</h3>
+                        </div>
+                        <div id="market-divergence-content" class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 p-4 md:p-6 shadow-sm">
+                        </div>
+                    </div>
+
                     <!-- 5. Liar Detection Section (v3.0 垂直跑馬燈) -->
                     <div id="liar-section">
                         <div class="flex items-center mb-4">
@@ -323,7 +333,7 @@
             </div>
 
             <!-- Stock Detail Overlay -->
-            <div id="stock-detail" class="hidden fixed left-[256px] right-0 top-0 bottom-0 bg-white dark:bg-[#0f1115] z-20 flex flex-col overflow-y-auto transition-colors duration-300">
+            <div id="stock-detail" class="hidden fixed md:left-[256px] left-0 right-0 top-0 bottom-0 bg-white dark:bg-[#0f1115] z-20 flex flex-col overflow-y-auto transition-colors duration-300">
                 <header class="h-16 border-b border-gray-200 dark:border-gray-800 flex items-center px-6 bg-white dark:bg-[#0f1115] transition-colors duration-300">
                     <button id="close-detail" class="mr-4 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
                         <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

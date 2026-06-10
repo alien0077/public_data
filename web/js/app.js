@@ -268,6 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderMarketSummary({});
                 renderBetaWarning(h);
                 renderMarketHealth();
+                renderMarketDivergence();
                 loadAndRenderLiar();
                 renderClosedHoldings(trades);
                 startAutoRefresh();
@@ -277,6 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 await renderMarketSummary({});
                 await renderMarketHealth();
                 await loadAndRenderLiar();
+                await renderMarketDivergence();
                 if (portfolioBody.children.length === 0) {
                     portfolioBody.innerHTML = '<tr><td colspan="9" class="px-6 py-10 text-center text-gray-500 font-mono text-sm">尚無持股資料，請由側邊欄「匯入資料」匯入交易紀錄</td></tr>';
                 }
@@ -313,6 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderExchangeRates();
             renderMarketSummary(q);
             renderMarketHealth();
+            renderMarketDivergence();
             loadAndRenderLiar();
             renderClosedHoldings(trades);
         } catch (err) {
@@ -823,6 +826,86 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch(e) { console.error('renderMarketHealth error:', e); }
     }
 
+    async function renderMarketDivergence() {
+        try {
+            const section = document.getElementById('market-divergence-section');
+            const content = document.getElementById('market-divergence-content');
+            if (!section || !content) return;
+
+            const data = await api.fetchLocalJson('meta/market_divergence_alert.json').catch(() => null);
+            if (!data) {
+                section.classList.add('hidden');
+                return;
+            }
+
+            const d = data.stocks?.[0] || data.data?.[0] || data;
+            if (!d || d.bias5 === undefined) {
+                section.classList.add('hidden');
+                return;
+            }
+
+            section.classList.remove('hidden');
+
+            const isAlert = d.is_alert;
+            const severity = d.severity || 'normal';
+            const bias5 = d.bias5 || 0;
+            const volRatio = d.vol_ratio || 0;
+            const triggerBias = d.trigger_bias_threshold || 0;
+            const triggerVol = d.trigger_vol_threshold || 1.2;
+            const crashProb = d.crash_probability || 0;
+            const summary = d.summary || '';
+
+            const severityConfig = {
+                danger: { icon: '🔴', label: '危險', bg: 'bg-red-500/10', border: 'border-red-500/30', text: 'text-red-500', bar: 'bg-red-500' },
+                warning: { icon: '🟡', label: '注意', bg: 'bg-orange-500/10', border: 'border-orange-500/30', text: 'text-orange-500', bar: 'bg-orange-500' },
+                normal: { icon: '🟢', label: '正常', bg: 'bg-green-500/10', border: 'border-green-500/30', text: 'text-green-500', bar: 'bg-green-500' }
+            };
+            const cfg = severityConfig[severity] || severityConfig.normal;
+
+            const biasPct = triggerBias > 0 ? Math.min(100, (bias5 / triggerBias) * 100) : 0;
+            const volPct = triggerVol > 0 ? Math.min(100, (volRatio / triggerVol) * 100) : 0;
+
+            content.innerHTML = `
+                <div class="flex items-start space-x-4">
+                    <div class="text-4xl ${cfg.text}">${cfg.icon}</div>
+                    <div class="flex-1 space-y-3">
+                        <div class="flex items-baseline space-x-2">
+                            <span class="text-lg font-black ${cfg.text}">${cfg.label}</span>
+                            ${isAlert ? '<span class="text-[10px] px-2 py-0.5 rounded-full font-bold ' + cfg.text + ' ' + cfg.bg + '">觸發警示</span>' : '<span class="text-[10px] text-gray-500">未觸發</span>'}
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <div class="flex justify-between text-[10px] text-gray-500 mb-1">
+                                    <span>乖離率 (BIAS5)</span>
+                                    <span class="font-bold font-mono ${isAlert ? cfg.text : ''}">${bias5.toFixed(2)}% / 門檻 ${triggerBias.toFixed(2)}%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="h-full rounded-full ${cfg.bar}" style="width: ${biasPct}%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-[10px] text-gray-500 mb-1">
+                                    <span>成交量能比</span>
+                                    <span class="font-bold font-mono">${volRatio.toFixed(2)}x / ${triggerVol.toFixed(1)}x</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="h-full rounded-full ${cfg.bar}" style="width: ${volPct}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2 pt-1">
+                            <span class="text-[10px] text-gray-500">歷史修正機率</span>
+                            <div class="flex-1 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden max-w-[100px]">
+                                <div class="h-full rounded-full ${cfg.bar}" style="width: ${Math.min(100, crashProb * 100)}%"></div>
+                            </div>
+                            <span class="text-[10px] font-bold font-mono ${cfg.text}">${(crashProb * 100).toFixed(0)}%</span>
+                        </div>
+                        <div class="text-[10px] text-gray-500 leading-relaxed pt-1 border-t border-gray-100 dark:border-gray-800">${summary}</div>
+                    </div>
+                </div>
+            `;
+        } catch(e) { console.error('renderMarketDivergence error:', e); }
+    }
 
     function setupSortHandlers() {
         document.querySelectorAll('th[data-sort]').forEach(th => {

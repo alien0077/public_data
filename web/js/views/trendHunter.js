@@ -523,13 +523,13 @@ export const TrendHunter = {
                                             <td class="px-5 py-2.5 text-left">
                                                 ${s.note ? `<span class="text-[10px] text-orange-500 leading-tight">${s.note}</span>` : '<span class="text-[10px] text-gray-400">--</span>'}
                                             </td>
-                                            <td class="px-5 py-2.5 text-right text-gray-500">${s.start_date ? s.start_date.substring(5) : '--'}</td>
+                                            <td class="px-5 py-2.5 text-right text-gray-500 whitespace-nowrap">${s.start_date ? s.start_date.substring(5) : '--'}</td>
                                             <td class="px-5 py-2.5 text-right text-gray-500">${s.tracking_days}d</td>
                                             <td class="px-5 py-2.5 text-right font-bold text-blue-500">${buyStr}</td>
                                             <td class="px-5 py-2.5 text-right font-bold ${retClass}">${retStr}</td>
                                             <td class="px-5 py-2.5 text-right hidden sm:table-cell font-bold ${peColor}">${peStr}</td>
                                             <td class="px-5 py-2.5 text-right">
-                                                <div class="flex flex-col items-end space-y-1">
+                                                <div class="flex flex-wrap justify-end gap-1">
                                                     ${signalBadge}
                                                     ${entryBadge}
                                                 </div>

@@ -203,6 +203,14 @@ export const StockDetail = {
         const gaugeColor = shortMarginRatio < 10 ? "#22c55e" : shortMarginRatio < 30 ? "#f97316" : "#ef4444";
 
         container.innerHTML = `<div class="p-4 space-y-6 flex-1 overflow-y-auto no-scrollbar pb-12">
+            ${data.abnormal_gm ? `
+            <div class="bg-red-500/10 border border-red-500/20 rounded-2xl p-4 flex items-start space-x-3">
+                <span class="text-xl flex-none">🚨</span>
+                <div>
+                    <div class="text-sm font-bold text-red-500">營運異常警告</div>
+                    <div class="text-xs text-red-400 mt-1">${data.gm_warning || '毛利率為負，此公司營運異常，請審慎評估'}</div>
+                </div>
+            </div>` : ''}
             <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800 flex items-center justify-between">
                 <div class="w-24 h-24 rounded-full border-8 ${scoreColor} flex flex-col items-center justify-center bg-white dark:bg-[#0f1115]">
                     <span class="text-2xl font-bold">${score}</span><span class="text-[8px] text-gray-500 uppercase">Health</span>
