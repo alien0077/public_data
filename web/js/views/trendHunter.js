@@ -1556,13 +1556,15 @@ export const TrendHunter = {
                     select_reason: c.select_reason || '', reason: c.select_reason || '模型選入',
                     pe_ratio: c.pe_ratio
                 }));
+                const portfolioPeMap = {};
+                (data.portfolio || []).forEach(p => { if (p.stock && p.pe_ratio != null) portfolioPeMap[p.stock] = p.pe_ratio; });
                 if (data.trade_log && data.trade_log.length > 0) {
                     const tradeSignals = data.trade_log.map(t => ({
                         entry_date: t.entry_date || t.exit_date || '', symbol: t.stock,
                         type: t.action === 'SELL' ? 'SELL' : 'BUY',
                         select_reason: t.select_reason || '',
                         reason: t.reason || t.select_reason || (t.action === 'SELL' ? '策略出場' : '策略進場'),
-                        pe_ratio: t.pe_ratio
+                        pe_ratio: t.pe_ratio ?? portfolioPeMap[t.stock] ?? null
                     }));
                     const seen = new Set(allSignals.map(s => s.symbol + '_' + s.entry_date));
                     allSignals = [...allSignals, ...tradeSignals.filter(t => !seen.has(t.symbol + '_' + t.entry_date))];
