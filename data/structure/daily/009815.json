@@ -1,6 +1,6 @@
 {
   "symbol": "009815",
-  "updated_at": "2026-06-09",
+  "updated_at": "2026-06-10",
   "lines": [
     {
       "id": "L_9",
@@ -63,6 +63,17 @@
       "price": 11.1,
       "start_idx": 71,
       "start_date": "2026-05-20",
+      "end_idx": 86,
+      "end_date": "2026-06-10",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "H_81",
+      "type": "high",
+      "price": 11.77,
+      "start_idx": 81,
+      "start_date": "2026-06-03",
       "end_idx": null,
       "end_date": null,
       "broken": false,
@@ -93,6 +104,12 @@
       "price": 11.55,
       "idx": 79,
       "date": "2026-06-01"
+    },
+    {
+      "type": "CHOCH_DOWN",
+      "price": 11.1,
+      "idx": 86,
+      "date": "2026-06-10"
     }
   ]
 }

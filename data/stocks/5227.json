@@ -1,21 +1,21 @@
 {
   "stock_id": "5227",
   "name": "5227",
-  "date": "2026-06-08",
-  "close": 27.0,
-  "health_score": 150,
+  "date": "2026-06-09",
+  "close": 26.5,
+  "health_score": 133,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.278,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.103,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -1.0,
+    "margin_change": 0.0,
     "margin_slope": -0.6,
-    "maintenance_ratio": 184.12,
+    "maintenance_ratio": 178.67,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 19.51
   },
   "main_force": {
-    "cost": 24.44,
-    "distance": 10.47,
+    "cost": 24.72,
+    "distance": 7.2,
     "trend": "UP"
   },
   "sector": {
@@ -39,14 +39,9 @@
   },
   "chip_status": "strong",
   "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
-  "raw_signals": [
-    "主力洗盤完成"
-  ],
-  "data_version": "2026-06-08"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-09",
+  "abnormal_gm": true,
+  "gm_warning": "⚠️ 毛利率為負 (-70.70%)，營運異常，請審慎評估"
 }

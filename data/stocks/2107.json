@@ -1,21 +1,21 @@
 {
   "stock_id": "2107",
   "name": "2107",
-  "date": "2026-06-08",
-  "close": 25.5,
-  "health_score": 110,
+  "date": "2026-06-09",
+  "close": 25.7,
+  "health_score": 113,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.006,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.006,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -3.0,
-    "margin_slope": -12.6,
-    "maintenance_ratio": 177.45,
+    "margin_change": 7.0,
+    "margin_slope": -10.6,
+    "maintenance_ratio": 178.84,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -26,7 +26,7 @@
   },
   "main_force": {
     "cost": 23.95,
-    "distance": 6.47,
+    "distance": 7.31,
     "trend": "UP"
   },
   "sector": {
@@ -34,17 +34,12 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 40
+    "style": "Growth",
+    "score": 70
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-08"
+  "data_version": "2026-06-09"
 }

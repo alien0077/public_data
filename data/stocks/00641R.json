@@ -1,11 +1,11 @@
 {
   "stock_id": "00641R",
   "name": "00641R",
-  "date": "2026-06-08",
-  "close": 3.94,
+  "date": "2026-06-09",
+  "close": 3.9,
   "health_score": 113,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -13,16 +13,16 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 289.0,
-    "margin_slope": 69.0,
-    "maintenance_ratio": 168.81,
-    "short_change": 9.0,
-    "short_margin_ratio": 6.44
+    "margin_change": 24.0,
+    "margin_slope": 78.2,
+    "maintenance_ratio": 167.1,
+    "short_change": 0.0,
+    "short_margin_ratio": 6.42
   },
   "tdcc": {},
   "main_force": {
     "cost": 3.89,
-    "distance": 1.29,
+    "distance": 0.26,
     "trend": "UP"
   },
   "sector": {
@@ -33,9 +33,11 @@
     "style": "Growth",
     "score": 70
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-08"
+  "raw_signals": [
+    "散戶接刀中"
+  ],
+  "data_version": "2026-06-09"
 }

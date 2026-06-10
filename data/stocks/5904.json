@@ -1,21 +1,21 @@
 {
   "stock_id": "5904",
   "name": "5904",
-  "date": "2026-06-08",
-  "close": 582.0,
-  "health_score": 150,
+  "date": "2026-06-09",
+  "close": 622.0,
+  "health_score": 166,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.244,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.256,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -9.0,
-    "margin_slope": 1.2,
-    "maintenance_ratio": 172.52,
+    "margin_change": 41.0,
+    "margin_slope": 3.8,
+    "maintenance_ratio": 183.38,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 70.25
   },
   "main_force": {
-    "cost": 562.25,
-    "distance": 3.51,
+    "cost": 565.3,
+    "distance": 10.03,
     "trend": "UP"
   },
   "sector": {
@@ -37,14 +37,18 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [],
-  "data_version": "2026-06-08"
+  "data_version": "2026-06-09"
 }

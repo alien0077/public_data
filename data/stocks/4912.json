@@ -1,23 +1,23 @@
 {
   "stock_id": "4912",
   "name": "4912",
-  "date": "2026-06-08",
-  "close": 89.5,
-  "health_score": 66,
-  "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
+  "date": "2026-06-09",
+  "close": 95.7,
+  "health_score": 106,
+  "signal": "Bullish",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.084,
+    "foreign_buy_ratio": -0.064,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "margin_slope": -87.4,
-    "maintenance_ratio": 144.96,
+    "margin_change": -62.0,
+    "margin_slope": -44.6,
+    "maintenance_ratio": 154.88,
     "short_change": 1.0,
-    "short_margin_ratio": 0.03
+    "short_margin_ratio": 0.05
   },
   "tdcc": {
     "big_holder_change": 36.97,
@@ -25,8 +25,8 @@
     "holder_concentration": 51.17
   },
   "main_force": {
-    "cost": 102.9,
-    "distance": -13.02,
+    "cost": 102.98,
+    "distance": -7.07,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,13 +35,18 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 60
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
-  "raw_signals": [
-    "融資斷頭預警"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-06-08"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-09"
 }

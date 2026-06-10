@@ -1,21 +1,21 @@
 {
   "stock_id": "2015",
   "name": "2015",
-  "date": "2026-06-08",
-  "close": 60.9,
-  "health_score": 83,
+  "date": "2026-06-09",
+  "close": 61.9,
+  "health_score": 100,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.002,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.015,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -1.0,
-    "margin_slope": 0.0,
-    "maintenance_ratio": 162.45,
+    "margin_change": 3.0,
+    "margin_slope": 0.8,
+    "maintenance_ratio": 165.38,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 88.23
   },
   "main_force": {
-    "cost": 62.48,
-    "distance": -2.53,
+    "cost": 62.38,
+    "distance": -0.77,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,9 +37,9 @@
     "style": "Value",
     "score": 0
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
   "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-08"
+  "data_version": "2026-06-09"
 }

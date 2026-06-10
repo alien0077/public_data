@@ -1,43 +1,48 @@
 {
   "stock_id": "00663L",
   "name": "00663L",
-  "date": "2026-06-08",
-  "close": 97.65,
-  "health_score": 103,
+  "date": "2026-06-09",
+  "close": 103.2,
+  "health_score": 130,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 2,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 146.0,
-    "margin_slope": 103.0,
-    "maintenance_ratio": 164.78,
-    "short_change": -114.0,
-    "short_margin_ratio": 19.81
+    "margin_change": -808.0,
+    "margin_slope": 42.6,
+    "maintenance_ratio": 173.25,
+    "short_change": 91.0,
+    "short_margin_ratio": 23.28
   },
   "tdcc": {},
   "main_force": {
-    "cost": 98.77,
-    "distance": -1.13,
-    "trend": "DOWN"
+    "cost": 99.28,
+    "distance": 3.95,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "chip_status": "danger",
   "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
-  "events": [],
-  "raw_signals": [
-    "散戶接刀中"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-06-08"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-09"
 }

@@ -1,23 +1,23 @@
 {
   "stock_id": "8473",
   "name": "8473",
-  "date": "2026-06-08",
-  "close": 53.9,
+  "date": "2026-06-09",
+  "close": 53.6,
   "health_score": 130,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.339,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.012,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -27.0,
-    "margin_slope": 85.0,
-    "maintenance_ratio": 204.21,
-    "short_change": 24.0,
-    "short_margin_ratio": 26.91
+    "margin_change": -169.0,
+    "margin_slope": 14.8,
+    "maintenance_ratio": 198.61,
+    "short_change": 28.0,
+    "short_margin_ratio": 30.3
   },
   "tdcc": {
     "big_holder_change": 65.35,
@@ -25,8 +25,8 @@
     "holder_concentration": 67.95
   },
   "main_force": {
-    "cost": 43.99,
-    "distance": 22.53,
+    "cost": 44.98,
+    "distance": 19.16,
     "trend": "UP"
   },
   "sector": {
@@ -37,14 +37,18 @@
     "style": "Growth",
     "score": 70
   },
-  "chip_status": "danger",
-  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
     {
       "level": "RED",
       "title": "短線券資比過熱 (警示)"
     }
   ],
   "raw_signals": [],
-  "data_version": "2026-06-08"
+  "data_version": "2026-06-09"
 }

@@ -1,23 +1,23 @@
 {
   "stock_id": "8021",
   "name": "8021",
-  "date": "2026-06-08",
-  "close": 460.0,
-  "health_score": 166,
+  "date": "2026-06-09",
+  "close": 506.0,
+  "health_score": 150,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.255,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.273,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -450.0,
-    "margin_slope": -189.0,
-    "maintenance_ratio": 174.65,
-    "short_change": -17.0,
-    "short_margin_ratio": 1.99
+    "margin_change": 1573.0,
+    "margin_slope": 166.2,
+    "maintenance_ratio": 191.36,
+    "short_change": 197.0,
+    "short_margin_ratio": 3.34
   },
   "tdcc": {
     "big_holder_change": 38.39,
@@ -25,8 +25,8 @@
     "holder_concentration": 48.3
   },
   "main_force": {
-    "cost": 438.98,
-    "distance": 4.79,
+    "cost": 440.7,
+    "distance": 14.82,
     "trend": "UP"
   },
   "sector": {
@@ -37,9 +37,14 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "strong",
-  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
-  "events": [],
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-08"
+  "data_version": "2026-06-09"
 }

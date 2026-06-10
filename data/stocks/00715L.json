@@ -1,28 +1,28 @@
 {
   "stock_id": "00715L",
   "name": "00715L",
-  "date": "2026-06-08",
-  "close": 57.1,
-  "health_score": 103,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "date": "2026-06-09",
+  "close": 53.05,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 6,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -58.0,
-    "margin_slope": -406.0,
-    "maintenance_ratio": 160.0,
-    "short_change": -283.0,
-    "short_margin_ratio": 39.14
+    "margin_change": 457.0,
+    "margin_slope": -135.8,
+    "maintenance_ratio": 149.81,
+    "short_change": 186.0,
+    "short_margin_ratio": 39.19
   },
   "tdcc": {},
   "main_force": {
-    "cost": 59.48,
-    "distance": -4.0,
+    "cost": 59.02,
+    "distance": -10.12,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,22 +31,18 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
-  "chip_status": "strong",
-  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 6 天"
-    },
     {
       "level": "RED",
       "title": "短線券資比過熱 (警示)"
     }
   ],
   "raw_signals": [
-    "主力洗盤完成"
+    "散戶接刀中"
   ],
-  "data_version": "2026-06-08"
+  "data_version": "2026-06-09"
 }

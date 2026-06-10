@@ -1,23 +1,23 @@
 {
   "stock_id": "2882",
   "name": "2882",
-  "date": "2026-06-08",
-  "close": 95.0,
+  "date": "2026-06-09",
+  "close": 104.0,
   "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.051,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.033,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -194.0,
-    "margin_slope": 217.8,
-    "maintenance_ratio": 188.67,
-    "short_change": -23.0,
-    "short_margin_ratio": 5.01
+    "margin_change": 945.0,
+    "margin_slope": 366.2,
+    "maintenance_ratio": 203.2,
+    "short_change": 33.0,
+    "short_margin_ratio": 4.76
   },
   "tdcc": {
     "big_holder_change": 83.22,
@@ -25,8 +25,8 @@
     "holder_concentration": 85.58
   },
   "main_force": {
-    "cost": 83.92,
-    "distance": 13.2,
+    "cost": 85.3,
+    "distance": 21.92,
     "trend": "UP"
   },
   "sector": {
@@ -39,7 +39,14 @@
   },
   "chip_status": "caution",
   "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-08"
+  "data_version": "2026-06-09",
+  "abnormal_gm": true,
+  "gm_warning": "⚠️ 毛利率為負 (0.00%)，營運異常，請審慎評估"
 }

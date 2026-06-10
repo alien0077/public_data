@@ -1,23 +1,23 @@
 {
   "stock_id": "6727",
   "name": "6727",
-  "date": "2026-06-08",
-  "close": 425.5,
+  "date": "2026-06-09",
+  "close": 468.0,
   "health_score": 86,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中/融資斷頭預警」。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成/融資斷頭預警」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_ratio": -2.557,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 37.0,
-    "margin_slope": -145.6,
-    "maintenance_ratio": 130.0,
-    "short_change": -1.0,
-    "short_margin_ratio": 0.0
+    "margin_change": -339.0,
+    "margin_slope": -211.4,
+    "maintenance_ratio": 143.61,
+    "short_change": 115.0,
+    "short_margin_ratio": 2.64
   },
   "tdcc": {
     "big_holder_change": 8.59,
@@ -25,8 +25,8 @@
     "holder_concentration": 31.88
   },
   "main_force": {
-    "cost": 545.5,
-    "distance": -22.0,
+    "cost": 543.15,
+    "distance": -13.84,
     "trend": "DOWN"
   },
   "sector": {
@@ -41,13 +41,13 @@
   "chip_warning": "",
   "events": [
     {
-      "level": "RED",
-      "title": "融資維持率低迷 (130.0%)"
+      "level": "GREEN",
+      "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [
-    "散戶接刀中",
+    "主力洗盤完成",
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-08"
+  "data_version": "2026-06-09"
 }

@@ -1,23 +1,23 @@
 {
   "stock_id": "8110",
   "name": "8110",
-  "date": "2026-06-08",
-  "close": 51.6,
-  "health_score": 83,
+  "date": "2026-06-09",
+  "close": 54.8,
+  "health_score": 113,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.168,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.251,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -1267.0,
-    "margin_slope": -271.2,
-    "maintenance_ratio": 158.03,
-    "short_change": -1074.0,
-    "short_margin_ratio": 3.52
+    "margin_change": 113.0,
+    "margin_slope": -279.4,
+    "maintenance_ratio": 167.25,
+    "short_change": 6.0,
+    "short_margin_ratio": 3.53
   },
   "tdcc": {
     "big_holder_change": 48.47,
@@ -25,21 +25,26 @@
     "holder_concentration": 51.86
   },
   "main_force": {
-    "cost": 54.42,
-    "distance": -5.18,
-    "trend": "DOWN"
+    "cost": 54.61,
+    "distance": 0.35,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-08"
+  "data_version": "2026-06-09"
 }

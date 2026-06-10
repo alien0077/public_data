@@ -1,22 +1,22 @@
 {
   "stock_id": "5531",
   "name": "5531",
-  "date": "2026-06-08",
-  "close": 7.83,
-  "health_score": 83,
+  "date": "2026-06-09",
+  "close": 8.03,
+  "health_score": 113,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.003,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.016,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3.0,
-    "margin_slope": 19.2,
-    "maintenance_ratio": 165.61,
-    "short_change": 1.0,
+    "margin_change": -13.0,
+    "margin_slope": 16.6,
+    "maintenance_ratio": 170.06,
+    "short_change": 0.0,
     "short_margin_ratio": 0.43
   },
   "tdcc": {
@@ -25,23 +25,23 @@
     "holder_concentration": 86.23
   },
   "main_force": {
-    "cost": 7.88,
-    "distance": -0.63,
-    "trend": "DOWN"
+    "cost": 7.87,
+    "distance": 2.03,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
-  "chip_status": "danger",
-  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [],
   "raw_signals": [
-    "散戶接刀中"
+    "主力洗盤完成"
   ],
-  "data_version": "2026-06-08"
+  "data_version": "2026-06-09"
 }

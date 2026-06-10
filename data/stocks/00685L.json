@@ -1,41 +1,46 @@
 {
   "stock_id": "00685L",
   "name": "00685L",
-  "date": "2026-06-08",
-  "close": 266.85,
-  "health_score": 103,
+  "date": "2026-06-09",
+  "close": 282.3,
+  "health_score": 113,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -47.0,
-    "margin_slope": 92.6,
-    "maintenance_ratio": 164.65,
-    "short_change": -19.0,
-    "short_margin_ratio": 0.42
+    "margin_change": 72.0,
+    "margin_slope": 94.4,
+    "maintenance_ratio": 173.3,
+    "short_change": 45.0,
+    "short_margin_ratio": 2.71
   },
   "tdcc": {},
   "main_force": {
-    "cost": 270.12,
-    "distance": -1.21,
-    "trend": "DOWN"
+    "cost": 271.5,
+    "distance": 3.98,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "chip_status": "danger",
   "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-08"
+  "data_version": "2026-06-09"
 }

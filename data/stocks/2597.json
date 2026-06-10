@@ -1,23 +1,23 @@
 {
   "stock_id": "2597",
   "name": "2597",
-  "date": "2026-06-08",
-  "close": 184.5,
+  "date": "2026-06-09",
+  "close": 191.0,
   "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.261,
+    "foreign_buy_ratio": -0.185,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -87.0,
-    "margin_slope": -118.2,
-    "maintenance_ratio": 195.55,
-    "short_change": -76.0,
-    "short_margin_ratio": 24.66
+    "margin_change": -29.0,
+    "margin_slope": -34.8,
+    "maintenance_ratio": 200.34,
+    "short_change": 0.0,
+    "short_margin_ratio": 28.35
   },
   "tdcc": {
     "big_holder_change": 75.53,
@@ -25,8 +25,8 @@
     "holder_concentration": 80.22
   },
   "main_force": {
-    "cost": 157.25,
-    "distance": 17.33,
+    "cost": 158.9,
+    "distance": 20.2,
     "trend": "UP"
   },
   "sector": {
@@ -39,7 +39,14 @@
   },
   "chip_status": "strong",
   "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
-  "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-08"
+  "events": [
+    {
+      "level": "RED",
+      "title": "短線券資比過熱 (警示)"
+    }
+  ],
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-09"
 }
