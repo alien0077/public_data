@@ -134,7 +134,7 @@ export const TrendHunter = {
                         <div class="w-3 h-3 rounded-full bg-green-500"></div>
                     </div>
                 </div>
-                <div id="trend-chart-container" class="w-full h-[520px] p-2 flex items-center justify-center">
+                <div id="trend-chart-container" class="w-full min-h-[800px] p-2 flex flex-col">
                     <div class="text-center">
                         <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4"></div>
                         <p class="text-gray-500">正在準備 ECharts 視覺化組件...</p>
