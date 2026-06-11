@@ -822,38 +822,10 @@ export const TrendHunter = {
                 `;
                 container.insertAdjacentHTML('beforeend', bannerHtml);
 
-                // === 2. 🚀 v10.7: Momentum Alert (資金異動雷達) ===
-                const hotThemes = (rotationData.themes || [])
-                    .filter(t => (t.flow_ratio || 0) > 3.0 && (t.avg_pct || 0) > 0)
-                    .sort((a, b) => (b.flow_ratio || 0) - (a.flow_ratio || 0))
-                    .slice(0, 5);
-                if (hotThemes.length > 0) {
-                    const cards = hotThemes.map(t => `
-                        <div class="flex-shrink-0 p-2 rounded-xl" style="width:160px;background:rgba(255,165,0,0.1);border:1px solid rgba(255,165,0,0.3)">
-                            <div class="flex items-center gap-1 mb-1">
-                                <span>🔥</span>
-                                <span class="text-xs font-bold truncate">${t.name}</span>
-                                <span class="text-xs font-bold text-red-500 ml-auto">${(t.avg_pct || 0) > 0 ? '+' : ''}${(t.avg_pct || 0).toFixed(1)}%</span>
-                            </div>
-                            <div class="text-xs" style="color:${textSec}">資金顯著湧入，建議增加 Beta 曝險</div>
-                        </div>
-                    `).join('');
-                    container.insertAdjacentHTML('beforeend', `
-                        <div class="mb-3 p-3 rounded-xl" style="background:${isDark ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.03)'}">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span style="color:#f97316">⚡</span>
-                                <span class="text-xs font-bold">資金異動雷達</span>
-                                <span class="text-xs font-bold px-1.5 py-0.5 rounded text-white" style="background:#ef4444;font-size:8px">LIVE</span>
-                            </div>
-                            <div class="flex gap-2 overflow-x-auto pb-1" style="scrollbar-width:none">${cards}</div>
-                        </div>
-                    `);
-                }
-
-                // === 3. 🚀 v10.7: 族群資金熱力圖 (Treemap) ===
+                // === 2. 🚀 v10.7: 族群資金輪動熱力圖 (Treemap) ===
                 const treemapHtml = `
                     <div class="mb-2 flex items-center gap-2">
-                        <span class="text-xs font-bold">🔥 族群資金熱力圖</span>
+                        <span class="text-xs font-bold">🔥 族群資金輪動熱力圖</span>
                         <span class="text-xs" style="color:${textSec}">面積代表成交值佔比，顏色代表平均漲跌幅</span>
                     </div>
                 `;
@@ -864,7 +836,7 @@ export const TrendHunter = {
                 treemapDom.style.marginBottom = '12px';
                 container.appendChild(treemapDom);
 
-                // === 4. 產業/AI 主題切換開關 + 象限圖 ===
+                // === 3. 產業/AI 主題切換開關 + 象限圖 ===
                 const toggleHtml = `
                     <div class="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-0.5 mb-2" style="width:fit-content">
                         <button class="view-toggle px-3 py-1 text-xs rounded-md font-bold bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 shadow-sm" data-view="industry">🏭 產業分類</button>
