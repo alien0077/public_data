@@ -793,8 +793,78 @@ export const TrendHunter = {
                 }
 
                 container.innerHTML = ''; // 清空 loading
+                const isDark = document.documentElement.classList.contains('dark');
+                const textSec = isDark ? '#aaa' : '#666';
 
-                // 🚀 v10.6: 產業/AI 主題切換開關
+                function getHeatColor(pct) {
+                    if (pct > 2.0) return '#cc1919';
+                    if (pct > 0) return '#ff4d4d';
+                    if (pct < -2.0) return '#1a991a';
+                    if (pct < 0) return '#4de64d';
+                    return isDark ? '#555' : '#999';
+                }
+
+                // === 1. 🚀 v10.7: Regime Banner (市場環境感測) ===
+                const regime = rotationData.regime || '';
+                const isAggressive = regime === 'AGGRESSIVE';
+                const badgeColor = isAggressive ? '#ef4444' : '#3b82f6';
+                const descText = isAggressive
+                    ? '當前為【積極進攻】模式，資金集中在強勢成長股，建議提高 Beta 曝險。'
+                    : (regime === 'CAUTIOUS' ? '當前為【謹慎觀察】模式，短線動能減弱，建議降低 Beta 曝險。' : '當前為【保守防禦】模式，建議關注高股息或防禦型板塊。');
+                const bannerHtml = `
+                    <div class="mb-3 p-3 rounded-xl" style="background:${isDark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.04)'}">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-sm">📡 市場環境感測</span>
+                            <span class="text-xs font-bold px-2 py-0.5 rounded-md text-white" style="background:${badgeColor}">${regime || '--'}</span>
+                        </div>
+                        <div class="text-xs" style="color:${textSec}">${descText}</div>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', bannerHtml);
+
+                // === 2. 🚀 v10.7: Momentum Alert (資金異動雷達) ===
+                const hotThemes = (rotationData.themes || [])
+                    .filter(t => (t.flow_ratio || 0) > 3.0 && (t.avg_pct || 0) > 0)
+                    .sort((a, b) => (b.flow_ratio || 0) - (a.flow_ratio || 0))
+                    .slice(0, 5);
+                if (hotThemes.length > 0) {
+                    const cards = hotThemes.map(t => `
+                        <div class="flex-shrink-0 p-2 rounded-xl" style="width:160px;background:rgba(255,165,0,0.1);border:1px solid rgba(255,165,0,0.3)">
+                            <div class="flex items-center gap-1 mb-1">
+                                <span>🔥</span>
+                                <span class="text-xs font-bold truncate">${t.name}</span>
+                                <span class="text-xs font-bold text-red-500 ml-auto">${(t.avg_pct || 0) > 0 ? '+' : ''}${(t.avg_pct || 0).toFixed(1)}%</span>
+                            </div>
+                            <div class="text-xs" style="color:${textSec}">資金顯著湧入，建議增加 Beta 曝險</div>
+                        </div>
+                    `).join('');
+                    container.insertAdjacentHTML('beforeend', `
+                        <div class="mb-3 p-3 rounded-xl" style="background:${isDark ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.03)'}">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span style="color:#f97316">⚡</span>
+                                <span class="text-xs font-bold">資金異動雷達</span>
+                                <span class="text-xs font-bold px-1.5 py-0.5 rounded text-white" style="background:#ef4444;font-size:8px">LIVE</span>
+                            </div>
+                            <div class="flex gap-2 overflow-x-auto pb-1" style="scrollbar-width:none">${cards}</div>
+                        </div>
+                    `);
+                }
+
+                // === 3. 🚀 v10.7: 族群資金熱力圖 (Treemap) ===
+                const treemapHtml = `
+                    <div class="mb-2 flex items-center gap-2">
+                        <span class="text-xs font-bold">🔥 族群資金熱力圖</span>
+                        <span class="text-xs" style="color:${textSec}">面積代表成交值佔比，顏色代表平均漲跌幅</span>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', treemapHtml);
+                const treemapDom = document.createElement('div');
+                treemapDom.style.width = '100%';
+                treemapDom.style.height = '260px';
+                treemapDom.style.marginBottom = '12px';
+                container.appendChild(treemapDom);
+
+                // === 4. 產業/AI 主題切換開關 + 象限圖 ===
                 const toggleHtml = `
                     <div class="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-0.5 mb-2" style="width:fit-content">
                         <button class="view-toggle px-3 py-1 text-xs rounded-md font-bold bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 shadow-sm" data-view="industry">🏭 產業分類</button>
@@ -805,14 +875,69 @@ export const TrendHunter = {
 
                 const chartDom = document.createElement('div');
                 chartDom.style.width = '100%';
-                chartDom.style.height = '100%';
+                chartDom.style.height = '400px';
                 container.appendChild(chartDom);
 
                 setTimeout(() => {
                     if (!container.contains(chartDom)) return;
-                    const isDark = document.documentElement.classList.contains('dark');
+
+                    // Treemap
+                    const treemapChart = echarts.init(treemapDom, isDark ? 'dark' : null);
+
+                    function buildTreemapOption(data) {
+                        const sorted = [...data].sort((a, b) => (b.flow_ratio || 0) - (a.flow_ratio || 0));
+                        return {
+                            backgroundColor: 'transparent',
+                            tooltip: {
+                                formatter: function(p) {
+                                    const d = p.data;
+                                    const pct = (d._avgPct || 0);
+                                    const pctStr = pct > 0 ? `+${pct.toFixed(1)}%` : `${pct.toFixed(1)}%`;
+                                    return `<b>${d.name}</b><br/>成交佔比: ${(d._flowRatio || 0).toFixed(1)}%<br/>平均漲跌幅: ${pctStr}`;
+                                }
+                            },
+                            series: [{
+                                type: 'treemap',
+                                roam: false,
+                                width: '100%',
+                                height: '100%',
+                                breadcrumb: { show: false },
+                                label: {
+                                    show: true,
+                                    fontSize: 10,
+                                    color: '#fff',
+                                    fontWeight: 'bold',
+                                    textShadowBlur: 2,
+                                    textShadowColor: 'rgba(0,0,0,0.5)'
+                                },
+                                itemStyle: {
+                                    borderColor: isDark ? '#333' : '#fff',
+                                    borderWidth: 2
+                                },
+                                levels: [{
+                                    colorSaturation: [0.3, 0.6],
+                                    itemStyle: {
+                                        borderColor: isDark ? '#333' : '#fff',
+                                        borderWidth: 2,
+                                        gapWidth: 2
+                                    }
+                                }],
+                                data: sorted.map(t => ({
+                                    name: t.name,
+                                    value: Math.max(t.flow_ratio || 1, 0.5),
+                                    _flowRatio: t.flow_ratio,
+                                    _avgPct: t.avg_pct,
+                                    itemStyle: { color: getHeatColor(t.avg_pct || 0) }
+                                }))
+                            }]
+                        };
+                    }
+
+                    treemapChart.setOption(buildTreemapOption(rotationData.themes));
+                    treemapChart.resize();
+
+                    // Scatter chart (象限圖)
                     const myChart = echarts.init(chartDom, isDark ? 'dark' : null);
-                    window.addEventListener('resize', () => myChart.resize());
 
                     function getActiveData(view) {
                         return view === 'ai' ? (rotationData.ai_themes || rotationData.themes) : rotationData.themes;
@@ -967,9 +1092,12 @@ export const TrendHunter = {
                     let option = buildOption(getActiveData(currentView));
                     myChart.setOption(option);
                     myChart.resize();
-                    window.addEventListener('resize', () => myChart.resize());
+                    window.addEventListener('resize', () => {
+                        treemapChart.resize();
+                        myChart.resize();
+                    });
 
-                    // 🚀 v10.6: 切換事件
+                    // 切換事件 — 同步更新 treemap + scatter
                     container.querySelectorAll('.view-toggle').forEach(btn => {
                         btn.addEventListener('click', function() {
                             const view = this.dataset.view;
@@ -979,7 +1107,9 @@ export const TrendHunter = {
                                 b.className = 'view-toggle px-3 py-1 text-xs rounded-md text-gray-500 dark:text-gray-400';
                             });
                             this.className = 'view-toggle px-3 py-1 text-xs rounded-md font-bold bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 shadow-sm';
-                            option = buildOption(getActiveData(view));
+                            const activeData = getActiveData(view);
+                            treemapChart.setOption(buildTreemapOption(activeData), true);
+                            option = buildOption(activeData);
                             myChart.setOption(option, true);
                         });
                     });
