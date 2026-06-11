@@ -1,43 +1,41 @@
 {
   "stock_id": "00664R",
   "name": "00664R",
-  "date": "2026-06-09",
-  "close": 1.69,
-  "health_score": 103,
+  "date": "2026-06-10",
+  "close": 1.75,
+  "health_score": 113,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8071.0,
-    "margin_slope": 1216.6,
-    "maintenance_ratio": 160.95,
-    "short_change": -7.0,
-    "short_margin_ratio": 0.39
+    "margin_change": 10469.0,
+    "margin_slope": 3267.2,
+    "maintenance_ratio": 167.62,
+    "short_change": 1041.0,
+    "short_margin_ratio": 1.26
   },
   "tdcc": {},
   "main_force": {
-    "cost": 1.75,
-    "distance": -3.43,
-    "trend": "DOWN"
+    "cost": 1.74,
+    "distance": 0.57,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "chip_status": "caution",
   "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
   "events": [],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-09"
+  "raw_signals": [],
+  "data_version": "2026-06-10"
 }

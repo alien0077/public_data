@@ -1,6 +1,6 @@
 {
   "symbol": "00983A",
-  "updated_at": "2026-06-10",
+  "updated_at": "2026-06-11",
   "lines": [
     {
       "id": "L_10",
@@ -66,28 +66,6 @@
       "end_idx": null,
       "end_date": null,
       "broken": false,
-      "strength": 1
-    },
-    {
-      "id": "L_108",
-      "type": "low",
-      "price": 11.18,
-      "start_idx": 108,
-      "start_date": "2025-11-21",
-      "end_idx": 160,
-      "end_date": "2026-02-05",
-      "broken": true,
-      "strength": 1
-    },
-    {
-      "id": "L_136",
-      "type": "low",
-      "price": 11.8,
-      "start_idx": 136,
-      "start_date": "2026-01-02",
-      "end_idx": 156,
-      "end_date": "2026-01-30",
-      "broken": true,
       "strength": 1
     },
     {
@@ -195,9 +173,9 @@
       "price": 11.18,
       "start_idx": 221,
       "start_date": "2026-05-18",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 239,
+      "end_date": "2026-06-11",
+      "broken": true,
       "strength": 1
     },
     {
@@ -206,9 +184,9 @@
       "price": 11.18,
       "start_idx": 222,
       "start_date": "2026-05-19",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 239,
+      "end_date": "2026-06-11",
+      "broken": true,
       "strength": 1
     },
     {
@@ -226,19 +204,7 @@
   "events": [
     {
       "type": "CHOCH_DOWN",
-      "price": 11.8,
-      "idx": 156,
-      "date": "2026-01-30"
-    },
-    {
-      "type": "CHOCH_DOWN",
       "price": 11.04,
-      "idx": 160,
-      "date": "2026-02-05"
-    },
-    {
-      "type": "CHOCH_DOWN",
-      "price": 11.18,
       "idx": 160,
       "date": "2026-02-05"
     },
@@ -283,6 +249,18 @@
       "price": 11.9,
       "idx": 230,
       "date": "2026-05-29"
+    },
+    {
+      "type": "CHOCH_DOWN",
+      "price": 11.18,
+      "idx": 239,
+      "date": "2026-06-11"
+    },
+    {
+      "type": "CHOCH_DOWN",
+      "price": 11.18,
+      "idx": 239,
+      "date": "2026-06-11"
     }
   ]
 }

@@ -1,22 +1,22 @@
 {
   "stock_id": "4956",
   "name": "4956",
-  "date": "2026-06-09",
-  "close": 40.4,
-  "health_score": 83,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "date": "2026-06-10",
+  "close": 37.8,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.004,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.115,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -21.0,
-    "margin_slope": -68.0,
-    "maintenance_ratio": 151.31,
-    "short_change": 2.0,
+    "margin_change": -201.0,
+    "margin_slope": -94.4,
+    "maintenance_ratio": 142.44,
+    "short_change": 0.0,
     "short_margin_ratio": 0.2
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 37.73
   },
   "main_force": {
-    "cost": 44.5,
-    "distance": -9.21,
+    "cost": 44.23,
+    "distance": -14.54,
     "trend": "DOWN"
   },
   "sector": {
@@ -39,14 +39,9 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "主力洗盤完成"
+    "融資斷頭預警"
   ],
-  "data_version": "2026-06-09"
+  "data_version": "2026-06-10"
 }

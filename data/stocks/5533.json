@@ -1,21 +1,21 @@
 {
   "stock_id": "5533",
   "name": "5533",
-  "date": "2026-06-09",
-  "close": 13.75,
-  "health_score": 66,
-  "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "date": "2026-06-10",
+  "close": 14.1,
+  "health_score": 113,
+  "signal": "Bullish",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.012,
+    "foreign_buy_ratio": -0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 59.0,
-    "margin_slope": 24.0,
-    "maintenance_ratio": 164.75,
+    "margin_change": -17.0,
+    "margin_slope": 18.8,
+    "maintenance_ratio": 168.94,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -26,20 +26,22 @@
   },
   "main_force": {
     "cost": 13.91,
-    "distance": -1.15,
-    "trend": "DOWN"
+    "distance": 1.37,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
-  "chip_status": "danger",
-  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-09"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-10"
 }

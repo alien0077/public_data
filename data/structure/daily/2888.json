@@ -1,12 +1,12 @@
 {
   "symbol": "2888",
-  "updated_at": "2026-06-10",
+  "updated_at": "2026-06-11",
   "lines": [
     {
-      "id": "H_9",
+      "id": "H_8",
       "type": "high",
       "price": 12.7,
-      "start_idx": 9,
+      "start_idx": 8,
       "start_date": "2025-04-01",
       "end_idx": null,
       "end_date": null,
@@ -14,10 +14,10 @@
       "strength": 1
     },
     {
-      "id": "L_13",
+      "id": "L_12",
       "type": "low",
       "price": 9.85,
-      "start_idx": 13,
+      "start_idx": 12,
       "start_date": "2025-04-09",
       "end_idx": null,
       "end_date": null,
@@ -25,32 +25,32 @@
       "strength": 1
     },
     {
-      "id": "H_17",
+      "id": "H_16",
       "type": "high",
       "price": 11.55,
-      "start_idx": 17,
+      "start_idx": 16,
       "start_date": "2025-04-15",
-      "end_idx": 27,
+      "end_idx": 26,
       "end_date": "2025-04-29",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "H_29",
+      "id": "H_28",
       "type": "high",
       "price": 11.85,
-      "start_idx": 29,
+      "start_idx": 28,
       "start_date": "2025-05-02",
-      "end_idx": 44,
+      "end_idx": 43,
       "end_date": "2025-05-23",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "L_31",
+      "id": "L_30",
       "type": "low",
       "price": 10.95,
-      "start_idx": 31,
+      "start_idx": 30,
       "start_date": "2025-05-06",
       "end_idx": null,
       "end_date": null,
@@ -58,10 +58,10 @@
       "strength": 1
     },
     {
-      "id": "H_47",
+      "id": "H_46",
       "type": "high",
       "price": 12.2,
-      "start_idx": 47,
+      "start_idx": 46,
       "start_date": "2025-05-28",
       "end_idx": null,
       "end_date": null,
@@ -69,22 +69,33 @@
       "strength": 1
     },
     {
-      "id": "L_49",
+      "id": "L_48",
       "type": "low",
       "price": 11.75,
-      "start_idx": 49,
+      "start_idx": 48,
       "start_date": "2025-06-02",
-      "end_idx": 63,
+      "end_idx": 62,
       "end_date": "2025-06-20",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "H_54",
+      "id": "H_53",
       "type": "high",
       "price": 12.1,
-      "start_idx": 54,
+      "start_idx": 53,
       "start_date": "2025-06-09",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_60",
+      "type": "high",
+      "price": 11.9,
+      "start_idx": 60,
+      "start_date": "2025-06-18",
       "end_idx": null,
       "end_date": null,
       "broken": false,
@@ -95,17 +106,6 @@
       "type": "high",
       "price": 11.9,
       "start_idx": 61,
-      "start_date": "2025-06-18",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
-      "strength": 1
-    },
-    {
-      "id": "H_62",
-      "type": "high",
-      "price": 11.9,
-      "start_idx": 62,
       "start_date": "2025-06-19",
       "end_idx": null,
       "end_date": null,
@@ -113,21 +113,21 @@
       "strength": 1
     },
     {
-      "id": "L_64",
+      "id": "L_63",
       "type": "low",
       "price": 11.25,
-      "start_idx": 64,
+      "start_idx": 63,
       "start_date": "2025-06-23",
-      "end_idx": 74,
+      "end_idx": 73,
       "end_date": "2025-07-07",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "L_72",
+      "id": "L_71",
       "type": "low",
       "price": 11.1,
-      "start_idx": 72,
+      "start_idx": 71,
       "start_date": "2025-07-03",
       "end_idx": null,
       "end_date": null,
@@ -139,25 +139,25 @@
     {
       "type": "BOS_UP",
       "price": 11.55,
-      "idx": 27,
+      "idx": 26,
       "date": "2025-04-29"
     },
     {
       "type": "BOS_UP",
       "price": 11.85,
-      "idx": 44,
+      "idx": 43,
       "date": "2025-05-23"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 11.75,
-      "idx": 63,
+      "idx": 62,
       "date": "2025-06-20"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 11.25,
-      "idx": 74,
+      "idx": 73,
       "date": "2025-07-07"
     }
   ]

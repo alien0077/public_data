@@ -1,23 +1,23 @@
 {
   "stock_id": "3322",
   "name": "3322",
-  "date": "2026-06-09",
-  "close": 15.65,
+  "date": "2026-06-10",
+  "close": 15.05,
   "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.346,
+    "foreign_buy_days": 6,
+    "foreign_buy_ratio": 0.082,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 95.0,
-    "margin_slope": 35.6,
-    "maintenance_ratio": 193.5,
-    "short_change": 22.0,
-    "short_margin_ratio": 0.17
+    "margin_change": -336.0,
+    "margin_slope": -58.2,
+    "maintenance_ratio": 185.25,
+    "short_change": -22.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 30.62,
@@ -25,8 +25,8 @@
     "holder_concentration": 35.94
   },
   "main_force": {
-    "cost": 13.48,
-    "distance": 16.1,
+    "cost": 13.54,
+    "distance": 11.15,
     "trend": "UP"
   },
   "sector": {
@@ -37,18 +37,14 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 5 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
+      "title": "外資連買 6 天"
     }
   ],
   "raw_signals": [],
-  "data_version": "2026-06-09"
+  "data_version": "2026-06-10"
 }

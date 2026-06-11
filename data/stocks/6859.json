@@ -1,28 +1,28 @@
 {
   "stock_id": "6859",
   "name": "6859",
-  "date": "2026-06-09",
-  "close": 129.0,
-  "health_score": 130,
+  "date": "2026-06-10",
+  "close": 126.0,
+  "health_score": 113,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 5,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -7.0,
-    "margin_slope": -7.6,
-    "maintenance_ratio": 174.34,
+    "margin_change": 8.0,
+    "margin_slope": -6.8,
+    "maintenance_ratio": 169.56,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {},
   "main_force": {
-    "cost": 123.32,
-    "distance": 4.61,
+    "cost": 123.85,
+    "distance": 1.74,
     "trend": "UP"
   },
   "sector": {
@@ -35,14 +35,9 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 5 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "主力洗盤完成"
+    "散戶接刀中"
   ],
-  "data_version": "2026-06-09"
+  "data_version": "2026-06-10"
 }

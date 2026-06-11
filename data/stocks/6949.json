@@ -1,23 +1,23 @@
 {
   "stock_id": "6949",
   "name": "6949",
-  "date": "2026-06-09",
-  "close": 704.0,
+  "date": "2026-06-10",
+  "close": 725.0,
   "health_score": 150,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.027,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.105,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 39.0,
-    "margin_slope": 21.4,
-    "maintenance_ratio": 175.16,
-    "short_change": 2.0,
-    "short_margin_ratio": 0.08
+    "margin_change": 49.0,
+    "margin_slope": 30.2,
+    "maintenance_ratio": 179.76,
+    "short_change": -3.0,
+    "short_margin_ratio": 0.02
   },
   "tdcc": {
     "big_holder_change": 63.89,
@@ -25,8 +25,8 @@
     "holder_concentration": 73.9
   },
   "main_force": {
-    "cost": 669.85,
-    "distance": 5.1,
+    "cost": 672.2,
+    "distance": 7.85,
     "trend": "UP"
   },
   "sector": {
@@ -39,9 +39,14 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-09",
+  "data_version": "2026-06-10",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (-18.92%)，營運異常，請審慎評估"
 }

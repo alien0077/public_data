@@ -1,21 +1,21 @@
 {
   "stock_id": "8433",
   "name": "8433",
-  "date": "2026-06-09",
-  "close": 52.0,
-  "health_score": 66,
-  "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "date": "2026-06-10",
+  "close": 53.8,
+  "health_score": 113,
+  "signal": "Bullish",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.007,
+    "foreign_buy_ratio": -0.017,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2.0,
-    "margin_slope": 1.2,
-    "maintenance_ratio": 164.73,
+    "margin_change": -1.0,
+    "margin_slope": 0.8,
+    "maintenance_ratio": 170.44,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -26,20 +26,22 @@
   },
   "main_force": {
     "cost": 52.61,
-    "distance": -1.16,
-    "trend": "DOWN"
+    "distance": 2.26,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
-  "chip_status": "danger",
-  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-09"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-10"
 }
