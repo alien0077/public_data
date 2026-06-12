@@ -1,23 +1,23 @@
 {
   "stock_id": "2646",
   "name": "2646",
-  "date": "2026-06-10",
-  "close": 20.15,
+  "date": "2026-06-11",
+  "close": 20.2,
   "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.046,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.01,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -30.0,
-    "margin_slope": 25.2,
-    "maintenance_ratio": 165.11,
+    "margin_change": 36.0,
+    "margin_slope": 30.8,
+    "maintenance_ratio": 165.52,
     "short_change": -1.0,
-    "short_margin_ratio": 0.96
+    "short_margin_ratio": 0.92
   },
   "tdcc": {
     "big_holder_change": 63.23,
@@ -26,7 +26,7 @@
   },
   "main_force": {
     "cost": 20.34,
-    "distance": -0.93,
+    "distance": -0.69,
     "trend": "DOWN"
   },
   "sector": {
@@ -39,7 +39,12 @@
   },
   "chip_status": "danger",
   "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-10"
+  "data_version": "2026-06-11"
 }

@@ -1,6 +1,6 @@
 {
   "symbol": "00982B",
-  "updated_at": "2026-06-11",
+  "updated_at": "2026-06-12",
   "lines": [
     {
       "id": "L_5",
@@ -179,17 +179,6 @@
       "strength": 1
     },
     {
-      "id": "L_160",
-      "type": "low",
-      "price": 9.87,
-      "start_idx": 160,
-      "start_date": "2025-12-16",
-      "end_idx": 212,
-      "end_date": "2026-03-12",
-      "broken": true,
-      "strength": 1
-    },
-    {
       "id": "H_181",
       "type": "high",
       "price": 10.17,
@@ -198,17 +187,6 @@
       "end_idx": null,
       "end_date": null,
       "broken": false,
-      "strength": 1
-    },
-    {
-      "id": "L_191",
-      "type": "low",
-      "price": 9.93,
-      "start_idx": 191,
-      "start_date": "2026-01-30",
-      "end_idx": 212,
-      "end_date": "2026-03-12",
-      "broken": true,
       "strength": 1
     },
     {
@@ -305,9 +283,9 @@
       "price": 9.93,
       "start_idx": 267,
       "start_date": "2026-06-02",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 275,
+      "end_date": "2026-06-12",
+      "broken": true,
       "strength": 1
     },
     {
@@ -316,9 +294,9 @@
       "price": 9.93,
       "start_idx": 269,
       "start_date": "2026-06-04",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 275,
+      "end_date": "2026-06-12",
+      "broken": true,
       "strength": 1
     }
   ],
@@ -332,18 +310,6 @@
     {
       "type": "CHOCH_DOWN",
       "price": 9.88,
-      "idx": 212,
-      "date": "2026-03-12"
-    },
-    {
-      "type": "CHOCH_DOWN",
-      "price": 9.87,
-      "idx": 212,
-      "date": "2026-03-12"
-    },
-    {
-      "type": "CHOCH_DOWN",
-      "price": 9.93,
       "idx": 212,
       "date": "2026-03-12"
     },
@@ -382,6 +348,18 @@
       "price": 9.89,
       "idx": 265,
       "date": "2026-05-29"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 9.93,
+      "idx": 275,
+      "date": "2026-06-12"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 9.93,
+      "idx": 275,
+      "date": "2026-06-12"
     }
   ]
 }

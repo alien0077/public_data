@@ -1,46 +1,48 @@
 {
   "stock_id": "4107",
   "name": "4107",
-  "date": "2026-06-10",
-  "close": 115.5,
-  "health_score": 83,
+  "date": "2026-06-11",
+  "close": 117.0,
+  "health_score": 130,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 6,
+    "foreign_buy_days": 7,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -22.0,
-    "margin_slope": -6.4,
-    "maintenance_ratio": 166.12,
+    "margin_change": -10.0,
+    "margin_slope": -7.2,
+    "maintenance_ratio": 168.39,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {},
   "main_force": {
-    "cost": 115.88,
-    "distance": -0.33,
-    "trend": "DOWN"
+    "cost": 115.8,
+    "distance": 1.04,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 6 天"
+      "title": "外資連買 7 天"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-10"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-11"
 }

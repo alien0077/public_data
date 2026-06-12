@@ -1,23 +1,23 @@
 {
   "stock_id": "3149",
   "name": "3149",
-  "date": "2026-06-10",
-  "close": 82.2,
+  "date": "2026-06-11",
+  "close": 80.5,
   "health_score": 130,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.432,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.519,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -194.0,
-    "margin_slope": -205.4,
-    "maintenance_ratio": 191.66,
-    "short_change": -10.0,
-    "short_margin_ratio": 3.13
+    "margin_change": -85.0,
+    "margin_slope": -196.8,
+    "maintenance_ratio": 184.24,
+    "short_change": -247.0,
+    "short_margin_ratio": 2.03
   },
   "tdcc": {
     "big_holder_change": 21.35,
@@ -25,8 +25,8 @@
     "holder_concentration": 27.36
   },
   "main_force": {
-    "cost": 71.48,
-    "distance": 15.0,
+    "cost": 72.82,
+    "distance": 10.55,
     "trend": "UP"
   },
   "sector": {
@@ -39,9 +39,14 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-10",
+  "data_version": "2026-06-11",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (-4.14%)，營運異常，請審慎評估"
 }

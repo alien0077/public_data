@@ -1,23 +1,23 @@
 {
   "stock_id": "6451",
   "name": "6451",
-  "date": "2026-06-10",
-  "close": 555.0,
-  "health_score": 86,
+  "date": "2026-06-11",
+  "close": 499.5,
+  "health_score": 120,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.543,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 1.363,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -630.0,
-    "margin_slope": -154.2,
-    "maintenance_ratio": 158.25,
-    "short_change": 67.0,
-    "short_margin_ratio": 3.8
+    "margin_change": -445.0,
+    "margin_slope": -251.4,
+    "maintenance_ratio": 142.73,
+    "short_change": -298.0,
+    "short_margin_ratio": 0.79
   },
   "tdcc": {
     "big_holder_change": 69.57,
@@ -25,8 +25,8 @@
     "holder_concentration": 76.67
   },
   "main_force": {
-    "cost": 584.52,
-    "distance": -5.05,
+    "cost": 583.25,
+    "distance": -14.36,
     "trend": "DOWN"
   },
   "sector": {
@@ -40,6 +40,8 @@
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-10"
+  "raw_signals": [
+    "融資斷頭預警"
+  ],
+  "data_version": "2026-06-11"
 }

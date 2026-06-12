@@ -1,21 +1,21 @@
 {
   "stock_id": "8444",
   "name": "8444",
-  "date": "2026-06-10",
-  "close": 4.97,
+  "date": "2026-06-11",
+  "close": 4.9,
   "health_score": 86,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「融資斷頭預警」。",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_ratio": -0.012,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
     "margin_change": 0.0,
     "margin_slope": 0.0,
-    "maintenance_ratio": 135.57,
+    "maintenance_ratio": 138.18,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 83.57
   },
   "main_force": {
-    "cost": 6.11,
-    "distance": -18.66,
+    "cost": 5.91,
+    "distance": -17.09,
     "trend": "DOWN"
   },
   "sector": {
@@ -41,18 +41,14 @@
   "chip_warning": "",
   "events": [
     {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    },
-    {
       "level": "RED",
-      "title": "融資維持率低迷 (135.57%)"
+      "title": "融資維持率低迷 (138.18%)"
     }
   ],
   "raw_signals": [
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-10",
+  "data_version": "2026-06-11",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (-33.67%)，營運異常，請審慎評估"
 }

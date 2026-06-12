@@ -1846,17 +1846,17 @@
   },
   "portfolio": {
     "cash": {
-      "trend": 571652.0,
+      "trend": 571780.0,
       "mr": 1000000.0,
-      "ai_inst": 125458.10000000003
+      "ai_inst": 62749.0
     },
     "positions": {
       "trend": [
         {
           "stock": "3189",
-          "entry_date": "2026-06-11",
-          "entry_price": 619.0,
-          "shares": 692,
+          "entry_date": "2026-06-12",
+          "entry_price": 610.0,
+          "shares": 702,
           "max_return": 0.0
         }
       ],
@@ -1864,34 +1864,45 @@
       "ai_inst": [
         {
           "stock": "8150",
-          "entry_date": "2026-06-11",
-          "entry_price": 97.1,
-          "shares": 5149,
+          "entry_date": "2026-06-12",
+          "entry_price": 97.0,
+          "shares": 5154,
           "max_return": 0.0,
           "consecutive_buy_days": 5,
-          "total_inst_buy": 11445812,
+          "total_inst_buy": 16268415,
           "b_signal_triggered": false,
           "phase": "ACCUMULATING"
         },
         {
           "stock": "8996",
-          "entry_date": "2026-06-11",
-          "entry_price": 1140.0,
-          "shares": 219,
+          "entry_date": "2026-06-12",
+          "entry_price": 1145.0,
+          "shares": 218,
           "max_return": 0.0,
           "consecutive_buy_days": 5,
-          "total_inst_buy": 3700326,
+          "total_inst_buy": 3278038,
+          "b_signal_triggered": false,
+          "phase": "ACCUMULATING"
+        },
+        {
+          "stock": "4908",
+          "entry_date": "2026-06-12",
+          "entry_price": 199.0,
+          "shares": 629,
+          "max_return": 0.0,
+          "consecutive_buy_days": 5,
+          "total_inst_buy": 2222317,
           "b_signal_triggered": false,
           "phase": "ACCUMULATING"
         },
         {
           "stock": "8016",
-          "entry_date": "2026-06-11",
-          "entry_price": 286.5,
-          "shares": 436,
+          "entry_date": "2026-06-12",
+          "entry_price": 289.5,
+          "shares": 216,
           "max_return": 0.0,
           "consecutive_buy_days": 5,
-          "total_inst_buy": 1262484,
+          "total_inst_buy": 1164366,
           "b_signal_triggered": true,
           "phase": "BREAKOUT"
         }
@@ -1899,42 +1910,42 @@
     },
     "nav_history": [
       {
-        "date": "2026-06-10",
+        "date": "2026-06-11",
         "nav": 1000000.0
       },
       {
-        "date": "2026-06-11",
+        "date": "2026-06-12",
         "nav": 3000000.0
       }
     ],
     "strategy_navs": {
       "trend": [
         {
-          "date": "2026-06-10",
+          "date": "2026-06-11",
           "nav": 1000000.0
         },
         {
-          "date": "2026-06-11",
+          "date": "2026-06-12",
           "nav": 1000000.0
         }
       ],
       "mr": [
         {
-          "date": "2026-06-10",
+          "date": "2026-06-11",
           "nav": 1000000.0
         },
         {
-          "date": "2026-06-11",
+          "date": "2026-06-12",
           "nav": 1000000.0
         }
       ],
       "ai_inst": [
         {
-          "date": "2026-06-10",
+          "date": "2026-06-11",
           "nav": 1000000.0
         },
         {
-          "date": "2026-06-11",
+          "date": "2026-06-12",
           "nav": 1000000.0
         }
       ]
@@ -2910,28 +2921,35 @@
   "trade_log": [
     {
       "stock": "8016",
-      "entry_date": "2026-06-11",
+      "entry_date": "2026-06-12",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009"
+    },
+    {
+      "stock": "4908",
+      "entry_date": "2026-06-12",
       "exit_date": null,
       "action": "BUY",
       "select_reason": "\u6cd5\u4eba\u5efa\u5009"
     },
     {
       "stock": "8996",
-      "entry_date": "2026-06-11",
+      "entry_date": "2026-06-12",
       "exit_date": null,
       "action": "BUY",
       "select_reason": "\u6cd5\u4eba\u5efa\u5009"
     },
     {
       "stock": "8150",
-      "entry_date": "2026-06-11",
+      "entry_date": "2026-06-12",
       "exit_date": null,
       "action": "BUY",
       "select_reason": "\u6cd5\u4eba\u5efa\u5009"
     },
     {
       "stock": "3189",
-      "entry_date": "2026-06-11",
+      "entry_date": "2026-06-12",
       "exit_date": null,
       "action": "BUY",
       "select_reason": "\u8da8\u52e2\u8ddf\u8e64\u00b7ETF\u52d5\u80fd"

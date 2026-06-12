@@ -1,23 +1,23 @@
 {
   "stock_id": "6261",
   "name": "6261",
-  "date": "2026-06-10",
-  "close": 94.8,
+  "date": "2026-06-11",
+  "close": 94.5,
   "health_score": 83,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 6,
-    "foreign_buy_ratio": 0.437,
+    "foreign_buy_days": 7,
+    "foreign_buy_ratio": 1.128,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -186.0,
-    "margin_slope": -123.2,
-    "maintenance_ratio": 139.65,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.08
+    "margin_change": -342.0,
+    "margin_slope": -177.0,
+    "maintenance_ratio": 140.83,
+    "short_change": -2.0,
+    "short_margin_ratio": 0.05
   },
   "tdcc": {
     "big_holder_change": 30.75,
@@ -25,8 +25,8 @@
     "holder_concentration": 38.56
   },
   "main_force": {
-    "cost": 113.14,
-    "distance": -16.21,
+    "cost": 111.84,
+    "distance": -15.5,
     "trend": "DOWN"
   },
   "sector": {
@@ -42,15 +42,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 6 天"
-    },
-    {
-      "level": "RED",
-      "title": "融資維持率低迷 (139.65%)"
+      "title": "外資連買 7 天"
     }
   ],
   "raw_signals": [
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-10"
+  "data_version": "2026-06-11"
 }

@@ -1,22 +1,22 @@
 {
   "stock_id": "4543",
   "name": "4543",
-  "date": "2026-06-10",
-  "close": 37.8,
-  "health_score": 86,
+  "date": "2026-06-11",
+  "close": 36.85,
+  "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.07,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.072,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -15.0,
-    "margin_slope": -23.0,
-    "maintenance_ratio": 157.54,
-    "short_change": -2.0,
+    "margin_change": 22.0,
+    "margin_slope": -16.8,
+    "maintenance_ratio": 153.58,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
@@ -26,7 +26,7 @@
   },
   "main_force": {
     "cost": 39.99,
-    "distance": -5.48,
+    "distance": -7.85,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,11 +35,13 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-10"
+  "raw_signals": [
+    "散戶接刀中"
+  ],
+  "data_version": "2026-06-11"
 }

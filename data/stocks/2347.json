@@ -1,23 +1,23 @@
 {
   "stock_id": "2347",
   "name": "2347",
-  "date": "2026-06-10",
-  "close": 92.2,
+  "date": "2026-06-11",
+  "close": 90.8,
   "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.421,
+    "foreign_buy_ratio": -0.544,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -27.0,
-    "margin_slope": 0.4,
-    "maintenance_ratio": 178.27,
-    "short_change": 1.0,
-    "short_margin_ratio": 0.39
+    "margin_change": 425.0,
+    "margin_slope": 75.0,
+    "maintenance_ratio": 174.79,
+    "short_change": -2.0,
+    "short_margin_ratio": 0.27
   },
   "tdcc": {
     "big_holder_change": 85.18,
@@ -25,8 +25,8 @@
     "holder_concentration": 88.64
   },
   "main_force": {
-    "cost": 86.2,
-    "distance": 6.96,
+    "cost": 86.58,
+    "distance": 4.87,
     "trend": "UP"
   },
   "sector": {
@@ -37,11 +37,11 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
   "events": [],
   "raw_signals": [
-    "主力洗盤完成"
+    "散戶接刀中"
   ],
-  "data_version": "2026-06-10"
+  "data_version": "2026-06-11"
 }

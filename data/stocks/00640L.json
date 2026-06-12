@@ -1,28 +1,28 @@
 {
   "stock_id": "00640L",
   "name": "00640L",
-  "date": "2026-06-10",
-  "close": 96.2,
-  "health_score": 103,
+  "date": "2026-06-11",
+  "close": 95.6,
+  "health_score": 86,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -1.0,
-    "margin_slope": -4.8,
-    "maintenance_ratio": 161.25,
+    "margin_change": 66.0,
+    "margin_slope": 13.8,
+    "maintenance_ratio": 160.52,
     "short_change": 0.0,
-    "short_margin_ratio": 29.47
+    "short_margin_ratio": 21.88
   },
   "tdcc": {},
   "main_force": {
-    "cost": 99.43,
-    "distance": -3.25,
+    "cost": 99.26,
+    "distance": -3.69,
     "trend": "DOWN"
   },
   "sector": {
@@ -33,14 +33,9 @@
     "style": "Value",
     "score": 30
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
-  "events": [
-    {
-      "level": "RED",
-      "title": "短線券資比過熱 (警示)"
-    }
-  ],
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-10"
+  "data_version": "2026-06-11"
 }

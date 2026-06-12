@@ -1,28 +1,28 @@
 {
   "stock_id": "00663L",
   "name": "00663L",
-  "date": "2026-06-10",
-  "close": 97.65,
+  "date": "2026-06-11",
+  "close": 96.65,
   "health_score": 103,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 3,
+    "foreign_buy_days": 4,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -302.0,
-    "margin_slope": -82.6,
-    "maintenance_ratio": 163.39,
-    "short_change": -9.0,
-    "short_margin_ratio": 24.16
+    "margin_change": 758.0,
+    "margin_slope": -41.2,
+    "maintenance_ratio": 161.34,
+    "short_change": -94.0,
+    "short_margin_ratio": 20.56
   },
   "tdcc": {},
   "main_force": {
-    "cost": 99.61,
-    "distance": -1.97,
+    "cost": 99.84,
+    "distance": -3.2,
     "trend": "DOWN"
   },
   "sector": {
@@ -38,9 +38,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-10"
+  "raw_signals": [
+    "散戶接刀中"
+  ],
+  "data_version": "2026-06-11"
 }

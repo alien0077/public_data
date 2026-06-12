@@ -1,6 +1,6 @@
 {
   "symbol": "4590",
-  "updated_at": "2026-06-11",
+  "updated_at": "2026-06-12",
   "lines": [
     {
       "id": "H_14",
@@ -107,11 +107,18 @@
       "price": 75.3,
       "start_idx": 69,
       "start_date": "2026-05-21",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 85,
+      "end_date": "2026-06-12",
+      "broken": true,
       "strength": 1
     }
   ],
-  "events": []
+  "events": [
+    {
+      "type": "BOS_UP",
+      "price": 75.3,
+      "idx": 85,
+      "date": "2026-06-12"
+    }
+  ]
 }
