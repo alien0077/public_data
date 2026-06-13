@@ -1,33 +1,33 @@
 {
-  "date": "2026-06-06",
+  "date": "2026-06-13",
   "adjustments": [
     {
-      "strategy": "multi_factor",
+      "strategy": "trend",
       "rank": 1,
       "sharpe_4w": 0,
       "mdd_4w": 0,
       "action": "調整"
     },
     {
-      "strategy": "trend",
-      "rank": 2,
-      "sharpe_4w": 3.13734042478281,
-      "mdd_4w": -0.061610430974420115,
-      "action": "維持"
-    },
-    {
       "strategy": "mr",
-      "rank": 3,
-      "sharpe_4w": 3.13734042478281,
-      "mdd_4w": -0.061610430974420115,
+      "rank": 2,
+      "sharpe_4w": 0,
+      "mdd_4w": 0,
       "action": "維持"
     },
     {
       "strategy": "portfolio_combined",
-      "rank": 4,
-      "sharpe_4w": 3.13734042478281,
-      "mdd_4w": -0.061610430974420115,
+      "rank": 3,
+      "sharpe_4w": 0,
+      "mdd_4w": 0,
       "action": "維持"
+    },
+    {
+      "strategy": "multi_factor",
+      "rank": 4,
+      "sharpe_4w": 0,
+      "mdd_4w": 0,
+      "action": "調整"
     }
   ],
   "liquidations": [],
@@ -35,25 +35,25 @@
     {
       "strategy": "trend",
       "label": "TREND Ensemble Fund",
-      "sharpe_4w": 3.13734042478281,
-      "total_return_4w": 0.42920220772704476,
-      "mdd_4w": -0.061610430974420115,
+      "sharpe_4w": 0,
+      "total_return_4w": 0,
+      "mdd_4w": 0,
       "rank_4w": 4
     },
     {
       "strategy": "mr",
       "label": "MR Ensemble Fund",
-      "sharpe_4w": 3.13734042478281,
-      "total_return_4w": 0.42920220772704476,
-      "mdd_4w": -0.061610430974420115,
+      "sharpe_4w": 0,
+      "total_return_4w": 0,
+      "mdd_4w": 0,
       "rank_4w": 3
     },
     {
       "strategy": "portfolio_combined",
       "label": "Portfolio (TREND+MR)",
-      "sharpe_4w": 3.13734042478281,
-      "total_return_4w": 0.42920220772704476,
-      "mdd_4w": -0.061610430974420115,
+      "sharpe_4w": 0,
+      "total_return_4w": 0,
+      "mdd_4w": 0,
       "rank_4w": 2
     },
     {
