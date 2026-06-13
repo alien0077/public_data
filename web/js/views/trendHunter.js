@@ -180,13 +180,13 @@ export const TrendHunter = {
                                 <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 text-xs uppercase">
                                     <tr>
                                         <th class="px-6 py-3">股號/名稱</th>
-                                        <th class="px-6 py-3 text-left hidden lg:table-cell">原因</th>
-                                        <th class="px-6 py-3 text-right">配置權重</th>
-                                        <th class="px-6 py-3 text-right hidden sm:table-cell">進場日期</th>
-                                        <th class="px-6 py-3 text-right">累積回報</th>
-                                        <th class="px-6 py-3 text-right hidden md:table-cell">籌碼特徵</th>
-                                        <th class="px-6 py-3 text-right">操作建議</th>
-                                        <th class="px-6 py-3 text-right hidden md:table-cell">本益比</th>
+                                         <th class="px-6 py-3 text-left">原因</th>
+                                         <th class="px-6 py-3 text-right">配置權重</th>
+                                         <th class="px-6 py-3 text-right">進場日期</th>
+                                         <th class="px-6 py-3 text-right">累積回報</th>
+                                         <th class="px-6 py-3 text-right">籌碼特徵</th>
+                                         <th class="px-6 py-3 text-right">操作建議</th>
+                                         <th class="px-6 py-3 text-right">本益比</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-sm text-gray-400">
@@ -485,7 +485,7 @@ export const TrendHunter = {
                                         <th class="px-5 py-2 text-right">天數</th>
                                         <th class="px-5 py-2 text-right">累計買超(張)</th>
                                         <th class="px-5 py-2 text-right">區間損益</th>
-                                        <th class="px-5 py-2 text-right hidden sm:table-cell">本益比</th>
+                                         <th class="px-5 py-2 text-right">本益比</th>
                                         <th class="px-5 py-2 text-right">訊號</th>
                                     </tr>
                                 </thead>
@@ -527,7 +527,7 @@ export const TrendHunter = {
                                             <td class="px-5 py-2.5 text-right text-gray-500">${s.tracking_days}d</td>
                                             <td class="px-5 py-2.5 text-right font-bold text-blue-500">${buyStr}</td>
                                             <td class="px-5 py-2.5 text-right font-bold ${retClass}">${retStr}</td>
-                                            <td class="px-5 py-2.5 text-right hidden sm:table-cell font-bold ${peColor}">${peStr}</td>
+                                             <td class="px-5 py-2.5 text-right font-bold ${peColor}">${peStr}</td>
                                             <td class="px-5 py-2.5 text-right">
                                                 <div class="flex flex-wrap justify-end gap-1">
                                                     ${signalBadge}
@@ -643,10 +643,10 @@ export const TrendHunter = {
                                         <th class="px-4 py-2 text-left">產業</th>
                                         <th class="px-4 py-2 text-right">累計買超</th>
                                         <th class="px-4 py-2 text-right">買入/${data.window_days}</th>
-                                        <th class="px-4 py-2 text-right hidden md:table-cell">一致性</th>
-                                        <th class="px-4 py-2 text-right hidden sm:table-cell">日均買超</th>
-                                        <th class="px-4 py-2 text-right hidden lg:table-cell">近3日</th>
-                                        <th class="px-4 py-2 text-right hidden lg:table-cell">本益比</th>
+                                         <th class="px-4 py-2 text-right">一致性</th>
+                                         <th class="px-4 py-2 text-right">日均買超</th>
+                                         <th class="px-4 py-2 text-right">近3日</th>
+                                         <th class="px-4 py-2 text-right">本益比</th>
                                         <th class="px-4 py-2 text-right">訊號</th>
                                     </tr>
                                 </thead>
@@ -679,12 +679,12 @@ export const TrendHunter = {
                                             <td class="px-4 py-2.5 text-left text-gray-500 text-[10px]">${s.sector_tag || '--'}</td>
                                             <td class="px-4 py-2.5 text-right font-bold text-cyan-600 dark:text-cyan-400">${buyStr}</td>
                                             <td class="px-4 py-2.5 text-right text-gray-600 dark:text-gray-300">${s.buy_days}/${s.total_days || data.window_days}</td>
-                                            <td class="px-4 py-2.5 text-right hidden md:table-cell">
-                                                <span class="${s.consistency >= 0.8 ? 'text-green-500' : s.consistency >= 0.6 ? 'text-orange-500' : 'text-gray-500'}">${(s.consistency * 100).toFixed(0)}%</span>
-                                            </td>
-                                            <td class="px-4 py-2.5 text-right text-gray-500 hidden sm:table-cell">${avgStr}</td>
-                                            <td class="px-4 py-2.5 text-right text-gray-500 hidden lg:table-cell">${r3Str}</td>
-                                            <td class="px-4 py-2.5 text-right hidden lg:table-cell font-bold ${peColor}">${peStr}</td>
+                                             <td class="px-4 py-2.5 text-right">
+                                                 <span class="${s.consistency >= 0.8 ? 'text-green-500' : s.consistency >= 0.6 ? 'text-orange-500' : 'text-gray-500'}">${(s.consistency * 100).toFixed(0)}%</span>
+                                             </td>
+                                             <td class="px-4 py-2.5 text-right text-gray-500">${avgStr}</td>
+                                             <td class="px-4 py-2.5 text-right text-gray-500">${r3Str}</td>
+                                             <td class="px-4 py-2.5 text-right font-bold ${peColor}">${peStr}</td>
                                             <td class="px-4 py-2.5 text-right">
                                                 <span class="text-[10px] font-bold px-2 py-1 rounded border ${labelColor}">${s.label}</span>
                                             </td>
@@ -795,6 +795,7 @@ export const TrendHunter = {
                 container.innerHTML = ''; // 清空 loading
                 const isDark = document.documentElement.classList.contains('dark');
                 const textSec = isDark ? '#aaa' : '#666';
+                const isMobile = window.innerWidth < 768;
 
                 function getHeatColor(pct) {
                     if (pct > 2.0) return '#cc1919';
@@ -832,7 +833,7 @@ export const TrendHunter = {
                 container.insertAdjacentHTML('beforeend', treemapHtml);
                 const treemapDom = document.createElement('div');
                 treemapDom.style.width = '100%';
-                treemapDom.style.height = '260px';
+                treemapDom.style.height = isMobile ? '220px' : '260px';
                 treemapDom.style.marginBottom = '12px';
                 container.appendChild(treemapDom);
 
@@ -847,8 +848,20 @@ export const TrendHunter = {
 
                 const chartDom = document.createElement('div');
                 chartDom.style.width = '100%';
-                chartDom.style.height = '400px';
+                chartDom.style.height = isMobile ? '320px' : '400px';
                 container.appendChild(chartDom);
+
+                if (isMobile) {
+                    const legendHtml = `
+                        <div class="grid grid-cols-2 gap-x-3 gap-y-1 mt-2 px-1 text-[10px]">
+                            <span style="color:#ef4444">🔥 量價齊揚 (主流)</span>
+                            <span style="color:#3b82f6">💧 資金吸納 (低接)</span>
+                            <span style="color:#f59e0b">🔒 籌碼鎖定 (悶聲)</span>
+                            <span style="color:#10b981">❄️ 弱勢量縮 (觀望)</span>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', legendHtml);
+                }
 
                 setTimeout(() => {
                     if (!container.contains(chartDom)) return;
@@ -876,7 +889,7 @@ export const TrendHunter = {
                                 breadcrumb: { show: false },
                                 label: {
                                     show: true,
-                                    fontSize: 10,
+                                    fontSize: isMobile ? 8 : 10,
                                     color: '#fff',
                                     fontWeight: 'bold',
                                     textShadowBlur: 2,
@@ -931,30 +944,30 @@ export const TrendHunter = {
                                 }
                             },
                             grid: {
-                                left: '12%',
-                                right: '10%',
-                                bottom: '20%',
-                                top: '22%',
+                                left: isMobile ? '8%' : '12%',
+                                right: isMobile ? '6%' : '10%',
+                                bottom: isMobile ? '15%' : '20%',
+                                top: isMobile ? '12%' : '22%',
                                 containLabel: true
                             },
                             xAxis: {
                                 name: '法人淨買超 (億元)',
                                 nameLocation: 'middle',
-                                nameGap: 60,
+                                nameGap: isMobile ? 35 : 60,
                                 splitLine: { show: false },
-                                axisLabel: { color: isDark ? '#888' : '#666', fontSize: 10 },
+                                axisLabel: { color: isDark ? '#888' : '#666', fontSize: isMobile ? 8 : 10 },
                                 min: -bound - 2,
                                 max: bound + 2
                             },
                             yAxis: {
                                 name: '平均漲跌幅 (%)',
                                 nameLocation: 'end',
-                                nameGap: 35,
+                                nameGap: isMobile ? 25 : 35,
                                 splitLine: { 
                                     show: true,
                                     lineStyle: { color: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)' }
                                 },
-                                axisLabel: { color: isDark ? '#888' : '#666', fontSize: 10 },
+                                axisLabel: { color: isDark ? '#888' : '#666', fontSize: isMobile ? 8 : 10 },
                                 min: function(value) { 
                                     const absMax = Math.max(Math.abs(value.min), Math.abs(value.max), 3);
                                     return -absMax - 0.5;
@@ -964,7 +977,7 @@ export const TrendHunter = {
                                     return absMax + 0.5;
                                 }
                             },
-                            graphic: [
+                            graphic: isMobile ? [] : [
                                 {
                                     type: 'group',
                                     left: 'center',
@@ -1050,7 +1063,7 @@ export const TrendHunter = {
                                     ],
                                     label: {
                                         show: true,
-                                        fontSize: 11,
+                                        fontSize: isMobile ? 9 : 11,
                                         formatter: function(p) {
                                             return p.name;
                                         }
@@ -1604,13 +1617,13 @@ export const TrendHunter = {
                             return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-900/30 cursor-pointer" onclick="window.StockDetail.show('${cleanStockId}')">
                                 <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
                                     <div class="font-bold">${cleanStockId}</div><div class="text-xs text-gray-500">${name}</div></td>
-                                <td class="px-6 py-4 text-left hidden lg:table-cell">${reason ? `<span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${reasonColor}">${reason}</span>` : ''}</td>
-                                <td class="px-6 py-4 text-right font-bold text-gray-700 dark:text-gray-300">${((p.weight || 0) * 100).toFixed(1)}%</td>
-                                <td class="px-6 py-4 text-right text-gray-500 font-mono text-xs hidden sm:table-cell">${p.entry_date || '--'}</td>
-                                <td class="px-6 py-4 text-right font-bold ${isProfit ? 'text-red-500' : 'text-green-500'}">${isProfit ? '+' : ''}${rawRet.toFixed(2)}%</td>
-                                <td class="px-6 py-4 text-right text-xs text-gray-500 hidden md:table-cell">${p.chips || p.chip_label || ''}</td>
-                                <td class="px-6 py-4 text-right"><span class="px-2 py-1 rounded text-xs font-bold ${actionColor}">${action}</span></td>
-                                <td class="px-6 py-4 text-right hidden md:table-cell font-bold ${peColor}">${peStr}</td>
+                                 <td class="px-6 py-4 text-left">${reason ? `<span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${reasonColor}">${reason}</span>` : ''}</td>
+                                 <td class="px-6 py-4 text-right font-bold text-gray-700 dark:text-gray-300">${((p.weight || 0) * 100).toFixed(1)}%</td>
+                                 <td class="px-6 py-4 text-right text-gray-500 font-mono text-xs">${p.entry_date || '--'}</td>
+                                 <td class="px-6 py-4 text-right font-bold ${isProfit ? 'text-red-500' : 'text-green-500'}">${isProfit ? '+' : ''}${rawRet.toFixed(2)}%</td>
+                                 <td class="px-6 py-4 text-right text-xs text-gray-500">${p.chips || p.chip_label || ''}</td>
+                                 <td class="px-6 py-4 text-right"><span class="px-2 py-1 rounded text-xs font-bold ${actionColor}">${action}</span></td>
+                                 <td class="px-6 py-4 text-right font-bold ${peColor}">${peStr}</td>
                             </tr>`;
                         }).join('');
                     }

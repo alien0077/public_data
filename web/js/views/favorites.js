@@ -129,9 +129,9 @@ export const Favorites = {
                                     <th class="px-3 md:px-6 py-4">代碼/名稱</th>
                                     <th class="px-3 md:px-6 py-4 text-right">現價</th>
                                     <th class="px-3 md:px-6 py-4 text-right">漲跌幅</th>
-                                    <th class="px-3 md:px-6 py-4 text-right hidden sm:table-cell">最高</th>
-                                    <th class="px-3 md:px-6 py-4 text-right hidden sm:table-cell">最低</th>
-                                    <th class="px-3 md:px-6 py-4 text-right hidden sm:table-cell">本益比</th>
+                                     <th class="px-3 md:px-6 py-4 text-right">最高</th>
+                                     <th class="px-3 md:px-6 py-4 text-right">最低</th>
+                                     <th class="px-3 md:px-6 py-4 text-right">本益比</th>
                                     <th class="px-3 md:px-6 py-4 text-right">操作</th>
                                 </tr>
                             </thead>
@@ -310,13 +310,13 @@ export const Favorites = {
                 <td class="px-3 md:px-6 py-4 text-right ${priceClass} text-xs font-bold">
                     ${price > 0 ? `${changePercent > 0 ? '▲' : (changePercent < 0 ? '▼' : '')} ${Math.abs(changePercent).toFixed(2)}%` : '--'}
                 </td>
-                <td class="px-3 md:px-6 py-4 text-right hidden sm:table-cell text-gray-400 text-xs">
-                    ${high > 0 ? this.formatNumber(high) : '--'}
-                </td>
-                <td class="px-3 md:px-6 py-4 text-right hidden sm:table-cell text-gray-400 text-xs">
-                    ${low > 0 ? this.formatNumber(low) : '--'}
-                </td>
-                <td class="px-3 md:px-6 py-4 text-right hidden sm:table-cell font-bold ${peColor}">${peStr}</td>
+                 <td class="px-3 md:px-6 py-4 text-right text-gray-400 text-xs">
+                     ${high > 0 ? this.formatNumber(high) : '--'}
+                 </td>
+                 <td class="px-3 md:px-6 py-4 text-right text-gray-400 text-xs">
+                     ${low > 0 ? this.formatNumber(low) : '--'}
+                 </td>
+                 <td class="px-3 md:px-6 py-4 text-right font-bold ${peColor}">${peStr}</td>
                 <td class="px-3 md:px-6 py-4 text-right">
                     <button class="remove-fav text-gray-500 hover:text-red-500 transition-colors" data-symbol="${sym}" title="移除收藏">
                         <svg class="w-5 h-5 inline-block" fill="currentColor" viewBox="0 0 24 24">

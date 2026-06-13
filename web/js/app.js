@@ -384,9 +384,9 @@ document.addEventListener('DOMContentLoaded', () => {
             row.innerHTML = '<td class="px-3 md:px-6 py-4"><div class="font-bold text-gray-900 dark:text-white">' + sym + '</div><div class="text-[10px] text-gray-500 truncate max-w-[100px]">' + (h.name || q.name || '') + '</div></td>' +
                 '<td class="px-3 md:px-6 py-4 text-right ' + priceClass + '">' + (price > 0 ? formatNumber(price) : '--') + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-right ' + priceClass + ' text-xs">' + (price > 0 ? (pct > 0 ? '▲' : (pct < 0 ? '▼' : '')) + ' ' + Math.abs(pct).toFixed(2) + '%' : '--') + '</td>' +
-                '<td class="px-3 md:px-6 py-4 text-right hidden sm:table-cell">' + formatNumber(shares, 0) + '</td>' +
-                '<td class="px-3 md:px-6 py-4 text-right text-gray-400 text-xs hidden sm:table-cell">' + formatNumber(avgCost) + '</td>' +
-'<td class="px-3 md:px-6 py-4 text-right font-bold text-blue-400 hidden md:table-cell">' + formatNumber(mv, 0) + '</td>' +
+                '<td class="px-3 md:px-6 py-4 text-right">' + formatNumber(shares, 0) + '</td>' +
+                '<td class="px-3 md:px-6 py-4 text-right text-gray-400 text-xs">' + formatNumber(avgCost) + '</td>' +
+'<td class="px-3 md:px-6 py-4 text-right font-bold text-blue-400">' + formatNumber(mv, 0) + '</td>' +
 '<td class="px-3 md:px-6 py-4 text-right ' + (pnl >= 0 ? 'text-red-500' : 'text-green-500') + '"><div class="font-bold">' + (pnl >= 0 ? '+' : '') + formatNumber(pnl, 0) + '</div><div class="text-[10px] opacity-70">' + roi.toFixed(2) + '% (未實現)</div></td>' +
 '<td class="px-3 md:px-6 py-4 text-right"><button class="delete-stock p-2 text-gray-500 hover:text-red-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button></td>';
             
@@ -737,6 +737,37 @@ document.addEventListener('DOMContentLoaded', () => {
             const sentimentBg = sentiment === '市場情緒過熱' ? 'bg-red-500/10' : sentiment === '散戶偏積極' ? 'bg-orange-500/10' : sentiment === '籌碼冷清' ? 'bg-blue-500/10' : 'bg-green-500/10';
             const marginBarColor = marginRatio > 1.1 ? 'bg-red-500' : marginRatio > 1.05 ? 'bg-orange-500' : marginRatio < 0.9 ? 'bg-blue-500' : 'bg-green-500';
 
+            // 取得近一週融資歷史資料
+            let marginHistory = [];
+            try {
+                const indexData = await api.fetchLocalJson('index.json').catch(() => ({}));
+                const latestMarginDate = indexData.latest_daily_tw_market_margin || d.date;
+                if (latestMarginDate) {
+                    // 生成近 5 個交易日的日期
+                    const dates = [];
+                    const baseDate = new Date(latestMarginDate);
+                    for (let i = 4; i >= 0; i--) {
+                        const dt = new Date(baseDate);
+                        dt.setDate(dt.getDate() - i);
+                        dates.push(dt.toISOString().split('T')[0]);
+                    }
+                    // 取得各日資料
+                    const promises = dates.map(date => 
+                        api.fetchLocalJson(`daily/tw_market_margin/${date}.json`).catch(() => null)
+                    );
+                    const results = await Promise.all(promises);
+                    marginHistory = results
+                        .map((r, i) => {
+                            if (!r) return null;
+                            const stock = r.stocks?.[0] || r.data?.[0] || r;
+                            return stock ? { date: dates[i], balance: (stock.total_margin_balance || 0) / 100000000 } : null;
+                        })
+                        .filter(Boolean);
+                }
+            } catch (e) {
+                console.warn('Failed to load margin history:', e);
+            }
+
             content.innerHTML = `
                 <div class="flex flex-col md:flex-row gap-6">
                     <div class="w-full md:w-48 h-40" id="market-health-gauge"></div>
@@ -765,6 +796,14 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div class="text-base font-mono font-bold">${shortMarginRatio.toFixed(1)}<span class="text-[9px] text-gray-400">%</span></div>
                             </div>
                         </div>
+                        <!-- 近一週融資餘額曲線 -->
+                        <div class="pt-2">
+                            <div class="text-[10px] text-gray-400 font-semibold mb-1">近一週融資餘額</div>
+                            <div id="margin-history-chart" class="w-full h-20"></div>
+                            ${marginHistory.length > 0 ? `
+                            <div class="text-[9px] text-gray-500 mt-1">最新：<span class="font-bold text-orange-500">${marginHistory[marginHistory.length - 1]?.balance?.toFixed(0) || '--'}</span> 億</div>
+                            ` : ''}
+                        </div>
                     </div>
                 </div>
                 <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 space-y-2">
@@ -775,14 +814,62 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="w-full h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
                         <div class="h-full rounded-full ${marginBarColor}" style="width: ${Math.min(100, marginRatio / 1.5 * 100)}%"></div>
                     </div>
+                    <div class="text-[8px] text-gray-400 leading-relaxed">融資水位 = 目前融資餘額 / MA20 月均線。>100% 表示融資增加（散戶偏多），<100% 表示融資減少（散戶偏空）。</div>
                     ${d.maintenance_rate ? `
                     <div class="flex justify-between items-center pt-1">
                         <span class="text-[10px] text-gray-500">融資維持率</span>
                         <span class="text-[10px] font-bold font-mono ${d.maintenance_rate < 140 ? "text-red-500" : d.maintenance_rate < 150 ? "text-orange-500" : "text-green-500"}">${d.maintenance_rate.toFixed(1)}%${d.maintenance_rate < 140 ? " ⚠️" : ""}</span>
-                    </div>` : ""}
+                    </div>
+                    <div class="text-[8px] text-gray-400 leading-relaxed">融資維持率 = 股票市值 / 融資金額。>166% 安全，130-166% 警戒，<130% 可能斷頭。</div>` : ""}
                     <div class="text-[10px] text-gray-500 leading-relaxed mt-1">${summaryText}</div>
                 </div>
             `;
+
+            // 繪製融資歷史曲線
+            if (marginHistory.length > 0 && typeof echarts !== 'undefined') {
+                const chartContainer = document.getElementById('margin-history-chart');
+                if (chartContainer) {
+                    const chart = echarts.init(chartContainer);
+                    const balances = marginHistory.map(h => h.balance);
+                    const minBal = Math.min(...balances);
+                    const maxBal = Math.max(...balances);
+                    const margin = (maxBal - minBal) * 0.05;
+                    chart.setOption({
+                        backgroundColor: 'transparent',
+                        grid: { top: 5, bottom: 20, left: 40, right: 10 },
+                        tooltip: { trigger: 'axis', formatter: '{b}<br/>融資餘額：{c} 億' },
+                        xAxis: {
+                            type: 'category',
+                            data: marginHistory.map(h => h.date.slice(5)),
+                            axisLabel: { fontSize: 8 },
+                            axisLine: { lineStyle: { color: '#374151' } }
+                        },
+                        yAxis: {
+                            type: 'value',
+                            min: minBal - margin,
+                            max: maxBal + margin,
+                            axisLabel: { fontSize: 8, formatter: '{value}' },
+                            splitLine: { lineStyle: { color: '#374151', type: 'dashed' } }
+                        },
+                        series: [{
+                            type: 'line',
+                            data: balances,
+                            smooth: true,
+                            symbol: 'circle',
+                            symbolSize: 6,
+                            lineStyle: { color: '#f97316', width: 2 },
+                            itemStyle: { color: '#f97316' },
+                            areaStyle: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                    { offset: 0, color: 'rgba(249, 115, 22, 0.3)' },
+                                    { offset: 1, color: 'rgba(249, 115, 22, 0.05)' }
+                                ])
+                            }
+                        }]
+                    });
+                    window.addEventListener('resize', () => chart.resize());
+                }
+            }
 
             const gaugeContainer = document.getElementById('market-health-gauge');
             if (gaugeContainer && typeof echarts !== 'undefined') {
