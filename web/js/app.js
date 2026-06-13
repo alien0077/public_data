@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 await loadAndRenderLiar();
                 await renderMarketDivergence();
                 if (portfolioBody.children.length === 0) {
-                    portfolioBody.innerHTML = '<tr><td colspan="9" class="px-6 py-10 text-center text-gray-500 font-mono text-sm">尚無持股資料，請由側邊欄「匯入資料」匯入交易紀錄</td></tr>';
+                    portfolioBody.innerHTML = '<tr><td colspan="10" class="px-6 py-10 text-center text-gray-500 font-mono text-sm">尚無持股資料，請由側邊欄「匯入資料」匯入交易紀錄</td></tr>';
                 }
             }
             // 🚀 支援從 group-search.html 帶入的 ?symbol=XXX 參數
@@ -329,10 +329,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const ytdRef = await api.fetchYTDRef();
         const holdings = CorporateActions.recalculateHoldings(trades, true, ytdRef.prices);
         portfolioBody.innerHTML = '';
+        const portfolioCards = document.getElementById('portfolio-cards');
+        if (portfolioCards) portfolioCards.innerHTML = '';
         let totalMV = 0, totalYtdBasis = 0, totalRefMV = 0;
         let rows = [];
 
         const syms = Object.keys(holdings).filter(s => s !== 'yearlyStats' && holdings[s].shares > 0.001);
+
+        const [quantMetrics, healthDataMap, chartDataMap] = await Promise.all([
+            api.fetchQuantMetrics().catch(() => ({})),
+            Promise.all(syms.map(async (s) => {
+                try { const d = await api.fetchHealthData(s); return [s, d]; } catch { return [s, null]; }
+            })).then(results => Object.fromEntries(results)),
+            Promise.all(syms.map(async (s) => {
+                try { const c = await api.fetchChart(s); return [s, c]; } catch { return [s, null]; }
+            })).then(results => Object.fromEntries(results))
+        ]);
+
+        const supportMap = {};
+        syms.forEach(sym => {
+            const q = quotes[sym] || quotes[sym.split('.')[0]] || {};
+            const price = parseFloat(q.price || 0);
+            const chart = chartDataMap[sym];
+            if (price > 0 && chart) {
+                supportMap[sym] = api.calculateSupportMA(price, chart);
+            } else {
+                supportMap[sym] = { supportMA: 'X', maBias: null };
+            }
+        });
         syms.sort((a, b) => {
             const ha = holdings[a], hb = holdings[b];
             const qa = quotes[a] || quotes[a.split('.')[0]] || {};
@@ -380,22 +404,73 @@ document.addEventListener('DOMContentLoaded', () => {
             const row = document.createElement('tr');
             row.className = 'hover:bg-gray-800/30 transition-colors cursor-pointer';
             row.addEventListener('click', () => StockDetail.show(sym));
-            
-            row.innerHTML = '<td class="px-3 md:px-6 py-4"><div class="font-bold text-gray-900 dark:text-white">' + sym + '</div><div class="text-[10px] text-gray-500 truncate max-w-[100px]">' + (h.name || q.name || '') + '</div></td>' +
+
+            const quant = quantMetrics[sym] || {};
+            const health = healthDataMap[sym];
+            const support = supportMap[sym] || {};
+            const healthScore = health?.health_score;
+
+            const adviceClass = quant.advice === 'HOLD' ? 'bg-green-500/20 text-green-400' :
+                quant.advice === 'REDUCE' ? 'bg-yellow-500/20 text-yellow-400' :
+                quant.advice === 'SELL' ? 'bg-red-500/20 text-red-400' : 'bg-gray-500/20 text-gray-400';
+            const adviceBadge = quant.advice ? '<span class="px-1.5 py-0.5 rounded text-[9px] font-bold ' + adviceClass + '">' + quant.advice + '</span>' : '';
+            const betaText = quant.beta != null ? '<span class="text-[10px] text-gray-500">β:' + quant.beta.toFixed(1) + '</span>' : '';
+            const healthBadge = healthScore != null ? '<span class="px-1.5 py-0.5 rounded text-[9px] font-bold ' + (healthScore >= 65 ? 'bg-green-500/20 text-green-400' : healthScore >= 45 ? 'bg-yellow-500/20 text-yellow-400' : 'bg-red-500/20 text-red-400') + '">' + healthScore + '</span>' : '';
+            const chipLabel = quant.chip_label || '';
+            const eventAlert = quant.event_alert || '';
+            const supportMA = support.supportMA || '';
+            const supportMAColor = supportMA.includes('🚀') ? 'text-red-400' : supportMA.includes('💀') ? 'text-green-400' : 'text-blue-400';
+
+            row.innerHTML = '<td class="px-3 md:px-6 py-4"><div class="flex items-center gap-2"><span class="font-bold text-gray-900 dark:text-white">' + sym + '</span>' + adviceBadge + '</div><div class="text-[10px] text-gray-500 truncate max-w-[120px]">' + (h.name || q.name || '') + '</div></td>' +
+                '<td class="px-3 md:px-6 py-4 text-center text-xs">' + betaText + '</td>' +
+                '<td class="px-3 md:px-6 py-4 text-center">' + healthBadge + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-right ' + priceClass + '">' + (price > 0 ? formatNumber(price) : '--') + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-right ' + priceClass + ' text-xs">' + (price > 0 ? (pct > 0 ? '▲' : (pct < 0 ? '▼' : '')) + ' ' + Math.abs(pct).toFixed(2) + '%' : '--') + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-right">' + formatNumber(shares, 0) + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-right text-gray-400 text-xs">' + formatNumber(avgCost) + '</td>' +
-'<td class="px-3 md:px-6 py-4 text-right font-bold text-blue-400">' + formatNumber(mv, 0) + '</td>' +
-'<td class="px-3 md:px-6 py-4 text-right ' + (pnl >= 0 ? 'text-red-500' : 'text-green-500') + '"><div class="font-bold">' + (pnl >= 0 ? '+' : '') + formatNumber(pnl, 0) + '</div><div class="text-[10px] opacity-70">' + roi.toFixed(2) + '% (未實現)</div></td>' +
-'<td class="px-3 md:px-6 py-4 text-right"><button class="delete-stock p-2 text-gray-500 hover:text-red-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button></td>';
-            
+                '<td class="px-3 md:px-6 py-4 text-center"><div class="flex flex-col items-center gap-0.5">' +
+                    (chipLabel ? '<span class="text-[10px]">' + chipLabel + '</span>' : '') +
+                    (eventAlert ? '<span class="text-[10px] text-yellow-400">' + eventAlert + '</span>' : '') +
+                    (supportMA !== 'X' ? '<span class="text-[10px] font-bold ' + supportMAColor + '">' + supportMA + '</span>' : '') +
+                '</div></td>' +
+                '<td class="px-3 md:px-6 py-4 text-right ' + (pnl >= 0 ? 'text-red-500' : 'text-green-500') + '"><div class="font-bold">' + (pnl >= 0 ? '+' : '') + formatNumber(pnl, 0) + '</div><div class="text-[10px] opacity-70">' + roi.toFixed(2) + '%</div></td>' +
+                '<td class="px-3 md:px-6 py-4 text-right"><button class="delete-stock p-2 text-gray-500 hover:text-red-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button></td>';
+
             row.querySelector('.delete-stock').addEventListener('click', (e) => {
                 e.stopPropagation();
                 deleteStockTrades(sym);
             });
-            
+
             portfolioBody.appendChild(row);
+
+            if (portfolioCards) {
+                const card = document.createElement('div');
+                card.className = 'px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors cursor-pointer';
+                card.addEventListener('click', () => StockDetail.show(sym));
+
+                const chipEventHTML = [chipLabel, eventAlert, supportMA !== 'X' ? '<span class="font-bold ' + supportMAColor + '">' + supportMA + '</span>' : ''].filter(Boolean).join(' · ');
+
+                card.innerHTML = '<div class="flex justify-between items-center mb-1">' +
+                    '<div class="flex items-center gap-2">' +
+                        '<span class="font-bold text-gray-900 dark:text-white">' + sym + '</span>' +
+                        adviceBadge +
+                        (betaText ? '<span class="text-[10px] text-gray-500">' + betaText + '</span>' : '') +
+                        healthBadge +
+                    '</div>' +
+                    '<div class="text-right ' + priceClass + '">' +
+                        '<div class="font-bold">' + (price > 0 ? formatNumber(price) : '--') + '</div>' +
+                        '<div class="text-[10px]">' + (price > 0 ? (pct > 0 ? '▲' : (pct < 0 ? '▼' : '')) + Math.abs(pct).toFixed(2) + '%' : '--') + '</div>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="text-[10px] text-gray-500 truncate mb-1">' + (h.name || q.name || '') + '</div>' +
+                (chipEventHTML ? '<div class="text-[10px] text-gray-400 mb-1">' + chipEventHTML + '</div>' : '') +
+                '<div class="flex justify-between text-[10px]">' +
+                    '<span class="text-gray-500">' + formatNumber(shares, 0) + '股 @ ' + formatNumber(avgCost) + '</span>' +
+                    '<span class="' + (pnl >= 0 ? 'text-red-500' : 'text-green-500') + ' font-bold">' + (pnl >= 0 ? '+' : '') + formatNumber(pnl, 0) + ' (' + roi.toFixed(2) + '%)</span>' +
+                '</div>';
+
+                portfolioCards.appendChild(card);
+            }
         });
 
         const curY = new Date().getFullYear().toString();

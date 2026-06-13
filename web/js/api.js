@@ -12,6 +12,7 @@ export const api = {
     _stocksMetaCache: null,
     _calendarCache: null,
     _ytdRefCache: null,
+    _quantMetricsCache: null,
 
     async getStocksMeta() {
         if (!this._stocksMetaCache) {
@@ -250,7 +251,59 @@ export const api = {
         return meta.stocks?.find(item => item.symbol === s) || null;
     },
     async fetchSectorPE() { try { return await this.fetchLocalJson('quant/sector_pe.json'); } catch (err) { return null; } },
-    async fetchLiarData() { try { return await this.fetchLocalJson(`daily/liar.json`); } catch (err) { return null; } }
+    async fetchLiarData() { try { return await this.fetchLocalJson(`daily/liar.json`); } catch (err) { return null; } },
+
+    async fetchQuantMetrics() {
+        if (!this._quantMetricsCache) {
+            try { this._quantMetricsCache = await this.fetchLocalJson('quant/stock_quant_metrics.json'); }
+            catch (e) { this._quantMetricsCache = {}; }
+        }
+        return this._quantMetricsCache;
+    },
+
+    calculateSupportMA(price, chartData) {
+        if (!chartData || !chartData.close) return { supportMA: 'X', maBias: null };
+        const closes = chartData.close.filter(c => c != null);
+        if (closes.length < 20) return { supportMA: 'X', maBias: null };
+
+        const calcMA = (period) => {
+            if (closes.length < period) return null;
+            const slice = closes.slice(-period);
+            return slice.reduce((a, b) => a + b, 0) / period;
+        };
+
+        const mas = [
+            { name: '5MA', value: calcMA(5) },
+            { name: '10MA', value: calcMA(10) },
+            { name: '20MA', value: calcMA(20) },
+            { name: '60MA', value: calcMA(60) },
+            { name: '120MA', value: calcMA(120) },
+            { name: '240MA', value: calcMA(240) }
+        ].filter(m => m.value !== null).sort((a, b) => a.value - b.value);
+
+        if (mas.length === 0) return { supportMA: 'X', maBias: null };
+
+        const minMA = mas[0], maxMA = mas[mas.length - 1];
+        const has240 = mas.some(m => m.name === '240MA');
+        const ma10 = mas.find(m => m.name === '10MA');
+        const isFalling = ma10 ? price < ma10.value : false;
+
+        if (price > maxMA.value) {
+            if (has240) return { supportMA: '🚀全', maBias: (price - maxMA.value) / maxMA.value };
+            return { supportMA: '支撐 ' + maxMA.name, maBias: null };
+        }
+        if (price < minMA.value) {
+            return { supportMA: '💀破', maBias: (price - minMA.value) / minMA.value };
+        }
+
+        for (let i = 0; i < mas.length - 1; i++) {
+            if (price >= mas[i].value && price <= mas[i + 1].value) {
+                const label = isFalling ? `${mas[i + 1].name}-${mas[i].name}` : `${mas[i].name}-${mas[i + 1].name}`;
+                return { supportMA: label, maBias: null };
+            }
+        }
+        return { supportMA: 'X', maBias: null };
+    }
 };
 
 window.api = api;
