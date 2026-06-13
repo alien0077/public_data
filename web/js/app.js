@@ -949,7 +949,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             const cfg = severityConfig[severity] || severityConfig.normal;
 
-            const biasPct = triggerBias > 0 ? Math.min(100, (bias5 / triggerBias) * 100) : 0;
+            const biasPct = Math.abs(triggerBias) > 0 ? Math.min(100, (Math.abs(bias5) / Math.abs(triggerBias)) * 100) : 0;
             const volPct = triggerVol > 0 ? Math.min(100, (volRatio / triggerVol) * 100) : 0;
 
             content.innerHTML = `
@@ -964,12 +964,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div>
                                 <div class="flex justify-between text-[10px] text-gray-500 mb-1">
                                     <span>乖離率 (BIAS5)</span>
-                                    <span class="font-bold font-mono ${isAlert ? cfg.text : ''}">${bias5.toFixed(2)}% / 門檻 ${triggerBias.toFixed(2)}%</span>
+                                    <span class="font-bold font-mono ${isAlert ? cfg.text : ''}">${bias5.toFixed(2)}% / 門檻 ${Math.abs(triggerBias).toFixed(2)}%</span>
                                 </div>
                                 <div class="w-full h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
                                     <div class="h-full rounded-full ${cfg.bar}" style="width: ${biasPct}%"></div>
                                 </div>
                             </div>
+                            ${volRatio > 0 ? `
                             <div>
                                 <div class="flex justify-between text-[10px] text-gray-500 mb-1">
                                     <span>成交量能比</span>
@@ -979,7 +980,11 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <div class="h-full rounded-full ${cfg.bar}" style="width: ${volPct}%"></div>
                                 </div>
                             </div>
+                            ` : `
+                            <div class="text-[10px] text-gray-400">成交量能比：暫無數據</div>
+                            `}
                         </div>
+                        ${crashProb > 0 ? `
                         <div class="flex items-center space-x-2 pt-1">
                             <span class="text-[10px] text-gray-500">歷史修正機率</span>
                             <div class="flex-1 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden max-w-[100px]">
@@ -987,6 +992,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <span class="text-[10px] font-bold font-mono ${cfg.text}">${(crashProb * 100).toFixed(0)}%</span>
                         </div>
+                        ` : ''}
                         <div class="text-[10px] text-gray-500 leading-relaxed pt-1 border-t border-gray-100 dark:border-gray-800">${summary}</div>
                     </div>
                 </div>
