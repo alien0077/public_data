@@ -1,21 +1,21 @@
 {
   "date": "2026-06-12",
   "regime": "CAUTIOUS",
-  "cash": 1634529.0,
+  "cash": 1062800.0,
   "nav": 3000000.0,
-  "portfolio_beta": 1.38,
+  "portfolio_beta": 1.23,
   "metadata": {
-    "holdings_count": 5,
+    "holdings_count": 7,
     "candidates_count": 200,
     "live_days": 2,
     "total_capital": 3000000.0,
-    "used_capital": 1365471.0
+    "used_capital": 1937200.0
   },
   "performance": {
-    "live_total_return": 2.0,
+    "live_total_return": 0.0,
     "live_sharpe": 0,
     "live_max_drawdown": 0.0,
-    "live_win_rate": 1.0,
+    "live_win_rate": 0.0,
     "live_equity": [
       {
         "date": "2026-06-11",
@@ -23,7 +23,7 @@
       },
       {
         "date": "2026-06-12",
-        "equity": 3.0
+        "equity": 1.0
       }
     ],
     "live_drawdown": [
@@ -59,6 +59,48 @@
       "event_alert": null,
       "evolution_note": null,
       "pe_ratio": 174.94
+    },
+    {
+      "stock": "6691",
+      "is_held": true,
+      "weight": 0.1429,
+      "score": 2.0,
+      "entry_reason": "TREND_HELD",
+      "select_reason": "趨勢跟蹤",
+      "themes": [],
+      "primary_theme": "電子其他",
+      "entry_date": "2026-06-12",
+      "return": 0.0,
+      "max_return": 0.0,
+      "beta": 0.76,
+      "advice": "HOLD",
+      "advice_color": "GREEN",
+      "chip_label": null,
+      "event_alert": null,
+      "evolution_note": null,
+      "pe_ratio": 24.46
+    },
+    {
+      "stock": "1519",
+      "is_held": true,
+      "weight": 0.0477,
+      "score": 2.0,
+      "entry_reason": "TREND_HELD",
+      "select_reason": "趨勢跟蹤",
+      "themes": [
+        "Power_Grid"
+      ],
+      "primary_theme": "重電_強韌電網",
+      "entry_date": "2026-06-12",
+      "return": 0.0,
+      "max_return": 0.0,
+      "beta": 1.26,
+      "advice": "HOLD",
+      "advice_color": "GREEN",
+      "chip_label": null,
+      "event_alert": null,
+      "evolution_note": null,
+      "pe_ratio": 59.59
     },
     {
       "stock": "8150",
@@ -141,42 +183,6 @@
       "event_alert": null,
       "evolution_note": null,
       "pe_ratio": 19.2
-    },
-    {
-      "stock": "6691",
-      "is_held": false,
-      "weight": 0.0,
-      "score": 58.98180000000001,
-      "entry_reason": "SIGNAL",
-      "select_reason": "趨勢跟蹤",
-      "themes": [],
-      "primary_theme": "電子其他",
-      "entry_date": "2026-06-12",
-      "beta": 0.76,
-      "chip_label": null,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "event_alert": null,
-      "pe_ratio": 24.46
-    },
-    {
-      "stock": "1519",
-      "is_held": false,
-      "weight": 0.0,
-      "score": 52.4884,
-      "entry_reason": "SIGNAL",
-      "select_reason": "趨勢跟蹤",
-      "themes": [
-        "Power_Grid"
-      ],
-      "primary_theme": "重電_強韌電網",
-      "entry_date": "2026-06-12",
-      "beta": 1.26,
-      "chip_label": null,
-      "advice": "HOLD",
-      "advice_color": "GREEN",
-      "event_alert": null,
-      "pe_ratio": 59.59
     },
     {
       "stock": "6446",
@@ -3681,10 +3687,46 @@
       "advice_color": "GREEN",
       "event_alert": null,
       "pe_ratio": null
+    },
+    {
+      "stock": "2316",
+      "is_held": false,
+      "weight": 0.0,
+      "score": 2.106,
+      "entry_reason": "SIGNAL",
+      "select_reason": "趨勢跟蹤",
+      "themes": [],
+      "primary_theme": "電子元件",
+      "entry_date": "2026-06-12",
+      "beta": 0.95,
+      "chip_label": null,
+      "advice": "HOLD",
+      "advice_color": "GREEN",
+      "event_alert": null,
+      "pe_ratio": 10.81
+    },
+    {
+      "stock": "00935",
+      "is_held": false,
+      "weight": 0.0,
+      "score": 2.0918,
+      "entry_reason": "SIGNAL",
+      "select_reason": "趨勢跟蹤",
+      "themes": [],
+      "primary_theme": "ETF",
+      "entry_date": "2026-06-12",
+      "beta": 1.4,
+      "chip_label": "🚀 籌碼洗清",
+      "advice": "HOLD",
+      "advice_color": "GREEN",
+      "event_alert": null,
+      "pe_ratio": null
     }
   ],
   "new_entries": [
     "3189",
+    "6691",
+    "1519",
     "8150",
     "8996",
     "4908",
@@ -3692,6 +3734,22 @@
   ],
   "exits": [],
   "trade_log": [
+    {
+      "stock": "1519",
+      "entry_date": "2026-06-12",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "趨勢跟蹤",
+      "pe_ratio": 59.59
+    },
+    {
+      "stock": "6691",
+      "entry_date": "2026-06-12",
+      "exit_date": null,
+      "action": "BUY",
+      "select_reason": "趨勢跟蹤",
+      "pe_ratio": 24.46
+    },
     {
       "stock": "8016",
       "entry_date": "2026-06-12",
