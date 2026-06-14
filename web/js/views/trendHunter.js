@@ -1100,6 +1100,260 @@ export const TrendHunter = {
                     });
                 }, 50);
 
+                // === 4. 📈 族群月曲線 (Monthly Curve) ===
+                const monthlySectionHtml = `
+                    <div class="mt-4 mb-2 p-4 rounded-xl border border-gray-200 dark:border-gray-700" style="background:${isDark ? 'rgba(255,255,255,0.02)' : 'rgba(0,0,0,0.02)'}">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm font-bold">📈 族群月曲線</span>
+                                <span class="text-xs" style="color:${textSec}">資金淨流入 vs 個股累計漲跌幅（近30日）</span>
+                            </div>
+                            <select id="monthly-theme-select" class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-1.5 text-xs font-bold focus:ring-2 focus:ring-blue-500 outline-none text-gray-800 dark:text-gray-200">
+                                <option value="">載入中...</option>
+                            </select>
+                        </div>
+                        <div id="monthly-curve-chart" style="width:100%;height:${isMobile ? '380px' : '450px'}"></div>
+                        <div id="monthly-curve-checkboxes" class="mt-3 flex flex-wrap gap-2"></div>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', monthlySectionHtml);
+
+                // 載入月曲線資料
+                (async () => {
+                    try {
+                        const flowIndex = await api.fetchLocalJson('quant/sector_monthly_flow/index.json');
+                        if (!flowIndex || !flowIndex.themes || flowIndex.themes.length === 0) return;
+
+                        const selectEl = document.getElementById('monthly-theme-select');
+                        if (!selectEl) return;
+                        selectEl.innerHTML = flowIndex.themes.map((t, i) =>
+                            `<option value="${t}" ${i === 0 ? 'selected' : ''}>${t}</option>`
+                        ).join('');
+
+                        let monthlyChart = null;
+                        let currentThemeData = null;
+
+                        async function loadTheme(themeName) {
+                            const data = await api.fetchLocalJson(`quant/sector_monthly_flow/${themeName}.json`);
+                            if (!data) return;
+                            currentThemeData = data;
+                            renderMonthlyCurve(data);
+                        }
+
+                        function renderMonthlyCurve(data) {
+                            const chartDom = document.getElementById('monthly-curve-chart');
+                            if (!chartDom) return;
+                            if (monthlyChart) monthlyChart.dispose();
+                            monthlyChart = echarts.init(chartDom, isDark ? 'dark' : null);
+
+                            const dates = data.dates.map(d => d.substring(5)); // MM-DD
+                            const netFlow = data.industry_net_flow;
+                            const stocks = data.stocks_data;
+
+                            // 計算左右 Y 軸範圍
+                            const flowMax = Math.max(...netFlow.map(Math.abs), 1);
+                            const allReturns = stocks.flatMap(s => s.cumulative_return);
+                            const returnMax = Math.max(...allReturns.map(Math.abs), 1);
+
+                            // 資金流系列（柱狀圖）
+                            const flowSeries = {
+                                name: '族群淨流入',
+                                type: 'bar',
+                                yAxisIndex: 0,
+                                data: netFlow,
+                                itemStyle: {
+                                    color: function(params) {
+                                        return params.value >= 0
+                                            ? 'rgba(24,144,255,0.6)'
+                                            : 'rgba(24,144,255,0.35)';
+                                    },
+                                    borderRadius: [2, 2, 0, 0]
+                                },
+                                barMaxWidth: 12,
+                                z: 1
+                            };
+
+                            // 個股系列（預設只顯示 default_visible 的）
+                            const stockSeries = stocks.map((stock, idx) => ({
+                                name: `${stock.stock_name}(${stock.stock_id})`,
+                                type: 'line',
+                                yAxisIndex: 1,
+                                data: stock.cumulative_return,
+                                showSymbol: false,
+                                lineStyle: { width: 1.5 },
+                                emphasis: { focus: 'series' },
+                                z: 2,
+                                _defaultVisible: stock.default_visible
+                            }));
+
+                            // 圖例篩選
+                            const legendNames = ['族群淨流入', ...stockSeries.map(s => s.name)];
+                            const legendSelected = { '族群淨流入': true };
+                            stockSeries.forEach(s => {
+                                legendSelected[s.name] = s._defaultVisible;
+                            });
+
+                            const option = {
+                                backgroundColor: 'transparent',
+                                tooltip: {
+                                    trigger: 'axis',
+                                    axisPointer: { type: 'cross', crossStyle: { color: '#999' } },
+                                    formatter: function(params) {
+                                        if (!params || params.length === 0) return '';
+                                        const date = params[0].axisValue;
+                                        let html = `<b>${date}</b><br/>`;
+                                        // 分為資金流和個股
+                                        const flowP = params.find(p => p.seriesName === '族群淨流入');
+                                        const stockPs = params.filter(p => p.seriesName !== '族群淨流入')
+                                            .sort((a, b) => (b.value || 0) - (a.value || 0));
+                                        if (flowP) {
+                                            const v = flowP.value;
+                                            html += `<span style="color:#1890ff">●</span> 族群淨流入: <b>${v >= 0 ? '+' : ''}${v.toFixed(1)} 億元</b><br/>`;
+                                        }
+                                        stockPs.forEach(p => {
+                                            const v = p.value;
+                                            const color = v >= 0 ? '#ef4444' : '#10b981';
+                                            html += `<span style="color:${color}">●</span> ${p.seriesName}: <b>${v >= 0 ? '+' : ''}${v.toFixed(2)}%</b><br/>`;
+                                        });
+                                        return html;
+                                    }
+                                },
+                                legend: {
+                                    data: legendNames,
+                                    selected: legendSelected,
+                                    top: 0,
+                                    type: 'scroll',
+                                    textStyle: { fontSize: isMobile ? 9 : 11, color: isDark ? '#aaa' : '#666' }
+                                },
+                                grid: {
+                                    left: isMobile ? '10%' : '8%',
+                                    right: isMobile ? '10%' : '8%',
+                                    top: '15%',
+                                    bottom: isMobile ? '20%' : '14%',
+                                    containLabel: true
+                                },
+                                xAxis: {
+                                    type: 'category',
+                                    data: dates,
+                                    axisLabel: { fontSize: isMobile ? 8 : 10, color: isDark ? '#888' : '#666', rotate: isMobile ? 45 : 0 },
+                                    axisTick: { show: false }
+                                },
+                                yAxis: [
+                                    {
+                                        type: 'value',
+                                        name: '淨流入(億)',
+                                        nameTextStyle: { fontSize: 10, color: isDark ? '#888' : '#666' },
+                                        position: 'left',
+                                        axisLabel: { fontSize: 9, color: '#1890ff', formatter: function(v) { return Math.round(v); } },
+                                        splitLine: { show: true, lineStyle: { color: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)' } },
+                                        min: -flowMax * 1.2,
+                                        max: flowMax * 1.2
+                                    },
+                                    {
+                                        type: 'value',
+                                        name: '漲跌幅(%)',
+                                        nameTextStyle: { fontSize: 10, color: isDark ? '#888' : '#666' },
+                                        position: 'right',
+                                        axisLabel: { fontSize: 9, color: isDark ? '#aaa' : '#666', formatter: function(v) { return v.toFixed(0) + '%'; } },
+                                        splitLine: { show: false },
+                                        min: -returnMax * 1.2,
+                                        max: returnMax * 1.2
+                                    }
+                                ],
+                                dataZoom: [
+                                    { type: 'inside', start: 0, end: 100 },
+                                    { type: 'slider', height: isMobile ? 16 : 20, bottom: 4, start: 0, end: 100 }
+                                ],
+                                series: [flowSeries, ...stockSeries]
+                            };
+
+                            monthlyChart.setOption(option);
+                            monthlyChart.resize();
+
+                            // 渲染 Checkbox
+                            renderCheckboxes(stocks, monthlyChart, legendNames, legendSelected);
+
+                            window.addEventListener('resize', () => {
+                                if (monthlyChart) monthlyChart.resize();
+                            });
+                        }
+
+                        function renderCheckboxes(stocks, chart, legendNames, legendSelected) {
+                            const cbContainer = document.getElementById('monthly-curve-checkboxes');
+                            if (!cbContainer) return;
+                            cbContainer.innerHTML = '';
+
+                            // 族群淨流入 checkbox
+                            const flowCb = createCheckbox('族群淨流入', '#1890ff', true, (checked) => {
+                                chart.dispatchAction({ type: 'legendToggleSelect', name: '族群淨流入' });
+                            });
+                            cbContainer.appendChild(flowCb);
+
+                            // 個股 checkboxes
+                            stocks.forEach(stock => {
+                                const name = `${stock.stock_name}(${stock.stock_id})`;
+                                const lastRet = stock.cumulative_return[stock.cumulative_return.length - 1] || 0;
+                                const color = lastRet >= 0 ? '#ef4444' : '#10b981';
+                                const cb = createCheckbox(name, color, stock.default_visible, (checked) => {
+                                    chart.dispatchAction({ type: 'legendToggleSelect', name });
+                                });
+                                cbContainer.appendChild(cb);
+                            });
+                        }
+
+                        function createCheckbox(label, color, checked, onChange) {
+                            const wrapper = document.createElement('label');
+                            wrapper.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full cursor-pointer text-xs font-bold transition-all';
+                            wrapper.style.background = checked ? `${color}15` : 'transparent';
+                            wrapper.style.color = checked ? color : (isDark ? '#888' : '#aaa');
+                            wrapper.style.border = `1px solid ${checked ? color + '40' : 'transparent'}`;
+
+                            const input = document.createElement('input');
+                            input.type = 'checkbox';
+                            input.checked = checked;
+                            input.className = 'hidden';
+
+                            const dot = document.createElement('span');
+                            dot.style.width = '8px';
+                            dot.style.height = '8px';
+                            dot.style.borderRadius = '50%';
+                            dot.style.background = checked ? color : 'transparent';
+                            dot.style.border = `2px solid ${checked ? color : (isDark ? '#555' : '#ccc')}`;
+
+                            const text = document.createTextNode(label);
+
+                            wrapper.appendChild(input);
+                            wrapper.appendChild(dot);
+                            wrapper.appendChild(text);
+
+                            wrapper.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                input.checked = !input.checked;
+                                onChange(input.checked);
+                                // 更新視覺
+                                wrapper.style.background = input.checked ? `${color}15` : 'transparent';
+                                wrapper.style.color = input.checked ? color : (isDark ? '#888' : '#aaa');
+                                wrapper.style.border = `1px solid ${input.checked ? color + '40' : 'transparent'}`;
+                                dot.style.background = input.checked ? color : 'transparent';
+                                dot.style.border = `2px solid ${input.checked ? color : (isDark ? '#555' : '#ccc')}`;
+                            });
+
+                            return wrapper;
+                        }
+
+                        // 切換族群
+                        selectEl.addEventListener('change', (e) => {
+                            if (e.target.value) loadTheme(e.target.value);
+                        });
+
+                        // 初始載入第一個族群
+                        await loadTheme(flowIndex.themes[0]);
+
+                    } catch (err) {
+                        console.error('月曲線載入失敗:', err);
+                    }
+                })();
+
             } catch (err) {
                 console.error(err);
                 container.innerHTML = `<div class="text-center text-red-500 py-8">圖表加載失敗: ${err.message}</div>`;
