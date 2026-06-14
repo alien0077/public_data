@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 await CorporateActions.loadCorporateActions(symbols);
                 emptyState.classList.add('hidden');
                 lastTrades = trades;
-                renderPortfolio(trades);
+                await renderPortfolio(trades);
                 const ytdRef = await api.fetchYTDRef();
                 const h = CorporateActions.recalculateHoldings(trades, true, ytdRef.prices);
                 lastHoldings = h;
@@ -1122,5 +1122,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('twstock:ready', () => init());
     window.api = api; window.db = db; window.CorporateActions = CorporateActions; window.StockDetail = StockDetail;
     setupSortHandlers();
-    if (localStorage.getItem('twstock_secret')) init();
+    // Note: init() is triggered by twstock:ready event from auth.js, not called directly here
+    // to prevent double initialization (both direct call + twstock:ready would cause duplicate rendering)
 });
