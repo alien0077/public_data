@@ -1,28 +1,28 @@
 {
   "stock_id": "00715L",
   "name": "00715L",
-  "date": "2026-06-11",
-  "close": 53.6,
+  "date": "2026-06-12",
+  "close": 48.08,
   "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中/融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -553.0,
-    "margin_slope": 167.8,
-    "maintenance_ratio": 154.34,
-    "short_change": 146.0,
-    "short_margin_ratio": 37.49
+    "margin_change": 1130.0,
+    "margin_slope": 405.4,
+    "maintenance_ratio": 140.39,
+    "short_change": 88.0,
+    "short_margin_ratio": 35.32
   },
   "tdcc": {},
   "main_force": {
-    "cost": 57.88,
-    "distance": -7.39,
+    "cost": 57.08,
+    "distance": -15.77,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,12 +37,17 @@
   "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
   "events": [
     {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
+    {
       "level": "RED",
       "title": "短線券資比過熱 (警示)"
     }
   ],
   "raw_signals": [
-    "主力洗盤完成"
+    "散戶接刀中",
+    "融資斷頭預警"
   ],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

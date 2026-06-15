@@ -1,32 +1,32 @@
 {
   "stock_id": "6187",
   "name": "6187",
-  "date": "2026-06-11",
-  "close": 1030.0,
-  "health_score": 83,
+  "date": "2026-06-12",
+  "close": 1085.0,
+  "health_score": 106,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.017,
+    "foreign_buy_ratio": -0.317,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -63.0,
-    "margin_slope": -38.0,
-    "maintenance_ratio": 154.45,
-    "short_change": -9.0,
+    "margin_change": 159.0,
+    "margin_slope": 11.2,
+    "maintenance_ratio": 162.99,
+    "short_change": 0.0,
     "short_margin_ratio": 0.04
   },
   "tdcc": {
-    "big_holder_change": 36.86,
+    "big_holder_change": 36.1,
     "retail_holder_change": 0,
-    "holder_concentration": 52.0
+    "holder_concentration": 53.34
   },
   "main_force": {
-    "cost": 1111.5,
-    "distance": -7.33,
+    "cost": 1109.5,
+    "distance": -2.21,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,11 +35,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 60
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

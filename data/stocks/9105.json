@@ -1,32 +1,32 @@
 {
   "stock_id": "9105",
   "name": "9105",
-  "date": "2026-06-11",
-  "close": 9.24,
-  "health_score": 130,
+  "date": "2026-06-12",
+  "close": 9.53,
+  "health_score": 113,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.033,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.082,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 188.0,
-    "margin_slope": -217.4,
-    "maintenance_ratio": 179.7,
-    "short_change": 191.0,
-    "short_margin_ratio": 24.98
+    "margin_change": 1400.0,
+    "margin_slope": 1173.2,
+    "maintenance_ratio": 181.32,
+    "short_change": -3286.0,
+    "short_margin_ratio": 17.79
   },
   "tdcc": {
-    "big_holder_change": 16.75,
+    "big_holder_change": 15.01,
     "retail_holder_change": 0,
-    "holder_concentration": 27.31
+    "holder_concentration": 24.72
   },
   "main_force": {
-    "cost": 8.57,
-    "distance": 7.82,
+    "cost": 8.76,
+    "distance": 8.79,
     "trend": "UP"
   },
   "sector": {
@@ -37,14 +37,9 @@
     "style": "Growth",
     "score": 70
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

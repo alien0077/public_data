@@ -1,32 +1,32 @@
 {
   "stock_id": "3290",
   "name": "3290",
-  "date": "2026-06-11",
-  "close": 63.6,
-  "health_score": 133,
+  "date": "2026-06-12",
+  "close": 61.4,
+  "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.693,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.053,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 289.0,
-    "margin_slope": 152.6,
-    "maintenance_ratio": 214.05,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.01
+    "margin_change": 180.0,
+    "margin_slope": 173.2,
+    "maintenance_ratio": 203.32,
+    "short_change": 7.0,
+    "short_margin_ratio": 0.08
   },
   "tdcc": {
-    "big_holder_change": 48.6,
+    "big_holder_change": 47.95,
     "retail_holder_change": 0,
-    "holder_concentration": 57.75
+    "holder_concentration": 58.94
   },
   "main_force": {
-    "cost": 49.52,
-    "distance": 28.43,
+    "cost": 50.33,
+    "distance": 21.99,
     "trend": "UP"
   },
   "sector": {
@@ -39,12 +39,9 @@
   },
   "chip_status": "caution",
   "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
+  "events": [],
+  "raw_signals": [
+    "散戶接刀中"
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

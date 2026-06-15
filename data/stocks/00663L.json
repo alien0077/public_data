@@ -1,48 +1,43 @@
 {
   "stock_id": "00663L",
   "name": "00663L",
-  "date": "2026-06-11",
-  "close": 96.65,
-  "health_score": 103,
+  "date": "2026-06-12",
+  "close": 101.45,
+  "health_score": 133,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 4,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 758.0,
-    "margin_slope": -41.2,
-    "maintenance_ratio": 161.34,
-    "short_change": -94.0,
-    "short_margin_ratio": 20.56
+    "margin_change": -15.0,
+    "margin_slope": -73.4,
+    "maintenance_ratio": 168.38,
+    "short_change": -5.0,
+    "short_margin_ratio": 20.54
   },
   "tdcc": {},
   "main_force": {
-    "cost": 99.84,
-    "distance": -3.2,
-    "trend": "DOWN"
+    "cost": 100.42,
+    "distance": 1.03,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
+  "events": [],
   "raw_signals": [
-    "散戶接刀中"
+    "主力洗盤完成"
   ],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

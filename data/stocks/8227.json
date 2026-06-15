@@ -1,32 +1,32 @@
 {
   "stock_id": "8227",
   "name": "8227",
-  "date": "2026-06-11",
-  "close": 173.5,
-  "health_score": 103,
+  "date": "2026-06-12",
+  "close": 178.0,
+  "health_score": 86,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
+  "ai_narrative": "今日股價走強，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 6,
-    "foreign_buy_ratio": 1.28,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.041,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -616.0,
-    "margin_slope": -244.4,
-    "maintenance_ratio": 139.42,
-    "short_change": 4.0,
-    "short_margin_ratio": 0.34
+    "margin_change": 51.0,
+    "margin_slope": -203.8,
+    "maintenance_ratio": 144.08,
+    "short_change": -8.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 18.22,
     "retail_holder_change": 0,
-    "holder_concentration": 29.11
+    "holder_concentration": 27.42
   },
   "main_force": {
-    "cost": 207.4,
-    "distance": -16.35,
+    "cost": 205.9,
+    "distance": -13.55,
     "trend": "DOWN"
   },
   "sector": {
@@ -39,18 +39,9 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 6 天"
-    },
-    {
-      "level": "RED",
-      "title": "融資維持率低迷 (139.42%)"
-    }
-  ],
+  "events": [],
   "raw_signals": [
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

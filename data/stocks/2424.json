@@ -1,32 +1,32 @@
 {
   "stock_id": "2424",
   "name": "2424",
-  "date": "2026-06-11",
-  "close": 10.3,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-12",
+  "close": 9.78,
+  "health_score": 83,
+  "signal": "Bullish",
   "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.005,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.039,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
     "margin_change": 0.0,
     "margin_slope": 0.0,
-    "maintenance_ratio": 119.3,
+    "maintenance_ratio": 118.03,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 79.56,
+    "big_holder_change": 79.52,
     "retail_holder_change": 0,
-    "holder_concentration": 83.21
+    "holder_concentration": 83.17
   },
   "main_force": {
-    "cost": 14.39,
-    "distance": -28.42,
+    "cost": 13.81,
+    "distance": -29.18,
     "trend": "DOWN"
   },
   "sector": {
@@ -42,13 +42,13 @@
   "events": [
     {
       "level": "RED",
-      "title": "融資維持率低迷 (119.3%)"
+      "title": "融資維持率低迷 (118.03%)"
     }
   ],
   "raw_signals": [
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-11",
+  "data_version": "2026-06-12",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (-1.92%)，營運異常，請審慎評估"
 }

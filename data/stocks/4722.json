@@ -1,32 +1,32 @@
 {
   "stock_id": "4722",
   "name": "4722",
-  "date": "2026-06-11",
-  "close": 206.0,
-  "health_score": 100,
+  "date": "2026-06-12",
+  "close": 226.5,
+  "health_score": 86,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
+  "ai_narrative": "今日股價走強，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.539,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.345,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -152.0,
-    "margin_slope": -84.2,
-    "maintenance_ratio": 130.68,
-    "short_change": -79.0,
-    "short_margin_ratio": 0.42
+    "margin_change": 279.0,
+    "margin_slope": -35.0,
+    "maintenance_ratio": 144.74,
+    "short_change": 10.0,
+    "short_margin_ratio": 0.48
   },
   "tdcc": {
-    "big_holder_change": 43.19,
+    "big_holder_change": 42.55,
     "retail_holder_change": 0,
-    "holder_concentration": 59.58
+    "holder_concentration": 58.85
   },
   "main_force": {
-    "cost": 262.73,
-    "distance": -21.59,
+    "cost": 260.82,
+    "distance": -13.16,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,18 +35,18 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [
     {
-      "level": "RED",
-      "title": "融資維持率低迷 (130.68%)"
+      "level": "GREEN",
+      "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

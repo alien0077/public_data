@@ -1,32 +1,32 @@
 {
   "stock_id": "3088",
   "name": "3088",
-  "date": "2026-06-11",
-  "close": 145.0,
-  "health_score": 150,
+  "date": "2026-06-12",
+  "close": 141.0,
+  "health_score": 133,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.187,
+    "foreign_buy_ratio": -1.594,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 277.0,
-    "margin_slope": -19.2,
-    "maintenance_ratio": 174.8,
-    "short_change": 4.0,
-    "short_margin_ratio": 0.18
+    "margin_change": 90.0,
+    "margin_slope": 6.0,
+    "maintenance_ratio": 169.37,
+    "short_change": -2.0,
+    "short_margin_ratio": 0.12
   },
   "tdcc": {
-    "big_holder_change": 38.87,
+    "big_holder_change": 39.08,
     "retail_holder_change": 0,
-    "holder_concentration": 49.85
+    "holder_concentration": 50.61
   },
   "main_force": {
-    "cost": 138.25,
-    "distance": 4.88,
+    "cost": 138.75,
+    "distance": 1.62,
     "trend": "UP"
   },
   "sector": {
@@ -37,9 +37,11 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "strong",
-  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-11"
+  "raw_signals": [
+    "散戶接刀中"
+  ],
+  "data_version": "2026-06-12"
 }

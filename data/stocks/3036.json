@@ -1,32 +1,32 @@
 {
   "stock_id": "3036",
   "name": "3036",
-  "date": "2026-06-11",
-  "close": 232.5,
-  "health_score": 83,
-  "signal": "Bullish",
+  "date": "2026-06-12",
+  "close": 228.5,
+  "health_score": 66,
+  "signal": "Neutral",
   "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中/融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 10,
-    "foreign_buy_ratio": 0.696,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.144,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 871.0,
-    "margin_slope": 322.6,
-    "maintenance_ratio": 143.36,
-    "short_change": 4.0,
-    "short_margin_ratio": 0.74
+    "margin_change": 328.0,
+    "margin_slope": 359.8,
+    "maintenance_ratio": 141.78,
+    "short_change": 9.0,
+    "short_margin_ratio": 0.82
   },
   "tdcc": {
-    "big_holder_change": 84.49,
+    "big_holder_change": 83.35,
     "retail_holder_change": 0,
-    "holder_concentration": 88.96
+    "holder_concentration": 88.09
   },
   "main_force": {
-    "cost": 270.3,
-    "distance": -13.98,
+    "cost": 268.6,
+    "distance": -14.93,
     "trend": "DOWN"
   },
   "sector": {
@@ -39,15 +39,10 @@
   },
   "chip_status": "danger",
   "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 10 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
     "散戶接刀中",
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

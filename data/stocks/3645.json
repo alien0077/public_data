@@ -1,32 +1,32 @@
 {
   "stock_id": "3645",
   "name": "3645",
-  "date": "2026-06-11",
-  "close": 89.5,
+  "date": "2026-06-12",
+  "close": 90.4,
   "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.51,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.142,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -218.0,
-    "margin_slope": -149.2,
-    "maintenance_ratio": 143.13,
-    "short_change": -4.0,
-    "short_margin_ratio": 0.58
+    "margin_change": 43.0,
+    "margin_slope": -77.2,
+    "maintenance_ratio": 145.66,
+    "short_change": 6.0,
+    "short_margin_ratio": 0.64
   },
   "tdcc": {
-    "big_holder_change": 36.8,
+    "big_holder_change": 36.2,
     "retail_holder_change": 0,
-    "holder_concentration": 46.35
+    "holder_concentration": 46.7
   },
   "main_force": {
-    "cost": 104.22,
-    "distance": -14.12,
+    "cost": 103.44,
+    "distance": -12.61,
     "trend": "DOWN"
   },
   "sector": {
@@ -39,9 +39,12 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
-  "raw_signals": [
-    "融資斷頭預警"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
   ],
-  "data_version": "2026-06-11"
+  "raw_signals": [],
+  "data_version": "2026-06-12"
 }

@@ -1,44 +1,44 @@
 {
   "stock_id": "2609",
   "name": "2609",
-  "date": "2026-06-11",
-  "close": 51.1,
-  "health_score": 83,
+  "date": "2026-06-12",
+  "close": 52.4,
+  "health_score": 150,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
     "foreign_buy_days": 10,
-    "foreign_buy_ratio": 0.674,
+    "foreign_buy_ratio": 0.26,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1299.0,
-    "margin_slope": 650.2,
-    "maintenance_ratio": 164.29,
-    "short_change": -21.0,
-    "short_margin_ratio": 0.06
+    "margin_change": 3.0,
+    "margin_slope": 464.6,
+    "maintenance_ratio": 167.76,
+    "short_change": 6.0,
+    "short_margin_ratio": 0.08
   },
   "tdcc": {
-    "big_holder_change": 54.61,
+    "big_holder_change": 53.06,
     "retail_holder_change": 0,
-    "holder_concentration": 57.31
+    "holder_concentration": 55.73
   },
   "main_force": {
-    "cost": 51.84,
-    "distance": -1.43,
-    "trend": "DOWN"
+    "cost": 52.06,
+    "distance": 0.65,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
-  "chip_status": "danger",
-  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
   "events": [
     {
       "level": "GREEN",
@@ -46,5 +46,5 @@
     }
   ],
   "raw_signals": [],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

@@ -1,32 +1,32 @@
 {
   "stock_id": "3518",
   "name": "3518",
-  "date": "2026-06-11",
-  "close": 26.8,
-  "health_score": 83,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中/融資斷頭預警」。",
+  "date": "2026-06-12",
+  "close": 27.6,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走強，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.315,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.024,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 72.0,
-    "margin_slope": -4.2,
-    "maintenance_ratio": 136.43,
-    "short_change": -8.0,
+    "margin_change": 11.0,
+    "margin_slope": 6.2,
+    "maintenance_ratio": 141.67,
+    "short_change": 0.0,
     "short_margin_ratio": 1.0
   },
   "tdcc": {
-    "big_holder_change": 28.4,
+    "big_holder_change": 28.46,
     "retail_holder_change": 0,
-    "holder_concentration": 38.55
+    "holder_concentration": 39.06
   },
   "main_force": {
-    "cost": 32.74,
-    "distance": -18.14,
+    "cost": 32.47,
+    "distance": -15.0,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,19 +37,13 @@
     "style": "Value",
     "score": 0
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
-  "events": [
-    {
-      "level": "RED",
-      "title": "融資維持率低迷 (136.43%)"
-    }
-  ],
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "events": [],
   "raw_signals": [
-    "散戶接刀中",
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-11",
+  "data_version": "2026-06-12",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (-13.12%)，營運異常，請審慎評估"
 }

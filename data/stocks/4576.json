@@ -1,32 +1,32 @@
 {
   "stock_id": "4576",
   "name": "4576",
-  "date": "2026-06-11",
-  "close": 196.5,
-  "health_score": 83,
+  "date": "2026-06-12",
+  "close": 202.0,
+  "health_score": 103,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
+  "ai_narrative": "今日股價走強，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.308,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.002,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -130.0,
-    "margin_slope": -99.4,
-    "maintenance_ratio": 134.12,
-    "short_change": -9.0,
-    "short_margin_ratio": 5.52
+    "margin_change": 42.0,
+    "margin_slope": -32.6,
+    "maintenance_ratio": 139.7,
+    "short_change": 2.0,
+    "short_margin_ratio": 5.51
   },
   "tdcc": {
-    "big_holder_change": 60.51,
+    "big_holder_change": 60.12,
     "retail_holder_change": 0,
-    "holder_concentration": 66.23
+    "holder_concentration": 66.51
   },
   "main_force": {
-    "cost": 244.18,
-    "distance": -19.53,
+    "cost": 241.0,
+    "distance": -16.18,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,18 +35,22 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [
     {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
+    {
       "level": "RED",
-      "title": "融資維持率低迷 (134.12%)"
+      "title": "融資維持率低迷 (139.7%)"
     }
   ],
   "raw_signals": [
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

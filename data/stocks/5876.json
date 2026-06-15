@@ -1,32 +1,32 @@
 {
   "stock_id": "5876",
   "name": "5876",
-  "date": "2026-06-11",
-  "close": 42.0,
-  "health_score": 166,
+  "date": "2026-06-12",
+  "close": 42.5,
+  "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.015,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.06,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 23.0,
-    "margin_slope": 3.4,
-    "maintenance_ratio": 173.31,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.16
+    "margin_change": -54.0,
+    "margin_slope": 12.6,
+    "maintenance_ratio": 174.85,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.34
   },
   "tdcc": {
-    "big_holder_change": 80.79,
+    "big_holder_change": 81.21,
     "retail_holder_change": 0,
-    "holder_concentration": 86.5
+    "holder_concentration": 86.88
   },
   "main_force": {
-    "cost": 40.39,
-    "distance": 3.99,
+    "cost": 40.51,
+    "distance": 4.91,
     "trend": "UP"
   },
   "sector": {
@@ -37,11 +37,13 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-11",
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-12",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (0.00%)，營運異常，請審慎評估"
 }

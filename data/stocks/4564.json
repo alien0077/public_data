@@ -1,32 +1,32 @@
 {
   "stock_id": "4564",
   "name": "4564",
-  "date": "2026-06-11",
-  "close": 15.3,
-  "health_score": 66,
-  "signal": "Neutral",
+  "date": "2026-06-12",
+  "close": 15.45,
+  "health_score": 103,
+  "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.045,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.097,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 38.0,
-    "margin_slope": -7.0,
-    "maintenance_ratio": 161.7,
+    "margin_change": 66.0,
+    "margin_slope": 8.4,
+    "maintenance_ratio": 163.8,
     "short_change": 0.0,
     "short_margin_ratio": 0.03
   },
   "tdcc": {
     "big_holder_change": 35.94,
     "retail_holder_change": 0,
-    "holder_concentration": 43.18
+    "holder_concentration": 43.04
   },
   "main_force": {
-    "cost": 15.77,
-    "distance": -2.98,
+    "cost": 15.72,
+    "distance": -1.72,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,13 +35,13 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
   "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-11",
+  "data_version": "2026-06-12",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (-21.44%)，營運異常，請審慎評估"
 }

@@ -1,32 +1,32 @@
 {
   "stock_id": "4952",
   "name": "4952",
-  "date": "2026-06-11",
-  "close": 51.8,
+  "date": "2026-06-12",
+  "close": 53.8,
   "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.244,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.036,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 137.0,
-    "margin_slope": 35.6,
-    "maintenance_ratio": 171.81,
-    "short_change": 1.0,
-    "short_margin_ratio": 0.11
+    "margin_change": -132.0,
+    "margin_slope": 7.8,
+    "maintenance_ratio": 177.7,
+    "short_change": -1.0,
+    "short_margin_ratio": 0.06
   },
   "tdcc": {
     "big_holder_change": 48.76,
     "retail_holder_change": 0,
-    "holder_concentration": 51.35
+    "holder_concentration": 51.29
   },
   "main_force": {
-    "cost": 50.25,
-    "distance": 3.08,
+    "cost": 50.46,
+    "distance": 6.62,
     "trend": "UP"
   },
   "sector": {
@@ -37,14 +37,11 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "caution",
-  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
+  "chip_status": "neutral",
+  "chip_warning": "",
+  "events": [],
+  "raw_signals": [
+    "主力洗盤完成"
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

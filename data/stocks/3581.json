@@ -1,32 +1,32 @@
 {
   "stock_id": "3581",
   "name": "3581",
-  "date": "2026-06-11",
-  "close": 143.0,
+  "date": "2026-06-12",
+  "close": 141.5,
   "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成/融資斷頭預警」。",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.178,
+    "foreign_buy_days": 6,
+    "foreign_buy_ratio": 0.041,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -298.0,
-    "margin_slope": -168.8,
-    "maintenance_ratio": 113.02,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.34
+    "margin_change": -23.0,
+    "margin_slope": -153.0,
+    "maintenance_ratio": 113.68,
+    "short_change": -6.0,
+    "short_margin_ratio": 0.09
   },
   "tdcc": {
-    "big_holder_change": 45.36,
+    "big_holder_change": 45.35,
     "retail_holder_change": 0,
-    "holder_concentration": 59.5
+    "holder_concentration": 58.75
   },
   "main_force": {
-    "cost": 210.88,
-    "distance": -32.19,
+    "cost": 207.45,
+    "distance": -31.79,
     "trend": "DOWN"
   },
   "sector": {
@@ -42,20 +42,15 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 5 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
+      "title": "外資連買 6 天"
     },
     {
       "level": "RED",
-      "title": "融資維持率低迷 (113.02%)"
+      "title": "融資維持率低迷 (113.68%)"
     }
   ],
   "raw_signals": [
-    "主力洗盤完成",
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

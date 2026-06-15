@@ -1,32 +1,32 @@
 {
   "stock_id": "4741",
   "name": "4741",
-  "date": "2026-06-11",
-  "close": 81.0,
+  "date": "2026-06-12",
+  "close": 78.0,
   "health_score": 133,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.451,
+    "foreign_buy_ratio": -0.755,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -14.0,
-    "margin_slope": 160.2,
-    "maintenance_ratio": 212.83,
-    "short_change": -5.0,
-    "short_margin_ratio": 0.22
+    "margin_change": 1.0,
+    "margin_slope": 25.0,
+    "maintenance_ratio": 201.8,
+    "short_change": 13.0,
+    "short_margin_ratio": 0.62
   },
   "tdcc": {
-    "big_holder_change": 40.07,
+    "big_holder_change": 43.51,
     "retail_holder_change": 0,
-    "holder_concentration": 51.5
+    "holder_concentration": 53.23
   },
   "main_force": {
-    "cost": 63.43,
-    "distance": 27.7,
+    "cost": 64.42,
+    "distance": 21.08,
     "trend": "UP"
   },
   "sector": {
@@ -37,9 +37,11 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "caution",
-  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
+  "chip_status": "neutral",
+  "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-11"
+  "raw_signals": [
+    "散戶接刀中"
+  ],
+  "data_version": "2026-06-12"
 }

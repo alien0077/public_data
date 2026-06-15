@@ -1,32 +1,32 @@
 {
   "stock_id": "00999A",
   "name": "00999A",
-  "date": "2026-06-11",
-  "close": 10.89,
-  "health_score": 110,
+  "date": "2026-06-12",
+  "close": 11.08,
+  "health_score": 130,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 2,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 12.0,
-    "margin_slope": -185.0,
-    "maintenance_ratio": 168.84,
-    "short_change": 4.0,
-    "short_margin_ratio": 0.12
+    "margin_change": -355.0,
+    "margin_slope": -62.2,
+    "maintenance_ratio": 171.15,
+    "short_change": -7.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 10.01,
+    "big_holder_change": 8.79,
     "retail_holder_change": 0,
-    "holder_concentration": 13.89
+    "holder_concentration": 12.61
   },
   "main_force": {
-    "cost": 10.75,
-    "distance": 1.3,
+    "cost": 10.79,
+    "distance": 2.69,
     "trend": "UP"
   },
   "sector": {
@@ -34,12 +34,14 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 40
+    "style": "Growth",
+    "score": 70
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-11"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-12"
 }

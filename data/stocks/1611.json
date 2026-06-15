@@ -1,32 +1,32 @@
 {
   "stock_id": "1611",
   "name": "1611",
-  "date": "2026-06-11",
-  "close": 13.3,
+  "date": "2026-06-12",
+  "close": 13.5,
   "health_score": 130,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.017,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.078,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -6.0,
-    "margin_slope": -31.8,
-    "maintenance_ratio": 179.92,
-    "short_change": -17.0,
-    "short_margin_ratio": 0.27
+    "margin_change": 9.0,
+    "margin_slope": -25.4,
+    "maintenance_ratio": 180.87,
+    "short_change": -2.0,
+    "short_margin_ratio": 0.21
   },
   "tdcc": {
-    "big_holder_change": 46.85,
+    "big_holder_change": 45.53,
     "retail_holder_change": 0,
-    "holder_concentration": 54.59
+    "holder_concentration": 53.92
   },
   "main_force": {
-    "cost": 12.32,
-    "distance": 7.95,
+    "cost": 12.44,
+    "distance": 8.52,
     "trend": "UP"
   },
   "sector": {
@@ -39,7 +39,12 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

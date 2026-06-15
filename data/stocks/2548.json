@@ -1,32 +1,32 @@
 {
   "stock_id": "2548",
   "name": "2548",
-  "date": "2026-06-11",
-  "close": 104.0,
-  "health_score": 103,
+  "date": "2026-06-12",
+  "close": 106.0,
+  "health_score": 120,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.035,
+    "foreign_buy_days": 6,
+    "foreign_buy_ratio": 0.26,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -241.0,
-    "margin_slope": 13.6,
-    "maintenance_ratio": 157.58,
-    "short_change": -3.0,
-    "short_margin_ratio": 0.66
+    "margin_change": -99.0,
+    "margin_slope": 3.6,
+    "maintenance_ratio": 161.5,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.74
   },
   "tdcc": {
-    "big_holder_change": 39.95,
+    "big_holder_change": 40.08,
     "retail_holder_change": 0,
-    "holder_concentration": 52.99
+    "holder_concentration": 52.72
   },
   "main_force": {
-    "cost": 110.0,
-    "distance": -5.45,
+    "cost": 109.39,
+    "distance": -3.1,
     "trend": "DOWN"
   },
   "sector": {
@@ -42,9 +42,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 5 天"
+      "title": "外資連買 6 天"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-11"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-12"
 }

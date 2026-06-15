@@ -1,32 +1,32 @@
 {
   "stock_id": "1714",
   "name": "1714",
-  "date": "2026-06-11",
-  "close": 14.4,
+  "date": "2026-06-12",
+  "close": 15.2,
   "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.087,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.592,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8079.0,
-    "margin_slope": 2741.6,
-    "maintenance_ratio": 224.09,
-    "short_change": 227.0,
-    "short_margin_ratio": 1.29
+    "margin_change": -3712.0,
+    "margin_slope": 1556.0,
+    "maintenance_ratio": 230.72,
+    "short_change": 581.0,
+    "short_margin_ratio": 4.23
   },
   "tdcc": {
-    "big_holder_change": 58.37,
+    "big_holder_change": 59.12,
     "retail_holder_change": 0,
-    "holder_concentration": 64.6
+    "holder_concentration": 65.07
   },
   "main_force": {
-    "cost": 10.71,
-    "distance": 34.45,
+    "cost": 10.98,
+    "distance": 38.43,
     "trend": "UP"
   },
   "sector": {
@@ -42,9 +42,15 @@
   "events": [
     {
       "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
+    {
+      "level": "GREEN",
       "title": "今日強勢大漲"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-11"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-12"
 }

@@ -1,32 +1,32 @@
 {
   "stock_id": "2375",
   "name": "2375",
-  "date": "2026-06-11",
-  "close": 161.0,
+  "date": "2026-06-12",
+  "close": 172.5,
   "health_score": 150,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.164,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.531,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 10.0,
-    "margin_slope": 61.6,
-    "maintenance_ratio": 189.18,
-    "short_change": -26.0,
-    "short_margin_ratio": 3.65
+    "margin_change": 1905.0,
+    "margin_slope": 477.6,
+    "maintenance_ratio": 197.59,
+    "short_change": 169.0,
+    "short_margin_ratio": 4.7
   },
   "tdcc": {
-    "big_holder_change": 28.01,
+    "big_holder_change": 28.74,
     "retail_holder_change": 0,
-    "holder_concentration": 31.69
+    "holder_concentration": 33.08
   },
   "main_force": {
-    "cost": 141.84,
-    "distance": 13.51,
+    "cost": 145.5,
+    "distance": 18.56,
     "trend": "UP"
   },
   "sector": {
@@ -37,14 +37,18 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
     }
   ],
   "raw_signals": [],
-  "data_version": "2026-06-11"
+  "data_version": "2026-06-12"
 }

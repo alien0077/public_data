@@ -1,32 +1,32 @@
 {
   "stock_id": "8070",
   "name": "8070",
-  "date": "2026-06-11",
-  "close": 58.8,
-  "health_score": 130,
+  "date": "2026-06-12",
+  "close": 57.3,
+  "health_score": 113,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 6,
-    "foreign_buy_ratio": 0.739,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.66,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -325.0,
-    "margin_slope": -734.2,
-    "maintenance_ratio": 193.87,
-    "short_change": -5.0,
+    "margin_change": -473.0,
+    "margin_slope": -410.0,
+    "maintenance_ratio": 186.93,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 73.85,
+    "big_holder_change": 72.87,
     "retail_holder_change": 0,
-    "holder_concentration": 77.32
+    "holder_concentration": 76.39
   },
   "main_force": {
-    "cost": 50.55,
-    "distance": 16.32,
+    "cost": 51.09,
+    "distance": 12.16,
     "trend": "UP"
   },
   "sector": {
@@ -39,14 +39,7 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 6 天"
-    }
-  ],
-  "raw_signals": [
-    "主力洗盤完成"
-  ],
-  "data_version": "2026-06-11"
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-12"
 }

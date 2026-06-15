@@ -1,28 +1,28 @@
 {
   "stock_id": "6706",
   "name": "6706",
-  "date": "2026-06-11",
-  "close": 161.0,
-  "health_score": 103,
+  "date": "2026-06-12",
+  "close": 167.0,
+  "health_score": 86,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -260.0,
-    "margin_slope": -198.0,
-    "maintenance_ratio": 144.73,
-    "short_change": -34.0,
-    "short_margin_ratio": 2.38
+    "margin_change": 752.0,
+    "margin_slope": 68.2,
+    "maintenance_ratio": 149.79,
+    "short_change": 6.0,
+    "short_margin_ratio": 2.26
   },
   "tdcc": {},
   "main_force": {
-    "cost": 185.4,
-    "distance": -13.16,
+    "cost": 185.82,
+    "distance": -10.13,
     "trend": "DOWN"
   },
   "sector": {
@@ -33,13 +33,11 @@
     "style": "Value",
     "score": 30
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
   "events": [],
-  "raw_signals": [
-    "融資斷頭預警"
-  ],
-  "data_version": "2026-06-11",
+  "raw_signals": [],
+  "data_version": "2026-06-12",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (-2.01%)，營運異常，請審慎評估"
 }

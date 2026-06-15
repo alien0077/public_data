@@ -1,32 +1,32 @@
 {
   "stock_id": "5410",
   "name": "5410",
-  "date": "2026-06-11",
-  "close": 44.15,
+  "date": "2026-06-12",
+  "close": 45.65,
   "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 1.851,
+    "foreign_buy_days": 8,
+    "foreign_buy_ratio": 0.037,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 692.0,
-    "margin_slope": 113.4,
-    "maintenance_ratio": 186.71,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": -109.0,
+    "margin_slope": 107.8,
+    "maintenance_ratio": 190.92,
+    "short_change": 6.0,
+    "short_margin_ratio": 0.22
   },
   "tdcc": {
-    "big_holder_change": 26.33,
+    "big_holder_change": 27.97,
     "retail_holder_change": 0,
-    "holder_concentration": 34.45
+    "holder_concentration": 37.62
   },
   "main_force": {
-    "cost": 39.41,
-    "distance": 12.03,
+    "cost": 39.85,
+    "distance": 14.55,
     "trend": "UP"
   },
   "sector": {
@@ -42,13 +42,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 7 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
+      "title": "外資連買 8 天"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-11"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-12"
 }
