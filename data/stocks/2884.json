@@ -1,23 +1,23 @@
 {
   "stock_id": "2884",
   "name": "2884",
-  "date": "2026-06-12",
-  "close": 34.35,
+  "date": "2026-06-15",
+  "close": 34.65,
   "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.146,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.017,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -87.0,
-    "margin_slope": -348.6,
-    "maintenance_ratio": 177.35,
-    "short_change": 13.0,
-    "short_margin_ratio": 0.44
+    "margin_change": -1101.0,
+    "margin_slope": -452.6,
+    "maintenance_ratio": 178.13,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.53
   },
   "tdcc": {
     "big_holder_change": 67.33,
@@ -25,8 +25,8 @@
     "holder_concentration": 71.76
   },
   "main_force": {
-    "cost": 32.28,
-    "distance": 6.41,
+    "cost": 32.42,
+    "distance": 6.88,
     "trend": "UP"
   },
   "sector": {
@@ -39,11 +39,14 @@
   },
   "chip_status": "strong",
   "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
-  "events": [],
-  "raw_signals": [
-    "主力洗盤完成"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
   ],
-  "data_version": "2026-06-12",
+  "raw_signals": [],
+  "data_version": "2026-06-15",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (0.00%)，營運異常，請審慎評估"
 }

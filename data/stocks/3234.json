@@ -1,21 +1,21 @@
 {
   "stock_id": "3234",
   "name": "3234",
-  "date": "2026-06-12",
-  "close": 111.5,
-  "health_score": 86,
+  "date": "2026-06-15",
+  "close": 122.5,
+  "health_score": 133,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.463,
+    "foreign_buy_ratio": -0.195,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
     "margin_change": 0.0,
     "margin_slope": 0.0,
-    "maintenance_ratio": 165.2,
+    "maintenance_ratio": 179.38,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,21 +25,26 @@
     "holder_concentration": 36.18
   },
   "main_force": {
-    "cost": 112.49,
-    "distance": -0.88,
-    "trend": "DOWN"
+    "cost": 113.82,
+    "distance": 7.63,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-12"
+  "data_version": "2026-06-15"
 }

@@ -1,23 +1,23 @@
 {
   "stock_id": "4991",
   "name": "4991",
-  "date": "2026-06-12",
-  "close": 554.0,
+  "date": "2026-06-15",
+  "close": 544.0,
   "health_score": 66,
   "signal": "Neutral",
-  "ai_narrative": "今日股價走強，盤面顯示「融資斷頭預警」。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中/融資斷頭預警」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.149,
+    "foreign_buy_ratio": -1.726,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 712.0,
-    "margin_slope": 40.6,
-    "maintenance_ratio": 133.01,
-    "short_change": -37.0,
-    "short_margin_ratio": 0.14
+    "margin_change": 964.0,
+    "margin_slope": 154.8,
+    "maintenance_ratio": 132.07,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.13
   },
   "tdcc": {
     "big_holder_change": 46.07,
@@ -25,8 +25,8 @@
     "holder_concentration": 59.56
   },
   "main_force": {
-    "cost": 694.2,
-    "distance": -20.2,
+    "cost": 686.5,
+    "distance": -20.76,
     "trend": "DOWN"
   },
   "sector": {
@@ -42,11 +42,12 @@
   "events": [
     {
       "level": "RED",
-      "title": "融資維持率低迷 (133.01%)"
+      "title": "融資維持率低迷 (132.07%)"
     }
   ],
   "raw_signals": [
+    "散戶接刀中",
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-12"
+  "data_version": "2026-06-15"
 }

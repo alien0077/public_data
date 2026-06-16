@@ -1,28 +1,28 @@
 {
   "stock_id": "00852L",
   "name": "00852L",
-  "date": "2026-06-12",
-  "close": 32.92,
-  "health_score": 150,
+  "date": "2026-06-15",
+  "close": 33.99,
+  "health_score": 133,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -7.0,
-    "margin_slope": 0.4,
-    "maintenance_ratio": 168.61,
+    "margin_change": 28.0,
+    "margin_slope": 6.0,
+    "maintenance_ratio": 173.24,
     "short_change": 0.0,
-    "short_margin_ratio": 114.75
+    "short_margin_ratio": 78.65
   },
   "tdcc": {},
   "main_force": {
-    "cost": 32.54,
-    "distance": 1.17,
+    "cost": 32.7,
+    "distance": 3.94,
     "trend": "UP"
   },
   "sector": {
@@ -33,16 +33,14 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
   "events": [
     {
       "level": "RED",
       "title": "短線券資比過熱 (警示)"
     }
   ],
-  "raw_signals": [
-    "主力洗盤完成"
-  ],
-  "data_version": "2026-06-12"
+  "raw_signals": [],
+  "data_version": "2026-06-15"
 }

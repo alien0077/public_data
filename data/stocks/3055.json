@@ -1,23 +1,23 @@
 {
   "stock_id": "3055",
   "name": "3055",
-  "date": "2026-06-12",
-  "close": 79.9,
-  "health_score": 66,
-  "signal": "Neutral",
-  "ai_narrative": "今日股價走強，盤面顯示「融資斷頭預警」。",
+  "date": "2026-06-15",
+  "close": 83.1,
+  "health_score": 86,
+  "signal": "Bullish",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成/融資斷頭預警」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.115,
+    "foreign_buy_ratio": -0.172,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -127.0,
-    "margin_slope": -113.0,
-    "maintenance_ratio": 128.0,
-    "short_change": -42.0,
-    "short_margin_ratio": 0.2
+    "margin_change": -37.0,
+    "margin_slope": -99.6,
+    "maintenance_ratio": 135.07,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.21
   },
   "tdcc": {
     "big_holder_change": 59.52,
@@ -25,8 +25,8 @@
     "holder_concentration": 66.79
   },
   "main_force": {
-    "cost": 104.04,
-    "distance": -23.2,
+    "cost": 102.54,
+    "distance": -18.96,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,18 +35,19 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [
     {
       "level": "RED",
-      "title": "融資維持率低迷 (128.0%)"
+      "title": "融資維持率低迷 (135.07%)"
     }
   ],
   "raw_signals": [
+    "主力洗盤完成",
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-12"
+  "data_version": "2026-06-15"
 }

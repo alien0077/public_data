@@ -1,23 +1,23 @@
 {
   "stock_id": "3665",
   "name": "3665",
-  "date": "2026-06-12",
-  "close": 2310.0,
-  "health_score": 150,
+  "date": "2026-06-15",
+  "close": 2265.0,
+  "health_score": 133,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.26,
+    "foreign_buy_ratio": -0.446,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 77.0,
-    "margin_slope": -0.8,
-    "maintenance_ratio": 187.71,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.5
+    "margin_change": 20.0,
+    "margin_slope": 21.2,
+    "maintenance_ratio": 182.99,
+    "short_change": -2.0,
+    "short_margin_ratio": 0.43
   },
   "tdcc": {
     "big_holder_change": 43.96,
@@ -25,8 +25,8 @@
     "holder_concentration": 59.6
   },
   "main_force": {
-    "cost": 2051.0,
-    "distance": 12.63,
+    "cost": 2063.0,
+    "distance": 9.79,
     "trend": "UP"
   },
   "sector": {
@@ -37,14 +37,11 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "strong",
-  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
+  "chip_status": "neutral",
+  "chip_warning": "",
+  "events": [],
+  "raw_signals": [
+    "散戶接刀中"
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-12"
+  "data_version": "2026-06-15"
 }

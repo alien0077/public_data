@@ -1,21 +1,21 @@
 {
   "stock_id": "3169",
   "name": "3169",
-  "date": "2026-06-12",
-  "close": 107.0,
+  "date": "2026-06-15",
+  "close": 110.5,
   "health_score": 123,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.054,
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 0.014,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -18.0,
-    "margin_slope": -22.0,
-    "maintenance_ratio": 155.89,
+    "margin_change": 5.0,
+    "margin_slope": -19.6,
+    "maintenance_ratio": 160.82,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 36.63
   },
   "main_force": {
-    "cost": 114.4,
-    "distance": -6.47,
+    "cost": 114.52,
+    "distance": -3.51,
     "trend": "DOWN"
   },
   "sector": {
@@ -42,11 +42,9 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 4 天"
+      "title": "外資連買 5 天"
     }
   ],
-  "raw_signals": [
-    "主力洗盤完成"
-  ],
-  "data_version": "2026-06-12"
+  "raw_signals": [],
+  "data_version": "2026-06-15"
 }
