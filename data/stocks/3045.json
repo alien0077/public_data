@@ -1,23 +1,23 @@
 {
   "stock_id": "3045",
   "name": "3045",
-  "date": "2026-06-15",
-  "close": 119.5,
-  "health_score": 150,
+  "date": "2026-06-16",
+  "close": 120.5,
+  "health_score": 166,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 9,
-    "foreign_buy_ratio": 0.019,
+    "foreign_buy_days": 10,
+    "foreign_buy_ratio": 0.14,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -9.0,
-    "margin_slope": -23.8,
-    "maintenance_ratio": 173.41,
-    "short_change": -2.0,
-    "short_margin_ratio": 24.58
+    "margin_change": -51.0,
+    "margin_slope": -32.6,
+    "maintenance_ratio": 174.56,
+    "short_change": 35.0,
+    "short_margin_ratio": 50.27
   },
   "tdcc": {
     "big_holder_change": 90.11,
@@ -25,8 +25,8 @@
     "holder_concentration": 92.37
   },
   "main_force": {
-    "cost": 114.85,
-    "distance": 4.05,
+    "cost": 115.05,
+    "distance": 4.74,
     "trend": "UP"
   },
   "sector": {
@@ -42,9 +42,13 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 9 天"
+      "title": "外資連買 10 天"
+    },
+    {
+      "level": "RED",
+      "title": "短線券資比過熱 (警示)"
     }
   ],
   "raw_signals": [],
-  "data_version": "2026-06-15"
+  "data_version": "2026-06-16"
 }

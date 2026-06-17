@@ -1,21 +1,21 @@
 {
   "stock_id": "1907",
   "name": "1907",
-  "date": "2026-06-15",
-  "close": 26.25,
+  "date": "2026-06-16",
+  "close": 26.95,
   "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.025,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.009,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -102.0,
-    "margin_slope": -27.0,
-    "maintenance_ratio": 174.79,
+    "margin_change": 147.0,
+    "margin_slope": 8.6,
+    "maintenance_ratio": 178.52,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 84.31
   },
   "main_force": {
-    "cost": 25.03,
-    "distance": 4.87,
+    "cost": 25.16,
+    "distance": 7.11,
     "trend": "UP"
   },
   "sector": {
@@ -37,11 +37,14 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "strong",
-  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
-  "events": [],
-  "raw_signals": [
-    "主力洗盤完成"
+  "chip_status": "neutral",
+  "chip_warning": "",
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
   ],
-  "data_version": "2026-06-15"
+  "raw_signals": [],
+  "data_version": "2026-06-16"
 }

@@ -1,21 +1,21 @@
 {
   "stock_id": "3567",
   "name": "3567",
-  "date": "2026-06-15",
-  "close": 27.75,
-  "health_score": 123,
+  "date": "2026-06-16",
+  "close": 27.8,
+  "health_score": 106,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.044,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.068,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7.0,
-    "margin_slope": 0.8,
-    "maintenance_ratio": 162.85,
+    "margin_change": 32.0,
+    "margin_slope": 8.0,
+    "maintenance_ratio": 163.15,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -26,7 +26,7 @@
   },
   "main_force": {
     "cost": 28.4,
-    "distance": -2.29,
+    "distance": -2.11,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,14 +37,9 @@
     "style": "Value",
     "score": 60
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
+  "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-15"
+  "data_version": "2026-06-16"
 }

@@ -1,21 +1,21 @@
 {
   "stock_id": "3092",
   "name": "3092",
-  "date": "2026-06-15",
-  "close": 29.85,
-  "health_score": 130,
+  "date": "2026-06-16",
+  "close": 29.3,
+  "health_score": 103,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.103,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.056,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 34.0,
-    "margin_slope": 4.0,
-    "maintenance_ratio": 167.96,
+    "margin_change": 80.0,
+    "margin_slope": 18.4,
+    "maintenance_ratio": 164.7,
     "short_change": 0.0,
     "short_margin_ratio": 0.03
   },
@@ -25,26 +25,28 @@
     "holder_concentration": 36.26
   },
   "main_force": {
-    "cost": 29.62,
-    "distance": 0.78,
-    "trend": "UP"
+    "cost": 29.65,
+    "distance": -1.18,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 30
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-15"
+  "raw_signals": [
+    "散戶接刀中"
+  ],
+  "data_version": "2026-06-16"
 }

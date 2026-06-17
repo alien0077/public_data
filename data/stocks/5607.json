@@ -1,22 +1,22 @@
 {
   "stock_id": "5607",
   "name": "5607",
-  "date": "2026-06-15",
-  "close": 52.2,
+  "date": "2026-06-16",
+  "close": 52.0,
   "health_score": 130,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.038,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.012,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 41.0,
-    "margin_slope": -15.6,
-    "maintenance_ratio": 170.05,
-    "short_change": 10.0,
+    "margin_change": 1.0,
+    "margin_slope": -14.6,
+    "maintenance_ratio": 168.74,
+    "short_change": 0.0,
     "short_margin_ratio": 0.69
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 75.41
   },
   "main_force": {
-    "cost": 51.16,
-    "distance": 2.03,
+    "cost": 51.36,
+    "distance": 1.25,
     "trend": "UP"
   },
   "sector": {
@@ -39,7 +39,12 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-15"
+  "data_version": "2026-06-16"
 }

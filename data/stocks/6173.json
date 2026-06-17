@@ -1,23 +1,23 @@
 {
   "stock_id": "6173",
   "name": "6173",
-  "date": "2026-06-15",
-  "close": 304.0,
+  "date": "2026-06-16",
+  "close": 287.0,
   "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.51,
+    "foreign_buy_ratio": -1.846,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 416.0,
-    "margin_slope": 382.6,
-    "maintenance_ratio": 228.02,
-    "short_change": 21.0,
-    "short_margin_ratio": 1.18
+    "margin_change": 256.0,
+    "margin_slope": 495.6,
+    "maintenance_ratio": 209.32,
+    "short_change": 492.0,
+    "short_margin_ratio": 6.24
   },
   "tdcc": {
     "big_holder_change": 63.15,
@@ -25,8 +25,8 @@
     "holder_concentration": 70.39
   },
   "main_force": {
-    "cost": 222.2,
-    "distance": 36.81,
+    "cost": 228.52,
+    "distance": 25.59,
     "trend": "UP"
   },
   "sector": {
@@ -39,12 +39,9 @@
   },
   "chip_status": "caution",
   "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
+  "events": [],
+  "raw_signals": [
+    "散戶接刀中"
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-15"
+  "data_version": "2026-06-16"
 }

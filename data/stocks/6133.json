@@ -1,23 +1,23 @@
 {
   "stock_id": "6133",
   "name": "6133",
-  "date": "2026-06-15",
-  "close": 24.0,
-  "health_score": 150,
+  "date": "2026-06-16",
+  "close": 23.5,
+  "health_score": 106,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 6,
-    "foreign_buy_ratio": 0.053,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.211,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -15.0,
-    "margin_slope": -22.8,
-    "maintenance_ratio": 169.49,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.27
+    "margin_change": 93.0,
+    "margin_slope": 2.6,
+    "maintenance_ratio": 165.61,
+    "short_change": -4.0,
+    "short_margin_ratio": 0.13
   },
   "tdcc": {
     "big_holder_change": 44.17,
@@ -25,26 +25,23 @@
     "holder_concentration": 47.53
   },
   "main_force": {
-    "cost": 23.6,
-    "distance": 1.69,
-    "trend": "UP"
+    "cost": 23.65,
+    "distance": -0.63,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 100
+    "style": "Value",
+    "score": 60
   },
-  "chip_status": "strong",
-  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 6 天"
-    }
+  "chip_status": "neutral",
+  "chip_warning": "",
+  "events": [],
+  "raw_signals": [
+    "散戶接刀中"
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-15"
+  "data_version": "2026-06-16"
 }

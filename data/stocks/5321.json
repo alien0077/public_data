@@ -1,21 +1,21 @@
 {
   "stock_id": "5321",
   "name": "5321",
-  "date": "2026-06-15",
-  "close": 36.05,
+  "date": "2026-06-16",
+  "close": 36.5,
   "health_score": 103,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「融資斷頭預警」。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成/融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.017,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.051,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 13.0,
-    "margin_slope": -1.8,
-    "maintenance_ratio": 137.18,
+    "margin_change": -1.0,
+    "margin_slope": 5.4,
+    "maintenance_ratio": 137.76,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 60.53
   },
   "main_force": {
-    "cost": 43.8,
-    "distance": -17.69,
+    "cost": 44.16,
+    "distance": -17.35,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,20 +37,21 @@
     "style": "Value",
     "score": 30
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
     },
     {
       "level": "RED",
-      "title": "融資維持率低迷 (137.18%)"
+      "title": "融資維持率低迷 (137.76%)"
     }
   ],
   "raw_signals": [
+    "主力洗盤完成",
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-15"
+  "data_version": "2026-06-16"
 }
