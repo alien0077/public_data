@@ -9,7 +9,7 @@ import { Transaction } from './views/transaction.js?v=2';
 import { Favorites } from './views/favorites.js?v=2';
 import { router } from './router.js';
 import { CorporateActions } from './corporateActions.js';
-import { Settings } from './views/settings.js?cb=2';
+import { Settings } from './views/settings.js?cb=3';
 import { GroupSearch } from './views/groupSearch.js?v=2';
 import { getPriceChangeStyle } from './utils/priceStyle.js';
 
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
         portfolioBody.innerHTML = '';
         const portfolioCards = document.getElementById('portfolio-cards');
         if (portfolioCards) portfolioCards.innerHTML = '';
-        let totalMV = 0, totalYtdBasis = 0, totalRefMV = 0;
+        let totalMV = 0, totalYtdBasis = 0, totalRefMV = 0, totalCost = 0;
         let rows = [];
 
         const syms = Object.keys(holdings).filter(s => s !== 'yearlyStats' && holdings[s].shares > 0.001);
@@ -393,6 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
             totalMV += mv;
             totalYtdBasis += (h.ytdBasis || h.totalCost);
             totalRefMV += (refPrice > 0 ? (refPrice * shares) : mv);
+            totalCost += h.totalCost;
 
             const pnl = price > 0 ? (mv - h.totalCost) : 0;
             const roi = h.totalCost > 0 ? (pnl / h.totalCost * 100) : 0;
@@ -474,11 +475,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const curY = new Date().getFullYear().toString();
-        const yS = (holdings.yearlyStats && holdings.yearlyStats[curY]) || { realizedPNL: 0, dividend: 0, ytdRealizedPNL: 0 };
         
-        const ytdUnrealized = (isNaN(totalMV) || isNaN(totalYtdBasis)) ? 0 : (totalMV - totalYtdBasis);
-        const totalPnl = ytdUnrealized + (yS.ytdRealizedPNL || 0) + (yS.dividend || 0);
-        const totalPnlPercent = totalYtdBasis > 0 ? (totalPnl / totalYtdBasis * 100) : 0;
+        const totalPnl = (isNaN(totalMV) || isNaN(totalCost)) ? 0 : (totalMV - totalCost);
+        const totalPnlPercent = totalCost > 0 ? (totalPnl / totalCost * 100) : 0;
         const dPnl = isNaN(totalMV) || isNaN(totalRefMV) ? 0 : (totalMV - totalRefMV);
 
         totalMarketValueEl.textContent = formatNumber(totalMV, 0);
@@ -489,7 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dailyPnlEl.textContent = (dPnl >= 0 ? '+' : '') + formatNumber(dPnl, 0);
         dailyPnlEl.className = 'text-3xl font-mono font-bold ' + (dPnl >= 0 ? 'text-red-500' : 'text-green-500');
         const pt = document.querySelector('#total-pnl')?.previousElementSibling;
-        if (pt) pt.textContent = '今年度總盈虧 (' + curY + ')';
+        if (pt) pt.textContent = '總盈虧';
     }
 
     function renderAssetRow2(trades, holdings, quotes) {

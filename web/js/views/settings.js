@@ -226,13 +226,27 @@ export const Settings = {
             try {
                 const text = await file.text();
                 const data = JSON.parse(text);
+
+                // 收藏頁 v1 格式: { version: 1, categories: { "name": ["stocks"] } }
+                if (data.version === 1 && data.categories) {
+                    const catNames = Object.keys(data.categories);
+                    const totalStocks = catNames.reduce((s, c) => s + (data.categories[c] || []).length, 0);
+                    if (!confirm(`將以匯入的分類 (${catNames.length} 個) 完全取代現有收藏，共 ${totalStocks} 檔股票。確定？`)) return;
+                    localStorage.setItem('twstock_favorite_categories', JSON.stringify(catNames));
+                    localStorage.setItem('twstock_favorite_data', JSON.stringify(data.categories));
+                    alert(`✅ 匯入完成！共 ${totalStocks} 檔股票，${catNames.length} 個分類。`);
+                    return;
+                }
+
+                // 舊格式: { categories: ["names"], items: { "stock": ["cats"] } }
                 if (data.categories && data.items) {
                     localStorage.setItem('twstock_favorite_categories', JSON.stringify(data.categories));
                     localStorage.setItem('twstock_favorite_data', JSON.stringify(data.items));
                     alert('收藏名單匯入成功！');
-                } else {
-                    alert('無效的收藏名單格式。');
+                    return;
                 }
+
+                alert('無效的收藏名單格式。');
             } catch { alert('解析 JSON 失敗。'); }
         });
         input.click();
