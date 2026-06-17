@@ -183,11 +183,13 @@ export const TrendHunter = {
                                          <th class="px-6 py-3 text-left">原因</th>
                                          <th class="px-6 py-3 text-right">配置權重</th>
                                          <th class="px-6 py-3 text-right">進場日期</th>
+                                         <th class="px-6 py-3 text-right">持有股數</th>
+                                         <th class="px-6 py-3 text-right">買入價</th>
                                          <th class="px-6 py-3 text-right">累積回報</th>
                                          <th class="px-6 py-3 text-right">籌碼特徵</th>
                                          <th class="px-6 py-3 text-right">操作建議</th>
                                          <th class="px-6 py-3 text-right">本益比</th>
-                                    </tr>
+                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono text-sm text-gray-400">
                                     <tr><td colspan="8" class="px-6 py-8 text-center text-gray-500">加載數據中...</td></tr>
@@ -1855,7 +1857,7 @@ export const TrendHunter = {
                 }
                 if (holdingsTable) {
                     if (activeHoldings.length === 0) {
-                        holdingsTable.innerHTML = `<tr><td colspan="7" class="px-6 py-8 text-center text-gray-500">模型目前無持股，保持全現金觀望。</td></tr>`;
+                        holdingsTable.innerHTML = `<tr><td colspan="10" class="px-6 py-8 text-center text-gray-500">模型目前無持股，保持全現金觀望。</td></tr>`;
                     } else {
                         holdingsTable.innerHTML = activeHoldings.map(p => {
                             const name = stocksMeta[p.stock] || stocksMeta[p.stock.replace(/\.TW(O)?$/, '')] || p.stock;
@@ -1868,17 +1870,19 @@ export const TrendHunter = {
                             const peRatio = p.pe_ratio;
                             const peColor = peRatio < 15 ? 'text-green-500' : peRatio < 25 ? 'text-gray-600 dark:text-gray-300' : 'text-orange-500';
                             const peStr = peRatio ? peRatio.toFixed(1) : '--';
-                            return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-900/30 cursor-pointer" onclick="window.StockDetail.show('${cleanStockId}')">
-                                <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
-                                    <div class="font-bold">${cleanStockId}</div><div class="text-xs text-gray-500">${name}</div></td>
-                                 <td class="px-6 py-4 text-left">${reason ? `<span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${reasonColor}">${reason}</span>` : ''}</td>
-                                 <td class="px-6 py-4 text-right font-bold text-gray-700 dark:text-gray-300">${((p.weight || 0) * 100).toFixed(1)}%</td>
-                                 <td class="px-6 py-4 text-right text-gray-500 font-mono text-xs">${p.entry_date || '--'}</td>
-                                 <td class="px-6 py-4 text-right font-bold ${isProfit ? 'text-red-500' : 'text-green-500'}">${isProfit ? '+' : ''}${rawRet.toFixed(2)}%</td>
-                                 <td class="px-6 py-4 text-right text-xs text-gray-500">${p.chips || p.chip_label || ''}</td>
-                                 <td class="px-6 py-4 text-right"><span class="px-2 py-1 rounded text-xs font-bold ${actionColor}">${action}</span></td>
-                                 <td class="px-6 py-4 text-right font-bold ${peColor}">${peStr}</td>
-                            </tr>`;
+                             return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-900/30 cursor-pointer" onclick="window.StockDetail.show('${cleanStockId}')">
+                                 <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                     <div class="font-bold">${cleanStockId}</div><div class="text-xs text-gray-500">${name}</div></td>
+                                  <td class="px-6 py-4 text-left">${reason ? `<span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${reasonColor}">${reason}</span>` : ''}</td>
+                                  <td class="px-6 py-4 text-right font-bold text-gray-700 dark:text-gray-300">${((p.weight || 0) * 100).toFixed(1)}%</td>
+                                  <td class="px-6 py-4 text-right text-gray-500 font-mono text-xs">${p.entry_date || '--'}</td>
+                                  <td class="px-6 py-4 text-right font-mono text-xs text-gray-500">${p.shares ? p.shares.toLocaleString() : '--'}</td>
+                                  <td class="px-6 py-4 text-right font-mono text-xs text-blue-500">${p.entry_price ? p.entry_price.toFixed(0) : '--'}</td>
+                                  <td class="px-6 py-4 text-right font-bold ${isProfit ? 'text-red-500' : 'text-green-500'}">${isProfit ? '+' : ''}${rawRet.toFixed(2)}%</td>
+                                  <td class="px-6 py-4 text-right text-xs text-gray-500">${p.chips || p.chip_label || ''}</td>
+                                  <td class="px-6 py-4 text-right"><span class="px-2 py-1 rounded text-xs font-bold ${actionColor}">${action}</span></td>
+                                  <td class="px-6 py-4 text-right font-bold ${peColor}">${peStr}</td>
+                             </tr>`;
                         }).join('');
                     }
                 }
@@ -1906,6 +1910,11 @@ export const TrendHunter = {
                                     </div>
                                     <div class="text-right mx-4 flex-shrink-0">
                                         <div class="text-[10px] font-mono text-gray-500">${t.exit_date ? `${t.entry_date} → ${t.exit_date}` : `買入於 ${t.entry_date}`}</div>
+                                        <div class="flex items-center justify-end space-x-2 mt-0.5">
+                                            ${t.entry_price ? `<span class="text-[10px] font-mono text-blue-500">買${t.entry_price.toFixed(0)}</span>` : ''}
+                                            ${t.exit_price ? `<span class="text-[10px] font-mono text-orange-500">賣${t.exit_price.toFixed(0)}</span>` : ''}
+                                            ${t.shares ? `<span class="text-[10px] font-mono text-gray-500">${t.shares}股</span>` : ''}
+                                        </div>
                                         <div class="text-[10px] text-gray-500">${t.reason || t.entry_reason || (isBuy ? '策略進場' : '策略出場')}</div>
                                     </div>
                                     <div class="text-right min-w-[70px] flex-shrink-0">
