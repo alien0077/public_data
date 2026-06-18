@@ -1,28 +1,28 @@
 {
   "stock_id": "00640L",
   "name": "00640L",
-  "date": "2026-06-16",
-  "close": 103.6,
-  "health_score": 133,
+  "date": "2026-06-17",
+  "close": 104.75,
+  "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -1.0,
-    "margin_slope": 2.0,
-    "maintenance_ratio": 172.6,
+    "margin_change": -9.0,
+    "margin_slope": -13.0,
+    "maintenance_ratio": 173.54,
     "short_change": 0.0,
-    "short_margin_ratio": 26.5
+    "short_margin_ratio": 27.75
   },
   "tdcc": {},
   "main_force": {
-    "cost": 100.04,
-    "distance": 3.56,
+    "cost": 100.6,
+    "distance": 4.13,
     "trend": "UP"
   },
   "sector": {
@@ -33,14 +33,16 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "caution",
-  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
   "events": [
     {
       "level": "RED",
       "title": "短線券資比過熱 (警示)"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-16"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-17"
 }

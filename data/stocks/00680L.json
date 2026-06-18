@@ -1,28 +1,28 @@
 {
   "stock_id": "00680L",
   "name": "00680L",
-  "date": "2026-06-16",
-  "close": 6.91,
-  "health_score": 110,
+  "date": "2026-06-17",
+  "close": 7.02,
+  "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 5,
+    "foreign_buy_days": 6,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 418.0,
-    "margin_slope": 91.8,
-    "maintenance_ratio": 168.87,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.98
+    "margin_change": 0.0,
+    "margin_slope": 143.2,
+    "maintenance_ratio": 171.05,
+    "short_change": 176.0,
+    "short_margin_ratio": 1.23
   },
   "tdcc": {},
   "main_force": {
-    "cost": 6.82,
-    "distance": 1.32,
+    "cost": 6.84,
+    "distance": 2.63,
     "trend": "UP"
   },
   "sector": {
@@ -30,19 +30,17 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 40
+    "style": "Growth",
+    "score": 100
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 5 天"
+      "title": "外資連買 6 天"
     }
   ],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-16"
+  "raw_signals": [],
+  "data_version": "2026-06-17"
 }

@@ -1,23 +1,23 @@
 {
   "stock_id": "3034",
   "name": "3034",
-  "date": "2026-06-16",
-  "close": 500.0,
-  "health_score": 166,
+  "date": "2026-06-17",
+  "close": 515.0,
+  "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.072,
+    "foreign_buy_days": 6,
+    "foreign_buy_ratio": 0.18,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -28.0,
-    "margin_slope": -19.4,
-    "maintenance_ratio": 170.86,
+    "margin_change": 452.0,
+    "margin_slope": 72.2,
+    "maintenance_ratio": 175.22,
     "short_change": 2.0,
-    "short_margin_ratio": 2.57
+    "short_margin_ratio": 2.29
   },
   "tdcc": {
     "big_holder_change": 59.27,
@@ -25,8 +25,8 @@
     "holder_concentration": 69.99
   },
   "main_force": {
-    "cost": 487.72,
-    "distance": 2.52,
+    "cost": 489.85,
+    "distance": 5.13,
     "trend": "UP"
   },
   "sector": {
@@ -37,16 +37,14 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "strong",
-  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 5 天"
+      "title": "外資連買 6 天"
     }
   ],
-  "raw_signals": [
-    "主力洗盤完成"
-  ],
-  "data_version": "2026-06-16"
+  "raw_signals": [],
+  "data_version": "2026-06-17"
 }

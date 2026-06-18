@@ -1,23 +1,23 @@
 {
   "stock_id": "00405A",
   "name": "00405A",
-  "date": "2026-06-16",
-  "close": 9.37,
-  "health_score": 103,
+  "date": "2026-06-17",
+  "close": 9.39,
+  "health_score": 86,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 4,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -3782.0,
-    "margin_slope": 160.2,
+    "margin_change": 720.0,
+    "margin_slope": -1892.4,
     "maintenance_ratio": 0,
-    "short_change": 27.0,
-    "short_margin_ratio": 0.25
+    "short_change": -22.0,
+    "short_margin_ratio": 0.15
   },
   "tdcc": {},
   "main_force": {
@@ -33,14 +33,9 @@
     "style": "Value",
     "score": 30
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
-  ],
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
+  "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-16"
+  "data_version": "2026-06-17"
 }

@@ -1,23 +1,23 @@
 {
   "stock_id": "00877",
   "name": "00877",
-  "date": "2026-06-16",
-  "close": 45.38,
+  "date": "2026-06-17",
+  "close": 46.19,
   "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -73.0,
-    "margin_slope": 212.0,
-    "maintenance_ratio": 177.54,
-    "short_change": 126.0,
-    "short_margin_ratio": 1.93
+    "margin_change": 597.0,
+    "margin_slope": 329.8,
+    "maintenance_ratio": 179.32,
+    "short_change": -127.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 11.32,
@@ -25,8 +25,8 @@
     "holder_concentration": 18.79
   },
   "main_force": {
-    "cost": 42.6,
-    "distance": 6.53,
+    "cost": 42.93,
+    "distance": 7.59,
     "trend": "UP"
   },
   "sector": {
@@ -39,9 +39,12 @@
   },
   "chip_status": "caution",
   "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
-  "events": [],
-  "raw_signals": [
-    "主力洗盤完成"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
   ],
-  "data_version": "2026-06-16"
+  "raw_signals": [],
+  "data_version": "2026-06-17"
 }

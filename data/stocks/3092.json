@@ -1,21 +1,21 @@
 {
   "stock_id": "3092",
   "name": "3092",
-  "date": "2026-06-16",
-  "close": 29.3,
-  "health_score": 103,
+  "date": "2026-06-17",
+  "close": 32.2,
+  "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.056,
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 0.109,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 80.0,
-    "margin_slope": 18.4,
-    "maintenance_ratio": 164.7,
+    "margin_change": 342.0,
+    "margin_slope": 86.6,
+    "maintenance_ratio": 179.79,
     "short_change": 0.0,
     "short_margin_ratio": 0.03
   },
@@ -25,28 +25,30 @@
     "holder_concentration": 36.26
   },
   "main_force": {
-    "cost": 29.65,
-    "distance": -1.18,
-    "trend": "DOWN"
+    "cost": 29.85,
+    "distance": 7.87,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "caution",
+  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 4 天"
+      "title": "外資連買 5 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
     }
   ],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-16"
+  "raw_signals": [],
+  "data_version": "2026-06-17"
 }

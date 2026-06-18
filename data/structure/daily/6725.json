@@ -1,6 +1,6 @@
 {
   "symbol": "6725",
-  "updated_at": "2026-06-17",
+  "updated_at": "2026-06-18",
   "lines": [
     {
       "id": "L_7",
@@ -118,6 +118,17 @@
       "price": 360.5,
       "start_idx": 94,
       "start_date": "2026-05-27",
+      "end_idx": 110,
+      "end_date": "2026-06-18",
+      "broken": true,
+      "strength": 1
+    },
+    {
+      "id": "L_105",
+      "type": "low",
+      "price": 273.0,
+      "start_idx": 105,
+      "start_date": "2026-06-11",
       "end_idx": null,
       "end_date": null,
       "broken": false,
@@ -166,6 +177,12 @@
       "price": 284.0,
       "idx": 102,
       "date": "2026-06-08"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 360.5,
+      "idx": 110,
+      "date": "2026-06-18"
     }
   ]
 }

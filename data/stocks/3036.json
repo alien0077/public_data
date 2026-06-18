@@ -1,22 +1,22 @@
 {
   "stock_id": "3036",
   "name": "3036",
-  "date": "2026-06-16",
-  "close": 219.0,
+  "date": "2026-06-17",
+  "close": 224.0,
   "health_score": 66,
   "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中/融資斷頭預警」。",
+  "ai_narrative": "今日股價走強，盤面顯示「融資斷頭預警」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.171,
+    "foreign_buy_ratio": -0.062,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 723.0,
-    "margin_slope": 621.4,
-    "maintenance_ratio": 137.65,
-    "short_change": 3.0,
+    "margin_change": 648.0,
+    "margin_slope": 576.8,
+    "maintenance_ratio": 142.07,
+    "short_change": 4.0,
     "short_margin_ratio": 0.58
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 88.09
   },
   "main_force": {
-    "cost": 265.16,
-    "distance": -17.41,
+    "cost": 262.79,
+    "distance": -14.76,
     "trend": "DOWN"
   },
   "sector": {
@@ -39,15 +39,9 @@
   },
   "chip_status": "danger",
   "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
-  "events": [
-    {
-      "level": "RED",
-      "title": "融資維持率低迷 (137.65%)"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "散戶接刀中",
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-16"
+  "data_version": "2026-06-17"
 }

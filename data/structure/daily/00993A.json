@@ -1,6 +1,6 @@
 {
   "symbol": "00993A",
-  "updated_at": "2026-06-17",
+  "updated_at": "2026-06-18",
   "lines": [
     {
       "id": "H_12",
@@ -74,9 +74,9 @@
       "price": 14.24,
       "start_idx": 70,
       "start_date": "2026-05-27",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 86,
+      "end_date": "2026-06-18",
+      "broken": true,
       "strength": 1
     },
     {
@@ -109,6 +109,12 @@
       "price": 13.55,
       "idx": 68,
       "date": "2026-05-25"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 14.24,
+      "idx": 86,
+      "date": "2026-06-18"
     }
   ]
 }

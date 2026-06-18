@@ -1,23 +1,23 @@
 {
   "stock_id": "6654",
   "name": "6654",
-  "date": "2026-06-16",
-  "close": 207.0,
-  "health_score": 133,
+  "date": "2026-06-17",
+  "close": 227.5,
+  "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.04,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.035,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 33.0,
-    "margin_slope": 3.8,
-    "maintenance_ratio": 228.73,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": -33.0,
+    "margin_slope": 1.6,
+    "maintenance_ratio": 240.97,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.03
   },
   "tdcc": {
     "big_holder_change": 71.18,
@@ -25,8 +25,8 @@
     "holder_concentration": 79.45
   },
   "main_force": {
-    "cost": 150.83,
-    "distance": 37.24,
+    "cost": 157.35,
+    "distance": 44.58,
     "trend": "UP"
   },
   "sector": {
@@ -45,6 +45,8 @@
       "title": "今日強勢大漲"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-16"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-17"
 }

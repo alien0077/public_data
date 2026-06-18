@@ -1691,26 +1691,26 @@
   "strategy_performance": {
     "trend": {
       "sharpe": 1.340391850007236,
-      "total_return": 0.135798,
+      "total_return": 0.153737,
       "win_rate": 0.07180851063829788,
       "backtest_total_return": 0.3159565499999999
     },
     "mr": {
       "sharpe": 0.35275545313655854,
-      "total_return": -0.019295,
+      "total_return": -0.032951,
       "win_rate": 0.08776595744680851,
       "backtest_total_return": 0.07015480000000007
     },
     "ai_inst": {
       "sharpe": 1.641305458732742,
-      "total_return": 0.062715,
+      "total_return": 0.137346,
       "win_rate": 0.5345744680851063,
       "backtest_total_return": 1.3045407
     },
     "portfolio": {
-      "sharpe": 13.074541401006478,
-      "total_return": 0.0597392000000001,
-      "win_rate": 0.5,
+      "sharpe": 16.480490859683236,
+      "total_return": 0.08604400000000001,
+      "win_rate": 0.6,
       "backtest_total_return": 0.5635506833333332,
       "backtest_sharpe": 1.7941963430436727,
       "backtest_win_rate": 0.5425531914893617
@@ -1848,7 +1848,7 @@
     "cash": {
       "trend": 260.0,
       "mr": 568433.0,
-      "ai_inst": 30595.5
+      "ai_inst": 8074.5
     },
     "positions": {
       "trend": [
@@ -1857,21 +1857,21 @@
           "entry_date": "2026-06-12",
           "entry_price": 610.0,
           "shares": 702,
-          "max_return": 0.1573770491803279
+          "max_return": 0.18688524590163924
         },
         {
           "stock": "8021",
           "entry_date": "2026-06-16",
           "entry_price": 518.0,
           "shares": 1103,
-          "max_return": 0.04633204633204624
+          "max_return": 0.04826254826254828
         },
         {
           "stock": "7610",
           "entry_date": "2026-06-17",
           "entry_price": 2105.0,
           "shares": 20,
-          "max_return": 0.0
+          "max_return": 0.09976247030878871
         }
       ],
       "mr": [
@@ -1887,14 +1887,14 @@
           "entry_date": "2026-06-16",
           "entry_price": 2370.0,
           "shares": 19,
-          "max_return": 0.0
+          "max_return": 0.012658227848101333
         },
         {
           "stock": "3044",
           "entry_date": "2026-06-17",
           "entry_price": 571.0,
           "shares": 117,
-          "max_return": 0.0
+          "max_return": 0.003502626970227629
         }
       ],
       "ai_inst": [
@@ -1903,7 +1903,7 @@
           "entry_date": "2026-06-12",
           "entry_price": 97.0,
           "shares": 5154,
-          "max_return": 0.0,
+          "max_return": 0.07216494845360821,
           "consecutive_buy_days": 5,
           "total_inst_buy": 16268415,
           "b_signal_triggered": true,
@@ -1914,7 +1914,7 @@
           "entry_date": "2026-06-12",
           "entry_price": 1145.0,
           "shares": 218,
-          "max_return": 0.32314410480349354,
+          "max_return": 0.3886462882096069,
           "consecutive_buy_days": 5,
           "total_inst_buy": 3278038,
           "b_signal_triggered": false,
@@ -1925,7 +1925,7 @@
           "entry_date": "2026-06-12",
           "entry_price": 199.0,
           "shares": 629,
-          "max_return": 0.0,
+          "max_return": 0.0653266331658291,
           "consecutive_buy_days": 5,
           "total_inst_buy": 2222317,
           "b_signal_triggered": false,
@@ -1947,9 +1947,31 @@
           "entry_date": "2026-06-17",
           "entry_price": 515.0,
           "shares": 59,
-          "max_return": 0.0,
+          "max_return": 0.001941747572815622,
           "consecutive_buy_days": 5,
           "total_inst_buy": 2743674,
+          "b_signal_triggered": false,
+          "phase": "ACCUMULATING"
+        },
+        {
+          "stock": "3037",
+          "entry_date": "2026-06-18",
+          "entry_price": 968.0,
+          "shares": 15,
+          "max_return": 0.0,
+          "consecutive_buy_days": 5,
+          "total_inst_buy": 7055142,
+          "b_signal_triggered": false,
+          "phase": "ACCUMULATING"
+        },
+        {
+          "stock": "3583",
+          "entry_date": "2026-06-18",
+          "entry_price": 889.0,
+          "shares": 9,
+          "max_return": 0.0,
+          "consecutive_buy_days": 5,
+          "total_inst_buy": 1046601,
           "b_signal_triggered": false,
           "phase": "ACCUMULATING"
         }
@@ -1975,6 +1997,10 @@
       {
         "date": "2026-06-17",
         "nav": 3179217.6
+      },
+      {
+        "date": "2026-06-18",
+        "nav": 3258132.0
       }
     ],
     "strategy_navs": {
@@ -1998,6 +2024,10 @@
         {
           "date": "2026-06-17",
           "nav": 1135798.0
+        },
+        {
+          "date": "2026-06-18",
+          "nav": 1153737.0
         }
       ],
       "mr": [
@@ -2020,6 +2050,10 @@
         {
           "date": "2026-06-17",
           "nav": 980705.0
+        },
+        {
+          "date": "2026-06-18",
+          "nav": 967049.0
         }
       ],
       "ai_inst": [
@@ -2042,6 +2076,10 @@
         {
           "date": "2026-06-17",
           "nav": 1062714.6
+        },
+        {
+          "date": "2026-06-18",
+          "nav": 1137346.0
         }
       ]
     }
@@ -5079,11 +5117,29 @@
   },
   "trade_log": [
     {
+      "stock": "3583",
+      "entry_date": "2026-06-18",
+      "exit_date": null,
+      "action": "BUY",
+      "entry_price": 889.0,
+      "shares": 9,
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009"
+    },
+    {
+      "stock": "3037",
+      "entry_date": "2026-06-18",
+      "exit_date": null,
+      "action": "BUY",
+      "entry_price": 968.0,
+      "shares": 15,
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009"
+    },
+    {
       "stock": "3034",
       "entry_date": "2026-06-17",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "法人建倉",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009",
       "entry_price": 515.0,
       "shares": 59
     },
@@ -5092,7 +5148,7 @@
       "entry_date": "2026-06-17",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "法人建倉",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009",
       "entry_price": 193.5,
       "shares": 315
     },
@@ -5101,7 +5157,7 @@
       "entry_date": "2026-06-17",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "趨勢跟蹤",
+      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
       "entry_price": 2105.0,
       "shares": 20
     },
@@ -5110,7 +5166,7 @@
       "entry_date": "2026-06-17",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "均值回歸·ETF動能",
+      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd",
       "entry_price": 571.0,
       "shares": 117
     },
@@ -5121,8 +5177,8 @@
       "exit_price": 2090.0,
       "return": -0.0773,
       "reason": "MR_STOP_LOSS (7%)",
-      "select_reason": "均值回歸·ETF動能",
-      "primary_theme": "電子其他",
+      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd",
+      "primary_theme": "\u96fb\u5b50\u5176\u4ed6",
       "action": "SELL",
       "entry_price": 2420.0,
       "shares": null
@@ -5132,7 +5188,7 @@
       "entry_date": "2026-06-16",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "趨勢跟蹤",
+      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
       "entry_price": 518.0,
       "shares": 1103
     },
@@ -5141,7 +5197,7 @@
       "entry_date": "2026-06-16",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "均值回歸·ETF動能",
+      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd",
       "entry_price": 2370.0,
       "shares": 19
     },
@@ -5150,7 +5206,7 @@
       "entry_date": "2026-06-15",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "均值回歸·ETF動能",
+      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd",
       "entry_price": 7205.0,
       "shares": 41
     },
@@ -5159,7 +5215,7 @@
       "entry_date": "2026-06-15",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "均值回歸·ETF動能",
+      "select_reason": "\u5747\u503c\u56de\u6b78\u00b7ETF\u52d5\u80fd",
       "entry_price": 2420.0
     },
     {
@@ -5168,9 +5224,9 @@
       "exit_date": "2026-06-15",
       "exit_price": 274.0,
       "return": -0.0535,
-      "reason": "AI_INST_EXIT (跌破10MA)",
-      "select_reason": "法人建倉·ETF動能",
-      "primary_theme": "IC設計_HPC_存儲",
+      "reason": "AI_INST_EXIT (\u8dcc\u783410MA)",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009\u00b7ETF\u52d5\u80fd",
+      "primary_theme": "IC\u8a2d\u8a08_HPC_\u5b58\u5132",
       "action": "SELL",
       "entry_price": 293.0,
       "shares": null
@@ -5182,8 +5238,8 @@
       "exit_price": 789.0,
       "return": -0.0025,
       "reason": "RS_WEAK (<80, Evolved)",
-      "select_reason": "趨勢跟蹤",
-      "primary_theme": "重電_強韌電網",
+      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
+      "primary_theme": "\u91cd\u96fb_\u5f37\u97cc\u96fb\u7db2",
       "action": "SELL",
       "entry_price": 810.0,
       "shares": null
@@ -5195,8 +5251,8 @@
       "exit_price": 757.0,
       "return": 0.0987,
       "reason": "RS_WEAK (<80, Evolved)",
-      "select_reason": "趨勢跟蹤",
-      "primary_theme": "電子其他",
+      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
+      "primary_theme": "\u96fb\u5b50\u5176\u4ed6",
       "action": "SELL",
       "entry_price": 643.0,
       "shares": null
@@ -5206,7 +5262,7 @@
       "entry_date": "2026-06-12",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "趨勢跟蹤",
+      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
       "entry_price": 810.0
     },
     {
@@ -5214,7 +5270,7 @@
       "entry_date": "2026-06-12",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "趨勢跟蹤",
+      "select_reason": "\u8da8\u52e2\u8ddf\u8e64",
       "entry_price": 643.0
     },
     {
@@ -5222,7 +5278,7 @@
       "entry_date": "2026-06-12",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "法人建倉",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009",
       "entry_price": 293.0
     },
     {
@@ -5230,7 +5286,7 @@
       "entry_date": "2026-06-12",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "法人建倉",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009",
       "entry_price": 199.0,
       "shares": 629
     },
@@ -5239,7 +5295,7 @@
       "entry_date": "2026-06-12",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "法人建倉",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009",
       "entry_price": 1145.0,
       "shares": 218
     },
@@ -5248,7 +5304,7 @@
       "entry_date": "2026-06-12",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "法人建倉",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009",
       "entry_price": 97.0,
       "shares": 5154
     },
@@ -5257,7 +5313,7 @@
       "entry_date": "2026-06-12",
       "exit_date": null,
       "action": "BUY",
-      "select_reason": "趨勢跟蹤·ETF動能",
+      "select_reason": "\u8da8\u52e2\u8ddf\u8e64\u00b7ETF\u52d5\u80fd",
       "entry_price": 610.0,
       "shares": 702
     }

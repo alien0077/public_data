@@ -1,21 +1,21 @@
 {
   "stock_id": "6925",
   "name": "6925",
-  "date": "2026-06-16",
-  "close": 63.8,
-  "health_score": 93,
+  "date": "2026-06-17",
+  "close": 62.8,
+  "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.13,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.05,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 3.0,
-    "margin_slope": -7.6,
-    "maintenance_ratio": 167.51,
+    "margin_change": 0.0,
+    "margin_slope": -6.2,
+    "maintenance_ratio": 164.13,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,9 +25,9 @@
     "holder_concentration": 60.59
   },
   "main_force": {
-    "cost": 63.48,
-    "distance": 0.5,
-    "trend": "UP"
+    "cost": 63.77,
+    "distance": -1.52,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
@@ -35,13 +35,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 40
+    "score": 0
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-16"
+  "raw_signals": [],
+  "data_version": "2026-06-17"
 }
