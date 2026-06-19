@@ -1,21 +1,21 @@
 {
   "stock_id": "5468",
   "name": "5468",
-  "date": "2026-06-17",
-  "close": 27.3,
-  "health_score": 150,
+  "date": "2026-06-18",
+  "close": 30.0,
+  "health_score": 133,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.222,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
     "margin_change": 0.0,
     "margin_slope": 0.0,
-    "maintenance_ratio": 236.36,
+    "maintenance_ratio": 251.76,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 71.19
   },
   "main_force": {
-    "cost": 19.25,
-    "distance": 41.82,
+    "cost": 19.86,
+    "distance": 51.06,
     "trend": "UP"
   },
   "sector": {
@@ -39,7 +39,12 @@
   },
   "chip_status": "strong",
   "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-17"
+  "data_version": "2026-06-18"
 }

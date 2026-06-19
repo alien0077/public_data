@@ -1,11 +1,11 @@
 {
   "stock_id": "00664R",
   "name": "00664R",
-  "date": "2026-06-17",
-  "close": 1.64,
+  "date": "2026-06-18",
+  "close": 1.62,
   "health_score": 66,
   "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -13,16 +13,16 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 53.0,
-    "margin_slope": -1819.0,
-    "maintenance_ratio": 160.78,
-    "short_change": 47.0,
-    "short_margin_ratio": 2.74
+    "margin_change": 6212.0,
+    "margin_slope": 284.0,
+    "maintenance_ratio": 159.76,
+    "short_change": -133.0,
+    "short_margin_ratio": 2.43
   },
   "tdcc": {},
   "main_force": {
-    "cost": 1.7,
-    "distance": -3.53,
+    "cost": 1.69,
+    "distance": -4.14,
     "trend": "DOWN"
   },
   "sector": {
@@ -33,9 +33,11 @@
     "style": "Value",
     "score": 0
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-17"
+  "raw_signals": [
+    "散戶接刀中"
+  ],
+  "data_version": "2026-06-18"
 }

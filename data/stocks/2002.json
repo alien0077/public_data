@@ -1,23 +1,23 @@
 {
   "stock_id": "2002",
   "name": "2002",
-  "date": "2026-06-17",
-  "close": 18.75,
-  "health_score": 100,
+  "date": "2026-06-18",
+  "close": 19.1,
+  "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.048,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 2.099,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -152.0,
-    "margin_slope": 238.6,
-    "maintenance_ratio": 166.31,
-    "short_change": 4.0,
-    "short_margin_ratio": 1.4
+    "margin_change": -2448.0,
+    "margin_slope": 29.6,
+    "maintenance_ratio": 168.97,
+    "short_change": 10.0,
+    "short_margin_ratio": 1.5
   },
   "tdcc": {
     "big_holder_change": 48.44,
@@ -25,21 +25,23 @@
     "holder_concentration": 52.1
   },
   "main_force": {
-    "cost": 18.79,
-    "distance": -0.21,
-    "trend": "DOWN"
+    "cost": 18.84,
+    "distance": 1.38,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-17"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-18"
 }

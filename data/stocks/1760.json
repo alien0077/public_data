@@ -1,21 +1,21 @@
 {
   "stock_id": "1760",
   "name": "1760",
-  "date": "2026-06-17",
+  "date": "2026-06-18",
   "close": 59.9,
-  "health_score": 130,
+  "health_score": 93,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.008,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.023,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5.0,
-    "margin_slope": -2.2,
-    "maintenance_ratio": 168.81,
+    "margin_change": 9.0,
+    "margin_slope": 2.4,
+    "maintenance_ratio": 168.78,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 42.55
   },
   "main_force": {
-    "cost": 59.14,
-    "distance": 1.29,
+    "cost": 59.15,
+    "distance": 1.27,
     "trend": "UP"
   },
   "sector": {
@@ -34,12 +34,12 @@
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 70
+    "style": "Value",
+    "score": 40
   },
-  "chip_status": "strong",
-  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
+  "chip_status": "danger",
+  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
   "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-17"
+  "data_version": "2026-06-18"
 }

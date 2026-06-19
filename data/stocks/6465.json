@@ -1,21 +1,21 @@
 {
   "stock_id": "6465",
   "name": "6465",
-  "date": "2026-06-17",
-  "close": 70.4,
-  "health_score": 150,
+  "date": "2026-06-18",
+  "close": 71.2,
+  "health_score": 133,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 6,
-    "foreign_buy_ratio": 0.083,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -61.0,
-    "margin_slope": 19.6,
-    "maintenance_ratio": 215.37,
+    "margin_change": 89.0,
+    "margin_slope": 5.6,
+    "maintenance_ratio": 214.12,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 68.35
   },
   "main_force": {
-    "cost": 54.48,
-    "distance": 29.22,
+    "cost": 55.42,
+    "distance": 28.47,
     "trend": "UP"
   },
   "sector": {
@@ -37,20 +37,9 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "caution",
-  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 6 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
-  "raw_signals": [
-    "主力洗盤完成"
-  ],
-  "data_version": "2026-06-17"
+  "chip_status": "neutral",
+  "chip_warning": "",
+  "events": [],
+  "raw_signals": [],
+  "data_version": "2026-06-18"
 }

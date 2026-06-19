@@ -1,23 +1,23 @@
 {
   "stock_id": "4991",
   "name": "4991",
-  "date": "2026-06-17",
-  "close": 560.0,
+  "date": "2026-06-18",
+  "close": 566.0,
   "health_score": 86,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成/融資斷頭預警」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.468,
+    "foreign_buy_ratio": 0.0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -350.0,
-    "margin_slope": 363.4,
-    "maintenance_ratio": 138.17,
-    "short_change": 24.0,
-    "short_margin_ratio": 0.31
+    "margin_change": -39.0,
+    "margin_slope": 213.2,
+    "maintenance_ratio": 141.47,
+    "short_change": 32.0,
+    "short_margin_ratio": 0.65
   },
   "tdcc": {
     "big_holder_change": 46.07,
@@ -25,8 +25,8 @@
     "holder_concentration": 59.56
   },
   "main_force": {
-    "cost": 675.5,
-    "distance": -17.1,
+    "cost": 666.8,
+    "distance": -15.12,
     "trend": "DOWN"
   },
   "sector": {
@@ -39,14 +39,10 @@
   },
   "chip_status": "caution",
   "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
-  "events": [
-    {
-      "level": "RED",
-      "title": "融資維持率低迷 (138.17%)"
-    }
-  ],
+  "events": [],
   "raw_signals": [
+    "主力洗盤完成",
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-17"
+  "data_version": "2026-06-18"
 }

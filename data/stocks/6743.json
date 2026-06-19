@@ -1,20 +1,20 @@
 {
   "stock_id": "6743",
   "name": "6743",
-  "date": "2026-06-17",
+  "date": "2026-06-18",
   "close": 29.0,
-  "health_score": 123,
+  "health_score": 106,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.119,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.028,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 8.0,
-    "margin_slope": 0.4,
+    "margin_change": -3.0,
+    "margin_slope": 5.0,
     "maintenance_ratio": 164.01,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
@@ -37,14 +37,9 @@
     "style": "Value",
     "score": 60
   },
-  "chip_status": "danger",
-  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "chip_status": "neutral",
+  "chip_warning": "",
+  "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-17"
+  "data_version": "2026-06-18"
 }
