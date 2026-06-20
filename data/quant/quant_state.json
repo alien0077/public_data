@@ -1691,23 +1691,29 @@
   "strategy_performance": {
     "trend": {
       "sharpe": -0.22541294591442954,
-      "total_return": -0.07149174999999997,
-      "win_rate": 0.03723404255319149
+      "total_return": 0.153737,
+      "win_rate": 0.03723404255319149,
+      "backtest_total_return": -0.07149174999999997
     },
     "mr": {
       "sharpe": 0.135884362797271,
-      "total_return": 0.013545550000000128,
-      "win_rate": 0.1196808510638298
+      "total_return": -0.032951,
+      "win_rate": 0.1196808510638298,
+      "backtest_total_return": 0.013545550000000128
     },
     "ai_inst": {
       "sharpe": 1.8426481766250888,
-      "total_return": 1.92394,
-      "win_rate": 0.5478723404255319
+      "total_return": 0.137346,
+      "win_rate": 0.5478723404255319,
+      "backtest_total_return": 1.92394
     },
     "portfolio": {
-      "sharpe": 1.6244258609754447,
-      "total_return": 0.6219979333333332,
-      "win_rate": 0.5452127659574468
+      "sharpe": 16.480490859683236,
+      "total_return": 0.08604400000000001,
+      "win_rate": 0.6,
+      "backtest_total_return": 0.6219979333333332,
+      "backtest_sharpe": 1.6244258609754447,
+      "backtest_win_rate": 0.5452127659574468
     }
   },
   "ensemble_performance": {
