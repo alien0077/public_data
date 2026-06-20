@@ -35,6 +35,10 @@ const ROUTES = {
     'groupSearch': {
         title: '族群搜尋',
         subPages: []
+    },
+    'audioSummary': {
+        title: '財經摘要',
+        subPages: []
     }
 };
 

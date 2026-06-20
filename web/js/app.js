@@ -11,7 +11,10 @@ import { router } from './router.js';
 import { CorporateActions } from './corporateActions.js';
 import { Settings } from './views/settings.js?cb=3';
 import { GroupSearch } from './views/groupSearch.js?v=2';
+import { AudioSummary } from './views/audioSummary.js';
 import { getPriceChangeStyle } from './utils/priceStyle.js';
+
+const audioSummary = new AudioSummary();
 
 document.addEventListener('DOMContentLoaded', () => {
     const portfolioBody = document.getElementById('portfolio-body');
@@ -64,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (primary === 'addTrade') Transaction.init();
             else if (primary === 'favorites') Favorites.init(secondary);
             else if (primary === 'groupSearch') GroupSearch.init();
+            else if (primary === 'audioSummary') audioSummary.init();
             else if (primary === 'settings') Settings.init();
         } catch (err) { console.error(primary + ' view error:', err); }
     });
@@ -74,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('click', (e) => { e.preventDefault(); router.switchPage(p); });
     };
-    ['portfolio', 'trendHunter', 'assetRisk', 'performance', 'addTrade', 'favorites', 'groupSearch', 'settings'].forEach(p => {
+    ['portfolio', 'trendHunter', 'assetRisk', 'performance', 'addTrade', 'favorites', 'audioSummary', 'groupSearch', 'settings'].forEach(p => {
         bindPage('nav-' + p, p);
         const m = document.getElementById('mobile-nav-' + p);
         if (m) m.addEventListener('click', (e) => { e.preventDefault(); router.switchPage(p); });
