@@ -1,60 +1,52 @@
 {
-  "date": "2026-06-13",
+  "date": "2026-06-20",
   "adjustments": [
     {
-      "strategy": "trend",
+      "strategy": "mr",
       "rank": 1,
-      "sharpe_4w": 0,
-      "mdd_4w": 0,
+      "sharpe_4w": -15.190849014338594,
+      "mdd_4w": -0.033,
       "action": "調整"
     },
     {
-      "strategy": "mr",
+      "strategy": "multi_factor",
       "rank": 2,
       "sharpe_4w": 0,
       "mdd_4w": 0,
       "action": "維持"
     },
     {
-      "strategy": "portfolio_combined",
+      "strategy": "trend",
       "rank": 3,
-      "sharpe_4w": 0,
-      "mdd_4w": 0,
+      "sharpe_4w": 11.735549761189109,
+      "mdd_4w": -0.0116991643454039,
       "action": "維持"
     },
     {
-      "strategy": "multi_factor",
+      "strategy": "portfolio_combined",
       "rank": 4,
-      "sharpe_4w": 0,
-      "mdd_4w": 0,
-      "action": "調整"
+      "sharpe_4w": 16.501731540433607,
+      "mdd_4w": -0.0014563106796116505,
+      "action": "維持"
     }
   ],
   "liquidations": [],
   "rolling_performance": [
     {
-      "strategy": "trend",
-      "label": "TREND Ensemble Fund",
-      "sharpe_4w": 0,
-      "total_return_4w": 0,
-      "mdd_4w": 0,
+      "strategy": "portfolio_combined",
+      "label": "Portfolio (TREND+MR)",
+      "sharpe_4w": 16.501731540433607,
+      "total_return_4w": 0.08600000000000008,
+      "mdd_4w": -0.0014563106796116505,
       "rank_4w": 4
     },
     {
-      "strategy": "mr",
-      "label": "MR Ensemble Fund",
-      "sharpe_4w": 0,
-      "total_return_4w": 0,
-      "mdd_4w": 0,
+      "strategy": "trend",
+      "label": "TREND Ensemble Fund",
+      "sharpe_4w": 11.735549761189109,
+      "total_return_4w": 0.15369999999999995,
+      "mdd_4w": -0.0116991643454039,
       "rank_4w": 3
-    },
-    {
-      "strategy": "portfolio_combined",
-      "label": "Portfolio (TREND+MR)",
-      "sharpe_4w": 0,
-      "total_return_4w": 0,
-      "mdd_4w": 0,
-      "rank_4w": 2
     },
     {
       "strategy": "multi_factor",
@@ -62,6 +54,14 @@
       "sharpe_4w": 0,
       "total_return_4w": 0,
       "mdd_4w": 0,
+      "rank_4w": 2
+    },
+    {
+      "strategy": "mr",
+      "label": "MR Ensemble Fund",
+      "sharpe_4w": -15.190849014338594,
+      "total_return_4w": -0.03300000000000003,
+      "mdd_4w": -0.033,
       "rank_4w": 1
     }
   ]
