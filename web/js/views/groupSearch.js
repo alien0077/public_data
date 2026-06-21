@@ -54,6 +54,7 @@ export const GroupSearch = {
                 if (s.macro_sector) groups.add(s.macro_sector);
                 if (s.official_sector) groups.add(s.official_sector);
                 if (Array.isArray(s.themes)) s.themes.forEach(function(t) { groups.add(t); });
+                if (s.power_chain_role) groups.add(s.power_chain_role);
                 groups.forEach(function(g) {
                     if (!g) return;
                     if (!idx[g]) idx[g] = [];
@@ -90,6 +91,9 @@ export const GroupSearch = {
             '生技': 'Biotechnology',
             '航運': 'Shipping',
             '低軌': '低軌衛星_SpaceX鏈', '衛星': '低軌衛星_SpaceX鏈',
+            'mosfet': '上游IC設計',
+            '二極體': '中游製造與IDM',
+            '導線架': '下游封測與材料',
         };
 
         const query = q.toLowerCase();
