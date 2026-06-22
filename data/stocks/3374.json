@@ -1,22 +1,22 @@
 {
   "stock_id": "3374",
   "name": "3374",
-  "date": "2026-06-18",
-  "close": 251.0,
-  "health_score": 133,
+  "date": "2026-06-22",
+  "close": 276.0,
+  "health_score": 150,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.677,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 250.0,
-    "margin_slope": 10.0,
-    "maintenance_ratio": 169.15,
-    "short_change": -213.0,
+    "margin_change": 140.0,
+    "margin_slope": 31.8,
+    "maintenance_ratio": 185.13,
+    "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 51.47
   },
   "main_force": {
-    "cost": 247.32,
-    "distance": 1.49,
+    "cost": 248.48,
+    "distance": 11.08,
     "trend": "UP"
   },
   "sector": {
@@ -39,7 +39,12 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-18"
+  "data_version": "2026-06-22"
 }

@@ -1,21 +1,21 @@
 {
   "stock_id": "5234",
   "name": "5234",
-  "date": "2026-06-18",
-  "close": 396.0,
+  "date": "2026-06-22",
+  "close": 400.0,
   "health_score": 86,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.013,
+    "foreign_buy_ratio": -0.033,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 17.0,
-    "margin_slope": 8.6,
-    "maintenance_ratio": 163.37,
+    "margin_change": -11.0,
+    "margin_slope": 1.2,
+    "maintenance_ratio": 165.92,
     "short_change": 0.0,
     "short_margin_ratio": 0.98
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 65.45
   },
   "main_force": {
-    "cost": 403.98,
-    "distance": -1.98,
+    "cost": 401.8,
+    "distance": -0.45,
     "trend": "DOWN"
   },
   "sector": {
@@ -40,6 +40,8 @@
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-18"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-22"
 }

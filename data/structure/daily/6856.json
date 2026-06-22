@@ -1,6 +1,6 @@
 {
   "symbol": "6856",
-  "updated_at": "2026-06-20",
+  "updated_at": "2026-06-22",
   "lines": [
     {
       "id": "H_30",
@@ -54,17 +54,6 @@
       "start_date": "2025-10-15",
       "end_idx": 200,
       "end_date": "2026-05-12",
-      "broken": true,
-      "strength": 1
-    },
-    {
-      "id": "L_110",
-      "type": "low",
-      "price": 51.0,
-      "start_idx": 110,
-      "start_date": "2025-10-27",
-      "end_idx": 177,
-      "end_date": "2026-03-20",
       "broken": true,
       "strength": 1
     },
@@ -179,17 +168,6 @@
       "strength": 1
     },
     {
-      "id": "L_192",
-      "type": "low",
-      "price": 48.8,
-      "start_idx": 192,
-      "start_date": "2026-04-27",
-      "end_idx": 200,
-      "end_date": "2026-05-12",
-      "broken": true,
-      "strength": 1
-    },
-    {
       "id": "H_193",
       "type": "high",
       "price": 52.0,
@@ -206,9 +184,9 @@
       "price": 46.1,
       "start_idx": 200,
       "start_date": "2026-05-12",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 226,
+      "end_date": "2026-06-22",
+      "broken": true,
       "strength": 1
     },
     {
@@ -228,19 +206,13 @@
       "price": 46.0,
       "start_idx": 217,
       "start_date": "2026-06-08",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 226,
+      "end_date": "2026-06-22",
+      "broken": true,
       "strength": 1
     }
   ],
   "events": [
-    {
-      "type": "CHOCH_DOWN",
-      "price": 51.0,
-      "idx": 177,
-      "date": "2026-03-20"
-    },
     {
       "type": "CHOCH_DOWN",
       "price": 48.5,
@@ -278,12 +250,6 @@
       "date": "2026-05-12"
     },
     {
-      "type": "CHOCH_DOWN",
-      "price": 48.8,
-      "idx": 200,
-      "date": "2026-05-12"
-    },
-    {
       "type": "BOS_UP",
       "price": 52.0,
       "idx": 207,
@@ -294,6 +260,18 @@
       "price": 53.0,
       "idx": 209,
       "date": "2026-05-25"
+    },
+    {
+      "type": "CHOCH_DOWN",
+      "price": 46.1,
+      "idx": 226,
+      "date": "2026-06-22"
+    },
+    {
+      "type": "CHOCH_DOWN",
+      "price": 46.0,
+      "idx": 226,
+      "date": "2026-06-22"
     }
   ]
 }

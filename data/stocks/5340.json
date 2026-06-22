@@ -1,23 +1,23 @@
 {
   "stock_id": "5340",
   "name": "5340",
-  "date": "2026-06-18",
-  "close": 90.0,
-  "health_score": 86,
+  "date": "2026-06-22",
+  "close": 99.0,
+  "health_score": 130,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.488,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -89.0,
-    "margin_slope": -11.6,
-    "maintenance_ratio": 156.15,
-    "short_change": -6.0,
-    "short_margin_ratio": 0.01
+    "margin_change": -32.0,
+    "margin_slope": -11.2,
+    "maintenance_ratio": 172.47,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.04
   },
   "tdcc": {
     "big_holder_change": 53.32,
@@ -25,23 +25,28 @@
     "holder_concentration": 61.49
   },
   "main_force": {
-    "cost": 96.06,
-    "distance": -6.31,
-    "trend": "DOWN"
+    "cost": 95.67,
+    "distance": 3.48,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "chip_status": "strong",
   "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [
     "主力洗盤完成"
   ],
-  "data_version": "2026-06-18"
+  "data_version": "2026-06-22"
 }

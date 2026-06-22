@@ -1,6 +1,6 @@
 {
   "symbol": "00990A",
-  "updated_at": "2026-06-20",
+  "updated_at": "2026-06-22",
   "lines": [
     {
       "id": "L_7",
@@ -96,9 +96,9 @@
       "price": 21.13,
       "start_idx": 104,
       "start_date": "2026-06-03",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 116,
+      "end_date": "2026-06-22",
+      "broken": true,
       "strength": 1
     },
     {
@@ -131,6 +131,12 @@
       "price": 18.56,
       "idx": 97,
       "date": "2026-05-25"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 21.13,
+      "idx": 116,
+      "date": "2026-06-22"
     }
   ]
 }

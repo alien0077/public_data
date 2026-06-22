@@ -1,23 +1,23 @@
 {
   "stock_id": "6962",
   "name": "6962",
-  "date": "2026-06-18",
-  "close": 38.9,
+  "date": "2026-06-22",
+  "close": 40.05,
   "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.357,
+    "foreign_buy_days": 8,
+    "foreign_buy_ratio": 0.78,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -288.0,
-    "margin_slope": -177.4,
-    "maintenance_ratio": 174.28,
+    "margin_change": -155.0,
+    "margin_slope": -193.6,
+    "maintenance_ratio": 179.39,
     "short_change": 1.0,
-    "short_margin_ratio": 0.21
+    "short_margin_ratio": 0.23
   },
   "tdcc": {
     "big_holder_change": 46.7,
@@ -25,8 +25,8 @@
     "holder_concentration": 52.33
   },
   "main_force": {
-    "cost": 37.2,
-    "distance": 4.57,
+    "cost": 37.21,
+    "distance": 7.63,
     "trend": "UP"
   },
   "sector": {
@@ -42,9 +42,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 7 天"
+      "title": "外資連買 8 天"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-18"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-22"
 }

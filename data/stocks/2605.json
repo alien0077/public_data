@@ -1,22 +1,22 @@
 {
   "stock_id": "2605",
   "name": "2605",
-  "date": "2026-06-18",
-  "close": 31.0,
-  "health_score": 66,
-  "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "date": "2026-06-22",
+  "close": 31.95,
+  "health_score": 130,
+  "signal": "Bullish",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -1.245,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.238,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 405.0,
-    "margin_slope": 232.8,
-    "maintenance_ratio": 169.01,
-    "short_change": -6.0,
+    "margin_change": -154.0,
+    "margin_slope": 178.8,
+    "maintenance_ratio": 173.85,
+    "short_change": 0.0,
     "short_margin_ratio": 0.05
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 54.7
   },
   "main_force": {
-    "cost": 30.57,
-    "distance": 1.41,
+    "cost": 30.63,
+    "distance": 4.31,
     "trend": "UP"
   },
   "sector": {
@@ -34,14 +34,14 @@
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
   "chip_status": "danger",
   "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
   "events": [],
   "raw_signals": [
-    "散戶接刀中"
+    "主力洗盤完成"
   ],
-  "data_version": "2026-06-18"
+  "data_version": "2026-06-22"
 }

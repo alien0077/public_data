@@ -1,21 +1,21 @@
 {
   "stock_id": "9949",
   "name": "9949",
-  "date": "2026-06-18",
-  "close": 24.5,
-  "health_score": 113,
+  "date": "2026-06-22",
+  "close": 26.9,
+  "health_score": 130,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.017,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 2.0,
-    "margin_slope": 3.8,
-    "maintenance_ratio": 174.8,
+    "margin_change": 9.0,
+    "margin_slope": 4.0,
+    "maintenance_ratio": 190.46,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 74.8
   },
   "main_force": {
-    "cost": 23.36,
-    "distance": 4.88,
+    "cost": 23.54,
+    "distance": 14.27,
     "trend": "UP"
   },
   "sector": {
@@ -39,7 +39,12 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-18"
+  "data_version": "2026-06-22"
 }

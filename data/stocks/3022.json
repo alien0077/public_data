@@ -1,23 +1,23 @@
 {
   "stock_id": "3022",
   "name": "3022",
-  "date": "2026-06-18",
-  "close": 84.5,
-  "health_score": 130,
+  "date": "2026-06-22",
+  "close": 83.2,
+  "health_score": 113,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.047,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.027,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -21.0,
-    "margin_slope": -66.2,
-    "maintenance_ratio": 177.55,
-    "short_change": -7.0,
-    "short_margin_ratio": 0.14
+    "margin_change": -32.0,
+    "margin_slope": -27.6,
+    "maintenance_ratio": 173.55,
+    "short_change": 1.0,
+    "short_margin_ratio": 0.16
   },
   "tdcc": {
     "big_holder_change": 54.9,
@@ -25,8 +25,8 @@
     "holder_concentration": 61.88
   },
   "main_force": {
-    "cost": 79.32,
-    "distance": 6.53,
+    "cost": 79.9,
+    "distance": 4.13,
     "trend": "UP"
   },
   "sector": {
@@ -39,12 +39,7 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 3 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-18"
+  "data_version": "2026-06-22"
 }
