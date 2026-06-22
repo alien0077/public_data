@@ -19,6 +19,12 @@ export const TrendHunter = {
             sideTitle: '市場感測',
             sideContent: '目前高股息 ETF 資金持續流入，但需注意部分電子權值型 ETF 的成分股重疊風險。'
         },
+        'ETF流量': {
+            title: 'ETF 集體買賣超',
+            description: '追蹤所有 ETF 集體對個股的淨買超/淨賣超排行，掌握 ETF 資金的真正流向。',
+            sideTitle: '流量說明',
+            sideContent: '計算所有 ETF 對每檔個股的持股比重增減，排序出最受 ETF 青睞或拋售的標的。'
+        },
         '精選策略': {
             title: 'AI 策略實驗室',
             description: '展示各種經典與現代交易策略在當前市場的運行表現。',
@@ -283,6 +289,35 @@ export const TrendHunter = {
             return `
                 <div id="hottest-container" class="p-6 grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1   ">
                     <div class="col-span-full text-center py-12 text-gray-500">正在掃描今日市場熱點...</div>
+                </div>
+            `;
+        }
+
+        if (subPage === 'ETF流量') {
+            return `
+                <div id="etf-flow-container" class="p-6 space-y-6 flex-1 flex flex-col overflow-y-auto no-scrollbar pb-20">
+                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                        <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gradient-to-r from-green-500/5 to-transparent">
+                            <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
+                                <span class="mr-2 text-xl">📈</span> ETF 集體淨買超 Top 20
+                            </h3>
+                            <p class="text-xs text-gray-500 mt-1">所有 ETF 合計對個股的淨持股比重增減，正數代表集體加碼</p>
+                        </div>
+                        <div class="p-5 overflow-x-auto">
+                            <div id="etf-flow-buy-table"></div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                        <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gradient-to-r from-red-500/5 to-transparent">
+                            <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
+                                <span class="mr-2 text-xl">📉</span> ETF 集體淨賣超 Top 20
+                            </h3>
+                            <p class="text-xs text-gray-500 mt-1">所有 ETF 合計對個股的淨持股比重增減，負數代表集體減碼</p>
+                        </div>
+                        <div class="p-5 overflow-x-auto">
+                            <div id="etf-flow-sell-table"></div>
+                        </div>
+                    </div>
                 </div>
             `;
         }
@@ -2195,6 +2230,60 @@ export const TrendHunter = {
             } catch (err) {
                 console.error(err);
                 container.innerHTML = `<div class="col-span-full text-center text-red-500 py-12">今日熱點加載失敗: ${err.message}</div>`;
+            }
+        }
+
+        else if (subPage === 'ETF流量') {
+            const buyContainer = document.getElementById('etf-flow-buy-table');
+            const sellContainer = document.getElementById('etf-flow-sell-table');
+
+            try {
+                const data = await api.fetchLocalJson('quant/etf/outputs/etf_flow.json');
+                if (!data || (!data.top_buy?.length && !data.top_sell?.length)) {
+                    if (buyContainer) buyContainer.innerHTML = '<div class="text-center py-12 text-gray-500">尚無 ETF 流量數據，請先執行 ETF Pipeline</div>';
+                    return;
+                }
+
+                function renderTable(items, container, color) {
+                    if (!container || !items?.length) {
+                        if (container) container.innerHTML = '<div class="text-center py-8 text-gray-500">無數據</div>';
+                        return;
+                    }
+                    container.innerHTML = `
+                        <div class="mb-2 text-[10px] text-gray-400 font-mono">日期: ${data.date || 'N/A'} | 基期: ${data.base_date || 'N/A'}</div>
+                        <table class="w-full text-left">
+                            <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 dark:text-gray-500 text-xs uppercase">
+                                <tr>
+                                    <th class="px-4 py-3">#</th>
+                                    <th class="px-4 py-3">個股</th>
+                                    <th class="px-4 py-3 text-right">淨流動</th>
+                                    <th class="px-4 py-3 text-right">涉及ETF</th>
+                                    <th class="px-4 py-3">主要ETF</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 dark:divide-gray-800 text-sm">
+                                ${items.map((item, i) => `
+                                    <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                        <td class="px-4 py-3 font-mono text-gray-400">${i + 1}</td>
+                                        <td class="px-4 py-3 font-bold text-gray-900 dark:text-white">${item.stock_id}</td>
+                                        <td class="px-4 py-3 text-right font-mono font-bold ${color}">
+                                            ${item.net_flow >= 0 ? '+' : ''}${item.net_flow.toFixed(4)}%
+                                        </td>
+                                        <td class="px-4 py-3 text-right text-gray-500">${item.etf_count}</td>
+                                        <td class="px-4 py-3 text-xs text-gray-500 truncate max-w-[200px]">${(item.details || []).slice(0, 3).map(d => `${d.etf_name}(${d.diff >= 0 ? '+' : ''}${d.diff.toFixed(2)}%)`).join(', ')}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `;
+                }
+
+                renderTable(data.top_buy, buyContainer, 'text-red-500');
+                renderTable(data.top_sell, sellContainer, 'text-green-500');
+
+            } catch (err) {
+                console.error(err);
+                if (buyContainer) buyContainer.innerHTML = `<div class="text-center py-12 text-red-500">ETF 流量數據加載失敗: ${err.message}</div>`;
             }
         }
 
