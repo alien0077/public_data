@@ -296,26 +296,47 @@ export const TrendHunter = {
         if (subPage === 'ETF流量') {
             return `
                 <div id="etf-flow-container" class="p-6 space-y-6 flex-1 flex flex-col overflow-y-auto no-scrollbar pb-20">
-                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
-                        <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gradient-to-r from-green-500/5 to-transparent">
-                            <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
-                                <span class="mr-2 text-xl">📈</span> ETF 集體淨買超 Top 20
-                            </h3>
-                            <p class="text-xs text-gray-500 mt-1">所有 ETF 合計對個股的淨持股比重增減，正數代表集體加碼</p>
+                    <div class="flex items-center gap-2 mb-2">
+                        <button id="etf-flow-tab-flow" class="etf-flow-tab px-4 py-2 rounded-lg text-sm font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 transition-all">個股淨流量</button>
+                        <button id="etf-flow-tab-perf" class="etf-flow-tab px-4 py-2 rounded-lg text-sm font-bold text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all">ETF 年績效</button>
+                    </div>
+
+                    <div id="etf-flow-panel-flow">
+                        <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                            <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gradient-to-r from-green-500/5 to-transparent">
+                                <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
+                                    <span class="mr-2 text-xl">📈</span> ETF 集體淨買超 Top 20
+                                </h3>
+                                <p class="text-xs text-gray-500 mt-1">所有 ETF 合計對個股的淨持股比重增減，正數代表集體加碼</p>
+                            </div>
+                            <div class="p-5 overflow-x-auto">
+                                <div id="etf-flow-buy-table"></div>
+                            </div>
                         </div>
-                        <div class="p-5 overflow-x-auto">
-                            <div id="etf-flow-buy-table"></div>
+                        <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                            <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gradient-to-r from-red-500/5 to-transparent">
+                                <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
+                                    <span class="mr-2 text-xl">📉</span> ETF 集體淨賣超 Top 20
+                                </h3>
+                                <p class="text-xs text-gray-500 mt-1">所有 ETF 合計對個股的淨持股比重增減，負數代表集體減碼</p>
+                            </div>
+                            <div class="p-5 overflow-x-auto">
+                                <div id="etf-flow-sell-table"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
-                        <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gradient-to-r from-red-500/5 to-transparent">
-                            <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
-                                <span class="mr-2 text-xl">📉</span> ETF 集體淨賣超 Top 20
-                            </h3>
-                            <p class="text-xs text-gray-500 mt-1">所有 ETF 合計對個股的淨持股比重增減，負數代表集體減碼</p>
-                        </div>
-                        <div class="p-5 overflow-x-auto">
-                            <div id="etf-flow-sell-table"></div>
+
+                    <div id="etf-flow-panel-perf" class="hidden">
+                        <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                            <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gradient-to-r from-purple-500/5 to-transparent">
+                                <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
+                                    <span class="mr-2 text-xl">🏆</span> ETF 年度績效 Top 20
+                                </h3>
+                                <p class="text-xs text-gray-500 mt-1">從年度首筆持倉快照至今的淨值成長率排名</p>
+                            </div>
+                            <div class="p-5 overflow-x-auto">
+                                <div id="etf-flow-performance-table"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2236,6 +2257,67 @@ export const TrendHunter = {
         else if (subPage === 'ETF流量') {
             const buyContainer = document.getElementById('etf-flow-buy-table');
             const sellContainer = document.getElementById('etf-flow-sell-table');
+            const perfContainer = document.getElementById('etf-flow-performance-table');
+            const panelFlow = document.getElementById('etf-flow-panel-flow');
+            const panelPerf = document.getElementById('etf-flow-panel-perf');
+            const tabFlow = document.getElementById('etf-flow-tab-flow');
+            const tabPerf = document.getElementById('etf-flow-tab-perf');
+
+            function switchTab(tab) {
+                const isFlow = tab === 'flow';
+                panelFlow?.classList.toggle('hidden', !isFlow);
+                panelPerf?.classList.toggle('hidden', isFlow);
+                tabFlow?.classList.toggle('bg-blue-500/10', isFlow);
+                tabFlow?.classList.toggle('text-blue-600', isFlow);
+                tabFlow?.classList.toggle('dark:text-blue-400', isFlow);
+                tabFlow?.classList.toggle('border-blue-200', isFlow);
+                tabFlow?.classList.toggle('dark:border-blue-800', isFlow);
+                tabFlow?.classList.toggle('text-gray-500', !isFlow);
+                tabPerf?.classList.toggle('bg-purple-500/10', !isFlow);
+                tabPerf?.classList.toggle('text-purple-600', !isFlow);
+                tabPerf?.classList.toggle('dark:text-purple-400', !isFlow);
+                tabPerf?.classList.toggle('border-purple-200', !isFlow);
+                tabPerf?.classList.toggle('dark:border-purple-800', !isFlow);
+                tabPerf?.classList.toggle('text-gray-500', isFlow);
+            }
+            tabFlow?.addEventListener('click', () => { switchTab('flow'); });
+            tabPerf?.addEventListener('click', () => { switchTab('perf'); loadYearPerformance(); });
+
+            function renderFlowTable(items, container, color) {
+                if (!container || !items?.length) {
+                    if (container) container.innerHTML = '<div class="text-center py-8 text-gray-500">無數據</div>';
+                    return;
+                }
+                container.innerHTML = `
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 dark:text-gray-500 text-xs uppercase">
+                            <tr>
+                                <th class="px-4 py-3">#</th>
+                                <th class="px-4 py-3">個股</th>
+                                <th class="px-4 py-3 text-right">淨流動</th>
+                                <th class="px-4 py-3 text-right">涉及ETF</th>
+                                <th class="px-4 py-3">主要ETF</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 dark:divide-gray-800 text-sm">
+                            ${items.map((item, i) => `
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer" onclick="window.StockDetail.show('${item.stock_id}')">
+                                    <td class="px-4 py-3 font-mono text-gray-400">${i + 1}</td>
+                                    <td class="px-4 py-3">
+                                        <div class="font-bold text-gray-900 dark:text-white">${item.stock_id}</div>
+                                        <div class="text-[10px] text-gray-400">${item.stock_name || ''}</div>
+                                    </td>
+                                    <td class="px-4 py-3 text-right font-mono font-bold ${color}">
+                                        ${item.net_flow >= 0 ? '+' : ''}${item.net_flow.toFixed(4)}%
+                                    </td>
+                                    <td class="px-4 py-3 text-right text-gray-500">${item.etf_count}</td>
+                                    <td class="px-4 py-3 text-xs text-gray-500 truncate max-w-[200px]">${(item.details || []).slice(0, 3).map(d => `${d.etf_name}(${d.diff >= 0 ? '+' : ''}${d.diff.toFixed(2)}%)`).join(', ')}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                `;
+            }
 
             try {
                 const data = await api.fetchLocalJson('quant/etf/outputs/etf_flow.json');
@@ -2243,47 +2325,83 @@ export const TrendHunter = {
                     if (buyContainer) buyContainer.innerHTML = '<div class="text-center py-12 text-gray-500">尚無 ETF 流量數據，請先執行 ETF Pipeline</div>';
                     return;
                 }
-
-                function renderTable(items, container, color) {
-                    if (!container || !items?.length) {
-                        if (container) container.innerHTML = '<div class="text-center py-8 text-gray-500">無數據</div>';
-                        return;
-                    }
-                    container.innerHTML = `
-                        <div class="mb-2 text-[10px] text-gray-400 font-mono">日期: ${data.date || 'N/A'} | 基期: ${data.base_date || 'N/A'}</div>
-                        <table class="w-full text-left">
-                            <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 dark:text-gray-500 text-xs uppercase">
-                                <tr>
-                                    <th class="px-4 py-3">#</th>
-                                    <th class="px-4 py-3">個股</th>
-                                    <th class="px-4 py-3 text-right">淨流動</th>
-                                    <th class="px-4 py-3 text-right">涉及ETF</th>
-                                    <th class="px-4 py-3">主要ETF</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-100 dark:divide-gray-800 text-sm">
-                                ${items.map((item, i) => `
-                                    <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                                        <td class="px-4 py-3 font-mono text-gray-400">${i + 1}</td>
-                                        <td class="px-4 py-3 font-bold text-gray-900 dark:text-white">${item.stock_id}</td>
-                                        <td class="px-4 py-3 text-right font-mono font-bold ${color}">
-                                            ${item.net_flow >= 0 ? '+' : ''}${item.net_flow.toFixed(4)}%
-                                        </td>
-                                        <td class="px-4 py-3 text-right text-gray-500">${item.etf_count}</td>
-                                        <td class="px-4 py-3 text-xs text-gray-500 truncate max-w-[200px]">${(item.details || []).slice(0, 3).map(d => `${d.etf_name}(${d.diff >= 0 ? '+' : ''}${d.diff.toFixed(2)}%)`).join(', ')}</td>
-                                    </tr>
-                                `).join('')}
-                            </tbody>
-                        </table>
-                    `;
+                if (buyContainer) {
+                    buyContainer.innerHTML = `<div class="mb-2 text-[10px] text-gray-400 font-mono">日期: ${data.date || 'N/A'} | 基期: ${data.base_date || 'N/A'}</div>`;
                 }
-
-                renderTable(data.top_buy, buyContainer, 'text-red-500');
-                renderTable(data.top_sell, sellContainer, 'text-green-500');
-
+                renderFlowTable(data.top_buy, buyContainer, 'text-red-500');
+                renderFlowTable(data.top_sell, sellContainer, 'text-green-500');
             } catch (err) {
                 console.error(err);
                 if (buyContainer) buyContainer.innerHTML = `<div class="text-center py-12 text-red-500">ETF 流量數據加載失敗: ${err.message}</div>`;
+            }
+
+            async function loadYearPerformance() {
+                if (perfContainer?.dataset.loaded) return;
+                try {
+                    const data = await api.fetchLocalJson('quant/etf/outputs/etf_year_performance.json');
+                    if (!data?.etfs?.length) {
+                        if (perfContainer) perfContainer.innerHTML = '<div class="text-center py-8 text-gray-500">無年績效數據（需先執行 pipeline）</div>';
+                        return;
+                    }
+                    const allEtfs = data.etfs;
+                    const PAGE_SIZE = 20;
+                    let currentPage = 0;
+
+                    function renderPage(page) {
+                        currentPage = page;
+                        const start = page * PAGE_SIZE;
+                        const slice = allEtfs.slice(start, start + PAGE_SIZE);
+                        const totalPages = Math.ceil(allEtfs.length / PAGE_SIZE);
+
+                        perfContainer.innerHTML = `
+                            <div class="mb-2 text-[10px] text-gray-400 font-mono">年度: ${data.year} | 更新: ${data.date} | 共 ${allEtfs.length} 檔 ETF | 第 ${page + 1}/${totalPages} 頁</div>
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 dark:text-gray-500 text-xs uppercase">
+                                    <tr>
+                                        <th class="px-4 py-3">#</th>
+                                        <th class="px-4 py-3">ETF</th>
+                                        <th class="px-4 py-3">類型</th>
+                                        <th class="px-4 py-3 text-right">起始價</th>
+                                        <th class="px-4 py-3 text-right">最新價</th>
+                                        <th class="px-4 py-3 text-right">年度報酬</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100 dark:divide-gray-800 text-sm">
+                                    ${slice.map((item, i) => `
+                                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                            <td class="px-4 py-3 font-mono text-gray-400">${start + i + 1}</td>
+                                            <td class="px-4 py-3">
+                                                <div class="font-bold text-gray-900 dark:text-white">${item.etf_id}</div>
+                                                <div class="text-[10px] text-gray-400">${item.etf_name}</div>
+                                            </td>
+                                            <td class="px-4 py-3 text-xs text-gray-500">${item.category}</td>
+                                            <td class="px-4 py-3 text-right text-gray-500">${item.first_close}</td>
+                                            <td class="px-4 py-3 text-right text-gray-500">${item.latest_close}</td>
+                                            <td class="px-4 py-3 text-right font-mono font-bold ${item.return_pct >= 0 ? 'text-red-500' : 'text-green-500'}">
+                                                ${item.return_pct >= 0 ? '+' : ''}${item.return_pct.toFixed(2)}%
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                            ${totalPages > 1 ? `
+                            <div class="flex justify-center items-center gap-2 mt-4">
+                                <button onclick="window._etfPerfPrev()" ${page === 0 ? 'disabled' : ''} class="px-3 py-1 text-xs rounded border border-gray-300 dark:border-gray-600 ${page === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}">上一頁</button>
+                                <span class="text-xs text-gray-400">${page + 1} / ${totalPages}</span>
+                                <button onclick="window._etfPerfNext()" ${page >= totalPages - 1 ? 'disabled' : ''} class="px-3 py-1 text-xs rounded border border-gray-300 dark:border-gray-600 ${page >= totalPages - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}">下一頁</button>
+                            </div>` : ''}
+                        `;
+                    }
+
+                    window._etfPerfPrev = () => { if (currentPage > 0) renderPage(currentPage - 1); };
+                    window._etfPerfNext = () => { if (currentPage < Math.ceil(allEtfs.length / PAGE_SIZE) - 1) renderPage(currentPage + 1); };
+
+                    perfContainer.dataset.loaded = '1';
+                    renderPage(0);
+                } catch (err) {
+                    console.error(err);
+                    if (perfContainer) perfContainer.innerHTML = `<div class="text-center py-12 text-red-500">年績效載入失敗: ${err.message}</div>`;
+                }
             }
         }
 
