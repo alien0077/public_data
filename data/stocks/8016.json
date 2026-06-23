@@ -1,23 +1,23 @@
 {
   "stock_id": "8016",
   "name": "8016",
-  "date": "2026-06-22",
-  "close": 315.0,
-  "health_score": 166,
+  "date": "2026-06-23",
+  "close": 320.5,
+  "health_score": 133,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.904,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.012,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 244.0,
-    "margin_slope": 116.4,
-    "maintenance_ratio": 182.95,
-    "short_change": 3.0,
-    "short_margin_ratio": 0.54
+    "margin_change": -2226.0,
+    "margin_slope": -329.2,
+    "maintenance_ratio": 184.83,
+    "short_change": -12.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 27.73,
@@ -25,8 +25,8 @@
     "holder_concentration": 43.15
   },
   "main_force": {
-    "cost": 286.96,
-    "distance": 9.77,
+    "cost": 289.01,
+    "distance": 10.9,
     "trend": "UP"
   },
   "sector": {
@@ -37,9 +37,11 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "caution",
-  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-22"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-23"
 }

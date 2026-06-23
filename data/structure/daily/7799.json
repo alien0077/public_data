@@ -1,6 +1,6 @@
 {
   "symbol": "7799",
-  "updated_at": "2026-06-22",
+  "updated_at": "2026-06-23",
   "lines": [
     {
       "id": "L_15",
@@ -173,9 +173,9 @@
       "price": 408.0,
       "start_idx": 173,
       "start_date": "2026-06-08",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 183,
+      "end_date": "2026-06-23",
+      "broken": true,
       "strength": 1
     }
   ],
@@ -227,6 +227,12 @@
       "price": 346.5,
       "idx": 171,
       "date": "2026-06-04"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 408.0,
+      "idx": 183,
+      "date": "2026-06-23"
     }
   ]
 }

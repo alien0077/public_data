@@ -1,5 +1,5 @@
 {
-  "cash": 3506.5,
+  "cash": 161816.0,
   "positions": [
     {
       "stock": "2330",
@@ -12,12 +12,6 @@
       "entry_date": "2026-06-17",
       "entry_price": 515.0,
       "shares": 323
-    },
-    {
-      "stock": "2376",
-      "entry_date": "2026-06-17",
-      "entry_price": 347.5,
-      "shares": 479
     },
     {
       "stock": "3189",
@@ -54,9 +48,24 @@
     {
       "date": "2026-06-22",
       "nav": 1073446.0
+    },
+    {
+      "date": "2026-06-23",
+      "nav": 1044251.0
     }
   ],
   "trade_log": [
+    {
+      "stock": "2376",
+      "action": "SELL",
+      "entry_date": "2026-06-17",
+      "exit_date": "2026-06-23",
+      "entry_price": 347.5,
+      "exit_price": 330.5,
+      "shares": 479,
+      "return": -0.048920863309352525,
+      "reason": "10MA_BREAK"
+    },
     {
       "stock": "8046",
       "action": "BUY",

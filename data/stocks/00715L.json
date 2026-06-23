@@ -1,28 +1,28 @@
 {
   "stock_id": "00715L",
   "name": "00715L",
-  "date": "2026-06-22",
-  "close": 38.49,
-  "health_score": 83,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「融資斷頭預警」。",
+  "date": "2026-06-23",
+  "close": 37.22,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 148.0,
-    "margin_slope": -232.0,
-    "maintenance_ratio": 127.26,
-    "short_change": 9.0,
-    "short_margin_ratio": 35.86
+    "margin_change": -12670.0,
+    "margin_slope": -2566.0,
+    "maintenance_ratio": 125.19,
+    "short_change": -4543.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {},
   "main_force": {
-    "cost": 50.41,
-    "distance": -23.65,
+    "cost": 49.55,
+    "distance": -24.88,
     "trend": "DOWN"
   },
   "sector": {
@@ -38,15 +38,11 @@
   "events": [
     {
       "level": "RED",
-      "title": "短線券資比過熱 (警示)"
-    },
-    {
-      "level": "RED",
-      "title": "融資維持率低迷 (127.26%)"
+      "title": "融資維持率低迷 (125.19%)"
     }
   ],
   "raw_signals": [
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-22"
+  "data_version": "2026-06-23"
 }
