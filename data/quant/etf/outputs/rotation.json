@@ -1,69 +1,182 @@
 {
-  "esg": {
-    "avg_weight_change": -0.0003,
+  "index": {
+    "avg_weight_change": 0.0423,
+    "etf_count": 99,
+    "top_inflow": [
+      "202607CN",
+      "2303",
+      "202608GC",
+      "202607XU",
+      "2454"
+    ]
+  },
+  "high_dividend": {
+    "avg_weight_change": -0.0006,
+    "etf_count": 14,
+    "top_inflow": [
+      "2303",
+      "2344",
+      "2408",
+      "1303",
+      "2891"
+    ]
+  },
+  "technology": {
+    "avg_weight_change": -0.0002,
+    "etf_count": 2,
+    "top_inflow": [
+      "2454",
+      "2303"
+    ]
+  },
+  "semiconductor": {
+    "avg_weight_change": -0.006,
     "etf_count": 3,
     "top_inflow": [
       "2303",
-      "6274",
-      "3711"
+      "2454"
+    ]
+  },
+  "ai": {
+    "avg_weight_change": -0.001,
+    "etf_count": 1,
+    "top_inflow": [
+      "2303"
+    ]
+  },
+  "esg": {
+    "avg_weight_change": 0.0008,
+    "etf_count": 6,
+    "top_inflow": [
+      "2303",
+      "6223",
+      "1303"
     ]
   },
   "active": {
-    "avg_weight_change": 0.344,
-    "etf_count": 1,
+    "avg_weight_change": 0.0597,
+    "etf_count": 28,
     "top_inflow": [
-      "NLY.US"
+      "2330",
+      "C_NTD",
+      "2454",
+      "6223",
+      "2303"
     ]
   },
   "active_bond": {
-    "avg_weight_change": 0.002,
-    "etf_count": 4,
-    "top_inflow": []
+    "avg_weight_change": 0.0695,
+    "etf_count": 7,
+    "top_inflow": [
+      "BPCEGP 6.915 01/14/46",
+      "USU12501BT57",
+      "USU6203KAG95",
+      "PEMEX 10 02/07/33",
+      "US233835AQ08"
+    ]
   },
   "bond": {
-    "avg_weight_change": -0.002,
+    "avg_weight_change": -0.0002,
     "etf_count": 80,
     "top_inflow": [
-      "C_USD",
-      "US91282CKR15",
-      "US91282CKJ98",
-      "US91282CKV27",
+      "US91282CPZ85",
+      "91282CQQ7",
       "C_NTD"
     ]
   },
-  "overseas_us": {
-    "avg_weight_change": 0.0151,
+  "financial": {
+    "avg_weight_change": -0.0012,
     "etf_count": 1,
     "top_inflow": [
-      "GOOGL",
-      "MSFT",
-      "NVDA",
-      "META",
-      "TSLA"
+      "2891"
+    ]
+  },
+  "overseas_us": {
+    "avg_weight_change": -0.0009,
+    "etf_count": 5,
+    "top_inflow": [
+      "MU",
+      "MRVL"
     ]
   },
   "overseas_japan": {
-    "avg_weight_change": 0.0029,
+    "avg_weight_change": 0.0021,
+    "etf_count": 4,
+    "top_inflow": [
+      "DA_NTD",
+      "C_JPY",
+      "9983"
+    ]
+  },
+  "overseas_india": {
+    "avg_weight_change": 0.1232,
+    "etf_count": 4,
+    "top_inflow": [
+      "202606GINM6F",
+      "6723"
+    ]
+  },
+  "overseas_china": {
+    "avg_weight_change": 0.0057,
+    "etf_count": 5,
+    "top_inflow": [
+      "202607CN",
+      "C_HKD",
+      "C_NTD",
+      "902",
+      "148"
+    ]
+  },
+  "overseas_semiconductor": {
+    "avg_weight_change": 0.1671,
     "etf_count": 1,
+    "top_inflow": [
+      "NVDA.US",
+      "AMAT.US",
+      "ASML.US",
+      "TSM.US",
+      "KLAC.US"
+    ]
+  },
+  "gold": {
+    "avg_weight_change": -2.35,
+    "etf_count": 2,
     "top_inflow": []
   },
-  "index": {
-    "avg_weight_change": -0.0011,
-    "etf_count": 22,
+  "oil": {
+    "avg_weight_change": 0.4533,
+    "etf_count": 3,
     "top_inflow": [
-      "PANW",
-      "CRWD",
-      "MSFT",
-      "ORCL",
-      "PLTR"
+      "202609B"
     ]
   },
-  "overseas": {
-    "avg_weight_change": 0.0288,
+  "leveraged": {
+    "avg_weight_change": 0.4975,
     "etf_count": 2,
     "top_inflow": [
-      "CIFR",
-      "HOOD"
+      "2330",
+      "202607WTXN6F"
     ]
+  },
+  "inverse": {
+    "avg_weight_change": -0.455,
+    "etf_count": 2,
+    "top_inflow": []
+  },
+  "overseas": {
+    "avg_weight_change": 0.0066,
+    "etf_count": 83,
+    "top_inflow": [
+      "MU",
+      "C_NTD",
+      "AMD",
+      "SNDK",
+      "000660"
+    ]
+  },
+  "futures": {
+    "avg_weight_change": 0.1125,
+    "etf_count": 4,
+    "top_inflow": []
   }
 }

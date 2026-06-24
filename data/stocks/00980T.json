@@ -1,28 +1,28 @@
 {
   "stock_id": "00980T",
   "name": "00980T",
-  "date": "2026-06-23",
-  "close": 11.22,
-  "health_score": 103,
+  "date": "2026-06-24",
+  "close": 11.21,
+  "health_score": 83,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -126.0,
-    "margin_slope": -1.6,
-    "maintenance_ratio": 162.19,
+    "margin_change": 0.0,
+    "margin_slope": -24.6,
+    "maintenance_ratio": 162.32,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {},
   "main_force": {
-    "cost": 11.53,
-    "distance": -2.69,
+    "cost": 11.51,
+    "distance": -2.61,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,11 +31,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-23"
+  "data_version": "2026-06-24"
 }
