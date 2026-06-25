@@ -1,6 +1,6 @@
 {
   "symbol": "00643K",
-  "updated_at": "2026-06-24",
+  "updated_at": "2026-06-25",
   "lines": [
     {
       "id": "H_9",
@@ -74,9 +74,9 @@
       "price": 4.43,
       "start_idx": 47,
       "start_date": "2026-05-12",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 56,
+      "end_date": "2026-06-25",
+      "broken": true,
       "strength": 1
     }
   ],
@@ -104,6 +104,12 @@
       "price": 4.05,
       "idx": 45,
       "date": "2026-05-05"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 4.43,
+      "idx": 56,
+      "date": "2026-06-25"
     }
   ]
 }

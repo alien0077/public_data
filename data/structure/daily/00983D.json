@@ -1,6 +1,6 @@
 {
   "symbol": "00983D",
-  "updated_at": "2026-06-24",
+  "updated_at": "2026-06-25",
   "lines": [
     {
       "id": "L_14",
@@ -36,17 +36,6 @@
       "strength": 1
     },
     {
-      "id": "L_56",
-      "type": "low",
-      "price": 10.23,
-      "start_idx": 56,
-      "start_date": "2026-01-05",
-      "end_idx": 73,
-      "end_date": "2026-01-28",
-      "broken": true,
-      "strength": 1
-    },
-    {
       "id": "H_64",
       "type": "high",
       "price": 10.38,
@@ -66,17 +55,6 @@
       "end_idx": null,
       "end_date": null,
       "broken": false,
-      "strength": 1
-    },
-    {
-      "id": "L_67",
-      "type": "low",
-      "price": 10.2,
-      "start_idx": 67,
-      "start_date": "2026-01-20",
-      "end_idx": 73,
-      "end_date": "2026-01-28",
-      "broken": true,
       "strength": 1
     },
     {
@@ -217,9 +195,9 @@
       "price": 10.16,
       "start_idx": 159,
       "start_date": "2026-06-12",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 167,
+      "end_date": "2026-06-25",
+      "broken": true,
       "strength": 1
     },
     {
@@ -228,25 +206,13 @@
       "price": 10.16,
       "start_idx": 160,
       "start_date": "2026-06-15",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
+      "end_idx": 167,
+      "end_date": "2026-06-25",
+      "broken": true,
       "strength": 1
     }
   ],
   "events": [
-    {
-      "type": "CHOCH_DOWN",
-      "price": 10.23,
-      "idx": 73,
-      "date": "2026-01-28"
-    },
-    {
-      "type": "CHOCH_DOWN",
-      "price": 10.2,
-      "idx": 73,
-      "date": "2026-01-28"
-    },
     {
       "type": "CHOCH_DOWN",
       "price": 10.23,
@@ -294,6 +260,18 @@
       "price": 10.02,
       "idx": 142,
       "date": "2026-05-20"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 10.16,
+      "idx": 167,
+      "date": "2026-06-25"
+    },
+    {
+      "type": "BOS_UP",
+      "price": 10.16,
+      "idx": 167,
+      "date": "2026-06-25"
     }
   ]
 }

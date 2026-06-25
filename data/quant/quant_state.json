@@ -1691,26 +1691,26 @@
   "strategy_performance": {
     "trend": {
       "sharpe": -0.22541294591442954,
-      "total_return": 0.186524,
+      "total_return": 0.172185,
       "win_rate": 0.03723404255319149,
       "backtest_total_return": -0.07149174999999997
     },
     "mr": {
       "sharpe": 0.135884362797271,
-      "total_return": -0.045,
+      "total_return": -0.03871,
       "win_rate": 0.1196808510638298,
       "backtest_total_return": 0.013545550000000128
     },
     "ai_inst": {
       "sharpe": 1.8426481766250888,
-      "total_return": 0.096455,
+      "total_return": 0.061478,
       "win_rate": 0.5478723404255319,
       "backtest_total_return": 1.92394
     },
     "portfolio": {
-      "sharpe": 5.937623248637099,
-      "total_return": 0.07932633333333339,
-      "win_rate": 0.5,
+      "sharpe": 4.481644168662674,
+      "total_return": 0.06498433333333331,
+      "win_rate": 0.4444444444444444,
       "backtest_total_return": 0.6219979333333332,
       "backtest_sharpe": 1.6244258609754447,
       "backtest_win_rate": 0.5452127659574468
@@ -1848,7 +1848,7 @@
     "cash": {
       "trend": 557814.0,
       "mr": 629975.0,
-      "ai_inst": 2317.5
+      "ai_inst": 250484.5
     },
     "positions": {
       "trend": [
@@ -1878,17 +1878,6 @@
       ],
       "ai_inst": [
         {
-          "stock": "8150",
-          "entry_date": "2026-06-12",
-          "entry_price": 97.0,
-          "shares": 5154,
-          "max_return": 0.17525773195876293,
-          "consecutive_buy_days": 5,
-          "total_inst_buy": 16268415,
-          "b_signal_triggered": true,
-          "phase": "BREAKOUT"
-        },
-        {
           "stock": "8996",
           "entry_date": "2026-06-12",
           "entry_price": 1145.0,
@@ -1915,7 +1904,7 @@
           "entry_date": "2026-06-17",
           "entry_price": 193.5,
           "shares": 315,
-          "max_return": 0.0,
+          "max_return": 0.007751937984496138,
           "consecutive_buy_days": 5,
           "total_inst_buy": 2753987,
           "b_signal_triggered": false,
@@ -1937,7 +1926,7 @@
           "entry_date": "2026-06-18",
           "entry_price": 968.0,
           "shares": 15,
-          "max_return": 0.038223140495867725,
+          "max_return": 0.05371900826446274,
           "consecutive_buy_days": 5,
           "total_inst_buy": 7055142,
           "b_signal_triggered": false,
@@ -1966,15 +1955,15 @@
           "phase": "ACCUMULATING"
         },
         {
-          "stock": "6230",
-          "entry_date": "2026-06-24",
-          "entry_price": 131.0,
-          "shares": 17,
+          "stock": "1590",
+          "entry_date": "2026-06-25",
+          "entry_price": 1390.0,
+          "shares": 179,
           "max_return": 0.0,
           "consecutive_buy_days": 5,
-          "total_inst_buy": 60043,
-          "b_signal_triggered": true,
-          "phase": "BREAKOUT"
+          "total_inst_buy": 446732,
+          "b_signal_triggered": false,
+          "phase": "ACCUMULATING"
         }
       ]
     },
@@ -2014,6 +2003,10 @@
       {
         "date": "2026-06-24",
         "nav": 3237979.0
+      },
+      {
+        "date": "2026-06-25",
+        "nav": 3194953.0
       }
     ],
     "strategy_navs": {
@@ -2053,6 +2046,10 @@
         {
           "date": "2026-06-24",
           "nav": 1186524.0
+        },
+        {
+          "date": "2026-06-25",
+          "nav": 1172185.0
         }
       ],
       "mr": [
@@ -2091,6 +2088,10 @@
         {
           "date": "2026-06-24",
           "nav": 955000.0
+        },
+        {
+          "date": "2026-06-25",
+          "nav": 961290.0
         }
       ],
       "ai_inst": [
@@ -2129,6 +2130,10 @@
         {
           "date": "2026-06-24",
           "nav": 1096455.0
+        },
+        {
+          "date": "2026-06-25",
+          "nav": 1061478.0
         }
       ]
     }
@@ -5165,6 +5170,41 @@
     "mr": 75
   },
   "trade_log": [
+    {
+      "stock": "1590",
+      "entry_date": "2026-06-25",
+      "exit_date": null,
+      "action": "BUY",
+      "entry_price": 1390.0,
+      "shares": 179,
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009"
+    },
+    {
+      "stock": "6230",
+      "entry_date": "2026-06-24",
+      "exit_date": "2026-06-25",
+      "entry_price": 131.0,
+      "exit_price": 129.0,
+      "shares": 17,
+      "return": -0.0153,
+      "reason": "AI_INST_EXIT (\u8dcc\u783410MA)",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009",
+      "primary_theme": "\u6563\u71b1\u6a21\u7d44",
+      "action": "SELL"
+    },
+    {
+      "stock": "8150",
+      "entry_date": "2026-06-12",
+      "exit_date": "2026-06-25",
+      "entry_price": 97.0,
+      "exit_price": 96.0,
+      "shares": 5154,
+      "return": -0.0103,
+      "reason": "AI_INST_EXIT (\u8dcc\u783410MA)",
+      "select_reason": "\u6cd5\u4eba\u5efa\u5009",
+      "primary_theme": "\u5c01\u6e2c_\u6750\u6599",
+      "action": "SELL"
+    },
     {
       "stock": "6230",
       "entry_date": "2026-06-24",

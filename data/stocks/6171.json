@@ -1,21 +1,21 @@
 {
   "stock_id": "6171",
   "name": "6171",
-  "date": "2026-06-24",
-  "close": 24.05,
+  "date": "2026-06-25",
+  "close": 23.95,
   "health_score": 130,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.005,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
     "margin_change": 0.0,
-    "margin_slope": -53.2,
-    "maintenance_ratio": 176.58,
+    "margin_slope": -53.0,
+    "maintenance_ratio": 175.61,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 87.72
   },
   "main_force": {
-    "cost": 22.7,
-    "distance": 5.95,
+    "cost": 22.73,
+    "distance": 5.37,
     "trend": "UP"
   },
   "sector": {
@@ -39,7 +39,12 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-24"
+  "data_version": "2026-06-25"
 }
