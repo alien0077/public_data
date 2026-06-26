@@ -1,21 +1,21 @@
 {
   "stock_id": "1789",
   "name": "1789",
-  "date": "2026-06-25",
-  "close": 20.55,
-  "health_score": 150,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "date": "2026-06-26",
+  "close": 20.0,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.002,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.019,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "margin_slope": -700.8,
-    "maintenance_ratio": 172.28,
+    "margin_change": 3555.0,
+    "margin_slope": -6.2,
+    "maintenance_ratio": 167.42,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 76.97
   },
   "main_force": {
-    "cost": 19.88,
-    "distance": 3.37,
+    "cost": 19.91,
+    "distance": 0.45,
     "trend": "UP"
   },
   "sector": {
@@ -34,17 +34,14 @@
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 100
+    "style": "Value",
+    "score": 0
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
+  "events": [],
+  "raw_signals": [
+    "散戶接刀中"
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-25"
+  "data_version": "2026-06-26"
 }

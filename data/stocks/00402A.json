@@ -1,29 +1,29 @@
 {
   "stock_id": "00402A",
   "name": "00402A",
-  "date": "2026-06-25",
-  "close": 9.89,
-  "health_score": 93,
+  "date": "2026-06-26",
+  "close": 9.7,
+  "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 0,
+    "foreign_buy_days": 1,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "margin_slope": -812.4,
-    "maintenance_ratio": 167.51,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 3668.0,
+    "margin_slope": -115.4,
+    "maintenance_ratio": 164.46,
+    "short_change": 3.0,
+    "short_margin_ratio": 0.08
   },
   "tdcc": {},
   "main_force": {
-    "cost": 9.84,
-    "distance": 0.51,
-    "trend": "UP"
+    "cost": 9.83,
+    "distance": -1.32,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
@@ -31,11 +31,13 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 40
+    "score": 0
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-25"
+  "raw_signals": [
+    "散戶接刀中"
+  ],
+  "data_version": "2026-06-26"
 }

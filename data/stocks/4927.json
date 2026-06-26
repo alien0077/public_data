@@ -1,23 +1,23 @@
 {
   "stock_id": "4927",
   "name": "4927",
-  "date": "2026-06-25",
-  "close": 48.7,
+  "date": "2026-06-26",
+  "close": 45.65,
   "health_score": 66,
   "signal": "Neutral",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.208,
+    "foreign_buy_ratio": -0.497,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "margin_slope": -7308.0,
-    "maintenance_ratio": 157.21,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 35859.0,
+    "margin_slope": -175.4,
+    "maintenance_ratio": 149.04,
+    "short_change": 297.0,
+    "short_margin_ratio": 0.83
   },
   "tdcc": {
     "big_holder_change": 20.05,
@@ -25,8 +25,8 @@
     "holder_concentration": 27.64
   },
   "main_force": {
-    "cost": 51.63,
-    "distance": -5.67,
+    "cost": 51.05,
+    "distance": -10.58,
     "trend": "DOWN"
   },
   "sector": {
@@ -40,8 +40,10 @@
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-25",
+  "raw_signals": [
+    "散戶接刀中"
+  ],
+  "data_version": "2026-06-26",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (-12.49%)，營運異常，請審慎評估"
 }

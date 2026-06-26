@@ -1,28 +1,28 @@
 {
   "stock_id": "00642U",
   "name": "00642U",
-  "date": "2026-06-25",
-  "close": 22.69,
-  "health_score": 83,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
+  "date": "2026-06-26",
+  "close": 23.0,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走強，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "margin_slope": -1848.6,
-    "maintenance_ratio": 139.54,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 5974.0,
+    "margin_slope": -568.4,
+    "maintenance_ratio": 143.03,
+    "short_change": 1608.0,
+    "short_margin_ratio": 26.92
   },
   "tdcc": {},
   "main_force": {
-    "cost": 27.1,
-    "distance": -16.27,
+    "cost": 26.8,
+    "distance": -14.18,
     "trend": "DOWN"
   },
   "sector": {
@@ -38,11 +38,11 @@
   "events": [
     {
       "level": "RED",
-      "title": "融資維持率低迷 (139.54%)"
+      "title": "短線券資比過熱 (警示)"
     }
   ],
   "raw_signals": [
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-25"
+  "data_version": "2026-06-26"
 }

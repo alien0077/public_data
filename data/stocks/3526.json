@@ -1,28 +1,28 @@
 {
   "stock_id": "3526",
   "name": "3526",
-  "date": "2026-06-25",
-  "close": 311.5,
-  "health_score": 83,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "date": "2026-06-26",
+  "close": 304.0,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 4,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "margin_slope": -493.2,
-    "maintenance_ratio": 151.44,
+    "margin_change": 1733.0,
+    "margin_slope": -50.0,
+    "maintenance_ratio": 149.23,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {},
   "main_force": {
-    "cost": 342.82,
-    "distance": -9.14,
+    "cost": 339.52,
+    "distance": -10.46,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,12 +35,9 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
+  "events": [],
+  "raw_signals": [
+    "散戶接刀中"
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-25"
+  "data_version": "2026-06-26"
 }

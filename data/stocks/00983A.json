@@ -1,11 +1,11 @@
 {
   "stock_id": "00983A",
   "name": "00983A",
-  "date": "2026-06-25",
-  "close": 11.91,
-  "health_score": 150,
+  "date": "2026-06-26",
+  "close": 11.72,
+  "health_score": 103,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
     "foreign_buy_days": 10,
     "foreign_buy_ratio": 0,
@@ -13,11 +13,11 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "margin_slope": -179.4,
-    "maintenance_ratio": 168.79,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 616.0,
+    "margin_slope": -22.2,
+    "maintenance_ratio": 165.96,
+    "short_change": 6.0,
+    "short_margin_ratio": 0.97
   },
   "tdcc": {
     "big_holder_change": 26.91,
@@ -25,17 +25,17 @@
     "holder_concentration": 31.44
   },
   "main_force": {
-    "cost": 11.76,
-    "distance": 1.28,
-    "trend": "UP"
+    "cost": 11.77,
+    "distance": -0.42,
+    "trend": "DOWN"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Growth",
-    "score": 100
+    "style": "Value",
+    "score": 30
   },
   "chip_status": "neutral",
   "chip_warning": "",
@@ -45,6 +45,8 @@
       "title": "外資連買 10 天"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-25"
+  "raw_signals": [
+    "散戶接刀中"
+  ],
+  "data_version": "2026-06-26"
 }

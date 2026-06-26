@@ -3,21 +3,10 @@
   "updated_at": "2026-06-26",
   "lines": [
     {
-      "id": "L_5",
-      "type": "low",
-      "price": 20.9,
-      "start_idx": 5,
-      "start_date": "2025-04-11",
-      "end_idx": 18,
-      "end_date": "2025-04-30",
-      "broken": true,
-      "strength": 1
-    },
-    {
-      "id": "H_10",
+      "id": "H_9",
       "type": "high",
       "price": 21.1,
-      "start_idx": 10,
+      "start_idx": 9,
       "start_date": "2025-04-18",
       "end_idx": null,
       "end_date": null,
@@ -25,21 +14,21 @@
       "strength": 1
     },
     {
-      "id": "L_20",
+      "id": "L_19",
       "type": "low",
       "price": 19.49,
-      "start_idx": 20,
+      "start_idx": 19,
       "start_date": "2025-05-05",
-      "end_idx": 33,
+      "end_idx": 32,
       "end_date": "2025-05-22",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "H_26",
+      "id": "H_25",
       "type": "high",
       "price": 20.0,
-      "start_idx": 26,
+      "start_idx": 25,
       "start_date": "2025-05-13",
       "end_idx": null,
       "end_date": null,
@@ -47,32 +36,32 @@
       "strength": 1
     },
     {
+      "id": "L_33",
+      "type": "low",
+      "price": 19.37,
+      "start_idx": 33,
+      "start_date": "2025-05-23",
+      "end_idx": 49,
+      "end_date": "2025-06-17",
+      "broken": true,
+      "strength": 1
+    },
+    {
       "id": "L_34",
       "type": "low",
       "price": 19.37,
       "start_idx": 34,
-      "start_date": "2025-05-23",
-      "end_idx": 50,
-      "end_date": "2025-06-17",
-      "broken": true,
-      "strength": 1
-    },
-    {
-      "id": "L_35",
-      "type": "low",
-      "price": 19.37,
-      "start_idx": 35,
       "start_date": "2025-05-26",
-      "end_idx": 50,
+      "end_idx": 49,
       "end_date": "2025-06-17",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "H_45",
+      "id": "H_44",
       "type": "high",
       "price": 19.68,
-      "start_idx": 45,
+      "start_idx": 44,
       "start_date": "2025-06-10",
       "end_idx": null,
       "end_date": null,
@@ -83,26 +72,20 @@
   "events": [
     {
       "type": "CHOCH_DOWN",
-      "price": 20.9,
-      "idx": 18,
-      "date": "2025-04-30"
-    },
-    {
-      "type": "CHOCH_DOWN",
       "price": 19.49,
-      "idx": 33,
+      "idx": 32,
       "date": "2025-05-22"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 19.37,
-      "idx": 50,
+      "idx": 49,
       "date": "2025-06-17"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 19.37,
-      "idx": 50,
+      "idx": 49,
       "date": "2025-06-17"
     }
   ]

@@ -1,28 +1,28 @@
 {
   "stock_id": "00980T",
   "name": "00980T",
-  "date": "2026-06-25",
-  "close": 11.24,
-  "health_score": 103,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "date": "2026-06-26",
+  "close": 11.0,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 4,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "margin_slope": -25.2,
-    "maintenance_ratio": 163.04,
+    "margin_change": 8.0,
+    "margin_slope": -23.6,
+    "maintenance_ratio": 159.98,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {},
   "main_force": {
-    "cost": 11.49,
-    "distance": -2.18,
+    "cost": 11.46,
+    "distance": -4.01,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,16 +31,13 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 0
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    }
+  "events": [],
+  "raw_signals": [
+    "散戶接刀中"
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-25"
+  "data_version": "2026-06-26"
 }

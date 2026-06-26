@@ -1,28 +1,28 @@
 {
   "stock_id": "00708L",
   "name": "00708L",
-  "date": "2026-06-25",
-  "close": 68.9,
-  "health_score": 83,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
+  "date": "2026-06-26",
+  "close": 69.65,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走強，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 5,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 0.0,
-    "margin_slope": -1857.2,
-    "maintenance_ratio": 142.09,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": 9228.0,
+    "margin_slope": -101.2,
+    "maintenance_ratio": 144.92,
+    "short_change": 789.0,
+    "short_margin_ratio": 8.55
   },
   "tdcc": {},
   "main_force": {
-    "cost": 80.82,
-    "distance": -14.75,
+    "cost": 80.1,
+    "distance": -13.05,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,14 +35,9 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 5 天"
-    }
-  ],
+  "events": [],
   "raw_signals": [
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-25"
+  "data_version": "2026-06-26"
 }
