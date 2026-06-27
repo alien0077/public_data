@@ -153,7 +153,7 @@ export class AudioSummary {
             '<div class="flex items-center space-x-3 min-w-0 flex-1">' +
             '<span class="toggle-icon text-gray-400 text-xs transition-transform">\u25B6</span>' +
             '<span class="text-xs text-gray-500 font-mono bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded shrink-0">' + pubDate + '</span>' +
-            '<span class="text-sm font-medium text-gray-900 dark:text-white truncate">' + this.escapeHtml(ep.title) + '</span>' +
+            '<span class="text-sm font-medium text-gray-900 dark:text-white">' + this.escapeHtml(ep.title) + '</span>' +
             '</div>' +
             '<div class="flex items-center space-x-2 shrink-0 ml-2">' +
             '<a href="' + ep.source_url + '" target="_blank" rel="noopener noreferrer"' +
