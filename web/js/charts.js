@@ -100,6 +100,7 @@ export const charts = {
         const isDark = document.documentElement.classList.contains('dark');
         const upColor = '#ef4444';
         const downColor = '#10b981';
+        const zoomWindow = this.getInitialKLineWindow(data.categoryData);
 
         const option = {
             backgroundColor: 'transparent',
@@ -110,7 +111,22 @@ export const charts = {
                 backgroundColor: isDark ? 'rgba(17, 24, 39, 0.95)' : 'rgba(255, 255, 255, 0.95)',
                 borderColor: isDark ? '#374151' : '#e5e7eb',
                 textStyle: { color: isDark ? '#f3f4f6' : '#1f2937', fontSize: 11 },
-                confine: true
+                confine: true,
+                formatter: (params) => {
+                    const k = params.find(p => p.seriesName === 'K線');
+                    if (!k) return '';
+                    const idx = k.dataIndex;
+                    const v = k.data || [];
+                    const volume = data.volumes[idx] || 0;
+                    return [
+                        `<b>${k.axisValue}</b>`,
+                        `開盤: ${this.formatTooltipNumber(v[0])}`,
+                        `最高: ${this.formatTooltipNumber(v[3])}`,
+                        `最低: ${this.formatTooltipNumber(v[2])}`,
+                        `收盤: ${this.formatTooltipNumber(v[1])}`,
+                        `成交量: ${this.formatTooltipNumber(volume, 0)}`
+                    ].join('<br/>');
+                }
             },
             grid: [
                 { left: '40', right: '10', top: '5%', height: '72%' },
@@ -125,8 +141,16 @@ export const charts = {
                 { scale: true, gridIndex: 1, splitNumber: 2, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { show: false } }
             ],
             dataZoom: [
-                { type: 'inside', xAxisIndex: [0, 1], start: Math.max(0, 100 - (250 / data.categoryData.length * 100)), end: 100 },
-                { show: true, type: 'slider', xAxisIndex: [0, 1], top: '97%', height: 15, start: Math.max(0, 100 - (250 / data.categoryData.length * 100)), end: 100 }
+                {
+                    type: 'inside',
+                    xAxisIndex: [0, 1],
+                    startValue: zoomWindow.startValue,
+                    endValue: zoomWindow.endValue,
+                    zoomOnMouseWheel: true,
+                    moveOnMouseMove: true,
+                    moveOnMouseWheel: true
+                },
+                { show: true, type: 'slider', xAxisIndex: [0, 1], top: '97%', height: 15, startValue: zoomWindow.startValue, endValue: zoomWindow.endValue }
             ],
             series: [
                 {
@@ -149,6 +173,41 @@ export const charts = {
             ]
         };
         this.instance.setOption(option);
+    },
+
+    getInitialKLineWindow(categoryData) {
+        const endValue = categoryData[categoryData.length - 1];
+        const endDate = this.parseCategoryDate(endValue);
+        if (!endDate) return { startValue: categoryData[0], endValue };
+
+        const months = window.matchMedia && window.matchMedia('(max-width: 767px)').matches ? 2 : 6;
+        const startDate = new Date(endDate);
+        startDate.setMonth(startDate.getMonth() - months);
+
+        const startIndex = categoryData.findIndex(dateText => {
+            const d = this.parseCategoryDate(dateText);
+            return d && d >= startDate;
+        });
+
+        return {
+            startValue: categoryData[startIndex >= 0 ? startIndex : 0],
+            endValue
+        };
+    },
+
+    parseCategoryDate(dateText) {
+        if (!dateText) return null;
+        const d = new Date(String(dateText).replace(/\//g, '-'));
+        return isNaN(d.getTime()) ? null : d;
+    },
+
+    formatTooltipNumber(value, decimals = 2) {
+        const n = parseFloat(value);
+        if (isNaN(n)) return '--';
+        return new Intl.NumberFormat('zh-TW', {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals
+        }).format(n);
     },
 
     formatTradeDate(val) {

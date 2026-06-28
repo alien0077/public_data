@@ -2663,7 +2663,11 @@ export const TrendHunter = {
                                     const isDark = document.documentElement.classList.contains('dark');
                                     const chart = echarts.init(pieDom, isDark ? 'dark' : null);
                                     window.etfPieChartInstance = chart;
-                                    const pieData = top10.map(h => ({ name: h.stock_name || h.stock_id || h.name, value: h.weight || 0 }));
+                                    const pieData = top10.map(h => {
+                                        const code = h.stock_id || h.symbol || '';
+                                        const displayName = h.stock_name || h.name || code;
+                                        return { name: code ? `${code} ${displayName}` : displayName, value: h.weight || 0 };
+                                    });
                                     if (othersWeight > 0) pieData.push({ name: '其他', value: othersWeight });
                                     chart.setOption({
                                         backgroundColor: 'transparent',

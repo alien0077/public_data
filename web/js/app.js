@@ -472,7 +472,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 '<div class="flex justify-between text-[10px]">' +
                     '<span class="text-gray-500">' + formatNumber(shares, 0) + '股 @ ' + formatNumber(avgCost) + '</span>' +
                     '<span class="' + (pnl >= 0 ? 'text-red-500' : 'text-green-500') + ' font-bold">' + (pnl >= 0 ? '+' : '') + formatNumber(pnl, 0) + ' (' + roi.toFixed(2) + '%)</span>' +
+                '</div>' +
+                '<div class="flex justify-end mt-2 pt-2 border-t border-gray-100 dark:border-gray-800">' +
+                    '<button class="delete-stock-mobile inline-flex items-center px-2.5 py-1 rounded-lg text-[10px] font-bold text-red-500 bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/40" title="刪除持股">刪除</button>' +
                 '</div>';
+
+                card.querySelector('.delete-stock-mobile').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    deleteStockTrades(sym);
+                });
 
                 portfolioCards.appendChild(card);
             }

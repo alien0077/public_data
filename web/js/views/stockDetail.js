@@ -29,6 +29,7 @@ export const StockDetail = {
         
         const detailSymbolEl = document.getElementById('detail-symbol');
         if (detailSymbolEl) detailSymbolEl.textContent = symbol;
+        this.updateHeader(symbol);
 
         this.updateFavoriteUI();
         
@@ -42,6 +43,48 @@ export const StockDetail = {
                     this.updateFavoriteUI();
                 }
             });
+        }
+    },
+
+    async updateHeader(symbol) {
+        const nameEl = document.getElementById('detail-name');
+        const priceEl = document.getElementById('detail-price');
+        const changeEl = document.getElementById('detail-change');
+        if (nameEl) nameEl.textContent = '--';
+        if (priceEl) {
+            priceEl.textContent = '--';
+            priceEl.className = 'text-xl font-mono font-bold text-gray-900 dark:text-white';
+        }
+        if (changeEl) {
+            changeEl.textContent = '--';
+            changeEl.className = 'text-xs text-gray-500';
+        }
+
+        try {
+            const [stockInfo, quoteMap] = await Promise.all([
+                api.getStockInfo(symbol).catch(() => null),
+                api.fetchQuotes([symbol]).catch(() => ({}))
+            ]);
+            const q = quoteMap[symbol] || quoteMap[symbol.split('.')[0]] || {};
+            if (nameEl) nameEl.textContent = stockInfo?.name || q.name || '--';
+
+            const price = parseFloat(q.price || 0);
+            const refPrice = parseFloat(q.referencePrice || price || 0);
+            const changePercent = q.changePercent != null ? parseFloat(q.changePercent) : (price > 0 && refPrice > 0 ? ((price - refPrice) / refPrice * 100) : null);
+            const style = getPriceChangeStyle(price, refPrice, symbol);
+            const priceClass = style.bgClass ? `${style.textClass} ${style.bgClass} rounded px-2 py-0.5` : style.textClass;
+
+            if (priceEl) {
+                priceEl.textContent = price > 0 ? this.formatValue(price) : '--';
+                priceEl.className = `text-xl font-mono font-bold ${price > 0 ? priceClass : 'text-gray-900 dark:text-white'}`;
+            }
+            if (changeEl) {
+                const arrow = changePercent > 0 ? '▲' : (changePercent < 0 ? '▼' : '');
+                changeEl.textContent = changePercent != null && Number.isFinite(changePercent) ? `${arrow} ${Math.abs(changePercent).toFixed(2)}%` : '--';
+                changeEl.className = `text-xs ${price > 0 ? priceClass : 'text-gray-500'}`;
+            }
+        } catch (e) {
+            console.warn('StockDetail header update failed:', e);
         }
     },
 
@@ -793,7 +836,11 @@ export const StockDetail = {
             const chartDom = document.getElementById('etf-pie-chart');
             if (!chartDom) return;
             const chart = echarts.init(chartDom, document.documentElement.classList.contains('dark') ? 'dark' : null);
-            const pieData = top10.map(h => ({ name: h.stock_name, value: h.weight }));
+            const pieData = top10.map(h => {
+                const code = h.stock_id || h.symbol || '';
+                const displayName = h.stock_name || h.name || code;
+                return { name: code ? `${code} ${displayName}` : displayName, value: h.weight };
+            });
             if (othersWeight > 0) pieData.push({ name: '其他', value: othersWeight });
             chart.setOption({
                 backgroundColor: 'transparent',

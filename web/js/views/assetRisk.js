@@ -232,7 +232,7 @@ export const AssetRisk = {
             myChart.setOption({
                 backgroundColor: 'transparent',
                 tooltip: { trigger: 'item', formatter: '{b}: {d}%' },
-                series: [{ name: '配置', type: 'pie', radius: ['40%', '70%'], itemStyle: { borderRadius: 8, borderColor: isDark ? '#161b22' : '#fff', borderWidth: 2 }, data: processed.map(p => ({ name: p.symbol, value: p.marketValue })) }]
+                series: [{ name: '配置', type: 'pie', radius: ['40%', '70%'], itemStyle: { borderRadius: 8, borderColor: isDark ? '#161b22' : '#fff', borderWidth: 2 }, data: processed.map(p => ({ name: `${p.symbol} ${p.name || p.symbol}`, value: p.marketValue })) }]
             });
         }, 50);
     },
