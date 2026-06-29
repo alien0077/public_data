@@ -13,6 +13,7 @@ import { Settings } from './views/settings.js?cb=3';
 import { GroupSearch } from './views/groupSearch.js?v=2';
 import { AudioSummary } from './views/audioSummary.js';
 import { getPriceChangeStyle } from './utils/priceStyle.js';
+import { stockIdentityHTML, stockMetricHTML, stockMobileCardHTML } from './utils/stockListLayout.js';
 
 const audioSummary = new AudioSummary();
 
@@ -425,8 +426,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const eventAlert = quant.event_alert || '';
             const supportMA = support.supportMA || '';
             const supportMAColor = supportMA.includes('🚀') ? 'text-red-400' : supportMA.includes('💀') ? 'text-green-400' : 'text-blue-400';
+            const displayName = h.name || q.name || sym;
 
-            row.innerHTML = '<td class="px-3 md:px-6 py-4"><div class="flex items-center gap-2"><span class="font-bold text-gray-900 dark:text-white">' + sym + '</span>' + adviceBadge + '</div><div class="text-[10px] text-gray-500 truncate max-w-[120px]">' + (h.name || q.name || '') + '</div></td>' +
+            row.innerHTML = '<td class="px-3 md:px-6 py-4">' + stockIdentityHTML(sym, displayName, { badgeHTML: adviceBadge }) + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-center text-xs">' + betaText + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-center">' + healthBadge + '</td>' +
                 '<td class="px-3 md:px-6 py-4 text-right ' + priceClass + '">' + (price > 0 ? formatNumber(price) : '--') + '</td>' +
@@ -450,32 +452,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (portfolioCards) {
                 const card = document.createElement('div');
-                card.className = 'px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors cursor-pointer';
+                card.className = 'hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors';
                 card.addEventListener('click', () => StockDetail.show(sym));
 
                 const chipEventHTML = [chipLabel, eventAlert, supportMA !== 'X' ? '<span class="font-bold ' + supportMAColor + '">' + supportMA + '</span>' : ''].filter(Boolean).join(' · ');
 
-                card.innerHTML = '<div class="flex justify-between items-center mb-1">' +
-                    '<div class="flex items-center gap-2">' +
-                        '<span class="font-bold text-gray-900 dark:text-white">' + sym + '</span>' +
-                        adviceBadge +
-                        (betaText ? '<span class="text-[10px] text-gray-500">' + betaText + '</span>' : '') +
-                        healthBadge +
-                    '</div>' +
-                    '<div class="text-right ' + priceClass + '">' +
+                card.innerHTML = stockMobileCardHTML({
+                    symbol: sym,
+                    name: displayName,
+                    badgeHTML: adviceBadge + (betaText ? '<span class="text-[10px] text-gray-500">' + betaText + '</span>' : '') + healthBadge,
+                    primaryHTML: '<div class="' + priceClass + '">' +
                         '<div class="font-bold">' + (price > 0 ? formatNumber(price) : '--') + '</div>' +
                         '<div class="text-[10px]">' + (price > 0 ? (pct > 0 ? '▲' : (pct < 0 ? '▼' : '')) + Math.abs(pct).toFixed(2) + '%' : '--') + '</div>' +
-                    '</div>' +
-                '</div>' +
-                '<div class="text-[10px] text-gray-500 truncate mb-1">' + (h.name || q.name || '') + '</div>' +
-                (chipEventHTML ? '<div class="text-[10px] text-gray-400 mb-1">' + chipEventHTML + '</div>' : '') +
-                '<div class="flex justify-between text-[10px]">' +
-                    '<span class="text-gray-500">' + formatNumber(shares, 0) + '股 @ ' + formatNumber(avgCost) + '</span>' +
-                    '<span class="' + (pnl >= 0 ? 'text-red-500' : 'text-green-500') + ' font-bold">' + (pnl >= 0 ? '+' : '') + formatNumber(pnl, 0) + ' (' + roi.toFixed(2) + '%)</span>' +
-                '</div>' +
-                '<div class="flex justify-end mt-2 pt-2 border-t border-gray-100 dark:border-gray-800">' +
-                    '<button class="delete-stock-mobile inline-flex items-center px-2.5 py-1 rounded-lg text-[10px] font-bold text-red-500 bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/40" title="刪除持股">刪除</button>' +
-                '</div>';
+                    '</div>',
+                    metricsHTML: stockMetricHTML('股數/成本', formatNumber(shares, 0) + '股 @ ' + formatNumber(avgCost)) +
+                        stockMetricHTML('損益', (pnl >= 0 ? '+' : '') + formatNumber(pnl, 0) + ' (' + roi.toFixed(2) + '%)', {
+                            valueClass: (pnl >= 0 ? 'text-red-500' : 'text-green-500')
+                        }),
+                    detailHTML: chipEventHTML,
+                    actionsHTML: '<button class="delete-stock-mobile inline-flex items-center px-2.5 py-1 rounded-lg text-[10px] font-bold text-red-500 bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/40" title="刪除持股">刪除</button>'
+                });
 
                 card.querySelector('.delete-stock-mobile').addEventListener('click', (e) => {
                     e.stopPropagation();

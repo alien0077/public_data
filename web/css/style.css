@@ -66,6 +66,108 @@
     scrollbar-width: none;
 }
 
+/* Shared stock list layout */
+.stock-identity {
+    min-width: 0;
+}
+
+.stock-identity-main {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-width: 0;
+}
+
+.stock-symbol {
+    font-weight: 800;
+    color: #111827;
+}
+
+.dark .stock-symbol {
+    color: #ffffff;
+}
+
+.stock-name {
+    margin-top: 0.125rem;
+    color: #6b7280;
+    font-size: 0.625rem;
+    line-height: 1rem;
+    overflow-wrap: anywhere;
+}
+
+.stock-metric {
+    min-width: 3.75rem;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.stock-metric-value {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: 800;
+}
+
+.stock-metric-label {
+    margin-top: 0.125rem;
+    color: #6b7280;
+    font-size: 0.625rem;
+    line-height: 1rem;
+}
+
+.stock-card-row {
+    padding: 0.875rem 1rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.stock-card-row:hover {
+    background: rgba(243, 244, 246, 0.9);
+}
+
+.dark .stock-card-row:hover {
+    background: rgba(31, 41, 55, 0.35);
+}
+
+.stock-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.875rem;
+}
+
+.stock-card-primary {
+    flex: 0 0 auto;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.stock-card-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem 0.75rem;
+    margin-top: 0.625rem;
+    font-size: 0.75rem;
+}
+
+.stock-card-detail {
+    margin-top: 0.5rem;
+    color: #6b7280;
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+    overflow-wrap: anywhere;
+}
+
+.stock-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.625rem;
+    padding-top: 0.625rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+.dark .stock-card-actions {
+    border-top-color: #1f2937;
+}
+
 /* 二級導航動畫與樣式 */
 #sub-nav-container {
     z-index: 10;

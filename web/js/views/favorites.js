@@ -1,5 +1,6 @@
 import { api } from '../api.js';
 import { getPriceChangeStyle } from '../utils/priceStyle.js';
+import { stockIdentityHTML, stockMetricHTML, stockMobileCardHTML } from '../utils/stockListLayout.js';
 
 /**
  * Favorites View
@@ -122,7 +123,7 @@ export const Favorites = {
 
                 <!-- List Content -->
                 <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm flex-1 flex flex-col transition-colors duration-300">
-                    <div class="overflow-x-auto flex-1">
+                    <div class="overflow-x-auto flex-1 hidden md:block">
                         <table class="w-full text-left">
                             <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 dark:text-gray-500 text-[10px] md:text-xs uppercase sticky top-0 z-10 backdrop-blur-sm">
                                 <tr>
@@ -140,6 +141,7 @@ export const Favorites = {
                             </tbody>
                         </table>
                     </div>
+                    <div id="favorites-cards" class="md:hidden divide-y divide-gray-100 dark:divide-gray-800"></div>
                 </div>
             </div>
         `;
@@ -235,6 +237,7 @@ export const Favorites = {
 
     async renderContent(quotes = {}) {
         const body = document.getElementById('favorites-body');
+        const cards = document.getElementById('favorites-cards');
         if (!body) return;
 
         const currentCat = this._categories[this._activeTab];
@@ -248,10 +251,14 @@ export const Favorites = {
                     </td>
                 </tr>
             `;
+            if (cards) {
+                cards.innerHTML = '<div class="px-4 py-10 text-center text-gray-500 text-sm">這個分類還沒有收藏任何股票，請從其他畫面將股票加入收藏！</div>';
+            }
             return;
         }
 
         body.innerHTML = '';
+        if (cards) cards.innerHTML = '';
         
         // 若有從 api.getStocksMeta() 取得的資料可以輔助名稱
         const meta = await api.getStocksMeta();
@@ -300,10 +307,7 @@ export const Favorites = {
             const peStr = peRatio ? peRatio.toFixed(1) : '--';
             
             row.innerHTML = `
-                <td class="px-3 md:px-6 py-4">
-                    <div class="font-bold text-gray-900 dark:text-white">${sym}</div>
-                    <div class="text-[10px] text-gray-500 truncate max-w-[100px]">${name}</div>
-                </td>
+                <td class="px-3 md:px-6 py-4">${stockIdentityHTML(sym, name)}</td>
                 <td class="px-3 md:px-6 py-4 text-right ${priceClass}">
                     ${price > 0 ? this.formatNumber(price) : '--'}
                 </td>
@@ -326,10 +330,30 @@ export const Favorites = {
                 </td>
             `;
             body.appendChild(row);
+
+            if (cards) {
+                const card = document.createElement('div');
+                card.className = 'hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors';
+                card.addEventListener('click', () => window.StockDetail.show(sym));
+                card.innerHTML = stockMobileCardHTML({
+                    symbol: sym,
+                    name,
+                    primaryHTML: `<div class="${priceClass}"><div class="font-bold">${price > 0 ? this.formatNumber(price) : '--'}</div><div class="text-[10px]">${price > 0 ? `${changePercent > 0 ? '▲' : (changePercent < 0 ? '▼' : '')} ${Math.abs(changePercent).toFixed(2)}%` : '--'}</div></div>`,
+                    metricsHTML: stockMetricHTML('最高', high > 0 ? this.formatNumber(high) : '--') +
+                        stockMetricHTML('最低', low > 0 ? this.formatNumber(low) : '--') +
+                        stockMetricHTML('本益比', peStr, { valueClass: peColor }),
+                    actionsHTML: `
+                        <button class="remove-fav-mobile text-gray-500 hover:text-red-500 transition-colors" data-symbol="${sym}" title="移除收藏">
+                            移除
+                        </button>
+                    `
+                });
+                cards.appendChild(card);
+            }
         });
 
         // 綁定刪除按鈕
-        body.querySelectorAll('.remove-fav').forEach(btn => {
+        document.querySelectorAll('.remove-fav, .remove-fav-mobile').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const sym = btn.dataset.symbol;

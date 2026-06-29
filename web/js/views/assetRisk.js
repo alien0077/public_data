@@ -5,6 +5,7 @@
 import { db } from '../db.js';
 import { api } from '../api.js';
 import { CorporateActions } from '../corporateActions.js';
+import { stockIdentityHTML } from '../utils/stockListLayout.js';
 
 export const AssetRisk = {
     subPageConfigs: {
@@ -237,7 +238,7 @@ export const AssetRisk = {
                     <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
                         ${processed.map(item => `
                             <tr class="hover:bg-gray-800/30">
-                                <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">${item.symbol}<br/><span class="text-[10px] text-gray-500 font-normal">${item.name}</span></td>
+                                <td class="px-6 py-4">${stockIdentityHTML(item.symbol, item.name || item.symbol)}</td>
                                 <td class="px-6 py-4">${this.formatNumber(item.price)}<br/><span class="text-[10px] text-gray-400">@${this.formatNumber(item.avgCost)}</span></td>
                                 <td class="px-6 py-4 text-right font-bold text-blue-500">${this.formatNumber(item.marketValue, 0)}</td>
                                 <td class="px-6 py-4 text-right"><span class="px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 text-[10px]">${(item.marketValue/totalMarketValue*100).toFixed(2)}%</span></td>
@@ -489,7 +490,7 @@ export const AssetRisk = {
                             <tbody class="divide-y divide-gray-100 dark:divide-gray-800 font-mono">
                                 ${detailList.sort((a,b) => b.totalPayout - a.totalPayout).map(item => `
                                     <tr class="hover:bg-gray-800/30">
-                                        <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">${item.symbol}<br/><span class="text-[10px] text-gray-500 font-normal">${item.name}</span></td>
+                                        <td class="px-6 py-4">${stockIdentityHTML(item.symbol, item.name || item.symbol)}</td>
                                         <td class="px-6 py-4 text-right">${this.formatNumber(item.shares, 0)}</td>
                                         <td class="px-6 py-4 text-right">${this.formatNumber(item.divPerShare)}</td>
                                         <td class="px-6 py-4 text-right font-bold text-green-500">$${this.formatNumber(item.totalPayout, 0)}</td>

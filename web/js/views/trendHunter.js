@@ -4,6 +4,7 @@
  */
 
 import { api } from '../api.js';
+import { stockIdentityHTML, stockMetricHTML, stockMobileCardHTML } from '../utils/stockListLayout.js';
 
 export const TrendHunter = {
     subPageConfigs: {
@@ -533,7 +534,46 @@ export const TrendHunter = {
                                 </svg>
                             </div>
                         </div>
-                        <div class="overflow-x-auto">
+                        <div class="md:hidden divide-y divide-gray-100 dark:divide-gray-800">
+                            ${sector.stocks.map(s => {
+                                const ret = s.current_return || 0;
+                                const retStr = (ret >= 0 ? '+' : '') + (ret * 100).toFixed(1) + '%';
+                                const retClass = ret >= 0 ? 'text-red-500' : 'text-green-500';
+                                const buyStr = s.accumulated_inst_buy >= 1000
+                                    ? (s.accumulated_inst_buy / 1000).toFixed(1) + 'K'
+                                    : s.accumulated_inst_buy.toLocaleString();
+                                const signalConfig = {
+                                    'B': { icon: '🔴', label: 'B 發動', cls: 'bg-red-500/15 text-red-500 border-red-500/30' },
+                                    'A+': { icon: '🟠', label: 'A+ 起跑', cls: 'bg-orange-500/15 text-orange-500 border-orange-500/30' },
+                                    'A': { icon: '🔵', label: 'A 潛伏', cls: 'bg-blue-500/15 text-blue-500 border-blue-500/30' },
+                                    'ABS': { icon: '🟣', label: 'ABS 絕對買超', cls: 'bg-purple-500/15 text-purple-500 border-purple-500/30' },
+                                };
+                                const sig = signalConfig[s.latest_signal_code];
+                                const entrySig = signalConfig[s.entry_signal_code];
+                                const entryBadge = entrySig
+                                    ? `<span class="text-[9px] font-bold px-1.5 py-0.5 rounded border ${entrySig.cls}">進場 ${entrySig.label}</span>`
+                                    : '';
+                                const signalBadge = sig
+                                    ? `<span class="text-[10px] font-bold px-2 py-1 rounded border ${sig.cls}">${sig.icon} ${sig.label}</span>`
+                                    : '<span class="text-[10px] text-gray-400">追蹤中</span>';
+                                const peRatio = s.pe_ratio;
+                                const peColor = peRatio < 15 ? 'text-green-500' : peRatio < 25 ? 'text-gray-600 dark:text-gray-300' : 'text-orange-500';
+                                const peStr = peRatio ? peRatio.toFixed(1) : '--';
+                                return stockMobileCardHTML({
+                                    symbol: s.stock_id,
+                                    name: s.name || s.stock_id,
+                                    badgeHTML: signalBadge + entryBadge,
+                                    primaryHTML: `<div class="${retClass}"><div class="font-bold">${retStr}</div><div class="text-[10px]">區間損益</div></div>`,
+                                    metricsHTML: stockMetricHTML('開始日', s.start_date ? s.start_date.substring(5) : '--') +
+                                        stockMetricHTML('天數', `${s.tracking_days}d`) +
+                                        stockMetricHTML('累計買超', buyStr, { valueClass: 'text-blue-500' }) +
+                                        stockMetricHTML('本益比', peStr, { valueClass: peColor }),
+                                    detailHTML: s.note ? `<span class="text-orange-500">${s.note}</span>` : '',
+                                    onClick: `window.StockDetail.show('${s.stock_id}')`
+                                });
+                            }).join('')}
+                        </div>
+                        <div class="overflow-x-auto hidden md:block">
                             <table class="w-full text-left">
                                 <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 text-[10px] uppercase">
                                     <tr>
@@ -574,10 +614,7 @@ export const TrendHunter = {
                                         const peStr = peRatio ? peRatio.toFixed(1) : '--';
                                         return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 cursor-pointer transition-colors"
                                                      onclick="window.StockDetail.show('${s.stock_id}')">
-                                            <td class="px-5 py-2.5">
-                                                <div class="font-bold text-gray-900 dark:text-white">${s.stock_id}</div>
-                                                <div class="text-[10px] text-gray-400">${s.name || ''}</div>
-                                            </td>
+                                            <td class="px-5 py-2.5">${stockIdentityHTML(s.stock_id, s.name || s.stock_id)}</td>
                                             <td class="px-5 py-2.5 text-left">
                                                 ${s.note ? `<span class="text-[10px] text-orange-500 leading-tight">${s.note}</span>` : '<span class="text-[10px] text-gray-400">--</span>'}
                                             </td>
@@ -693,7 +730,42 @@ export const TrendHunter = {
 
                 listContainer.innerHTML = `
                     <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
-                        <div class="overflow-x-auto">
+                        <div class="md:hidden divide-y divide-gray-100 dark:divide-gray-800">
+                            ${data.stocks.map(s => {
+                                const buyStr = s.total_inst_buy >= 1000
+                                    ? (s.total_inst_buy / 1000).toFixed(1) + 'K'
+                                    : s.total_inst_buy.toLocaleString();
+                                const avgStr = s.avg_daily_buy >= 1000
+                                    ? (s.avg_daily_buy / 1000).toFixed(1) + 'K'
+                                    : s.avg_daily_buy.toLocaleString();
+                                const r3Str = s.recent_3d_buy >= 1000
+                                    ? (s.recent_3d_buy / 1000).toFixed(1) + 'K'
+                                    : s.recent_3d_buy.toLocaleString();
+                                let labelColor = 'bg-gray-500/15 text-gray-500 border-gray-500/30';
+                                if (s.label.includes('🔥')) labelColor = 'bg-red-500/15 text-red-500 border-red-500/30';
+                                else if (s.label.includes('👀')) labelColor = 'bg-orange-500/15 text-orange-500 border-orange-500/30';
+                                else if (s.label.includes('⚡')) labelColor = 'bg-blue-500/15 text-blue-500 border-blue-500/30';
+                                const peRatio = s.pe_ratio;
+                                const peColor = peRatio < 15 ? 'text-green-500' : peRatio < 25 ? 'text-gray-600 dark:text-gray-300' : 'text-orange-500';
+                                const peStr = peRatio ? peRatio.toFixed(1) : '--';
+                                return stockMobileCardHTML({
+                                    symbol: s.stock_id,
+                                    name: s.name || s.stock_id,
+                                    badgeHTML: `<span class="text-[10px] font-bold px-2 py-1 rounded border ${labelColor}">${s.label}</span>`,
+                                    primaryHTML: `<div class="text-cyan-600 dark:text-cyan-400"><div class="font-bold">${buyStr}</div><div class="text-[10px]">累計買超</div></div>`,
+                                    metricsHTML: stockMetricHTML(`買入/${data.window_days}`, `${s.buy_days}/${s.total_days || data.window_days}`) +
+                                        stockMetricHTML('一致性', `${(s.consistency * 100).toFixed(0)}%`, {
+                                            valueClass: s.consistency >= 0.8 ? 'text-green-500' : s.consistency >= 0.6 ? 'text-orange-500' : 'text-gray-500'
+                                        }) +
+                                        stockMetricHTML('日均買超', avgStr) +
+                                        stockMetricHTML('近3日', r3Str) +
+                                        stockMetricHTML('本益比', peStr, { valueClass: peColor }),
+                                    detailHTML: s.sector_tag || '',
+                                    onClick: `window.StockDetail.show('${s.stock_id}')`
+                                });
+                            }).join('')}
+                        </div>
+                        <div class="overflow-x-auto hidden md:block">
                             <table class="w-full text-left">
                                 <thead class="bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 text-[10px] uppercase">
                                     <tr>
@@ -730,10 +802,7 @@ export const TrendHunter = {
 
                                         return `<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 cursor-pointer transition-colors"
                                                      onclick="window.StockDetail.show('${s.stock_id}')">
-                                            <td class="px-4 py-2.5">
-                                                <div class="font-bold text-gray-900 dark:text-white">${s.stock_id}</div>
-                                                <div class="text-[10px] text-gray-400">${s.name || ''}</div>
-                                            </td>
+                                            <td class="px-4 py-2.5">${stockIdentityHTML(s.stock_id, s.name || s.stock_id)}</td>
                                             <td class="px-4 py-2.5 text-left text-gray-500 text-[10px]">${s.sector_tag || '--'}</td>
                                             <td class="px-4 py-2.5 text-right font-bold text-cyan-600 dark:text-cyan-400">${buyStr}</td>
                                             <td class="px-4 py-2.5 text-right text-gray-600 dark:text-gray-300">${s.buy_days}/${s.total_days || data.window_days}</td>
