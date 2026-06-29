@@ -136,6 +136,23 @@ export const AssetRisk = {
         }
     },
 
+    baseSymbol(symbol) {
+        return String(symbol || '').replace('^', '').split('.')[0].toUpperCase();
+    },
+
+    isSymbolLikeName(name, symbol) {
+        const value = String(name || '').trim().toUpperCase();
+        if (!value) return true;
+        const base = this.baseSymbol(symbol);
+        return value === base || value === `${base}.TW` || value === `${base}.TWO`;
+    },
+
+    resolveStockName(symbol, quote, meta, holding) {
+        const candidates = [meta?.name, holding?.name, quote?.name, symbol];
+        const resolved = candidates.find(name => !this.isSymbolLikeName(name, symbol));
+        return resolved || symbol;
+    },
+
     calculateHoldings(trades) {
         const holdings = {};
         const sortedTrades = [...trades].sort((a, b) => new Date(a.date || a.timestamp || a.tradeDate) - new Date(b.date || b.timestamp || b.tradeDate));
@@ -186,7 +203,13 @@ export const AssetRisk = {
         ]);
 
         const stockMap = {};
-        if (stocksMeta?.stocks) stocksMeta.stocks.forEach(s => stockMap[s.symbol] = s);
+        if (stocksMeta?.stocks) stocksMeta.stocks.forEach(s => {
+            const symbol = String(s.symbol || '').toUpperCase();
+            const base = this.baseSymbol(symbol);
+            [symbol, base, `${base}.TW`, `${base}.TWO`].forEach(key => {
+                if (key) stockMap[key] = s;
+            });
+        });
 
         let totalMarketValue = 0;
         const processed = symbols.map(sym => {
@@ -195,8 +218,9 @@ export const AssetRisk = {
             const price = q.price || (h.totalCost / h.shares);
             const mv = price * h.shares;
             totalMarketValue += mv;
-            const meta = stockMap[sym] || {};
-            return { symbol: sym, name: q.name || meta.name || h.name || sym, shares: h.shares, avgCost: h.totalCost / h.shares, price, marketValue: mv, industry: meta.industry || meta.sector || '其他' };
+            const meta = stockMap[String(sym).toUpperCase()] || stockMap[this.baseSymbol(sym)] || {};
+            const name = this.resolveStockName(sym, q, meta, h);
+            return { symbol: sym, name, shares: h.shares, avgCost: h.totalCost / h.shares, price, marketValue: mv, industry: meta.industry || meta.sector || '其他' };
         });
 
         processed.sort((a, b) => b.marketValue - a.marketValue);

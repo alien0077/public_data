@@ -10,8 +10,49 @@ export const Settings = {
     },
 
     render(container) {
+        const selectedTheme = window.ThemeEngine?.preference?.() || 'system';
+        const themeOptions = [
+            { mode: 'system', icon: '🖥️', title: '系統', description: '跟隨裝置外觀設定' },
+            { mode: 'light', icon: '☀️', title: '淺色', description: '固定使用明亮介面' },
+            { mode: 'dark', icon: '🌙', title: '深色', description: '固定使用深色介面' }
+        ];
+        const themeButtons = themeOptions.map(option => {
+            const isSelected = selectedTheme === option.mode;
+            const classes = isSelected
+                ? 'border-blue-500 bg-blue-500/10 text-blue-600 dark:text-blue-300 ring-2 ring-blue-500/20'
+                : 'border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50 text-gray-600 dark:text-gray-300 hover:border-blue-300 dark:hover:border-blue-700';
+            const checkmark = isSelected
+                ? '<span class="ml-auto text-blue-500 text-sm font-bold">✓</span>'
+                : '<span class="ml-auto w-4"></span>';
+            return `
+                <button type="button" data-theme-mode="${option.mode}" aria-pressed="${isSelected}"
+                    class="settings-theme-option flex items-center gap-3 rounded-xl border p-3 text-left transition-all ${classes}">
+                    <span class="text-xl flex-shrink-0">${option.icon}</span>
+                    <span class="min-w-0">
+                        <span class="block text-sm font-bold text-gray-900 dark:text-white">${option.title}</span>
+                        <span class="block text-xs text-gray-500 dark:text-gray-400">${option.description}</span>
+                    </span>
+                    ${checkmark}
+                </button>
+            `;
+        }).join('');
+
         container.innerHTML = `
             <div class="flex flex-col flex-1 overflow-y-auto no-scrollbar p-4 md:p-6 space-y-6">
+                <!-- 外觀設定 -->
+                <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                    <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+                        <h3 class="font-bold text-gray-900 dark:text-white flex items-center">
+                            <span class="mr-2">🎨</span> 外觀設定
+                        </h3>
+                    </div>
+                    <div class="p-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            ${themeButtons}
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 資料管理 -->
                 <div class="bg-white dark:bg-[#161b22] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
                     <div class="p-5 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
@@ -172,6 +213,18 @@ export const Settings = {
     },
 
     bindEvents() {
+        document.querySelectorAll('.settings-theme-option').forEach((button) => {
+            button.addEventListener('click', () => {
+                const mode = button.dataset.themeMode;
+                window.ThemeEngine?.set(mode);
+                const container = document.getElementById('view-settings');
+                if (container) {
+                    this.render(container);
+                    this.bindEvents();
+                }
+            });
+        });
+
         document.getElementById('settings-import-trades')?.addEventListener('click', () => {
             document.getElementById('trigger-import')?.click();
         });

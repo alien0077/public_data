@@ -18,8 +18,10 @@
         // 防止主題閃爍
         if (typeof ThemeEngine !== 'undefined') {
             ThemeEngine.init();
-        } else if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
+        } else {
+            const themePreference = localStorage.getItem('theme-preference') || 'system';
+            const shouldUseDark = themePreference === 'dark' || (themePreference === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (shouldUseDark) document.documentElement.classList.add('dark');
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
