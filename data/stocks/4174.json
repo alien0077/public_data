@@ -1,49 +1,54 @@
 {
   "stock_id": "4174",
   "name": "4174",
-  "date": "2026-06-26",
-  "close": 26.55,
-  "health_score": 66,
-  "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "date": "2026-06-29",
+  "close": 29.2,
+  "health_score": 130,
+  "signal": "Bullish",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.353,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.283,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1599.0,
-    "margin_slope": 20.4,
-    "maintenance_ratio": 155.92,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": -157.0,
+    "margin_slope": 288.4,
+    "maintenance_ratio": 171.3,
+    "short_change": 4.0,
+    "short_margin_ratio": 0.28
   },
   "tdcc": {
-    "big_holder_change": 34.54,
+    "big_holder_change": 35.59,
     "retail_holder_change": 0,
-    "holder_concentration": 43.16
+    "holder_concentration": 42.7
   },
   "main_force": {
-    "cost": 28.38,
-    "distance": -6.45,
-    "trend": "DOWN"
+    "cost": 28.41,
+    "distance": 2.78,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 70
   },
-  "chip_status": "danger",
-  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
-  "events": [],
-  "raw_signals": [
-    "散戶接刀中"
+  "chip_status": "neutral",
+  "chip_warning": "",
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-06-26",
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-29",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (-497.41%)，營運異常，請審慎評估"
 }

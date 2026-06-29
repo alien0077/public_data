@@ -1,11 +1,11 @@
 {
   "stock_id": "8234",
   "name": "8234",
-  "date": "2026-06-26",
-  "close": 65.7,
+  "date": "2026-06-29",
+  "close": 66.0,
   "health_score": 66,
   "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": -0.06,
@@ -13,20 +13,20 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5293.0,
-    "margin_slope": 75.4,
-    "maintenance_ratio": 163.16,
-    "short_change": 9.0,
-    "short_margin_ratio": 0.17
+    "margin_change": 23.0,
+    "margin_slope": 1063.2,
+    "maintenance_ratio": 164.62,
+    "short_change": 8.0,
+    "short_margin_ratio": 0.32
   },
   "tdcc": {
     "big_holder_change": 45.86,
     "retail_holder_change": 0,
-    "holder_concentration": 52.85
+    "holder_concentration": 52.96
   },
   "main_force": {
-    "cost": 67.11,
-    "distance": -2.1,
+    "cost": 66.82,
+    "distance": -1.23,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,11 +37,9 @@
     "style": "Value",
     "score": 0
   },
-  "chip_status": "caution",
-  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
   "events": [],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-26"
+  "raw_signals": [],
+  "data_version": "2026-06-29"
 }

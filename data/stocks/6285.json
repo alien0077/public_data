@@ -1,32 +1,32 @@
 {
   "stock_id": "6285",
   "name": "6285",
-  "date": "2026-06-26",
+  "date": "2026-06-29",
   "close": 236.0,
-  "health_score": 100,
+  "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中/融資斷頭預警」。",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.174,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.016,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 16757.0,
-    "margin_slope": -198.6,
-    "maintenance_ratio": 144.13,
+    "margin_change": -119.0,
+    "margin_slope": 3327.6,
+    "maintenance_ratio": 143.65,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 58.38,
+    "big_holder_change": 57.88,
     "retail_holder_change": 0,
-    "holder_concentration": 64.91
+    "holder_concentration": 64.12
   },
   "main_force": {
-    "cost": 272.91,
-    "distance": -13.52,
+    "cost": 273.82,
+    "distance": -13.81,
     "trend": "DOWN"
   },
   "sector": {
@@ -42,12 +42,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
     }
   ],
   "raw_signals": [
-    "散戶接刀中",
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-26"
+  "data_version": "2026-06-29"
 }

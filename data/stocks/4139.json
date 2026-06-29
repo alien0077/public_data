@@ -1,21 +1,21 @@
 {
   "stock_id": "4139",
   "name": "4139",
-  "date": "2026-06-26",
-  "close": 23.6,
-  "health_score": 66,
-  "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "date": "2026-06-29",
+  "close": 24.25,
+  "health_score": 133,
+  "signal": "Bullish",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": 0.0,
+    "foreign_buy_ratio": -0.009,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1303.0,
-    "margin_slope": 0.0,
-    "maintenance_ratio": 166.24,
+    "margin_change": -3.0,
+    "margin_slope": 260.0,
+    "maintenance_ratio": 170.25,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,23 +25,23 @@
     "holder_concentration": 67.79
   },
   "main_force": {
-    "cost": 23.66,
-    "distance": -0.25,
-    "trend": "DOWN"
+    "cost": 23.74,
+    "distance": 2.15,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 0
+    "style": "Growth",
+    "score": 100
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
   "raw_signals": [
-    "散戶接刀中"
+    "主力洗盤完成"
   ],
-  "data_version": "2026-06-26"
+  "data_version": "2026-06-29"
 }

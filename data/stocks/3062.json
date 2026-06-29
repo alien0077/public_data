@@ -1,32 +1,32 @@
 {
   "stock_id": "3062",
   "name": "3062",
-  "date": "2026-06-26",
-  "close": 24.0,
-  "health_score": 66,
-  "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "date": "2026-06-29",
+  "close": 24.85,
+  "health_score": 103,
+  "signal": "Bullish",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.303,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.097,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 12126.0,
-    "margin_slope": -0.8,
-    "maintenance_ratio": 148.59,
-    "short_change": 97.0,
-    "short_margin_ratio": 0.8
+    "margin_change": 175.0,
+    "margin_slope": 2460.2,
+    "maintenance_ratio": 155.53,
+    "short_change": -42.0,
+    "short_margin_ratio": 0.45
   },
   "tdcc": {
-    "big_holder_change": 16.95,
+    "big_holder_change": 17.53,
     "retail_holder_change": 0,
-    "holder_concentration": 24.99
+    "holder_concentration": 24.7
   },
   "main_force": {
-    "cost": 26.92,
-    "distance": -10.85,
+    "cost": 26.63,
+    "distance": -6.68,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,13 +35,11 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-26"
+  "raw_signals": [],
+  "data_version": "2026-06-29"
 }

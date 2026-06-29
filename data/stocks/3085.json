@@ -1,11 +1,11 @@
 {
   "stock_id": "3085",
   "name": "3085",
-  "date": "2026-06-26",
-  "close": 11.6,
-  "health_score": 66,
-  "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "date": "2026-06-29",
+  "close": 12.2,
+  "health_score": 86,
+  "signal": "Bullish",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -15,14 +15,14 @@
   "margin": {
     "margin_change": 0.0,
     "margin_slope": 0.0,
-    "maintenance_ratio": 156.67,
+    "maintenance_ratio": 164.91,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {},
   "main_force": {
-    "cost": 12.34,
-    "distance": -6.0,
+    "cost": 12.33,
+    "distance": -1.05,
     "trend": "DOWN"
   },
   "sector": {
@@ -31,11 +31,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
-  "chip_status": "neutral",
-  "chip_warning": "",
-  "events": [],
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-26"
+  "data_version": "2026-06-29"
 }

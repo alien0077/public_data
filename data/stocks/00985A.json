@@ -1,32 +1,32 @@
 {
   "stock_id": "00985A",
   "name": "00985A",
-  "date": "2026-06-26",
-  "close": 21.24,
+  "date": "2026-06-29",
+  "close": 21.33,
   "health_score": 103,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 3,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 1604.0,
-    "margin_slope": -2.8,
-    "maintenance_ratio": 160.62,
-    "short_change": 54.0,
-    "short_margin_ratio": 3.37
+    "margin_change": 15.0,
+    "margin_slope": 323.8,
+    "maintenance_ratio": 161.59,
+    "short_change": -2.0,
+    "short_margin_ratio": 3.21
   },
   "tdcc": {
-    "big_holder_change": 13.73,
+    "big_holder_change": 12.3,
     "retail_holder_change": 0,
-    "holder_concentration": 16.69
+    "holder_concentration": 15.14
   },
   "main_force": {
-    "cost": 22.04,
-    "distance": -3.63,
+    "cost": 22.0,
+    "distance": -3.05,
     "trend": "DOWN"
   },
   "sector": {
@@ -39,9 +39,12 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
-  "raw_signals": [
-    "散戶接刀中"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
   ],
-  "data_version": "2026-06-26"
+  "raw_signals": [],
+  "data_version": "2026-06-29"
 }

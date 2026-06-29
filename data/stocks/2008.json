@@ -1,47 +1,45 @@
 {
   "stock_id": "2008",
   "name": "2008",
-  "date": "2026-06-26",
-  "close": 30.05,
-  "health_score": 86,
+  "date": "2026-06-29",
+  "close": 30.55,
+  "health_score": 130,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.001,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.003,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 149.0,
-    "margin_slope": 0.0,
-    "maintenance_ratio": 166.39,
+    "margin_change": 0.0,
+    "margin_slope": 29.8,
+    "maintenance_ratio": 168.71,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 90.92,
+    "big_holder_change": 90.93,
     "retail_holder_change": 0,
-    "holder_concentration": 92.25
+    "holder_concentration": 92.26
   },
   "main_force": {
-    "cost": 30.1,
-    "distance": -0.17,
-    "trend": "DOWN"
+    "cost": 30.18,
+    "distance": 1.23,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 70
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-26"
+  "raw_signals": [],
+  "data_version": "2026-06-29"
 }

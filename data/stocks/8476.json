@@ -1,32 +1,32 @@
 {
   "stock_id": "8476",
   "name": "8476",
-  "date": "2026-06-26",
-  "close": 23.8,
+  "date": "2026-06-29",
+  "close": 24.75,
   "health_score": 150,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.017,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.279,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 14793.0,
-    "margin_slope": 342.8,
-    "maintenance_ratio": 207.57,
-    "short_change": 148.0,
-    "short_margin_ratio": 1.0
+    "margin_change": 380.0,
+    "margin_slope": 3034.6,
+    "maintenance_ratio": 208.97,
+    "short_change": -37.0,
+    "short_margin_ratio": 0.73
   },
   "tdcc": {
-    "big_holder_change": 58.49,
+    "big_holder_change": 61.46,
     "retail_holder_change": 0,
-    "holder_concentration": 67.87
+    "holder_concentration": 69.82
   },
   "main_force": {
-    "cost": 19.11,
-    "distance": 24.54,
+    "cost": 19.74,
+    "distance": 25.38,
     "trend": "UP"
   },
   "sector": {
@@ -37,9 +37,14 @@
     "style": "Growth",
     "score": 100
   },
-  "chip_status": "caution",
-  "chip_warning": "融資買盤過度熱絡，散戶進場意願高，短期內波動風險增加，建議留意回調。",
-  "events": [],
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [],
-  "data_version": "2026-06-26"
+  "data_version": "2026-06-29"
 }

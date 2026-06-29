@@ -1,32 +1,32 @@
 {
   "stock_id": "6446",
   "name": "6446",
-  "date": "2026-06-26",
-  "close": 1155.0,
-  "health_score": 166,
+  "date": "2026-06-29",
+  "close": 1270.0,
+  "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.02,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.118,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 7897.0,
-    "margin_slope": -38.0,
-    "maintenance_ratio": 191.87,
-    "short_change": 32.0,
-    "short_margin_ratio": 0.41
+    "margin_change": 83.0,
+    "margin_slope": 1596.0,
+    "maintenance_ratio": 207.46,
+    "short_change": 2.0,
+    "short_margin_ratio": 0.43
   },
   "tdcc": {
-    "big_holder_change": 43.88,
+    "big_holder_change": 44.72,
     "retail_holder_change": 0,
-    "holder_concentration": 56.49
+    "holder_concentration": 57.31
   },
   "main_force": {
-    "cost": 1003.3,
-    "distance": 15.12,
+    "cost": 1020.3,
+    "distance": 24.47,
     "trend": "UP"
   },
   "sector": {
@@ -42,11 +42,13 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
     }
   ],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-26"
+  "raw_signals": [],
+  "data_version": "2026-06-29"
 }

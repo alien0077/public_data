@@ -1,32 +1,32 @@
 {
   "stock_id": "8027",
   "name": "8027",
-  "date": "2026-06-26",
-  "close": 210.0,
+  "date": "2026-06-29",
+  "close": 197.0,
   "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中/融資斷頭預警」。",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.015,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.138,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 9926.0,
-    "margin_slope": -99.2,
-    "maintenance_ratio": 139.14,
-    "short_change": 34.0,
-    "short_margin_ratio": 0.34
+    "margin_change": -315.0,
+    "margin_slope": 1922.2,
+    "maintenance_ratio": 132.14,
+    "short_change": -6.0,
+    "short_margin_ratio": 0.29
   },
   "tdcc": {
-    "big_holder_change": 17.54,
+    "big_holder_change": 18.02,
     "retail_holder_change": 0,
-    "holder_concentration": 29.59
+    "holder_concentration": 28.61
   },
   "main_force": {
-    "cost": 251.55,
-    "distance": -16.52,
+    "cost": 248.48,
+    "distance": -20.72,
     "trend": "DOWN"
   },
   "sector": {
@@ -42,16 +42,15 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
     },
     {
       "level": "RED",
-      "title": "融資維持率低迷 (139.14%)"
+      "title": "融資維持率低迷 (132.14%)"
     }
   ],
   "raw_signals": [
-    "散戶接刀中",
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-26"
+  "data_version": "2026-06-29"
 }

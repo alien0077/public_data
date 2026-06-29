@@ -1,32 +1,32 @@
 {
   "stock_id": "3704",
   "name": "3704",
-  "date": "2026-06-26",
-  "close": 43.0,
+  "date": "2026-06-29",
+  "close": 45.25,
   "health_score": 103,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.066,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.173,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6607.0,
-    "margin_slope": -80.0,
-    "maintenance_ratio": 152.77,
-    "short_change": 29.0,
-    "short_margin_ratio": 0.44
+    "margin_change": -28.0,
+    "margin_slope": 1315.8,
+    "maintenance_ratio": 159.44,
+    "short_change": -8.0,
+    "short_margin_ratio": 0.32
   },
   "tdcc": {
-    "big_holder_change": 59.87,
+    "big_holder_change": 60.1,
     "retail_holder_change": 0,
-    "holder_concentration": 65.93
+    "holder_concentration": 66.14
   },
   "main_force": {
-    "cost": 46.91,
-    "distance": -8.34,
+    "cost": 47.3,
+    "distance": -4.33,
     "trend": "DOWN"
   },
   "sector": {
@@ -39,9 +39,18 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
-  "raw_signals": [
-    "散戶接刀中"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    },
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-06-26"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-29"
 }

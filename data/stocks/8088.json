@@ -1,32 +1,32 @@
 {
   "stock_id": "8088",
   "name": "8088",
-  "date": "2026-06-26",
-  "close": 62.7,
+  "date": "2026-06-29",
+  "close": 62.0,
   "health_score": 103,
   "signal": "Bullish",
   "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.094,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.07,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4354.0,
-    "margin_slope": -88.8,
-    "maintenance_ratio": 164.46,
+    "margin_change": 4.0,
+    "margin_slope": 871.6,
+    "maintenance_ratio": 162.45,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 20.85,
+    "big_holder_change": 19.94,
     "retail_holder_change": 0,
-    "holder_concentration": 26.08
+    "holder_concentration": 22.41
   },
   "main_force": {
-    "cost": 63.54,
-    "distance": -1.32,
+    "cost": 63.61,
+    "distance": -2.53,
     "trend": "DOWN"
   },
   "sector": {
@@ -39,9 +39,14 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "散戶接刀中"
   ],
-  "data_version": "2026-06-26"
+  "data_version": "2026-06-29"
 }

@@ -1,32 +1,32 @@
 {
   "stock_id": "5227",
   "name": "5227",
-  "date": "2026-06-26",
-  "close": 33.55,
+  "date": "2026-06-29",
+  "close": 33.85,
   "health_score": 130,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.022,
+    "foreign_buy_days": 6,
+    "foreign_buy_ratio": 0.029,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 31.0,
-    "margin_slope": 0.0,
-    "maintenance_ratio": 176.5,
+    "margin_change": 0.0,
+    "margin_slope": 6.2,
+    "maintenance_ratio": 175.53,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 12.87,
     "retail_holder_change": 0,
-    "holder_concentration": 19.36
+    "holder_concentration": 16.64
   },
   "main_force": {
-    "cost": 31.68,
-    "distance": 5.9,
+    "cost": 32.14,
+    "distance": 5.32,
     "trend": "UP"
   },
   "sector": {
@@ -42,13 +42,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 5 天"
+      "title": "外資連買 6 天"
     }
   ],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-26",
+  "raw_signals": [],
+  "data_version": "2026-06-29",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (-70.70%)，營運異常，請審慎評估"
 }

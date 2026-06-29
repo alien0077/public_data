@@ -1,32 +1,32 @@
 {
   "stock_id": "1714",
   "name": "1714",
-  "date": "2026-06-26",
-  "close": 18.55,
-  "health_score": 166,
+  "date": "2026-06-29",
+  "close": 18.9,
+  "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 5,
-    "foreign_buy_ratio": 0.174,
+    "foreign_buy_days": 6,
+    "foreign_buy_ratio": 0.042,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 14290.0,
-    "margin_slope": -870.4,
-    "maintenance_ratio": 206.25,
-    "short_change": 626.0,
-    "short_margin_ratio": 4.38
+    "margin_change": -1226.0,
+    "margin_slope": 2612.8,
+    "maintenance_ratio": 203.75,
+    "short_change": -3.0,
+    "short_margin_ratio": 4.77
   },
   "tdcc": {
-    "big_holder_change": 57.64,
+    "big_holder_change": 56.99,
     "retail_holder_change": 0,
-    "holder_concentration": 62.93
+    "holder_concentration": 61.98
   },
   "main_force": {
-    "cost": 14.99,
-    "distance": 23.75,
+    "cost": 15.46,
+    "distance": 22.25,
     "trend": "UP"
   },
   "sector": {
@@ -42,9 +42,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 5 天"
+      "title": "外資連買 6 天"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-26"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-29"
 }

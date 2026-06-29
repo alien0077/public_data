@@ -1,32 +1,32 @@
 {
   "stock_id": "4971",
   "name": "4971",
-  "date": "2026-06-26",
-  "close": 476.5,
+  "date": "2026-06-29",
+  "close": 474.0,
   "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中/融資斷頭預警」。",
+  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.8,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.303,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 4266.0,
-    "margin_slope": -25.2,
-    "maintenance_ratio": 132.82,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.0
+    "margin_change": -36.0,
+    "margin_slope": 846.0,
+    "maintenance_ratio": 135.25,
+    "short_change": 7.0,
+    "short_margin_ratio": 0.17
   },
   "tdcc": {
     "big_holder_change": 7.04,
     "retail_holder_change": 0,
-    "holder_concentration": 34.38
+    "holder_concentration": 34.45
   },
   "main_force": {
-    "cost": 597.92,
-    "distance": -20.31,
+    "cost": 584.12,
+    "distance": -18.85,
     "trend": "DOWN"
   },
   "sector": {
@@ -42,16 +42,15 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
     },
     {
       "level": "RED",
-      "title": "融資維持率低迷 (132.82%)"
+      "title": "融資維持率低迷 (135.25%)"
     }
   ],
   "raw_signals": [
-    "散戶接刀中",
     "融資斷頭預警"
   ],
-  "data_version": "2026-06-26"
+  "data_version": "2026-06-29"
 }

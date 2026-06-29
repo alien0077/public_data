@@ -1,11 +1,11 @@
 {
   "stock_id": "00407A",
   "name": "00407A",
-  "date": "2026-06-26",
-  "close": 9.47,
+  "date": "2026-06-29",
+  "close": 9.46,
   "health_score": 66,
   "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
     "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
@@ -13,13 +13,17 @@
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 37627.0,
-    "margin_slope": 12542.33,
+    "margin_change": 3635.0,
+    "margin_slope": 10315.5,
     "maintenance_ratio": 0,
-    "short_change": 126.0,
-    "short_margin_ratio": 0.33
+    "short_change": -96.0,
+    "short_margin_ratio": 0.07
   },
-  "tdcc": {},
+  "tdcc": {
+    "big_holder_change": 9.5,
+    "retail_holder_change": 0,
+    "holder_concentration": 17.25
+  },
   "main_force": {
     "cost": null,
     "distance": 0,
@@ -36,8 +40,6 @@
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-26"
+  "raw_signals": [],
+  "data_version": "2026-06-29"
 }

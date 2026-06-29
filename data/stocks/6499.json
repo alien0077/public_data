@@ -1,32 +1,32 @@
 {
   "stock_id": "6499",
   "name": "6499",
-  "date": "2026-06-26",
-  "close": 68.0,
-  "health_score": 66,
-  "signal": "Neutral",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "date": "2026-06-29",
+  "close": 71.6,
+  "health_score": 86,
+  "signal": "Bullish",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.082,
+    "foreign_buy_ratio": -0.012,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 6988.0,
-    "margin_slope": -8.8,
-    "maintenance_ratio": 147.88,
+    "margin_change": -7.0,
+    "margin_slope": 1396.2,
+    "maintenance_ratio": 157.08,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
   "tdcc": {
-    "big_holder_change": 36.2,
+    "big_holder_change": 36.19,
     "retail_holder_change": 0,
-    "holder_concentration": 42.65
+    "holder_concentration": 42.62
   },
   "main_force": {
-    "cost": 76.64,
-    "distance": -11.27,
+    "cost": 75.97,
+    "distance": -5.75,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,13 +35,18 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
-  "raw_signals": [
-    "散戶接刀中"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-06-26"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-29"
 }

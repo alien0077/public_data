@@ -1,32 +1,32 @@
 {
   "stock_id": "6949",
   "name": "6949",
-  "date": "2026-06-26",
-  "close": 862.0,
-  "health_score": 113,
+  "date": "2026-06-29",
+  "close": 856.0,
+  "health_score": 130,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.001,
+    "foreign_buy_days": 1,
+    "foreign_buy_ratio": 0.005,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": 5692.0,
-    "margin_slope": 2.2,
-    "maintenance_ratio": 190.73,
-    "short_change": 2.0,
+    "margin_change": 1.0,
+    "margin_slope": 1138.6,
+    "maintenance_ratio": 186.79,
+    "short_change": 0.0,
     "short_margin_ratio": 0.04
   },
   "tdcc": {
-    "big_holder_change": 61.98,
+    "big_holder_change": 62.03,
     "retail_holder_change": 0,
-    "holder_concentration": 74.59
+    "holder_concentration": 74.69
   },
   "main_force": {
-    "cost": 753.25,
-    "distance": 14.44,
+    "cost": 763.8,
+    "distance": 12.07,
     "trend": "UP"
   },
   "sector": {
@@ -37,13 +37,11 @@
     "style": "Growth",
     "score": 70
   },
-  "chip_status": "danger",
-  "chip_warning": "融資餘額在高檔持續增加，顯示散戶盲目接刀。籌碼呈現散戶化，需嚴防斷頭賣壓。",
+  "chip_status": "strong",
+  "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
   "events": [],
-  "raw_signals": [
-    "散戶接刀中"
-  ],
-  "data_version": "2026-06-26",
+  "raw_signals": [],
+  "data_version": "2026-06-29",
   "abnormal_gm": true,
   "gm_warning": "⚠️ 毛利率為負 (-18.92%)，營運異常，請審慎評估"
 }
