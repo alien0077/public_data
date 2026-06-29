@@ -149,13 +149,15 @@ export class AudioSummary {
 
         let html =
             '<div class="episode-card">' +
-            '<div class="episode-toggle flex items-center justify-between px-5 py-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors select-none">' +
-            '<div class="flex items-center space-x-3 min-w-0 flex-1">' +
-            '<span class="toggle-icon text-gray-400 text-xs transition-transform">\u25B6</span>' +
-            '<span class="text-xs text-gray-500 font-mono bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded shrink-0">' + pubDate + '</span>' +
-            '<span class="text-sm font-medium text-gray-900 dark:text-white">' + this.escapeHtml(ep.title) + '</span>' +
+            '<div class="episode-toggle flex items-start justify-between gap-3 px-5 py-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors select-none">' +
+            '<div class="flex items-start gap-3 min-w-0 flex-1">' +
+            '<span class="toggle-icon text-gray-400 text-xs transition-transform pt-1">\u25B6</span>' +
+            '<div class="min-w-0 flex-1 space-y-1.5">' +
+            '<span class="inline-block text-xs text-gray-500 font-mono bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded">' + pubDate + '</span>' +
+            '<p class="text-sm font-medium leading-relaxed text-gray-900 dark:text-white break-words whitespace-normal">' + this.escapeHtml(ep.title) + '</p>' +
             '</div>' +
-            '<div class="flex items-center space-x-2 shrink-0 ml-2">' +
+            '</div>' +
+            '<div class="flex items-center space-x-2 shrink-0 pt-1">' +
             '<a href="' + ep.source_url + '" target="_blank" rel="noopener noreferrer"' +
             ' class="text-xs text-blue-500 hover:text-blue-600 hover:underline"' +
             ' onclick="event.stopPropagation()">' +
@@ -180,22 +182,22 @@ export class AudioSummary {
             html += '</div>';
         }
 
-        html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">';
+        html += '<div class="space-y-3 text-xs">';
 
         if (bullish.length > 0) {
             html += '<div class="bg-red-50/50 dark:bg-red-900/10 border border-red-200/50 dark:border-red-800/30 rounded-xl p-3">' +
-                '<p class="font-bold text-red-600 dark:text-red-400 mb-1 text-[11px] uppercase tracking-wider">\uD83D\uDCC8 看多</p><ul class="space-y-1">';
+                '<p class="font-bold text-red-600 dark:text-red-400 mb-2 text-[11px] uppercase tracking-wider">\uD83D\uDCC8 看多</p><ul class="list-disc list-outside pl-4 space-y-1.5">';
             for (const b of bullish) {
-                html += '<li class="text-gray-700 dark:text-gray-300">\u2022 ' + this.escapeHtml(b) + '</li>';
+                html += '<li class="text-gray-700 dark:text-gray-300 leading-relaxed break-words">' + this.escapeHtml(b) + '</li>';
             }
             html += '</ul></div>';
         }
 
         if (bearish.length > 0) {
             html += '<div class="bg-green-50/50 dark:bg-green-900/10 border border-green-200/50 dark:border-green-800/30 rounded-xl p-3">' +
-                '<p class="font-bold text-green-600 dark:text-green-400 mb-1 text-[11px] uppercase tracking-wider">\uD83D\uDCC9 看空</p><ul class="space-y-1">';
+                '<p class="font-bold text-green-600 dark:text-green-400 mb-2 text-[11px] uppercase tracking-wider">\uD83D\uDCC9 看空</p><ul class="list-disc list-outside pl-4 space-y-1.5">';
             for (const b of bearish) {
-                html += '<li class="text-gray-700 dark:text-gray-300">\u2022 ' + this.escapeHtml(b) + '</li>';
+                html += '<li class="text-gray-700 dark:text-gray-300 leading-relaxed break-words">' + this.escapeHtml(b) + '</li>';
             }
             html += '</ul></div>';
         }
