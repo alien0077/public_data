@@ -1,23 +1,23 @@
 {
   "stock_id": "3533",
   "name": "3533",
-  "date": "2026-06-29",
-  "close": 2135.0,
-  "health_score": 100,
+  "date": "2026-06-30",
+  "close": 2110.0,
+  "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.182,
+    "foreign_buy_days": 5,
+    "foreign_buy_ratio": 0.224,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -19.0,
-    "margin_slope": 114.8,
-    "maintenance_ratio": 153.89,
-    "short_change": 1.0,
-    "short_margin_ratio": 1.05
+    "margin_change": 36.0,
+    "margin_slope": 122.0,
+    "maintenance_ratio": 156.56,
+    "short_change": 0.0,
+    "short_margin_ratio": 0.98
   },
   "tdcc": {
     "big_holder_change": 45.9,
@@ -25,8 +25,8 @@
     "holder_concentration": 63.86
   },
   "main_force": {
-    "cost": 2312.25,
-    "distance": -7.67,
+    "cost": 2246.18,
+    "distance": -6.06,
     "trend": "DOWN"
   },
   "sector": {
@@ -42,11 +42,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 4 天"
+      "title": "外資連買 5 天"
     }
   ],
   "raw_signals": [
-    "主力洗盤完成"
+    "散戶接刀中"
   ],
-  "data_version": "2026-06-29"
+  "data_version": "2026-06-30"
 }

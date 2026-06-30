@@ -1,23 +1,23 @@
 {
   "stock_id": "2483",
   "name": "2483",
-  "date": "2026-06-29",
-  "close": 55.7,
-  "health_score": 150,
+  "date": "2026-06-30",
+  "close": 57.1,
+  "health_score": 133,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 7,
-    "foreign_buy_ratio": 0.527,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -0.01,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -251.0,
-    "margin_slope": 459.4,
-    "maintenance_ratio": 247.75,
-    "short_change": 172.0,
-    "short_margin_ratio": 25.51
+    "margin_change": 153.0,
+    "margin_slope": 490.0,
+    "maintenance_ratio": 243.7,
+    "short_change": -180.0,
+    "short_margin_ratio": 16.57
   },
   "tdcc": {
     "big_holder_change": 57.69,
@@ -25,8 +25,8 @@
     "holder_concentration": 61.99
   },
   "main_force": {
-    "cost": 37.47,
-    "distance": 48.65,
+    "cost": 39.05,
+    "distance": 46.22,
     "trend": "UP"
   },
   "sector": {
@@ -39,16 +39,7 @@
   },
   "chip_status": "strong",
   "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 7 天"
-    },
-    {
-      "level": "RED",
-      "title": "短線券資比過熱 (警示)"
-    }
-  ],
+  "events": [],
   "raw_signals": [],
-  "data_version": "2026-06-29"
+  "data_version": "2026-06-30"
 }

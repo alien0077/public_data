@@ -1,23 +1,23 @@
 {
   "stock_id": "6139",
   "name": "6139",
-  "date": "2026-06-29",
-  "close": 955.0,
-  "health_score": 166,
+  "date": "2026-06-30",
+  "close": 923.0,
+  "health_score": 150,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中」。",
   "institutional": {
-    "foreign_buy_days": 4,
-    "foreign_buy_ratio": 0.281,
+    "foreign_buy_days": 0,
+    "foreign_buy_ratio": -1.101,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -212.0,
-    "margin_slope": 1292.4,
-    "maintenance_ratio": 196.99,
-    "short_change": 44.0,
-    "short_margin_ratio": 2.62
+    "margin_change": 251.0,
+    "margin_slope": 1342.6,
+    "maintenance_ratio": 188.68,
+    "short_change": -25.0,
+    "short_margin_ratio": 2.15
   },
   "tdcc": {
     "big_holder_change": 60.08,
@@ -25,8 +25,8 @@
     "holder_concentration": 69.95
   },
   "main_force": {
-    "cost": 808.0,
-    "distance": 18.19,
+    "cost": 815.3,
+    "distance": 13.21,
     "trend": "UP"
   },
   "sector": {
@@ -39,18 +39,9 @@
   },
   "chip_status": "strong",
   "chip_warning": "籌碼趨勢穩定，目前由籌碼集中度高的主力掌握，散戶心態保守。",
-  "events": [
-    {
-      "level": "GREEN",
-      "title": "外資連買 4 天"
-    },
-    {
-      "level": "GREEN",
-      "title": "今日強勢大漲"
-    }
-  ],
+  "events": [],
   "raw_signals": [
-    "主力洗盤完成"
+    "散戶接刀中"
   ],
-  "data_version": "2026-06-29"
+  "data_version": "2026-06-30"
 }

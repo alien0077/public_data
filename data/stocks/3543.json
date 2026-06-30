@@ -1,21 +1,21 @@
 {
   "stock_id": "3543",
   "name": "3543",
-  "date": "2026-06-29",
-  "close": 28.6,
+  "date": "2026-06-30",
+  "close": 29.05,
   "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 3,
-    "foreign_buy_ratio": 0.093,
+    "foreign_buy_days": 4,
+    "foreign_buy_ratio": 0.123,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -65.0,
-    "margin_slope": 1081.8,
-    "maintenance_ratio": 147.67,
+    "margin_change": -23.0,
+    "margin_slope": 1077.2,
+    "maintenance_ratio": 153.31,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 48.88
   },
   "main_force": {
-    "cost": 32.28,
-    "distance": -11.4,
+    "cost": 31.58,
+    "distance": -8.01,
     "trend": "DOWN"
   },
   "sector": {
@@ -42,9 +42,11 @@
   "events": [
     {
       "level": "GREEN",
-      "title": "外資連買 3 天"
+      "title": "外資連買 4 天"
     }
   ],
-  "raw_signals": [],
-  "data_version": "2026-06-29"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-30"
 }

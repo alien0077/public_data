@@ -1,21 +1,21 @@
 {
   "stock_id": "4966",
   "name": "4966",
-  "date": "2026-06-29",
-  "close": 631.0,
-  "health_score": 100,
+  "date": "2026-06-30",
+  "close": 629.0,
+  "health_score": 83,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.329,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.022,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -69.0,
-    "margin_slope": 865.0,
-    "maintenance_ratio": 150.77,
+    "margin_change": 80.0,
+    "margin_slope": 881.0,
+    "maintenance_ratio": 152.81,
     "short_change": 0.0,
     "short_margin_ratio": 0.02
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 41.02
   },
   "main_force": {
-    "cost": 697.55,
-    "distance": -9.54,
+    "cost": 686.05,
+    "distance": -8.32,
     "trend": "DOWN"
   },
   "sector": {
@@ -39,9 +39,12 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
-  "raw_signals": [
-    "主力洗盤完成"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
   ],
-  "data_version": "2026-06-29"
+  "raw_signals": [],
+  "data_version": "2026-06-30"
 }

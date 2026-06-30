@@ -1,23 +1,23 @@
 {
   "stock_id": "00934",
   "name": "00934",
-  "date": "2026-06-29",
-  "close": 27.78,
-  "health_score": 103,
+  "date": "2026-06-30",
+  "close": 28.21,
+  "health_score": 123,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 1,
+    "foreign_buy_days": 2,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -3.0,
-    "margin_slope": 135.6,
-    "maintenance_ratio": 163.43,
-    "short_change": 0.0,
-    "short_margin_ratio": 0.15
+    "margin_change": -5.0,
+    "margin_slope": 134.6,
+    "maintenance_ratio": 166.67,
+    "short_change": -1.0,
+    "short_margin_ratio": 0.0
   },
   "tdcc": {
     "big_holder_change": 7.92,
@@ -25,8 +25,8 @@
     "holder_concentration": 9.97
   },
   "main_force": {
-    "cost": 28.33,
-    "distance": -1.94,
+    "cost": 28.21,
+    "distance": 0.0,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,7 +35,7 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 60
   },
   "chip_status": "neutral",
   "chip_warning": "",
@@ -43,5 +43,5 @@
   "raw_signals": [
     "主力洗盤完成"
   ],
-  "data_version": "2026-06-29"
+  "data_version": "2026-06-30"
 }

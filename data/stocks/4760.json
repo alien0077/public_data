@@ -1,22 +1,22 @@
 {
   "stock_id": "4760",
   "name": "4760",
-  "date": "2026-06-29",
-  "close": 322.0,
-  "health_score": 86,
+  "date": "2026-06-30",
+  "close": 344.0,
+  "health_score": 106,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成/融資斷頭預警」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.097,
+    "foreign_buy_ratio": -0.419,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -12.0,
-    "margin_slope": 674.4,
-    "maintenance_ratio": 141.89,
-    "short_change": 1.0,
+    "margin_change": 120.0,
+    "margin_slope": 698.4,
+    "maintenance_ratio": 153.31,
+    "short_change": 0.0,
     "short_margin_ratio": 0.03
   },
   "tdcc": {
@@ -25,8 +25,8 @@
     "holder_concentration": 42.47
   },
   "main_force": {
-    "cost": 378.22,
-    "distance": -14.86,
+    "cost": 373.98,
+    "distance": -8.02,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,14 +35,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 30
+    "score": 60
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
-  "raw_signals": [
-    "主力洗盤完成",
-    "融資斷頭預警"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-06-29"
+  "raw_signals": [],
+  "data_version": "2026-06-30"
 }

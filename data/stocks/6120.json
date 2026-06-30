@@ -1,23 +1,23 @@
 {
   "stock_id": "6120",
   "name": "6120",
-  "date": "2026-06-29",
-  "close": 14.15,
-  "health_score": 120,
+  "date": "2026-06-30",
+  "close": 14.8,
+  "health_score": 150,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.096,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.245,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -70.0,
-    "margin_slope": 1533.6,
-    "maintenance_ratio": 162.2,
-    "short_change": 5.0,
-    "short_margin_ratio": 0.07
+    "margin_change": -111.0,
+    "margin_slope": 1511.4,
+    "maintenance_ratio": 171.53,
+    "short_change": 3.0,
+    "short_margin_ratio": 0.11
   },
   "tdcc": {
     "big_holder_change": 56.61,
@@ -25,17 +25,17 @@
     "holder_concentration": 61.26
   },
   "main_force": {
-    "cost": 14.54,
-    "distance": -2.68,
-    "trend": "DOWN"
+    "cost": 14.38,
+    "distance": 2.92,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
     "score": 80
   },
   "market_style": {
-    "style": "Value",
-    "score": 30
+    "style": "Growth",
+    "score": 100
   },
   "chip_status": "neutral",
   "chip_warning": "",
@@ -43,5 +43,5 @@
   "raw_signals": [
     "主力洗盤完成"
   ],
-  "data_version": "2026-06-29"
+  "data_version": "2026-06-30"
 }

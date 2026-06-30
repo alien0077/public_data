@@ -1,551 +1,552 @@
 {
-  "date": "2026-06-29",
+  "date": "2026-06-30",
   "themes": [
     {
       "name": "晶圓代工",
-      "flow_ratio": 13.89,
-      "avg_pct": 1.32,
+      "flow_ratio": 14.56,
+      "avg_pct": 1.65,
       "trend": "UP",
-      "net_flow": -54.57
+      "net_flow": -92.93
     },
     {
       "name": "電子元件",
-      "flow_ratio": 10.34,
-      "avg_pct": -0.79,
-      "trend": "DOWN",
-      "net_flow": 64.33
+      "flow_ratio": 10.92,
+      "avg_pct": 3.68,
+      "trend": "UP",
+      "net_flow": -50.11
     },
     {
       "name": "半導體_其他",
-      "flow_ratio": 9.25,
-      "avg_pct": -1.28,
-      "trend": "DOWN",
-      "net_flow": -34.43
+      "flow_ratio": 9.43,
+      "avg_pct": 3.08,
+      "trend": "UP",
+      "net_flow": -160.92
     },
     {
       "name": "PCB_CCL_ABF",
-      "flow_ratio": 8.75,
-      "avg_pct": -0.36,
-      "trend": "DOWN",
-      "net_flow": 45.36
-    },
-    {
-      "name": "顯示面板",
-      "flow_ratio": 6.43,
-      "avg_pct": -12.57,
-      "trend": "DOWN",
-      "net_flow": 57.73
+      "flow_ratio": 6.9,
+      "avg_pct": 6.81,
+      "trend": "UP",
+      "net_flow": 27.95
     },
     {
       "name": "IC設計_HPC_存儲",
-      "flow_ratio": 5.24,
-      "avg_pct": 1.65,
+      "flow_ratio": 6.33,
+      "avg_pct": 5.0,
       "trend": "UP",
-      "net_flow": 46.32
+      "net_flow": 17.42
+    },
+    {
+      "name": "顯示面板",
+      "flow_ratio": 5.43,
+      "avg_pct": 2.54,
+      "trend": "UP",
+      "net_flow": 43.87
     },
     {
       "name": "塑膠",
-      "flow_ratio": 4.01,
-      "avg_pct": 1.82,
+      "flow_ratio": 4.62,
+      "avg_pct": 1.99,
       "trend": "UP",
-      "net_flow": 2.09
-    },
-    {
-      "name": "電源供應器",
-      "flow_ratio": 3.63,
-      "avg_pct": 2.59,
-      "trend": "UP",
-      "net_flow": 14.36
-    },
-    {
-      "name": "ETF",
-      "flow_ratio": 3.51,
-      "avg_pct": 0.73,
-      "trend": "UP",
-      "net_flow": -21.64
+      "net_flow": -68.75
     },
     {
       "name": "AI伺服器代工",
-      "flow_ratio": 3.31,
-      "avg_pct": 1.91,
+      "flow_ratio": 3.08,
+      "avg_pct": 2.47,
       "trend": "UP",
-      "net_flow": -27.63
+      "net_flow": 23.35
     },
     {
-      "name": "電子其他",
-      "flow_ratio": 3.24,
-      "avg_pct": -0.52,
-      "trend": "DOWN",
-      "net_flow": 13.78
+      "name": "ETF",
+      "flow_ratio": 3.01,
+      "avg_pct": 2.06,
+      "trend": "UP",
+      "net_flow": 77.26
+    },
+    {
+      "name": "電源供應器",
+      "flow_ratio": 2.77,
+      "avg_pct": 4.44,
+      "trend": "UP",
+      "net_flow": -5.9
     },
     {
       "name": "封測_材料",
-      "flow_ratio": 2.05,
-      "avg_pct": -1.85,
-      "trend": "DOWN",
-      "net_flow": -39.96
+      "flow_ratio": 2.76,
+      "avg_pct": 5.02,
+      "trend": "UP",
+      "net_flow": 83.88
     },
     {
       "name": "金控母體",
-      "flow_ratio": 1.98,
-      "avg_pct": -1.2,
+      "flow_ratio": 2.62,
+      "avg_pct": 0.39,
+      "trend": "UP",
+      "net_flow": 36.82
+    },
+    {
+      "name": "電子其他",
+      "flow_ratio": 2.59,
+      "avg_pct": 2.02,
+      "trend": "UP",
+      "net_flow": -14.12
+    },
+    {
+      "name": "其他",
+      "flow_ratio": 1.99,
+      "avg_pct": -0.41,
       "trend": "DOWN",
-      "net_flow": -10.57
+      "net_flow": 69.97
     },
     {
       "name": "電腦週邊",
-      "flow_ratio": 1.95,
-      "avg_pct": 2.92,
+      "flow_ratio": 1.97,
+      "avg_pct": 2.39,
       "trend": "UP",
-      "net_flow": 9.45
-    },
-    {
-      "name": "光學鏡頭",
-      "flow_ratio": 1.93,
-      "avg_pct": -4.97,
-      "trend": "DOWN",
-      "net_flow": -1.2
-    },
-    {
-      "name": "其他",
-      "flow_ratio": 1.89,
-      "avg_pct": -0.77,
-      "trend": "DOWN",
-      "net_flow": 84.64
+      "net_flow": 0.15
     },
     {
       "name": "主動式 ETF",
-      "flow_ratio": 1.82,
-      "avg_pct": -0.01,
-      "trend": "DOWN",
-      "net_flow": -39.66
+      "flow_ratio": 1.76,
+      "avg_pct": 3.6,
+      "trend": "UP",
+      "net_flow": 89.09
     },
     {
       "name": "低軌衛星_SpaceX鏈",
-      "flow_ratio": 1.65,
-      "avg_pct": -0.23,
-      "trend": "DOWN",
-      "net_flow": -5.53
-    },
-    {
-      "name": "矽光子_CPO",
-      "flow_ratio": 1.28,
-      "avg_pct": -2.1,
-      "trend": "DOWN",
-      "net_flow": 1.8
-    },
-    {
-      "name": "光電面板",
-      "flow_ratio": 1.2,
-      "avg_pct": 0.53,
+      "flow_ratio": 1.58,
+      "avg_pct": 5.79,
       "trend": "UP",
-      "net_flow": -3.22
+      "net_flow": 13.17
+    },
+    {
+      "name": "光學鏡頭",
+      "flow_ratio": 1.54,
+      "avg_pct": 0.93,
+      "trend": "UP",
+      "net_flow": -45.98
     },
     {
       "name": "IC設計_IP",
-      "flow_ratio": 1.05,
-      "avg_pct": 0.19,
+      "flow_ratio": 1.5,
+      "avg_pct": 3.82,
       "trend": "UP",
-      "net_flow": 14.7
-    },
-    {
-      "name": "銀行保險",
-      "flow_ratio": 0.93,
-      "avg_pct": 0.09,
-      "trend": "UP",
-      "net_flow": 15.23
-    },
-    {
-      "name": "電子通路",
-      "flow_ratio": 0.92,
-      "avg_pct": 0.34,
-      "trend": "UP",
-      "net_flow": -2.14
-    },
-    {
-      "name": "散熱模組",
-      "flow_ratio": 0.81,
-      "avg_pct": 1.84,
-      "trend": "UP",
-      "net_flow": 16.89
-    },
-    {
-      "name": "網通設備",
-      "flow_ratio": 0.75,
-      "avg_pct": 0.4,
-      "trend": "UP",
-      "net_flow": -8.48
-    },
-    {
-      "name": "重電_強韌電網",
-      "flow_ratio": 0.67,
-      "avg_pct": 0.54,
-      "trend": "UP",
-      "net_flow": 4.91
-    },
-    {
-      "name": "網通其他",
-      "flow_ratio": 0.63,
-      "avg_pct": -0.04,
-      "trend": "DOWN",
-      "net_flow": 5.16
-    },
-    {
-      "name": "貨櫃航運",
-      "flow_ratio": 0.63,
-      "avg_pct": 1.43,
-      "trend": "UP",
-      "net_flow": -1.23
-    },
-    {
-      "name": "新藥_生技",
-      "flow_ratio": 0.53,
-      "avg_pct": 5.35,
-      "trend": "UP",
-      "net_flow": 9.16
-    },
-    {
-      "name": "車用零件_EV",
-      "flow_ratio": 0.46,
-      "avg_pct": 0.38,
-      "trend": "UP",
-      "net_flow": -8.34
-    },
-    {
-      "name": "化學特化",
-      "flow_ratio": 0.4,
-      "avg_pct": 2.14,
-      "trend": "UP",
-      "net_flow": 9.16
-    },
-    {
-      "name": "一般機械",
-      "flow_ratio": 0.36,
-      "avg_pct": -1.92,
-      "trend": "DOWN",
-      "net_flow": 5.77
-    },
-    {
-      "name": "玻璃陶瓷",
-      "flow_ratio": 0.3,
-      "avg_pct": 2.42,
-      "trend": "UP",
-      "net_flow": 4.3
-    },
-    {
-      "name": "紡織纖維",
-      "flow_ratio": 0.28,
-      "avg_pct": 1.39,
-      "trend": "UP",
-      "net_flow": 4.36
-    },
-    {
-      "name": "伺服器機殼_滑軌",
-      "flow_ratio": 0.28,
-      "avg_pct": -0.86,
-      "trend": "DOWN",
-      "net_flow": -1.87
-    },
-    {
-      "name": "其他",
-      "flow_ratio": 0.24,
-      "avg_pct": 0.51,
-      "trend": "UP",
-      "net_flow": 0.85
-    },
-    {
-      "name": "車用零件",
-      "flow_ratio": 0.24,
-      "avg_pct": 0.52,
-      "trend": "UP",
-      "net_flow": 1.88
-    },
-    {
-      "name": "運動休閒",
-      "flow_ratio": 0.24,
-      "avg_pct": 0.86,
-      "trend": "UP",
-      "net_flow": -0.19
-    },
-    {
-      "name": "半導體設備_CoWoS",
-      "flow_ratio": 0.21,
-      "avg_pct": 2.79,
-      "trend": "UP",
-      "net_flow": 2.55
-    },
-    {
-      "name": "機器人_AI視覺",
-      "flow_ratio": 0.21,
-      "avg_pct": 1.31,
-      "trend": "UP",
-      "net_flow": 3.54
-    },
-    {
-      "name": "無人機_UAV",
-      "flow_ratio": 0.21,
-      "avg_pct": 7.65,
-      "trend": "UP",
-      "net_flow": 1.85
-    },
-    {
-      "name": "軍工_航太",
-      "flow_ratio": 0.2,
-      "avg_pct": 4.23,
-      "trend": "UP",
-      "net_flow": -1.23
-    },
-    {
-      "name": "機器人_自動化",
-      "flow_ratio": 0.16,
-      "avg_pct": 2.19,
-      "trend": "UP",
-      "net_flow": 0.97
-    },
-    {
-      "name": "銀行",
-      "flow_ratio": 0.15,
-      "avg_pct": 0.2,
-      "trend": "UP",
-      "net_flow": 2.47
-    },
-    {
-      "name": "綠能環保",
-      "flow_ratio": 0.15,
-      "avg_pct": 1.06,
-      "trend": "UP",
-      "net_flow": -0.0
-    },
-    {
-      "name": "生技製藥",
-      "flow_ratio": 0.14,
-      "avg_pct": 0.25,
-      "trend": "UP",
-      "net_flow": 4.38
-    },
-    {
-      "name": "航空運輸",
-      "flow_ratio": 0.13,
-      "avg_pct": -0.43,
-      "trend": "DOWN",
       "net_flow": 0.18
     },
     {
-      "name": "特化",
-      "flow_ratio": 0.12,
-      "avg_pct": 2.85,
+      "name": "光電面板",
+      "flow_ratio": 1.36,
+      "avg_pct": 2.91,
       "trend": "UP",
-      "net_flow": 4.22
+      "net_flow": 13.5
+    },
+    {
+      "name": "散熱模組",
+      "flow_ratio": 1.1,
+      "avg_pct": 4.04,
+      "trend": "UP",
+      "net_flow": 50.4
+    },
+    {
+      "name": "銀行保險",
+      "flow_ratio": 0.89,
+      "avg_pct": 0.95,
+      "trend": "UP",
+      "net_flow": 15.41
+    },
+    {
+      "name": "玻璃陶瓷",
+      "flow_ratio": 0.87,
+      "avg_pct": 5.32,
+      "trend": "UP",
+      "net_flow": 43.54
+    },
+    {
+      "name": "電子通路",
+      "flow_ratio": 0.83,
+      "avg_pct": 2.12,
+      "trend": "UP",
+      "net_flow": -3.32
+    },
+    {
+      "name": "網通設備",
+      "flow_ratio": 0.74,
+      "avg_pct": 5.01,
+      "trend": "UP",
+      "net_flow": 11.54
+    },
+    {
+      "name": "網通其他",
+      "flow_ratio": 0.65,
+      "avg_pct": 2.47,
+      "trend": "UP",
+      "net_flow": -10.75
+    },
+    {
+      "name": "新藥_生技",
+      "flow_ratio": 0.63,
+      "avg_pct": 1.58,
+      "trend": "UP",
+      "net_flow": 5.54
+    },
+    {
+      "name": "無人機_UAV",
+      "flow_ratio": 0.59,
+      "avg_pct": 8.27,
+      "trend": "UP",
+      "net_flow": 18.07
+    },
+    {
+      "name": "矽光子_CPO",
+      "flow_ratio": 0.53,
+      "avg_pct": 3.66,
+      "trend": "UP",
+      "net_flow": -8.77
+    },
+    {
+      "name": "貨櫃航運",
+      "flow_ratio": 0.53,
+      "avg_pct": 0.92,
+      "trend": "UP",
+      "net_flow": 12.95
+    },
+    {
+      "name": "重電_強韌電網",
+      "flow_ratio": 0.51,
+      "avg_pct": 2.56,
+      "trend": "UP",
+      "net_flow": -2.0
+    },
+    {
+      "name": "化學特化",
+      "flow_ratio": 0.48,
+      "avg_pct": 1.62,
+      "trend": "UP",
+      "net_flow": -0.85
+    },
+    {
+      "name": "軍工_航太",
+      "flow_ratio": 0.43,
+      "avg_pct": 8.53,
+      "trend": "UP",
+      "net_flow": 14.14
+    },
+    {
+      "name": "一般機械",
+      "flow_ratio": 0.35,
+      "avg_pct": 1.44,
+      "trend": "UP",
+      "net_flow": 2.43
+    },
+    {
+      "name": "伺服器機殼_滑軌",
+      "flow_ratio": 0.34,
+      "avg_pct": 3.73,
+      "trend": "UP",
+      "net_flow": -4.36
+    },
+    {
+      "name": "其他",
+      "flow_ratio": 0.31,
+      "avg_pct": -2.41,
+      "trend": "DOWN",
+      "net_flow": 1.27
+    },
+    {
+      "name": "半導體設備_CoWoS",
+      "flow_ratio": 0.31,
+      "avg_pct": 3.92,
+      "trend": "UP",
+      "net_flow": 8.42
+    },
+    {
+      "name": "車用零件_EV",
+      "flow_ratio": 0.3,
+      "avg_pct": 0.11,
+      "trend": "UP",
+      "net_flow": -12.97
+    },
+    {
+      "name": "機器人_AI視覺",
+      "flow_ratio": 0.24,
+      "avg_pct": 3.29,
+      "trend": "UP",
+      "net_flow": 0.95
+    },
+    {
+      "name": "紡織纖維",
+      "flow_ratio": 0.2,
+      "avg_pct": 0.55,
+      "trend": "UP",
+      "net_flow": -8.64
+    },
+    {
+      "name": "銀行",
+      "flow_ratio": 0.19,
+      "avg_pct": 0.67,
+      "trend": "UP",
+      "net_flow": -0.81
+    },
+    {
+      "name": "車用零件",
+      "flow_ratio": 0.18,
+      "avg_pct": -0.8,
+      "trend": "DOWN",
+      "net_flow": -2.77
+    },
+    {
+      "name": "運動休閒",
+      "flow_ratio": 0.17,
+      "avg_pct": -0.54,
+      "trend": "DOWN",
+      "net_flow": -4.41
+    },
+    {
+      "name": "鋼鐵",
+      "flow_ratio": 0.15,
+      "avg_pct": -0.62,
+      "trend": "DOWN",
+      "net_flow": -9.38
+    },
+    {
+      "name": "航空運輸",
+      "flow_ratio": 0.15,
+      "avg_pct": 2.6,
+      "trend": "UP",
+      "net_flow": 2.5
+    },
+    {
+      "name": "生技製藥",
+      "flow_ratio": 0.13,
+      "avg_pct": -0.33,
+      "trend": "DOWN",
+      "net_flow": -0.45
+    },
+    {
+      "name": "水泥",
+      "flow_ratio": 0.13,
+      "avg_pct": -0.24,
+      "trend": "DOWN",
+      "net_flow": -10.04
+    },
+    {
+      "name": "綠能環保",
+      "flow_ratio": 0.12,
+      "avg_pct": 0.9,
+      "trend": "UP",
+      "net_flow": 1.19
     },
     {
       "name": "食品工",
       "flow_ratio": 0.12,
-      "avg_pct": 0.28,
+      "avg_pct": 0.43,
       "trend": "UP",
-      "net_flow": 2.92
+      "net_flow": -3.94
     },
     {
-      "name": "水泥",
-      "flow_ratio": 0.11,
-      "avg_pct": -0.29,
-      "trend": "DOWN",
-      "net_flow": -5.16
-    },
-    {
-      "name": "鋼鐵",
+      "name": "特化",
       "flow_ratio": 0.1,
-      "avg_pct": 0.21,
+      "avg_pct": 1.78,
       "trend": "UP",
-      "net_flow": 1.58
-    },
-    {
-      "name": "建材營造",
-      "flow_ratio": 0.09,
-      "avg_pct": -1.01,
-      "trend": "DOWN",
-      "net_flow": -0.14
-    },
-    {
-      "name": "貿易百貨",
-      "flow_ratio": 0.09,
-      "avg_pct": -5.5,
-      "trend": "DOWN",
-      "net_flow": -1.12
-    },
-    {
-      "name": "數位雲端",
-      "flow_ratio": 0.08,
-      "avg_pct": 0.21,
-      "trend": "UP",
-      "net_flow": -2.67
-    },
-    {
-      "name": "證券_期貨",
-      "flow_ratio": 0.07,
-      "avg_pct": 0.42,
-      "trend": "UP",
-      "net_flow": -1.37
-    },
-    {
-      "name": "橡膠工",
-      "flow_ratio": 0.07,
-      "avg_pct": 0.78,
-      "trend": "UP",
-      "net_flow": 2.36
-    },
-    {
-      "name": "航運其他",
-      "flow_ratio": 0.07,
-      "avg_pct": 0.56,
-      "trend": "UP",
-      "net_flow": 0.21
-    },
-    {
-      "name": "鋼鐵原物料",
-      "flow_ratio": 0.06,
-      "avg_pct": 0.45,
-      "trend": "UP",
-      "net_flow": 0.56
+      "net_flow": -0.53
     },
     {
       "name": "營建_土木",
-      "flow_ratio": 0.06,
-      "avg_pct": 0.4,
+      "flow_ratio": 0.09,
+      "avg_pct": 0.26,
       "trend": "UP",
-      "net_flow": -0.05
+      "net_flow": -2.83
+    },
+    {
+      "name": "機器人_自動化",
+      "flow_ratio": 0.08,
+      "avg_pct": 0.33,
+      "trend": "UP",
+      "net_flow": -0.44
+    },
+    {
+      "name": "貿易百貨",
+      "flow_ratio": 0.07,
+      "avg_pct": -0.7,
+      "trend": "DOWN",
+      "net_flow": -1.78
+    },
+    {
+      "name": "建材營造",
+      "flow_ratio": 0.07,
+      "avg_pct": 0.29,
+      "trend": "UP",
+      "net_flow": 0.42
+    },
+    {
+      "name": "數位雲端",
+      "flow_ratio": 0.07,
+      "avg_pct": 0.91,
+      "trend": "UP",
+      "net_flow": 0.86
+    },
+    {
+      "name": "塑膠工",
+      "flow_ratio": 0.07,
+      "avg_pct": 1.55,
+      "trend": "UP",
+      "net_flow": 2.34
+    },
+    {
+      "name": "航運其他",
+      "flow_ratio": 0.06,
+      "avg_pct": 0.62,
+      "trend": "UP",
+      "net_flow": -0.99
+    },
+    {
+      "name": "鋼鐵原物料",
+      "flow_ratio": 0.05,
+      "avg_pct": 0.04,
+      "trend": "UP",
+      "net_flow": -1.38
     },
     {
       "name": "油電燃氣",
       "flow_ratio": 0.05,
-      "avg_pct": 0.72,
-      "trend": "UP",
-      "net_flow": 0.14
-    },
-    {
-      "name": "居家生活",
-      "flow_ratio": 0.05,
-      "avg_pct": -2.59,
+      "avg_pct": -0.0,
       "trend": "DOWN",
-      "net_flow": 0.45
+      "net_flow": -1.81
     },
     {
-      "name": "塑膠工",
+      "name": "證券_期貨",
       "flow_ratio": 0.05,
-      "avg_pct": 0.07,
+      "avg_pct": 0.19,
       "trend": "UP",
-      "net_flow": 0.33
+      "net_flow": -1.74
+    },
+    {
+      "name": "綠能_儲能",
+      "flow_ratio": 0.05,
+      "avg_pct": 0.6,
+      "trend": "UP",
+      "net_flow": -0.69
+    },
+    {
+      "name": "資訊服務",
+      "flow_ratio": 0.05,
+      "avg_pct": -1.96,
+      "trend": "DOWN",
+      "net_flow": -1.59
     },
     {
       "name": "散裝航運",
       "flow_ratio": 0.04,
-      "avg_pct": 0.82,
+      "avg_pct": 0.99,
       "trend": "UP",
-      "net_flow": 0.27
+      "net_flow": 0.31
     },
     {
-      "name": "綠能_儲能",
-      "flow_ratio": 0.03,
-      "avg_pct": 2.66,
+      "name": "橡膠工",
+      "flow_ratio": 0.04,
+      "avg_pct": 0.13,
       "trend": "UP",
-      "net_flow": 0.36
+      "net_flow": -1.43
     },
     {
-      "name": "資訊服務",
+      "name": "居家生活",
       "flow_ratio": 0.03,
-      "avg_pct": -2.08,
+      "avg_pct": -8.82,
       "trend": "DOWN",
-      "net_flow": -0.36
+      "net_flow": -1.34
     },
     {
       "name": "醫美_隱形眼鏡",
       "flow_ratio": 0.03,
-      "avg_pct": 3.35,
-      "trend": "UP",
-      "net_flow": 1.59
+      "avg_pct": -0.08,
+      "trend": "DOWN",
+      "net_flow": 0.54
     },
     {
-      "name": "造紙工",
+      "name": "電器電纜",
       "flow_ratio": 0.02,
-      "avg_pct": 1.03,
+      "avg_pct": 2.58,
       "trend": "UP",
-      "net_flow": 0.27
+      "net_flow": 0.07
     },
     {
       "name": "旅遊_餐飲",
       "flow_ratio": 0.02,
-      "avg_pct": -1.04,
+      "avg_pct": -0.33,
       "trend": "DOWN",
-      "net_flow": 0.07
-    },
-    {
-      "name": "電器電纜",
-      "flow_ratio": 0.01,
-      "avg_pct": 1.25,
-      "trend": "UP",
-      "net_flow": 0.16
+      "net_flow": -0.77
     },
     {
       "name": "工具機",
-      "flow_ratio": 0.01,
-      "avg_pct": 0.18,
+      "flow_ratio": 0.02,
+      "avg_pct": 1.96,
       "trend": "UP",
-      "net_flow": -0.21
+      "net_flow": 0.63
+    },
+    {
+      "name": "造紙工",
+      "flow_ratio": 0.02,
+      "avg_pct": -0.01,
+      "trend": "DOWN",
+      "net_flow": -0.34
     },
     {
       "name": "觀光餐旅",
       "flow_ratio": 0.01,
-      "avg_pct": 0.51,
+      "avg_pct": 0.17,
       "trend": "UP",
-      "net_flow": 0.07
+      "net_flow": -0.64
+    },
+    {
+      "name": "電線電纜",
+      "flow_ratio": 0.01,
+      "avg_pct": 1.26,
+      "trend": "UP",
+      "net_flow": -0.23
     },
     {
       "name": "光伏_風電",
       "flow_ratio": 0.0,
-      "avg_pct": -1.38,
-      "trend": "DOWN",
-      "net_flow": 0.02
-    },
-    {
-      "name": "文化創意",
-      "flow_ratio": 0.0,
-      "avg_pct": 0.59,
+      "avg_pct": 1.4,
       "trend": "UP",
-      "net_flow": 3.09
+      "net_flow": -0.08
     },
     {
       "name": "水泥工",
       "flow_ratio": 0.0,
-      "avg_pct": 0.91,
+      "avg_pct": 1.07,
       "trend": "UP",
-      "net_flow": 0.02
+      "net_flow": -0.25
     },
     {
-      "name": "農科技",
+      "name": "文化創意",
       "flow_ratio": 0.0,
-      "avg_pct": -0.28,
+      "avg_pct": -10.73,
       "trend": "DOWN",
-      "net_flow": 0.0
+      "net_flow": 6.72
     },
     {
       "name": "醫療器材",
       "flow_ratio": 0.0,
-      "avg_pct": 1.2,
+      "avg_pct": 1.17,
       "trend": "UP",
-      "net_flow": 0.07
+      "net_flow": 0.06
     },
     {
-      "name": "電線電纜",
+      "name": "農科技",
       "flow_ratio": 0.0,
-      "avg_pct": 0.62,
+      "avg_pct": 1.05,
       "trend": "UP",
-      "net_flow": -0.13
+      "net_flow": -0.0
     }
   ],
-  "regime": "CAUTIOUS",
+  "regime": "AGGRESSIVE",
   "learning_notes": [
-    "💡 半導體_其他 MR 反彈後續強，放寬 RSI 出場至 79。",
+    "💡 半導體_其他 MR 反彈後續強，放寬 RSI 出場至 81。",
     "💡 散熱模組 族群近期爆發力強，系統已自動放寬 RS 出場門檻。",
     "💡 封測_材料 族群近期爆發力強，系統已自動放寬 RS 出場門檻。",
+    "💡 PCB_CCL_ABF 族群近期爆發力強，系統已自動放寬 RS 出場門檻。",
     "💡 電子其他 MR 反彈後續強，放寬 RSI 出場至 90。",
     "💡 IC設計_HPC_存儲 族群近期爆發力強，系統已自動放寬 RS 出場門檻。",
     "💡 重電_強韌電網 族群近期爆發力強，系統已自動放寬 RS 出場門檻。"
@@ -553,80 +554,80 @@
   "ai_themes": [
     {
       "name": "晶圓代工",
-      "flow_ratio": 13.89,
-      "avg_pct": 1.32,
+      "flow_ratio": 14.56,
+      "avg_pct": 1.65,
       "trend": "UP",
-      "net_flow": -54.57
+      "net_flow": -92.93
     },
     {
       "name": "PCB_CCL_ABF",
-      "flow_ratio": 8.75,
-      "avg_pct": -0.36,
-      "trend": "DOWN",
-      "net_flow": 45.36
+      "flow_ratio": 6.9,
+      "avg_pct": 6.81,
+      "trend": "UP",
+      "net_flow": 27.95
     },
     {
       "name": "IC設計_HPC_存儲",
-      "flow_ratio": 5.24,
-      "avg_pct": 1.65,
+      "flow_ratio": 6.33,
+      "avg_pct": 5.0,
       "trend": "UP",
-      "net_flow": 46.32
-    },
-    {
-      "name": "電源供應器",
-      "flow_ratio": 3.63,
-      "avg_pct": 2.59,
-      "trend": "UP",
-      "net_flow": 14.36
+      "net_flow": 17.42
     },
     {
       "name": "AI伺服器代工",
-      "flow_ratio": 3.31,
-      "avg_pct": 1.91,
+      "flow_ratio": 3.08,
+      "avg_pct": 2.47,
       "trend": "UP",
-      "net_flow": -27.63
+      "net_flow": 23.35
+    },
+    {
+      "name": "電源供應器",
+      "flow_ratio": 2.77,
+      "avg_pct": 4.44,
+      "trend": "UP",
+      "net_flow": -5.9
     },
     {
       "name": "封測_材料",
-      "flow_ratio": 2.05,
-      "avg_pct": -1.85,
-      "trend": "DOWN",
-      "net_flow": -39.96
-    },
-    {
-      "name": "矽光子_CPO",
-      "flow_ratio": 1.28,
-      "avg_pct": -2.1,
-      "trend": "DOWN",
-      "net_flow": 1.8
+      "flow_ratio": 2.76,
+      "avg_pct": 5.02,
+      "trend": "UP",
+      "net_flow": 83.88
     },
     {
       "name": "IC設計_IP",
-      "flow_ratio": 1.05,
-      "avg_pct": 0.19,
+      "flow_ratio": 1.5,
+      "avg_pct": 3.82,
       "trend": "UP",
-      "net_flow": 14.7
+      "net_flow": 0.18
     },
     {
       "name": "散熱模組",
-      "flow_ratio": 0.81,
-      "avg_pct": 1.84,
+      "flow_ratio": 1.1,
+      "avg_pct": 4.04,
       "trend": "UP",
-      "net_flow": 16.89
+      "net_flow": 50.4
+    },
+    {
+      "name": "矽光子_CPO",
+      "flow_ratio": 0.53,
+      "avg_pct": 3.66,
+      "trend": "UP",
+      "net_flow": -8.77
     },
     {
       "name": "伺服器機殼_滑軌",
-      "flow_ratio": 0.28,
-      "avg_pct": -0.86,
-      "trend": "DOWN",
-      "net_flow": -1.87
+      "flow_ratio": 0.34,
+      "avg_pct": 3.73,
+      "trend": "UP",
+      "net_flow": -4.36
     },
     {
       "name": "半導體設備_CoWoS",
-      "flow_ratio": 0.21,
-      "avg_pct": 2.79,
+      "flow_ratio": 0.31,
+      "avg_pct": 3.92,
       "trend": "UP",
-      "net_flow": 2.55
+      "net_flow": 8.42
     }
   ]
 }

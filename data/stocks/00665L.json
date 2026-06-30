@@ -1,28 +1,28 @@
 {
   "stock_id": "00665L",
   "name": "00665L",
-  "date": "2026-06-29",
-  "close": 7.72,
-  "health_score": 83,
-  "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "date": "2026-06-30",
+  "close": 7.44,
+  "health_score": 66,
+  "signal": "Neutral",
+  "ai_narrative": "今日股價走弱，盤面顯示「散戶接刀中/融資斷頭預警」。",
   "institutional": {
-    "foreign_buy_days": 2,
+    "foreign_buy_days": 0,
     "foreign_buy_ratio": 0,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -1062.0,
-    "margin_slope": 16437.4,
-    "maintenance_ratio": 146.38,
-    "short_change": 124.0,
-    "short_margin_ratio": 0.78
+    "margin_change": 2625.0,
+    "margin_slope": 16962.4,
+    "maintenance_ratio": 142.53,
+    "short_change": -141.0,
+    "short_margin_ratio": 0.59
   },
   "tdcc": {},
   "main_force": {
-    "cost": 8.79,
-    "distance": -12.17,
+    "cost": 8.7,
+    "distance": -14.48,
     "trend": "DOWN"
   },
   "sector": {
@@ -37,7 +37,8 @@
   "chip_warning": "",
   "events": [],
   "raw_signals": [
-    "主力洗盤完成"
+    "散戶接刀中",
+    "融資斷頭預警"
   ],
-  "data_version": "2026-06-29"
+  "data_version": "2026-06-30"
 }

@@ -1,21 +1,21 @@
 {
   "stock_id": "8299",
   "name": "8299",
-  "date": "2026-06-29",
-  "close": 2340.0,
+  "date": "2026-06-30",
+  "close": 2385.0,
   "health_score": 120,
   "signal": "Bullish",
   "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 2,
-    "foreign_buy_ratio": 0.118,
+    "foreign_buy_days": 3,
+    "foreign_buy_ratio": 0.034,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
     "margin_change": -110.0,
-    "margin_slope": 2709.2,
-    "maintenance_ratio": 159.93,
+    "margin_slope": 2687.2,
+    "maintenance_ratio": 165.45,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 46.29
   },
   "main_force": {
-    "cost": 2438.5,
-    "distance": -4.04,
+    "cost": 2402.58,
+    "distance": -0.73,
     "trend": "DOWN"
   },
   "sector": {
@@ -39,9 +39,14 @@
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "外資連買 3 天"
+    }
+  ],
   "raw_signals": [
     "主力洗盤完成"
   ],
-  "data_version": "2026-06-29"
+  "data_version": "2026-06-30"
 }

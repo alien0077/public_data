@@ -1,21 +1,21 @@
 {
   "stock_id": "1584",
   "name": "1584",
-  "date": "2026-06-29",
-  "close": 18.55,
-  "health_score": 83,
+  "date": "2026-06-30",
+  "close": 19.05,
+  "health_score": 103,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
+  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.082,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.242,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -5.0,
-    "margin_slope": 1227.6,
-    "maintenance_ratio": 159.45,
+    "margin_change": -104.0,
+    "margin_slope": 1206.8,
+    "maintenance_ratio": 163.91,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,8 +25,8 @@
     "holder_concentration": 40.34
   },
   "main_force": {
-    "cost": 19.39,
-    "distance": -4.33,
+    "cost": 19.37,
+    "distance": -1.65,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,11 +35,13 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
-  "raw_signals": [],
-  "data_version": "2026-06-29"
+  "raw_signals": [
+    "主力洗盤完成"
+  ],
+  "data_version": "2026-06-30"
 }

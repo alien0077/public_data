@@ -1,220 +1,168 @@
 {
-  "0050": {
-    "name": "元大台灣50",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.82
-      }
-    ],
-    "weight_down": []
-  },
-  "006208": {
-    "name": "富邦台50",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.82
-      }
-    ],
-    "weight_down": []
-  },
-  "006203": {
-    "name": "元大MSCI台灣",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.87
-      }
-    ],
-    "weight_down": []
-  },
-  "006204": {
-    "name": "永豐臺灣加權",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.59
-      }
-    ],
-    "weight_down": []
-  },
-  "00690": {
-    "name": "兆豐藍籌30",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 1.04
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2454",
-        "diff": -0.64
-      }
-    ]
-  },
-  "00922": {
-    "name": "國泰台灣領袖50",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.83
-      }
-    ],
-    "weight_down": []
-  },
   "0056": {
     "name": "元大高股息",
     "added": [],
-    "removed": [],
+    "removed": [
+      "1319",
+      "1477",
+      "2006",
+      "6176"
+    ],
     "weight_up": [],
+    "weight_down": []
+  },
+  "00919": {
+    "name": "群益台灣精選高息",
+    "added": [],
+    "removed": [],
+    "weight_up": [
+      {
+        "stock_id": "202607TX",
+        "diff": 0.63
+      }
+    ],
     "weight_down": [
       {
-        "stock_id": "2303",
-        "diff": -0.58
+        "stock_id": "2881",
+        "diff": -0.55
+      },
+      {
+        "stock_id": "2882",
+        "diff": -0.51
       }
     ]
   },
   "00929": {
     "name": "復華台灣科技優息",
-    "added": [
-      "2379",
-      "3045",
-      "2382",
-      "6409",
-      "6691",
-      "4904",
-      "5434",
-      "2412",
-      "3231",
-      "6139",
-      "5269",
-      "3706",
-      "2376",
-      "2377",
-      "2317",
-      "3023",
-      "8069",
-      "2356",
-      "6191",
-      "8112",
-      "5469",
-      "2352"
-    ],
-    "removed": [
-      "DA_NTD"
-    ],
+    "added": [],
+    "removed": [],
     "weight_up": [],
     "weight_down": [
       {
         "stock_id": "2303",
-        "diff": -1.96
+        "diff": -1.82
       },
       {
         "stock_id": "2454",
-        "diff": -1.48
+        "diff": -1.1
       },
       {
         "stock_id": "3008",
-        "diff": -0.69
+        "diff": -0.93
       },
       {
         "stock_id": "6239",
-        "diff": -0.54
+        "diff": -0.66
       },
       {
         "stock_id": "6488",
-        "diff": -0.71
+        "diff": -0.64
       }
     ]
   },
   "00713": {
     "name": "元大台灣高息低波",
     "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2892",
-        "diff": 0.71
-      }
+    "removed": [
+      "3406",
+      "2883",
+      "2881",
+      "6278",
+      "3010",
+      "4938",
+      "2474",
+      "2441",
+      "5522"
     ],
+    "weight_up": [],
     "weight_down": []
   },
-  "00915": {
-    "name": "凱基優選高股息30",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "2303",
-        "diff": -0.82
-      }
-    ]
-  },
-  "00918": {
-    "name": "大華優利高填息30",
-    "added": [],
+  "00943": {
+    "name": "兆豐電子高息等權",
+    "added": [
+      "3014",
+      "2458",
+      "6409",
+      "3479",
+      "3402",
+      "3028",
+      "6143",
+      "3596",
+      "3045",
+      "2412",
+      "2382",
+      "3622",
+      "6561",
+      "2387",
+      "3029",
+      "3005",
+      "3515",
+      "3526",
+      "6146",
+      "4953"
+    ],
     "removed": [],
     "weight_up": [],
     "weight_down": [
       {
         "stock_id": "2327",
-        "diff": -0.84
-      }
-    ]
-  },
-  "00900": {
-    "name": "富邦特選高股息30",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
+        "diff": -1.67
+      },
       {
-        "stock_id": "2454",
-        "diff": -0.52
-      }
-    ]
-  },
-  "00701": {
-    "name": "國泰股利精選30",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
+        "stock_id": "6147",
+        "diff": -1.78
+      },
       {
         "stock_id": "2303",
+        "diff": -1.37
+      },
+      {
+        "stock_id": "3090",
+        "diff": -1.42
+      },
+      {
+        "stock_id": "2409",
+        "diff": -0.83
+      },
+      {
+        "stock_id": "6285",
+        "diff": -0.98
+      },
+      {
+        "stock_id": "8091",
         "diff": -0.85
-      }
-    ]
-  },
-  "00881": {
-    "name": "國泰台灣5G+",
-    "added": [],
-    "removed": [],
-    "weight_up": [
+      },
       {
-        "stock_id": "2330",
-        "diff": 1.06
-      }
-    ],
-    "weight_down": [
+        "stock_id": "3455",
+        "diff": -0.91
+      },
       {
-        "stock_id": "2454",
-        "diff": -0.56
+        "stock_id": "6278",
+        "diff": -0.76
+      },
+      {
+        "stock_id": "5425",
+        "diff": -0.89
+      },
+      {
+        "stock_id": "3265",
+        "diff": -0.77
+      },
+      {
+        "stock_id": "3209",
+        "diff": -0.8
+      },
+      {
+        "stock_id": "5483",
+        "diff": -0.65
+      },
+      {
+        "stock_id": "3034",
+        "diff": -0.53
+      },
+      {
+        "stock_id": "1582",
+        "diff": -0.53
       }
     ]
   },
@@ -224,118 +172,27 @@
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "2330",
-        "diff": 1.23
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2454",
-        "diff": -0.75
-      }
-    ]
-  },
-  "00935": {
-    "name": "野村臺灣新科技50",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.96
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2454",
-        "diff": -0.64
-      }
-    ]
-  },
-  "00904": {
-    "name": "新光臺灣半導體30",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 1.48
+        "stock_id": "C_NTD",
+        "diff": 0.56
       }
     ],
     "weight_down": []
   },
-  "00927": {
-    "name": "群益半導體收益",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.59
-      }
+  "00980A": {
+    "name": "主動野村臺灣優選",
+    "added": [
+      "4958"
     ],
-    "weight_down": []
-  },
-  "00850": {
-    "name": "元大臺灣ESG永續",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.66
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2454",
-        "diff": -0.51
-      }
-    ]
-  },
-  "00888": {
-    "name": "永豐台灣ESG",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.64
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2303",
-        "diff": -0.83
-      }
-    ]
-  },
-  "00923": {
-    "name": "群益台ESG低碳50",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.91
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2454",
-        "diff": -0.54
-      }
-    ]
-  },
-  "00930": {
-    "name": "永豐ESG低碳高息",
-    "added": [],
     "removed": [],
     "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "202607TX",
-        "diff": -1.84
+        "stock_id": "2330",
+        "diff": -0.9
+      },
+      {
+        "stock_id": "6223",
+        "diff": -0.52
       }
     ]
   },
@@ -345,203 +202,153 @@
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "NTLA",
-        "diff": 0.6
+        "stock_id": "C_USD",
+        "diff": 1.76
       }
     ],
     "weight_down": [
       {
         "stock_id": "C_NTD",
-        "diff": -5.73
-      },
-      {
-        "stock_id": "C_USD",
-        "diff": -2.83
-      },
-      {
-        "stock_id": "COIN",
-        "diff": -0.56
-      },
-      {
-        "stock_id": "ROKU",
-        "diff": -1.33
+        "diff": -3.95
       }
     ]
   },
   "00403A": {
     "name": "主動統一",
-    "added": [],
+    "added": [
+      "6239"
+    ],
     "removed": [],
     "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "2368",
-        "diff": -0.64
+        "stock_id": "2383",
+        "diff": -0.66
       }
     ]
-  },
-  "00986A": {
-    "name": "主動台新龍頭成長",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "MU",
-        "diff": 0.95
-      }
-    ],
-    "weight_down": []
   },
   "00987A": {
     "name": "主動台新優勢成長",
     "added": [],
     "removed": [],
-    "weight_up": [],
+    "weight_up": [
+      {
+        "stock_id": "2327",
+        "diff": 1.45
+      }
+    ],
     "weight_down": [
       {
-        "stock_id": "6274",
-        "diff": -1.05
+        "stock_id": "6187",
+        "diff": -1.62
       }
     ]
   },
   "00988A": {
     "name": "主動統一全球創新",
     "added": [
-      "6871"
+      "AMAT"
     ],
-    "removed": [
-      "CRWD"
-    ],
-    "weight_up": [
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
       {
-        "stock_id": "MU",
-        "diff": 0.6
+        "stock_id": "6787",
+        "diff": -0.51
       },
       {
-        "stock_id": "SNDK",
-        "diff": 1.09
+        "stock_id": "5274",
+        "diff": -0.51
       },
       {
-        "stock_id": "WDC",
-        "diff": 0.58
-      },
-      {
-        "stock_id": "2327",
-        "diff": 0.62
+        "stock_id": "2308",
+        "diff": -0.56
       }
-    ],
-    "weight_down": []
+    ]
   },
   "00989A": {
     "name": "主動摩根美國科技",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "C_NTD",
-        "diff": 1.29
-      }
+    "added": [
+      "AMAT"
     ],
-    "weight_down": []
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "C_USD",
+        "diff": -0.86
+      }
+    ]
   },
   "00990A": {
     "name": "主動元大AI新經濟",
     "added": [
-      "6857"
+      "UCTT"
     ],
     "removed": [
-      "AIXA"
+      "STX"
     ],
     "weight_up": [
       {
-        "stock_id": "SNDK",
-        "diff": 1.21
-      },
-      {
-        "stock_id": "MU",
-        "diff": 0.78
-      },
-      {
-        "stock_id": "285A",
-        "diff": 0.79
+        "stock_id": "AMAT",
+        "diff": 0.51
       }
     ],
     "weight_down": []
   },
-  "00992A": {
-    "name": "主動群益科技創新",
-    "added": [],
-    "removed": [
-      "3105",
-      "2360"
-    ],
-    "weight_up": [
-      {
-        "stock_id": "6182",
-        "diff": 0.63
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2368",
-        "diff": -1.21
-      }
-    ]
-  },
-  "00994A": {
-    "name": "主動第一金台股優",
+  "00991A": {
+    "name": "主動復華未來50",
     "added": [],
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "8046",
-        "diff": 0.58
+        "stock_id": "2303",
+        "diff": 0.53
       }
     ],
     "weight_down": [
       {
-        "stock_id": "2454",
-        "diff": -0.9
-      },
+        "stock_id": "6223",
+        "diff": -0.53
+      }
+    ]
+  },
+  "00993A": {
+    "name": "主動安聯台灣",
+    "added": [],
+    "removed": [],
+    "weight_up": [
       {
-        "stock_id": "3017",
-        "diff": -1.07
-      },
+        "stock_id": "2330",
+        "diff": 0.66
+      }
+    ],
+    "weight_down": []
+  },
+  "00994A": {
+    "name": "主動第一金台股優",
+    "added": [
+      "5347",
+      "3131"
+    ],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
       {
-        "stock_id": "2308",
-        "diff": -0.76
-      },
-      {
-        "stock_id": "6669",
-        "diff": -0.83
-      },
-      {
-        "stock_id": "2360",
+        "stock_id": "6223",
         "diff": -0.65
-      },
-      {
-        "stock_id": "7769",
-        "diff": -0.88
       }
     ]
   },
   "00995A": {
     "name": "主動中信台灣卓越",
-    "added": [],
-    "removed": [
-      "4979",
-      "2382"
-    ],
-    "weight_up": [],
-    "weight_down": []
-  },
-  "00996A": {
-    "name": "主動兆豐台灣豐收",
     "added": [
-      "3189"
+      "6139",
+      "2404"
     ],
     "removed": [
-      "3081"
+      "3661",
+      "7751"
     ],
     "weight_up": [],
     "weight_down": []
@@ -549,111 +356,141 @@
   "00997A": {
     "name": "主動群益美國增長",
     "added": [],
-    "removed": [
-      "BESI"
+    "removed": [],
+    "weight_up": [
+      {
+        "stock_id": "AMAT",
+        "diff": 0.83
+      },
+      {
+        "stock_id": "INTC",
+        "diff": 0.93
+      },
+      {
+        "stock_id": "GLW",
+        "diff": 0.53
+      },
+      {
+        "stock_id": "FTNT",
+        "diff": 0.66
+      },
+      {
+        "stock_id": "CIEN",
+        "diff": 0.78
+      }
     ],
-    "weight_up": [],
-    "weight_down": []
+    "weight_down": [
+      {
+        "stock_id": "SNDK",
+        "diff": -0.59
+      },
+      {
+        "stock_id": "LITE",
+        "diff": -0.67
+      }
+    ]
   },
-  "00998A": {
-    "name": "主動復華金融股息",
+  "00400A": {
+    "name": "主動國泰動能高息",
     "added": [
-      "希臘國家銀行"
-    ],
-    "removed": [
-      "渣打集團有限公司"
-    ],
-    "weight_up": [],
-    "weight_down": []
-  },
-  "00983D": {
-    "name": "主動富邦複合收益",
-    "added": [
-      "USU8531HAD27"
+      "2472"
     ],
     "removed": [],
+    "weight_up": [],
+    "weight_down": []
+  },
+  "00980D": {
+    "name": "主動聯博投等入息",
+    "added": [
+      "BANCO SANTANDER SA (REG) 6.607% 07NOV2028",
+      "TIME WARNER ENTERTAINMEN 8.375% 15JUL2033",
+      "CITIGROUP INC 8.125% 15JUL2039",
+      "DOW CHEMICAL CO/THE 7.375% 01NOV2029",
+      "DELL INT LLC / EMC CORP (REG) 8.1% 15JUL2036",
+      "VIRGINIA ELEC & POWER CO (REG) 8.875% 15NOV2038",
+      "ONEOK INC 6.625% 01SEP2053",
+      "SANTANDER HOLDINGS USA VAR 09NOV2031"
+    ],
+    "removed": [
+      "US 10YR NOTE (CBT)SEP26 21-SEP-2026",
+      "US LONG BOND(CBT) SEP26 21-SEP-2026",
+      "US 2YR NOTE (CBT) SEP26 30-SEP-2026",
+      "ATHENE HOLDING LTD (REG) 6.25% 01APR2054",
+      "GLOBAL ATLANTIC FIN CO SER REGS 7.950000 % 15JUN2033",
+      "CONCENTRIX CORP (REG) 6.85% 02AUG2033",
+      "MOHEGAN TRIBAL / MS DIG SER REGS 11.875000 % 15APR2031",
+      "ORANGE SA (REG) 9% 01MAR2031"
+    ],
     "weight_up": [],
     "weight_down": []
   },
   "00984D": {
     "name": "主動聯博全球非投",
     "added": [
-      "US04625HAJ86",
-      "US15853BAA98"
+      "US69413FAA03"
     ],
-    "removed": [
-      "US04302XAA28",
-      "US257867BK60"
-    ],
-    "weight_up": [],
-    "weight_down": []
-  },
-  "00662": {
-    "name": "富邦NASDAQ",
-    "added": [],
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "MU",
-        "diff": 0.75
-      }
-    ],
-    "weight_down": []
-  },
-  "00861": {
-    "name": "元大全球未來通訊",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "AMAT",
-        "diff": 0.79
+        "stock_id": "USU12501BT57",
+        "diff": 0.98
       }
     ],
     "weight_down": [
       {
-        "stock_id": "AAPL",
-        "diff": -0.53
+        "stock_id": "US1248EPCV30",
+        "diff": -0.97
       }
     ]
   },
-  "00924": {
-    "name": "復華S&P500成長",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "MU",
-        "diff": 0.51
-      }
-    ],
-    "weight_down": []
-  },
-  "00645": {
-    "name": "富邦日本",
+  "00985D": {
+    "name": "主動貝萊德優投等",
     "added": [
-      "7350",
-      "9974",
-      "2659",
-      "5451"
+      "ISHARES 20+ YEAR TREASURY BO COM 0",
+      "AT&T INC 5.55 2045/11/1",
+      "CVS HEALTH CORP 6 2044/6/1",
+      "BANK OF AMERICA CORP 6.11 2037/1/29",
+      "ORACLE CORPORATION 5.38 2040/7/15",
+      "INTEL CORPORATION 5.7 2053/2/10",
+      "EXELON CORPORATION 5.88 2055/3/15",
+      "UNITED PARCEL SERVICE INC 5.95 2055/5/14",
+      "BOEING CO 6.86 2054/5/1",
+      "ALPHABET INC 5.3 2065/5/15"
     ],
-    "removed": [],
+    "removed": [
+      "ISHARES 20+ YEAR TREASURY BO COM 0.0",
+      "AT&T INC 5.55 2045/11/01",
+      "BANK OF AMERICA CORP 6.11 2037/01/29",
+      "ORACLE CORPORATION 5.38 2040/07/15",
+      "CVS HEALTH CORP 6.0 2044/06/01",
+      "EXELON CORPORATION 5.88 2055/03/15",
+      "UNITED PARCEL SERVICE INC 5.95 2055/05/14",
+      "ALPHABET INC 5.3 2065/05/15",
+      "BOEING CO 6.86 2054/05/01",
+      "VERIZON COMMUNICATIONS INC 6.0 2065/11/30"
+    ],
     "weight_up": [],
     "weight_down": []
   },
-  "00661": {
-    "name": "元大日經225",
-    "added": [],
-    "removed": [],
+  "00986D": {
+    "name": "主動復華金融債息",
+    "added": [
+      "HSBC 8 PERP",
+      "VEDLN 9.475 07/24/30"
+    ],
+    "removed": [
+      "OXY 8 7/8 07/15/30",
+      "ENBCN 8 1/2 01/15/2084"
+    ],
     "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "6857",
-        "diff": -0.62
+        "stock_id": "JPM 8 3/4 09/01/30",
+        "diff": -1.42
       },
       {
-        "stock_id": "9984",
-        "diff": -0.63
+        "stock_id": "PEMEX 10 02/07/33",
+        "diff": -1.37
       }
     ]
   },
@@ -664,29 +501,34 @@
     "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "6981",
-        "diff": -0.6
-      },
-      {
         "stock_id": "DA_NTD",
-        "diff": -1.1
+        "diff": -0.86
       }
     ]
+  },
+  "00953B": {
+    "name": "群益印度中小",
+    "added": [],
+    "removed": [
+      "USU1303AAF31",
+      "USC3117MAA02"
+    ],
+    "weight_up": [],
+    "weight_down": []
   },
   "00954": {
     "name": "中信印度50",
     "added": [],
     "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "6857",
-        "diff": 0.87
-      }
-    ],
+    "weight_up": [],
     "weight_down": [
       {
+        "stock_id": "6857",
+        "diff": -0.66
+      },
+      {
         "stock_id": "C_NTD",
-        "diff": -0.67
+        "diff": -0.66
       }
     ]
   },
@@ -694,85 +536,11 @@
     "name": "中信中國50正2",
     "added": [],
     "removed": [],
-    "weight_up": [
+    "weight_up": [],
+    "weight_down": [
       {
         "stock_id": "202609MUR",
-        "diff": 1.93
-      },
-      {
-        "stock_id": "C_NTD",
-        "diff": 1.17
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "M_USD",
-        "diff": -1.38
-      }
-    ]
-  },
-  "00882": {
-    "name": "中信中國高股息",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "902",
-        "diff": -0.54
-      }
-    ]
-  },
-  "00941": {
-    "name": "中信上游半導體",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "AMAT",
-        "diff": 0.7
-      }
-    ],
-    "weight_down": []
-  },
-  "00830": {
-    "name": "國泰費城半導體",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "MU.US",
-        "diff": 0.97
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "NVDA.US",
-        "diff": -0.55
-      }
-    ]
-  },
-  "00708L": {
-    "name": "期元大S&P黃金正2",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "202608GC",
-        "diff": -9.42
-      }
-    ]
-  },
-  "00642U": {
-    "name": "期元大S&P石油",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "202608CL",
-        "diff": -0.54
+        "diff": -4.23
       }
     ]
   },
@@ -780,23 +548,35 @@
     "name": "期元大S&P原油反1",
     "added": [],
     "removed": [],
-    "weight_up": [
+    "weight_up": [],
+    "weight_down": [
       {
         "stock_id": "202608CL",
-        "diff": 12.14
+        "diff": -11.41
       }
-    ],
-    "weight_down": []
+    ]
   },
   "00715L": {
     "name": "期街口布蘭特正2",
     "added": [],
     "removed": [],
+    "weight_up": [
+      {
+        "stock_id": "202609B",
+        "diff": 12.21
+      }
+    ],
+    "weight_down": []
+  },
+  "00631L": {
+    "name": "元大台灣50正2",
+    "added": [],
+    "removed": [],
     "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "202609B",
-        "diff": -12.51
+        "stock_id": "2330",
+        "diff": -1.27
       }
     ]
   },
@@ -804,10 +584,22 @@
     "name": "富邦臺灣加權正2",
     "added": [],
     "removed": [],
-    "weight_up": [
+    "weight_up": [],
+    "weight_down": [
       {
         "stock_id": "202607WTXN6F",
-        "diff": 1.55
+        "diff": -2.44
+      }
+    ]
+  },
+  "00632R": {
+    "name": "元大台灣50反1",
+    "added": [],
+    "removed": [],
+    "weight_up": [
+      {
+        "stock_id": "202607TX",
+        "diff": 1.29
       }
     ],
     "weight_down": []
@@ -816,46 +608,43 @@
     "name": "富邦臺灣加權反1",
     "added": [],
     "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "202607WTXN6F",
-        "diff": -1.46
-      }
-    ]
-  },
-  "00969B": {
-    "name": "元大零息超長美債",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "912803GP2",
-        "diff": -0.61
-      }
-    ]
-  },
-  "00654R": {
-    "name": "富邦印度反1",
-    "added": [],
-    "removed": [],
     "weight_up": [
       {
-        "stock_id": "202606GINM6F",
-        "diff": 0.91
+        "stock_id": "202607WTXN6F",
+        "diff": 2.17
       }
     ],
+    "weight_down": []
+  },
+  "00937B": {
+    "name": "群益ESG投等債20+",
+    "added": [],
+    "removed": [
+      "US00206RNJ76"
+    ],
+    "weight_up": [],
     "weight_down": []
   },
   "00685L": {
     "name": "群益臺灣加權正2",
     "added": [],
     "removed": [],
-    "weight_up": [
+    "weight_up": [],
+    "weight_down": [
       {
         "stock_id": "202607TX",
-        "diff": 1.0
+        "diff": -2.35
+      }
+    ]
+  },
+  "00731": {
+    "name": "復華富時高息低波",
+    "added": [],
+    "removed": [],
+    "weight_up": [
+      {
+        "stock_id": "2887",
+        "diff": 0.55
       }
     ],
     "weight_down": []
@@ -864,77 +653,25 @@
     "name": "群益臺灣加權反1",
     "added": [],
     "removed": [],
-    "weight_up": [],
-    "weight_down": [
+    "weight_up": [
       {
         "stock_id": "202607MTX",
-        "diff": -1.9
+        "diff": 2.64
       }
-    ]
+    ],
+    "weight_down": []
   },
   "00664R": {
     "name": "國泰臺灣加權反1",
     "added": [],
     "removed": [],
-    "weight_up": [],
-    "weight_down": [
+    "weight_up": [
       {
         "stock_id": "202607TX",
-        "diff": -0.54
-      }
-    ]
-  },
-  "00692": {
-    "name": "富邦公司治理",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.67
+        "diff": 2.25
       }
     ],
     "weight_down": []
-  },
-  "009813": {
-    "name": "貝萊德標普卓越50",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "NVDA",
-        "diff": 0.76
-      },
-      {
-        "stock_id": "AAPL",
-        "diff": 0.69
-      }
-    ],
-    "weight_down": []
-  },
-  "00876": {
-    "name": "元大全球5G(原名:元大未來關鍵科技)",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "AMAT",
-        "diff": 0.8
-      }
-    ],
-    "weight_down": []
-  },
-  "00786B": {
-    "name": "元大10年IG銀行債",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "UV4871793",
-        "diff": -0.8
-      }
-    ]
   },
   "00877": {
     "name": "復華中國5G",
@@ -942,136 +679,123 @@
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "202607XU",
-        "diff": 0.75
+        "stock_id": "603986",
+        "diff": 1.01
+      },
+      {
+        "stock_id": "DA_NTD",
+        "diff": 1.04
       }
     ],
-    "weight_down": []
+    "weight_down": [
+      {
+        "stock_id": "DA_CNH",
+        "diff": -1.03
+      }
+    ]
   },
   "00735": {
     "name": "國泰臺韓科技",
     "added": [],
     "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.66
-      }
-    ],
+    "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "000660.KS",
-        "diff": -0.69
+        "stock_id": "005930.KS",
+        "diff": -0.88
       }
     ]
   },
-  "00655L": {
-    "name": "國泰中國A50正2",
+  "006205": {
+    "name": "富邦上証",
     "added": [],
     "removed": [
-      "202606SCN"
-    ],
-    "weight_up": [
-      {
-        "stock_id": "202607SCN",
-        "diff": 98.16
-      }
-    ],
-    "weight_down": []
-  },
-  "00981B": {
-    "name": "第一金優選非投債",
-    "added": [],
-    "removed": [
-      "US69318FAJ75"
+      "600050"
     ],
     "weight_up": [],
     "weight_down": []
   },
-  "00851": {
-    "name": "台新全球AI",
+  "00402A": {
+    "name": "主動安聯美國科技",
+    "added": [],
+    "removed": [
+      "MELI"
+    ],
+    "weight_up": [
+      {
+        "stock_id": "MU",
+        "diff": 0.67
+      },
+      {
+        "stock_id": "AMD",
+        "diff": 0.61
+      }
+    ],
+    "weight_down": []
+  },
+  "00638R": {
+    "name": "元大滬深300反1",
     "added": [],
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "000660",
-        "diff": 0.71
-      },
-      {
-        "stock_id": "MU",
-        "diff": 0.76
+        "stock_id": "202607CN",
+        "diff": 0.66
       }
     ],
+    "weight_down": []
+  },
+  "00727B": {
+    "name": "國泰優選非投等債",
+    "added": [],
+    "removed": [
+      "BBG00XVBZT42"
+    ],
+    "weight_up": [],
+    "weight_down": []
+  },
+  "00703": {
+    "name": "台新MSCI中國",
+    "added": [
+      "202607XUN6"
+    ],
+    "removed": [
+      "202606XUM6"
+    ],
+    "weight_up": [],
     "weight_down": []
   },
   "00964": {
     "name": "中信亞太高股息",
     "added": [],
     "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "C_NTD",
-        "diff": 1.01
-      }
-    ],
-    "weight_down": []
-  },
-  "00980T": {
-    "name": "平衡凱基美國TOP",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "MU_US",
-        "diff": 0.63
-      }
-    ],
+    "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "AAPL_US",
-        "diff": -0.67
+        "stock_id": "C_NTD",
+        "diff": -0.54
       }
     ]
   },
-  "00985B": {
-    "name": "群益ESG投等債0-5",
+  "00982T": {
+    "name": "平衡兆豐台美動能",
+    "added": [],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "2454",
+        "diff": -0.77
+      }
+    ]
+  },
+  "009814": {
+    "name": "富邦標普500",
     "added": [],
     "removed": [
-      "US785592AS57"
+      "CAG"
     ],
     "weight_up": [],
-    "weight_down": []
-  },
-  "00859B": {
-    "name": "群益0-1年美債",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "US91282CKR15",
-        "diff": 1.03
-      },
-      {
-        "stock_id": "US91282CKJ98",
-        "diff": 1.09
-      },
-      {
-        "stock_id": "US91282CJP77",
-        "diff": 0.7
-      }
-    ],
-    "weight_down": []
-  },
-  "0057": {
-    "name": "富邦摩台",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.86
-      }
-    ],
     "weight_down": []
   },
   "009801": {
@@ -1080,545 +804,82 @@
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "MU",
-        "diff": 1.01
+        "stock_id": "AAPL",
+        "diff": 0.74
       }
     ],
     "weight_down": [
       {
-        "stock_id": "AAPL",
-        "diff": -0.97
-      },
-      {
         "stock_id": "C_NTD",
-        "diff": -7.43
+        "diff": -1.05
       }
     ]
+  },
+  "00724B": {
+    "name": "群益投資級金融債",
+    "added": [
+      "US202712BL88"
+    ],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": []
   },
   "00641R": {
     "name": "富邦日本反1",
     "added": [],
     "removed": [],
-    "weight_up": [
+    "weight_up": [],
+    "weight_down": [
       {
         "stock_id": "202609JTIU6F",
-        "diff": 1.04
+        "diff": -0.79
       }
-    ],
-    "weight_down": []
+    ]
   },
   "00730": {
     "name": "富邦臺灣優質高息",
     "added": [],
     "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "3034",
-        "diff": -0.7
-      }
-    ]
-  },
-  "00670L": {
-    "name": "富邦NASDAQ正2",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "202609NQU6F",
-        "diff": -2.82
-      }
-    ]
-  },
-  "009800": {
-    "name": "中信NASDAQ",
-    "added": [],
-    "removed": [],
     "weight_up": [
       {
-        "stock_id": "MU",
-        "diff": 0.78
-      }
-    ],
-    "weight_down": []
-  },
-  "00665L": {
-    "name": "富邦恒生國企正2",
-    "added": [
-      "202607HHIN6F"
-    ],
-    "removed": [
-      "202606HHIM6F"
-    ],
-    "weight_up": [],
-    "weight_down": []
-  },
-  "00897": {
-    "name": "富邦基因免疫生技",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "BAYN",
+        "stock_id": "6139",
         "diff": 0.66
       }
     ],
     "weight_down": []
   },
-  "00982D": {
-    "name": "主動富邦動態入息",
+  "00778B": {
+    "name": "凱基金融債20+",
     "added": [],
     "removed": [
-      "US254687EZ57",
-      "US00206RAS13",
-      "US38141GGM06",
-      "US91913YAL48"
+      "LW3683676"
     ],
     "weight_up": [],
     "weight_down": []
   },
-  "00913": {
-    "name": "兆豐台灣晶圓製造ETF",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.83
-      }
-    ],
-    "weight_down": []
-  },
-  "00634R": {
-    "name": "富邦上証反1",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "202607SFCN6F",
-        "diff": 1.45
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "202607WOAFN6F",
-        "diff": -0.93
-      }
-    ]
-  },
-  "00640L": {
-    "name": "富邦日本正2",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "202609JTIU6F",
-        "diff": -1.33
-      }
-    ]
-  },
-  "00657": {
-    "name": "國泰日經225",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "6857.JP",
-        "diff": -0.63
-      },
-      {
-        "stock_id": "9984.JP",
-        "diff": -0.64
-      }
-    ]
-  },
-  "00680L": {
-    "name": "元大美債20正2",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "202609UB",
-        "diff": 2.47
-      }
-    ],
-    "weight_down": []
-  },
-  "009808": {
-    "name": "華南永昌優選50",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.7
-      }
-    ],
-    "weight_down": []
-  },
-  "00710B": {
-    "name": "復華彭博非投等債",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "DA_NTD",
-        "diff": 1.49
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "DA_USD",
-        "diff": -1.49
-      }
-    ]
-  },
-  "00741B": {
-    "name": "富邦全球非投等債",
-    "added": [],
-    "removed": [
-      "US69318FAJ75"
-    ],
-    "weight_up": [],
-    "weight_down": []
-  },
-  "009802": {
-    "name": "富邦旗艦50",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "2454",
-        "diff": -1.15
-      }
-    ]
-  },
-  "00916": {
-    "name": "國泰全球品牌50",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "AAPL.US",
-        "diff": -0.69
-      }
-    ]
-  },
-  "00965": {
-    "name": "元大航太防衛科技",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "202609ES",
-        "diff": 0.86
-      },
-      {
-        "stock_id": "202609JNI",
-        "diff": 1.31
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2330",
-        "diff": -1.27
-      },
-      {
-        "stock_id": "6702",
-        "diff": -0.51
-      }
-    ]
-  },
-  "00917": {
-    "name": "中信特選金融",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "C_NTD",
-        "diff": 0.82
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "C_USD",
-        "diff": -0.73
-      }
-    ]
-  },
-  "00905": {
-    "name": "FT臺灣Smart",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.67
-      }
-    ],
-    "weight_down": []
-  },
-  "00934": {
-    "name": "中信成長高股息",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "C_NTD",
-        "diff": 0.62
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2454",
-        "diff": -0.76
-      }
-    ]
-  },
-  "00404A": {
-    "name": "主動聯博動能50",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 1.04
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "202607TXF",
-        "diff": -0.6
-      }
-    ]
-  },
-  "00903": {
-    "name": "富邦元宇宙",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "MU",
-        "diff": 1.65
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "AAPL",
-        "diff": -0.51
-      }
-    ]
-  },
-  "009804": {
-    "name": "聯邦台灣精彩50ETF基金",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.7
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2454",
-        "diff": -0.58
-      }
-    ]
-  },
-  "00853B": {
-    "name": "統一美債10年Aa-A",
-    "added": [],
-    "removed": [
-      "US89153VAV18"
-    ],
-    "weight_up": [],
-    "weight_down": []
-  },
-  "0061": {
-    "name": "元大寶滬深",
-    "added": [
-      "202607CN"
-    ],
-    "removed": [
-      "202606CN"
-    ],
-    "weight_up": [],
-    "weight_down": []
-  },
-  "00847B": {
-    "name": "中信美國市政債",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "US912810UU06",
-        "diff": -2.24
-      },
-      {
-        "stock_id": "US912810UK24",
-        "diff": -1.43
-      },
-      {
-        "stock_id": "US912810UM89",
-        "diff": -1.44
-      },
-      {
-        "stock_id": "US912810UP11",
-        "diff": -1.41
-      }
-    ]
-  },
-  "00671R": {
-    "name": "富邦NASDAQ 反1",
+  "00670L": {
+    "name": "富邦NASDAQ正2",
     "added": [],
     "removed": [],
     "weight_up": [
       {
         "stock_id": "202609NQU6F",
-        "diff": 1.61
+        "diff": 3.93
       }
     ],
     "weight_down": []
   },
-  "00706L": {
-    "name": "期元大S&amp;P日圓正2(原名：元大S&amp;P日圓正2)",
+  "00702": {
+    "name": "國泰標普低波高息",
     "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "202609JY",
-        "diff": -0.68
-      }
-    ]
-  },
-  "00757": {
-    "name": "統一FANG+",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "MU",
-        "diff": 1.65
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "AAPL",
-        "diff": -0.52
-      }
-    ]
-  },
-  "00689R": {
-    "name": "國泰20年美債反1",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "202609UB",
-        "diff": -2.49
-      }
-    ]
-  },
-  "00875": {
-    "name": "國泰網路資安ETF",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "BB.CN",
-        "diff": 0.65
-      }
-    ],
-    "weight_down": []
-  },
-  "00928": {
-    "name": "中信上櫃ESG30",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "3081",
-        "diff": 0.78
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "6274",
-        "diff": -1.16
-      },
-      {
-        "stock_id": "3131",
-        "diff": -1.39
-      }
-    ]
-  },
-  "00746B": {
-    "name": "富邦A級公司債",
-    "added": [
-      "US754730AF69"
-    ],
     "removed": [
-      "US59156RAM07"
+      "CAG.US"
     ],
     "weight_up": [],
     "weight_down": []
   },
-  "009810": {
-    "name": "玉山全球藍籌100",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "AAPL",
-        "diff": -0.57
-      }
-    ]
-  },
-  "00948B": {
-    "name": "中信優息投資級債",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "C_USD",
-        "diff": 4.66
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "C_NTD",
-        "diff": -4.74
-      },
-      {
-        "stock_id": "US747525BT99",
-        "diff": -0.54
-      }
-    ]
-  },
-  "00956": {
-    "name": "中信日經高股息",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "C_NTD",
-        "diff": 1.66
-      }
-    ],
-    "weight_down": []
-  },
-  "00636": {
-    "name": "國泰中國A50",
+  "00736": {
+    "name": "國泰富時新興市場基金",
     "added": [
       "202607SCN"
     ],
@@ -1628,20 +889,237 @@
     "weight_up": [],
     "weight_down": []
   },
-  "009815": {
-    "name": "大華美國MAG7+",
+  "00634R": {
+    "name": "富邦上証反1",
+    "added": [],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "202607SFCN6F",
+        "diff": -1.47
+      }
+    ]
+  },
+  "009805": {
+    "name": "新光美國電力基建",
+    "added": [],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "BE",
+        "diff": -0.74
+      }
+    ]
+  },
+  "006206": {
+    "name": "元大上證50",
+    "added": [],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "202607CN",
+        "diff": -1.73
+      }
+    ]
+  },
+  "009819": {
+    "name": "中信數據及電力",
+    "added": [],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "AVGO",
+        "diff": -0.67
+      }
+    ]
+  },
+  "00910": {
+    "name": "第一金太空衛星",
+    "added": [
+      "202609NQ"
+    ],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "2455",
+        "diff": -0.58
+      }
+    ]
+  },
+  "00710B": {
+    "name": "復華彭博非投等債",
+    "added": [],
+    "removed": [
+      "USU1303AAF31"
+    ],
+    "weight_up": [],
+    "weight_down": []
+  },
+  "009802": {
+    "name": "富邦旗艦50",
     "added": [],
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "MU",
-        "diff": 0.63
+        "stock_id": "2308",
+        "diff": 0.61
       }
     ],
+    "weight_down": []
+  },
+  "00965": {
+    "name": "元大航太防衛科技",
+    "added": [
+      "ADI",
+      "010140",
+      "AME",
+      "RKLB",
+      "ASTS",
+      "032820",
+      "186A"
+    ],
+    "removed": [],
+    "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "AAPL",
-        "diff": -0.71
+        "stock_id": "6702",
+        "diff": -1.64
+      },
+      {
+        "stock_id": "ENR",
+        "diff": -1.22
+      }
+    ]
+  },
+  "006201": {
+    "name": "元大富櫃50",
+    "added": [],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "6223",
+        "diff": -0.62
+      }
+    ]
+  },
+  "00950B": {
+    "name": "凱基A級公司債",
+    "added": [
+      "DL4442315",
+      "DL4448643",
+      "DL3940319",
+      "DL9325317"
+    ],
+    "removed": [
+      "UV5229520",
+      "EK0384629"
+    ],
+    "weight_up": [],
+    "weight_down": []
+  },
+  "00899": {
+    "name": "FT潔淨能源(原名:富蘭克林潔淨能源)",
+    "added": [],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "BE",
+        "diff": -1.3
+      }
+    ]
+  },
+  "00903": {
+    "name": "富邦元宇宙",
+    "added": [],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "MU",
+        "diff": -0.69
+      }
+    ]
+  },
+  "00648R": {
+    "name": "元大S&amp;P500反1",
+    "added": [],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "202609ES",
+        "diff": -0.51
+      }
+    ]
+  },
+  "00847B": {
+    "name": "中信美國市政債",
+    "added": [],
+    "removed": [],
+    "weight_up": [
+      {
+        "stock_id": "C_USD",
+        "diff": 6.59
+      }
+    ],
+    "weight_down": []
+  },
+  "00671R": {
+    "name": "富邦NASDAQ 反1",
+    "added": [],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "202609NQU6F",
+        "diff": -2.22
+      }
+    ]
+  },
+  "00757": {
+    "name": "統一FANG+",
+    "added": [],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "MU",
+        "diff": -0.83
+      }
+    ]
+  },
+  "00928": {
+    "name": "中信上櫃ESG30",
+    "added": [],
+    "removed": [],
+    "weight_up": [
+      {
+        "stock_id": "8069",
+        "diff": 0.75
+      },
+      {
+        "stock_id": "202607",
+        "diff": 0.69
+      }
+    ],
+    "weight_down": []
+  },
+  "00948B": {
+    "name": "中信優息投資級債",
+    "added": [],
+    "removed": [],
+    "weight_up": [],
+    "weight_down": [
+      {
+        "stock_id": "C_USD",
+        "diff": -0.95
       }
     ]
   },
@@ -1652,46 +1130,34 @@
     "weight_up": [
       {
         "stock_id": "202609UB",
-        "diff": 2.25
+        "diff": 0.53
       }
     ],
     "weight_down": []
   },
-  "00681R": {
-    "name": "元大美債20反1",
+  "00852L": {
+    "name": "國泰美國道瓊正2",
     "added": [],
     "removed": [],
-    "weight_up": [],
-    "weight_down": [
+    "weight_up": [
       {
-        "stock_id": "202609UB",
-        "diff": -2.26
+        "stock_id": "202609YM",
+        "diff": 0.67
       }
-    ]
-  },
-  "009809": {
-    "name": "富邦淨零ESG50",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "2303",
-        "diff": -0.56
-      }
-    ]
+    ],
+    "weight_down": []
   },
   "00663L": {
     "name": "國泰臺灣加權正2",
     "added": [],
     "removed": [],
-    "weight_up": [
+    "weight_up": [],
+    "weight_down": [
       {
         "stock_id": "202607TX",
-        "diff": 0.75
+        "diff": -2.36
       }
-    ],
-    "weight_down": []
+    ]
   },
   "00762": {
     "name": "元大全球AI",
@@ -1699,28 +1165,8 @@
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "000660",
-        "diff": 0.57
-      },
-      {
-        "stock_id": "SNDK",
-        "diff": 0.83
-      },
-      {
-        "stock_id": "MU",
-        "diff": 0.59
-      }
-    ],
-    "weight_down": []
-  },
-  "0053": {
-    "name": "元大電子",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.98
+        "stock_id": "MSFT",
+        "diff": 0.63
       }
     ],
     "weight_down": []
@@ -1732,7 +1178,7 @@
     "weight_up": [
       {
         "stock_id": "202608GC",
-        "diff": 7.68
+        "diff": 2.56
       }
     ],
     "weight_down": []
@@ -1741,93 +1187,123 @@
     "name": "富邦ESG綠色電力",
     "added": [],
     "removed": [],
-    "weight_up": [],
+    "weight_up": [
+      {
+        "stock_id": "IBE",
+        "diff": 0.55
+      }
+    ],
     "weight_down": [
       {
         "stock_id": "BE",
-        "diff": -0.59
+        "diff": -1.55
       }
     ]
   },
-  "00728": {
-    "name": "第一金工業30",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.84
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2303",
-        "diff": -0.61
-      }
-    ]
-  },
-  "009803": {
-    "name": "玉山市值動能50",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 1.12
-      }
-    ],
-    "weight_down": []
-  },
-  "00984B": {
-    "name": "大華優利美A債15",
+  "00885": {
+    "name": "富邦越南",
     "added": [],
     "removed": [],
     "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "US112586AB85",
-        "diff": -0.8
+        "stock_id": "VIC",
+        "diff": -0.65
       },
       {
-        "stock_id": "US459200LV14",
-        "diff": -0.56
+        "stock_id": "VHM",
+        "diff": -0.84
       }
     ]
+  },
+  "00841B": {
+    "name": "凱基AAA-AA公司債",
+    "added": [
+      "DL9265463",
+      "DL7038896",
+      "YL4117443",
+      "YR4183517",
+      "DL1754191",
+      "DL1754159"
+    ],
+    "removed": [
+      "AM3324358",
+      "BJ3690572",
+      "ZN7148762",
+      "AM6819156",
+      "AM7800239",
+      "BP1726218",
+      "BS0508728",
+      "BS8791664",
+      "BR3407649",
+      "JK9116332",
+      "BR3596748",
+      "AM3834166",
+      "ZO1044189",
+      "ZO8502833",
+      "BJ8088996",
+      "BJ8282581",
+      "BJ9358919",
+      "BK7674603",
+      "BK8777561",
+      "BK8778353",
+      "BK9300447",
+      "BN3428131"
+    ],
+    "weight_up": [],
+    "weight_down": []
   },
   "00656R": {
     "name": "國泰中國A50反1",
-    "added": [
-      "202607SCN"
+    "added": [],
+    "removed": [],
+    "weight_up": [
+      {
+        "stock_id": "202607SCN",
+        "diff": 0.91
+      }
     ],
-    "removed": [
-      "202606SCN"
-    ],
-    "weight_up": [],
     "weight_down": []
   },
   "00633L": {
     "name": "富邦上証正2",
     "added": [],
-    "removed": [
-      "202606SFCM6F"
-    ],
+    "removed": [],
     "weight_up": [
       {
         "stock_id": "202607SFCN6F",
-        "diff": 90.75
+        "diff": 0.57
       }
     ],
     "weight_down": []
   },
-  "006207": {
-    "name": "復華滬深",
-    "added": [
-      "202607XU"
+  "00893": {
+    "name": "國泰智能電動車",
+    "added": [],
+    "removed": [],
+    "weight_up": [
+      {
+        "stock_id": "TSLA.US",
+        "diff": 0.57
+      }
     ],
-    "removed": [
-      "202606XU"
+    "weight_down": [
+      {
+        "stock_id": "TXN.US",
+        "diff": -0.55
+      }
+    ]
+  },
+  "00647L": {
+    "name": "元大S&amp;P500正2",
+    "added": [],
+    "removed": [],
+    "weight_up": [
+      {
+        "stock_id": "202609ES",
+        "diff": 0.65
+      }
     ],
-    "weight_up": [],
     "weight_down": []
   },
   "00651R": {
@@ -1836,164 +1312,86 @@
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "M_HKD",
-        "diff": 1.16
-      }
-    ],
-    "weight_down": [
-      {
         "stock_id": "M_NTD",
-        "diff": -0.79
-      }
-    ]
-  },
-  "009811": {
-    "name": "統一美國50ETF基金",
-    "added": [],
-    "removed": [],
-    "weight_up": [],
-    "weight_down": [
-      {
-        "stock_id": "AAPL",
-        "diff": -0.56
-      }
-    ]
-  },
-  "00683L": {
-    "name": "期元大美元指正2(原名：元大美元指數正2)",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "202609DX",
-        "diff": 0.84
+        "diff": 0.68
       }
     ],
-    "weight_down": []
+    "weight_down": [
+      {
+        "stock_id": "M_HKD",
+        "diff": -0.99
+      }
+    ]
   },
   "00668K": {
     "name": "國泰美國道瓊+U",
+    "added": [
+      "ALPHABET CL A CMN"
+    ],
+    "removed": [
+      "JPM.US"
+    ],
+    "weight_up": [],
+    "weight_down": []
+  },
+  "009806": {
+    "name": "台新標普500",
     "added": [],
     "removed": [],
     "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "CAT.US",
-        "diff": -0.63
+        "stock_id": "NVDA",
+        "diff": -0.51
+      },
+      {
+        "stock_id": "MU",
+        "diff": -0.51
       }
     ]
-  },
-  "00739": {
-    "name": "元大MSCI A股",
-    "added": [
-      "202607CN"
-    ],
-    "removed": [
-      "202606CN"
-    ],
-    "weight_up": [],
-    "weight_down": []
-  },
-  "00695B": {
-    "name": "富邦美債7-10",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "US91282CPZ85",
-        "diff": 1.11
-      }
-    ],
-    "weight_down": []
-  },
-  "00970B": {
-    "name": "新光BBB投等債20+",
-    "added": [],
-    "removed": [
-      "US674599EM33"
-    ],
-    "weight_up": [],
-    "weight_down": []
   },
   "00951": {
     "name": "台新日本半導體ETF",
     "added": [],
     "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "6857",
-        "diff": 0.82
-      }
-    ],
-    "weight_down": []
-  },
-  "00405A": {
-    "name": "主動富邦台灣龍耀",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2344",
-        "diff": 1.63
-      },
-      {
-        "stock_id": "3037",
-        "diff": 0.92
-      },
-      {
-        "stock_id": "3653",
-        "diff": 0.96
-      }
-    ],
+    "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "6223",
-        "diff": -0.59
+        "stock_id": "6857",
+        "diff": -0.64
       }
     ]
   },
   "00637L": {
     "name": "元大滬深300正2",
     "added": [],
-    "removed": [
-      "202606CN"
-    ],
-    "weight_up": [
-      {
-        "stock_id": "202607CN",
-        "diff": 66.17
-      }
-    ],
-    "weight_down": []
-  },
-  "00650L": {
-    "name": "復華香港正2",
-    "added": [],
-    "removed": [
-      "202606HSI"
-    ],
-    "weight_up": [
-      {
-        "stock_id": "202607HSI",
-        "diff": 186.87
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "M_HKD",
-        "diff": -1.18
-      }
-    ]
-  },
-  "00684R": {
-    "name": "期元大美元指反1(原名：元大美元指數反1)",
-    "added": [],
     "removed": [],
     "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "202609DX",
-        "diff": -2.37
+        "stock_id": "202607CN",
+        "diff": -1.22
+      }
+    ]
+  },
+  "00650L": {
+    "name": "復華香港正2",
+    "added": [],
+    "removed": [],
+    "weight_up": [
+      {
+        "stock_id": "202607HSI",
+        "diff": 0.83
+      },
+      {
+        "stock_id": "M_HKD",
+        "diff": 0.78
+      }
+    ],
+    "weight_down": [
+      {
+        "stock_id": "DA_NTD",
+        "diff": -0.84
       }
     ]
   },
@@ -2003,14 +1401,18 @@
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "MU_US",
-        "diff": 1.17
+        "stock_id": "MSFT_US",
+        "diff": 0.73
       }
     ],
     "weight_down": [
       {
-        "stock_id": "AAPL_US",
-        "diff": -0.81
+        "stock_id": "AVGO_US",
+        "diff": -0.52
+      },
+      {
+        "stock_id": "MU_US",
+        "diff": -0.56
       }
     ]
   },
@@ -2018,100 +1420,32 @@
     "name": "元大納斯達克精選",
     "added": [],
     "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "MU",
-        "diff": 1.59
-      },
-      {
-        "stock_id": "SNDK",
-        "diff": 0.69
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "NVDA",
-        "diff": -0.54
-      },
-      {
-        "stock_id": "META",
-        "diff": -0.55
-      }
-    ]
-  },
-  "00912": {
-    "name": "中信臺灣智慧50",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.76
-      }
-    ],
-    "weight_down": []
-  },
-  "00669R": {
-    "name": "國泰美國道瓊反1",
-    "added": [],
-    "removed": [],
     "weight_up": [],
     "weight_down": [
       {
-        "stock_id": "202609YM",
-        "diff": -1.94
+        "stock_id": "MU",
+        "diff": -0.64
       }
     ]
   },
-  "0052": {
-    "name": "富邦科技",
+  "00864B": {
+    "name": "中信美國公債0-1",
     "added": [],
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "2330",
-        "diff": 1.01
+        "stock_id": "C_NTD",
+        "diff": 1.42
       }
     ],
     "weight_down": []
-  },
-  "00892": {
-    "name": "富邦台灣半導體",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 1.01
-      }
-    ],
-    "weight_down": []
-  },
-  "00901": {
-    "name": "永豐智能車供應鏈",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.91
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2454",
-        "diff": -0.51
-      }
-    ]
   },
   "00717": {
     "name": "富邦美國特別股",
     "added": [
-      "FCNCN"
-    ],
-    "removed": [
       "FHN"
     ],
+    "removed": [],
     "weight_up": [],
     "weight_down": []
   },
@@ -2121,113 +1455,46 @@
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "MU",
-        "diff": 0.79
+        "stock_id": "AAPL",
+        "diff": 0.6
+      },
+      {
+        "stock_id": "MSFT",
+        "diff": 0.67
       }
     ],
     "weight_down": [
       {
-        "stock_id": "AAPL",
-        "diff": -0.92
+        "stock_id": "MU",
+        "diff": -0.56
       }
     ]
   },
   "00770": {
     "name": "國泰標普北美科技ETF基金",
-    "added": [],
-    "removed": [
+    "added": [
       "AI.US"
     ],
-    "weight_up": [
-      {
-        "stock_id": "MU.US",
-        "diff": 0.76
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "AAPL.US",
-        "diff": -0.56
-      }
-    ]
-  },
-  "00894": {
-    "name": "中信小資高價30",
-    "added": [],
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "2330",
-        "diff": 0.8
+        "stock_id": "MSFT.US",
+        "diff": 0.54
       }
     ],
-    "weight_down": [
-      {
-        "stock_id": "2454",
-        "diff": -0.58
-      }
-    ]
-  },
-  "009816": {
-    "name": "凱基台灣TOP50",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.76
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "2454",
-        "diff": -0.69
-      }
-    ]
-  },
-  "00666R": {
-    "name": "富邦恒生國企反1",
-    "added": [
-      "202607HHIN6F"
-    ],
-    "removed": [
-      "202606HHIM6F"
-    ],
-    "weight_up": [],
     "weight_down": []
   },
   "00936": {
     "name": "台新永續高息中小型ETF",
     "added": [],
     "removed": [],
-    "weight_up": [
+    "weight_up": [],
+    "weight_down": [
       {
         "stock_id": "8046",
-        "diff": 1.05
+        "diff": -0.69
       }
-    ],
-    "weight_down": []
-  },
-  "00911": {
-    "name": "兆豐洲際半導體",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "MU_US",
-        "diff": 0.95
-      }
-    ],
-    "weight_down": []
-  },
-  "00945B": {
-    "name": "凱基美國非投等債",
-    "added": [],
-    "removed": [
-      "ZO9637596"
-    ],
-    "weight_up": [],
-    "weight_down": []
+    ]
   },
   "009818": {
     "name": "華南永昌NASDAQxT",
@@ -2235,70 +1502,72 @@
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "MU",
-        "diff": 0.87
-      }
-    ],
-    "weight_down": [
-      {
         "stock_id": "AAPL",
-        "diff": -0.7
-      }
-    ]
-  },
-  "00406A": {
-    "name": "主動中信台灣收益",
-    "added": [
-      "TXUG62026",
-      "6213"
-    ],
-    "removed": [
-      "TXYF62026",
-      "2317"
-    ],
-    "weight_up": [
-      {
-        "stock_id": "C_NTD",
-        "diff": 3.68
+        "diff": 0.53
       },
       {
-        "stock_id": "2303",
-        "diff": 0.91
-      }
-    ],
-    "weight_down": [
-      {
-        "stock_id": "202607TX",
-        "diff": -0.98
-      },
-      {
-        "stock_id": "TX1G62026",
-        "diff": -5.2
-      }
-    ]
-  },
-  "00751B": {
-    "name": "元大AAA至A公司債",
-    "added": [],
-    "removed": [
-      "BK7674603"
-    ],
-    "weight_up": [],
-    "weight_down": []
-  },
-  "00668": {
-    "name": "國泰美國道瓊",
-    "added": [
-      "GOOGL.OQ"
-    ],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "CAT.N",
+        "stock_id": "MSFT",
         "diff": 0.66
       }
     ],
     "weight_down": []
+  },
+  "00758B": {
+    "name": "復華能源債",
+    "added": [
+      "USU0856AAK52"
+    ],
+    "removed": [
+      "US127097AN32"
+    ],
+    "weight_up": [],
+    "weight_down": []
+  },
+  "00406A": {
+    "name": "主動中信台灣收益",
+    "added": [
+      "3189"
+    ],
+    "removed": [],
+    "weight_up": [
+      {
+        "stock_id": "TXUG62026",
+        "diff": 3.72
+      },
+      {
+        "stock_id": "TX1G62026",
+        "diff": 3.59
+      }
+    ],
+    "weight_down": [
+      {
+        "stock_id": "C_NTD",
+        "diff": -1.72
+      }
+    ]
+  },
+  "00668": {
+    "name": "國泰美國道瓊",
+    "added": [],
+    "removed": [
+      "VZ.N"
+    ],
+    "weight_up": [
+      {
+        "stock_id": "GOOGL.OQ",
+        "diff": 1.94
+      }
+    ],
+    "weight_down": [
+      {
+        "stock_id": "CAT.N",
+        "diff": -0.63
+      },
+      {
+        "stock_id": "202609YM",
+        "diff": -1.84
+      }
+    ]
   },
   "009824": {
     "name": "群益美國科技巨頭ETF基金",
@@ -2306,31 +1575,15 @@
     "removed": [],
     "weight_up": [
       {
-        "stock_id": "MU",
-        "diff": 1.27
-      },
-      {
-        "stock_id": "SNDK",
-        "diff": 0.54
+        "stock_id": "AAPL",
+        "diff": 0.76
       }
     ],
     "weight_down": [
       {
-        "stock_id": "AAPL",
-        "diff": -1.02
+        "stock_id": "MU",
+        "diff": -0.56
       }
     ]
-  },
-  "00407A": {
-    "name": "主動凱基台灣",
-    "added": [],
-    "removed": [],
-    "weight_up": [
-      {
-        "stock_id": "2330",
-        "diff": 0.59
-      }
-    ],
-    "weight_down": []
   }
 }

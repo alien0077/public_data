@@ -1,12 +1,12 @@
 {
   "symbol": "5903",
-  "updated_at": "2026-06-29",
+  "updated_at": "2026-06-30",
   "lines": [
     {
-      "id": "H_18",
+      "id": "H_17",
       "type": "high",
       "price": 211.5,
-      "start_idx": 18,
+      "start_idx": 17,
       "start_date": "2025-05-05",
       "end_idx": null,
       "end_date": null,
@@ -14,10 +14,10 @@
       "strength": 1
     },
     {
-      "id": "H_19",
+      "id": "H_18",
       "type": "high",
       "price": 211.5,
-      "start_idx": 19,
+      "start_idx": 18,
       "start_date": "2025-05-06",
       "end_idx": null,
       "end_date": null,
@@ -25,11 +25,22 @@
       "strength": 1
     },
     {
-      "id": "H_83",
+      "id": "H_82",
       "type": "high",
       "price": 211.0,
-      "start_idx": 83,
+      "start_idx": 82,
       "start_date": "2025-08-05",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_95",
+      "type": "high",
+      "price": 196.5,
+      "start_idx": 95,
+      "start_date": "2025-08-22",
       "end_idx": null,
       "end_date": null,
       "broken": false,
@@ -40,17 +51,6 @@
       "type": "high",
       "price": 196.5,
       "start_idx": 96,
-      "start_date": "2025-08-22",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
-      "strength": 1
-    },
-    {
-      "id": "H_97",
-      "type": "high",
-      "price": 196.5,
-      "start_idx": 97,
       "start_date": "2025-08-25",
       "end_idx": null,
       "end_date": null,
@@ -58,10 +58,10 @@
       "strength": 1
     },
     {
-      "id": "H_107",
+      "id": "H_106",
       "type": "high",
       "price": 197.0,
-      "start_idx": 107,
+      "start_idx": 106,
       "start_date": "2025-09-08",
       "end_idx": null,
       "end_date": null,
@@ -69,43 +69,43 @@
       "strength": 1
     },
     {
-      "id": "L_129",
+      "id": "L_128",
       "type": "low",
       "price": 189.0,
-      "start_idx": 129,
+      "start_idx": 128,
       "start_date": "2025-10-13",
-      "end_idx": 272,
+      "end_idx": 271,
       "end_date": "2026-05-20",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "L_153",
+      "id": "L_152",
       "type": "low",
       "price": 189.0,
-      "start_idx": 153,
+      "start_idx": 152,
       "start_date": "2025-11-17",
-      "end_idx": 272,
+      "end_idx": 271,
       "end_date": "2026-05-20",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "L_173",
+      "id": "L_172",
       "type": "low",
       "price": 189.0,
-      "start_idx": 173,
+      "start_idx": 172,
       "start_date": "2025-12-15",
-      "end_idx": 272,
+      "end_idx": 271,
       "end_date": "2026-05-20",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "H_213",
+      "id": "H_212",
       "type": "high",
       "price": 197.0,
-      "start_idx": 213,
+      "start_idx": 212,
       "start_date": "2026-02-11",
       "end_idx": null,
       "end_date": null,
@@ -113,21 +113,21 @@
       "strength": 1
     },
     {
-      "id": "L_233",
+      "id": "L_232",
       "type": "low",
       "price": 189.0,
-      "start_idx": 233,
+      "start_idx": 232,
       "start_date": "2026-03-23",
-      "end_idx": 272,
+      "end_idx": 271,
       "end_date": "2026-05-20",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "H_236",
+      "id": "H_235",
       "type": "high",
       "price": 192.0,
-      "start_idx": 236,
+      "start_idx": 235,
       "start_date": "2026-03-26",
       "end_idx": null,
       "end_date": null,
@@ -135,12 +135,23 @@
       "strength": 1
     },
     {
+      "id": "L_238",
+      "type": "low",
+      "price": 189.5,
+      "start_idx": 238,
+      "start_date": "2026-03-31",
+      "end_idx": 262,
+      "end_date": "2026-05-07",
+      "broken": true,
+      "strength": 1
+    },
+    {
       "id": "L_239",
       "type": "low",
       "price": 189.5,
       "start_idx": 239,
-      "start_date": "2026-03-31",
-      "end_idx": 263,
+      "start_date": "2026-04-01",
+      "end_idx": 262,
       "end_date": "2026-05-07",
       "broken": true,
       "strength": 1
@@ -150,28 +161,17 @@
       "type": "low",
       "price": 189.5,
       "start_idx": 240,
-      "start_date": "2026-04-01",
-      "end_idx": 263,
-      "end_date": "2026-05-07",
-      "broken": true,
-      "strength": 1
-    },
-    {
-      "id": "L_241",
-      "type": "low",
-      "price": 189.5,
-      "start_idx": 241,
       "start_date": "2026-04-02",
-      "end_idx": 263,
+      "end_idx": 262,
       "end_date": "2026-05-07",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "H_248",
+      "id": "H_247",
       "type": "high",
       "price": 191.5,
-      "start_idx": 248,
+      "start_idx": 247,
       "start_date": "2026-04-15",
       "end_idx": null,
       "end_date": null,
@@ -179,10 +179,10 @@
       "strength": 1
     },
     {
-      "id": "H_249",
+      "id": "H_248",
       "type": "high",
       "price": 191.5,
-      "start_idx": 249,
+      "start_idx": 248,
       "start_date": "2026-04-16",
       "end_idx": null,
       "end_date": null,
@@ -190,10 +190,10 @@
       "strength": 1
     },
     {
-      "id": "H_255",
+      "id": "H_254",
       "type": "high",
       "price": 191.0,
-      "start_idx": 255,
+      "start_idx": 254,
       "start_date": "2026-04-24",
       "end_idx": null,
       "end_date": null,
@@ -201,32 +201,32 @@
       "strength": 1
     },
     {
-      "id": "L_256",
+      "id": "L_255",
       "type": "low",
       "price": 189.0,
-      "start_idx": 256,
+      "start_idx": 255,
       "start_date": "2026-04-27",
-      "end_idx": 272,
+      "end_idx": 271,
       "end_date": "2026-05-20",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "L_260",
+      "id": "L_259",
       "type": "low",
       "price": 189.0,
-      "start_idx": 260,
+      "start_idx": 259,
       "start_date": "2026-05-04",
-      "end_idx": 272,
+      "end_idx": 271,
       "end_date": "2026-05-20",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "H_261",
+      "id": "H_260",
       "type": "high",
       "price": 191.5,
-      "start_idx": 261,
+      "start_idx": 260,
       "start_date": "2026-05-05",
       "end_idx": null,
       "end_date": null,
@@ -234,21 +234,21 @@
       "strength": 1
     },
     {
-      "id": "L_267",
+      "id": "L_266",
       "type": "low",
       "price": 188.5,
-      "start_idx": 267,
+      "start_idx": 266,
       "start_date": "2026-05-13",
-      "end_idx": 273,
+      "end_idx": 272,
       "end_date": "2026-05-21",
       "broken": true,
       "strength": 1
     },
     {
-      "id": "H_268",
+      "id": "H_267",
       "type": "high",
       "price": 190.0,
-      "start_idx": 268,
+      "start_idx": 267,
       "start_date": "2026-05-14",
       "end_idx": null,
       "end_date": null,
@@ -256,11 +256,22 @@
       "strength": 1
     },
     {
-      "id": "L_280",
+      "id": "L_279",
       "type": "low",
       "price": 185.5,
-      "start_idx": 280,
+      "start_idx": 279,
       "start_date": "2026-06-01",
+      "end_idx": null,
+      "end_date": null,
+      "broken": false,
+      "strength": 1
+    },
+    {
+      "id": "H_282",
+      "type": "high",
+      "price": 189.5,
+      "start_idx": 282,
+      "start_date": "2026-06-04",
       "end_idx": null,
       "end_date": null,
       "broken": false,
@@ -271,17 +282,6 @@
       "type": "high",
       "price": 189.5,
       "start_idx": 283,
-      "start_date": "2026-06-04",
-      "end_idx": null,
-      "end_date": null,
-      "broken": false,
-      "strength": 1
-    },
-    {
-      "id": "H_284",
-      "type": "high",
-      "price": 189.5,
-      "start_idx": 284,
       "start_date": "2026-06-05",
       "end_idx": null,
       "end_date": null,
@@ -289,10 +289,10 @@
       "strength": 1
     },
     {
-      "id": "H_287",
+      "id": "H_286",
       "type": "high",
       "price": 189.5,
-      "start_idx": 287,
+      "start_idx": 286,
       "start_date": "2026-06-10",
       "end_idx": null,
       "end_date": null,
@@ -300,10 +300,10 @@
       "strength": 1
     },
     {
-      "id": "L_292",
+      "id": "L_291",
       "type": "low",
       "price": 187.0,
-      "start_idx": 292,
+      "start_idx": 291,
       "start_date": "2026-06-17",
       "end_idx": null,
       "end_date": null,
@@ -315,61 +315,61 @@
     {
       "type": "CHOCH_DOWN",
       "price": 189.5,
-      "idx": 263,
+      "idx": 262,
       "date": "2026-05-07"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 189.5,
-      "idx": 263,
+      "idx": 262,
       "date": "2026-05-07"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 189.5,
-      "idx": 263,
+      "idx": 262,
       "date": "2026-05-07"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 189.0,
-      "idx": 272,
+      "idx": 271,
       "date": "2026-05-20"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 189.0,
-      "idx": 272,
+      "idx": 271,
       "date": "2026-05-20"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 189.0,
-      "idx": 272,
+      "idx": 271,
       "date": "2026-05-20"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 189.0,
-      "idx": 272,
+      "idx": 271,
       "date": "2026-05-20"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 189.0,
-      "idx": 272,
+      "idx": 271,
       "date": "2026-05-20"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 189.0,
-      "idx": 272,
+      "idx": 271,
       "date": "2026-05-20"
     },
     {
       "type": "CHOCH_DOWN",
       "price": 188.5,
-      "idx": 273,
+      "idx": 272,
       "date": "2026-05-21"
     }
   ]

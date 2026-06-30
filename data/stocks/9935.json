@@ -1,21 +1,21 @@
 {
   "stock_id": "9935",
   "name": "9935",
-  "date": "2026-06-29",
-  "close": 19.15,
+  "date": "2026-06-30",
+  "close": 19.1,
   "health_score": 123,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走強，盤面顯示「主力洗盤完成」。",
+  "ai_narrative": "今日股價走弱，籌碼目前處於盤整狀態。",
   "institutional": {
-    "foreign_buy_days": 1,
-    "foreign_buy_ratio": 0.016,
+    "foreign_buy_days": 2,
+    "foreign_buy_ratio": 0.041,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -30.0,
-    "margin_slope": 209.4,
-    "maintenance_ratio": 166.41,
+    "margin_change": 2.0,
+    "margin_slope": 209.8,
+    "maintenance_ratio": 177.05,
     "short_change": 0.0,
     "short_margin_ratio": 0.0
   },
@@ -25,9 +25,9 @@
     "holder_concentration": 61.91
   },
   "main_force": {
-    "cost": 19.18,
-    "distance": -0.16,
-    "trend": "DOWN"
+    "cost": 17.98,
+    "distance": 6.23,
+    "trend": "UP"
   },
   "sector": {
     "name": "一般",
@@ -40,8 +40,6 @@
   "chip_status": "neutral",
   "chip_warning": "",
   "events": [],
-  "raw_signals": [
-    "主力洗盤完成"
-  ],
-  "data_version": "2026-06-29"
+  "raw_signals": [],
+  "data_version": "2026-06-30"
 }

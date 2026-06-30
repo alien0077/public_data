@@ -1,23 +1,23 @@
 {
   "stock_id": "2313",
   "name": "2313",
-  "date": "2026-06-29",
-  "close": 221.0,
-  "health_score": 83,
+  "date": "2026-06-30",
+  "close": 232.5,
+  "health_score": 86,
   "signal": "Bullish",
-  "ai_narrative": "今日股價走弱，盤面顯示「融資斷頭預警」。",
+  "ai_narrative": "今日股價走強，籌碼目前處於盤整狀態。",
   "institutional": {
     "foreign_buy_days": 0,
-    "foreign_buy_ratio": -0.257,
+    "foreign_buy_ratio": -0.103,
     "trust_buy_days": 0,
     "dealer_buy_days": 0
   },
   "margin": {
-    "margin_change": -284.0,
-    "margin_slope": 8852.0,
-    "maintenance_ratio": 143.95,
-    "short_change": 23.0,
-    "short_margin_ratio": 1.39
+    "margin_change": 132.0,
+    "margin_slope": 8878.4,
+    "maintenance_ratio": 153.66,
+    "short_change": -281.0,
+    "short_margin_ratio": 0.75
   },
   "tdcc": {
     "big_holder_change": 51.8,
@@ -25,8 +25,8 @@
     "holder_concentration": 57.07
   },
   "main_force": {
-    "cost": 255.88,
-    "distance": -13.63,
+    "cost": 252.18,
+    "distance": -7.8,
     "trend": "DOWN"
   },
   "sector": {
@@ -35,13 +35,16 @@
   },
   "market_style": {
     "style": "Value",
-    "score": 0
+    "score": 30
   },
   "chip_status": "neutral",
   "chip_warning": "",
-  "events": [],
-  "raw_signals": [
-    "融資斷頭預警"
+  "events": [
+    {
+      "level": "GREEN",
+      "title": "今日強勢大漲"
+    }
   ],
-  "data_version": "2026-06-29"
+  "raw_signals": [],
+  "data_version": "2026-06-30"
 }
